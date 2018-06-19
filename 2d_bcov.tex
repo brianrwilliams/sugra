@@ -22,10 +22,10 @@
 
 \begin{document}
 \maketitle
-\tableofcontents
+%\tableofcontents
 
-Suppose $X$ is a complex manifold of complex dimension $2$. equipped with a holomorphic symplectic form $\omega \in \Omega^{2,hol}(X)$.
-We study BCOV theory on $X$, which should be thought of as the theory of ``divergence-free holomorphic polyvector fields" with respect to the fixed symplectic structure.
+Suppose $X$ is a complex manifold of complex dimension $\dim_\CC(X) = 2$ equipped with a holomorphic symplectic form $\omega \in \Omega^{2,hol}(X)$.
+We study BCOV theory on $X$, which should be thought of as the theory of ``divergence-free holomorphic polyvector fields" with respect to the volume form determined by the fixed symplectic structure.
 
 Let $\PV^{k, hol}(X)$ be the space of holomorphic $k$-polyvector fields; these are holomorphic sections of the $k$th exterior power of the holomorphic tangent bundle $\wedge^k T^{1,0}X$.
 The holomorphic volume form identifies
@@ -108,7 +108,7 @@ Indeed, there is a sub dg Lie algebra
 When one equips the left hand side with the $\dbar$ differential, this is a resolution for holomorphic symplectic vector fields. 
 
 There is a related Lie algebra of holomorphic {\em Hamiltonian} vector fields. 
-This Lie algebra has underlying vector space the space of holomorphic functions $\sO^{hol}(X)$ and is equipped with Lie bracket given by the holomorphic Poisson bracket $\{-,-\}_\omega$. 
+This Lie algebra has underlying vector space the space of holomorphic functions $\sO^{hol}(X)$ and is equipped with Lie bracket given by the holomorphic Poisson bracket $\{-,-\}_\omega$ determined by the symplectic form $\omega$. 
 As we've done several times already, this Lie algebra admits a Dolbeualt resolution as a dg Lie algebra 
 \be\label{hamiltonian}
 \left(\Omega^{0,*}(X), \dbar, \{-,-\}_\omega \right).
@@ -117,16 +117,23 @@ As we've done several times already, this Lie algebra admits a Dolbeualt resolut
 Locally, every holomorphic symplectic vector field is Hamiltonian. 
 Thus, as sheaves of dg Lie algebras we might as well replace $\cX_{symp}^{*}(X)$ with the dg Lie algebra (\ref{hamiltonian}). 
 
-Given any dg Lie algebra, there is a standard construction to define a classical BV theory.
+Given any dg Lie algebra, there is a standard construction to define a classical BV theory. \brian{cotangent theory}
 
 The fields are
 \ben
 (A, B) \in \Omega^{0,*}(X) [1] \oplus \Omega^{2,*}(X) 
 \een
 The action functional is
-\ben
+\be\label{action3}
 \int_X B \dbar A + \frac{1}{2} \int_X B \{A, A\} .
-\een
-6
+\ee
+
+The following lemma is an immediate consequence of our discussion.
+
+\begin{lem} 
+The action functional (\ref{action2}) is equivalent to the action functional (\ref{action3}).
+In other words, BCOV theory on a complex surface is equivalent to the cotangent theory associated to the Lie algebra of holomorphic symplectic vector fields.
+\end{lem}
+
 \end{document}
 
