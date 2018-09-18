@@ -1,0 +1,104 @@
+\documentclass[10pt, oneside]{article}
+\input math_headers.sty
+
+\title{Notes on Twisted SYM and SUGRA}
+\author{Chris Elliott}
+\date{\today}
+
+\newcommand{\map}{\ul{\mr{Map}}}
+\newcommand{\dBRST}{\mathrm d_{\mathrm{BRST}}}
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\sD}{\slashed{D}}
+\newcommand{\sdel}{\slashed{\partial}}
+\newcommand{\sdelbar}{\overline{\slashed{\partial}}}
+\newcommand{\st}[1]{{}^*{#1}}
+
+\addbibresource{Twist.bib}
+
+\begin{document}
+
+\section{Some BRST Twisting Calculations}
+ 
+The following is Pavel's suggestion, as I understand it.  I'm going to only consider linear spaces of fields (complexes rather than $Q$-manifolds) for now.
+
+\begin{definition}
+A \emph{BRST Theory} on $M$ is a sheaf of super cochain complexes $(\Phi, \dBRST)$ of fields on $M$ along with a (polynomial) Lagrangian density, which is a $\ZZ/2\ZZ$-graded map of sheaves $\LL \colon \sym^\bullet(\Phi) \to \dens_M$ satisfying $\LL \circ \dBRST = 0$ (where the differential is extended as a derivation).
+
+A morphism of BRST theories on $M$ is a sheaf map $f \colon \Phi_1 \to \Phi_2$ that strictly commutes with the differentials, and where the triangle relating the two Lagrangian densities homotopy commutes.  Say that $f$ is an \emph{equivalence} if it is a quasi-isomorphism.  Note: Pavel suggested, in the more general $Q$-manifold context, that we should say $f$ is an equivalence if its homotopy fiber is equivalent to $V_{\mr{dR}}$ for some linear space $V$.
+\end{definition}
+
+\begin{remark}
+One obtains the BV complex from the BRST complex by taking the twisted shifted cotangent bundle of $(\Phi, \dBRST)$, using the $!$-dual and twisting by the quadratic part of $\LL$.  The higher order terms in the polynomial $\LL$ define the $L_\infty$-structure but I haven't tried to write this down carefully.   Equivalences of BRST theories should induce $L_\infty$ equivalences of BV complexes.
+\end{remark}
+
+We can define twists in this language
+\vspace{-10pt}
+\begin{enumerate}
+ \item With respect to a fermionic degree 0 endomorphism $Q$ of the BRST complex so that $Q^2 = 0$ and $\LL \circ Q = 0$.  We add $Q$ to the BRST differential: the resulting theory is now only a sheaf of $\ZZ/2\ZZ$-graded complexes.
+ \item With respect to an action $(Q,\alpha)$ of $\CC^\times \ltimes \Pi \CC$ on the BRST complex so that $\LL \circ Q = 0$ and $\LL \circ \alpha = \LL$.  We form the usual total complex construction: the resulting theory is still $\ZZ$-graded.
+\end{enumerate}
+\vspace{-10pt}
+
+Now, let's try to write down some of the descriptions of twisted theories that we've been discussing.
+\begin{example}[10d $\mc N=1$ Super Yang-Mills]
+I'm going to try to write this following the calculation in Baulieu \cite{Baulieu}.  We choose a complex structure on $\RR^{10}$ and decompose the (BRST) fields into irreducible components for the action of $\SU(5)$.  The fields one obtains are
+\begin{align*}
+A = A_{0, 1} + A_{1, 0} \\
+\lambda = \chi + \psi_{1, 0} + B_{0, 2},
+\end{align*}
+where the subscripts indicate the form type of the component fields.  There's also a ghost $c$, which is a scalar in degree $-1$.  Finally we'll introduce an auxiliary scalar field $h$ (bosonic, in degree 0)   The BRST differential is given by $c \mapsto (\dd c, \ol{\dd} c)$.  Denote this complex by $(\Phi^{\mr{YM}}, \dBRST^{\mr{YM}})$.  The holomorphic twist is only $\ZZ/2\ZZ$-graded, and is given by the identity map from $\psi$ to $A_{1,0}$, the identity map from $h$ to $\chi$, along with the map $\ol \dd$ from $A_{0,1}$ to $B$ \footnote{More precisely, if we're doing perturbation theory around a background connection $A'$ we take the covariant derivative with respect to this $A'$.}.  
+
+We expect the holomorphically twisted theory to be equivalent to 5d holomorphic Chern-Simons theory.  The BRST fields here are given by $c, A_{0,1}$ and $B_{0,2}$ in even, odd and even degrees respectively (this is only a $\ZZ/2\ZZ$-graded theory).  Denote this complex by $(\Phi^{\mr{hCS}},\dBRST^{\mr{hCS}})$.  It's clear that the projection $\Phi^{\mr{YM}} \to \Phi^{\mr{hCS}}$ is a quasi-isomorphism with respect to the $Q$-twisted BRST differential: its fiber is the contractible complex $h \mapsto \chi, \psi \mapsto A_{1,0}$.  It remains for us to verify that this projection is compatible with the Lagrangian densities of the two theories.  In other words, if we take the Lagrangian density of 10d $\mc N=1$ Yang-Mills theory and subtract the Lagrangian density of holomorphic Chern-Simons theory applied to the fields $c, A_{0,1}$ and $B$ then the result is $Q$-exact.
+
+I can do this calculation with the BV Lagrangian instead (Question: is this sufficient, and if so, why?).  This is what Baulieu does.  The BV Lagrangian density in 10d $\mc N=1$ Yang-Mills theory, where we ignore scaling factors for the individual terms, is given as follows.  Write $J$ for the map from $(1,1)$-forms to functions given by the chosen hermitian structure, and write $\Omega$ for the associated volume form (yes, I know I need to be more careful here).  Then
+\begin{align*}
+\LL_{\mr{YM}} &= J^2(F_{2, 0}\wedge F_{0,2})\Omega + \|h\|^2\Omega + h J(F_{1,1}) \Omega + J( \chi \wedge (\ol \dd_{A_{0,1}} \psi)) \Omega + J^2(B \wedge (\dd_{A_{1,0}} \psi)) \Omega + (B \wedge \ol \dd_{A_{0,1}} B) \\
+&+ \st{A_{1, 0}}\wedge \partial c + \st{A_{0, 1}}\wedge \overline{\partial} c + \st{c}\wedge [c, c] + \st{A_{0, 1}}\wedge [c, A_{0, 1}] + \st{A_{1, 0}}\wedge [c, A_{1, 0}] + \st{B}\wedge [c, B] + \st{\chi}\wedge [c, \chi] 
++ \st{\psi}\wedge [c, \psi].
+\end{align*}
+The holomorphic Chern-Simons action, on the other hand, can be written as
+\begin{align*}
+\LL_{\mr{hCS}} &= B \wedge \ol \dd_{A_{0,1}} B + \st B \wedge F_{0,2} + \st B \wedge [c,B] + \st A_{0,1} \wedge \ol \dd_{A_{0,1}}c + \st c \wedge [c,c]
+\end{align*}
+so taking the difference we're left with
+\begin{align*}
+\LL_{\mr{YM}} - \LL_{\mr{hCS}} &= J^2(F_{2, 0}\wedge F_{0,2})\Omega + \|h\|^2\Omega + h J(F_{1,1}) \Omega + J( \chi \wedge (\ol \dd_{A_{0,1}} \psi)) \Omega + J^2(B \wedge (\dd_{A_{1,0}} \psi)) \Omega \\
+&+ \st{A_{1, 0}}\wedge \partial c    + \st{A_{1, 0}}\wedge [c, A_{1, 0}]  + \st{\chi}\wedge [c, \chi] 
++ \st{\psi}\wedge [c, \psi] - \st B \wedge F_{0,2}.
+\end{align*}
+Now, $\st \chi, h, \st A_{1,0}$ and $\psi$ are all $Q$-exact (viewed as linear functionals on $\Phi$, so we can immediately simplify this to say that
+\[ \LL_{\mr{YM}} - \LL_{\mr{hCS}} = J^2(F_{2, 0}\wedge F_{0,2})\Omega - \st B \wedge F_{0,2}  + Q\text{-exact}.\]
+Likewise $F_{0,2}$ is $Q$-exact, which implies that this difference of Lagrangian densities is $Q$-exact, as required.
+\end{example}
+
+\begin{example}[4d $\mc N=1$ supergravity]
+Warning: this is still very rough.  Caveat lector.
+
+Let's now consider the example of twisted supergravity as in \cite{BaulieuBellonReys}.  We can model the BRST Fields using the first order formalism for supergravity as developed by D'Auria and Fr\'e.  In other words, the fields are modelled as gauge fields for the super Poincar\'e algebra.  Here we'll use the ordinary $\mc N=1$ super Poincar\'e algebra with no extension and no auxiliary fields, so $\Phi_{\mr{SUGRA}} = \Omega^0(\RR^4; \mf{iso}(4) \ltimes (S_+ \oplus S_-))[1] \to \Omega^1(\RR^4; \mf{iso}(4) \ltimes (S_+ \oplus S_-))$.  We obtain our twist by choosing a non-zero background for the ghost of the gravitino. So we choose a complex structure on $\RR^4$ and choose a square-zero supercharge in $S_+$ stabilized by the corresponding action of $\mr U(2)$ (unique up to scale).  We view this as a constant value for the ghost of the gravitino.  There is a compatible $\mr U(1)$-action so that $S_+$ has weight 1, $S_-$ has weight $-1$ and $\iso(4)$ has weight 0.
+
+We can decompose the fields according to the action of this choice of $\mr U(2)$.  We won't fully decompose into irreducible components, but we can split $\Omega^1$ into $\Omega^{0,1} \oplus \Omega^{1,0}$ and then split ghosts and the holomorphic and anti-holomorphic components of the fields into 
+\begin{align*}
+e^{0,1} &= e^{0,1}_{1,0} + e^{0,1}_{0,1} \text{ and } \xi = \xi_{1,0} + \xi_{0,1} \\
+\omega^{0,1} &= \omega^{0,1}_{\mr{hol}} + A^{0,1}_e + A^{0,1}_f + A^{0,1}_h \text{ and } \Omega = \Omega_{\mr{hol}} + \phi_e + \phi_f + \phi_h\\
+\lambda^{0,1}_- &= \lambda^{0,1}_- \text{ and } \chi_- = \chi_- \\
+\lambda^{0,1}_+ &= \lambda^{0,1}_0 + \lambda^{0,1}_{2,0} \text{ and } \chi_+ = \chi_0 + \chi_{2,0}
+\end{align*}
+where in each case we write the ordinary anti-holomorphic fields followed by their corresponding ghosts (we haven't written the holomorphic fields but they split identically: we denote them using a superscript $1,0$ in place of $0,1$).  Here for instance $\Omega_{\mr{hol}}$ is $\su(2)$-valued and the $\phi$ fields are scalars.
+
+In this language the bosonic ghost $Q$ we twist by is a constant of type $\chi_0$.  The associated supersymmetries act on these component fields by the identity maps from $\chi_-$ to $\xi_{0,1}$, from $\phi_h$ to $\chi_0$ and from $\phi_f$ to $\chi_{2,0}$, and identically for the corresponding holomorphic and anti-holomorphic fields.
+
+We'd like to show that this theory is equivalent to the cotangent theory to the theory of holomorphic symplectic structures.  The BRST complex here is given by $\Omega^0(\CC^2)[1] \to (\Omega^{0,1}(\CC^2) \oplus \Omega^{2,0}(\CC^2))$ with differential $(\ol \dd,0)$.  There's an obvious cochain map from supergravity into this theory given by the projection onto the BRST fields $(\phi_f, \pi (e^{1,0}_{1,0}), A^{0,1}_f)$ where by $\pi (e^{1,0}_{1,0})$ we mean the projection onto the antisymmetric part.  The natural question to ask here is, how close is this to providing an equivalence of BRST theories?  My first instinct is that it won't be -- maybe we need to use a modified model, perhaps with some auxiliary fields.
+
+In order to investigate this we'll need to describe the BRST or BV action functionals, which will involve choosing a background vielbein.  My hope is that this choice will break the symmetry between the holomorphic and anti-holomorphic fields above.
+
+\end{example}
+
+
+
+\pagestyle{bib}
+\printbibliography
+
+\textsc{Institut des Hautes \'Etudes Scientifiques}\\
+\textsc{35 Route de Chartres, Bures-sur-Yvette, 91440, France}\\
+\texttt{celliott@ihes.fr}
+\end{document}
