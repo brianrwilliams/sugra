@@ -15,6 +15,8 @@
 
 \addbibresource{Twist.bib}
 
+\def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
+
 \begin{document}
 
 \section{Some BRST Twisting Calculations}
@@ -27,9 +29,29 @@ A \emph{BRST Theory} on $M$ is a sheaf of super cochain complexes $(\Phi, \dBRST
 A morphism of BRST theories on $M$ is a sheaf map $f \colon \Phi_1 \to \Phi_2$ that strictly commutes with the differentials, and where the triangle relating the two Lagrangian densities homotopy commutes.  Say that $f$ is an \emph{equivalence} if it is a quasi-isomorphism.  Note: Pavel suggested, in the more general $Q$-manifold context, that we should say $f$ is an equivalence if its homotopy fiber is equivalent to $V_{\mr{dR}}$ for some linear space $V$.
 \end{definition}
 
+\brian{Little confused by this. 
+Here are some points to clarify:
+\begin{enumerate}
+\item Here $\d_{BRST}$ is the {\em linear} term in the BRST differential? 
+Maybe it'd be best to write this as $Q$. 
+\item For any examples that we want to discuss quantization we probably want to impose the usual geometric restrictions. 
+So $(\Phi, Q)$ is an elliptic complex (possibly just $\ZZ/2$ graded).
+\item You have in mind $\LL$ that depend more than just jets of fields?
+\item Usually, we mod out by total derivatives. 
+I would say the {\em theory} is really the element $\int \LL \in \mathcal{O}_{loc}(\Phi) = \dens_M \otimes_{D_M} \sym^\bullet(J \Phi)^\vee$.
+\end{enumerate}
+}
+
 \begin{remark}
 One obtains the BV complex from the BRST complex by taking the twisted shifted cotangent bundle of $(\Phi, \dBRST)$, using the $!$-dual and twisting by the quadratic part of $\LL$.  The higher order terms in the polynomial $\LL$ define the $L_\infty$-structure but I haven't tried to write this down carefully.   Equivalences of BRST theories should induce $L_\infty$ equivalences of BV complexes.
 \end{remark}
+
+\brian{
+Why is $\Phi \oplus \Phi^![-3]$ $L_\infty$? 
+I don't think just the condition $\LL \d_{BRST} = 0$ implies this...
+It seems like the thing you want to call a BRST theory is just a local $L_\infty$-algebra. 
+Am I missing something really basic?
+}
 
 We can define twists in this language
 \vspace{-10pt}
@@ -43,9 +65,10 @@ Now, let's try to write down some of the descriptions of twisted theories that w
 \begin{example}[10d $\mc N=1$ Super Yang-Mills]
 I'm going to try to write this following the calculation in Baulieu \cite{Baulieu}.  We choose a complex structure on $\RR^{10}$ and decompose the (BRST) fields into irreducible components for the action of $\SU(5)$.  The fields one obtains are
 \begin{align*}
-A = A_{0, 1} + A_{1, 0} \\
-\lambda = \chi + \psi_{1, 0} + B_{0, 2},
+A = A_{0, 1} + A_{1, 0} \in \Omega^{0,1}(\CC^5, \fg) \oplus \Omega^{1,0}{\CC^5, \fg)
+\lambda = \chi + \psi_{1, 0} + B_{0, 2} \in \Omega^0(\CC^5,
 \end{align*}
+
 where the subscripts indicate the form type of the component fields.  There's also a ghost $c$, which is a scalar in degree $-1$.  Finally we'll introduce an auxiliary scalar field $h$ (bosonic, in degree 0)   The BRST differential is given by $c \mapsto (\dd c, \ol{\dd} c)$.  Denote this complex by $(\Phi^{\mr{YM}}, \dBRST^{\mr{YM}})$.  The holomorphic twist is only $\ZZ/2\ZZ$-graded, and is given by the identity map from $\psi$ to $A_{1,0}$, the identity map from $h$ to $\chi$, along with the map $\ol \dd$ from $A_{0,1}$ to $B$ \footnote{More precisely, if we're doing perturbation theory around a background connection $A'$ we take the covariant derivative with respect to this $A'$.}.  
 
 We expect the holomorphically twisted theory to be equivalent to 5d holomorphic Chern-Simons theory.  The BRST fields here are given by $c, A_{0,1}$ and $B_{0,2}$ in even, odd and even degrees respectively (this is only a $\ZZ/2\ZZ$-graded theory).  Denote this complex by $(\Phi^{\mr{hCS}},\dBRST^{\mr{hCS}})$.  It's clear that the projection $\Phi^{\mr{YM}} \to \Phi^{\mr{hCS}}$ is a quasi-isomorphism with respect to the $Q$-twisted BRST differential: its fiber is the contractible complex $h \mapsto \chi, \psi \mapsto A_{1,0}$.  It remains for us to verify that this projection is compatible with the Lagrangian densities of the two theories.  In other words, if we take the Lagrangian density of 10d $\mc N=1$ Yang-Mills theory and subtract the Lagrangian density of holomorphic Chern-Simons theory applied to the fields $c, A_{0,1}$ and $B$ then the result is $Q$-exact.
