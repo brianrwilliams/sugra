@@ -1,0 +1,46 @@
+
+\documentclass[10pt, oneside]{article}
+\input math_headers.sty
+
+\title{6d Notes}
+\author{Chris Elliott}
+\date{\today}
+
+\begin{document}
+
+\section{Notes on the Holomorphic twist of pure $\mc N=(1,0)$ 6d gauge theory}
+
+The fields in the 6d $\mc N=(1,0)$ theory can be written as follows, after breaking the Lorentz symmetry from $\SO(6)$ to $\SU(3)$.  Decompose the gauge field into $A + A'$: holomorphic + antiholomorphic.
+Decompose the spinor into $\phi + \psi$, where $\phi$ is a $W$-valued scalar and $\psi$ is a $W$-valued $(0,2)$-form (maybe the same as a $(1,0)$-form?).  Here $W$ is a 2-dimensional symplectic vector space.
+Auxiliary scalar field $h$, and a ghost $c$.
+
+Guess the supersymmetries are as follows, where we write $Q$ for the operator on linear functionals (so really $\delta / \delta Q$).
+\begin{align*}
+QA &= \psi_-\\
+QA'&= 0\\
+Q\phi_+ &= h\\
+Q\phi_- &= 0\\
+Q\psi_+ &= \ol \dd_{A'} A'\\
+Q\psi_- &= 0\\
+Qh &= 0\\
+Qc &= 0.
+\end{align*}
+
+Here $\pm$ denotes a basis for $W$, which we also take to be the R-symmetry weight for a chosen $\mr U(1)$.
+
+The space of fields becomes cohomologous to $\Omega^0[1] \to \Omega^{0,1} \to \Omega^{0,2}[-1] \oplus \Omega^{3,0}[1]$.  Take this as the base of a twisted cotangent bundle defining the theory $T^*[-1]\bun_G(X)$.  The (usual, BRST) action functional is then $\phi_- \ol \del_{A'} \psi_+$ in this language.  It remains to show that the difference between the action functional for the full $\mc N=(1,0)$ theory and this functional is totally $Q$-exact.  Of course, terms involving $\psi_-$, $h$ or $\ol \dd A' = F^{0,2}$ are $Q$-exact.  There's a potentially problematic term involving the $A$'s, $\phi_+$ and $\phi_-$ which I hope vanishes for the following reason: terms in the action functional should be $\SU(3)$-invariant, and there seems to be no invariant such expression involving two scalars and a vector quantity like $\dd + A$.
+
+The $\mc N=(1,0)$ hypermultiplet consists of a spinor (of the opposite helicity to the spinor in the vector multiplet) and four (real?) scalars.  The spinor splits up as $\phi' + \psi'$ where $\phi'$ is a $W$-valued scalar and $\psi'$ is a $W$-valued $(2,0)$-form (maybe the same as a $(0,1)$-form?).  The scalars $\chi_1, \ldots, \chi_4$ remain scalars (could they live in $W^{\otimes 2}$?).  Everything also takes values in a representation of $\gg$ which we'll suppress in the notation.  We want to be left with the same space of fields as we had for the vector multiplet, but shifted in degrees.  For instance, could have a $\chi_{+-} \to \psi'_+$ as the base and a $\chi_{--} \to \psi'_-$ as the fiber.  Then we'd need the $\chi_{-+}$ and $\chi_{++}$ to receive maps from $\phi'_-$ and $\phi'_+$ respectively.  That is
+\begin{align*}
+Q\phi'_+ &= 0 \\
+Q\phi'_- &= 0 \\
+Q\psi'_+ &= \ol \dd_{A'} \chi_{+-}\\
+Q\psi'_- &= \ol \dd_{A'} \chi_{--}\\
+Q\chi_{++} &= \phi'_+\\
+Q\chi_{+-} &= 0\\
+Q\chi_{-+} &= 0 \\
+Q\chi_{--} &= \phi'_-.
+\end{align*}
+It's pretty easy to believe that the action functional will work out here -- the main thing to check is that the R-charges of the $\chi$ fields are correct in the multiplet!
+
+\end{document}
