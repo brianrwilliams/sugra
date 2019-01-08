@@ -1,0 +1,26 @@
+\documentclass[10pt, oneside]{article}
+
+\IfFileExists{../math_headers.sty}
+  {\input ../math_headers.sty}
+  {\IfFileExists{./math_headers.sty}
+    {\input ./math_headers.sty}
+    {\typeout{Header file not found}
+    }
+  }
+
+\title{Notes on Supergravity}
+\author{Chris Elliott}
+\date{}
+
+\begin{document}
+
+The Lagrangian density is, in a local coordinate patch, given by
+\[\LL(\omega, e) = \eps_{abcd} \Omega^{ab} e^c e^d.\]
+Compute its first variation under the gauge transformation $e^a \mapsto e^a + \dd^a f + f \omega^a$.  We find
+\begin{align*}
+\delta\LL(\omega, e) &= \eps_{abcd} \Omega^{ab} (\dd^c f e^d + f \omega^c e^d + e^c \dd^d f + f e^c \omega^d)\\ 
+&= (\eps_{abcd} + \eps_{abdc}) \Omega^{ab} (\dd^c f e^d + f \omega^c e^d) \\
+&= 0
+\end{align*}
+
+\end{document}

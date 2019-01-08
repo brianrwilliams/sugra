@@ -1,0 +1,380 @@
+\documentclass[10pt, oneside]{article}
+
+\IfFileExists{../math_headers.sty}
+  {\input ../math_headers.sty}
+  {\IfFileExists{./math_headers.sty}
+    {\input ./math_headers.sty}
+    {\typeout{Header file not found}
+    }
+  }
+
+\title{Notes on Supergravity}
+\author{Chris Elliott}
+\date{}
+
+\DeclareMathOperator{\EOM}{EOM}
+\newcommand{\EOMs}{\EOM_{\text{sing}}}
+\DeclareMathOperator{\PT}{\mathbb{PT}}
+\DeclareMathOperator{\PN}{\mathbb{PN}}
+
+\begin{document}
+\maketitle
+This is a set of notes on supergravity theories that I'm writing while trying to learn the basics.  The formulae come from the indicated references, but there's a good chance I've introduced errors in signs and constant factors.
+
+\section{First Order Gravity and Supergravity Fields}
+Let $X$ be a smooth manifold of dimension $n = p+q$.  The first order formalism for gravity gives a description of signature $(p,q)$ pseudo-Riemannian metrics on $X$.  Let $\mf{iso}(p,q)$ denote the Poincar\'e group of signature $(p,q)$, i.e. the semidirect product $\so(p,q) \ltimes \RR^n$.  The \emph{fields} of gravity in the first order formalism are, locally, $\mf{iso}(p,q)$-valued 1-forms on $X$.
+
+Let's be more specific.  Let $F(T_X) \to X$ be the frame bundle of $X$, so pseudo-Riemannian metrics are the same as reductions of structure group of $F(T_X)$ to $O(p,q)$.  Equivalently, such a reduction is a linear bundle isomorphism 
+\[e \colon T_X \to V\]
+where $V$ is the vector bundle associated to a principal $O(p,q)$-bundle $P$.  Locally at least we can assume that $V$ is trivial, in which case $e$ is just a local section of the frame bundle.  Such an $e$ is called a \emph{vielbein}.  We can produce a pseudo-Riemannian metric from a vielbein by pulling back the canonical metric on $V$ along $e$.  We'll come back to this point of view from a more sophisticated point of view shortly.
+
+Working in the first-order formalism means that we introduce an additional field into the action as well as the metric.  Essentially we think of the metric and its Levi-Civita connection as independent dynamical objects in the action.  Let $\omega$ be a connection on the principal bundle $P$, or yields a connection on $V$ and hence on $T_X$ by pulling back along the isomorphism $e$.  Locally the connection is an $\so(p,q)$-valued 1-form on $X$.  Taking $\omega$ and $e$ together we locally obtain an $\mf{iso}(p,q)$-valued 1-form.
+
+There are various action functionals we might consider, but there's a standard choice called the \emph{Palatini action}, which we'll explain in the case where $V$ is trivial.  Write $\Omega$ for the curvature of $\omega$.  The Palatini Lagrangian density is
+\[\mc L(e, \omega) = \langle \Omega \wedge e \wedge \cdots \wedge e\rangle\]
+where there are $n-2$ copies of $e$, and where $\langle\,-\,\rangle \in C^\bullet(\mf{iso}(p,q))$ is the invariant polynomial which is totally alternating in the canonical basis.
+
+\subsection{Gravity Fields Without Global Triviality}
+Leaving the action aside for a moment, let's rephrase the description of the space of fields in a more explicit way, without the condition of $V$ being globally trivial.  To do so, we follow the formalism in \cite{SSS}.  If $\gg$ is any Lie algebra, $\gg$-valued 1-forms on $X$ are the same as dga morphisms
+\[A \colon W^\bullet(\gg) \to \Omega^\bullet(X)\]
+where $W^\bullet(\gg)$ is the Weil algebra of $\gg$.  Here the forms themselves are the images of the degree 0 generators, and their curvatures are the images of the degree 1 generators.  We use this to \emph{define} the space $\Omega^\bullet(X; L)$ for any (super) $L_\infty$ algebra $L$ as the complex $\hom_{\dga}(W^\bullet(L), \Omega^\bullet(X))$.  The space of flat $L$-valued 1-forms is the subspace of maps factoring through the Chevalley-Eilenberg complex $C^\bullet(L)$.
+
+Fiorenza-Sati-Schreiber define the notion of a $L$-valued connection, not necessarily flat, in this language.  The definition is as follows.
+\begin{definition} \label{connectiondef}
+An $L$-bundle with connection $A$ on $X$ is a surjective submersion $\pi \colon Y \to X$, and a commutative diagram of dgas
+\[\xymatrix{
+C^\bullet(L) \ar[r] &\Omega^\bullet_{\mr{vert}}(Y) \\
+W^\bullet(L) \ar[u] \ar[r]^A &\Omega^\bullet(Y) \ar[u] \\
+\mr{inv}(L) \ar[u] \ar[r] & \Omega^\bullet(X) \ar[u]_{\pi^*}
+}\]
+where $\mr{inv}(L)$ denotes the space of \emph{invariant polynomials} for $L$ (the kernel of the map $W^\bullet(L) \to C^\bullet(L)$), and where $\Omega^\bullet_{\mr{vert}}(Y)$ denotes the cokernel of the map $\pi_* \colon \Omega^\bullet(X) \to \Omega^\bullet(Y)$.  Two such objects are equivalent if the maps $A_{\mr{vert}} \colon C^\bullet(L) \to \Omega^\bullet_{\mr{vert}}(Y)$ and  $A'_{\mr{vert}} \colon C^\bullet(L) \to \Omega^\bullet_{\mr{vert}}(Y')$ if their pullbacks to the common refinement $Y \times_X Y'$ are \emph{concordant}, i.e. if there exists a map
+\[C^\bullet(L)  \to \Omega^\bullet_{\mr{vert}}(Y \times_X Y') \otimes \Omega^\bullet(I)\]
+for $I = [0,1]$ the unit interval, restricting to the two maps via pulling back under the maps induced by the inclusion of the two end points of $I$.
+\end{definition}
+
+\begin{remark}
+I might, following Schreiber, refer to the images of the shifted generators of $W^\bullet(L)$ as \emph{fields}, and the images of the unshifted generators as \emph{field strengths}.  The interpretation is that the images of the shifted generators are components of the connection, and the images of the unshifted generators are the components of its curvature.
+\end{remark}
+
+
+We should think of these as $L$-valued 1-forms on $Y$ flat along the fibres of $\pi \colon Y \to X$.  The columns of the above diagram are exact, so the bottom row is determined by the other two.
+
+\subsection{Supergravity Fields}
+Since the above formalism made sense for any (super) $L_\infty$ algebra, we can immediately describe the spaces of fields in supergravity theories.  As a starting point, we consider \emph{super Poincar\'e algebras}.  These depend on a choice of real spinorial representation $S$ of $\so(p,q)$, and non-degenerate $\Spin(p,q)$-invariant pairing $\Gamma \colon S \otimes S \to \RR^{p,q}$.  The super Poincar\'e algebra is then 
+\[\mf{iso}(p,q) \ltimes S\]
+with an additional collection of brackets coming from the pairing $\Gamma$.
+
+In general, formulations of supergravity actually use a more general kind of algebras: one is required to adjoin higher degree elements, forming an $L_n$ algebra, not just a Lie algebra.  This is done by taking a super Poincar\'e algebra as above and forming iterated extensions by degree $n$ $L_\infty$ algebra cocycles.  Such extensions are studied in detail in \cite{FSS}, where they are referred to as the ``brane bouquet''.  We'll investigate the case of 11-dimensional $N=1$ supergravity in Lorentzian signature, `maximal' supergravity, where the relevant algebra was first described by D'Auria and Fr\'e in \cite{DF} (and in more detail in the book \cite{CDF}).
+
+\begin{definition}
+The 11-dimensional \emph{supergravity $L_\infty$ algebra} $\sugra(10,1)$ is defined as an iterated extension of the super Lie algebra $\mf{iso}(1,10) \ltimes S$, where $S$ is the 32-real-dimensional Majorana spin representation of $\so(10,1)$.  We first form the extension from the Chevalley-Eilenberg 4-cocycle
+\[\mu_4 = \frac 12 \ol \psi \wedge \gamma^{ab} \psi \wedge e_a \wedge e_b \]
+where $e_a$ are a basis for the translations in $\mf{iso}(10,1)$, and $\psi_\alpha$ are a basis for $S$.  Denote the new degree 3 basis element by $C$.  We then form a second extension via the Chevalley Eilenberg 7-cocycle
+\[\mu_7 = \frac 12 \ol \psi \wedge \gamma^{abcde} \psi \wedge e_a \wedge e_b \wedge e_c \wedge e_d \wedge e_e + \frac {13}2 \ol \psi \wedge \gamma^{ab} \psi \wedge e_a \wedge e_b \wedge C.\]
+\end{definition}
+I've ommitted the calculation that these cochains are closed under the Chevalley-Eilenberg differential, which can be found in any of the above references.  We interpret the extensions as adjoining a \emph{supergravity C-field} and its electro-magnetic dual.  A \emph{field} in supergravity is then a $\sugra(10,1)$-bundle with connection in the sense of definition \ref{connectiondef}.  In particular, locally fields are maps from the Weil algebra of this $L_\infty$ algebra to the algebra of differential forms.
+
+Why this specific $L_\infty$ algebra?  The answer has several parts.
+\vspace{-8pt}
+\begin{enumerate}
+ \item Why the degree 3 generator?  This field component -- called the \emph{supergravity C field} -- was introduced in the original formulation of 11d supergravity by Julia, Cremmer and Scherk \cite{CJS}.  They observed that introducing a C field in addition to the graviton and gravitino fields ensures that the classical moduli space has equal bosonic and fermionic (virtual) dimension (specifically, dimension 128).  This is a necessary condition if we want any non-trivial supersymmetries.
+ \item Why the degree 6 generator?  In particular, if it's going to be dual to the C field on-shell it should be possible to eliminate it from the equations of motion, so why include it in the first place?  We'd like the action to include a generalised Maxwell term for the 3-form field, i.e. a term of the form
+ \[F_C \wedge \ast F_C\]
+ where $F_C$ is the curvature of $C$ and $\ast F_C$ is its Hodge dual with respect to the metric (itself a dynamical field).  However we cannot expect this to arise naturally from the Chern-Simons approach to the equations of notion that we'll discuss in the next section since $\ast F_C$ is not polynomial in the components of the metric (one needs to take a square root).  We get around this by introducing an auxilliary dual 7-form field $C'$, including a term of form $F_C \wedge F_{C'}$ in the action along with additional terms ensuring the fields are dual on-shell.
+ \item Why extend the algebra using these specific cocycles?  Consider cocycle for the 3-form field.  What we've done by imposing this particular cocycle extension is enforced the flatness condition
+ \[dC- \frac 12 \ol \psi \wedge \gamma_{a_1 b_1} \psi \wedge e^{a_1} \wedge e^{a_2} = 0\]
+ among the fields (at least in a vacuum state, where all field strengths -- unshifted generators in the Weil algebra -- vanish).  This is a necessary condition for supersymmetry.  Indeed, the condition of having all field strengths vanish should be supersymmetry invariant, which means the field strengths themselves should be supersymmetry invariant.  Now, the variation of $C$ under linear action of a supercharge $Q$ must be a 3-form depending linearly on $Q$ and the gravitino field $\psi$.  Essentially the only possibility is
+ \[\delta C = \ol Q \wedge \gamma_{a_1 a_2} \psi \wedge e^{a_1} \wedge e^{a_2}\]
+ up to some constant factor.  If we compute $\delta(F_C) = d(\delta C)$, we find that it is non-zero, so the physical curvature must differ from the na\"ive curvature $F_C$ by some polynomial in the other fields.  One can compute which such polynomials are cocycles using Fierz identities, and this is the only possibility.  The constant $1/2$ arises by computing the variation and comparing to $d(\delta C)$.
+
+\end{enumerate}
+
+\section{Supergravity Action}
+Having produced a definition for the fields, how can we define an action functional extending the Palatini-Hilbert-Einstein action for ordinary gravity?  There is a natural general idea that makes sense for any $L_\infty$ algebra $L$: given a \emph{Chern-Simons element} -- an element $\mr{cs}$ of $W^n(L)$ where $n$ is the dimension of space-time -- we can evaluate a field $A$ at this element to get an $n$-form on $Y$.  Now, na\"ively, we might ask for this $n$-form to be \emph{horizontal}, i.e. to canonically descend to a top form on $X$.  However we really only need to ask for something weaker.  We don't need the Lagrangian density to be a canonical top form on $X$ to have well-defined equations of motion, only its first variation.  So it suffices for the differential $d\mr{cs}$ in the Weil algebra to be horizontal, i.e. to actually lie in the subalgebra $\mr{inv}^{n+1}(L) \sub W^{n+1}(L)$ of invariant polynomials.  In \cite{DF} this is called the \emph{cosmo-cocycle condition}, and its significance is explained by Schreiber in \cite{Schreiber}.  Concretely we're asking the Weil differential $d\mr{cs}$ to vanish after setting all the unshifted generators (the field strengths) to zero.
+
+For a reasonable theory we'll just need to choose the element $\mr{cs}$ satisfying some sensible properties.  For supergravity, we might want the following (as in section 4 of \cite{DF}).
+\vspace{-12pt}
+\begin{enumerate}
+ \item The term should be locally $\so(10,1)$-invariant.
+ \item The term should be invariant under the action of $\CC^\times$ by R-symmetries, up to a global rescaling which doesn't affect the equations of motion.  This action is diagonal in the basis we've chosen.  The connection form $\omega$ has weight 0, the vielbein $e$ has weight 1, the gravitino $\psi$ has weight $1/2$, the C field has weight $3$ and its dual has weight $6$.  Their field strengths all have the same respective weights (equation (4.3) in \cite{DF}).
+\end{enumerate}
+These conditions determine an (almost \footnote{unique up to addition of a topological term of form $\int F_C \wedge F_{C'}$.}) unique Palatini like Chern-Simons element, and hence Lagrangian density, for the algebra $\sugra(10,1)$.  To write it out we write $\Omega$ for the field strength of the spin connection, $R$ for the field strength of the vielbein, $\rho$ for the field strength of the gravitino and $F_C$ for the field strength of the C field.  Also, displayed indices refer to a basis of the translation group inside $L$; their position as raised or lowered is not meaningful, and is only included to make the summation convention more explicit \cite{CDF}. 
+\begin{align*}
+\mr{cs} = &- \frac 19 \; \eps_{a_1 \cdots a_{11}} \Omega^{a_1 a_2} \wedge e^{a_3} \wedge \cdots \wedge e^{a_{11}} \\
+&+ \frac 7{30}i \; (R^a \wedge e_a) \wedge (\ol \psi \wedge \gamma_{a_1 \cdots a_5} \psi) \wedge e^{a_1} \wedge e^{a_2} \wedge e^{a_3} \wedge e^{a_4} \wedge e^{a_5} \\
+&- 84 i \; F_C \wedge (\ol \psi \wedge \gamma_{a_1 \cdots a_5} \psi) \wedge e^{a_1} \wedge e^{a_2} \wedge e_{a_3} \wedge e_{a_4} \wedge e_{a_5}\\
+&- 840 \;C \wedge F_C \wedge (\ol \psi \wedge \gamma_{a_1 a_2} \psi) \wedge e^{a_1} \wedge e^{a_2} \\
+&+ 2 \;(\ol \rho \wedge \gamma_{a_1 \cdots a_5} \psi) \wedge e^{a_1} \wedge e^{a_2} \wedge e_{a_3} \wedge e_{a_4} \wedge e_{a_5}\\
+&+ \frac 14 \; \eps_{a_1 \cdots a_{11}} (\ol \psi \wedge \gamma_{a_1 a_2} \psi) \wedge (\ol \psi \wedge \gamma_{a_3 a_4} \psi) \wedge e^{a_5} \wedge e^{a_{11}} \\
+&+ 210 \; C \wedge (\ol \psi \wedge \gamma^2 \psi) \wedge (\ol \psi \wedge \gamma^2 \psi) \wedge e_a \wedge e_b \wedge e_c \wedge e_d \\
+&+ 840 \; C \wedge F_C \wedge F_C 
+\end{align*}
+
+This action has several features it's worth remarking upon.  First note that the first line is the Palatini Lagrangian density for ordinary gravity.  Secondly, while we have a Chern-Simons term for the C field, we haven't found the Maxwell type term we wanted.  Indeed, the dual field $C'$ and it's field strength $F_{C'}$ don't appear in the action at all!  D'Auria and Fr\'e show that one can recover something like this term using a trick.  Replace $W^\bullet(\sugra(10,1))$ by $W^\bullet(\sugra(10,1)) \otimes \wedge^4 \RR^{11}$, and denote the generators of the new factor by $G^{a_1 a_2 a_3 a_4}$ (in degree zero). Add to the Chern-Simons form above the term
+\[\mr{cs}' = 2\; G^{a_1 a_2 a_3 a_4} F_C \wedge e^{a_5} \wedge \cdots \wedge e^{a^{11}} - \frac 1{330} \; G_{a_1 a_2 a_3 a_4}G^{a_1 a_2 a_3 a_4} \eps_{b_1 \cdots b_{11}} e^{b_1} \wedge \cdots \wedge e^{b_{11}}.\]
+Now, when one computes the equations of motion for this modified Lagrangian, one finds no new degrees of freedom.  Indeed, on-shell the $G$ components recover the space-time components of the curvature $F_C$ of the $C$-field.  However, one now has non-trivial dynamics for the C field as required.
+
+\subsection{Questions}
+\vspace{-8pt}
+\begin{enumerate}
+ \item We introduced the 6-form field to give an explicit Maxwell term to the C field, but we failed.  In order to satisfy the cosmo cocycle conditions we had to normalise all the terms involving $C'$ and its derivative in such a way that they collected in a topological term.  In which case, why bother forming the second $L_\infty$ algebra extension at all?  We could've just stuck with the original extension.  All we gained was the topological term.
+ \item This ``0-form trick'' was necessary to give the C field any suitable dynamics, but it's a bit clunky.  Can we incorporate it more neatly into the general story of Chern-Simons for $L_\infty$ algebras.  For instance, starting with the $L_\infty$ algebra $\sugra(10,1) \oplus \wedge^4 \RR^{11}$?
+ \item There aren't any obvious kinetic terms in the action.  Is that a problem?  If one fixes the fields coming from the metric then one sees a Dirac term and a mass term for the gravitino (the fifth and second lines in $\mr{cs}$), and a Maxwell type term for the C field coming from $\mr{cs}'$.  However, how might one compute a propagator for the graviton?
+ \item Is there a natural way to recover the supersymmetry action from this picture?  One can compute them by hand without too much trouble: one finds, for a supercharge $Q$ and the fields that actually appear in the action \cite{FreGrassi}, 
+ \begin{align*}
+  \delta e^a &= i \ol Q \wedge \gamma^a \psi \\
+  \delta \psi &= \nabla(\omega) Q + \frac i3 G_{a_1 a_2 a_3 a_4} (\gamma^{a_1 a_2 a_3} Q \wedge V^{a_4} - \frac 18 \gamma^{a_1 a_2 a_3 a_4} Q) \\
+  \delta C &= -\ol Q \wedge \gamma_{a_1 a_2} \psi \wedge e^{a_1} \wedge e^{a_2}
+ \end{align*}
+ and all field strengths are supersymmetry invariant.  Here $\nabla(\omega)$ denotes the covariant derivative associated to the connection $\omega$.
+\end{enumerate}
+
+\section{Pure Spinors, and Spinors in 11 Dimensions}
+To investigate twists of this theory it will be necessary to understand the supersymmetry algebra, in particular the vector valued pairing between spinors in signature $(10,1)$.  This pairing is encoded in the Clifford algebra structure, i.e. in the Gamma matrices we've been using above.  We'd like to compute the subspace of \emph{square zero spinors} -- those satisfying $\Gamma(Q,Q) = 0$ -- and the possible cohomologies of the supersymmetry algebra with respect to the diffferential $[Q,-]$ for such a spinor.  Some relevant calculations are included in Cederwall's work on 11d supergravity \cite{Cederwall1} \cite{Cederwall2}.
+
+Before specialising to 11 dimensions, let's investigate those spinors satisfying $\Gamma(Q,Q) = 0$ in arbitrary dimension.  These subspaces of the spaces of spinors are closely related to the \emph{pure spinors} introduced by Cartan and Chevalley.  I referred to chapter III of the book \cite{Chevalley} as a comprehensive reference on pure spinors, and the paper \cite{BudinichTrautman} for a more concise treatment.   Let $S$ be the complex (Dirac) spin representation of $\so(1,n-1)$ (since we're only discussing complex representations the signature won't actually play a role), and let $V$ be the complex $n$-dimensional vector representation.
+\begin{definition}
+For a spinor $Q \in S$, its \emph{nullspace} $T_Q$ is the space of vectors $v \in V$ that Clifford annihilate $Q$, i.e. $\{v \colon \rho(v)Q = 0\}$.  The spinor is called \emph{pure} if $\dim T_Q = \lfloor \frac n2 \rfloor$.
+\end{definition}
+Notice that this is the largest possible dimension for $T_Q$ since these nullspaces are always \emph{totally isotropic}.  Indeed, if $v$ and $w$ are in $T_Q$ then
+\[(v,w)Q = (\rho(v)\rho(w) - \rho(w)\rho(v))Q = 0.\]
+We should also notice that all such maximally isotropic subspaces $T$ arise as the nullspace of some spinor $Q$.  The action of the Clifford algebra $\mr{Cl}(V)$ on $S$ is faithful, so choosing a basis $\{v_1, \ldots, v_{\lfloor \frac n2 \rfloor}\}$ for $T$, we can find a spinor $Q$ so that
+\[\rho(v_1) \cdots \rho(v_{\lfloor \frac n2 \rfloor}) Q \ne 0,\]
+and then $T \sub T_Q$, and they must be equal by maximality.  In fact, such a $Q$ is uniquely determined up to rescaling.
+
+Now, lets investigate the image of the $\Gamma$ pairing with a pure spinor, i.e. the subspace
+\[S_Q = \mr{Im}(\Gamma(Q,-)) \sub V.\]
+\begin{prop} \label{purespinorimage}
+Let $Q$ be a pure spinor.
+\vspace{-6pt}
+\begin{itemize}
+ \item If $n=2m$ is even, then $S_Q = T_Q$.
+ \item If $n=2m-1$ is odd, then $T_Q \sub S_Q$ is a codimension 1 subspace.
+\end{itemize}
+\vspace{-6pt}
+\end{prop}
+
+\begin{proof}
+First observe that $S_Q^\perp = T_Q$.  Indeed, let $v$ be a vector in $S_Q^\perp$, i.e. $(v, w) = 0$ for all $w \in S_Q$.  That is
+\begin{align*}
+&\qquad (v, \Gamma(Q,Q')) = 0 \text{ for all } Q' \in S \\
+&\Leftrightarrow \langle \rho(v)Q, Q' \rangle  = 0 \text{ for all } Q' \in S \\
+&\Leftrightarrow \rho(v)Q = 0 
+\end{align*}
+So $v \in S_Q^\perp$ if and only if $v \in T_Q$.  Furthermore, taking a second orthogonal complement, this means that $S_Q = T_Q^\perp$, and therefore -- since $T_Q$ is totally isotropic -- $T_Q \sub S_Q$.  Looking at dimensions, since $Q$ is pure, $\dim T_Q = \lfloor \frac n2 \rfloor$, so $\dim  S_Q = \lceil \frac n2 \rceil$.  This completes the proof.
+\end{proof}
+
+Now, what's the relationship between pure spinors and those satisfying $\Gamma(Q,Q)=0$?  To answer this question, we'll use an interesting decomposition.  Every spinor $Q$ induces a matrix element $Q \otimes \ol Q \in S \otimes S^* \iso \eend(S)$ via the diagonal embedding and the invariant pairing on $S$.  If $S$ is irreducible (i.e. for Dirac spinors in odd dimensions or Weyl spinors in even dimensions) we can identify endomorphisms with elements of the Clifford algebra, and thus decompose the spinor bilinear as
+\[Q \otimes \ol Q = \sum_{p=0}^n F_p\]
+where $F_p \in \wedge^p V$.  We can explicitly identify these elements $F_p$ as, in index notation, the Clifford algebra element $Q_i \gamma^{a_1 \cdots a_p}_{ij} Q_j$.  There's a nice characterisation of pure spinors in this language.
+\begin{theorem}[Chevalley] \label{ChevalleyCriterion}
+A non-zero spinor $Q$ is pure if and only if it is Weyl (in even dimensions), and $F_p = 0$ for all $p < \lfloor n/2 \rfloor$. 
+\end{theorem}
+
+In particular, $F_1 = 0$ whenever $n > 3$, so we have
+\begin{corollary}
+All pure spinors in dimensions $n > 3$ satisfy $\Gamma(Q,Q) = 0$.
+\end{corollary}
+
+Another useful fact is the following (explained for instance in \cite{BudinichTrautman})
+\begin{lemma} \label{WeylCriterion}
+If $Q$ is a Weyl spinor in dimension $n=2m$, the tensor $F_p$ is zero unless $p \equiv m \mod 4$.
+\end{lemma}
+
+\begin{proof}
+This is a combination of two symmetries satisfied by $F_p$.  Firstly, $F_p = 0$ whenever $m-p$ is odd, since the spinor pairing $\langle -,- \rangle \colon S \otimes S \to \CC$ pairs $S_\pm$ with itself when $m$ is even, and pairs $S_+$ with $S_-$ with $m$ is odd, and Clifford multiplication always interchanges $S_+$ and $S_-$.
+
+Secondly, we have a general symmetry in spinor bilinears, of form
+\[\langle Q_1, \rho(v_1) \cdots \rho(v_p) Q_2 \rangle = (-1)^{\frac{m(m-1)}2 + \frac{p(p-1)}2}\langle Q_2, \rho(v_1) \cdots \rho(v_p) Q_1 \rangle.\]
+This is a combination of the symmetry property $\langle Q_1, Q_2 \rangle = (-1)^{\frac{m(m-1)}2} \langle Q_2, Q_1 \rangle$ of the spinor pairing, and the fact that we have to do $\frac {p(p-1)}2$ swaps to restore the $p$ Clifford multiplications to the correct order upon moving them to the other side of the bracket, picking up a factor of $-1$ for each.  Thus, since if $m-p \equiv 2 \mod 4$ then $\frac{m(m-1)}2 + \frac{p(p-1)}2$ is odd, in this case the tensor $F_p$ also vanishes.
+\end{proof}
+
+Now, let's use these facts to investigate pure spinors in various dimensions.
+\vspace{-6pt}
+\begin{itemize}
+ \item Let's deal with the special case $n=2$ first.  There is an isomorphism $\so(2;\CC) \iso \CC$, under which the Weyl spin representations are 1-dimensional of weights $\pm 1$, and the vector representation is $V \iso \CC_2 \oplus \CC_{-2}$.  A positive Weyl spinor $Q$ has $T_Q = \CC_{-2}$, and a negative Weyl spinor has $T_Q = \CC_{2}$, so every Weyl spinor is pure.  However, no spinors satisfy $\Gamma(Q,Q) = 0$, since the pairings $S_\pm \otimes S_\pm \to V$ are injective.
+ 
+ \item Now, even dimensions 4 and 6 are very simple.  Again, every Weyl spinor is pure.  Indeed, by the corollary, we only need to show that $F_p = 0$ when $p = 0$ or 1 in dimension 4, or 0,1 or 2 in dimension 6, and lemma \ref{WeylCriterion} tells us that all of these vanish.  In particular, all Weyl spinors square to zero under the Gamma pairing.  Of course, there are other spinors we might use for twisting that square to zero but are not Weyl spinors, and therefore not pure.
+ 
+ \item In dimension 8, we have a single constraint for a Weyl spinor to be pure, that $F_0 = 0$, i.e. that the spinor satisfies $\langle Q,Q \rangle = 0$.  All Weyl spinors satisfy $\Gamma(Q,Q) = 0$ however, so in this dimension squaring to zero is strictly weaker than being pure.  This is interesting in particular because of the following fact (\cite{Charlton} 3.3.1).
+ \begin{prop}
+ If $Q$ is an impure spinor in eight dimensions then the image space $S_Q$ is all of $V$.
+ \end{prop}
+ 
+ \begin{proof}
+ We proved in \ref{purespinorimage} that, for any spinor, $S_Q = T_Q^\perp$, so we must show that $T_Q = \{0\}$ for an impure spinor.  To see this, we decompose the space $S_+$ (or $S_-$) into two subspaces consisting only of pure spinors, specifically
+ \begin{align*}
+ &\mr{span} \{z, \rho(x_1)\rho(x_2)z, \rho(x_1)\rho(x_3)z, \rho(x_1)\rho(x_4)z\} \\
+ &\mr{span} \{\rho(x_2)\rho(x_3)z, \rho(x_2)\rho(x_4)z, \rho(x_3)\rho(x_4)z, \rho(x_1)\rho(x_2)\rho(x_3)\rho(x_4)z\}
+ \end{align*}
+ where $z$ is a volume form for any maximally totally isotropic subspace, and $x_1, x_2,x_3,x_4$ is a basis for a complementary maximally totally isotropic space.  Write $Q = Q_1 + Q_2$ where the $Q_i$ are pure, one in each subspace.  By \cite{Charlton} 2.3.35 the intersection $T_{Q_1} \cap T_{Q_2}$ must be $\{0\}$ since $Q$ is impure.  However, by \cite{Charlton} 3.2.18, $T_{Q_1} \cap T_{Q_2} = T_Q$, as required.
+ \end{proof}
+ This means $N=1$ supersymmetric field theories in 8 dimensions admit topological twists.
+
+ \item In dimension 10, the constraint for a Weyl spinor to be pure is that $F_1 = 0$, i.e. a Weyl spinor $Q$ in dimension 10 is pure if and only if $\Gamma(Q,Q) = 0$.
+ 
+ \item Let's move on to odd dimensions.  There's a basic fact that we can use to help ourselves understand these.  Recall that there's a natural isomorphism of $\so(2m-1)$-representations between the spin representation in dimension $2m-1$ and either Weyl spinor representation in dimension $2m$, after choosing any codimension one subspace in $\CC^{2m}$ (\cite{Chevalley} III.8).
+ \begin{prop}
+ A non-zero $Q$ in $2m-1$ dimensions is pure if and only if it is pure as a Weyl spinor in $2m$ dimensions.
+ \end{prop}
+ In particular, in dimensions 1, 3 and 5 every spinor is pure, so by Chevalley's criterion \ref{ChevalleyCriterion} all spinors in dimension 5 also square to zero.
+ 
+ \item In dimension 7, we have a single pure spinor constraint: $\langle Q, Q \rangle_8 = 0$ where $\langle-,-\rangle_8$ denotes the spinor pairing in 8 dimensions.  Thus in 7 dimensions the pure spinors and those satisfying $\Gamma(Q,Q) = 0$ coincide, and are both given by a quadric hypersurface in $S$.  Similarly, in dimension 9 a spinor $Q$ is pure if and only if $\Gamma_{10}(Q,Q) = 0$, where $\Gamma_{10}$ is the vector valued pairing applied to $Q$ as a 10-dimensional Weyl spinor.  
+ 
+ \item Dimension 11 is the case we're most interested in for the purposes of this note, so let's recall for completeness some basic facts about spinors in signature $(10,1)$.  There are $\RR$-algebra isomorphisms
+\[\mr{Cl}^+(10,1;\RR) \iso \mr{Cl}(1,9; \RR) \iso \mat_{32}(\RR),\]
+and the Majorana spinor representation $S$ is the 32-dimensional representation of this algebra, inheriting an action of $\spin(10,1) \sub \mr{Cl}^+(10,1;\RR)$, and hence of $\so(10,1)$.  As a module for $\so(9,1)$, $S_\RR$ splits into $S_{\RR+} \oplus S_{\RR-}$ where $S_{\RR\pm}$ are the two Majorana-Weyl spinors representations, dual to one another.  Write $S, S_+$ and $S_-$ for the complexifications of these representations.
+
+For a spinor $Q$ to be pure, it has to satisfy the constraint $F_2 = 0$.  The space of pure spinors agrees with the space of pure positive helicity (say) Weyl spinors in dimension 12. In particular it satisfies $\Gamma(Q,Q) = 0$, but there are additional constraints.  Let's try to understand the full space of spinors in 11 dimensions satisfying $\Gamma(Q,Q) = 0$.  To do so, we follow the description in \cite{Cederwall1} and decompose $Q$ into $Q_+ + Q_-$ as an $\so(9,1)$ spinor.  The $\so(9,1)$ gamma pairing acts diagonally on the two factors: one has
+\[\Gamma_\pm \colon S_\pm \otimes S_\pm \to \CC^{10}.\]
+With respect to this pairing, the condition $\Gamma(Q,Q)=0$ says that
+\begin{align*}
+&\Gamma_+(Q_+, Q_+) - \Gamma_-(Q_-, Q_-) = 0 \\
+\text{and } &\langle Q_+, Q_-\rangle = 0.
+\end{align*}
+The last condition comes from the vanishing of the last component in $V$, perpendicular to our chosen 10-dimensional subspace. 
+
+We can produce spinors satisfying these equations by first fixing $Q_+$, then setting $Q_- = \rho(v)Q_+$, where $v$ is a unit vector orthogonal to the vector $\Gamma_+(Q_+, Q_+)$.  That $v$ must be a unit vector is required by the first condition above, and the orthogonality is required by the second condition.  Note also that any vector $v \in T_{Q_+}$ is orthogonal to $\Gamma_+(Q_+,Q_+)$ because $T_{Q_+} = S_{Q_+}^\perp \sub \langle \Gamma_+(Q_+,Q_+)\rangle^\perp$, so the space of square zero spinors we've defined admits a proper map to the space $S_+$ whose fibre over $Q_+$ is a $k$-sphere, where $k = 8 - \dim(T_{Q_+})$.
+
+\begin{question}
+Why does this produce all spinors $Q$ such that $\Gamma(Q,Q) = 0$, as Cederwall claims?
+\end{question}
+
+\begin{remark}
+In \cite{Cederwall1}, Cederwall \emph{defines} a pure spinor in 11 dimensions to be a spinor satisfying $\Gamma(Q,Q)=0$.  What other sources call a pure spinor (a pure Weyl spinor in dimension 12), he calls a \emph{very pure spinor}.  These are characterised by the 12d condition $F_2 = 0$.
+\end{remark}
+
+\end{itemize}
+
+\section{Twisting $N=1$, $d=4$ Supergravity}
+Before trying to compute twists of the 11-dimensional theory, let's investigate an easier example: $N=1$ supergravity on $\RR^4$.  The fields in this theory really are just gauge fields for the super Poincar\'e algebra in four dimensions.  We'll write them as
+\begin{align*}
+\omega &\in \Omega^1(\RR^4; \so(4)) \\
+e &\in \Omega^1(\RR^4; \RR^4) \\
+\psi &\in \Omega^1(\RR^4; \Pi S)
+\end{align*}
+where $S \iso S_+ \oplus S_-$ is the four-dimensional Dirac spin representation of $\so(4)$.  The Lagrangian density is a natural extension of the Einstein-Hilbert action.
+\[\mc L(\omega, e, \psi) = \eps_{a_1 a_2 a_3 a_4} \Omega^{a_1 a_2} \wedge e^{a_3} \wedge e^{a_4} + 4 \ol \psi \wedge \gamma_a \,D_\omega \psi \wedge e^a.\]
+The gauge group $\Omega^0(\RR^4; \mf{iso}(4) \oplus \Pi S) \iso \Omega^0(\RR^4; \so(4)) \oplus \Omega^0(\RR^4; \RR^4) \oplus \Omega^0(\RR^4; \Pi S)$ acts on the fields so as to preserve the action.  We treat the three factors separately.  Elements $f \in \Omega^0(\RR^4; \so(4))$ in the first factor act by simple gauge transformations: $\omega \mapsto \omega + D_\omega f$, $e \mapsto e + [e,f]$ and $\psi \mapsto [\psi,f]$.  Elements $\phi \in \Omega^0(\RR^4; \RR^4)$ in the second factor act by infinitesmial diffeomorphisms.  Specifically $\omega \mapsto \omega + \iota_\phi F_\omega$ and $e \mapsto e + d_\omega \phi  + \iota_\phi (d_\omega e)$, where $\iota_\phi$ is contraction with $\phi$ thought of as a vector field on $\RR^4$.  Elements $\chi \in \Omega^0(\RR^4; S)$ in the final, fermionic factor act by \emph{supersymmetries}: $e \mapsto e + \Gamma(\chi, \psi)$ and $\psi \mapsto \psi + D_\omega \chi$.
+
+We must compute the (complexified) BV complex near a classical solution to the equations of motion $(\omega_0, e_0, \psi_0)$.  The BV complex is fairly easy to write down.  It looks like
+\[\xymatrix{
+   \Omega^0(X; \CC^4) \ar[r]^d & \Omega^1(X; \CC^4) \ar[r]^{e_0 \wedge d} &\Omega^3(X; \wedge^2 \CC^4) \ar[r]^d &\Omega^4(X; \wedge^2 \CC^4) \\
+   \Omega^0(X; \so(4;\CC)) \ar[r]^d \ar[ur]^{e_0} & \Omega^1(X; \so(4;\CC)) \ar[r]^{e_0 \wedge d} \ar[ur]^{[e_0 \wedge e_0]} &\Omega^3(X; \wedge^3 \CC^4) \ar[r]^d \ar[ur]^{e_0} &\Omega^4(X; \wedge^3 \CC^4) \\
+   \Pi\Omega^0(X; S) \ar[r]^d & \Pi\Omega^1(X; S) \ar[r]^{\rho(e_0) d} &\Pi\Omega^3(X; S) \ar[r]^d &\Pi\Omega^4(X; S) \\
+}\]
+so the first two rows are bosonic and the last is fermionic.  The pairing pairs the first two rows with one another, and pairs $S_\pm$ with itself in the last row.  The notation $\rho(e_0)$ denotes Clifford multiplication by the vector component of $e_0$ and wedge with the form component.  The operator $e_0 \colon \Omega^0(X;\so(4;\CC)) \to \Omega^1(X;\CC^4)$ is given by acting on $e_0$, and its dual operator $e_0 \colon \Omega^3(X;\wedge^3\CC^4) \to \Omega^4(X;\wedge^2\CC^4)$ is given by identifying $\wedge^3\CC^4$ with $\CC^4$ using the metric, and wedging with $e_0$.  Finally, the operator $[e_0 \wedge e_0] \colon \Omega^1(X;\so(2;\CC)) \to \Omega^3(X; \so(4;\CC))$ is given by composing $e_0 \wedge e_0 \colon \Omega^1(X;\wedge^2\CC^4) \to \Omega^3(X; \wedge^2(\wedge^2 \CC^4))$ with the Lie bracket on $\so(4;\CC)$, thought of as a map $\wedge^2(\wedge^2 \CC^4) \to \wedge^2\CC^4$.  This complex admits an $L_\infty$ structure with the higher brackets determined by the higher order terms in the action functional and the gauge symmetry.
+
+Let $Q \in \Omega^0(X; S_+)$ be a fixed global section of the Weyl spinor bundle.  The action of this supersymmetry, combined with the $\CC^\times$ action in which $S_\pm$ has weight $\pm 1$, yields \emph{twisting data} for the supergravity theory.  The cokernel of the map $\Gamma(Q,-)$ corresponds to a choice of complex structure on $X$.  We choose the reference vierbein $e_0$ to live in the holomorphic tangent bundle inside the full complexified tangent bundle, $\Omega^1(X; \CC^2) \sub \Omega^1(X;\CC^4)$.  The twisted BV complex is
+\[\xymatrix{
+   \Omega^0(X; S_-) \ar[r] \ar[rd] & \Omega^1(X; S_-) \ar[r]\ \ar[rd] &\Omega^3(X; S_-) \ar[r] \ar[rdd] &\Omega^4(X; S_-) \ar[rdd] \\
+   &\Omega^0(X; \CC^4) \ar[r] & \Omega^1(X; \CC^4) \ar[r]\ &\Omega^3(X; \wedge^2 \CC^4) \ar[r] \ar[rdd] &\Omega^4(X; \wedge^2 \CC^4) \ar[rdd] \\
+   &\Omega^0(X; \so(4;\CC)) \ar[r] \ar[rd] \ar[ur] & \Omega^1(X; \so(4;\CC)) \ar[r] \ar[ru] \ar[rd] &\Omega^3(X; \wedge^3 \CC^4) \ar[r] \ar[ur] &\Omega^4(X; \wedge^3 \CC^4) \\ 
+   &&\Omega^0(X; S_+) \ar[r] & \Omega^1(X; S_+) \ar[r]\ &\Omega^3(X; S_+) \ar[r] &\Omega^4(X; S_+) \\
+}\]
+where now all rows are bosonic.  The new, downward diagonal arrows here are given by the action of the supersymmetry $Q$.  This complex is quasi-isomorphic to the complex 
+\[\xymatrix{
+ \Omega^0(X; \CC^2) \ar[r] & \Omega^1(X; \CC^2) \ar[r] &\Omega^3(X; \gl(2;\CC)) \ar[r] &\Omega^4(X; \gl(2;\CC)) \\
+   \Omega^0(X; \gl(2;\CC)) \ar[r] \ar[ur] & \Omega^1(X; \gl(2;\CC)) \ar[r] \ar[ur] &\Omega^3(X; \CC^2) \ar[r] \ar[ur] &\Omega^4(X; \CC^2) \\
+}\]
+where the map $\Omega^1(X; \gl(2;\CC)) \to \Omega^3(X; \CC^2)$ is given by $d$ followed by applying the two by two matrix component to the vector component of $e_0$ and wedging the form components, and the map $\Omega^1(X; \CC^2) \to \Omega^3(X; \gl(2;\CC))$ is given by $d$ followed by wedging with $e_0$, and noting that this lands in $\sl(2;\CC)_+ \sub \so(4;\CC) \iso \wedge^2 \CC^4$ \chris{or gl}.
+
+Going one step further, this is quasi-isomorphic to the complex
+\[\xymatrix{
+\Omega^{0,0}(X; \CC^2) \ar[r]^{\ol \dd} &\Omega^{0,1}(X; \CC^2) \ar[r]^{e_0 \wedge \ol \dd} &\Omega^{1,2}(X; \gl(2;\CC)) \ar[r]^(.55){\pi \circ \ol \dd} &\Omega^{2,2}(X;\CC^2)\\
+\Omega^{0,0}(X;\CC^2) \ar[r]^(.45){\iota \circ \ol \dd}&\Omega^{1,0}(X; \gl(2;\CC)) \ar[r]^{e_0 \wedge \ol \dd} &\Omega^{2,1}(X; \CC^2) \ar[r]^{\ol \dd} &\Omega^{2,2}(X;\CC^2)
+}\]
+where the map $\Omega^{0,0}(X;\CC^2) \to \Omega^{1,0}(X; \gl(2;\CC))$ uses the inclusion of the annihilator of $e_0$ in $\CC^2$, and its dual likewise uses the projection onto the annihilator.
+
+Now, let's interpret the fields and the action functional we obtain.  The vierbein $e$ becomes a $(0,1)$ form valued in the holomorphic tangent bundle of $X$, and the spin connection $\omega$ becomes a connection on the holomorphic tangent bundle, compatible with the complex structure.  The holomorphic vierbein yields a Hermitian metric $h$ on the holomorphic tangent bundle by an analogous procedure to the construction of a Riemannian metric from a vierbein on any manifold; we choose a reference anti-Hermitian metric $h_0$ on the anti-holomorphic tangent bundle $T^{0,1}X$, and define
+\[h(u, v) = h_0(e(u), e(v)).\]
+We naturally expect the equations of motion to impose that $h$ is a Hermite-Einstein metric, and $\omega$ is the associated Chern connection to $h$ (so an auxiliary field).  Let's check that this is indeed the case.  The Lagrangian density in the twisted theory is still of form 
+\[\mc L(\omega, e) = \langle \Omega \wedge e \wedge e \rangle\]
+where $\langle \; \rangle$ denotes the canonical trivialisation of $\wedge^4 \CC^4$ on the complexified tangent bundle, and where $\Omega$ denotes the holomorphic curvature of $\omega$, lying in $\Omega^{2,0}(X; \gl(2;\CC))$.
+
+Solving the equations of motion, as one would do in ordinary first order gravity, we obtain an Einstein condition
+\[R_{ab} = k h_{ab}\]
+where $R_{ab}$ is the Ricci tensor, which -- in the holomorphic setting -- a priori is a section of $(T^{1,0}X)^{\otimes 2}$.  We also obtain a torsion-freeness condition for the connection, of form $T_a = 0$, where in the holomorphic setting the torsion $T_a$ is a $\CC^2$-valued $(2,0)$-form.  This implies not only that the connection $\omega$ is the Chern connection associated to $h$, but \emph{also} that the Hermitian metric $h$ in fact defines a K\"ahler structure on $X$ (this is a standard fact in complex geometry, but for my own sake, a textbook reference is \cite{Huybrechts} proposition 4.A.7).  Thus we conclude that the moduli space of solutions to the equations of motion is the moduli space of \emph{K\"ahler-Einstein Structures} on the holomorphic tangent bundle of $X$, with complex structure given by the choice of twist $Q$.  In particular, by the Kobayashi-Hitchin correspondence, it is non-empty if and only if the holomorphic tangent bundle is semistable.
+
+\begin{remark}
+The gauge group here has split into two parts, but I suspect they'll glue together to a copy of $\Omega^0(X;\gl(2;\CC))$, acting in the expected way on the fields.  I haven't checked that the brackets work correctly yet.
+\end{remark}
+
+\section{Twisting Maximal Supergravity}
+Let's now try to mimic this calculation for supergravity in 11 dimensions.  We'll start by describing the linearised BV complex near a fixed elfbein field $e_0$, just as we did above.  The quadratic term of the Lagrangian density after making the perturbation $e \mapsto e + e_0$ has form (ignoring constants)
+\[\langle \omega \wedge \omega \wedge e_0^9 \rangle + \langle d\omega \wedge e \wedge e_0^8 \rangle + \langle \ol \psi \wedge (1+d)\rho(e_0)^5 \psi \rangle + \langle dC \wedge dC \wedge e_0^3 \rangle.\]
+Thus we expect a complexified BV complex of form
+\[\xymatrix{
+&\Omega^0(X; \CC^{11}) \ar[r] &\Omega^1(X;\CC^{11}) \ar[r] &\Omega^{10}(X; \wedge^9\CC^{11}) \ar[r] &\Omega^{11}(X;\wedge^9\CC^{11}) &\\
+&\Omega^0(X; \so(11;\CC)) \ar[r] \ar[ur] &\Omega^1(X;\so(11;\CC)) \ar[r] \ar[ur] &\Omega^{10}(X; \wedge^{10}\CC^{11}) \ar[r] \ar[ur] &\Omega^{11}(X;\wedge^{10}\CC^{11}) &\\
+\cdots\ar[r] &\Omega^2(X;\CC) \ar[r] &\Omega^3(X;\CC) \ar[r] &\Omega^8(X;\CC) \ar[r] &\Omega^9(X;\CC) \ar[r] &\cdots \\
+&\Pi\Omega^0(X; S) \ar[r] &\Pi\Omega^1(X;S) \ar[r] &\Pi\Omega^{10}(X; S) \ar[r] &\Pi\Omega^{11}(X;S) &\\
+}\]
+
+\begin{landscape}
+where, as before, the first and second lines are paired with one another, and the third and fourth lines are paired with themselves, all by a wedge-and-integrate pairing.  The twisted BV complex has a similar form to that in four dimension, but incorporating the supergravity C-field.
+\[
+\xymatrix{
+\hspace*{-30pt}
+\Omega^0(X; S_-) \ar[r] \ar[dr] &\Omega^1(X;S_-) \ar[r] \ar[dr] &\Omega^{10}(X; S_-) \ar[r] \ar[ddr] &\Omega^{11}(X;S_-) \ar[ddr] &&\\
+&\Omega^0(X; \CC^{11}) \ar[r] &\Omega^1(X;\CC^{11}) \ar[r] &\Omega^{10}(X; \wedge^9\CC^{11}) \ar[r] \ar[ddr] &\Omega^{11}(X;\wedge^9\CC^{11}) \ar[ddr]&\\
+&\Omega^0(X; \so(11;\CC)) \ar[r] \ar[ur] \ar[dr] &\Omega^1(X;\so(11;\CC)) \ar[r] \ar[ur] \ar[dr] &\Omega^{10}(X; \wedge^{10}\CC^{11}) \ar[r] \ar[ur] &\Omega^{11}(X;\wedge^{10}\CC^{11}) &\\
+&&\Omega^0(X; S_+) \ar[r] \ar[rd] &\Omega^1(X;S_+) \ar[r] \ar[rd] &\Omega^{10}(X; S_+) \ar[r] \ar[rd] &\Omega^{11}(X;S_+) \ar[rd] \\
+&&\cdots \ar[r] &\Omega^2(X;\CC) \ar[r] &\Omega^3(X;\CC) \ar[r] &\Omega^8(X;\CC) \ar[r] &\Omega^9(X;\CC) \ar[r] &\cdots \\
+}
+\]
+
+The first interesting map, $[-,Q] \colon S_- \to \CC^{11}$, is injective and has cokernel $\CC^5$.  The other interesting map, $\mr{act}_Q \colon \so(11;\CC) \to S_+$, has an interesting kernel \emph{and} cokernel.  To analyse these, Igusa \cite{Igusa} computed all the possible (complex) orbits and stabiliser subgroups for spinors in eleven dimensions.  There are five orbits, whose associated stabilisers are
+\begin{itemize}
+ \item $\SL(5;\CC)$, of dimension 24.
+ \item $\SL(5;\CC) \ltimes U_{15}$ of dimension $24+15 = 39$.
+ \item $(G_2 \times \SL(2;\CC)) \ltimes U_{15}$ of dimension $(14 + 3) + 15 = 32$.
+ \item $\Spin(7;\CC) \ltimes \CC^9$ of dimension $27 + 9 = 36$.
+ \item $\Sp(4;\CC) \ltimes U_{14}$ of dimension $10 + 14 = 24$.
+\end{itemize}
+where $U_{14}$ and $U_{15}$ are connected unipotent groups of complex dimension 14 and 15.  Charlton \cite{Charlton} states that the pure spinors comprise the orbit of smallest dimension.  This smallest dimensional orbit corresponds to the largest dimensional stabiliser, which we see -- from the list -- is $\SL(5;\CC) \ltimes U_{15}$.  Here $U_{15}$ is the group of upper triangular six-by-six matrices with 1 along the diagonal.  To describe the $\SL(5;\CC)$ action, we naturally identify this with $\wedge^2 \CC^6$, then choose a vector $v_0$ in $\CC^6$ to induce an identification with $\wedge^2 \CC^5 \oplus \CC^5 \wedge \{v_0\}$, with its natural $\SL(5;\CC)$ action.  
+\end{landscape}
+
+This group embeds in $\SO(12;\CC)$ as block matrices of form
+\[\left(\begin{array}{ccc|c|ccc|c}
+&&&&&&&\\
+&\alpha&&0&&0&&0\\
+&&&&&&&\\
+\hline
+&0&&1&&0&&0\\
+\hline
+&&&&&&&\\
+&\gamma \alpha&&v&&(\alpha^T)^{-1}&&0\\
+&&&&&&&\\
+\hline
+&-v^T\alpha&&0&&0&&1
+\end{array}\right)\]
+where $\alpha \in \SL(5;\CC)$, $v\in \CC^5$ and $\gamma \in \so(5;\CC)$.  One can check that this is a subgroup, where we use the quadratic form of signature $(6,6)$ on $\CC^{12}$.  What's more, it lies in a copy of $\SO(11;\CC)$ embedded in $\SO(12;\CC)$ as the group of block matrices of form
+\[\left(\begin{array}{ccc|c|ccc|c}
+&&&&&&&\\
+&\alpha&&0&&\beta&&0\\
+&&&&&&&\\
+\hline
+&0&&1&&0&&0\\
+\hline
+&&&&&&&\\
+&\gamma &&v&&\delta&&0\\
+&&&&&&&\\
+\hline
+&w&&a&&x&&1
+\end{array}\right)\]
+representing isometries.  The double cover map $\spin(11;\CC) \to \SO(11;\CC)$ maps the stabiliser of $Q$ isomorphically onto this group, since the stabiliser in the spin group doesn't include the element $-1$ (the other element of the preimage of the identity under the double covering map). \chris{What's more, some of the other orbits correspond to interesting square zero spinors which we could use to twist.}
+
+Now, the image of the action map is given by the tangent space to the $\Spin(11;\CC)$ orbit at $Q \in S_+$.  If we choose a pure spinor, the orbit has dimension 16, thus so does the image under the infinitesimal action map.  The last interesting map is the one that lands in the space of C-fields, namely the map $\Omega^1(X;S_+) \to \Omega^3(X;\CC)$ sending a positive gravitino $\psi$ to the 3-form $\ol Q \wedge \gamma_{ab} \psi \wedge e_0^a \wedge e_0^b$, or in a more coordinate free notation, $\langle Q, \rho(e_0)^2 \psi \rangle$.  Note that any endomorphism $F$ of the space of spinors is realised by iterated Clifford multiplication \chris{todo.  $\langle Q, \rho(v)Q \rangle = (v, \Gamma(Q,Q)) = 0$, but it's not clear for iterated Clifford multiplication.  Does $\Gamma(Q,\rho(v)Q)$ at least lie in a MTIS with $v$?  Want to show the $S_+$ cohomology group vanishes.}
+
+Finally we need to investigate the image of this map in $\Omega^3(X;\CC)$. \chris{It's probably generated by covectors of form $v \wedge \gamma_{ab} e_0^a \wedge e_0^b$, so isomorphic to $\Omega^1(X;\CC)$?}
+
+\chris{Actually, I should try to phrase this all in the Weil algebra language first.  In parturbation theory we shouldn't need to worry about the difference between connections and 1-forms, and should just consider the shifted cotangent space to $\hom_{\mr{cdga}}(W^\bullet(\gg), \Omega^\bullet(X))$.  This lives inside the degree zero part of $(W^\bullet(\gg))^* \otimes \Omega^\bullet(X)$ (which models cochain complex morphisms), which we should suitably resolve.  Going further we need to take into account gauge transformations, modelled by concordance.  Maybe there's a simplicial description here to which we can apply Dold-Kan to get the BRST complex?  This looks like the usual simplicial $L_\infty$ algebra construction using differential forms on $n$-simplices.}
+
+\bibliographystyle{alpha}
+\bibliography{Supergravity}
+
+\textsc{Department of Mathematics, Northwestern University}\\
+\textsc{2033 Sheridan Road, Evanston, IL 60208, USA} \\
+\texttt{celliott@math.northwestern.edu}
+\end{document}

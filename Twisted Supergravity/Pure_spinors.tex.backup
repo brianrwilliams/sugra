@@ -1,0 +1,85 @@
+\documentclass[10pt, oneside]{article}
+
+\IfFileExists{../math_headers.sty}
+  {\input ../math_headers.sty}
+  {\IfFileExists{./math_headers.sty}
+    {\input ./math_headers.sty}
+    {\typeout{Header file not found}
+    }
+  }
+
+\title{Notes on Pure Spinors}
+\author{Chris Elliott}
+\date{}
+
+\DeclareMathOperator{\EOM}{EOM}
+\newcommand{\EOMs}{\EOM_{\text{sing}}}
+\DeclareMathOperator{\PT}{\mathbb{PT}}
+\DeclareMathOperator{\PN}{\mathbb{PN}}
+
+\begin{document}
+\maketitle
+
+\section{Pure Spinors}
+Let $S$ be the complex spin representation of $\so(n)$, and let $V$ be the complex $n$-dimensional vector representation.  I'll write $(v,w)$ for the inner product on $V$, $\langle Q, Q' \rangle$ for the invariant nondegenerate $\CC$ valued pairing on $S$, and $\Gamma(Q, Q')$ for the equivariant vector valued pairing on $S$. 
+
+For a spinor $Q$ we define its \emph{null space} $T_Q$ to be 
+\[T_Q = \{v \in V \colon \rho(v)Q = 0\} \sub V.\]
+Note that $T_Q$ is totally isotropic, since if $v, w$ are in $T_Q$ then
+\[(v,w)Q = (\rho(v)\rho(w) - \rho(w)\rho(v))Q = 0.\]
+
+\begin{definition}
+A spinor $Q$ is called \emph{pure} if the space $T_Q$ is \emph{maximal}, i.e. of dimension $\lfloor \frac n2 \rfloor$.  It is called \emph{square zero} if $\Gamma(Q,Q) = 0$
+\end{definition}
+
+Now, I'd like to investigate the image 
+\[S_Q = \mr{Im}(\Gamma(Q,-)) \sub V\]
+of the map induced by pairing with a pure or square zero spinor $Q$.
+\begin{prop}
+Let $Q$ be a pure spinor.
+\vspace{-6pt}
+\begin{itemize}
+ \item If $n=2m$ is even, then $S_Q = T_Q$.
+ \item If $n=2m-1$ is odd, then $T_Q \sub S_Q$ is a codimension 1 subspace.
+\end{itemize}
+\vspace{-6pt}
+\end{prop}
+
+\begin{proof}
+First observe that $S_Q^\perp = T_Q$.  Indeed, let $v$ be a vector in $S_Q^\perp$, i.e. $(v, w) = 0$ for all $w \in S_Q$.  That is
+\begin{align*}
+&\qquad (v, \Gamma(Q,Q')) = 0 \text{ for all } Q' \in S \\
+&\Leftrightarrow \langle \rho(v)Q, Q' \rangle  = 0 \text{ for all } Q' \in S \\
+&\Leftrightarrow \rho(v)Q = 0 
+\end{align*}
+So $v \in S_Q^\perp$ if and only if $v \in T^Q$.  Furthermore, taking a second orthogonal complement, this means that $S_Q = T_Q^\perp$, and therefore -- since $T_Q$ is totally isotropic -- $T_Q \sub S_Q$.  Looking at dimensions, since $Q$ is pure, $\dim T_Q = \lfloor \frac n2 \rfloor$, so $\dim  S_Q = \lceil \frac n2 \rceil$.  This completes the proof.
+\end{proof}
+
+Now, what's the relationship between pure spinors and square zero spinors?  To answer this question, we'll use an interesting decomposition.  Every spinor $Q$ induces a matrix element $Q \otimes \ol Q \in S \otimes S^* \iso \eend(S)$ via the diagonal embedding and the invariant pairing on $S$.  If $S$ is irreducible (i.e. for Dirac spinors in odd dimensions or Weyl spinors in even dimensions) we can identify endomorphisms with elements of the Clifford algebra, and thus decompose the spinor bilinear as
+\[Q \otimes \ol Q = \sum_{p=0}^n F_p\]
+where $F_p \in \wedge^p V$.  We can explicitly identify these elements $F_p$ as, in index notation, the Clifford algebra element $Q_i \gamma^{a_1 \cdots a_p}_{ij} Q_j$.  In this language we can characterise pure spinors \cite{Chevalley}.
+\begin{theorem}[Chevalley]
+A spinor $Q$ is pure if and only if it is Weyl (in even dimensions), and $F_p = 0$ for all $p < n/2$. 
+\end{theorem}
+
+In particular, $F_1 = 0$ whenever $n > 2$, so we have
+\begin{corollary}
+All pure spinors in dimensions $n > 2$ are square zero.
+\end{corollary}
+
+Now, let's investigate pure and square zero spinors in various dimensions.
+\vspace{-6pt}
+\begin{itemize}
+ \item 
+\end{itemize}
+
+
+
+
+\bibliographystyle{alpha}
+\bibliography{Supergravity}
+
+\textsc{Department of Mathematics, Northwestern University}\\
+\textsc{2033 Sheridan Road, Evanston, IL 60208, USA} \\
+\texttt{celliott@math.northwestern.edu}
+\end{document}

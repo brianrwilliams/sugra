@@ -1,0 +1,40 @@
+\documentclass[10pt, oneside]{article}
+
+\IfFileExists{../math_headers.sty}
+  {\input ../math_headers.sty}
+  {\IfFileExists{./math_headers.sty}
+    {\input ./math_headers.sty}
+    {\typeout{Header file not found}
+    }
+  }
+
+\title{Notes on Supergravity}
+\author{Chris Elliott}
+\date{}
+
+
+\fancyhead[R]{}
+
+\begin{document}
+
+The Lagrangian density is, in a local coordinate patch, given by
+\[\LL(\omega, e) = \eps_{abcd} \Omega^{ab} \wedge e^c \wedge e^d.\]
+Compute its first variation under the gauge transformation $e^a \mapsto e^a + \dd f^a + \omega^{ab} f_b$.  We find
+\begin{align*}
+\delta\LL(\omega, e) &= \eps_{abcd} \Omega^{ab} \wedge (\dd^c f\wedge  e^d + f \omega^c \wedge e^d + e^c \wedge \dd^d f + f e^c \wedge \omega^d)\\ 
+&= (\eps_{abcd} + \eps_{abdc}) \Omega^{ab} \wedge (\dd^c f\wedge  e^d + f \omega^c \wedge e^d) \\
+&= 0.
+\end{align*}
+In the index notation, the order in which we write the forms isn't important, only the order of the indices. 
+
+Now, here's what I think this calculation really means.  First, how should we interpret the Palatini action?  I'll explain it in $n$ dimensions.  We can take $e$, which is an $\RR^n$ valued 1-form, and produce a $\wedge^{n-2} \RR^n$ valued $n-2$ form, which I'll write as 
+\[e^{a_1} \wedge e^{a_2} \wedge \cdots  \wedge e^{a_{n-2}}.\]
+This is totally antisymmetric in the $a_i$ indices.  What's more, the curvature $\Omega$ of the connection $\omega$ is an $\so(n)$ valued 2-form, and $\so(n)$ is canonically isomorphic to $\wedge^2 \RR^n$.  Thus we produce a $\wedge^n \RR^n$ valued $n$ form which I'll write as 
+\[\Omega^{a_1 a_2}  \wedge e^{a_3}  \wedge e^{a_4}  \wedge \cdots \wedge  e^{a_n}.\]
+Our choice of basis gives us a canonical isomorphism $\wedge^n \RR^n \iso \RR$, thus an $\RR$ valued $n$ form which I could reasonably write as 
+\[\frac 1{n!}\eps_{a_1 \cdots a_n} \Omega^{a_1 a_2}  \wedge e^{a_3}  \wedge e^{a_4}  \wedge \cdots  \wedge e^{a_n}.\]
+
+Note that while the wedge product of 1-forms remains antisymmetric, $e^a \wedge e^b$ is still not zero if $a \ne b$, because we're pairing different components of the vielbein.  The symmetry I used to see that the variation vanishes is on the level of components: it was that
+\[e^a \wedge (d_\omega f)^b = - e^b \wedge (d \omega f)^a.\]
+
+\end{document}

@@ -1,0 +1,77 @@
+\begin{thebibliography}{Ced10b}
+
+\bibitem[BT89]{BudinichTrautman}
+Paolo Budinich and Andrzej Trautman.
+\newblock Fock space description of simple spinors.
+\newblock {\em Journal of Mathematical Physics}, 30(9):2125--2131, 1989.
+
+\bibitem[CDF91]{CDF}
+Leonardo Castellani, Riccardo D'Auria, and Pietro Fr{\'e}.
+\newblock {\em Supergravity and superstrings}.
+\newblock World Scientific, 1991.
+
+\bibitem[Ced10a]{Cederwall2}
+Martin Cederwall.
+\newblock {$D=11$} supergravity with manifest supersymmetry.
+\newblock {\em Modern Physics Letters A}, 25(38):3201--3212, 2010.
+
+\bibitem[Ced10b]{Cederwall1}
+Martin Cederwall.
+\newblock Towards a manifestly supersymmetric action for 11-dimensional
+  supergravity.
+\newblock {\em Journal of High Energy Physics}, 2010(1):1--19, 2010.
+
+\bibitem[Cha97]{Charlton}
+Philip Charlton.
+\newblock {\em The geometry of pure spinors, with applications}.
+\newblock PhD thesis, University of Newcastle, 1997.
+
+\bibitem[Che95]{Chevalley}
+Claude Chevalley.
+\newblock {\em The Algebraic Theory of Spinors and Clifford Algebras: Collected
+  Works}, volume~2.
+\newblock Springer, 1995.
+
+\bibitem[CJS78]{CJS}
+Eugene Cremmer, Bernard Julia, and Joel Scherk.
+\newblock Supergravity theory in 11 dimensions.
+\newblock {\em Physics Letters B}, 76(4):409--412, 1978.
+
+\bibitem[DF82]{DF}
+Riccardo D'Auria and Pietro Fr{\'e}.
+\newblock Geometric supergravity in {$D=11$} and its hidden supergroup.
+\newblock {\em Nuclear Physics B}, 201(1):101--140, 1982.
+
+\bibitem[FG08]{FreGrassi}
+Pietro Fr{\'e} and Pietro~Antonio Grassi.
+\newblock Free differential algebras, rheonomy, and pure spinors.
+\newblock {\em arXiv preprint arXiv:0801.3076}, 2008.
+
+\bibitem[FSS13]{FSS}
+Domenico Fiorenza, Hisham Sati, and Urs Schreiber.
+\newblock Super lie {$n$}-algebra extensions, higher {WZW} models, and super
+  {$p$}-branes with tensor multiplet fields.
+\newblock {\em arXiv preprint arXiv:1308.5264}, 2013.
+
+\bibitem[Huy06]{Huybrechts}
+Daniel Huybrechts.
+\newblock {\em Complex geometry: an introduction}.
+\newblock Springer, 2006.
+
+\bibitem[Igu70]{Igusa}
+Jun-ichi Igusa.
+\newblock A classification of spinors up to dimension twelve.
+\newblock {\em American Journal of Mathematics}, pages 997--1028, 1970.
+
+\bibitem[Sch13]{Schreiber}
+Urs Schreiber.
+\newblock Differential cohomology in a cohesive infinity-topos.
+\newblock {\em arXiv preprint arXiv:1310.7930}, 2013.
+
+\bibitem[SSS09]{SSS}
+Hisham Sati, Urs Schreiber, and Jim Stasheff.
+\newblock {$L_\infty$}-algebra connections and applications to {S}tring- and
+  {C}hern-{S}imons {$n$}-transport.
+\newblock In {\em Quantum Field Theory}, pages 303--424. Birkh{\"a}user, 2009.
+
+\end{thebibliography}

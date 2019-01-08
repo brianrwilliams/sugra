@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Supergravity.aux
+The style file: alpha.bst
+Database file #1: Supergravity.bib
+You've used 14 entries,
+            2543 wiz_defined-function locations,
+            654 strings with 6338 characters,
+and the built_in function-call counts, 5186 in all, are:
+= -- 523
+> -- 213
+< -- 10
++ -- 72
+- -- 68
+* -- 349
+:= -- 862
+add.period$ -- 43
+call.type$ -- 14
+change.case$ -- 77
+chr.to.int$ -- 13
+cite$ -- 14
+duplicate$ -- 223
+empty$ -- 384
+format.name$ -- 89
+if$ -- 1055
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 16
+newline$ -- 73
+num.names$ -- 42
+pop$ -- 77
+preamble$ -- 1
+purify$ -- 95
+quote$ -- 0
+skip$ -- 182
+stack$ -- 0
+substring$ -- 292
+swap$ -- 33
+text.length$ -- 10
+text.prefix$ -- 7
+top$ -- 0
+type$ -- 100
+warning$ -- 0
+while$ -- 50
+width$ -- 17
+write$ -- 180

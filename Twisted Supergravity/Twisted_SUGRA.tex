@@ -1,0 +1,155 @@
+\documentclass[10pt, oneside]{article}
+
+\IfFileExists{./math_headers.sty}
+  {\input ./math_headers.sty}
+  {\IfFileExists{../math_headers.sty}
+    {\input ../math_headers.sty}
+    {\typeout{Header file not found}
+    }
+  }
+
+\title{Holomorphically Twisted Supergravity}
+\author{Chris Elliott}
+
+\usepackage{verbatim}
+
+\DeclareMathOperator{\EOM}{EOM}
+\newcommand{\vac}{\mc{V} \text{ac}}
+\newcommand{\del}{\partial}
+\def\d{{\rm d}}
+\newcommand{\Obs}{\mathrm{Obs}}
+\newcommand{\map}{\underline{\mathrm{Map}}}
+\newcommand{\siso}{\mathfrak{siso}}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\chris{Later we can write an intro to the BV setup, and to twisting.}
+
+\subsection{Introduction to Supersymmetry}
+In this paper we'll mainly discuss the $N=1$ supersymmetry algebra in dimension 4, although we'll sometimes obtain examples of supersymmetric theories by compactification from higher dimensional supersymmetric theories.
+
+\begin{definition}
+The complex $N=1$ \emph{super Poincar\'e algebra} in dimension 4 $\siso(4;\CC)$ is the complex super Lie algebra whose bosonic part is the Poincar\'e algebra $\so(4;\CC) \ltimes \CC^4$, and whose fermionic part is the Dirac spin representation $S$ of $\so(4;\CC)$.  Concretely we can decompose $\so(4;\CC)$ as $\sl(2;\CC)_+ \oplus \sl(2;\CC)_-$, and $S$ splits as the sum $S_+ \oplus S_-$ of the fundamental representations of the two factors.  There is a bracket between the fermionic elements given by the unique $\so(4;\CC)$-equivariant map
+\[\Gamma \colon S_+ \otimes S_- \to \CC^4\]
+where $\so(4;\CC)$ acts on $\CC^4$ by the fundamental representation.
+\end{definition}
+
+
+\section{Supergravity in the First Order Formalism}
+In this section we'll explain how 4d $N=1$ supergravity can be modelled perturbatively in the BV formalism using the first order formalism for gravity.  This will allow us to make sense perturbatively of \emph{twisted} supergravity theories.  While the 4d $N=1$ supersymmetry algebra doesn't include any topological supercharges we can consider the twist with respect to holomorphic supercharges, which we'll argue yields a perturbative theory of K\"ahler-Einstein structures.
+
+Our main object of study will be the following classical BV theory.
+\begin{definition}
+The theory of \emph{$N=1$ supergravity} in the first-order formalism is the BV theory on $\RR^4$ modelled by the following sheaf $L_{N=1}$ of $L_\infty$-algebras.  We fix a reference 1-form $e_0 \in \Omega^1(\RR^4; T_{\RR^4}^\CC)$ valued in the complexified tangent bundle.  The theory $L_{N=1}$ assigns to an open set $U \sub \RR^4$ the following cochain complex.
+\[\xymatrix{
+& \underline{0} & \underline{1} & \underline{2} & \underline 3 \\
+\mbox{Fermion degree }0 & \Omega^0(U; T^\CC_U) \ar[r]^\d & \Omega^1(U; T^\CC_U) \ar[r]^{e_0 \wedge \d} &\Omega^3(U; \wedge^2 T^\CC_U) \ar[r]^\d &\Omega^4(U; \wedge^2 T^\CC_U) \\
+\mbox{Fermion degree }0 & \Omega^0(U; \so(4;\CC)) \ar[r]^\d \ar[ur]^{e_0} & \Omega^1(U; \so(4;\CC)) \ar[r]^{e_0 \wedge \d} \ar[ur]^{[e_0 \wedge e_0]} &\Omega^3(U; \wedge^3 T^\CC_U) \ar[r]^\d \ar[ur]^{e_0} &\Omega^4(U; \wedge^3 T^\CC_U) \\
+\mbox{Fermion degree }1 & \Omega^0(U; S) \ar[r]^\d & \Omega^1(U; S) \ar[r]^{\sd e_0 \d} &\Omega^3(U; S) \ar[r]^\d &\Omega^4(U; S).
+}\]
+Here $\sd e_0$ denotes the usual Dirac slash notation $\sd e_0 = \gamma^i (e_0)_i$.  This cochain complex admits a natural degree $-3$ wedge-pairing $L_{N=1} \otimes L_{N=1} \to \mr{Dens}[3]$ valued in densities, where the first two rows are paired with one another and $S_\pm$ is paired with itself in the last row.  The complex is also equipped with degree 2 and degree 3 brackets making it into an $L_\infty$-algebra; it's most straightforward to encode this $L_\infty$-structure in terms of an interaction functional $I$ satisfying the classical master equation.  We can describe this interaction concretely in terms of individual fields in the BV theory.
+
+We'll use the following notation for the fields.  We denote the ghosts (generators of the degree 0 part of the BV complex) by $f \in \Omega^0(\RR^4;T_{\RR^4})$, $\phi \in \Omega^0(\RR^4;\so(4))$ and $\chi \in \Omega^0(\RR^4;\mc S)$.  We denote the classical fields (generators of the degree 1 part of the BV complex) by $e \in \Omega^1(\RR^4;T_{\RR^4})$, $A \in \Omega^1(\RR^4;\so(4))$ and $\psi \in \Omega^1(\RR^4;\mc S)$.  We denote the antighosts and antifields dual to these generators by the symbols $f^\vee, \phi^\vee, \chi^\vee, e^\vee, A^\vee$ and $\psi^\vee$.
+
+Our interaction functional will split as
+\[I_{N=1} = I_{\mr{Pal}} + I_{\mr{fer}} + I_{\mr{ghost}}\]
+where $I_{\mr{Pal}} = F_A \wedge e \wedge e$ and $I_{\mr{fer}} = \langle \psi, \sd e \d_A \psi \rangle$, where $\langle -,- \rangle$ denotes the scalar-valued pairing between spinors.  Together these make up the ordinary (as opposed to BV) classical interaction for the $N=1$ supergravity theory in the first order formalism.  The third factor $I_{\mr{ghost}}$ encodes the infinitesimal gauge symmetry and take the following form:
+\[
+I_{\mr{ghost}} = \sum_{\text{BV fields } \alpha}  \left( \langle \alpha^\vee, [\phi, \alpha]\rangle_{\mr{BV}} + \langle \alpha^\vee, [\chi, \alpha]\rangle_{\mr{BV}} + \langle \alpha^\vee, [f, \alpha] + \mc L_f \d_A \alpha \rangle_{\mr{BV}} \right)
+\]
+where $\langle -,-\rangle_{\mr{BV}}$ denotes the degree $-3$ BV pairing, and the sum is over the twelve summands of the BV complex.
+\end{definition}
+
+This theory admits a natural twisting datum -- an action of the supergroup $\aut(\Pi \CC) = \CC^\times \ltimes \Pi \CC$ -- as follows.  Let $Q \in S_+$ be a fixed Weyl spinor.  If we like we can view $Q$ as an element of $\Omega^0(U; \mc S_U)$ for each open set $U \sub \RR^4$.
+\begin{definition}
+The \emph{holomorphic twisting datum} on $L_{N=1}$ associated to this choice of $Q$ is defined as follows.  We define a $\CC^\times$-action on $L_{N=1}(U)$ by giving $\Omega^\bullet(U; \mc S_{+U})$ weight 1 and $\Omega^\bullet(U; \mc S_{-U})$ weight $-1$, and we define a $\Pi \CC$ action generated by the bracket $[Q,-]$, which has $\CC^\times$-weight 1 since $Q$ has weight 1.
+\end{definition}
+
+In order to compute the twist with respect to this action we must compute the total complex of $L_{N=1}(U)$ viewed as a double complex with respect to its internal BV-BRST differential and the new grading and differential given by $[Q,-]$, i.e. the following:
+\begin{equation} \xymatrix{
+   \Omega^0(U; S_-) \ar[r] \ar[rd] & \Omega^1(U; S_-) \ar[r]\ \ar[rd] &\Omega^3(U; S_-) \ar[r] \ar[rdd] &\Omega^4(U; S_-) \ar[rdd] \\
+   &\Omega^0(U; T^\CC_U) \ar[r] & \Omega^1(U; T^\CC_U) \ar[r]\ &\Omega^3(U; \wedge^2 T^\CC_U) \ar[r] \ar[rdd] &\Omega^4(U; \wedge^2 T^\CC_U) \ar[rdd] \\
+   &\Omega^0(U; \so(4;\CC)) \ar[r] \ar[rd] \ar[ur] & \Omega^1(U; \so(4;\CC)) \ar[r] \ar[ru] \ar[rd] &\Omega^3(U; \wedge^3 T^\CC_U) \ar[r] \ar[ur] &\Omega^4(U; \wedge^3 T^\CC_U) \\ 
+   &&\Omega^0(U; S_+) \ar[r] & \Omega^1(U; S_+) \ar[r]\ &\Omega^3(U; S_+) \ar[r] &\Omega^4(U; S_+). \\
+}\label{twisted_complex}\end{equation}
+We'll describe a natural subcomplex quasi-isomorphic to this total complex, and investigate the new $L_\infty$-structure.
+
+\begin{remark}
+This description of twisted supergravity from the point of view of the first-order formalism is equivalent to the notion of twisted supergravity as introduced by Costello and Li \cite{CostelloLi}.  Indeed, Costello and Li describe twisted supergravity as simply performing calculations in a background where the bosonic ghost takes a non-zero value.  In our language, the bosonic ghosts are the fields $(\chi_+ + \chi_-) \in \Omega^0(\RR^4;S)$.  After modifying the degrees of the BV complex by adding the R-charge, the positive helicity bosonic ghost $\chi_+ \in \Omega^0(\RR^4;S_+)$ lies in degree 0.  We described the differential in the untwisted supergravity theory in terms of perturbations around a non-trivial vielbein field $e_0$.  In Costello and Li's language, one could instead consider perturbations around a non-trivial field $(e_0, (\chi_+)_0) \in \Omega^1(\RR^4; T^\CC_{\RR^4}) \oplus \Omega^0(\RR^4; S_+)$.  Adding the bosonic ghost $(\chi_+)_0$ to the background has the same affect as adding $[(\chi_+)_0, -]$ to the BV differential, which is exactly what we're doing in our description with $(\chi_+)_0 = Q$.
+\end{remark}
+
+Note that the choice of a holomorphic supercharge $Q$ above induces a choice of complex structure on $\RR^4$.  Indeed, there is a canonical $\so(4;\CC)$-equivariant isomorphism $\mc S_+ \otimes \mc S_- \to T^\CC_{\RR^4}$ of complex vector bundles on $\RR^4$, and so a choice of element $Q \in S_+$ -- or equivalently of a global section of the spinor bundle $\mc S_+$ induces a choice of complex 2-dimensional subbundle of $T^\CC_{\RR^4}$, i.e. a complex structure on $\RR^4$.  Suppose from now on that our $e_0$ is adapted to this complex structure, i.e. that it lives in $\Omega^1(\RR^4; T^{0,1}_{\RR^4}) \sub \Omega^1(\RR^4; T^\CC_{\RR^4})$.
+
+\begin{prop}
+The following subcomplex $L_{\mr{hol}}(U) \sub L_{N=1}^{\mr{tw}}(U)$ of the twisted BV complex \ref{twisted_complex}, corresponding to the complex structure induced by the choice of $Q$ is a quasi-isomorphism:
+\begin{equation}\xymatrix{
+&&\Omega^{2,1}(U;\CC) \ar[dr]^{\iota_+ \circ \ol \dd} & \\
+\Omega^{0,0}(U; T^{0,1}_U) \ar[r]^{\ol \dd} &\Omega^{0,1}(U; T^{0,1}_U) \ar[ur]^{e_0 \wedge \dd} \ar[r]^{e_0 \wedge \ol \dd} &\Omega^{1,2}(U; \CC \oplus \sl(2;\CC)) \ar[r]^(.55){\pi_{\mr{ann}(e_0)} \circ \dd} &\Omega^{2,2}(U;T^{0,1}_U)\\
+\Omega^{0,0}(U;T^{0,1}_U) \ar[dr]_{\pi_+ \circ \ol \dd} \ar[r]^(.45){\iota_{\mr{ann}(e_0)} \circ \dd}&\Omega^{1,0}(U; \CC \oplus \sl(2;\CC)) \ar[r]^{e_0 \wedge \ol \dd} &\Omega^{2,1}(U; T^{0,1}_U) \ar[r]^{\ol \dd} &\Omega^{2,2}(U;T^{0,1}_U).\\
+&\Omega^{0,1}(U;\CC) \ar[ur]^{e_0 \wedge \dd} &&
+}\label{small_model}\end{equation}
+Here $\CC \oplus \sl(2;\CC) \sub \so(4;\CC)$ is the centralizer of the supercharge $Q$, $\iota_{\mr{ann}(e_0)}$ indicates the inclusion of the (two-dimensional) annihilator of $e_0$ in $\RR^4$ and $\pi_{\mr{ann}(e_0)}$ is the projection onto the same annihilator (defined using the Iwasawa decomposition), and likewise $\iota_+$ and $\pi_+$ denote the inclusion of and projection onto the one-dimensional summand of this annihilator lying in the first factor of $\sl(2;\CC)_+ \oplus \sl(2;\CC)_-$.  
+\end{prop}
+
+\begin{proof}
+We'll check this by splitting the inclusion into a composite of two inclusions, each of which is a quasi-isomorphism.  Consider the intermediate subcomplex
+\begin{equation}\xymatrix{
+ \Omega^0(U; T^{0,1}_U) \ar[r] & \Omega^1(U; T^{0,1}_U) \ar[r] &\Omega^3(U; \CC \oplus \sl(2;\CC)) \ar[r] &\Omega^4(U; \CC \oplus \sl(2;\CC)) \\
+   \Omega^0(U; \CC \oplus \sl(2;\CC)) \ar[r] \ar[ur] & \Omega^1(U; \CC \oplus \sl(2;\CC)) \ar[r] \ar[ur] &\Omega^3(U; T^{0,1}_U) \ar[r] \ar[ur] &\Omega^4(U; T^{0,1}_U) 
+} \label{intermediate_complex}\end{equation}
+where the map $\Omega^1(U; \CC \oplus \sl(2;\CC)) \to \Omega^3(U; T^{0,1}_U)$ is given by sending $\alpha \otimes A$ to $\d \alpha \wedge A(e_0)$, and the map $\Omega^1(U; T^{0,1}_U)) \to \Omega^3(U; \CC \oplus \sl(2;\CC))$ is given by sending $e$ to $\d e \wedge e_0$ and noting that this lands in the subalgebra $\CC \oplus \sl(2;\CC)$ of $\so(4;\CC) \iso \wedge^2 \CC^4$ which centralizes $Q$.  To see that the inclusion of this subcomplex into $L_{N=1}^{\mr{tw}}(U)$ is a quasi-isomorphism we just need to observe that 
+\begin{enumerate}
+ \item The map $[Q,-] \colon \Omega^i(U; S_-) \to \Omega^i(U; T_U)$ is injective and its image is exactly the subspace of $i$-forms valued in \emph{holomorphic} vector fields for the complex structure coming from $Q$ -- this is the definition of the complex structure.
+ \item The map $\mr{act}_Q \colon \Omega^i(U; \so(4;\CC)) \to \Omega^i(U; S_+)$ is surjective and its kernel is the subspace of $i$-forms valued in the centralizer of $Q$.
+\end{enumerate}
+Having done this calculation we've established that the intermediate complex \ref{intermediate_complex} is equivalent to the $E_2$-page of the spectral sequence whose $\d_0$ is the new differential $[Q,-]$ coming from the twist, with respect to the grading by $\CC^\times$-weight $-1,0$ and $+1$.  Because this $E_2$-page is concentrated in $\CC^\times$-weight 0, it's equivalent to the $E_\infty$-page, which means that our inclusion is a quasi-isomorphism as claimed.
+
+We now need to check that the inclusion of \ref{small_model} into this intermediate complex is also a quasi-isomorphism, which essentially means computing the kernel and cokernel of the three diagonal maps from the bottom row to the top (applying exactly the same argument).  First consider the map $\Omega^0(U; \CC \oplus \sl(2;\CC)) \to \Omega^1(U, T^{0,1}_U)$ defined by $A \mapsto A(e_0)$.  The kernel of this map consists of $A$ that annihilate $e_0$.  This annihilator is 2-dimensional and abelian, and we can naturally identify it with the space of sections of the holomorphic tangent bundle $T^{0,1}_U$.  The image of this map consists of \emph{holomorphic} 1-forms valued in $T^{0,1}_U$, and so the cokernel can canonically be identified with $\Omega^{0,1}(U, T^{0,1}_U)$.  The morphism $\Omega^3(U; T^{0,1}_U) \to \Omega^4(U; \CC \oplus \sl(2;\CC))$ is dual to this map under the non-degenerate BV pairing, so we can identify the kernel and cokernel as $\Omega^{2,1}(U; T^{0,1}_U)$ and $\Omega^{2,2}(U; T^{0,1}_U)$ -- the duals of the kernel and cokernel we just computed.
+
+Finally we consider the map $\Omega^1(U; \CC \oplus \sl(2;\CC)) \to \Omega^3(U; \CC \oplus \sl(2;\CC))$ which sends $\alpha \otimes A$ to $\alpha \otimes [A, [e_0 \wedge e_0]]$ where $[e_0 \wedge e_0]$ is viewed as an element of $\Omega^2(U; \so(4;\CC))$.  In fact by definition it's an element of $\Omega^{2,0}(U; \sl(2;\CC)_+)$.  The assumption that $[e_0 \wedge e_0]$ is non-zero ensures that it's a regular element \chris{need an argument that it can't be a nilpotent}, so the kernel and cokernel of our map are given by $\Omega^{0,1}(U;\CC) \oplus \Omega^{1,0}(U; \CC \oplus \sl(2\CC)$ and$\Omega^{2,1}(U;\CC) \oplus \Omega^{1,2}(U; \CC \oplus \sl(2\CC)$ respectively, as required.
+\end{proof}
+
+Now, let's address the Lie bracket on the twisted BV complex.  We'll understand how the Lie bracket changes after twisting by investigating the twisted algebra of observables, i.e. the twist of the Chevalley-Eilenberg cochain complex of our $L_\infty$-algebra.  We can do this using a straightforward spectral sequence argument.  We'll use the following fact \chris{include elsewhere, including the notation I'm calling $\nu$.}
+
+\begin{prop} \label{twisted_observables_prop}
+Let $\obs_{N=1}$ be the classical factorization algebra of observables in the untwisted $N=1$ theory, and let $\obs_{N=1}^Q$ be the classical factorization algebra of observables in the $Q$-twisted theory.  Up to regrading, the algebra $\obs_{N=1}^Q$ is equivalent to the algebra obtained from $\obs_{N=1}$ by adding the operator $\{\nu(Q),-\}$ to the differential.  Here $\nu(Q)$ is the conserved current asociated to the symmetry $Q$.
+\end{prop}
+
+\begin{prop}
+There is an embedding of graded vector spaces $L_{\mr{hol}}^\natural(U) \to L^\natural_{N=1}(U)$ \emph{without} turning on the twist, where the notation $\natural$ here means the graded vector space obtained by forgetting the differential.  This allows us to restrict the BV interaction functional $I_{N=1}$ to a functional on $L_{\mr{hol}}^\natural(U)$.  This interaction satisfies the classical master equation, and therefore defines an $L_\infty$-structure on $L_{\mr{hol}}$.  Furthermore the embedding $L_{\mr{hol}}(U) \to L_{N=1}^{\mr{tw}}(U)$ is an $L_\infty$-map. 
+\end{prop}
+
+\begin{proof}
+We'll use Proposition \ref{twisted_observables_prop} and the spectral sequence of the double complex for the internal grading and differential $\d_{\mr{cl}}$ on $\obs_{N=1}(U) = C^\bullet(L_{N=1}(U))$ and the R-weight grading and differential $\{\nu(Q),-\}$.  In order to verify our claim, we'll just need to check that this spectral sequence collapses at the $E_2$-page, so that
+\[H^\bullet_{\mr{CE}}(H^\bullet(L(U),Q), \d_{\mr{CE}}) \iso H^\bullet_{\mr{CE}}(L(U), \d_{\mr{CE}} + Q)\]
+where we've written $Q$ for the operator $\{\nu(Q),-\}$. This degeneration is easy to see because $H^\bullet(L(U),Q) \iso L_{\mr{hol}}(U)$ is concentrated in degree 0 for the R-symmetry weight grading, which means that the higher differentials in the spectral sequence automatically vanish.
+
+Now, we recall that one can extract the classical interaction functional for a classical field theory from the Maurer-Cartan equations for the $L_\infty$ structure, or equivalently from the equation $\d_{\mr{CE}}(\OO) = 0$ in the Chevalley-Eilenberg complex.  This spectral sequence argument tells us in particular that a $Q$-closed field is closed for the classical differential in the untwisted theory (i.e. as an element in $L^\natural_{N=1}(U)$) if and only if it is closed for the classical differential in the twisted theory (i.e. as an element in $L_{\mr{hol}}^\natural(U)$).  Therefore the classical interaction obtained by restriction to $L_{\mr{hol}}^\natural(U)$ (equivalently the degree 2 and 3 brackets obtained by restriction) is equivalent to the classical interaction obtained from the spectral sequence, which means that this restricted classical interaction satisfies the classical master equation (or equivalently the restricted brackets are well-defined on $L_{\mr{hol}}$).
+\end{proof}
+
+Having given this description, how should we think about the twisted supergravity theory?  We can read off a nice description of the equations of motion of the twisted theory from the classical BV complex, which suggests that non-perturbatively the twisted supergravity theory should admit K\"ahler-Einstein structures as classical solutions, as we'll now explain. 
+
+Firstly, the classical fields in the holomorphically twisted theory on an open set $U$ are given as follows:
+\begin{align*}
+ e_{\mr{hol}} &\in \Omega^{0,1}(U; T^{0,1}_U) \\ 
+ A_{\mr{hol}} &\in \Omega^{1,0}(U; \sl(2;\CC)) \\
+ A' &\in \Omega^{1}(U; \CC).
+\end{align*}
+The holomorphic vielbein $e_{\mr{hol}}$ defines a hermitian metric on the holomorphic tangent bundle of $U$ just as the ordinary vielbein defines a Riemannian metric on the ordinary tangent bundle: we choose a reference
+
+\chris{todo.  If we look at the form of the action this extra field $A'$ is going to end up non-propagating, so we'll get a K\"ahler-Einstein metric and a free abelian gauge field with no coupling between them.  The equations of motion for the gauge field will look like Chern-Simons equations: $\tr(e_0 \wedge A' \wedge \d A') = 0$ (though I need to think a little more about what $\tr$ means here exactly).}
+
+
+
+\bibliographystyle{alpha}
+\bibliography{Supergravity}
+
+\textsc{Institut des Hautes \'Etudes Scientifiques}\\
+\textsc{35 Route de Chartres, Bures-sur-Yvette, 91440, France}\\
+\texttt{celliott@ihes.fr}\\
+\vspace{5pt}
+\end{document}
