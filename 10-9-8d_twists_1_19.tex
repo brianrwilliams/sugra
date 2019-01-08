@@ -1,0 +1,81 @@
+\documentclass[10pt, oneside]{article}
+\input math_headers.sty
+
+\title{Notes on Twisted SYM}
+\author{Chris Elliott}
+\date{\today}
+
+\newcommand{\map}{\ul{\mr{Map}}}
+\newcommand{\dBRST}{\mathrm d_{\mathrm{BRST}}}
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\sD}{\slashed{D}}
+\newcommand{\sdel}{\slashed{\partial}}
+\newcommand{\sdelbar}{\overline{\slashed{\partial}}}
+\newcommand{\st}[1]{{}^*{#1}}
+
+\addbibresource{Twist.bib}
+
+\begin{document}
+
+\section{Some BRST Twisting Calculations}
+
+\begin{example}[10d $\mc N=1$ Super Yang-Mills]
+I'm going to write this following the calculation in Baulieu \cite{Baulieu}.  We choose a complex structure on $\RR^{10}$ and decompose the (BRST) fields into irreducible components for the action of $\SU(5)$.  The fields one obtains are
+\begin{align*}
+A &= A_{0, 1} + A_{1, 0} \in \Omega^{0,1}(\CC^5; \gg) \oplus \Omega^{1,0}(\CC^5; \gg)\\
+\lambda &= \chi + \psi_{1, 0} + B_{0, 2} \in \Omega^0(\CC^5; S_+),
+\end{align*}
+
+where the subscripts indicate the form type of the component fields.  There's also a ghost $c$, which is a $\gg$-valued scalar in degree $-1$.  Finally we'll introduce an auxiliary scalar field $h$ (bosonic, in degree 0).  The BRST differential is given by $c \mapsto (\dd c, \ol{\dd} c)$.  Denote this complex by $(\Phi^{\mr{YM}}, \dBRST^{\mr{YM}})$.  The dg Lie bracket is given by the action of $c$ on the other component fields.  The holomorphic twist is only $\ZZ/2\ZZ$-graded, and is given by the identity map from $\psi$ to $A_{1,0}$, the identity map from $h$ to $\chi$, along with the map $\ol \dd$ from $A_{0,1}$ to $B$ \footnote{More precisely, if we're doing perturbation theory around a background connection $A'$ we take the covariant derivative with respect to this $A'$.}.  
+
+We expect the holomorphically twisted theory to be equivalent to 5d holomorphic Chern-Simons theory.  The BRST fields here are given by $c, A_{0,1}$ and $B_{0,2}$ in even, odd and even degrees respectively (this is only a $\ZZ/2\ZZ$-graded theory).  Denote this complex by $(\Phi^{\mr{hCS}},\dBRST^{\mr{hCS}})$.  It's clear that the projection $\Phi^{\mr{YM}} \to \Phi^{\mr{hCS}}$ is a quasi-isomorphism with respect to the $Q$-twisted BRST differential: its fiber is the contractible complex $h \mapsto \chi, \psi \mapsto A_{1,0}$.  It remains for us to verify that this projection is compatible with the Lagrangian densities of the two theories.  In other words, if we take the Lagrangian density of 10d $\mc N=1$ Yang-Mills theory and subtract the Lagrangian density of holomorphic Chern-Simons theory applied to the fields $c, A_{0,1}$ and $B$ then the result is $Q$-exact.
+
+So, let's describe the Lagrangian density of 10d $\mc N=1$ Yang-Mills theory in terms of our component fields.  We have
+\begin{align*}
+\LL_{\mr{YM}} &= (B \wedge \ol \dd_{A_{0,1}} B) + J^2(F_{2, 0}\wedge F_{0,2})\Omega + \|h\|^2\Omega + h J(F_{1,1}) \Omega + J( \chi \wedge (\ol \dd_{A_{0,1}} \psi)) \Omega + J^2(B \wedge (\dd_{A_{1,0}} \psi)) \Omega \\
+&= (B \wedge \ol \dd_{A_{0,1}} B) + \frac\delta{\delta Q}\bigg( 2J^2(F_{2, 0}\wedge B)\Omega + h\chi\Omega + \chi J(F_{1,1}) \Omega + J( \chi \wedge (F_{1,1})) \Omega\bigg).
+\end{align*}
+Therefore, after twisting the Lagrangian density is equivalent to just $B \wedge \ol \dd_{A_{0,1}} B$, which is the Lagrangian density in 5d holomorphic Chern-Simons theory, as required.
+\end{example}
+
+\begin{example}[9d $\mc N=1$ Super Yang-Mills]
+Let's decompose our fields further into irreducible summands with respect to the action of $\SU(4)$.  We also restrict to 10d fields which are constant in the $x^{10}$-direction.  The only fields we'll consider are those which survived the 10d holomorphic twist.  These fields are
+\begin{align*}
+B^{10} &= B + A \wedge \d x^9 \in (\Omega^{0,2}(\CC^4; \gg) \oplus \Omega^{0,1}(\CC^4; \gg)) \otimes \Omega^0(\RR_9) \\
+A^{10}_{0,1} &= A' + \phi \d x^9 \in (\Omega^{0,1}(\CC^4; \gg) \oplus \Omega^0(\CC^4; \gg)) \otimes \Omega^0(\RR_9)
+\end{align*}
+along with the ghost $c$.
+
+All the square-zero supercharges lie in the same $\spin(9)$-orbit, so choose a square-zero $Q$ which is still square-zero in 10 dimensions.  The twist with respect to $Q$ is then just the dimensional reduction of the 10d twisted theory calculated above.  So, the twisted action functional is just calculated by decomposing the 10d twisted action
+\[\LL^Q = B \wedge (\dd_{A'} A + [\phi, B]) \d x^9.\]
+\end{example}
+
+\begin{example}[8d $\mc N=1$ Super Yang-Mills]
+There are two ways of dimensionally reducing a second time: we can either reduce in the direction $x^9$ to obtain another holomorphic twist, or we can reduce in a non-invariant direction to obtain a partially topological twist.  
+
+\begin{enumerate}
+\item The latter -- the partially topological twist -- is acted upon by $\SU(3)$.  Again, let's decompose our twisted component fields with respect to the action of $\SU(3)$, and restrict to fields which are constant in the $x^{10}$ and $x^9$ directions.  The result is
+\begin{align*}
+B^{10} &= B + A_2 + A_3 + \phi_1 \in (\Omega^{0,2}(\CC^3; \gg) \oplus \Omega^{0,1}(\CC^3; \gg)^2\oplus \Omega^0(\CC^3; \gg)) \otimes \Omega^0(\RR_7 \times \RR_8)\\
+A^{10}_{0,1} &= A_1 + \phi_2 + \phi_3 \in (\Omega^{0,1}(\CC^3; \gg) \oplus \Omega^0(\CC^3; \gg)^2) \otimes \Omega^0(\RR_7 \times \RR_8)
+\end{align*}
+again, along with the ghost $c$ (I've skipped writing the $\d x^7$ and $\d x^8$ factors in here).
+
+As in dimension 9 we choose a square-zero $Q$ of rank $(1,1)$ which is still square-zero in 10 dimensions, and decompose the 10d twisted theory calculated above into these component fields.  The twisted action functional looks like
+\[\LL^Q = B \wedge (\ol \dd \phi_1 + [A_1,\phi_1] - [A_3,\phi_2] - [A_2,\phi_3]) \d x^7 \wedge \d x^8.\]
+
+\item The former -- the holomorphic twist -- is essentially equivalent to the theory discussed in dimension 9, but without the $\Omega^0(\RR_9)$ factor.  It is still acted upon by $\SU(4)$.  This theory should be a cotangent theory where the base -- in terms of BV fields -- is spanned by $c, A, \st B, \st A', \st \phi$, and the fiber is spanned by $\phi, A', B, \st A, \st c$.  We can see this by thinking about which fields are bosonic and which are fermionic.  This example should, for the first time, be promotable into a $\ZZ$-graded theory.  For this to produce the correct degrees, we need $A'$ to have R-symmetry weight $-1$ and $\phi$ to have R-symmetry weight $-2$.  I don't see right now where this is supposed to come from.
+\end{enumerate}
+
+\end{example}
+
+
+
+
+\pagestyle{bib}
+\printbibliography
+
+\textsc{Institut des Hautes \'Etudes Scientifiques}\\
+\textsc{35 Route de Chartres, Bures-sur-Yvette, 91440, France}\\
+\texttt{celliott@ihes.fr}
+\end{document}
