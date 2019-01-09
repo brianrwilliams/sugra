@@ -41,8 +41,8 @@ Therefore, after twisting the Lagrangian density is equivalent to just $B \wedge
 \begin{example}[9d $\mc N=1$ Super Yang-Mills]
 Let's decompose our fields further into irreducible summands with respect to the action of $\SU(4)$.  We also restrict to 10d fields which are constant in the $x^{10}$-direction.  The only fields we'll consider are those which survived the 10d holomorphic twist.  These fields are
 \begin{align*}
-B^{10} &= B + A \wedge \d x^9 \in (\Omega^{0,2}(\CC^4; \gg) \oplus \Omega^{0,1}(\CC^4; \gg)) \otimes \Omega^0(\RR_9) \\
-A^{10}_{0,1} &= A' + \phi \d x^9 \in (\Omega^{0,1}(\CC^4; \gg) \oplus \Omega^0(\CC^4; \gg)) \otimes \Omega^0(\RR_9)
+B^{10} &= B + A \wedge \d \ol z^5 \in (\Omega^{0,2}(\CC^4; \gg) \oplus \Omega^{0,1}(\CC^4; \gg)) \otimes \Omega^0(\RR_9) \\
+A^{10}_{0,1} &= A' + \phi \d \ol z^5 \in (\Omega^{0,1}(\CC^4; \gg) \oplus \Omega^0(\CC^4; \gg)) \otimes \Omega^0(\RR_9)
 \end{align*}
 along with the ghost $c$.
 
@@ -59,12 +59,20 @@ There are two ways of dimensionally reducing a second time: we can either reduce
 B^{10} &= B + A_2 + A_3 + \phi_1 \in (\Omega^{0,2}(\CC^3; \gg) \oplus \Omega^{0,1}(\CC^3; \gg)^2\oplus \Omega^0(\CC^3; \gg)) \otimes \Omega^0(\RR_7 \times \RR_8)\\
 A^{10}_{0,1} &= A_1 + \phi_2 + \phi_3 \in (\Omega^{0,1}(\CC^3; \gg) \oplus \Omega^0(\CC^3; \gg)^2) \otimes \Omega^0(\RR_7 \times \RR_8)
 \end{align*}
-again, along with the ghost $c$ (I've skipped writing the $\d x^7$ and $\d x^8$ factors in here).
+again, along with the ghost $c$ (I've skipped writing the $\d \ol z^4$ and $\d \ol z^5$ factors in here).
 
 As in dimension 9 we choose a square-zero $Q$ of rank $(1,1)$ which is still square-zero in 10 dimensions, and decompose the 10d twisted theory calculated above into these component fields.  The twisted action functional looks like
 \[\LL^Q = B \wedge (\ol \dd \phi_1 + [A_1,\phi_1] - [A_3,\phi_2] - [A_2,\phi_3]) \d x^7 \wedge \d x^8.\]
 
-\item The former -- the holomorphic twist -- is essentially equivalent to the theory discussed in dimension 9, but without the $\Omega^0(\RR_9)$ factor.  It is still acted upon by $\SU(4)$.  This theory should be a cotangent theory where the base -- in terms of BV fields -- is spanned by $c, A, \st B, \st A', \st \phi$, and the fiber is spanned by $\phi, A', B, \st A, \st c$.  We can see this by thinking about which fields are bosonic and which are fermionic.  This example should, for the first time, be promotable into a $\ZZ$-graded theory.  For this to produce the correct degrees, we need $A'$ to have R-symmetry weight $-1$ and $\phi$ to have R-symmetry weight $-2$.  I don't see right now where this is supposed to come from.
+\item The former -- the holomorphic twist -- is essentially equivalent to the theory discussed in dimension 9, but without the $\Omega^0(\RR_9)$ factor.  It is still acted upon by $\SU(4)$.  This theory should be a cotangent theory where the base -- in terms of BV fields -- is spanned by $c, A', B, \st A, \st \phi$, and the fiber is spanned by $\phi, A, \st B, \st A', \st c$.  We can see this by thinking about which fields are bosonic and which are fermionic.  This example should, for the first time, be promotable into a $\ZZ$-graded theory.  For this to produce the correct degrees, we need the following R-charges under the 8d $\CC^\times$ R-symmetry group:
+\begin{align*}
+B &\text{: charge } +1 \\
+A &\text{: charge } -1 \\
+A' &\text{: charge } 0 \\
+\phi &\text{: charge } -2. \\
+\end{align*}
+In 10-dimensions, $A^{10}$, and hence $A_{0,1}^{10}$, has R-charge 0, and $\lambda$, and hence $B^{10}$, has R-charge $+1$.  So writing $A_{0,1}^{10} = A' + \phi \d \ol z^5$ and $B^{10} = B + A \wedge \d \ol z^5$ we get the correct R-charges if $\d \ol z^5$ has R-charge 2.
+
 \end{enumerate}
 
 \end{example}
