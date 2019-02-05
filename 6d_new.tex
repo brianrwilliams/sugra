@@ -1,0 +1,84 @@
+\documentclass[10pt, oneside]{article}
+\input math_headers.sty
+
+\title{6d $\cN = (1,0)}
+\author{Brian}
+\date{\today}
+
+\def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
+
+\def\tensor{{\otimes}}
+
+\begin{document}
+
+\section{The holomorphic twist of $6d$ $\mc N = (1,0)$ SUSY}
+
+The underlying supervector space for the $6d$ $\mc N = (1,0)$ supersymmetry algebra has the following description. 
+\begin{enumerate}
+\item The bosonic piece of the 6d $\mc N = (1,0)$ supersymmetry algebra is
+\[
+(\mf {so} (6, \CC) \times \mf {sl}(2, \CC)_R) \ltimes V
+\]
+where 
+\begin{itemize}
+\item $V = \CC^6$ is the fundamental representation of $\mf {so}(6,\CC)$.
+\item $\mf {sl}(2, \CC)_R$ is the $R$-symmetry algebra.
+It acts trivially on $V$. 
+\end{itemize}
+\item The fermionic piece of the algebra is 
+\[
+S_+ \otimes_\CC W
+\]
+where $S_+ = \CC^4$ is the chiral irreducible spin representation of $\so(6, \CC)$ and $W_R = \CC^2$ is the two-dimensional vector space. 
+\end{enumerate}
+
+The Lie bracket for the superalgebra is determined by the rules:
+\begin{enumerate}
+\item
+There is a term in the Lie bracket for the fundamental action of $\mf {so}(6, \CC)$ on $V$ and the spinorial action of $\mf {so}(6,\CC)$ on $S_+$. 
+\item 
+There is a term in the Lie bracket given by the action of $\mf {sl} (2,\CC)$ on $S_+ \otimes_\CC W_R$ by rotating the $W_R = \CC^2$ factor. 
+\item
+The final term in the Lie bracket is defined by the composition
+\[
+\Gamma : (S_+ \otimes \CC^2) \otimes (S_+ \otimes \CC^2) = (S_+ \otimes S_+) \otimes (\CC^2 \otimes \CC^2) \xrightarrow{\wedge \otimes \omega_{std}} V 
+\]
+where we have used the isomorphism $\wedge^2 S_+ \cong V$ and the standard symplectic form on $\CC^2$. 
+\end{enumerate}
+
+\subsection{Pure gauge theory}
+
+The field content for $6d$ $\mc N = (1,0)$ pure gauge theory consists of a gauge field
+\[
+A \in C^\infty(\RR^4, V) \tensor \mf g = \Omega^1(\RR^6, \mf g)
+\]
+and a spinor
+\[
+\psi \in C^\infty(\RR^4, S_+ \tensor W_R) \tensor \mf g .
+\]
+As a convention, we choose a basis for $W_R$ given by symbols $\{+, -\}$ and we accordingly decompose the spinor as $\psi = \psi_+ + \psi_-$ where $\psi_{\pm} \in C^\infty(\RR^4, S_+) \tensor \mf g$.
+\brian{yikes, bad notation?}
+
+\subsection{The hypermultiplet}
+
+\subsection{Holomorphic language}
+
+A complex structure on $\RR^6 \cong \CC^3$ determines an embedding $\mf {gl} (3, \CC) \hookrightarrow \mf {so} (6, \CC)$. 
+With respect to this inclusion, the $\mf {so}(6,\CC)$ representations split as
+\begin{align*}
+V & = V^{1,0} \oplus V^{0,1} \\
+S_+ & = \CC \oplus \wedge^2(V^{0,1})
+\end{align*}
+where $V^{1,0}$ is the fundamental representation of $\mf {gl}(3, \CC)$ and $V^{0,1}$ its complex conjugate. 
+
+Accordingly, the fields of the pure gauge theory decompose as
+\[
+A = A^{1,0} + A^{0,1} \in \Omega^{1,0}(\CC^3, \mf g) \oplus \Omega^{0,1}(\CC^3, \mf g)
+\]
+and 
+\[
+\psi = \phi + \chi^{0,2} \in C^\infty(\CC^3, W_R) \tensor \mf g \oplus \Omega^{0,2}(\CC^3, W_R) \tensor \mf g .
+\]
+In our notation above, after we choose a basis $\{+,-\}$ for $W_R$ we can decompose the spinor further into $\phi_{\pm} \in C^\infty(\CC^3) \tensor \mf g$ and $\chi^{0,2}_{\pm} \in \Omega^{0,2}(\CC^3) \tensor \mf g$. 
+
+\end{document}
