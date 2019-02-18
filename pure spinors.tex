@@ -1,0 +1,140 @@
+\documentclass[12pt]{amsart}
+
+\usepackage{eucal}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+
+\usepackage{color}
+\definecolor{e-mail}{rgb}{0,.40,.80}
+\definecolor{reference}{rgb}{.20,.60,.22}
+\definecolor{citation}{rgb}{0,.40,.80}
+
+\usepackage[colorlinks=true,
+            linkcolor=reference,
+            citecolor=citation,
+            urlcolor=e-mail]{hyperref}
+\usepackage{cleveref}
+\usepackage[all]{xy}
+
+\textwidth=16.5cm
+\oddsidemargin=0cm
+\evensidemargin=0cm
+\textheight=22cm
+\topmargin=0cm
+
+\binoppenalty=10000
+\relpenalty=10000
+
+\newcommand{\C}{\mathbf{C}}
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\g}{\mathfrak{g}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cO}{\mathcal{O}}
+\renewcommand{\P}{\mathrm{P}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\T}{\mathrm{T}}
+
+\newcommand{\End}{\mathrm{End}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\LGr}{\mathrm{LGr}}
+\newcommand{\ML}{\mathrm{ML}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\Spin}{\mathrm{Spin}}
+\newcommand{\Sym}{\mathrm{Sym}}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lm}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{example}[thm]{Example}
+
+\newcommand{\defterm}[1]{\textbf{\emph{#1}}}
+
+\begin{document}
+\title{Pure spinor formalism}
+\author{Pavel Safronov}
+\maketitle
+
+\section{Pure spinors}
+
+Let $V=\C^{10}$ and $S_+, S_-$ be the semi-spin representations of $\Spin(V)$. We have a nondegenerate $\Spin(V)$-equivariant pairing $\Gamma\colon \Sym^2(S_+)\rightarrow V$.
+
+For a vector space $L$ we denote by $\ML(L)$ the metalinear group, i.e. the $2:1$ cover of $\GL(L)$ given by the pullback
+\[
+\xymatrix{
+\ML(L) \ar[r] \ar[d] & \GL(1) \ar^{z\mapsto z^2}[d] \\
+\GL(L) \ar^{\det}[r] & \GL(1)
+}
+\]
+
+\textbf{Fact}: the choice of a spin structure on $V$ endows any Lagrangian subspace $L\subset V$ with a metalinear structure, i.e. a choice of $\det(L)^{1/2}$.
+
+\begin{prop}$ $
+\begin{enumerate}
+\item The group $\Spin(V)$ acts transitively on the set $\LGr(V)$ of Lagrangian subspaces $L\subset V$.
+
+\item The stabilizer of a Lagrangian subspace $L\subset V$ is a parabolic subgroup $G_L\subset \Spin(V)$ which fits into an exact sequence
+\[1\longrightarrow \wedge^2 L\longrightarrow G_L\longrightarrow \ML(L)\longrightarrow 1.\]
+The choice of a Lagrangian complement $L^*\subset V$ to $L\subset V$ determines a splitting of this exact sequence, i.e. it gives an identification $G_L\cong \ML(L)\ltimes \wedge^2 L$.
+
+\item Under the restriction $G_L\subset \Spin(V)$ the semi-spin representations split as
+\[S_+ = (\C\oplus \wedge^2(L^*)\oplus \wedge^4(L^*))\otimes \det(L)^{1/2},\qquad S_- = (\C\oplus \wedge^2L\oplus \wedge^4 L)\otimes \det(L)^{-1/2}.\]
+\end{enumerate}
+\end{prop}
+
+The tangent bundle $\T_{\LGr(V)}$ to $\LGr(V)$ is naturally $\Spin(V)$-equivariant. Its fiber at $L\in\LGr(V)$ is isomorphic to
+\[\wedge^2(L\oplus L^*) / (\End(L)\oplus \wedge^2 L)\cong \wedge^2 L^*\]
+as a $G_L$-representation (here $\wedge^2 L$ acts trivially). In particular, $\dim(\LGr(V)) = 10$.
+
+We have $\det(\wedge^2 L^*) \cong \deg(L)^{-4}$. This representation is not $G_L$-invariant, so $\LGr(V)$ does not have a $\Spin(V)$-invariant Calabi--Yau structure.
+
+\begin{prop}$ $
+Let $\P$ be the set of nonzero elements $Q\in S_+$ satisfying $\Gamma(Q, Q) = 0$ and $\tilde{\P} = \P\cup \{0\}$.
+\begin{itemize}
+\item For $Q\in \P$ the image of $\Gamma(Q, -)\colon S_+\rightarrow V$ is a Lagrangian subspace. In particular, we have a projection $\P\rightarrow \LGr(V)$.
+
+\item The natural action of $\C^\times$ on $\P$ by scaling gives $\P\rightarrow \LGr(V)$ the structure of a $\C^\times$-torsor. The fiber of $\P\rightarrow \LGr(V)$ at $L\subset V$ may be identified with nonzero elements $Q\in\det(L)^{1/2}$.
+\end{itemize}
+\end{prop}
+
+The tangent bundle $\T_\P$ to $\P$ is naturally $\Spin(V)$-equivariant. Its fiber at $Q\in \P$ is isomorphic to
+\[\wedge^2(L\oplus L^*) / (\End_0(L)\oplus \wedge^2 L)\cong \wedge^2 L^* \oplus \C\]
+as a $\SL(L)\ltimes \wedge^2 L$-representation ($\wedge^2 L$ acts from the first to the second summand). In particular, $\det(\T_{\P, Q})\cong \det(L)^{-4}$ which is trivial as a $\SL(L)\ltimes \wedge^2 L$-representation. In particular, there is a unique $\Spin(V)$-invariant Calabi--Yau structure on $\P$.
+
+Choose a point $Q\in P$. We can introduce a coordinate chart near $Q$ in the following way. We split
+\[S_+ = (\C\oplus \wedge^2(L^*)\oplus \wedge^4(L^*))\otimes \det(L)^{1/2}.\]
+Let $(\ell, A, M)\in S_+$ be components of a spinor with respect to this splitting. The pure spinor constraint is
+\begin{align*}
+\ell M + \Lambda\wedge \Lambda &= 0,\\
+\langle \Lambda, M\rangle &= 0,
+\end{align*}
+where in the last line the pairing is $\wedge^2 L^*\otimes \wedge^4 L^*\rightarrow \det(L)^*\otimes L^*$.
+
+In particular, in a neighborhood of $Q$ (i.e. in a neighborhood of $\Lambda=0$, $M=0$ and $\ell\neq 0$) the pair $(\ell, \Lambda)$ gives a coordinate chart. We may identify
+\[\det(\wedge^2(L^*)\otimes \det(L)^{1/2})\cong \det(L),\]
+so in this chart the unique $\Spin(V)$-invariant Calabi--Yau structure has the form
+\[\Omega = \ell^{-3} \d \ell \d^{10} \Lambda.\]
+
+\section{Pure spinor formulation of 10d SYM}
+
+Let
+\[T = \Pi\Sigma_+\oplus V\]
+be the supertranslation Lie algebra and $G_T$ the supertranslation group. Then $C^\infty(G_T)$ carries two commuting $T$-actions given by left and right translations. For $\sigma\in S_+$ denote by $Q_\sigma$ and $\cD_\sigma$ the corresponding vector fields.
+
+We assign the ghost number number $1$ and odd fermionic degree to coordinates on $\P$. The fields in our theory are
+\[\cF = C^\infty(G_T)\otimes \cO(\P)\otimes \g[1].\]
+The differential at $\sigma\in \P$ is given by $\cD_\sigma$. There is a residual supersymmetry action on $\cF$ given by $Q_\sigma$.
+
+The differential $\cD$ can be split as $\cD^0 + \cD^1$, where $\cD^0$ is $\cD$ with $\Gamma=0$. The differential $\cD^0$ does not act on $C^\infty(V)$, so it just becomes an overall factor.
+
+\begin{defn}
+The \defterm{zero-mode cohomology} is the cohomology of $C^\infty(\Pi S)\otimes \cO(\P)$ with respect to $\cD^0$.
+\end{defn}
+
+\end{document}
