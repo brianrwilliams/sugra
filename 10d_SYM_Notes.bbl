@@ -83,6 +83,27 @@
   \field{year}{2018}
 \endentry
 
+\entry{Guillen}{thesis}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Guillen}{G.}%
+     {Max}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{GM1}
+  \strng{fullhash}{GM1}
+  \field{labelalpha}{Gui16}
+  \field{sortinit}{G}
+  \field{title}{{$D=10$} Super {Y}ang-{M}ills, {$D=11$} Supergravity and the
+  Pure Spinor Superfield Formalism}
+  \list{institution}{1}{%
+    {Instituto de F{\'i}sica Te{\'o}rica Universidade Estadual Paulista}%
+  }
+  \field{type}{mathesis}
+  \field{year}{2016}
+\endentry
+
 \lossort
 \endlossort
 
