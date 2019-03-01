@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.17)  1 MAR 2019 11:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.17)  1 MAR 2019 11:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1297,12 +1297,12 @@ Package biblatex Info: Automatic encoding selection.
 \openout4 = `10d_SYM_Notes-blx.bib'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file '10d_SYM_Notes.bbl' not found.
+Package biblatex Info: ... file '10d_SYM_Notes.bbl' found.
 
-No file 10d_SYM_Notes.bbl.
+(./10d_SYM_Notes.bbl)
 Package biblatex Info: Reference section=0 on input line 19.
 Package biblatex Info: Reference segment=0 on input line 19.
-ABD: EveryShipout initializing macros
+ ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box62
 Package hyperref Info: Link coloring OFF on input line 19.
 
@@ -1329,11 +1329,7 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) <xymatrix 4x2 198>
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Empty bibliography on input line 71.
-
-[2]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
  (./10d_SYM_Notes.aux)
@@ -1347,13 +1343,13 @@ Package logreq Info: Writing requests to '10d_SYM_Notes.run.xml'.
  )
 (\end occurred when \iftrue on line 19 was incomplete) 
 Here is how much of TeX's memory you used:
- 33656 strings out of 494910
- 619637 string characters out of 6179835
+ 33772 strings out of 494910
+ 621702 string characters out of 6179835
  786194 words of memory out of 5000000
- 36446 multiletter control sequences out of 15000+600000
- 14423 words of font info for 60 fonts, out of 8000000 for 9000
+ 36556 multiletter control sequences out of 15000+600000
+ 14937 words of font info for 62 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 56i,13n,65p,10410b,668s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,13n,65p,10410b,970s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/
@@ -1370,14 +1366,16 @@ fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xycm
-at10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xycmbt10.pfb>
-Output written on 10d_SYM_Notes.pdf (2 pages, 175074 bytes).
+onts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/e
+ufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
+m7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xycmat10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/xypic/xycmbt10.pfb>
+Output written on 10d_SYM_Notes.pdf (2 pages, 202323 bytes).
 PDF statistics:
- 134 PDF objects out of 1000 (max. 8388607)
- 107 compressed objects within 2 object streams
- 10 named destinations out of 1000 (max. 500000)
+ 146 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
+ 12 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,52 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{ElliottYoo1}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Elliott}{E.}%
+     {Chris}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Yoo}{Y.}%
+     {Philsang}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{ECYP1}
+  \strng{fullhash}{ECYP1}
+  \field{labelalpha}{EY18}
+  \field{sortinit}{E}
+  \verb{eprint}
+  \verb 1507.03048
+  \endverb
+  \field{number}{3}
+  \field{title}{Geometric {Langlands} Twists of {$N=4$} Gauge Theory from
+  Derived Algebraic Geometry}
+  \field{volume}{22}
+  \field{journaltitle}{Advances in Theoretical and Mathematical Physics}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{math-ph}
+  \field{year}{2018}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput
