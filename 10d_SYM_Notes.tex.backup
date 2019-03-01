@@ -21,15 +21,56 @@
 \maketitle
 
 \section{Minimal Super Yang-Mills}
-Our starting point will be the theory complexifying the usual 10d super Yang-Mills theory.  Fix a complex reductive gauge group $G$ with Lie algebra $\gg$.  The ordinary fields of super Yang-Mills theory on $\RR^{10}$ consist of a boson: a connection $A$ on the trivial $G$-bundle, and a fermion: a $\gg$-valued section $\lambda$ of the Weyl spinor bundle associated to the spinor representation $S_+$ \footnote{If we didn't complexify we would instead consider $G_\RR$ a compact connected Lie group, and a section of the Majorana-Weyl spinor bundle, which necessitates working in Lorentzian signature.}.  These fields are acted upon by the group of gauge transformations -- $G$-valued functions on $\RR^{10}$.
+Our starting point will be the theory complexifying the usual 10d super Yang-Mills theory.  Fix a complex reductive gauge group $G$ with Lie algebra $\gg$.  The ordinary fields of super Yang-Mills theory on $\RR^{10}$ consist of a boson: a connection $A$ on the trivial $G$-bundle, and a fermion: a $\gg$-valued section $\lambda$ of the Weyl spinor bundle associated to the spinor representation $S_+$ \footnote{If we didn't complexify we would instead consider $G_\RR$ a compact connected Lie group, and a section of the Majorana-Weyl spinor bundle, which necessitates working in Lorentzian signature.  I think for our purposes it's interesting enough to just consider the complexified theory and avoid signature issues.  The complexified theory twists to holomorphic Chern-Simons theory with complex gauge group.}.  These fields are acted upon by the group of gauge transformations -- $G$-valued functions on $\RR^{10}$.
 
 We can model the stack of fields modulo gauge transformations infinitesimally near the point $0$ by the corresponding BRST complex.  This is the local super Lie algebra
-\[L_{\mr{BRST}} = \Omega^0(\RR^{10}; \gg) \to \Omega^1(\RR^{10}; \gg \oplus \Pi S_+ \otimes \gg)\]
-placed in cohomological degrees 0 and 1, with bracket induced from the Lie bracket on $\gg$.
+\[L_{\mr{BRST}} = \Omega^0(\RR^{10}; \gg) \to \Omega^1(\RR^{10}; \gg) \oplus \Omega^0(\RR^{10}; \Pi S_+ \otimes \gg)\]
+with the de Rham differential, placed in cohomological degrees 0 and 1, with bracket induced from the Lie bracket on $\gg$.
 
-%BRST Fields, Action Functional, BV Complex
+The action functional in 10d super Yang-Mills is given by
+\[S(A,\lambda) = \int_{\RR^{10}} \langle F_A \wedge \ast F_A + (\lambda, \sd D_A \lambda)\rangle,\]
+where $\langle - \rangle$ denotes an invariant pairing on $\gg$, and $(,)$ denotes a scalar-valued pairing $S_+ \otimes S_- \to \CC$ (there will be a unique such pairing, up to rescaling, characterized by the condition that $(\rho(v)\lambda_1,\rho(v)\lambda_2) = (\lambda_1,\lambda_2)$ for each $v \in \CC^{10}$, where $\rho$ denotes Clifford multiplication).
+
+We can re-encode this data in terms of the classical BV complex (Phil and I wrote this down in \cite[Section 3.1]{ElliottYoo1}).  This is the $L_\infty$-algebra whose underlying cochain complex takes the form
+\[\xymatrix{
+\Omega^0(\RR^{10}; \gg) \ar[r]^{\d} &\Omega^1(\RR^{10}; \gg) \ar[r]^{\d \ast \d} &\Omega^9(\RR^{10}; \gg) \ar[r]^{\d} &\Omega^{10}(\RR^{10}; \gg) \\
+&\Omega^0(\RR^{10}; \Pi S_- \otimes \gg) \ar[r]^{\ast \sd \d} &\Omega^{10}(\RR^{10}; \Pi S_- \otimes \gg), &
+}\]
+with degree $-3$ invariant pairing induced by the invariant pairing on $\gg$ and the pairing $(,)$ between $S_+$ and $S_-$, and with degree 2 and 3 brackets given by the action of $\Omega^0(\RR^{10}; \gg)$ on everything along with
+\begin{align*}
+\ell_2^{\mr{Bos}} \colon \Omega^1(\RR^{10};\gg) \otimes \Omega^1(\RR^{10};\gg) &\to \Omega^{9}(\RR^{10};\gg) \\
+(A \otimes B) &\mapsto [A \wedge \ast \mr d B] + [\ast \mr d  A \wedge B] + \mathrm{d} \ast[A \wedge B] \\
+\ell_2^{\mr{Fer}} \colon \Omega^1(\RR^{10};\gg) \otimes \Omega^0(\RR^{10}; S_{+} \otimes \gg) &\to \Omega^{10}(\RR^{10}; S_{-} \otimes \gg) \\
+(A \otimes \lambda) &\mapsto \ast \sd A \lambda
+\end{align*}
+in degree 2, and the map
+\begin{align*}
+\ell_3 \colon \Omega^1(\RR^{10};\gg) \otimes \Omega^1(\RR^{10};\gg) \otimes \Omega^1(\RR^{10};\gg) &\to \Omega^{9}(\RR^{10};\gg) \\
+(A \otimes B \otimes C) &\mapsto [A \wedge \ast[B \wedge C]] + [B \wedge \ast[C \wedge A]] + [C \wedge \ast[A \wedge B]]
+\end{align*}
+in degree 3.
 
 \subsection{On-Shell Supersymmetry Action}
+We can define an action of the 10d $\mc N=1$ supersymmetry algebra on the complex of BRST fields in this minimal super Yang-Mills theory.  The Poincar\'e action is clear, and the action of the supersymmetry $Q$ is generated -- in the usual Physics notation -- by the transformation \cite{BrinkSchwarzScherk}
+\begin{align*}
+\delta_Q A &= \Gamma(Q,\lambda) \\
+\delta_Q \lambda &= \sd F_A Q,
+\end{align*}
+where the notation $\sd F_A$ stands for the iterated Clifford multiplication $\sd F_A = F_{ij} \gamma^j \gamma^i$.  To check that this defines a supersymmetry action we need to check it's compatible with the brackets in the supersymmetry algebra.  So, we calculate
+\begin{align*}
+[\delta_{Q_1}, \delta_{Q_2}] A &= (\Gamma(Q_2,\sd F_A Q_1) - \Gamma(Q_1,\sd F_A Q_2)) \\
+&=  F_{ij}(Q_2 \gamma^k \gamma^j \gamma^i Q_1 - Q_1 \gamma^k \gamma^j \gamma^i Q_2)\\
+&=  F_{ij}(Q_2 \gamma^k \gamma^j \gamma^i Q_1 - Q_2 \gamma^j \gamma^k \gamma^i Q_1)\\
+&=  F_{ij}\delta^{kj}(Q_2 \gamma^i Q_1) \\
+&= \delta_{[Q_1, Q_2]} A 
+\end{align*}
+and
+\begin{align*}
+[\delta_{Q_1}, \delta_{Q_2}] \lambda &= (\sd F_{\Gamma(Q_2, \lambda)} Q_1 - \sd F_{\Gamma(Q_1,\lambda)} Q_2) \\
+&= 
+\end{align*}
+
+
 %Failure to commute with the classical BV differential
 
 \section{Baulieu's 10 Model}
