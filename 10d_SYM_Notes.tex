@@ -29,16 +29,27 @@ with the de Rham differential, placed in cohomological degrees 0 and 1, with bra
 
 The action functional in 10d super Yang-Mills is given by
 \[S(A,\lambda) = \int_{\RR^{10}} \langle F_A \wedge \ast F_A + (\lambda, \sd D_A \lambda)\rangle,\]
-where $\langle - \rangle$ denotes an invariant pairing on $\gg$, and $(,)$ denotes a scalar-valued pairing $S_+ \otimes S_+ \to \CC$ (there will be a unique such pairing, up to rescaling, characterized by the condition that $(\rho(v)\lambda_1,\rho(v)\lambda_2) = (\lambda_1,\lambda_2)$ for each $v \in \CC^{10}$, where $\rho$ denotes Clifford multiplication).
+where $\langle - \rangle$ denotes an invariant pairing on $\gg$, and $(,)$ denotes a scalar-valued pairing $S_+ \otimes S_- \to \CC$ (there will be a unique such pairing, up to rescaling, characterized by the condition that $(\rho(v)\lambda_1,\rho(v)\lambda_2) = (\lambda_1,\lambda_2)$ for each $v \in \CC^{10}$, where $\rho$ denotes Clifford multiplication).
 
 We can re-encode this data in terms of the classical BV complex.  This is the $L_\infty$-algebra whose underlying cochain complex takes the form
 \[\xymatrix{
-\Omega^0(\RR^{10}; \gg) \ar[r] &\Omega^1(\RR^{10}; \gg) \ar[r]^{\d \ast \d} &\Omega^9(\RR^{10}; \gg) \ar[r] &\Omega^{10}(\RR^{10}; \gg) \\
-&\Omega^0(\RR^{10}; \Pi S_+ \otimes \gg) \ar[r]^{\ast \sd \d} &\Omega^{10}(\RR^{10}; \Pi S_+ \otimes \gg), &
+\Omega^0(\RR^{10}; \gg) \ar[r]^{\d} &\Omega^1(\RR^{10}; \gg) \ar[r]^{\d \ast \d} &\Omega^9(\RR^{10}; \gg) \ar[r]^{\d} &\Omega^{10}(\RR^{10}; \gg) \\
+&\Omega^0(\RR^{10}; \Pi S_- \otimes \gg) \ar[r]^{\ast \sd \d} &\Omega^{10}(\RR^{10}; \Pi S_- \otimes \gg), &
 }\]
-with degree 2 and 3 brackets given by 
+with degree $-3$ invariant pairing induced by the invariant pairing on $\gg$ and the pairing $(,)$ between $S_+$ and $S_-$, and with degree 2 and 3 brackets given by the action of $\Omega^0(\RR^{10}; \gg)$ on everything along with
+\begin{align*}
+\ell_2^{\mr{Bos}} \colon \Omega^1(\RR^{10};\gg) \otimes \Omega^1(\RR^{10};\gg) &\to \Omega^{9}(\RR^{10};\gg) \\
+(A \otimes B) &\mapsto [A \wedge \ast \mr d B] + [\ast \mr d  A \wedge B] + \mathrm{d} \ast[A \wedge B] \\
+\ell_2^{\mr{Fer}} \colon \Omega^1(\RR^{10};\gg) \otimes \Omega^0(\RR^{10}; S_{+} \otimes \gg) &\to \Omega^{10}(\RR^{10}; S_{-} \otimes \gg) \\
+(A \otimes \lambda) &\mapsto \ast \sd A \lambda
+\end{align*}
+in degree 2, and the map
+\begin{align*}
+\ell_3 \colon \Omega^1(\RR^{10};\gg) \otimes \Omega^1(\RR^{10};\gg) \otimes \Omega^1(\RR^{10};\gg) &\to \Omega^{9}(\RR^{10};\gg) \\
+(A \otimes B \otimes C) &\mapsto [A \wedge \ast[B \wedge C]] + [B \wedge \ast[C \wedge A]] + [C \wedge \ast[A \wedge B]]
+\end{align*}
+in degree 3.
 
-%BRST Fields, Action Functional, BV Complex
 
 \subsection{On-Shell Supersymmetry Action}
 %Failure to commute with the classical BV differential
