@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.17)  1 MAR 2019 11:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.17)  1 MAR 2019 12:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1329,12 +1329,18 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) <xymatrix 4x2 198>
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
- (./10d_SYM_Notes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for U+eus on input line 54.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueus.fd
+File: ueus.fd 2013/01/14 v3.01 Euler Script
+) [2]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 86.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 86.
+
+(./10d_SYM_Notes.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 86.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 86.
 Package rerunfilecheck Info: File `10d_SYM_Notes.out' has not changed.
 (rerunfilecheck)             Checksum: 4A58DC1F5A5C3DF3C9A8025544EDCBE2;423.
 Package logreq Info: Writing requests to '10d_SYM_Notes.run.xml'.
@@ -1343,39 +1349,41 @@ Package logreq Info: Writing requests to '10d_SYM_Notes.run.xml'.
  )
 (\end occurred when \iftrue on line 19 was incomplete) 
 Here is how much of TeX's memory you used:
- 33772 strings out of 494910
- 621702 string characters out of 6179835
- 786194 words of memory out of 5000000
- 36556 multiletter control sequences out of 15000+600000
- 14937 words of font info for 62 fonts, out of 8000000 for 9000
+ 33791 strings out of 494910
+ 622031 string characters out of 6179835
+ 787194 words of memory out of 5000000
+ 36567 multiletter control sequences out of 15000+600000
+ 15838 words of font info for 66 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 56i,13n,65p,10410b,970s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,13n,65p,10410b,969s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/e
-ufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
-bm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
-m7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xycmat10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/xypic/xycmbt10.pfb>
-Output written on 10d_SYM_Notes.pdf (2 pages, 202323 bytes).
+fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+t10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xycmat10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/xypic/xycmbt10.pfb>
+Output written on 10d_SYM_Notes.pdf (2 pages, 220176 bytes).
 PDF statistics:
- 146 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
- 12 named destinations out of 1000 (max. 500000)
+ 158 PDF objects out of 1000 (max. 8388607)
+ 127 compressed objects within 2 object streams
+ 13 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
