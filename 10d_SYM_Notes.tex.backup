@@ -24,19 +24,8 @@
 Our starting point will be the theory complexifying the usual 10d super Yang-Mills theory.  Fix a complex reductive gauge group $G$ with Lie algebra $\gg$.  The ordinary fields of super Yang-Mills theory on $\RR^{10}$ consist of a boson: a connection $A$ on the trivial $G$-bundle, and a fermion: a $\gg$-valued section $\lambda$ of the Weyl spinor bundle associated to the spinor representation $S_+$ \footnote{If we didn't complexify we would instead consider $G_\RR$ a compact connected Lie group, and a section of the Majorana-Weyl spinor bundle, which necessitates working in Lorentzian signature.}.  These fields are acted upon by the group of gauge transformations -- $G$-valued functions on $\RR^{10}$.
 
 We can model the stack of fields modulo gauge transformations infinitesimally near the point $0$ by the corresponding BRST complex.  This is the local super Lie algebra
-\[L_{\mr{BRST}} = \Omega^0(\RR^{10}; \gg) \to \Omega^1(\RR^{10}; \gg) \oplus \Omega^0(\RR^{10}; \Pi S_+ \otimes \gg)\]
-with the de Rham differential, placed in cohomological degrees 0 and 1, with bracket induced from the Lie bracket on $\gg$.
-
-The action functional in 10d super Yang-Mills is given by
-\[S(A,\lambda) = \int_{\RR^{10}} \langle F_A \wedge \ast F_A + (\lambda, \sd D_A \lambda)\rangle,\]
-where $\langle - \rangle$ denotes an invariant pairing on $\gg$, and $(,)$ denotes a scalar-valued pairing $S_+ \otimes S_+ \to \CC$ (there will be a unique such pairing, up to rescaling, characterized by the condition that $(\rho(v)\lambda_1,\rho(v)\lambda_2) = (\lambda_1,\lambda_2)$ for each $v \in \CC^{10}$, where $\rho$ denotes Clifford multiplication).
-
-We can re-encode this data in terms of the classical BV complex.  This is the $L_\infty$-algebra whose underlying cochain complex takes the form
-\[\xymatrix{
-\Omega^0(\RR^{10}; \gg) \ar[r] &\Omega^1(\RR^{10}; \gg) \ar[r]^{\d \ast \d} &\Omega^9(\RR^{10}; \gg) \ar[r] &\Omega^{10}(\RR^{10}; \gg) \\
-&\Omega^0(\RR^{10}; \Pi S_+ \otimes \gg) \ar[r]^{\ast \sd \d} &\Omega^{10}(\RR^{10}; \Pi S_+ \otimes \gg), &
-}\]
-with degree 2 and 3 brackets given by 
+\[L_{\mr{BRST}} = \Omega^0(\RR^{10}; \gg) \to \Omega^1(\RR^{10}; \gg \oplus \Pi S_+ \otimes \gg)\]
+placed in cohomological degrees 0 and 1, with bracket induced from the Lie bracket on $\gg$.
 
 %BRST Fields, Action Functional, BV Complex
 
