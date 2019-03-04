@@ -16,6 +16,35 @@
   {}
 \endgroup
 
+\entry{Baulieu}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Baulieu}{B.}%
+     {Laurent}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \strng{namehash}{BL1}
+  \strng{fullhash}{BL1}
+  \field{labelalpha}{Bau11}
+  \field{sortinit}{B}
+  \verb{eprint}
+  \verb 1009.3893
+  \endverb
+  \field{number}{1}
+  \field{pages}{63\bibrangedash 67}
+  \field{title}{{$\mathrm{SU}(5)$}-invariant decomposition of ten-dimensional
+  {Yang--Mills} supersymmetry}
+  \field{volume}{698}
+  \field{journaltitle}{Physics Letters B}
+  \field{eprinttype}{arXiv}
+  \field{eprintclass}{hep-th}
+  \field{year}{2011}
+\endentry
+
 \entry{BrinkSchwarzScherk}{article}{}
   \name{author}{3}{}{%
     {{}%

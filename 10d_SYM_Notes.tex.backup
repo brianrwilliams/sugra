@@ -68,13 +68,21 @@ where the notation $\sd F_A$ stands for the iterated Clifford multiplication $\s
 where on the third line we used the fact that the pairing $\Gamma(-,-)$ is symmetric -- i.e. that $\lambda_1 \gamma^i \lambda_2 = \lambda_2 \gamma^i \lambda_1$ -- three times, and on the fourth and fifth lines we used the Clifford relations.  Similarly we can calculate
 \begin{align*}
 [\delta_{Q_1}, \delta_{Q_2}] \lambda &= (\sd F_{\Gamma(Q_2, \lambda)} Q_1 - \sd F_{\Gamma(Q_1,\lambda)} Q_2) \\
+&= (Q_2 \gamma_j \dd_i \lambda + [Q_2\gamma_i \lambda, Q_2 \gamma_j \lambda]) (\gamma^i \gamma^j Q_1) - (1 \leftrightarrow 2) \\
 &= 
 \end{align*}
+
+\begin{remark}
+I'm part way through trying to do these calculations myself, but for reference I found these calculations discussed in the master's thesis \cite{Guillen} we've discussed before.  For instance for the commutator of two supersymmetries acting on a spinor see equation 2.1.13.
+\end{remark}
+
 
 
 %Failure to commute with the classical BV differential
 
 \section{Baulieu's 10 Model}
+
+Baulieu \cite{Baulieu} considers an extension of 10d Super-Yang Mills including an auxiliary scalar field $h$.  The inclusion of this field breaks the manifest $\SO(10)$ symmetry to $\SU(5)$.
 %SU(5) BRST and BV Fields, Action Functional, BV Complex
 
 \subsection{Off-Shell Action of a Scalar Supersymmetry}
