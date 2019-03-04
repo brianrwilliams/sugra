@@ -82,15 +82,15 @@ I'm part way through trying to do these calculations myself, but for reference I
 
 \section{Baulieu's 10 Model}
 
-Baulieu \cite{Baulieu} considers an extension of 10d Super-Yang Mills including an auxiliary scalar field $h$.  The inclusion of this field breaks the manifest $\SO(10)$ symmetry to the subgroup $\SU(5)$, corresponding to a choice of complex structure on $\RR^{10}$.  Let's describe this classical theory in an explicitly $\SU(5)$-invariant way.  With respect to this choice of complex structure $\CC^5$ becomes Calabi-Yau: we'll denote the holomorphic top-form by $\Omega$ and the map $\Omega^{p,q}(\CC^5) \to \Omega^{p-1,q-1}(\CC^5)$ induced from the K\"ahler structure by $J$.
+Baulieu \cite{Baulieu} considers an extension of 10d Super-Yang Mills including an auxiliary $\gg$-valued scalar field $h$.  The inclusion of this field breaks the manifest $\SO(10)$ symmetry to the subgroup $\SU(5)$, corresponding to a choice of complex structure on $\RR^{10}$.  Let's describe this classical theory in an explicitly $\SU(5)$-invariant way.  With respect to this choice of complex structure $\CC^5$ becomes Calabi-Yau: we'll denote the holomorphic top-form by $\Omega$ and the map $\Omega^{p,q}(\CC^5) \to \Omega^{p-1,q-1}(\CC^5)$ induced from the K\"ahler structure by $J$.
 
 The ordinary fields $A$ and $\lambda$ of super Yang-Mills will decompose according to the decomposition of the vector and Weyl spinor representations of $\SO(10)$ into irreducible $\SU(5)$-representations.  So, explicitly $A$ splits up into fields
 \[A_{1,0} + A_{0,1} \in \Omega^{1,0}(\CC^5; \gg) \oplus \Omega^{0,1}(\CC^5; \gg),\]
 and $\lambda$ splits up into fields
 \[\chi + \psi + B \in \Pi(\Omega^0(\CC^5; \gg) \oplus \Omega^{1,0}(\CC^5; \gg) \oplus \Omega^{0,2}(\CC^5; \gg)).\]
 In terms of these fields, and including the auxiliary field $h$, the action functional becomes
-\[S(A_{1,0}, A_{0,1}, \chi, \psi, B, h) = \int (B \wedge \ol \dd_{A_{0,1}} B) + J^2(F_{2, 0}\wedge F_{0,2})\Omega + \|h\|^2\Omega + h J(F_{1,1}) \Omega + J( \chi \wedge (\ol \dd_{A_{0,1}} \psi)) \Omega + J^2(B \wedge (\dd_{A_{1,0}} \psi)) \Omega.\]
-
+\[S(A_{1,0}, A_{0,1}, \chi, \psi, B, h) = \int \langle (B \wedge \ol \dd_{A_{0,1}} B) + J^2(F_{2, 0}\wedge F_{0,2})\Omega + \|h\|^2\Omega + h J(F_{1,1}) \Omega + J( \chi \wedge (\ol \dd_{A_{0,1}} \psi)) \Omega + J^2(B \wedge (\dd_{A_{1,0}} \psi)) \Omega \rangle.\]
+One derives this action functional by decomposing the 10d super Yang-Mills action functional into $\SU(5)$ irreducible component fields, then introducing a Lagrange multiplier $h$ to eliminate the $F_{1,1}^2$ term.
 %SU(5) BRST and BV Fields, Action Functional, BV Complex
 
 \subsection{Off-Shell Action of a Scalar Supersymmetry}

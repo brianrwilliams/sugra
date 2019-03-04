@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.17)  4 MAR 2019 12:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.17)  4 MAR 2019 12:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1335,18 +1335,19 @@ LaTeX Font Info:    Try loading font information for U+eus on input line 54.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
 ) [2]
-Overfull \hbox (4.59679pt too wide) detected at line 92
+Overfull \hbox (12.37459pt too wide) detected at line 92
 \OML/cmm/m/it/10 S\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A[]; A[]; ^^_;  ; B; h\OT1/
-cmr/m/n/10 ) = [](\OML/cmm/m/it/10 B \OMS/cmsy/m/n/10 ^ [][]\OML/cmm/m/it/10 B\
-OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 J[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 F[] \O
-MS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 F[]\OT1/cmr/m/n/10 )
+cmr/m/n/10 ) = []\OMS/cmsy/m/n/10 h\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B \OMS/cms
+y/m/n/10 ^ [][]\OML/cmm/m/it/10 B\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 J[]\OT1/c
+mr/m/n/10 (\OML/cmm/m/it/10 F[] \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 F[]\OT1/cmr
+/m/n/10 )
  + \OMS/cmsy/m/n/10 k\OML/cmm/m/it/10 h\OMS/cmsy/m/n/10 k[]\OT1/cmr/m/n/10 
  + \OML/cmm/m/it/10 hJ\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 F[]\OT1/cmr/m/n/10 )
  + \OML/cmm/m/it/10 J\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^_ \OMS/cmsy/m/n/10 ^ \
 OT1/cmr/m/n/10 ([][]\OML/cmm/m/it/10  \OT1/cmr/m/n/10 ))
  + \OML/cmm/m/it/10 J[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B \OMS/cmsy/m/n/10 ^ \
 OT1/cmr/m/n/10 (\OML/cmm/m/it/10 @[] \OT1/cmr/m/n/10 ))
-\OML/cmm/m/it/10 :
+\OMS/cmsy/m/n/10 i\OML/cmm/m/it/10 :
  []
 
 [3]
@@ -1396,7 +1397,7 @@ are/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/share
 texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/xypic/xycmat10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/xypic/xycmbt10.pfb>
-Output written on 10d_SYM_Notes.pdf (3 pages, 247895 bytes).
+Output written on 10d_SYM_Notes.pdf (3 pages, 248117 bytes).
 PDF statistics:
  176 PDF objects out of 1000 (max. 8388607)
  142 compressed objects within 2 object streams
