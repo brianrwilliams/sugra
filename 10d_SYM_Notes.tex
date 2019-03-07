@@ -7,17 +7,16 @@
 \renewcommand{\d}{\mathrm{d}}
 \newcommand{\sD}{\slashed{D}}
 \newcommand{\sdel}{\slashed{\partial}}
+\newcommand{\cO}{\mathcal{O}}
 \newcommand{\sdelbar}{\overline{\slashed{\partial}}}
 \newcommand{\st}[1]{{}^*{#1}}
 
-\addbibresource{Twist.bib}
+%\addbibresource{Twist.bib}
 
 \title{Notes on 10d Super Yang-Mills}
 \author{Chris Elliott, Pavel Safronov and Brian Williams}
 
 \date{\today}
-
-\def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
 
 \begin{document}
 
@@ -114,6 +113,7 @@ Note that there is a map of dg Lie algebras
 \oloc^{BV}[-1] \to {\rm End}(\oloc^{BRST})
 \]
 sending a functional $I$ to the endomorphism $\{I,-\}$.
+\brian{No there is not.}
 
 \def\cN{\mathcal{N}}
 
@@ -155,7 +155,7 @@ plus an $L_\infty$ correction of the form:
 \[
 I^{(2)} : \mf g_{\cN=1}^{\otimes 2} \to \oloc^{BV} [-2]  .
 \]
-You may ask why we have to stop there, but I don't have a great conceptual answer besides the computational fact that it seems like it works out. 
+You may ask why we have to stop there, but I don't have a great conceptual answer besides the computational fact that it seems like it works out. o
 I claim that $I^{(1)} + I^{(2)}$ determines an off-shell action of $\mf g_{\cN=1}$ on the BV complex. 
 
 At the level of generators, we are proposing a new transformation law of the form 
@@ -176,6 +176,26 @@ I'm a little confused by a few things: can I ask for clarification?
 \end{enumerate}
 }
 
+\brian{
+\begin{enumerate}
+\item I was being sloppy, and you are right. 
+Think of BRST as functions on $B \mf g$ and BV as functions on $T^* B\mf g$.
+Since vector fields include inside poly-vector fields there is a map of dg Lie algebras
+\[
+{\rm Der}(\cO(B \mf g)) = {\rm Vect}(B \mf g) \to \cO(T^* B \mf g) .
+\]
+So, really, the map should go the other way.
+I'll fix the above when I have more time, but basically what I'm saying is that even though we can't write down a Lie map to derivations of BRST, we can map one to the bigger BV complex.
+That's why the action looks like its by poly-vector fields, not just derivations. 
+\item
+I think I was also being sloppy here, and I don't see a way of making my argument precise. 
+I will try to find the reference (I think it may be Berkovits) where he says something to this effect. 
+\item
+OK, I wanted to see if you thought it was reasonable before including the details. 
+I'll work on writing that up now!
+\end{enumerate}
+}
+
 \section{Homotopy Data}
 %We were going to check in particular that everything was a chain map
 
@@ -183,7 +203,7 @@ I'm a little confused by a few things: can I ask for clarification?
 
 
 
-\pagestyle{bib}
-\printbibliography
+%\pagestyle{bib}
+%\printbibliography
 
 \end{document}
