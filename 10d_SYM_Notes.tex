@@ -167,6 +167,15 @@ At the level of generators, we are proposing a new transformation law of the for
 I've included terms coming from the BV operator (which have no $\epsilon$ dependence). 
 The only new term is the last one in the transformation law for $\lambda$, $\epsilon (\epsilon \lambda^*)$. 
 
+\chris{
+I'm a little confused by a few things: can I ask for clarification?
+\begin{enumerate}
+ \item Firstly, while I understand the map $(I \mapsto \{I, -\}) \colon \oloc^{BV}[-1] \to {\rm End}(\oloc^{BV})$, I don't understand how it lifts to ${\rm End}(\oloc^{BRST})$.  For instance (maybe a little heuristically, but I hope what I'm trying to say makes sense), let $\alpha$ be a scalar field and let $\alpha^*$ be its antifield.  Let $I = (\alpha^*)^2$ in $\oloc^{BV}$.  Then $\{(\alpha^*)^2, \alpha\} = 2\alpha^*$ is a non-trivial element of $\oloc^{BV}$ which is not in the image of $\oloc^{BRST}$, which says that my na\"ive guess for how to define your map doesn't work, so I must be supposed to do something more clever?
+ \item I wanted to clarify something about your ``counting fermion number'' argument.  I thought that this argument only applied to the action of a whole supersymmetry algebra, not a single square zero supercharge.  That is, if we're trying to construct off-shell BRST supersymmetry then the space of BRST fields should yield a representation of the supersymmetry algebra.  Representations $V_0 \oplus V_1$ of the supersymmetry algebra have to have the same number of bosonic and fermionic degrees of freedom -- i.e. $\dim V_0 = \dim V_1$, because we can choose a supertranslation $Q$ which squares to a translation.  So if $\alpha$ denotes the supersymmetry algebra action, the composite of $\alpha(Q)|_{V_0} \colon V_0 \to V_1$ and $\alpha(Q)|_{V_1} \colon V_1 \to V_0$ is equal to the action of a translation, which is an isomorphism, and therefore $\alpha(Q)$ must also be an isomorphism, so $\dim V_0 = \dim V_1$.  However this argument doesn't apply anymore if you just want an action of a single square-zero odd symmetry.  Maybe you have something else in mind though?
+ \item Could you include some of the calculation that the map you define at the end is an $L_\infty$ map?  This seems like it might be exactly what we're looking for.
+\end{enumerate}
+}
+
 \section{Homotopy Data}
 %We were going to check in particular that everything was a chain map
 
