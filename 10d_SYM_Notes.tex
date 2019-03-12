@@ -11,7 +11,9 @@
 \newcommand{\sdelbar}{\overline{\slashed{\partial}}}
 \newcommand{\st}[1]{{}^*{#1}}
 
-%\addbibresource{Twist.bib}
+\newcommand{\brian}[1]{\textcolor{blue}{BW: #1}}
+
+\addbibresource{Twist.bib}
 
 \title{Notes on 10d Super Yang-Mills}
 \author{Chris Elliott, Pavel Safronov and Brian Williams}
@@ -196,6 +198,23 @@ I'll work on writing that up now!
 \end{enumerate}
 }
 
+\subsection{Abelian case}
+
+The BV differential is
+\begin{align*}
+\delta_{BV} c &= 0 \\
+\delta_{BV} A &= \d c \\
+\delta_{BV} \lambda &= 0 \\
+\delta_{BV} \lambda^* &= \sd D_A \lambda \\
+\delta_{BV} A^* &= \d\ast F \\
+\delta_{BV} c^* &= \d A^*
+\end{align*}
+
+\[I^{(1)} = \int (\lambda^*, \sd F \epsilon) + \int A^* \Gamma(\epsilon, \lambda)\]
+
+\[\delta_{BV} I^{(1)} = \int (\sd D_A\lambda, \sd F\epsilon) + \int (\d\ast F) \Gamma(\epsilon, \lambda).\]
+
+
 \section{Homotopy Data}
 %We were going to check in particular that everything was a chain map
 
@@ -203,7 +222,7 @@ I'll work on writing that up now!
 
 
 
-%\pagestyle{bib}
-%\printbibliography
+\pagestyle{bib}
+\printbibliography
 
 \end{document}
