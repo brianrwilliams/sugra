@@ -229,6 +229,22 @@ acting trivially on all other (BRST) fields.  This clearly squares to zero, so d
 \end{align*}
 This should mean that the $\Pi \CC$ action is off-shell, so extends to an action on the full BV complex (the above calculation should be equivalent to showing that $\delta$ commutes with the BV differential).
 
+Let me also explicitly show that the BV action functional is also invariant for this square-zero supersymmetry.  So we also include the dual action
+\begin{align*}
+\delta \psi^* &= A_{1,0}^* \\
+\delta h^* &= \chi^* \\
+\delta A_{0,1}^* &= \ol \dd_{A_{0,1}} B^*.
+\end{align*}
+The variation of the part of the BV action functional involving the anti-fields is then calculated to vanish as follows.
+\begin{align*}
+&\!\!\! \delta S_{\mr{anti}} = \\
+&= \int \delta \left(c^* \wedge [c, c] + {A^*_{1, 0}}\wedge (\partial_{A_{1,0}} c + [c,A_{1,0}]) + {A^*_{0, 1}}\wedge (\ol \dd_{A_{0,1}} c + [c, A_{0, 1}]) - B^*\wedge [c, B] - \chi^*\wedge [c, \chi] - \psi^*\wedge [c, \psi] \right) + h^* \wedge [c,h] \\
+&= \int 0 +A^*_{1,0} \wedge [c,\psi] + \ol \dd_{A_{0,1}} B^* \wedge [c,A_{0,1}] - B^* \wedge [c,F_{0,2}] - \chi^* \wedge [c,h] - A_{1,0}^* \wedge [c,\psi] + \chi^* \wedge [c,h] \\
+&= 0.
+\end{align*}
+
+
+
 
 
 \section{Homotopy Data}
