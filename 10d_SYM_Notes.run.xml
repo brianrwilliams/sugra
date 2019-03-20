@@ -81,6 +81,7 @@
       <file>10d_SYM_Notes-blx.bib</file>
     </requires>
     <requires type="editable">
+      <file>Twist.bib</file>
     </requires>
     <requires type="static">
       <file>biblatex.bst</file>
