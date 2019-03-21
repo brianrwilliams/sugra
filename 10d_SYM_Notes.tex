@@ -224,7 +224,7 @@ Consider the following square-zero supersymmetry acting on Baulieu's theory:
 acting trivially on all other (BRST) fields.  This clearly squares to zero, so defines an action of the supergroup $\Pi \CC$ on the BRST complex.  We can calculate the variation of the action functional with respect to this symmetry, and see that it vanishes.  Indeed,
 \begin{align*}
 \delta S &= \int \delta \langle J^2(F_{2, 0}\wedge F_{0,2})\Omega - \frac 12 \|h\|^2\Omega + h J(F_{1,1}) \Omega - J( \chi \wedge (\ol \dd_{A_{0,1}} \psi)) \Omega - J^2(B \wedge (\dd_{A_{1,0}} \psi) - (B \wedge \ol \dd_{A_{0,1}} B)) \Omega \rangle \\
-&= \int \langle J^2(\dd_{A_{1,0}} B \wedge F_{0,2})\Omega - 0 + h J(\ol \dd_{A_{0,1}} \psi) \Omega - J( h (\ol \dd_{A_{0,1}} \psi)) \Omega - J^2(F_{0,2} \wedge (\dd_{A_{1,0}} \psi) - 0) \Omega \rangle \\
+&= \int \langle J^2(\dd_{A_{1,0}} \psi \wedge F_{0,2})\Omega - 0 + h J(\ol \dd_{A_{0,1}} \psi) \Omega - J( h (\ol \dd_{A_{0,1}} \psi)) \Omega - J^2(F_{0,2} \wedge \dd_{A_{1,0}} \psi)\Omega - 0\rangle \\
 &= 0.
 \end{align*}
 This should mean that the $\Pi \CC$ action is off-shell, so extends to an action on the full BV complex (the above calculation should be equivalent to showing that $\delta$ commutes with the BV differential).
@@ -238,11 +238,23 @@ Let me also explicitly show that the BV action functional is also invariant for 
 The variation of the part of the BV action functional involving the anti-fields is then calculated to vanish as follows.
 \begin{align*}
 &\!\!\! \delta S_{\mr{anti}} = \\
-&= \int \delta \left(c^* \wedge [c, c] + {A^*_{1, 0}}\wedge (\partial_{A_{1,0}} c + [c,A_{1,0}]) + {A^*_{0, 1}}\wedge (\ol \dd_{A_{0,1}} c + [c, A_{0, 1}]) - B^*\wedge [c, B] - \chi^*\wedge [c, \chi] - \psi^*\wedge [c, \psi] \right) + h^* \wedge [c,h] \\
+&= \int \delta \left(c^* \wedge [c, c] + {A^*_{1, 0}}\wedge (\partial c + [c,A_{1,0}]) + {A^*_{0, 1}}\wedge (\ol \dd c + [c, A_{0, 1}]) - B^*\wedge [c, B] - \chi^*\wedge [c, \chi] - \psi^*\wedge [c, \psi] \right) + h^* \wedge [c,h] \\
 &= \int 0 +A^*_{1,0} \wedge [c,\psi] + \ol \dd_{A_{0,1}} B^* \wedge [c,A_{0,1}] - B^* \wedge [c,F_{0,2}] - \chi^* \wedge [c,h] - A_{1,0}^* \wedge [c,\psi] + \chi^* \wedge [c,h] \\
 &= 0.
 \end{align*}
 
+\begin{remark}
+If we don't adjoin the auxiliary field $h$, but do break the $\spin(10)$ symmetry down to $\SU(5)$ and consider the scalar supersymmetry with respect to the on-shell action from the previous section, then the BRST action is still preserved.  The supersymmetries are as above, except that now $\delta \chi = JF_{1,1)}$.  We have, very similarly to the calculation above,
+\begin{align*}
+\delta S &= \int \delta \langle J^2(F_{2, 0}\wedge F_{0,2})\Omega + J^2(F_{1,1}^2) \Omega - J( \chi \wedge (\ol \dd_{A_{0,1}} \psi)) \Omega - J^2(B \wedge (\dd_{A_{1,0}} \psi) - (B \wedge \ol \dd_{A_{0,1}} B)) \Omega \rangle \\
+&= \int \langle J^2(\dd_{A_{1,0}} \psi \wedge F_{0,2})\Omega - 0 + J^2(F_{1,1} \wedge \ol \dd_{A_{0,1}} \psi) \Omega - J^2( F_{1,1} \wedge (\ol \dd_{A_{0,1}} \psi)) \Omega - J^2(F_{0,2} \wedge \dd_{A_{1,0}} \psi)\Omega - 0 \rangle \\
+&= 0.
+\end{align*}
+\chris{Actually maybe this doesn't quite work, because of a factor of two.  We had $\delta(hJF_{1,1}) = hJ(\ol \dd \psi)$, whereas $\delta(J^2F_{1,1}^2) = 2 J^2(F_{1,1} \wedge \ol \dd \psi)$, and that extra 2 seems to break the cancellation.}
+
+On the other hand, if try to extend this to the BV fields, we must have $\delta A^*_{1,0} = 0$ so that $\delta^2 = 0$, so we would need to modify $\delta A^*_{0,1}$ to include some term cancelling the term $\delta(\chi^*\wedge [c, \chi]) = \chi^* \wedge [c, JF_{1,1}]$, but without introducing a new term $\delta(A_{0,1}^* \wedge \ol \dd c)$.  This na\"ively doesn't look like it's possible.
+
+\end{remark}
 
 
 
