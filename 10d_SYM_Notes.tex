@@ -2,11 +2,12 @@
 
 \input ./math_headers.sty
 
-\newcommand{\map}{\ul{\mr{Map}}}
+\newcommand{\C}{\mathbf{C}}
 \newcommand{\dBRST}{\mathrm d_{\mathrm{BRST}}}
 \renewcommand{\d}{\mathrm{d}}
 \newcommand{\sD}{\slashed{D}}
 \newcommand{\sdel}{\slashed{\partial}}
+\newcommand{\map}{\ul{\mr{Map}}}
 \newcommand{\cO}{\mathcal{O}}
 \newcommand{\sdelbar}{\overline{\slashed{\partial}}}
 \newcommand{\st}[1]{{}^*{#1}}
@@ -80,7 +81,17 @@ where on the third line we used the fact that the pairing $\Gamma(-,-)$ is symme
 I'm part way through trying to do these calculations myself, but for reference I found these calculations discussed in the master's thesis \cite{Guillen} we've discussed before.  For instance for the commutator of two supersymmetries acting on a spinor see equation 2.1.13.
 \end{remark}
 
+\subsection{$U(5)$-invariant splitting}
 
+Pick a reduction of the structure group to $U(5)\subset SO(10)$. This splits the defining representation as $\C^{10} = L\oplus L^*$ giving a decomposition $A = A_{0, 1} + A_{1, 0}$. Therefore, $\wedge^2 \C^{10} \cong \wedge^2 L \oplus \End(L) \oplus \wedge^2 L^*$ which gives a decomposition $F = F_{2, 0} + F_{1, 1} + F_{0, 2}$. We denote by $J\colon \End(L)\rightarrow \C$ the trace. The semi-spin representation splits as $S_+ = (\C\oplus \wedge^2 L\oplus \wedge^4 L)\otimes \det(L)^{-1/2}$ giving a decomposition $\lambda = \chi + B + \psi$.
+
+If $Q\in S_+$ is the scalar supercharge, the supersymmetry transformations become
+\begin{align*}
+\delta_Q A_{1, 0} &= Q\psi \\
+\delta_Q B &= Q F_{0, 2} \\
+\delta_Q \chi &= -\frac{1}{2}Q J(F_{1, 1}).
+\end{align*}
+Note that $\delta_Q^2 \chi = -\frac{1}{2} J(\overline{\partial}_{A_{0, 1}} \psi)$ and zero on other fields.
 
 %Failure to commute with the classical BV differential
 
