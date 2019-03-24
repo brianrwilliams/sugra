@@ -9,6 +9,7 @@
 \newcommand{\sdel}{\slashed{\partial}}
 \newcommand{\map}{\ul{\mr{Map}}}
 \newcommand{\cO}{\mathcal{O}}
+\newcommand{\R}{\mathbf{R}}
 \newcommand{\sdelbar}{\overline{\slashed{\partial}}}
 \newcommand{\st}[1]{{}^*{#1}}
 
@@ -33,7 +34,7 @@ We can model the stack of fields modulo gauge transformations infinitesimally ne
 with the de Rham differential, placed in cohomological degrees 0 and 1, with bracket induced from the Lie bracket on $\gg$.
 
 The action functional in 10d super Yang-Mills is given by
-\[S(A,\lambda) = \int_{\RR^{10}} \langle F_A \wedge \ast F_A + (\lambda, \sd D_A \lambda)\rangle,\]
+\[S(A,\lambda) = \int_{\RR^{10}} \langle \frac{1}{2} F_A \wedge \ast F_A - (\lambda, \sd D_A \lambda)\rangle,\]
 where $\langle - \rangle$ denotes an invariant pairing on $\gg$, and $(,)$ denotes a scalar-valued pairing $S_+ \otimes S_- \to \CC$ (there will be a unique such pairing, up to rescaling, characterized by the condition that $(\rho(v)\lambda_1,\rho(v)\lambda_2) = (\lambda_1,\lambda_2)$ for each $v \in \CC^{10}$, where $\rho$ denotes Clifford multiplication).
 
 We can re-encode this data in terms of the classical BV complex (Phil and I wrote this down in \cite[Section 3.1]{ElliottYoo1}).  This is the $L_\infty$-algebra whose underlying cochain complex takes the form
@@ -81,21 +82,59 @@ where on the third line we used the fact that the pairing $\Gamma(-,-)$ is symme
 I'm part way through trying to do these calculations myself, but for reference I found these calculations discussed in the master's thesis \cite{Guillen} we've discussed before.  For instance for the commutator of two supersymmetries acting on a spinor see equation 2.1.13.
 \end{remark}
 
-\subsection{$U(5)$-invariant splitting}
+\subsection{$SU(5)$-invariant splitting}
 
-Pick a reduction of the structure group to $U(5)\subset SO(10)$. This splits the defining representation as $\C^{10} = L\oplus L^*$ giving a decomposition $A = A_{0, 1} + A_{1, 0}$. Therefore, $\wedge^2 \C^{10} \cong \wedge^2 L \oplus \End(L) \oplus \wedge^2 L^*$ which gives a decomposition $F = F_{2, 0} + F_{1, 1} + F_{0, 2}$. We denote by $J\colon \End(L)\rightarrow \C$ the trace. The semi-spin representation splits as $S_+ = (\C\oplus \wedge^2 L\oplus \wedge^4 L)\otimes \det(L)^{-1/2}$ giving a decomposition $\lambda = \chi + B + \psi$.
+We will need an expression for the Hodge star operator on K\"{a}hler manifolds, see \cite[Proposition 1.2.31]{Huybrechts}.
+
+\begin{prop}
+Let $M$ be a K\"{a}hler $d$-fold and decompose
+\[\Omega^2(M; \C) = \Omega^{2, 0}(M)\oplus \Omega^{0, 2}(M)\oplus (\C\omega\oplus \Omega^{1, 1}_\perp(M)).\]
+Then
+\begin{enumerate}
+\item The spaces $\Omega^{2, 0}(M)\oplus \Omega^{0, 2}(M)$, $\C\omega$ and $\Omega^{1, 1}_\perp(M)$ are mutually orthogonal.
+
+\item For $\alpha\in\Omega^{2, 0}(M)\oplus \Omega^{0, 2}(M)$ we have
+\[\ast \alpha = \frac{1}{(d-2)!} \alpha\wedge \omega^{d-2}.\]
+
+\item For $\alpha\in \Omega^{1, 1}_\perp(M)$ we have
+\[\ast\alpha = -\frac{1}{(d-2)!} \alpha\wedge \omega^{d-2}.\]
+
+\item For $\alpha\in\C\omega$ we have
+\[\ast \alpha = \frac{1}{(d-1)!} \alpha\wedge \omega^{d-2}.\]
+\end{enumerate}
+\end{prop}
+
+\begin{corollary}
+Let $M$ be a K\"{a}hler $d$-fold. Then
+\[F\wedge \ast F + \frac{1}{(d-2)!} F\wedge F\wedge \omega^{d-2} = \left(4(F_{2, 0}, F_{0, 2}) + (\Lambda F_{1, 1})^2\right) \frac{\omega^d}{d!}.\]
+\end{corollary}
+
+Pick a reduction of the structure group to $SU(5)\subset SO(10)$. This gives rise to a K\"{a}hler structure $\omega$ on $\R^{10}$ and a nonvanishing holomorphic 5-form $\Omega$. We denote by $\Lambda\colon \Omega^k(M)\rightarrow \Omega^{k-2}(M)$ the dual Lefschetz operator defined by $(\Lambda \alpha, \beta) = (\alpha, \beta\wedge \omega)$.
+
+The connection splits as $A = A_{0, 1} + A_{1, 0}$. The semi-spin representation decomposes as
+\[S_+ \cong \C\oplus \Omega^{0, 2} \oplus \Omega^{1, 0},\]
+which gives rise to a decomposition $\lambda = \chi + B + \psi$.
 
 If $Q\in S_+$ is the scalar supercharge, the supersymmetry transformations become
 \begin{align*}
-\delta_Q A_{1, 0} &= Q\psi \\
-\delta_Q B &= Q F_{0, 2} \\
-\delta_Q \chi &= -\frac{1}{2}Q J(F_{1, 1}).
+\delta_Q A_{1, 0} &= \psi \\
+\delta_Q B &= F_{0, 2} \\
+\delta_Q \chi &= \frac{1}{2} \Lambda F_{1, 1}.
 \end{align*}
-Note that $\delta_Q^2 \chi = -\frac{1}{2} J(\overline{\partial}_{A_{0, 1}} \psi)$ and zero on other fields.
+Note that $\delta_Q^2 \chi = \frac{1}{2} \Lambda(\overline{\partial} \psi)$ and zero on other fields.
 
-%Failure to commute with the classical BV differential
+Let
+\[S_{top} = \frac{1}{12}\int F\wedge F\wedge \omega^3\]
+be the instanton number. Then we get
+\[
+S + S_{top} = \int \frac{\omega^5}{5!}\left(2(F_{2, 0}, F_{0, 2}) + \frac{1}{2} (\Lambda F_{1, 1})^2 - 2\Lambda(\overline{\partial}\psi) \chi - 2(B, \partial \psi)\right) - B\wedge \overline{\partial} B\wedge \Omega
+\]
 
+We then have
+\[\delta_Q(S+S_{top}) = \int \frac{\omega^5}{5!}\left(2(F_{0, 2}, \partial \psi) + \Lambda F_{1, 1} \Lambda(\overline{\partial}\psi) - \Lambda F_{1, 1} \Lambda(\overline{\partial}\psi) - 2(F_{0, 2}, \partial \psi)\right) = 0.
+\]
 
+Note that $\delta_Q S_{top} = 0$ (it is a topological invariant). Therefore, $\delta_Q S = 0$. We have checked it for a pure spinor supercharge. The span of pure spinors in $S_+$ is an $SO(10)$-subrepresentation which by irreducibility has to be everything. Thus, any spinor is a linear combination of pure spinors and so $\delta_Q S = 0$ for any supercharge $Q$.
 
 \subsection{An Off-Shell Supersymmetry Action?}
 \brian{I realized I'm still confused with the role of Baulieu's $h$-field. 
