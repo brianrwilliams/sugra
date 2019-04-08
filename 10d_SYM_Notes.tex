@@ -12,8 +12,8 @@
 \newcommand{\R}{\mathbf{R}}
 \newcommand{\sdelbar}{\overline{\slashed{\partial}}}
 \newcommand{\st}[1]{{}^*{#1}}
-
-\newcommand{\brian}[1]{\textcolor{blue}{BW: #1}}
+\newcommand{\clie}{{\rm C}_{\rm Lie}}
+\def\cN{\mathcal{N}}
 
 \addbibresource{Twist.bib}
 
@@ -40,8 +40,9 @@ where $\langle - \rangle$ denotes an invariant pairing on $\gg$, and $(,)$ denot
 We can re-encode this data in terms of the classical BV complex (Phil and I wrote this down in \cite[Section 3.1]{ElliottYoo1}).  This is the $L_\infty$-algebra whose underlying cochain complex takes the form
 \[\xymatrix{
 \Omega^0(\RR^{10}; \gg) \ar[r]^{\d} &\Omega^1(\RR^{10}; \gg) \ar[r]^{\d \ast \d} &\Omega^9(\RR^{10}; \gg) \ar[r]^{\d} &\Omega^{10}(\RR^{10}; \gg) \\
-&\Omega^0(\RR^{10}; \Pi S_- \otimes \gg) \ar[r]^{\ast \sd \d} &\Omega^{10}(\RR^{10}; \Pi S_- \otimes \gg), &
+&\Omega^0(\RR^{10}; \Pi S_+ \otimes \gg) \ar[r]^{\ast \sd \d} &\Omega^{10}(\RR^{10}; \Pi S_- \otimes \gg), &
 }\]
+\brian{I've changed the spinor component in degree zero to $S_+$, check if that's OK.}
 with degree $-3$ invariant pairing induced by the invariant pairing on $\gg$ and the pairing $(,)$ between $S_+$ and $S_-$, and with degree 2 and 3 brackets given by the action of $\Omega^0(\RR^{10}; \gg)$ on everything along with
 \begin{align*}
 \ell_2^{\mr{Bos}} \colon \Omega^1(\RR^{10};\gg) \otimes \Omega^1(\RR^{10};\gg) &\to \Omega^{9}(\RR^{10};\gg) \\
@@ -97,6 +98,75 @@ Q_1 \otimes Q_2 \otimes \lambda^* &\mapsto - \left(\rho(\Gamma(Q_1,Q_2)) \lambda
 \end{align*}
 \end{remark}
 
+\subsection{Off-shell supersymmetry action}
+
+The goal is to show that the maps
+\begin{align*}
+\delta^{(1)}_+ \colon S_+ \otimes \left( \Omega^1(\RR^{10} ; \mf g) \oplus \Gamma(\RR^{10}; \Pi S_+[-1] \otimes \mf g) \right) &\to \Omega^1(\RR^{10} ; \mf g) \oplus \Gamma(\RR^{10}; \Pi S_+[-1] \otimes \mf g) \\
+Q \otimes (A + \lambda) &\mapsto  \Gamma(Q,\lambda) + \sd F_A Q .
+\end{align*}
+\begin{align*}
+\delta^{(2)}_+ \colon S_+ \otimes S_+ \otimes \Gamma(\RR^{10}; \Pi S_+) &\to \Gamma(\RR^{10}; \Pi S_-' [-1]) \\
+Q_1 \otimes Q_2 \otimes \lambda &\mapsto - \left(\rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right).
+\end{align*}
+define an $L_\infty$-action of the supersymmetry algebra on the BV complex. 
+
+The BV action involving the component $\Pi S_+$ of the supersymmetry algebra reads
+\begin{align*}
+I_+^{(1)} (Q ; A, \lambda, A^*, \lambda^*) & = A^* \wedge \Gamma(Q, \lambda) + (\lambda^*, \sd F_A Q) \\
+I_+^{(2)} (Q_1,Q_2 ; \lambda^*) & = \pm \left(\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right) .
+\end{align*}
+
+\brian{Part of BV action involving the bosonic translations}
+
+It suffices to show that the Maurer-Cartan equation for the functional $I^{(1)}_+ + I^{(2)}_+$ holds:
+\[
+(\d_{CE} + \d_{BV}) \left(I_+^{(1)} + I_+^{(2)}\right) + \frac{1}{2} \left\{I_+^{(1)} + I_+^{(2)}, I_+^{(1)} + I_+^{(2)} \right\} = 0 .
+\]
+The space of equivariant BV functionals $\clie^*(\mf g_{\cN=1}) \otimes \cO_{BV}$ is filtered by the number of anti-field components. 
+With respect to this filtration,  this Maurer-Cartan equation splits into four equations:
+\begin{enumerate}
+\item[(1)] $\d_{BV} I^{(1)} = 0$ ;
+\item[(2)] $\d_{CE} I^{(1)}_+ + \d_{BV} I^{(2)}_+ + \frac{1}{2}  \left\{I_+^{(1)} , I_+^{(1)} \right\} = 0$ ;
+\item[(3)] $\d_{CE} I^{(2)}_+ + \{I^{(1)}_+, I^{(2)}_+\} = 0$ ;
+\item[(4)] $\{I^{(2)}_+ , I^{(2)}_+ \} = 0$.
+\end{enumerate}
+
+Equation (1) follows from \brian{p. 14 in \cite{BaezHuerta}}.
+
+Equation (2). \brian{this will entail adding a few sentences after Chris' calculation above.}
+
+Equation (3).
+Note that $\d_{CE} I^{(2)}_+ = 0$ since the term $I^{(2)}_+$ is quadratic in the term $\Pi S_+ \subset \mf g_{\cN =1}$ and there are no brackets that land in the odd component of supersymmetry algebra. 
+The second term $\{I^{(1)}_+, I^{(2)}_+\}$ splits into two terms.
+The first is a functional of the form \brian{keeping with Pavel's notation from the email, the $\Gamma_{\pm}$ and $\rho_{\pm}$ tell you which spinor your acting on}
+\[
+(Q_1, Q_2, Q_3 ; A^*, \lambda^*) \mapsto A^* \wedge \Gamma_+(Q_1, \rho_- (\Gamma_+(Q_2, Q_3)) \lambda^*) + (123)
+\] 
+and the second is
+\[
+(Q_1, Q_2, Q_3 ; A^*, \lambda^*) \mapsto (\lambda^*, Q_1) (A^* \wedge \Gamma_+(Q_2, Q_3)) + (123) .
+\]
+
+\begin{lemma}
+For any $\psi_+ \in S_+$, $\psi_- \in S_-$, and $v \in V$, the following relation holds
+\[
+\Gamma_+(\psi_+, \rho_-(v) \psi_-) + \Gamma_-(\psi_-, \rho_+(v) \psi_+) = (\psi_-, \psi_+) v
+\]
+\end{lemma}
+\begin{proof}
+We will prove that for any $w \in V$ the following relation holds
+\[
+g\left(w, \Gamma_+(\psi_+, \rho_-(v) \psi_-) + \Gamma_-(\psi_-, \rho_+(v) \psi_+) \right) = (\psi_-, \psi_+) g(w,v)
+\]
+where $g$ is the fixed metric on $V$. 
+Since \brian{Something about adjointness of $\Gamma$ and $\rho$} the left hand side is equal to
+\[
+\left(\rho(w) (\psi_+ + \psi_-), \rho(v) (\psi_+ + \psi_-) \right) .
+\]
+Now the pairing $(-,-) : S_{\pm} \otimes S_{\mp} \to \CC$ is equivariant with respect Clifford multiplication, so this is expression is equal to $g(w,v) (\psi_-, \psi_+)$ as desired.
+Since this is true for all $w \in V$, the claim follows. 
+\end{proof}
 
 \subsection{$SU(5)$-invariant splitting}
 
@@ -169,8 +239,6 @@ Note that there is a map of dg Lie algebras
 \]
 sending a functional $I$ to the endomorphism $\{I,-\}$.
 \brian{No there is not.}
-
-\def\cN{\mathcal{N}}
 
 The cursory definition of the linear map
 \[
