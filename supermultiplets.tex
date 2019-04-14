@@ -1,0 +1,213 @@
+\documentclass[12pt]{amsart}
+
+\usepackage{eucal}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+
+\usepackage{color}
+\definecolor{e-mail}{rgb}{0,.40,.80}
+\definecolor{reference}{rgb}{.20,.60,.22}
+\definecolor{citation}{rgb}{0,.40,.80}
+
+\usepackage[colorlinks=true,
+            linkcolor=reference,
+            citecolor=citation,
+            urlcolor=e-mail]{hyperref}
+\usepackage{cleveref}
+\usepackage[all]{xy}
+
+\textwidth=16.5cm
+\oddsidemargin=0cm
+\evensidemargin=0cm
+\textheight=22cm
+\topmargin=0cm
+
+\binoppenalty=10000
+\relpenalty=10000
+
+\newcommand{\C}{\mathbf{C}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\Z}{\mathbf{Z}}
+
+\newcommand{\Cl}{\mathrm{Cl}}
+\newcommand{\Spin}{\mathrm{Spin}}
+\newcommand{\Sym}{\mathrm{Sym}}
+
+\newcommand{\defterm}[1]{\textbf{\emph{#1}}}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lm}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{example}[thm]{Example}
+
+\begin{document}
+\title{Classification of massless supermultiplets}
+\maketitle
+
+\section{}
+
+Let $V$ be a complex vector space with a chosen spin structure. Let $\Sigma$ be a spinorial representation of $\Spin(V)$, $\Gamma\colon \Sym^2(\Sigma)\rightarrow V$ the associated vector-valued pairing and $T_\Sigma$ the supertranslation group with Lie algebra $\Pi\Sigma\oplus V$. The superPoincar\'{e} group is $\Spin(V)\ltimes T_\Sigma$.
+
+Recall that massless representations of the Poincar\'{e} group are parametrized in the following way. Split $V = V_0\oplus \C e_+\oplus \C e_-$, where $e_+$ and $e_-$ are null vectors with $(e_+, e_-) = 1$. Then massless representations correspond to finite-dimensional representations of $\Spin(V_0)$.
+
+\begin{remark}
+We ignore the continuous-spin representations. Alternatively, we only consider finite-dimensional representations of the little group.
+\end{remark}
+
+We label irreducible representations of $\Spin(2)$ by \defterm{helicity} which is a half-integer number.
+
+\begin{defn}
+Suppose $\dim(V_0)\geq 2$. A representation $\rho$ of $\Spin(V_0)$ is \defterm{admissible} if for some (equivalently, any) nondegenerate subspace $\C^2\subset V_0$ the helicities appearing in $\rho$ are at most $1$ by absolute value.
+\end{defn}
+
+In a similar way, massless representations of the superPoincar\'{e} group are parametrized as follows (see \cite[Lecture 6]{Freed} for details). Consider a quadratic form on $\Sigma$ defined by $q(Q, Q) = (e_+, \Gamma(Q, Q))$ for $Q\in \Sigma$. Let $\Sigma_0$ be the radical of $q$ and $\overline{\Sigma} = \Sigma / \Sigma_0$. Let $\Cl(\overline{\Sigma}, q)$ be the associated Clifford algebra. Then massless representations correspond to finite-dimensional representations of $\Cl(\overline{\Sigma}, q)$ with a compatible action of $\Spin(V_0)$.
+
+\subsection{$d=3$}
+
+We have $\Spin(1)\cong \Z/2$. We denote its irreducible representations by $\C$ and $S$ which correspond to the massless scalar and massless spinor.
+
+The spinorial representation is
+\[\Sigma = (S\oplus S)\otimes W,\]
+where $W$ carries a nondegenerate symmetric bilinear form. We have
+\[\overline{\Sigma} = S\otimes W.\]
+
+There is a unique supermultiplet which contains $\dim(W)$ scalars and $\dim(W)$ spinors.
+
+\subsection{$d=4$}
+
+The admissible irreducible representations of $\Spin(2)$ are the trivial one-dimensional representation $\C$, the semi-spin representations $S_{\pm}$ of helicity $\pm\frac{1}{2}$ and the half-vector representations $V_{\pm}$ of helicity $\pm 1$.
+
+The spinorial representation is
+\[\Sigma = (S_+\oplus S_-)\otimes W\oplus (S_+\oplus S_-)\otimes W^*\]
+for a complex vector space $W$.
+
+The radical is $\Sigma_0 = S_+\otimes W\oplus S_-\otimes W^*$, so
+\[\overline{\Sigma} = S_-\otimes W\oplus S_+\otimes W^*\]
+with $q$ the obvious quadratic form. In particular, it contains a Lagrangian subspace $S_+\otimes W^*$, so irreducible massless representations of the superPoincar\'{e} group are parametrized by irreducible $\Spin(2)$-representations $\C_h$ labeled by a half-integer $h$, so that the corresponding representation of the little group is
+\[\C_h\otimes \wedge^\bullet(S_+\otimes W^*).\]
+
+This representation is admissible if $-1\leq h\leq 1$ and $h+\cN/2\leq 1$. In particular, we must have $\cN\leq 4$.
+
+In this dimension we have to make sure our representations are CPT invariant. We will only deal with PT invariance. This corresponds to extending $\Spin(2)$ to $\Z/2\ltimes \Spin(2)$, where $\Z/2$ acts on $\Spin(2)$ by inversion.
+
+The list of admissible supermultiplets:
+\begin{itemize}
+\item $\cN=1$. Chiral multiplet $\C^{\oplus 2}\oplus S_+\oplus S_-$ and the $\cN=1$ vector multiplet $S_+\oplus S_-\oplus V_+\oplus V_-$.
+
+\item $\cN=2$. Half-hypermultiplet (aka $\cN=1$ chiral multiplet) and an $\cN=2$ vector multiplet $\C^{\oplus 2}\oplus (S_+\oplus S_-)^{\oplus 2}\oplus V_+\oplus V_-$.
+
+\item $\cN=4, \cN=3$. $\cN=4$ vector multiplet $\C^{\oplus 6}\oplus (S_+\oplus S_-)^{\oplus 4}\oplus V_+\oplus V_-$.
+\end{itemize}
+
+\subsection{$d=5$}
+
+The admissible irreducible representations of $\Spin(3)$ are the trivial one-dimensional representation $\C$, the spin representation $S$ and the vector representation $V_3$.
+
+The spinorial representation is
+\[\Sigma = (S\oplus S)\otimes W,\]
+where $W$ is a complex symplectic vector space. The radical is
+\[\Sigma_0 = S\otimes W\]
+(say, the first summand), so
+\[\overline{\Sigma} = S\otimes W.\]
+
+The quadratic form is given by the product of the symplectic structure on $W$ and the symplectic structure on $S$. Choose a Lagrangian subspace $L\subset W$. Then the masless irreducible representations of the superPoincar\'{e} group are parametrized by irreducible representations $M$ of $\Spin(3)$ so that the corresponding representation of the little group is
+\[M\otimes \wedge^\bullet(S\otimes L).\]
+
+The list of admissible supermultiplets:
+\begin{itemize}
+\item $\cN=1$. The chiral multiplet (aka half-hypermultiplet) $\C^{\oplus 2}\oplus S$ and the $\cN=1$ vector multiplet $\C\oplus S^{\oplus 2}\oplus V_3$.
+
+\item $\cN=2$. $\cN=2$ vector multiplet $\C^{\oplus 5}\oplus S^{\oplus 4}\oplus V_3$.
+\end{itemize}
+
+\subsection{$d=6$}
+
+The admissible irreducible representations of $\Spin(4)$ are the trivial one-dimensional representation $\C$, the semi-spin representations $S_{\pm}$, the vector representation $V_4$ and the (anti) self-dual form representations $\Sym^2(S_{\pm})$. Note that we have a decomposition
+\[\wedge^2 V_4\cong \Sym^2(S_+)\oplus \Sym^2(S_-).\]
+
+The spinorial representation is
+\[\Sigma = (S_+\oplus S_-)\otimes W_+\oplus (S_+\oplus S_-)\otimes W_-,\]
+where $W_\pm$ are symplectic vector spaces.
+
+We have
+\[\overline{\Sigma} = S_-\otimes W_+\oplus S_+\otimes W_-\]
+with the quadratic form being the product of the symplectic form on $S_-$, $S_+$ and $W_{\pm}$. Pick Lagrangians $L_{\pm}\subset W_{\pm}$. Then the massless irreducile reprsentations of the superPoincar\'{e} group are parametrized by an irreducible $\Spin(4)$-representation $M$, so that the corresponding representation of the little group is
+\[M\otimes \wedge^\bullet(S_-\otimes L_+\oplus S_+\otimes L_-).\]
+
+The list of admissible supermultiplets:
+\begin{itemize}
+\item $\cN=(1, 0)$. The chiral multiplet (aka half-hypermultiplet) $\C^2\oplus S_-$, the tensor multiplet $\C\oplus S_-^{\oplus 2}\oplus \Sym^2(S_-)$ and the $\cN=(1, 0)$ vector multiplet $S_+^{\oplus 2}\oplus V_4$.
+
+\item $\cN=(1, 1)$. The $\cN=(1, 1)$ vector multiplet $\C^{\oplus 4}\oplus (S_+\oplus S_-)^{\oplus 2}\oplus V_4$.
+
+\item $\cN=(2, 0)$. The $\cN=(2, 0)$ tensor multiplet $\C^{\oplus 5}\oplus S_-^{\oplus 4}\oplus \Sym^2(S_-)$.
+\end{itemize}
+
+\subsection{$d=7$}
+
+The only irreducible admissible representations of $\Spin(5)$ are the trivial one-dimensional representation $\C$, the 4d spin representation $S$ and the 5d vector representation $V_5$.
+
+The spinorial representation is
+\[\Sigma = (S\oplus S)\otimes W,\]
+where $W$ is a symplectic vector space. We have
+\[\overline{\Sigma} = S\otimes W\]
+with the quadratic form the product of the symplectic structure on $S$ and the symplectic structure on $W$. Pick a Lagrangian subspace $L\subset W$. Then the irreducible representation of the little group is
+\[M\otimes \wedge^\bullet(S\otimes L),\]
+where $M$ is an irreducible representation of $\Spin(5)$.
+
+The list of admissible supermultiplets:
+\begin{itemize}
+\item $\cN=1$. The vector multiplet $\C^{\oplus 3}\oplus S^{\oplus 2}\oplus V_5$.
+\end{itemize}
+
+\subsection{$d=8$}
+
+The only irreducible admissible representations of $\Spin(6)$ are the trivial one-dmensional representation $\C$, the 4d semi-spin representations $S_{\pm}$ and the 6d vector representation $V_6$. The spinorial representation is
+\[\Sigma=(S_+\oplus S_-)\otimes (W\oplus W^*)\]
+for a complex vector space $W$. We have
+\[\overline{\Sigma} = S_+\otimes W\oplus S_-\otimes W^*\]
+with the quadratic form given by a pairing $S_+\otimes S_-\rightarrow \C$. Then the irreducible representation of the little group is
+\[M\otimes \wedge^\bullet(S_+\otimes W),\]
+where $M$ is an irreducible representation of $\Spin(6)$.
+
+The list of admissible supermultiplets:
+\begin{itemize}
+\item $\cN=1$. The vector multiplet $\C^{\oplus 2}\oplus S_+\oplus S_-\oplus V_6$.
+\end{itemize}
+
+\subsection{$d=9$}
+
+The only admissible irreducible representations of $\Spin(7)$ are the trivial one-dimensional representation $\C$, the 8d spin representation $S$ and the 7d vector representation $V_7$. The spinorial representation is
+\[\Sigma = (S\oplus S)\otimes W,\]
+where $W$ carries a nondegenerate symmetric bilinear form. We have
+\[\overline{\Sigma} = S\otimes W.\]
+
+Note that in the case $\dim(W)$ odd there is no $\Spin(7)$-invariant Lagrangian subspace in $\overline{\Sigma}$.
+
+The list of admissible supermultiplets:
+\begin{itemize}
+\item $\cN=1$. The vector multiplet $\C\oplus S\oplus V$.
+\end{itemize}
+
+\subsection{$d=10$}
+
+The only admissible irreducible representations of $\Spin(8)$ are the trivial one-dimensional representation $\C$, the semi-spin representations $S_{\pm}$ and the 8d vector representation $V_8$. The spinorial representation is
+\[\Sigma = (S_+\oplus S_-)\otimes W_+\oplus (S_+\oplus S_-)\otimes W_-,\]
+where $W_{\pm}$ carry nondegenerate symmetric bilinear forms. We have
+\[\overline{\Sigma} = S_-\otimes W_+\oplus S_+\otimes W_-.\]
+
+The list of admissible supermultiplets:
+\begin{itemize}
+\item $\cN=(1, 0)$. The vector multiplet $S_-\oplus V$.
+\end{itemize}
+
+\begin{thebibliography}{Freed}
+\bibitem[Freed]{Freed} D. Freed, Classical field theory and supersymmetry, \url{https://web.ma.utexas.edu/users/dafr/pcmi.pdf}.
+\end{thebibliography}
+
+\end{document}
