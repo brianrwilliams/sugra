@@ -60,8 +60,68 @@
 
 \subsection{Models of field theories}
 
+\subsection{The definition of a field theory}
 % field theories defined in terms of vector bundles on spacetime
+
+\begin{dfn}
+A {\bf free classical field theory} on a manifold $M$ is the data:
+\begin{itemize}
+\item a finite rank $\ZZ$-graded vector bundle $E \to M$ equipped with a differential operator of cohomological degree $+1$
+\[
+Q : \cE \to \cE [1] 
+\]
+such that (1) $Q^2 = 0$ and (2) $(\cE , Q)$ is an elliptic complex;
+\item a map of bundles
+\[
+\omega : E \otimes E \to {\rm Dens}_M [-1]
+\]
+that is (1) fiberwise nondegenerate, (2) graded skew symmetric, and (3) satisfies $\int_M \omega\<e_0, Qe_1\> = (-1)^{|e_0|} \int_M \omega(Q e_0, e_1)$ where $e_i$ are compactly supported sections of $E$ .
+\end{itemize}
+\end{dfn}
+
+
+\begin{dfn}
+A {\bf classical field theory} is a free classical field theory $(E, Q, \omega)$ equipped with a functional
+\[
+I \in \oloc^+(E)
+\]
+satisfying the classical master equation 
+\[
+Q I + \frac{1}{2} \{I,I\} = 0 .
+\]
+\end{dfn} 
+
+A local functional induces an endomorphism $\{I,-\}$ on the space of all local functionals $\oloc(E)$. 
+It also induces an endomorphism on the larger space of {\em all} functionals $\cO(E)$. 
+The classical master equation implies that the operator $Q + \{I,-\}$ squares to zero on $\cO(E)$, and hence every classical field theory defines a cochain complex
+\[
+\left(\cO(E), Q + \{I,-\}\right) .
+\]
+We will refer to this as the classical BV complex of the theory. 
+
+\begin{dfn}
+A {\bf morphism} of classical field theories (defined on the same manifold $M$) $F : (E, Q, \omega, I) \to (E', Q', \omega', I')$ is a linear map of vector bundles
+\[
+F : E \to E'
+\]
+that intertwines the differentials $Q, Q'$, the pairings $\omega, \omega'$, and the interactions $I,I'$. 
+\end{dfn}
+
+Note that a map of classical field theories induces a map of BV complexes
+\[
+F^* : \left(\cO (\cE)[-1], Q + \{I,-\} \right) \to \left(\cO (\cE')[-1], Q' + \{I',-\} \right) .
+\]
+This allows us to make the following definition of an equivalence between classical theories. 
+
+\begin{dfn}
+A map of classical field theories $F : (E, Q, \omega, I) \to (E', Q', \omega', I')$ is an {\bf equivalence} if it induces a quasi-isomorphism 
+\[
+F^* :  \left(\cO(\cE')[-1], Q' + \{I',-\} \right) \xto{\simeq} \left(\cO(\cE)[-1], Q + \{I,-\} \right) .
+\]
+\end{dfn}
+
 % explain how to obtain a QP manifold
+
 % explain how to obtain a factorization algebra given a classical solution
 
 \subsection{Supersymmetry} \label{sec: susy}
