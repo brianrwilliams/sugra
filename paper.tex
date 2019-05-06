@@ -79,17 +79,24 @@ that is (1) fiberwise nondegenerate, (2) graded skew symmetric, and (3) satisfie
 \end{itemize}
 \end{dfn}
 
+\brian{recall dfn of $\oloc$ of a gr vb.}
 
 \begin{dfn}
 A {\bf classical field theory} is a free classical field theory $(E, Q, \omega)$ equipped with a functional
 \[
 I \in \oloc^+(E)
 \]
-satisfying the classical master equation 
+of cohomological degree zero satisfying the classical master equation 
 \[
 Q I + \frac{1}{2} \{I,I\} = 0 .
 \]
 \end{dfn} 
+
+\begin{remark}
+There is a super variant of the above two definitions. 
+A $\ZZ/2$ graded field theory is a $\ZZ \times \ZZ/2$ graded vector bundle $E$ equipped with the same additional data as above.
+We require that $Q, \omega, I$ all have even parity with respect to the additional $\ZZ/2$ grading. 
+\end{remark}
 
 A local functional induces an endomorphism $\{I,-\}$ on the space of all local functionals $\oloc(E)$. 
 It also induces an endomorphism on the larger space of {\em all} functionals $\cO(E)$. 
@@ -128,10 +135,25 @@ F^* :  \left(\cO(\cE')[-1], Q' + \{I',-\} \right) \xto{\simeq} \left(\cO(\cE)[-1
 
 % spinorial representations, supertranslation groups, superPoincar\'{e} groups
 % list possible massless supermultiplets in dimensions [4, 10] with <= 16 supercharges
+
+\subsubsection{Supersymmetric field theory}
+
 % explain what a supersymmetric field theory is (in terms of the L_infinity action of the supertranslation algebra)
 
-\brian{How we we feel about using $L$ for the local Lie algebra of BRST fields and $\fL$ for the BV fields?}
+\begin{dfn}
+Let $(E,Q,\omega, I)$ be a $\ZZ/2$-graded classical field theory on $\RR^n$. 
+A {\em strict action} of a super Lie algebra $\fg$ on $(E,Q,\omega, I)$ is a map of super dg Lie algebras
+\[
+\rho : \fg \to \left(\oloc(E)[-1] , \{-,-\}_\omega, Q + \{I,-\}_\omega\right) .
+\]
+More generally, an $L_\infty$ {\em action} is an $L_\infty$ map of super dg Lie algebras
+\[
+\rho : \fg \rightsquigarrow \left(\oloc(E)[-1] , \{-,-\}_\omega, Q + \{I,-\}_\omega\right) .
+\]
+\end{dfn}
 
+\begin{rmk}
+More generally, one can speak of what it means for a 
 \subsection{Supersymmetric twisting}
 
 % twisting of field theories
@@ -343,7 +365,7 @@ The matter sector of the theory is labeled by the BRST fields:
 \end{itemize} 
 which together define the (abelian) local Lie algebra
 \[
-L_{\rm matter}^{\cN=1} = C^\infty (\RR^4) \otimes R^{\oplus 2} \oplus  \Pi C^\infty(\RR^4) \otimes (S_{+}  \otimes R \oplus S_- \otimes R) .
+\sE_{\rm matter}^{\cN=1} = C^\infty (\RR^4) \otimes R^{\oplus 2} \oplus  \Pi C^\infty(\RR^4) \otimes (S_{+}  \otimes R \oplus S_- \otimes R) .
 \]
 \subsection{Dimension 3}
 
