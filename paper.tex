@@ -33,7 +33,7 @@ A {\bf free classical field theory} on a manifold $M$ is the data:
 \begin{itemize}
 \item a finite rank $\ZZ$-graded vector bundle $E \to M$ equipped with a differential operator of cohomological degree $+1$
 \[
-Q : \cE \to \cE [1] 
+Q \colon \cE \to \cE [1] 
 \]
 such that (1) $Q^2 = 0$ and (2) $(\cE , Q)$ is an elliptic complex;
 \item a map of bundles
@@ -308,8 +308,8 @@ The holomorphic twist of 10d super Yang-Mills theory on a Calabi-Yau 5-fold $X$ 
 We will first construct a morphism $\iota$ from holomorphic Chern-Simons theory to the twisted theory $\fL^Q$. \chris{We split the fields of 10d super Yang-Mills into $\SU(5)$ irreducible representations, so the ghost $c$, then fields $A_{0,1}, A_{1,0}, B, \psi, \chi$ and their antifields, and include $c, A_{0,1}, B, B^\vee, A_{0,1}^\vee, c^\vee$.  Easy to check that it defines a morphism to the twisted theory.}
 
 Now, to verify that this morphism is an equivalence as in Definition \ref{equivalence_def}, we must check that the induced morphism 
-\[\iota^* \colon  \left(\cO(\cE_{\mr{SYM}})[-1], Q_{\mr{SYM}} + \{I_{\mr{BV}} + I^{(1)}_Q,-\} \right) \xto{\simeq} \left(\cO(\cE_\hCS)[-1], Q_\hCS + \{I_\hCS,-\} \right)\]
-is a quasi-isomorphism. \chris{...}
+\[\iota^* \colon  \left(\cO(\cE_{\mr{SYM}})[-1], Q_{\mr{SYM}} + \{I_{\mr{BV}} + I^{(1)}_Q + I^{(2)}_{Q\otimes Q},-\} \right) \xto{\simeq} \left(\cO(\cE_\hCS)[-1], Q_\hCS + \{I_\hCS,-\} \right)\]
+is a quasi-isomorphism. \chris{maybe try filtering the left-hand side by the number of $\chi$ and $\chi^\vee$ fields occuring.  The 0th filtered piece should coincide with the right-hand side exactly, and maybe we'd like to see that everything else is killed off by some differential in the spectral sequence?}
 
 \end{proof}
 
