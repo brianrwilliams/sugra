@@ -1,41 +1,6 @@
 \documentclass[10pt, oneside]{article}
 
-\input ./math_headers.sty
-
-\def\cA{\mathcal A}\def\cB{\mathcal B}\def\cC{\mathcal C}\def\cD{\mathcal D}
-\def\cE{\mathcal E}\def\cF{\mathcal F}\def\cG{\mathcal G}\def\cH{\mathcal H}
-\def\cI{\mathcal I}\def\cJ{\mathcal J}\def\cK{\mathcal K}\def\cL{\mathcal L}
-\def\cM{\mathcal M}\def\cN{\mathcal N}\def\cO{\mathcal O}\def\cP{\mathcal P}
-\def\cQ{\mathcal Q}\def\cR{\mathcal R}\def\cS{\mathcal S}\def\cT{\mathcal T}
-\def\cU{\mathcal U}\def\cV{\mathcal V}\def\cW{\mathcal W}\def\cX{\mathcal X}
-\def\cY{\mathcal Y}\def\cZ{\mathcal Z}
-
-\def\AA{\mathbb A}\def\BB{\mathbb B}\def\CC{\mathbb C}\def\DD{\mathbb D}
-\def\EE{\mathbb E}\def\FF{\mathbb F}\def\GG{\mathbb G}\def\HH{\mathbb H}
-\def\II{\mathbb I}\def\JJ{\mathbb J}\def\KK{\mathbb K}\def\LL{\mathbb L}
-\def\MM{\mathbb M}\def\NN{\mathbb N}\def\OO{\mathbb O}\def\PP{\mathbb P}
-\def\QQ{\mathbb Q}\def\RR{\mathbb R}\def\SS{\mathbb S}\def\TT{\mathbb T}
-\def\UU{\mathbb U}\def\VV{\mathbb V}\def\WW{\mathbb W}\def\XX{\mathbb X}
-\def\YY{\mathbb Y}\def\ZZ{\mathbb Z}
-
-\def\fA{\mathfrak A}\def\fB{\mathfrak B}\def\fC{\mathfrak C}\def\fD{\mathfrak D}
-\def\fE{\mathfrak E} \def\fF{\mathfrak F}\def\fG{\mathfrak G}\def\fH{\mathfrak H}
-\def\fI{\mathfrak I}\def\fJ{\mathfrak J}\def\fK{\mathfrak K}\def\fL{\mathfrak L}
-\def\fM{\mathfrak M}\def\fN{\mathfrak N}\def\fO{\mathfrak O}\def\fP{\mathfrak P}
-\def\fQ{\mathfrak Q}\def\fR{\mathfrak R}\def\fS{\mathfrak S}\def\fT{\mathfrak T}
-\def\fU{\mathfrak U}\def\fV{\mathfrak V}\def\fW{\mathfrak W}\def\fX{\mathfrak X}
-\def\fY{\mathfrak Y}\def\fZ{\mathfrak Z}
-
-\def\fa{\mathfrak a}\def\fb{\mathfrak b}\def\fc{\mathfrak c}\def\fd{\mathfrak d}
-\def\fe{\mathfrak e}\def\ff{\mathfrak f}\def\fg{\mathfrak g}\def\fh{\mathfrak h} \def\fj{\mathfrak j}\def\fk{\mathfrak k}\def\fl{\mathfrak l} \def\fm{\mathfrak m}\def\fn{\mathfrak n}\def\fo{\mathfrak o}\def\fp{\mathfrak p} \def\fq{\mathfrak q}\def\fr{\mathfrak r}\def\fs{\mathfrak s}\def\ft{\mathfrak t}
-\def\fu{\mathfrak u}\def\fv{\mathfrak v}\def\fw{\mathfrak w}\def\fx{\mathfrak x}
-\def\fy{\mathfrak y}\def\fz{\mathfrak z}
-
-\def\<{\langle}
-\def\>{\rangle}
-\def\cloc{{\rm C}_{\rm loc}}
-\def\bu{\bullet}
-\def\clie{{\rm C}_{\rm Lie}}
+\input ./combined_macros.sty
 
 \addbibresource{Twist.bib}
 
@@ -120,10 +85,10 @@ F^* : \left(\cO (\cE)[-1], Q + \{I,-\} \right) \to \left(\cO (\cE')[-1], Q' + \{
 \]
 This allows us to make the following definition of an equivalence between classical theories. 
 
-\begin{dfn}
+\begin{dfn} \label{equivalence_def}
 A map of classical field theories $F : (E, Q, \omega, I) \to (E', Q', \omega', I')$ is an {\bf equivalence} if it induces a quasi-isomorphism 
 \[
-F^* :  \left(\cO(\cE')[-1], Q' + \{I',-\} \right) \xto{\simeq} \left(\cO(\cE)[-1], Q + \{I,-\} \right) .
+F^* \colon  \left(\cO(\cE')[-1], Q' + \{I',-\} \right) \xto{\simeq} \left(\cO(\cE)[-1], Q + \{I,-\} \right) .
 \]
 \end{dfn}
 
@@ -154,6 +119,7 @@ More generally, an $L_\infty$ {\em action} is an $L_\infty$ map of super dg Lie 
 
 \begin{rmk}
 More generally, one can speak of what it means for a 
+\end{rmk}
 \subsection{Supersymmetric twisting}
 
 % twisting of field theories
@@ -164,13 +130,12 @@ More generally, one can speak of what it means for a
 
 \subsection{Dimension 10}
 
-Our starting point will be (complexified) 10d super Yang-Mills theory.  
-Fix a complex reductive gauge group $G$ with Lie algebra $\gg$.  
+Our starting point will be (complexified) 10d super Yang-Mills theory. Fix a complex reductive gauge group $G$ with Lie algebra $\gg$.  
 The ordinary fields of super Yang-Mills theory on $\RR^{10}$ consist of:
 \begin{itemize}
-\item a single boson: a connection $A \in \Omega^1(\RR^{10} ; \fg)$ on the trivial $G$-bundle;
-\item a single fermion: a $\gg$-valued section $\lambda \in \Omega^0(\RR^{10}) \otimes \Pi S_+ \otimes \fg$ of the Weyl spinor bundle associated to the spinor representation $S_+$. 
-\footnote{If we didn't complexify we would instead consider $G_\RR$ a compact connected Lie group, and a section of the Majorana-Weyl spinor bundle, which necessitates working in Lorentzian signature.  I think for our purposes it's interesting enough to just consider the complexified theory and avoid signature issues.  The complexified theory twists to holomorphic Chern-Simons theory with complex gauge group.}.  
+\item A connection $A \in \Omega^1(\RR^{10} ; \fg)$ on the trivial $G$-bundle;
+\item A $\gg$-valued section $\lambda \in \Omega^0(\RR^{10}) \otimes \Pi S_+ \otimes \fg$ of the Weyl spinor bundle associated to the spinor representation $S_+$. 
+\footnote{If we didn't complexify we would instead consider $G_\RR$ a compact connected Lie group, and a section of the Majorana-Weyl spinor bundle, which necessitates working in Lorentzian signature.  For our purposes it's interesting enough to just consider the complexified theory and avoid signature issues.  The complexified theory twists to holomorphic Chern-Simons theory with complex gauge group.}.  
 \end{itemize}
 These fields are acted upon by the group of gauge transformations -- $G$-valued functions on $\RR^{10}$. 
 Hence, there is a single ghost for the theory given by a $\gg$-valued section of the trivial $G$-bundle $c \in \Omega^0(\RR^{10} ; \fg)$. 
@@ -197,7 +162,6 @@ This is the local $L_\infty$-algebra $\fL$ on $\RR^{10}$ whose underlying cochai
 \fL & = & \Omega^0(\RR^{10}; \gg) \ar[r]^{\d} &\Omega^1(\RR^{10}; \gg) \ar[r]^{\d \ast \d} &\Omega^9(\RR^{10}; \gg) \ar[r]^{\d} &\Omega^{10}(\RR^{10}; \gg) \\
 & & &\Omega^0(\RR^{10}; \Pi S_+ \otimes \gg) \ar[r]^{\ast \sd \d} &\Omega^{10}(\RR^{10}; \Pi S'_- \otimes \gg), &
 }\]
-\brian{I've changed the spinor component in degree zero to $S_+$, check if that's OK.}
 with degree $(-3)$ invariant pairing $\<-,-\>$ induced by the invariant pairing on $\gg$ and the pairing $(-,-)$ between $S_+$ and $S_-$, and with degree 2 and 3 brackets given by the action of $\Omega^0(\RR^{10}; \gg)$ on everything along with
 \begin{align*}
 \ell_2^{\mr{Bos}} \colon \Omega^1(\RR^{10};\gg) \otimes \Omega^1(\RR^{10};\gg) &\to \Omega^{9}(\RR^{10};\gg) \\
@@ -219,10 +183,14 @@ S_{BV} (\alpha) = \frac{1}{2} \<\alpha , Q_{BV} \alpha\> + \sum_{n \geq 2} \frac
 where $\alpha$ is a general BV field and $Q_{BV}$ is the linear BV differential. 
 The statement that $S_{BV}$ is gauge invariant is encoded by the fact that it satisfies that classical master equation $\{S_{BV}, S_{BV}\} = 0$, which is equivalent to the statement that $S_{BV}$ determines a Mauer-Cartan element in the dg Lie algebra $\cloc^\bu(\fL)[-1]$. 
 
-\subsubsection{The naive supersymmetry action}
+\subsubsection{The Supersymmetry Action}
+In order to construct an action of the $\mc N=(1,0)$ supersymmetry algebra $\mf A$ on the 10d supersymmetric gauge theory $\fL$, we proceed in two steps.
+\begin{enumerate}
+ \item There is an ordinary Lie action of the super Lie algebra $\mf A$ on the theory $\fL$, extending the standard action of the Poincar\'e algebra by isometries of $\RR^{10}$ \chris{define this above}, which is only well-defined on-shell.  In other words, there is a linear map $\delta^{(1)} \colon \mf A \to \cloc^\bu(\fL)[-1]$ which is a Lie action modulo the ideal generated by the equations of motion \chris{induces a Lie homomorphism on cohomology?}.
+ \item We can promote this on-shell action to an $L_\infty$ map $\delta^{(1)} \colon \mf A \to \cloc^\bu(\fL)[-1]$ by including a quadratic term $\delta^{(2)}$ which ``corrects'' for the failure of the map $\delta^{(1)}$ to be a Lie map on-the-nose.
+\end{enumerate}
 
-The naive supersymmetry action is defined by saying that bosonic piece of the supersymmetry algebra acts by isometries on $\CC^{10}$, and on the fields via pullback. 
-The fermionic piece of the supersymmetry algebra is defined by saying that $Q \in S_+$ acts infinitesimally by
+Since this is our first example, we will work through it in some detail, in order to motivate the formul\ae{} that will recur in later examples.  The fermionic piece of the supersymmetry algebra is defined by saying that $Q \in S_+$ acts infinitesimally by
 \[
 \begin{pmatrix}
 A \\ \lambda
@@ -237,10 +205,9 @@ where
 \delta_Q A &= \Gamma(Q,\lambda) \\
 \delta_Q \lambda &= \sd F_A Q .
 \end{align*}
-Here, the notation $\sd F_A$ stands for the iterated Clifford multiplication $\sd F_A = F_{ij} \gamma^i \gamma^j$.  
-%To check that this defines an on-shell supersymmetry action we need to check it's compatible with the brackets in the supersymmetry algebra, up to terms in the ideal generated by the equations of motion.  
+Here, the notation $\sd F_A$ stands for the iterated Clifford multiplication $\sd F_A = F_{ij} \gamma^i \gamma^j$. 
 
-\begin{lemma}
+\begin{lemma} \label{10d_onshell_lemma}
 Suppose $Q_1, Q_2 \in S_+$ and $(A, \lambda)$ are fields.
 The following relations hold:
 \begin{itemize}
@@ -249,6 +216,7 @@ The following relations hold:
 \end{itemize}
 Here, the commutator on the left hand side of the equations takes place in the algebra of endomorphisms of the space of fields.
 \end{lemma}
+
 \begin{proof}
 Both are direct calculations using standard Clifford relations which cite below.
 So, we calculate
@@ -279,51 +247,73 @@ as in \cite[Theorem 11]{BaezHuerta}.  Making one more simplification using the C
 \end{proof}
 
 In particular the supersymmetry action is a Lie algebra homomorphism only modulo the ideal generated by the equation of motion $\sd \dd \lambda = 0$.
-In other words, this supersymmetry action only defined an action of the Lie algebra of supertranslations ``on-shell". 
-
-\subsubsection{Off-shell formulation}
-
-Based off the calculations in the previous subsection, we are motivated to write down the following $L_\infty$ action of the supersymmetry algebra on the space of BV fields.
-
-The linear part of the action is simply the naive action we have already written down:
+In other words, this supersymmetry action only defined an action of the Lie algebra of supertranslations ``on-shell".  This calculation suggests introducing a second order correction to the supersymmetry action on the BV theory, which has the chance of closing off-shell.  Define a second order action depending on the antifield $\lambda^*$ to the gluino $\lambda$ by
 \begin{align*}
-\delta^{(1)} \colon S_+ \otimes \left( \Omega^1(\RR^{10} ; \mf g) \oplus \Omega^0(\RR^{10}; \Pi S_+[-1] \otimes \mf g) \right) &\to \Omega^1(\RR^{10} ; \mf g) \oplus \Gamma(\RR^{10}; \Pi S_+[-1] \otimes \mf g) \\
-Q \otimes (A + \lambda) &\mapsto  \Gamma(Q,\lambda) + \sd F_A Q .
-\end{align*}
-In other words, $\delta^{(1)}(Q \otimes (A + \lambda)) = \delta_Q A + \delta_Q\lambda $ in the notation of the previous subsection.
-We define the following quadratic action as
-\begin{align*}
-\delta^{(2)} \colon S_+ \otimes S_+ \otimes \Omega^0(\RR^{10}; \Pi S_+) &\to \Omega^0(\RR^{10}; \Pi S_-' [-1]) \\
-Q_1 \otimes Q_2 \otimes \lambda &\mapsto - \left(\rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right) .
+\delta^{(2)} \colon S_+ \otimes S_+ \otimes \Gamma(\RR^{10}; \Pi S_-[-1]) &\to \Gamma(\RR^{10}; \Pi S_+) \\
+Q_1 \otimes Q_2 \otimes \lambda^* &\mapsto - \left(\rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right).
 \end{align*}
 
-The BV action involving the component $\Pi S_+$ of the supersymmetry algebra reads
+We'll rewrite this as a local functional in the theory $\fL$ coupled to the $\mc N=(1,0)$ super Lie algebra $\mf A$.
+
+\begin{definition}
+The off-shell supersymmetry action on complexified Yang-Mills theory on $\RR^{10}$ is defined to be the cochain
+\[I^{(1)} + I^{(2)} \in \clie^\bu(\mc A) \otimes \cloc^\bu(\fL),\]
+where 
 \begin{align*}
 I ^{(1)} (Q ; A, \lambda, A^*, \lambda^*) & = \<A^* , \Gamma(Q, \lambda)\> + \<\lambda^*, \sd F_A Q\> \\
 I^{(2)} (Q_1,Q_2 ; \lambda^*) & = \pm \left\<\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right\> .
 \end{align*}
+\end{definition}
 
 \begin{prop}
-The functional
-\[
-\fS = S_{BV} + I^{\rm Bos} + I^{(1)} + I^{(2)} \in \clie^\bu(\fg_{\cN=1}) \otimes \cloc^\bu(\fL) [-1]
-\]
+Let $S_{\mr{BV}}$ be the BV action functional in the theory $\fL$, and write $I_{\mr{Poin}}$ for the interaction generating the Lie action of the Poincar\'e algebra \chris{we'll have to see whether we want Poincar\'e or just translation here}. The functional
+\[\fS = S_{\mr{BV}} + I_{\mr{Poin}} + I^{(1)} + I^{(2)} \in \clie^\bu(\mc A) \otimes \cloc^\bu(\fL) [-1]\]
 satisfies the Maurer-Cartan equation
-\[
-\d_{\rm Lie}  \left( \fS \right) + \{S_{BV}, \fS\} + \frac{1}{2} \left\{\fS , \fS \right\} = 0 .
-\]
+\begin{equation} 
+\label{10d_MC}
+(\d_{\rm Lie} \fS + \frac{1}{2} \left\{\fS , \fS \right\} = 0 .
+\end{equation}
 \end{prop}
 
-To state the above proposition differently, the functional $\fS$ prescribes an $L_\infty$ map
-\[
-\fS : \fg_{\cN=1} \rightsquigarrow \cloc^\bu(\fL) [-1]
-\]
-\brian{add more}
+\begin{proof}
+We can filter the complex $\clie^\bu(\mc A) \otimes \cloc^\bu(\fL)$ by the number of anti-field components in $\fL$.  Using this filtration, the left-hand side of \ref{10d_MC} splits up as
+\begin{align}
+\d_{\rm Lie}  \left( \fS \right) + \frac{1}{2} \left\{ \fS , \fS \right\} &= \d_{\mr{Lie}} I_{\mr{Poin}} + \frac 12 \{S_{\mr{BV}} + I_{\mr{Poin}}, S_{\mr{BV}} + I_{\mr{Poin}}\} \label{10d_MC_BV}\\
+&\quad + \{S_{\mr{BV}}, I^{(1)}\} \label{10d_MC_1}\\
+&\quad + \d_{\mr{Lie}} I^{(1)} + \{S_{\mr{BV}}, I^{(2)}\} + \{I_{\mr{Poin}}, I^{(1)}\} + \frac 12 \{I^{(1)}, I^{(1)}\} \label{10d_MC_2}\\
+&\quad + \d_{\mr{Lie}} I^{(2)} + \{I_{\mr{Poin}}, I^{(2)}\} + \{I^{(1)}, I^{(2)}\} \label{10d_MC_3}\\
+&\quad + \frac 12 \{I^{(2)}, I^{(2)}\}. \label{10d_MC_4}
+\end{align}
+Taking these terms one at a time, we first note that the vanishing of \ref{10d_MC_BV} is just the fact that the BV action of the 10d super Yang-Mills theory satisfies the classical master equation, along with the fact that this theory is Poincar\'e invariant \chris{ref some earlier discussion}.  The remaining terms are those involving the action of supersymmetries.
 
-\subsubsection{The minimal twist}
+First, the term \ref{10d_MC_1} vanishes by \chris{We've discussed this.  First the $\{I_{\mr{Poin}}, I^{(i)}\}$ terms vanish by Poincar\'e invariance of the interaction terms.  Then \ref{10d_MC_1} is zero by Baez--Huerta.  Term \ref{10d_MC_2} is Lemma \ref{10d_onshell_lemma}. Term \ref{10d_MC_3} vanishes because, first $\d_{\mr{Lie}}I^{(2)} = 0$ since ...not sure right now..., then the remaining term vanishes by the trick where we symmetrize in three spinors.  Finally \ref{10d_MC_4} vanishes because $I^{(2)}$ only involves antifields.}
+\end{proof}
 
-% \cN=(1, 0) SYM
-% Construct the L_infinity action of supersymmetry
+
+\subsubsection{The Holomorphic Twist}
+
+\newcommand{\hCS}{\mathrm{hCS}}
+\chris{this definition should go elsewhere.  We also need to include a description of the holomorphic supercharge, and something about the trivial $\SU(5)$ twisting homomorphism.}
+
+\begin{definition}
+Let $X$ be a Calabi-Yau variety of odd complex dimension $d$, and let $G$ be a complex reductive group.  \emph{Holomorphic Chern-Simons theory} is the $\ZZ/2\ZZ$-graded classical field theory $(E_\hCS, Q_\hCS, \omega_\hCS, I_\hCS)$, where $E_\hCS$ is the graded vector bundle $\Omega^{0,\bullet}(X;\gg)$, $Q_{\hCS}$ is the Dolbeault differential, $\omega_\hCS$ is the density-valued pairing associated to the Calabi-Yau structure on $X$ and a choice of invariant pairing on $\gg$, and $I_\hCS$ is the cubic interactional functional
+\[I_{\hCS}(\alpha) = \frac 16 [\alpha \wedge \alpha \wedge \alpha].\]
+\end{definition}
+
+\begin{theorem}
+The holomorphic twist of 10d super Yang-Mills theory on a Calabi-Yau 5-fold $X$ is equivalent to holomorphic Chern-Simons theory on $X$.
+\end{theorem}
+
+\begin{proof}
+We will first construct a morphism $\iota$ from holomorphic Chern-Simons theory to the twisted theory $\fL^Q$. \chris{We split the fields of 10d super Yang-Mills into $\SU(5)$ irreducible representations, so the ghost $c$, then fields $A_{0,1}, A_{1,0}, B, \psi, \chi$ and their antifields, and include $c, A_{0,1}, B, B^\vee, A_{0,1}^\vee, c^\vee$.  Easy to check that it defines a morphism to the twisted theory.}
+
+Now, to verify that this morphism is an equivalence as in Definition \ref{equivalence_def}, we must check that the induced morphism 
+\[\iota^* \colon  \left(\cO(\cE_{\mr{SYM}})[-1], Q_{\mr{SYM}} + \{I_{\mr{BV}} + I^{(1)}_Q,-\} \right) \xto{\simeq} \left(\cO(\cE_\hCS)[-1], Q_\hCS + \{I_\hCS,-\} \right)\]
+is a quasi-isomorphism. \chris{...}
+
+\end{proof}
+
+
 
 \subsection{Dimension 9}
 
@@ -365,7 +355,7 @@ The matter sector of the theory is labeled by the BRST fields:
 \end{itemize} 
 which together define the (abelian) local Lie algebra
 \[
-\sE_{\rm matter}^{\cN=1} = C^\infty (\RR^4) \otimes R^{\oplus 2} \oplus  \Pi C^\infty(\RR^4) \otimes (S_{+}  \otimes R \oplus S_- \otimes R) .
+\mathcal E_{\rm matter}^{\cN=1} = C^\infty (\RR^4) \otimes R^{\oplus 2} \oplus  \Pi C^\infty(\RR^4) \otimes (S_{+}  \otimes R \oplus S_- \otimes R) .
 \]
 \subsection{Dimension 3}
 
