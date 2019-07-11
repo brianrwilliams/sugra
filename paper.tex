@@ -39,16 +39,16 @@ A {\bf free classical field theory} on a manifold $M$ is the data:
 \[
 \d \colon \cE \to \cE [1] 
 \]
-such that (1) $\d^2 = 0$ and (2) $(\cE , \d)$ is an elliptic complex;
+such that $(1)$: $\d^2 = 0$ and $(2)$: the pair $(\cE , \d)$ is an elliptic complex;
 \item a map of bundles
 \[
 \omega\colon E \otimes E \to {\rm Dens}_M [-1]
 \]
 that is
 \begin{enumerate}
-\item fiberwise nondegenerate,
-\item graded skew symmetric, and
-\item satisfies $\int_M \omega\<e_0, \d e_1\> = (-1)^{|e_0|} \int_M \omega(\d e_0, e_1)$ where $e_i$ are compactly supported sections of $E$ .
+\item[$(1)$] fiberwise nondegenerate,
+\item[$(2)$] graded skew symmetric, and
+\item[$(3)$] satisfies $\int_M \omega\<e_0, \d e_1\> = (-1)^{|e_0|} \int_M \omega(\d e_0, e_1)$ where $e_i$ are compactly supported sections of $E$ .
 \end{enumerate}
 \end{itemize}
 \end{dfn}
@@ -113,6 +113,7 @@ More generally, an $L_\infty$ {\bf action} is an $\infty$-morphism of super dg L
 \[
 \rho\colon \fg \rightsquigarrow \left(\oloc(E)[-1] , \{-,-\}_\omega, \d + \{I,-\}_\omega\right) .
 \]
+\brian{maybe point to appendix where we can fix conventions for $\infty$-maps}
 \end{dfn}
 
 We denote components of an $\infty$-morphism by $\rho_2, \rho_3, \dots$, so that $\rho_2$ is a morphism of (super) chain complexes.
@@ -553,5 +554,15 @@ which together define the (abelian) local Lie algebra
 \label{fig:superchargeorbits}
 \end{figure}
 \end{landscape}
+
+\appendix
+
+\section{Functional analysis}
+
+\brian{We can put all our conventions for topological vector spaces, largely borrowed from \cite{CG1}, here. }
+
+\section{$\infty$ algebra}
+
+\brian{Not sure if this deserves a whole appendix, but it may be good to spell out what $L_\infty$ modules are, etc..}
 
 \end{document}
