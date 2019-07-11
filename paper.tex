@@ -4,6 +4,17 @@
 
 \addbibresource{Twist.bib}
 
+\usepackage{pdflscape}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+\tikzstyle{s16} = [rectangle, rounded corners, minimum width=2cm, minimum height=1cm,text centered, draw=black,fill=red!30]
+\tikzstyle{s16chiral} = [s16, dashed]
+\tikzstyle{s8} = [rectangle, rounded corners, minimum width=2cm, minimum height=1cm,text centered, draw=black,fill=orange!30]
+\tikzstyle{s4} = [rectangle, rounded corners, minimum width=2cm, minimum height=1cm,text centered, draw=black,fill=yellow!30]
+\tikzstyle{s2chiral} = [rectangle, dashed, rounded corners, minimum width=2cm, minimum height=1cm,text centered, draw=black,fill=green!30]
+\tikzstyle{dimension} = [ellipse, text centered, text width=1cm, minimum height=1cm, draw=black]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
 \title{Twists of supersymmetric gauge theories}
 \author{Chris Elliott\and Pavel Safronov \and Brian Williams}
 
@@ -13,118 +24,202 @@
 
 \maketitle
 
-\section{Introduction}
+\section*{Introduction}
 
 \section{Preliminaries}
 
-\subsection{Shifted symplectic manifolds}
-
-% Define QP manifolds (Z x Z/2-graded, Q doesn't have to be Hamiltonian)
-% Tangent complex of a QP manifold at a classical solution forms a cyclic L_infinity algebra
-% equivalence of QP manifolds
-
-\subsection{Models of field theories}
+Throughout the paper we will mostly work with a $\ZZ\times\ZZ/2$-grading. \emph{Degree} will refer to the first (cohomological) grading and \emph{odd} or \emph{even} to the second (fermionic) grading.
 
 \subsection{The definition of a field theory}
-% field theories defined in terms of vector bundles on spacetime
 
 \begin{dfn}
 A {\bf free classical field theory} on a manifold $M$ is the data:
 \begin{itemize}
-\item a finite rank $\ZZ$-graded vector bundle $E \to M$ equipped with a differential operator of cohomological degree $+1$
+\item a finite rank $\ZZ\times\ZZ/2$-graded vector bundle $E \to M$ equipped with an even differential operator of cohomological degree $+1$
 \[
-Q \colon \cE \to \cE [1] 
+\d \colon \cE \to \cE [1] 
 \]
-such that (1) $Q^2 = 0$ and (2) $(\cE , Q)$ is an elliptic complex;
+such that (1) $\d^2 = 0$ and (2) $(\cE , \d)$ is an elliptic complex;
 \item a map of bundles
 \[
-\omega : E \otimes E \to {\rm Dens}_M [-1]
+\omega\colon E \otimes E \to {\rm Dens}_M [-1]
 \]
-that is (1) fiberwise nondegenerate, (2) graded skew symmetric, and (3) satisfies $\int_M \omega\<e_0, Qe_1\> = (-1)^{|e_0|} \int_M \omega(Q e_0, e_1)$ where $e_i$ are compactly supported sections of $E$ .
+that is
+\begin{enumerate}
+\item fiberwise nondegenerate,
+\item graded skew symmetric, and
+\item satisfies $\int_M \omega\<e_0, \d e_1\> = (-1)^{|e_0|} \int_M \omega(\d e_0, e_1)$ where $e_i$ are compactly supported sections of $E$ .
+\end{enumerate}
 \end{itemize}
 \end{dfn}
 
 \brian{recall dfn of $\oloc$ of a gr vb.}
 
 \begin{dfn}
-A {\bf classical field theory} is a free classical field theory $(E, Q, \omega)$ equipped with a functional
+A {\bf classical field theory} is a free classical field theory $(E, \d, \omega)$ equipped with an even functional
 \[
 I \in \oloc^+(E)
 \]
 of cohomological degree zero satisfying the classical master equation 
 \[
-Q I + \frac{1}{2} \{I,I\} = 0 .
+\d I + \frac{1}{2} \{I,I\} = 0 .
 \]
-\end{dfn} 
+\end{dfn}
+
+Given a classical field theory $(E, \d, \omega, I)$ we denote by
+\[S_{BV} = \frac{1}{2} \int_M \omega(e, \d e) + I\in \oloc(E)\]
+the BV action of the theory.
 
 \begin{remark}
-There is a super variant of the above two definitions. 
-A $\ZZ/2$ graded field theory is a $\ZZ \times \ZZ/2$ graded vector bundle $E$ equipped with the same additional data as above.
-We require that $Q, \omega, I$ all have even parity with respect to the additional $\ZZ/2$ grading. 
+We will also consider $\ZZ/2$-graded classical field theories which are defined as before, but where $E$ has only a single $\ZZ/2$-grading and, correspondigly, $\d$ is simply an odd operator.
 \end{remark}
 
 A local functional induces an endomorphism $\{I,-\}$ on the space of all local functionals $\oloc(E)$. 
 It also induces an endomorphism on the larger space of {\em all} functionals $\cO(E)$. 
-The classical master equation implies that the operator $Q + \{I,-\}$ squares to zero on $\cO(E)$, and hence every classical field theory defines a cochain complex
+The classical master equation implies that the operator $\d + \{I,-\}$ squares to zero on $\cO(E)$, and hence every classical field theory defines a cochain complex
 \[
-\left(\cO(E), Q + \{I,-\}\right) .
+\left(\cO(E), \d + \{I,-\}\right) .
 \]
-We will refer to this as the classical BV complex of the theory. 
+We will refer to this as the {\bf classical BV complex} of the theory. 
 
 \begin{dfn}
-A {\bf morphism} of classical field theories (defined on the same manifold $M$) $F : (E, Q, \omega, I) \to (E', Q', \omega', I')$ is a linear map of vector bundles
+A {\bf morphism} of classical field theories (defined on the same manifold $M$) $F\colon (E, \d, \omega, I) \to (E', \d', \omega', I')$ is a linear map of vector bundles
 \[
-F : E \to E'
+F\colon E \to E'
 \]
-that intertwines the differentials $Q, Q'$, the pairings $\omega, \omega'$, and the interactions $I,I'$. 
+that intertwines the differentials $\d, \d'$, the pairings $\omega, \omega'$, and the interactions $I,I'$. 
 \end{dfn}
 
 Note that a map of classical field theories induces a map of BV complexes
 \[
-F^* : \left(\cO (\cE)[-1], Q + \{I,-\} \right) \to \left(\cO (\cE')[-1], Q' + \{I',-\} \right) .
+F^*\colon \left(\cO (\cE)[-1], \d + \{I,-\} \right) \to \left(\cO (\cE')[-1], \d' + \{I',-\} \right) .
 \]
 This allows us to make the following definition of an equivalence between classical theories. 
 
 \begin{dfn} \label{equivalence_def}
-A map of classical field theories $F : (E, Q, \omega, I) \to (E', Q', \omega', I')$ is an {\bf equivalence} if it induces a quasi-isomorphism 
+A morphism of classical field theories $F\colon (E, \d, \omega, I) \to (E', \d', \omega', I')$ is an {\bf equivalence} if it induces a quasi-isomorphism 
 \[
-F^* \colon  \left(\cO(\cE')[-1], Q' + \{I',-\} \right) \xto{\simeq} \left(\cO(\cE)[-1], Q + \{I,-\} \right) .
+F^* \colon  \left(\cO(\cE')[-1], \d' + \{I',-\} \right) \xto{\simeq} \left(\cO(\cE)[-1], \d + \{I,-\} \right) .
 \]
 \end{dfn}
 
-% explain how to obtain a QP manifold
+\begin{dfn}
+Let $(E, \d,\omega, I)$ be a classical field theory 
+A {\bf strict action} of a super Lie algebra $\fg$ on $(E, \d,\omega, I)$ is a map of super dg Lie algebras
+\[
+\rho\colon \fg \to \left(\oloc(E)[-1] , \{-,-\}_\omega, \d + \{I,-\}_\omega\right) .
+\]
+More generally, an $L_\infty$ {\bf action} is an $\infty$-morphism of super dg Lie algebras
+\[
+\rho\colon \fg \rightsquigarrow \left(\oloc(E)[-1] , \{-,-\}_\omega, \d + \{I,-\}_\omega\right) .
+\]
+\end{dfn}
 
-% explain how to obtain a factorization algebra given a classical solution
+We denote components of an $\infty$-morphism by $\rho_2, \rho_3, \dots$, so that $\rho_2$ is a morphism of (super) chain complexes.
+
+\pavel{explain how to obtain a factorization algebra from a classical field theory.}
+
+\pavel{explain how to get a BV theory from a BRST theory}
+
+\subsection{Examples}
+
+\pavel{(partially) topological BF theories and Chern-Simons theories in different dimensions.}
 
 \subsection{Supersymmetry} \label{sec: susy}
 
-% spinorial representations, supertranslation groups, superPoincar\'{e} groups
-% list possible massless supermultiplets in dimensions [4, 10] with <= 16 supercharges
+In this section we recall the framework for supersymmetry following \cite{ElliottSafronov} and \cite{DeligneSpinors}, we refer there for more details.
 
-\subsubsection{Supersymmetric field theory}
+Let $V_\RR = \RR^n$ endowed with its nondegenerate bilinear form and $V=V_\RR\otimes_\RR\CC$ its complexification. Consider the Lie algebra $\so(V)$. Let us recall the following facts:
+\begin{itemize}
+\item If $n$ is odd, $\so(V)$ has a distinguished fundamental representation called the {\bf spin} representation $S$.
 
-% explain what a supersymmetric field theory is (in terms of the L_infinity action of the supertranslation algebra)
+\item If $n$ is even, $\so(V)$ has a pair of distinguished fundamental representations called the {\bf semi-spin} representations $S_+, S_-$.
+\end{itemize}
 
 \begin{dfn}
-Let $(E,Q,\omega, I)$ be a $\ZZ/2$-graded classical field theory on $\RR^n$. 
-A {\em strict action} of a super Lie algebra $\fg$ on $(E,Q,\omega, I)$ is a map of super dg Lie algebras
-\[
-\rho : \fg \to \left(\oloc(E)[-1] , \{-,-\}_\omega, Q + \{I,-\}_\omega\right) .
-\]
-More generally, an $L_\infty$ {\em action} is an $L_\infty$ map of super dg Lie algebras
-\[
-\rho : \fg \rightsquigarrow \left(\oloc(E)[-1] , \{-,-\}_\omega, Q + \{I,-\}_\omega\right) .
-\]
+A {\bf spinorial representation} $\Sigma$ is a sum of spin or semi-spin representations of $\so(V)$.
 \end{dfn}
 
-\begin{rmk}
-More generally, one can speak of what it means for a 
-\end{rmk}
+So, in odd dimensions we have $\Sigma=S\otimes W$ and in even dimensions we have $\Sigma=S_+\otimes W_+\oplus S_-\otimes W_-$, where $W$ denotes a multiplicity space.
+
+\begin{dfn}
+Fix a spinorial representation $\Sigma$ and a nondegenerate $\so(V)$-equivariant pairing $\Gamma\colon \sym^2(\Sigma)\rightarrow V$. The {\bf supertranslation Lie algebra} is the $\so(V)$-equivariant super Lie algebra $T=\Pi\Sigma\oplus V$ whose only nontrivial bracket is given by $\Gamma$.
+\end{dfn}
+
+For a given spinorial representation, the pairing $\Gamma$ is unique up to a scale, so a supertranslation Lie algebra is specified by fixing a spinorial representation. In turn, a spinorial representation is determined by the dimension of the multiplicity space, so we will talk about $\mc{N}$ or $(\mc{N}_+, \mc{N}_-)$ supertranslation Lie algebras, where the numbers are specified as follows:
+\begin{itemize}
+\item If $n\equiv 0, 1, 3, 4\pmod 8$, we let $\mc{N} = \dim(W)$.
+
+\item If $n\equiv 2 \pmod 8$, we let $\mc{N}_{\pm}=\dim(W_{\pm})$.
+
+\item If $n\equiv 5, 7\pmod 8$, we let $2\mc{N} = \dim(W)$.
+
+\item If $n\equiv 6\pmod 8$, we let $2\mc{N}_{\pm} = \dim(W_{\pm})$.
+\end{itemize}
+
+Fix the following data:
+\begin{itemize}
+\item A spinorial representation $\Sigma$ of $\so(V)$.
+
+\item An $\so(V)$-equivariant nondegenerate pairing $\Gamma\colon \sym^2(\Sigma)\rightarrow V$.
+
+\item A complex Lie group $G_R$, the {\bf group of $R$-symmetries}, which is a subgroup of $\so(V)$-equivariant automorphisms of $(\Sigma, \Gamma)$.
+\end{itemize}
+
+Note that the supertranslation Lie algebra $T$ is a $\Spin(V_\RR)\times G_R$-equivariant super Lie algebra.
+
+Consider a spacetime manifold $M$ which is an affine space over $V_\RR$. Let $\ISO(V_\RR) = \Spin(V_\RR)\ltimes V_\RR$ be the Poincar\'{e} group which acts in the obvious way on $M$.
+
+\begin{dfn}
+A classical field theory $(E, Q, \omega, I)$ is {\bf supersymmetric} if $E\rightarrow M$ is an $\ISO(V_\RR)\times G_R$-equivariant vector bundle and the infinitesimal strict action of the translation Lie algebra $V$ on the classical theory is extended to a $\Spin(V_\RR)\times G_R$-equivariant $L_\infty$ action of the supertranslation Lie algebra $T$ on the classical theory.
+\end{dfn}
+
 \subsection{Supersymmetric twisting}
 
-% twisting of field theories
-% twisting homomorphisms
-% list all possible twists in dimensions [2, 10] with <= 16 supercharges
+\begin{dfn}
+A {\bf square-zero supercharge} is a nonzero element $Q\in\Sigma$ such that $\Gamma(Q, Q)=0$.
+\end{dfn}
+
+It is shown in \cite[Proposition 3.25]{ElliottSafronov} that the image of $\Gamma(Q, -)\colon \Sigma\rightarrow V$ has dimension at least $n/2$. We will use the following adjectives for square-zero supercharges depending on $d=\dim(\mathrm{im}\Gamma(Q, -))$:
+\begin{itemize}
+\item A supercharge $Q$ is {\bf topological} if $d = n$.
+
+\item A supercharge $Q$ is {\bf holomorphic} if $n$ is even and $d=n/2$.
+\end{itemize}
+
+In the intermediate case we refer to $Q$ as a {\bf holomorphic-topological} (alternatively, partially topological) supercharge. The collection of all square-zero supercharges in dimensions 2 through 10 (where one restricts to supersymmetries with at most 16 supercharges) was studied in \cite{ElliottSafronov} and \cite{EagerSaberiWalcher}. In particular, orbits of square-zero supercharges under the $R$-symmetry group, $\Spin(V)$ and the obvious scaling action of $\CC^\times$ are shown in Figure \ref{fig:superchargeorbits}:
+\begin{itemize}
+\item The color denotes the amount of supersymmetries: red denotes 16 supercharges, orange 8 supercharges, yellow 4 supercharges and green 2 supercharges. Dashed border denotes chiral supersymmetry (i.e. $(\cN_+, 0)$ in even dimensions).
+
+\item $d$ denotes the dimension of the image of $\Gamma(Q, -)$.
+
+\item Rank denotes the rank of the tensor $Q\in S\otimes W$ in odd dimensions or $Q\in S_+\otimes W_+\oplus S_-\otimes W_-$ in even dimensions.
+
+\item Arrows denote compactifications from higher to lower dimensions.
+\end{itemize}
+
+\begin{dfn}
+A {\bf twisting datum} is a pair $(Q, \alpha)$, where $Q\in\Sigma$ is a square-zero supercharge and $\alpha\colon U(1)\rightarrow G_R$ is a homomorphism under which $Q$ has weight $1$.
+\end{dfn}
+
+We will call $\alpha$ in a twisting datum a {\bf twisting homomorphism}.
+
+\begin{dfn}
+Suppose $(E, \d, \omega, I)$ is a supersymmetric classical field theory and $(Q, \alpha)$ is a twisting datum. The {\bf $Q$-twisted classical field theory} is the classical field theory $(E^Q, \d + \{\rho_2(Q), -\}, \omega, I + \rho_3(Q) + \dots)$, where
+\[E^Q = \bigoplus_{n=-\infty}^\infty \Pi^n E(n)[-n]\]
+for $E(n)$ the component of $E$ which has $\alpha$-weight $n$.
+\end{dfn}
+
+\begin{prop}
+The collection $(E^Q, \d + \{\rho_2(Q), -\}, \omega, I + \rho_3(Q) + \dots)$ is a classical field theory.
+\end{prop}
+\pavel{Need to explain that the degrees work out and check that you still have an elliptic complex.}
+
+\begin{remark}
+Without a twisting homomorphism $\alpha$, we obtain a $\ZZ/2$-graded classical field theory
+\[(E, \d + \{\rho_2(Q), -\}, \omega, I + \rho_3(Q) + \dots),\]
+where the $\ZZ/2$-grading on $E$ is the total grading.
+\end{remark}
 
 \section{Twists}
 
@@ -375,5 +470,88 @@ which together define the (abelian) local Lie algebra
 
 \pagestyle{bib}
 \printbibliography
+
+\begin{landscape}
+\begin{figure}
+\begin{tikzpicture}[node distance=0.5cm and 0.5cm, text width=2cm]
+\node (101) [s16chiral] {Rank $(1, 0)$. $d=5$};
+\node (91) [s16, below=of 101] {Rank $1$. $d=5$};
+\node (82) [s16, below=of 91] {Rank $(1, 1)$. $d=5$};
+\node (81) [s16, left=of 82] {Rank $(1, 0)$. $d=4$};
+\node (825) [right=of 82] {};
+\node (83) [s16, right=of 825] {Rank $(1, 0)$. $d=8$};
+\node (71) [s16, below=of 81] {Rank $1$. $d=4$};
+\node (72) [s16, below=of 82] {Rank $2$. $d=5$};
+\node (73) [s16, below=of 83] {Rank $1$. $d=7$};
+\node (62) [s16, below=of 71] {Rank $(1, 1)$. $d=4$};
+\node (61) [s8, left=of 62] {Rank $(1, 0)$. $d=3$};
+\node (63) [s16, below=of 72] {Rank $(2, 2)$. $d=5$};
+\node (64) [s16chiral, right=of 63] {Rank $(2, 0)$. $d=5$};
+\node (65) [s16, below=of 73, right=of 64] {Rank $(1, 1)$. $d=6$};
+\node (51) [s8, below=of 61] {Rank $1$. $d=3$};
+\node (52) [s16, below=of 62] {Rank $2$. $d=4$};
+\node (53) [s16, below=of 63] {Rank $4$. $d=5$};
+\node (54) [s16, below=of 64] {Rank $2$. $d=5$};
+\node (42) [s8, below=of 51] {Rank $(1, 1)$. $d=3$};
+\node (41) [s4, left=of 42] {Rank $(1, 0)$. $d=2$};
+\node (43) [s16, right=of 42] {Rank $(2, 2)$. $d=4$};
+\node (44) [s16, right=of 43] {Rank $(2, 1)$. $d=4$};
+\node (45) [s8, right=of 44] {Rank $(2, 0)$. $d=4$};
+\node (31) [s4, below=of 41] {Rank $1$. $d=2$};
+\node (32) [s8, below=of 42] {Rank $2$. $d=3$};
+\node (22) [s4, below=of 31] {Rank $(1, 1)$. $d=2$};
+\node (21) [s2chiral, left=of 22] {Rank $(1, 0)$. $d=1$};
+
+\draw[arrow] (101) -- (91);
+\draw[arrow] (91) -- (81);
+\draw[arrow] (91) -- (82);
+\draw[arrow] (81) -- (71);
+\draw[arrow] (82) -- (71);
+\draw[arrow] (82) -- (72);
+\draw[arrow] (83) -- (73);
+\draw[arrow] (71) -- (61);
+\draw[arrow] (71) -- (62);
+\draw[arrow] (72) -- (62);
+\draw[arrow] (72) -- (63);
+\draw[arrow] (73) -- (65);
+\draw[arrow] (61) -- (51);
+\draw[arrow] (62) -- (51);
+\draw[arrow] (62) -- (52);
+\draw[arrow] (63) -- (53);
+\draw[arrow] (64) -- (52);
+\draw[arrow] (64) -- (54);
+\draw[arrow] (65) -- (54);
+\draw[arrow] (51) -- (41);
+\draw[arrow] (51) -- (42);
+\draw[arrow] (52) -- (42);
+\draw[arrow] (52) -- (43);
+\draw[arrow] (53) -- (43);
+\draw[arrow] (54) -- (43);
+\draw[arrow] (54) -- (44);
+\draw[arrow] (54) -- (45);
+\draw[arrow] (41) -- (31);
+\draw[arrow] (42) -- (31);
+\draw[arrow] (42) -- (32);
+\draw[arrow] (43) -- (32);
+\draw[arrow] (44) -- (32);
+\draw[arrow] (45) -- (32);
+\draw[arrow] (31) -- (21);
+\draw[arrow] (31) -- (22);
+\draw[arrow] (32) -- (22);
+
+\node (2d) [dimension, left=of 21] {2d};
+\node (3d) [dimension, above=of 2d] {3d};
+\node (4d) [dimension, above=of 3d] {4d};
+\node (5d) [dimension, above=of 4d] {5d};
+\node (6d) [dimension, above=of 5d] {6d};
+\node (7d) [dimension, above=of 6d] {7d};
+\node (8d) [dimension, above=of 7d] {8d};
+\node (9d) [dimension, above=of 8d] {9d};
+\node (10d) [dimension, above=of 9d] {10d};
+\end{tikzpicture}
+\caption{Orbits of square-zero supercharges.}
+\label{fig:superchargeorbits}
+\end{figure}
+\end{landscape}
 
 \end{document}

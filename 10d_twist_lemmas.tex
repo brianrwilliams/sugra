@@ -1,0 +1,71 @@
+\documentclass[10pt, oneside]{article}
+
+\input ./combined_macros.sty
+
+\addbibresource{Twist.bib}
+
+\title{Twists of supersymmetric gauge theories}
+\author{Chris Elliott\and Pavel Safronov \and Brian Williams}
+
+\date{\today}
+
+\begin{document}
+
+\section{Structure of the 10d Twist Argument}
+
+Based on our conversation in Edinburgh I think we had an outline like this in mind.
+
+\begin{enumerate}
+\item There is a map of abelian theories.
+\item Lemma: linear upper triangular change of coordinates is a symplectic equivalence (should take care: shearing is not symplectic, if you alter $\chi^\vee$ you must also alter $\chi$ itself dually).
+\item Lemma: If $A$ is contractible, an inclusion $B \to (A \to B)$ is an equivalence.  Likewise a projection $(B \to A) \to B$ is an equivalence.
+\item Lemma: All equivalences are invertible (by a suitable change of variables).
+\item Lemma: The composite of an inclusion and the inverse of a projection, or the opposite, where $A_1 + A_2$ is a symplectic subspace of the fields, is a symplectic map.
+\item Putting these together we can build our desired symplectic equivalence.
+\item The equivalence preserves interactions (maybe this will be clear from a general lemma).
+\item Lemma: free to interacting spectral sequence, implies the desired result (needs some functional analysis).
+\end{enumerate}
+
+So including point 7 (which needs formulating more precisely), that's 6 lemmas to state and prove.  Cochain complexes here will be complexes of differentiable vector spaces, so we'll have to think about functional analysis.
+
+\begin{lemma} \label{symplectomorphism_lemma}
+A linear symplectomorphism $F \colon \mc E^\bullet \to \mc E^\bullet$ induces an equivalence of theories between $(\mc E^\bullet, Q, \omega, I)$ and $(\mc E^\bullet, F^*Q, \omega, F^*I)$.
+\end{lemma}
+
+We'll use this where $F$ is the transformation $\chi^\vee \mapsto \chi^\vee + \Lambda F_{1,1}$, although in order to get a symplectomorphism $\chi$ will also have to transform.  The result of this procedure will be that $\chi$ and $\chi^\vee$ form a contractible doublet only admitting maps in to the rest of the classical BV complex, and we can then integrate them out using the following lemma.
+
+\begin{lemma} \label{inclusion_and_projection_lemma}
+Let $(\mc E^\bullet, Q)$ be a cochain complex, and let $(\mc C^\bullet, Q')$ be a contractible cochain complex.
+\begin{enumerate}
+ \item Let $F \colon \mc C^\bullet \to \mc E^\bullet$ be a degree 1 map making $(\mc C^\bullet \overset F\to \mc E^\bullet)$ into a cochain complex.  Then the canonical inclusion $\mc E^\bullet \to (\mc C^\bullet \overset F\to \mc E^\bullet)$ is a quasi-isomorphism.
+ \item Let $F' \colon \mc E^\bullet \to \mc C^\bullet$ be a degree 1 map making $(\mc E^\bullet \overset {F'}\to \mc C^\bullet)$ into a cochain complex.  Then the canonical projection $(\mc E^\bullet \overset {F'}\to \mc C^\bullet) \to \mc E^\bullet$ is a quasi-isomorphism.
+\end{enumerate}
+\end{lemma}
+
+\begin{lemma}
+Any quasi-isomorphism of cochain complexes admits a quasi-inverse.
+\end{lemma}
+
+\begin{lemma} \label{symplectic_composite_lemma}
+Let $(\mc E^\bullet,Q)$ be a cochain complex, let $(\mc C_1^\bullet, Q_1)$ and $(\mc C_2^\bullet, Q_2)$ be contractible cochain complexes, and let $\mc C_1^\bullet \overset{F_1}\to \mc E^\bullet \overset{F_2}\to \mc C_2^\bullet$ be a pair of degree 1 maps so that the differential $Q + Q_1 + Q_2 + F_1 + F_2$ on the total complex squares to 0.  Suppose the graded vector space $\mc E^\bullet \oplus \mc C_1^\bullet \oplus C_2^\bullet$ is equipped with a $-1$-shifted symplectic structure so that $\mc C_1^\bullet \oplus \mc C_2^\bullet$ is a symplectic subspace.  Then the cochain map 
+\begin{equation}
+\label{symp_composite_eqn}\mc E^\bullet (\mc C_1^\bullet \overset{F_1}\to \mc E^\bullet \overset{F_2}\to \mc C_2^\bullet)
+\end{equation}
+obtained as the composite of the projection from Lemma \ref{inclusion_and_projection_lemma} (2) with a quasi-inverse to the inclusion from Lemma \ref{inclusion_and_projection_lemma} (1) is a symplectomorphism.
+\end{lemma}
+
+Now, altogether this gives us an equivalence of free BV theories between holomorphic Chern-Simons and twisted 10d super Yang-Mills.  To conclude we should deal with the interaction functionals.  It's enough to check that the quasi-isomorphism we've constructed is compatible with interaction functionals using the following lemma.  Note that I've phrased this in terms of classical observables (i.e. local functionals) because as I said in my e-mail I'm unsure whether the differential coming from $\{I,-\}$ on the full algebra of functionals on fields is well-defined (but if I'm wrong about this being a problem we can amend the statement).
+
+\begin{lemma}[Free to Interacting Spectral Sequence]
+Let $(\mc E^\bullet, Q, \omega, I)$ be a classical field theory with polynomial interaction.  There is a convergent spectral sequence whose $E_1$ page is the complex of classical observables of the underlying free theory, and whose $E_\infty$ page is equivalent to the complex of classical observables of the interacting theory.
+\end{lemma}
+
+So, finally, we need a statement capturing the compatibility of the interaction functionals of our two theories.  Assuming we can deal with the change of coordinates from Lemma \ref{symplectomorphism_lemma} explicitly, it would suffice to prove the following.
+\begin{lemma} 
+In the set-up of Lemma \ref{symplectic_composite_lemma}, suppose we're given an interaction $I$ on the graded vector space $\mc E^\bullet \oplus \mc C_1^\bullet \oplus C_2^\bullet$, which pulls back to $I'$ under the inclusion of $\mc E^\bullet$.  If $\mc C_2^\bullet = 0$, or if $\mc C_1^\bullet$ and $\mc C_2^\bullet$ are both isotropic subspaces of $\mc E^\bullet \oplus \mc C_1^\bullet \oplus C_2^\bullet$, then the map \ref{symp_composite_eqn} is compatible with the interactions $I$ and $I'$
+\end{lemma}
+
+If $\mc C_2^\bullet = 0$ so we're just considering inclusions, I think this is clear.  For the other part, the idea here is that projection maps as in Lemma \ref{inclusion_and_projection_lemma} (2) will clearly be compatible with an interaction and its restriction to $\mc E^\bullet$, i.e. the pullback of the interaction on $\mc E^\bullet$ is just the interaction on $\mc E^\bullet \oplus \mc C_1^\bullet \oplus \mc C_2^\bullet$ with all fields in $\mc C_2^\bullet$ set to zero, but if the two summands of $\mc C_1^\bullet \oplus \mc C_2^\bullet$ are Lagrangian then that kills all the $\mc C_1^\bullet$ fields too, because they only appear paired together.  Of course that's pretty vague and I haven't tried to write that idea down more precisely, so it might turn out to be nonsense under a bit more thought.
+
+
+\end{document}
