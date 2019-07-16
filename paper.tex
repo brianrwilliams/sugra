@@ -75,11 +75,12 @@ We will also consider $\ZZ/2$-graded classical field theories which are defined 
 \end{remark}
 
 A local functional induces an endomorphism $\{I,-\}$ on the space of all local functionals $\oloc(E)$. 
-It also induces an endomorphism on the larger space of {\em all} functionals $\cO(E)$. 
-The classical master equation implies that the operator $Q + \{I,-\}$ squares to zero on $\cO(E)$, and hence every classical field theory defines a cochain complex
+It also induces an endomorphism on the larger space of {\em all} functionals $\cO(\cE)$, see Definition \ref{dfn: fnl} in the appendix. 
+The classical master equation implies that the operator $Q + \{I,-\}$ squares to zero on $\cO(\cE)$, and hence every classical field theory defines a cochain complex
 \[
-\left(\cO(E), Q + \{I,-\}\right) .
+\left(\cO(\cE), Q + \{I,-\}\right) .
 \]
+In fact, this has the structure of a differentiable pro-cochain complex, see Definition \ref{dfn: pro}. 
 We will refer to this as the {\bf classical BV complex} of the theory. 
 
 \begin{dfn}
@@ -90,22 +91,25 @@ F\colon E \to E'
 that intertwines the differentials $Q, Q'$, the pairings $\omega, \omega'$, and the interactions $I,I'$. 
 \end{dfn}
 
-Note that a map of classical field theories induces a map of BV complexes
+Note that a map of classical field theories induces a map of BV complexes, that is, a map of pro-cochain complexes:
 \[
 F^*\colon \left(\cO (\cE)[-1], Q + \{I,-\} \right) \to \left(\cO (\cE')[-1], Q' + \{I',-\} \right) .
 \]
 This allows us to make the following definition of an equivalence between classical theories. 
 
 \begin{dfn} \label{equivalence_def}
-A morphism of classical field theories $F\colon (E, Q, \omega, I) \to (E', Q', \omega', I')$ is an {\bf equivalence} if it induces a quasi-isomorphism 
+A morphism of classical field theories $F\colon (E, Q, \omega, I) \to (E', Q', \omega', I')$ is an {\bf equivalence} if it induces a quasi-isomorphism of differentiable pro-cochain complexes
 \[
 F^* \colon  \left(\cO(\cE')[-1], Q' + \{I',-\} \right) \xto{\simeq} \left(\cO(\cE)[-1], Q + \{I,-\} \right) .
 \]
 \end{dfn}
 
+For a short background on homological algebra with differentiable pro-cochain complexes, including the notion of quasi-isomorphism, we refer to Appendix \ref{appx: top}.
+For a more thorough introduction, and for which our conventions are based on, we refer to \cite{CG1}. 
+
 \begin{dfn}
 Let $(E, Q,\omega, I)$ be a classical field theory 
-A {\bf strict action} of a super Lie algebra $\fg$ on $(E, Q,\omega, I)$ is a map of super dg Lie algebras
+A {\bf strict action} of a super Lie algebra $\fg$ on $(E, Q,\omega, I)$ is a map of super dg Lie algebras (in differentiable pro-cochain complexes)
 \[
 \rho\colon \fg \to \left(\oloc(E)[-1] , \{-,-\}_\omega, Q + \{I,-\}_\omega\right) .
 \]
@@ -127,14 +131,15 @@ Then, we recall the formalism of \cite{CG1,CG2} which extracts a factorization a
 
 \begin{dfn}
 Let $(E, Q, \omega, I)$ be a classical field theory on $M$.
-The {\bf classical factorization algebra of observables} $\Obs$ assigns to an open set $U \subset M$ the commutative dg algebra
+The {\bf classical factorization algebra of observables} $\Obs$ assigns to an open set $U \subset M$ the commutative dg algebra (in differentiable pro-cochain complexes)
 \[
 \Obs(U) = \left(\cO(\cE(U)) , Q + \{I,-\}\right) .
 \]
 \end{dfn}
 
-\subsection{From BRST to BV}
+Notice that the BV complex we defined in the previous section is simply the global sections of the factorization algebra along $M$. 
 
+\subsection{From BRST to BV}
 
 \pavel{explain how to get a BV theory from a BRST theory}
 
@@ -580,7 +585,7 @@ which together define the (abelian) local Lie algebra
 
 \appendix
 
-\section{Functional analysis}
+\section{Functional analysis} \label{appx: top}
 
 \def\CVS{{\rm CVS}}
 \def\DVS{{\rm DVS}}
@@ -605,7 +610,9 @@ For an open set $U \subset M$ let
 \[
 \cE(U)^\vee = \Bar{\cE}^!_c(U)
 \]
-be the continuous, or distributional dual, to $\sE(U)$. 
+be the continuous, or distributional, dual to $\cE(U)$. 
+
+\brian{recall definition of CVS. all our familiar spaces above are in $\CVS$. talk about tensor products.}
 
 \begin{prop}
 Let $E,F$ be vector bundles on $M,N$ respectively.
@@ -615,15 +622,18 @@ Then
 \]
 \end{prop}
 
-\begin{dfn}
+\begin{dfn}\label{dfn: fnl}
 Let $E$ be a vector bundle on $M$ and $U \subset M$.
-The completed algebra of functions on $\cE(U)$ is
+The {\bf completed algebra of functions} on $\cE(U)$ is
 \[
 \cO(\cE(U)) = \prod_{n = 0}^\infty {\rm Hom}_{\rm CVS} \left(\cE(U)^{\Hat{\otimes}_\beta n}, \CC\right)_{S_n} .
 \]
+On global sections, we use the notation $\cO(\cE) = \cO(\cE(M))$. 
 \end{dfn}
 
 \subsection{Homological algebra}
+
+\brian{can't do cokernels in CVS, blah blah}
 
 There is a functor
 \[
@@ -666,13 +676,22 @@ The category $\DVS$ is a Grothendieck abelian category.
 
 In particular, we can freely apply the Eilenberg-Moore comparison result to the types of topological cochain complexes we come across in the BV formalism. 
 
-\begin{dfn}
+\begin{dfn}\label{dfn: pro}
 A {\bf differentiable pro-cochain complex} is a differentiable cochain complex $V$ with a filtration
 \[
 \cdots \to F_{n-1} V \to F_{n} V \to F_{n+1}V \to \cdots
 \]
 where each map is a monomorphism in each cohomological degree and such that the canonical maps $V \to V / F_n V$ induce a quasi-isomorphism $V \to \lim V / F_n V$. 
 \end{dfn}
+
+\begin{lem}
+If $(E, \omega, Q, I)$ is the data of a classical theory on $M$, then the BV complex
+\[
+\left(\cO(\cE) , Q + \{I,-\}\right)
+\]
+is a differentiable pro-cochain complex.
+More generally, the classical factorization algebra of observables $\Obs$ is a factorization algebra in differentiable pro-cochain complexes. 
+\end{lem}
 
 \section{$\infty$ algebra}
 
