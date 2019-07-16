@@ -33,13 +33,13 @@ Throughout the paper we will mostly work with a $\ZZ\times\ZZ/2$-grading. \emph{
 \subsection{The definition of a field theory}
 
 \begin{dfn}
-A {\bf free classical field theory} on a manifold $M$ is the data:
+A {\bf free BV theory} on a manifold $M$ is the data:
 \begin{itemize}
 \item a finite rank $\ZZ\times\ZZ/2$-graded vector bundle $E \to M$ equipped with an even differential operator of cohomological degree $+1$
 \[
-\d \colon \cE \to \cE [1] 
+Q \colon \cE \to \cE [1] 
 \]
-such that $(1)$: $\d^2 = 0$ and $(2)$: the pair $(\cE , \d)$ is an elliptic complex;
+such that $(1)$: $Q^2 = 0$ and $(2)$: the pair $(\cE , Q)$ is an elliptic complex;
 \item a map of bundles
 \[
 \omega\colon E \otimes E \to {\rm Dens}_M [-1]
@@ -48,7 +48,7 @@ that is
 \begin{enumerate}
 \item[$(1)$] fiberwise nondegenerate,
 \item[$(2)$] graded skew symmetric, and
-\item[$(3)$] satisfies $\int_M \omega\<e_0, \d e_1\> = (-1)^{|e_0|} \int_M \omega(\d e_0, e_1)$ where $e_i$ are compactly supported sections of $E$ .
+\item[$(3)$] satisfies $\int_M \omega\<e_0, Q e_1\> = (-1)^{|e_0|} \int_M \omega(Q e_0, e_1)$ where $e_i$ are compactly supported sections of $E$ .
 \end{enumerate}
 \end{itemize}
 \end{dfn}
@@ -56,71 +56,94 @@ that is
 \brian{recall dfn of $\oloc$ of a gr vb.}
 
 \begin{dfn}
-A {\bf classical field theory} is a free classical field theory $(E, \d, \omega)$ equipped with an even functional
+A {\bf classical BV field theory} (or simply, classical field theory) is a free BV theory $(E, Q, \omega)$ equipped with an even functional
 \[
 I \in \oloc^+(E)
 \]
 of cohomological degree zero satisfying the classical master equation 
 \[
-\d I + \frac{1}{2} \{I,I\} = 0 .
+Q I + \frac{1}{2} \{I,I\} = 0 .
 \]
 \end{dfn}
 
-Given a classical field theory $(E, \d, \omega, I)$ we denote by
-\[S_{BV} = \frac{1}{2} \int_M \omega(e, \d e) + I\in \oloc(E)\]
+Given a classical field theory $(E, Q, \omega, I)$ we denote by
+\[S = \frac{1}{2} \int_M \omega(e, Q e) + I\in \oloc(E)\]
 the BV action of the theory.
 
 \begin{remark}
-We will also consider $\ZZ/2$-graded classical field theories which are defined as before, but where $E$ has only a single $\ZZ/2$-grading and, correspondigly, $\d$ is simply an odd operator.
+We will also consider $\ZZ/2$-graded classical field theories which are defined as before, but where $E$ has only a single $\ZZ/2$-grading and, correspondigly, $Q$ is simply an odd operator.
 \end{remark}
 
 A local functional induces an endomorphism $\{I,-\}$ on the space of all local functionals $\oloc(E)$. 
 It also induces an endomorphism on the larger space of {\em all} functionals $\cO(E)$. 
-The classical master equation implies that the operator $\d + \{I,-\}$ squares to zero on $\cO(E)$, and hence every classical field theory defines a cochain complex
+The classical master equation implies that the operator $Q + \{I,-\}$ squares to zero on $\cO(E)$, and hence every classical field theory defines a cochain complex
 \[
-\left(\cO(E), \d + \{I,-\}\right) .
+\left(\cO(E), Q + \{I,-\}\right) .
 \]
 We will refer to this as the {\bf classical BV complex} of the theory. 
 
 \begin{dfn}
-A {\bf morphism} of classical field theories (defined on the same manifold $M$) $F\colon (E, \d, \omega, I) \to (E', \d', \omega', I')$ is a linear map of vector bundles
+A {\bf morphism} of classical field theories (defined on the same manifold $M$) $F\colon (E, Q, \omega, I) \to (E', Q', \omega', I')$ is a linear map of vector bundles
 \[
 F\colon E \to E'
 \]
-that intertwines the differentials $\d, \d'$, the pairings $\omega, \omega'$, and the interactions $I,I'$. 
+that intertwines the differentials $Q, Q'$, the pairings $\omega, \omega'$, and the interactions $I,I'$. 
 \end{dfn}
 
 Note that a map of classical field theories induces a map of BV complexes
 \[
-F^*\colon \left(\cO (\cE)[-1], \d + \{I,-\} \right) \to \left(\cO (\cE')[-1], \d' + \{I',-\} \right) .
+F^*\colon \left(\cO (\cE)[-1], Q + \{I,-\} \right) \to \left(\cO (\cE')[-1], Q' + \{I',-\} \right) .
 \]
 This allows us to make the following definition of an equivalence between classical theories. 
 
 \begin{dfn} \label{equivalence_def}
-A morphism of classical field theories $F\colon (E, \d, \omega, I) \to (E', \d', \omega', I')$ is an {\bf equivalence} if it induces a quasi-isomorphism 
+A morphism of classical field theories $F\colon (E, Q, \omega, I) \to (E', Q', \omega', I')$ is an {\bf equivalence} if it induces a quasi-isomorphism 
 \[
-F^* \colon  \left(\cO(\cE')[-1], \d' + \{I',-\} \right) \xto{\simeq} \left(\cO(\cE)[-1], \d + \{I,-\} \right) .
+F^* \colon  \left(\cO(\cE')[-1], Q' + \{I',-\} \right) \xto{\simeq} \left(\cO(\cE)[-1], Q + \{I,-\} \right) .
 \]
 \end{dfn}
 
 \begin{dfn}
-Let $(E, \d,\omega, I)$ be a classical field theory 
-A {\bf strict action} of a super Lie algebra $\fg$ on $(E, \d,\omega, I)$ is a map of super dg Lie algebras
+Let $(E, Q,\omega, I)$ be a classical field theory 
+A {\bf strict action} of a super Lie algebra $\fg$ on $(E, Q,\omega, I)$ is a map of super dg Lie algebras
 \[
-\rho\colon \fg \to \left(\oloc(E)[-1] , \{-,-\}_\omega, \d + \{I,-\}_\omega\right) .
+\rho\colon \fg \to \left(\oloc(E)[-1] , \{-,-\}_\omega, Q + \{I,-\}_\omega\right) .
 \]
 More generally, an $L_\infty$ {\bf action} is an $\infty$-morphism of super dg Lie algebras
 \[
-\rho\colon \fg \rightsquigarrow \left(\oloc(E)[-1] , \{-,-\}_\omega, \d + \{I,-\}_\omega\right) .
+\rho\colon \fg \rightsquigarrow \left(\oloc(E)[-1] , \{-,-\}_\omega, Q + \{I,-\}_\omega\right) .
 \]
 \brian{maybe point to appendix where we can fix conventions for $\infty$-maps}
 \end{dfn}
 
 We denote components of an $\infty$-morphism by $\rho_2, \rho_3, \dots$, so that $\rho_2$ is a morphism of (super) chain complexes.
 
+\subsection{The classical factorization algebra}
+
 \pavel{explain how to obtain a factorization algebra from a classical field theory.}
 
+Let $(E, Q, \omega, I)$ be a classical field theory and suppose $\psi_0 \in \sE$ is a fixed solution to the equations of motion. 
+Then, we recall the formalism of \cite{CG1,CG2} which extracts a factorization algebra on spacetime that should be thought of as  functions on the formal neighborhood of the derived critical locus of the action $S$ near $\psi_0$. 
+
+\begin{dfn}
+Let $(E, Q, \omega, I)$ be a classical field theory on $M$.
+The {\bf classical factorization algebra of observables} $\Obs$ assigns to an open set $U \subset M$ the commutative dg algebra
+\[
+\Obs(U) = \left(\cO(\cE(U)) , Q + \{I,-\}\right) .
+\]
+\end{dfn}
+
+\subsection{From BRST to BV}
+
+
 \pavel{explain how to get a BV theory from a BRST theory}
+
+%\begin{dfn}
+%A {\bf classical BRST theory} is a finite rank $\ZZ \times \ZZ / 2$-graded vector bundle $F \to M$ equipped with an even differential operator of cohomological degree $+1$
+%\[
+%Q : \cF \to \cF[1]
+%\]
+%such that $Q
 
 \subsection{Examples}
 
@@ -559,7 +582,97 @@ which together define the (abelian) local Lie algebra
 
 \section{Functional analysis}
 
+\def\CVS{{\rm CVS}}
+\def\DVS{{\rm DVS}}
+
 \brian{We can put all our conventions for topological vector spaces, largely borrowed from \cite{CG1}, here. }
+
+\subsection{Notations and conventions}
+
+\begin{dfn}
+Let $M$ be a manifold and $E$ a (graded) vector bundle on $M$.  
+For any open set $U \subset M$, define the following notations:
+\begin{itemize}
+\item $\cE(U)$ denotes the graded vector space of smooth sections supported on $U$;
+\item $\cE_c(U)$ denotes the graded vector space of compactly supported smooth sections on $U$;
+\item $\Bar{\cE}(U)$ denotes the graded vector space of distributional smooth sections on $U$;
+\item $\Bar{\cE}_c(U)$ denotes the graded vector space of compactly supported distributional smooth sections on $U$.
+\end{itemize}
+\end{dfn}
+
+If $E$ is a vector bundle, let $E^!$ denote the ``Verdier dual" vector bundle defined by $E^* \otimes {\rm Dens}_M$, where $E^*$ is the usual linear dual vector bundle. 
+For an open set $U \subset M$ let 
+\[
+\cE(U)^\vee = \Bar{\cE}^!_c(U)
+\]
+be the continuous, or distributional dual, to $\sE(U)$. 
+
+\begin{prop}
+Let $E,F$ be vector bundles on $M,N$ respectively.
+Then
+\[
+\cE(M) \Hat{\otimes}_\beta \cF(N) \cong \Gamma(M \times N, E \boxtimes F)
+\]
+\end{prop}
+
+\begin{dfn}
+Let $E$ be a vector bundle on $M$ and $U \subset M$.
+The completed algebra of functions on $\cE(U)$ is
+\[
+\cO(\cE(U)) = \prod_{n = 0}^\infty {\rm Hom}_{\rm CVS} \left(\cE(U)^{\Hat{\otimes}_\beta n}, \CC\right)_{S_n} .
+\]
+\end{dfn}
+
+\subsection{Homological algebra}
+
+There is a functor
+\[
+dif_c : \CVS \to \DVS .
+\]
+
+\begin{dfn}
+Suppose $V,W$ are cochain complexes in convenient vector spaces. 
+A cochain map $f : V \to W$ is a {\bf quasi-isomorphism} if the map
+\[
+dif_c (f) : dif_c(V) \to dif_c(W)
+\]
+is a quasi-isomorphism of differentiable vector spaces.
+\end{dfn}
+
+\begin{dfn}
+A {\bf filtered differentiable cochain complex} is a sequence of differentiable cochain complexes
+\[
+\cdots \to F_{n-1} V \to F_{n} V \to F_{n+1}V \to \cdots
+\]
+where each map is a monomorphism in each cohomological degree. 
+A filtered differentiable cochain complex is {\bf complete} if the canonical maps $V \to V / F_n V$ induce an isomorphism $V \cong \lim V / F_n V$. 
+\end{dfn}
+
+\begin{thm}[Eilenberg-Moore Comparison]
+Let $f : V \to W$ be a map of filtered cochain complexes in an AB4 abelian category.
+Suppose, for each integer $n$ there exists an integer $p$ such that $F_p V^n = 0 = F_p W^n$.
+If there is an integer $r \geq 0$ such that the induced map on the $r$th page of the corresponding spectral sequences 
+\[
+f_r^{pq} :  E_r^{pq} V \to E_r^{pq} W
+\]
+is an isomorphism for all $p,q$, then $f : V \to W$ is a quasi-isomorphism. 
+\end{thm}
+
+The category of differentiable vector space is an AB4 category, in fact, it is actually a Grothendieck abelian category. 
+
+\begin{thm}[Theorem 2.2.1 of \cite{CG1}]
+The category $\DVS$ is a Grothendieck abelian category.
+\end{thm}
+
+In particular, we can freely apply the Eilenberg-Moore comparison result to the types of topological cochain complexes we come across in the BV formalism. 
+
+\begin{dfn}
+A {\bf differentiable pro-cochain complex} is a differentiable cochain complex $V$ with a filtration
+\[
+\cdots \to F_{n-1} V \to F_{n} V \to F_{n+1}V \to \cdots
+\]
+where each map is a monomorphism in each cohomological degree and such that the canonical maps $V \to V / F_n V$ induce a quasi-isomorphism $V \to \lim V / F_n V$. 
+\end{dfn}
 
 \section{$\infty$ algebra}
 
