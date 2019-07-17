@@ -109,7 +109,7 @@ S_{BV} (\alpha) = \frac{1}{2} \<\alpha , Q_{BV} \alpha\> + \sum_{n \geq 2} \frac
 where $\alpha$ is a general BV field and $Q_{BV}$ is the linear BV differential. 
 The statement that $S_{BV}$ is gauge invariant is encoded by the fact that it satisfies that classical master equation $\{S_{BV}, S_{BV}\} = 0$, which is equivalent to the statement that $S_{BV}$ determines a Mauer-Cartan element in the dg Lie algebra $\cloc^\bu(\fL)[-1]$.
 
-\subsubsection{Supersymmetry Actions}
+\subsubsection{Supersymmetry Actions} \label{SUSY_action_section}
 For minimal choices of the spinorial representation, Yang-Mills theory admits an action of the supersymmetry algebra when $n=3,4,6$ or 10, so $\Sigma$ is the 2-dimensional Dirac representation $S$, the 4-dimensional Dirac representation $S_+ \oplus S_-$, the 8-dimensional symplectic Weyl representation $S_+ \otimes W$ where $W$ is a 2-dimensional symplectic vector space, and the 16-dimensional Weyl representation $S_+$ respectively.  We will now proceed to construct this supersymmetry algebra action. \chris{can we do it all in one go, using the fact that the 3 $\psi$ rule \cite[Theorem 11]{BaezHuerta} works exactly in these dimensions?  If not we can just write the calculation out four times.  We've already started to write it in the 10-dimensional case, though it's incomplete.  How would you suggest proceeding?}
 
 \subsection{Standard Equivalences Between Classical Field Theories}
@@ -141,17 +141,26 @@ In the set-up of Lemma \ref{symplectic_composite_lemma}, suppose we're given an 
 
 \section{Twists}
 \subsection{Dimension 10}
-We'll begin by studying the twist of 10-dimensional $\mc N=(1,0)$ super Yang-Mills theory, with the supersymmetry action we analyzed in Theorem \chris{ref}.  In the 10d $\mc N=(1,0)$ supersymmetry algebra there is a unique $\Spin(10)$ orbit of non-trivial square-zero supercharges given by the locus of pure spinors.  These square-zero supercharges are holomorphic.
+We'll begin by studying the twist of 10-dimensional $\mc N=(1,0)$ super Yang-Mills theory, with the supersymmetry action we analyzed in Section \ref{SUSY_action_section}.  In the 10d $\mc N=(1,0)$ supersymmetry algebra there is a unique $\Spin(10)$ orbit of non-trivial square-zero supercharges given by the locus of pure spinors.  These square-zero supercharges are holomorphic.
 
-Fix a non-trivial pure spinor $Q$.  The stabilizer of $Q$ in $\Spin(10)$ is isomorphic to $\SU(5)$.  Let us first, therefore, decompose the component fields of 10d super Yang-Mills theory into sections of the associated bundles to irreducible representations of $\SU(5)$.  The BRST fields split as
+Fix a non-trivial pure spinor $Q$, or equivalently, fix a Calabi-Yau structure on $\RR^{10}$.  The stabilizer of $Q$ in $\Spin(10)$ is isomorphic to $\SU(5)$.  Let us first, therefore, decompose the component fields of 10d super Yang-Mills theory into sections of the associated bundles to irreducible representations of $\SU(5)$.  The BRST fields split as follows:
 \begin{align*}
 c &\mapsto c \in \Omega^0(\CC^5; \gg) \\
 A &\mapsto A_{0, 1} + A_{1, 0} \in \Omega^{0,1}(\CC^5; \gg) \oplus \Omega^{1,0}(\CC^5; \gg)\\
 \lambda &\mapsto \chi + \psi + B \in \Omega^0(\CC^5; \gg) \oplus \Omega^{1,0}(\CC^5; \gg) \oplus \Omega^{0,2}(\CC^5; \gg). 
 \end{align*}
 
-
-\chris{background, recall there is only one class of twists, by a pure spinor.  There's a trivial twisting homomorphism from $\SU(5)$, and so it's defined on CY5s.  Give names to the BV component fields as irreducible $\SU(5)$ representations: this is important for the argument below.}
+In terms of these component fields, the BV action functional can be written in the following way.  We'll split the action functional up into the BRST action and the antifield action.
+\begin{align*}
+S_{\mr{BRST}} &= \int \d^5z \left(\Lambda^2 \langle F_{0,2} \wedge F_{2,0}\rangle + \frac 12 |\Lambda F_{1,1}|^2 + \Lambda( \chi \wedge (\ol \dd_{A_{0,1}} \psi))  + \Lambda^2(B \wedge (\dd_{A_{1,0}} \psi))\right) \Omega + (B \wedge \ol \dd_{A_{0,1}} B) \\
+S_{\mr{anti}} &= \int \d^5z \langle \dd_{A_{1,0}}c, A_{1,0}^\vee \rangle +  \langle \ol \dd_{A_{0,1}}c, A_{0,1}^\vee \rangle + \langle [c,c], c^\vee \rangle + \langle [\chi,c], \chi^\vee \rangle + \langle [\psi,c], \psi^\vee \rangle + \langle [B,c], B^\vee \rangle,
+\end{align*}
+where $F_{i,j}$ is the $(i,j)$-form component of the curvature of the gauge field $A_{0, 1} + A_{1, 0}$, and $\Omega$ is the Calabi-Yau $(0,5)$-form.  Similarly, we can write explicitly the $L_\infty$ interaction functional associated to the action of the square 0 supercharge $Q$.  It has a quadratic and a cubic component given by
+\begin{align*}
+I^{(1)} &= \int \langle A_{1,0}^\vee, \psi \rangle + \langle \chi^\vee \Lambda F_{1,1} \rangle + \langle B^\vee, F_{0,2} \rangle \\
+I^{(2)} &= \frac 12 \int \d^5z \Omega |\chi^\vee|^2.
+\end{align*}
+The twisted action functional is obtained by adding these terms to the original BV action functional.
 
 We can now calculate the 10d holomorphic twist.  This calculation is originally due to Baulieu \cite{Baulieu}.
 
@@ -164,7 +173,24 @@ This twisted theory is only $\ZZ/2\ZZ$-graded, because the R-symmetry group is t
 \end{remark}
 
 \begin{proof}
-\chris{recall the steps.  1) Modify $\chi^\vee$ by a linear change of variables $\chi^\vee \mapsto \chi^vee + \Lambda F_{1,1}$. 2) Integrate out the contractible doublet $\chi, \chi^\vee$.  3) Note that the pairs $A_{1,0}, \psi$ and $\psi^\vee, A_{1,0}^\vee$ can be killed in pairs, and the composite of these operations defines a symplectomorphism.  4) These steps each preserve the action, so that we have a map of interacting theories. 5) Using the spectral sequence, this map is an equivalence.}
+We'll prove this equivalence by first describing an equivalence of the underlying classical theories, as the composite of several maps, then showing that this equivalence is compatible with the two interaction functionals, and therefore defines a morphism of classical field theories, and finally observing that by Lemma \ref{free_int_ss_lemma} this morphism is automatically an equivalence.
+
+\begin{enumerate}
+ \item The first part of our equivalence of classical field theories will be a simple change of variables.  Let $\chi'^\vee = \chi^\vee + \Lambda F_{1,1}$.  In terms of $\chi'^\vee$, the quadratic part of the twisted action functional becomes
+ \begin{align*}
+  S^Q &= \int \d^5z \left(\Lambda^2 \langle \ol \dd A_{0,1} \wedge \dd A_{1,0} \rangle + \frac 12 |\chi'^\vee|^2 + \Lambda( \chi \wedge (\ol \dd \psi))  + \Lambda^2(B \wedge (\dd \psi))\right) \Omega + (B \wedge \ol \dd B) \\
+  &\quad + \langle \dd c, A_{1,0}^\vee \rangle +  \langle \ol \dd c, A_{0,1}^\vee \rangle + \langle A_{1,0}^\vee, \psi \rangle + \langle B^\vee, \ol \dd A_{0,1} \rangle.
+ \end{align*}
+ The classical BV complex associated to the theory after performing this change of variables is quasi-isomorphic to the classical BV complex of the original theory according to Lemma \ref{symplectomorphism_lemma}.  However, after performing the change of variables, the classical BV complex takes the form $(\Omega^0(\CC^5; \gg)_{\chi'^\vee} \overset \id \to \Pi\Omega^0(\CC^5; \gg)_{\chi}) \to \mc E^\bullet$, where $\mc E^\bullet$ is the part of the BV complex generated by all fields other than $\chi$ and $\chi'^\vee$, and where the map into $\mc E^\bullet$ is given by the map $\ol \dd$ from $\chi$ to $\psi^\vee$.  Therefore the inclusion of the complex $\mc E^\bullet$ is a quasi-isomorphism by Lemma \ref{inclusion_and_projection_lemma}.  We think of this as ``integrating out'' the field $\chi$ and its antifield.
+ 
+ \item We'll now use a similar trick to integrate out the fields $\psi, A_{1,0}$ and their antifields.  We've argued in step 1 that the free part of the $Q$-twisted theory is equivalent to the theory with action functional 
+ \[  S^Q = \int \d^5z \left(\Lambda^2 \langle \ol \dd A_{0,1} \wedge \dd A_{1,0} \rangle + \Lambda^2(B \wedge (\dd \psi))\right) \Omega + (B \wedge \ol \dd B) + \langle \dd c, A_{1,0}^\vee \rangle +  \langle \ol \dd c, A_{0,1}^\vee \rangle + \langle A_{1,0}^\vee, \psi \rangle + \langle B^\vee, \ol \dd A_{0,1} \rangle.\]
+ Observe that the classical BV complex associated to this action functional takes the form \chris{I'm confused here: there are actually both maps into the $\psi \to A_{1,0}$ two step complex ($c \mapsto \dd c$) and maps out ($A_{1,0} \to A_{0,1}^\vee$ and $\psi \to B^\vee$).  So the argument we'd been thinking of doesn't work?  I don't remember, did we discuss this?}
+ 
+ \item Now, let's understand how the interaction functional behaves under this equivalence of classical field theories. \chris{...}
+ 
+ \item To conclude the proof, we only need to apply Lemma \ref{free_int_ss_lemma}.  The morphism of classical field theories that we've constructed induces an equivalence of the $E_1$ pages of the free-to-interacting spectral sequences associated to holomorphically twisted 10d super Yang-Mills theory and holomorphic Chern-Simons theory.  Because the spectral sequences are convergent, there is likewise an equivalence of the $E_\infty$ pages, i.e. an equivalence of classical field theories.
+\end{enumerate}
 \end{proof}
 
 
