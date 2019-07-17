@@ -141,11 +141,27 @@ In the set-up of Lemma \ref{symplectic_composite_lemma}, suppose we're given an 
 
 \section{Twists}
 \subsection{Dimension 10}
+We'll begin by studying the twist of 10-dimensional $\mc N=(1,0)$ super Yang-Mills theory, with the supersymmetry action we analyzed in Theorem \chris{ref}.  In the 10d $\mc N=(1,0)$ supersymmetry algebra there is a unique $\Spin(10)$ orbit of non-trivial square-zero supercharges given by the locus of pure spinors.  These square-zero supercharges are holomorphic.
+
+Fix a non-trivial pure spinor $Q$.  The stabilizer of $Q$ in $\Spin(10)$ is isomorphic to $\SU(5)$.  Let us first, therefore, decompose the component fields of 10d super Yang-Mills theory into sections of the associated bundles to irreducible representations of $\SU(5)$.  The BRST fields split as
+\begin{align*}
+c &\mapsto c \in \Omega^0(\CC^5; \gg) \\
+A &\mapsto A_{0, 1} + A_{1, 0} \in \Omega^{0,1}(\CC^5; \gg) \oplus \Omega^{1,0}(\CC^5; \gg)\\
+\lambda &\mapsto \chi + \psi + B \in \Omega^0(\CC^5; \gg) \oplus \Omega^{1,0}(\CC^5; \gg) \oplus \Omega^{0,2}(\CC^5; \gg). 
+\end{align*}
+
+
 \chris{background, recall there is only one class of twists, by a pure spinor.  There's a trivial twisting homomorphism from $\SU(5)$, and so it's defined on CY5s.  Give names to the BV component fields as irreducible $\SU(5)$ representations: this is important for the argument below.}
+
+We can now calculate the 10d holomorphic twist.  This calculation is originally due to Baulieu \cite{Baulieu}.
 
 \begin{theorem}
 The holomorphic twist of 10d super Yang-Mills theory on a Calabi-Yau 5-fold $X$ is equivalent to holomorphic Chern-Simons theory on $X$.
 \end{theorem}
+
+\begin{remark}
+This twisted theory is only $\ZZ/2\ZZ$-graded, because the R-symmetry group is trivial, so there is no possible R-charge with which to regrade the twisted theory to make it $\ZZ$-graded.  As a consequence, the twisted BV-BRST complex only has an odd symplectic pairing, not a $-1$-symplectic pairing.
+\end{remark}
 
 \begin{proof}
 \chris{recall the steps.  1) Modify $\chi^\vee$ by a linear change of variables $\chi^\vee \mapsto \chi^vee + \Lambda F_{1,1}$. 2) Integrate out the contractible doublet $\chi, \chi^\vee$.  3) Note that the pairs $A_{1,0}, \psi$ and $\psi^\vee, A_{1,0}^\vee$ can be killed in pairs, and the composite of these operations defines a symplectomorphism.  4) These steps each preserve the action, so that we have a map of interacting theories. 5) Using the spectral sequence, this map is an equivalence.}
