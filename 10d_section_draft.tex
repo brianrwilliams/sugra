@@ -1,7 +1,6 @@
 \documentclass[10pt, oneside]{article}
 
 \input ./combined_macros.sty
-\newcommand{\hCS}{\mathrm{hCS}}
 
 \addbibresource{Twist.bib}
 
@@ -17,12 +16,29 @@
 
 \chris{As you pointed out, these lemmas should go with other discussion of functional analysis issues.}
 \begin{lemma}[Free to Interacting Spectral Sequence] \label{free_int_ss_lemma}
-Let $(\mc E^\bullet, Q, \omega, I)$ be a classical field theory with polynomial interaction.  There is a convergent spectral sequence whose $E_1$ page is the complex of classical observables of the underlying free theory, and whose $E_\infty$ page is equivalent to the complex of classical observables of the interacting theory.
+Let $(E^\bullet, Q, \omega, I)$ be a classical field theory with polynomial interaction.  There is a convergent spectral sequence whose $E_1$ page is the complex of classical observables of the underlying free theory, and whose $E_\infty$ page is equivalent to the complex of classical observables of the interacting theory.
 \end{lemma}
+\begin{proof}
+The BV complex is of the form $\left(\cO(\cE), Q + \{I,-\}\right)$.
+We have already exhibited \brian{this is a general fact that should go in the functional analysis section} a differentiable pro-cochain complex structure on the BV complex via the 
+natural decreasing filtration 
+\[
+F^k \cO (\cE) = \Sym^{\geq k} (\cE^\vee)
+\]
+which is compatible with both $Q$ and $\{I,-\}$ separately.
+The associated graded of this filtration is the differentiable cochain complex given by
+\[
+\left(\prod_{n \geq 0} \Sym^n (\cE^\vee) , Q \right) .
+\]
+This is simply the BV complex associated to the free theory based on $(E, Q, \omega)$ obtained by forgetting $I$. 
+Thus, the $E_1$ page of the corresponding spectral sequence is the BV cohomology of the underlying free theory, as desired. 
+\brian{shall we say a word about convergence? This must follow from completeness of the filtration in addition to boundedness in some direction of the cohomology of $\cE$.}
+\end{proof}
 
 \begin{lemma} \label{invert_quis_lemma}
 Any quasi-isomorphism of cochain complexes admits a quasi-inverse.
 \end{lemma}
+\brian{I think Pavel had something to say for this lemma.}
 
 \subsection{Dimensional Reduction} \label{dim_red_section}
 \chris{I'm including this with the aim to not have to prove supersymmetry invariance of non-maximal theories.  It's a pretty rough draft, so apologies there}
@@ -119,6 +135,9 @@ In this section, we will collect some standard lemmas that we'll use to simplify
 A linear symplectomorphism $F \colon \mc E^\bullet \to \mc E^\bullet$ induces an equivalence of theories between $(\mc E^\bullet, Q, \omega, I)$ and $(\mc E^\bullet, F^*Q, \omega, F^*I)$.
 \end{lemma}
 
+\brian{I may be optimistic, but shouldn't the lemmas below all follow from the fact that the category we are working with is a Grothendieck abelian category?
+In any case, I do like that we've stated them clearly.}
+
 \begin{lemma} \label{inclusion_and_projection_lemma}
 Let $(\mc E^\bullet, Q)$ be a cochain complex, and let $(\mc C^\bullet, Q')$ be a contractible cochain complex.
 \begin{enumerate}
@@ -174,7 +193,9 @@ The holomorphic twist of 10d super Yang-Mills theory on a Calabi-Yau 5-fold $X$ 
 \end{theorem}
 
 \begin{remark}
-This twisted theory is only $\ZZ/2\ZZ$-graded, because the R-symmetry group is trivial, so there is no possible R-charge with which to regrade the twisted theory to make it $\ZZ$-graded.  As a consequence, the twisted BV-BRST complex only has an odd symplectic pairing, not a $-1$-symplectic pairing.
+From the point of view of supersymmetry, the twisted theory is only $\ZZ/2\ZZ$-graded, because the R-symmetry group is trivial, so there is no possible R-charge with which to regrade the twisted theory to make it $\ZZ$-graded.  
+This is of course compatible with our conventions for holomorphic Chern-Simons: holomorphic Chern-Simons (with values in an ordinary Lie algebra) on an odd dimensional Calabi-Yau only defines a $\ZZ/2$-graded theory (unless $d=3$, where this can be lifted to a $\ZZ$-grading). 
+As a consequence, the twisted BV-BRST complex only has an odd symplectic pairing, not a $(-1)$-symplectic pairing.
 \end{remark}
 
 \begin{proof}
@@ -211,6 +232,9 @@ We'll prove this equivalence by first describing an equivalence of the underlyin
 \end{proof}
 
 The above argument can be applied identically on a general Calabi-Yau 5-fold $X$.
+\brian{How do we place 10d YM on an arbitrary 5-fold? 
+Are you using something about sugra?
+}
 
 \pagestyle{bib}
 \printbibliography
