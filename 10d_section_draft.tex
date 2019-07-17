@@ -185,13 +185,15 @@ We'll prove this equivalence by first describing an equivalence of the underlyin
  
  \item We'll now use a similar trick to integrate out the fields $\psi, A_{1,0}$ and their antifields.  We've argued in step 1 that the free part of the $Q$-twisted theory is equivalent to the theory with action functional 
  \[  S^Q = \int \d^5z \left(\Lambda^2 \langle \ol \dd A_{0,1} \wedge \dd A_{1,0} \rangle + \Lambda^2(B \wedge (\dd \psi))\right) \Omega + (B \wedge \ol \dd B) + \langle \dd c, A_{1,0}^\vee \rangle +  \langle \ol \dd c, A_{0,1}^\vee \rangle + \langle A_{1,0}^\vee, \psi \rangle + \langle B^\vee, \ol \dd A_{0,1} \rangle.\]
- Observe that the classical BV complex associated to this action functional can be written in the following form:
+ We'll begin, as in step 1, by performing a linear change of variables, setting $A'_{1,0} = A_{1,0} - \ol{A_{0,1}}$, and performing the dual change of variables on the antifields.  This change of variables has the effect of eliminating the term $\langle \dd c, A_{1,0}^\vee \rangle$ from the quadratic part of the action. \chris{This isn't quite right I think.  We need to kill that term, however, for the below argument to work.  Can we fix it?}
+ 
+ Observe that the classical BV complex associated to this action functional can now be written in the following form:
  \[\xymatrix{
- &&\Omega^{1,0}(\CC^5;\gg)_\psi \ar[dl] \ar[dr] \ar[r] &\Omega^{1,0}(\CC^5;\gg)_{A_{1,0}} \ar[dr]\\
- \Omega^0(\CC^5;\gg)_c \ar[r] \ar[urrr] &\Omega^{0,1}(\CC^5;\gg)_{A_{0,1}}  \ar[dl] \ar[r] &\Omega^{0,2}(\CC^5;\gg)_{B} \ar[dl]\ar[r] &\Omega^{0,3}(\CC^5;\gg)_{B^\vee} \ar[r] &\Omega^{0,4}(\CC^5;\gg)_{A_{0,1}^\vee} \ar[dlll] \ar[r] &\Omega^{0,5}(\CC^5;\gg)_{c^\vee} \\
- \Omega^{4,0}(\CC^5;\gg)_{A_{1,0}^\vee} \ar[r] \ar[urrrrr]  &\Omega^{4,0}(\CC^5;\gg)_{\psi^\vee}. 
+ &&\Omega^{1,0}(\CC^5;\gg)_\psi \ar[dl] \ar[dr] \ar[r] &\Omega^{1,0}(\CC^5;\gg)_{{A'}_{1,0}} \ar[dr]\\
+ \Omega^0(\CC^5;\gg)_c \ar[r] &\Omega^{0,1}(\CC^5;\gg)_{A_{0,1}}  \ar[dl] \ar[r] &\Omega^{0,2}(\CC^5;\gg)_{B} \ar[dl]\ar[r] &\Omega^{0,3}(\CC^5;\gg)_{B^\vee} \ar[r] &\Omega^{0,4}(\CC^5;\gg)_{A_{0,1}^\vee} \ar[dlll] \ar[r] &\Omega^{0,5}(\CC^5;\gg)_{c^\vee} \\
+ \Omega^{4,0}(\CC^5;\gg)_{{A'}_{1,0}^\vee} \ar[r]   &\Omega^{4,0}(\CC^5;\gg)_{\psi^\vee},
  }\]
- \chris{I'm confused here: there are actually both maps into the $\psi \to A_{1,0}$ two step complex ($c \mapsto \dd c$) and maps out ($A_{1,0} \to A_{0,1}^\vee$ and $\psi \to B^\vee$).  So the argument we'd been thinking of doesn't work?  I don't remember, did we discuss this? I want to eliminate those ugly arrows involving $c$ and $c^\vee$ (also obviously they make the diagram above unreadable).}
+ where the first and third rows are dual under the symplectic pairing.  This is exactly in the form required to apply Lemma \ref{symplectic_composite_lemma}, so applying that result tells us that the underlying free theory of the twisted 10d super Yang Mills theory is equivalent to the middle row alone, i.e. the Dolbeault complex, which is exactly the free part of holomorphic Chern-Simons theory on $\CC^5$.
  
  \item Now, let's understand how the interaction functional behaves under this equivalence of classical field theories.  We'll use Lemma \ref{interaction_pullback_lemma}.  Take our original action functional after the change of variables from step 1, and set the fields $\chi, \psi, A_{1,0}$ and their antifields to zero (i.e, in the notation of Lemma \ref{interaction_pullback_lemma}, restrict the interaction to the complex $\mc E^\bullet$).  The resulting interaction is 
  \[
@@ -203,6 +205,7 @@ We'll prove this equivalence by first describing an equivalence of the underlyin
 \end{enumerate}
 \end{proof}
 
+The above argument can be applied identically on a general Calabi-Yau 5-fold $X$.
 
 \pagestyle{bib}
 \printbibliography
