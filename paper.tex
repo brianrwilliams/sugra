@@ -154,6 +154,50 @@ Notice that the BV complex we defined in the previous section is simply the glob
 
 \pavel{(partially) topological BF theories and Chern-Simons theories in different dimensions.}
 
+\subsubsection{Holomorphic Chern-Simons}
+
+Fix a Calabi-Yau manifold $X$ of complex dimension $n$, and let $\fg$ be a $\ZZ/2$-graded Lie algebra with a non-degenerate graded symmetric pairing of parity opposite to $n$. 
+In particular, for odd $n$ we can take an ordinary complex semi-simple Lie algebra $\fg$ with its Killing form. 
+When $n$ is even must work with a graded Lie algebra with an odd pairing.
+In any case, we denote the pairing by $\<-,-\>$. 
+
+\begin{dfn}
+Let $X, \fg$ be as above.
+{\bf Holomorphic Chern-Simons theory} on $X$ with values in $\fg$ is the $\ZZ/2$-graded classical field theory $(E_\hCS, Q_\hCS, \omega_\hCS, I_\hCS)$, where the space of fields is given by the Dolbeault complex with coefficients in $\gg$
+\[
+\cE_\hCS = \Omega^{0,\bullet}(X;\gg)[1],
+\]
+$Q_{\hCS} = \dbar$ is the Dolbeault differential, $\omega_\hCS$ is the density-valued pairing
+\[
+\omega_{\hCS} (\alpha,\beta) = \<\alpha \wedge \beta\> \wedge \Omega_X,
+\]
+where $\Omega_X$ is the Calabi-Yau structure on $X$, and $I_\hCS$ is the cubic interactional functional
+\[
+I_{\hCS}(\alpha) = \frac 16 \<\alpha \wedge [\alpha, \alpha]\> \wedge \Omega_X .
+\]
+\end{dfn}
+
+\begin{eg} 
+Let $X$ be a Calabi-Yau $2$-fold, like $\CC^2$, and let $\fh$ be an ordinary Lie algebra equipped with an invariant non-degenerate symmetric pairing $\<-,-\>_\fh$. 
+Define the $\ZZ/2$-graded Lie algebra
+\[
+\fg = \fh[\epsilon_1,\epsilon_2, \epsilon_3] 
+\]
+where $\epsilon_i$ are odd formal variables. 
+
+There is an odd pairing on $\fg$ defined using the pairing on $\fh$ and the Berezin integral along the odd coordinates:
+\[
+\<X , Y\> = \int_{\CC^{0|3}} \d \epsilon_1 \d \epsilon_2 \d \epsilon_3 \<X, Y\>_\fh 
+\] 
+where $X,Y \in \fg = \fh[\epsilon_i]$.
+
+With this data, holomorphic Chern-Simons on the $2$-fold $X$ with values in $\fg = \fh[\epsilon_1,\epsilon_2, \epsilon_3]$ is defined. 
+\brian{check this} In fact, in this example, there is a natural lift to a $\ZZ$-graded theory whereby the coordinates $\epsilon_i$ are given cohomological degree $-1$. 
+
+On $X = \CC^2$ with its standard Calabi-Yau form $\Omega_X = \d z_1 \d z_2$ this theory is equivalent to the holomorphic twist of $\cN=4$ super Yang-Mills on $\RR^4$ for the Lie algebra $\fh$. 
+
+\end{eg} 
+
 \subsection{Supersymmetry} \label{sec: susy}
 
 In this section we recall the framework for supersymmetry following \cite{ElliottSafronov} and \cite{DeligneSpinors}, we refer there for more details.
@@ -416,7 +460,7 @@ First, the term \ref{10d_MC_1} vanishes by \chris{We've discussed this.  First t
 
 \subsubsection{The Holomorphic Twist}
 
-\newcommand{\hCS}{\mathrm{hCS}}
+
 \chris{this definition should go elsewhere.  We also need to include a description of the holomorphic supercharge, and something about the trivial $\SU(5)$ twisting homomorphism.}
 
 \begin{definition}
