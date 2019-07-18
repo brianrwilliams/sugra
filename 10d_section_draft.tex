@@ -32,7 +32,7 @@ The associated graded of this filtration is the differentiable cochain complex g
 \]
 This is simply the BV complex associated to the free theory based on $(E, Q, \omega)$ obtained by forgetting $I$. 
 Thus, the $E_1$ page of the corresponding spectral sequence is the BV cohomology of the underlying free theory, as desired. 
-\brian{shall we say a word about convergence? This must follow from completeness of the filtration in addition to boundedness in some direction of the cohomology of $\cE$.}
+\brian{shall we say a word about convergence? This must follow from completeness of the filtration in addition to boundedness in some direction of the cohomology of $\cE$.} \chris{Does convergence require that the interaction is polynomial, or alternatively does this bound the number of differentials appearing in the spectral sequence?}
 \end{proof}
 
 \begin{lemma} \label{invert_quis_lemma}
@@ -135,8 +135,7 @@ In this section, we will collect some standard lemmas that we'll use to simplify
 A linear symplectomorphism $F \colon \mc E^\bullet \to \mc E^\bullet$ induces an equivalence of theories between $(\mc E^\bullet, Q, \omega, I)$ and $(\mc E^\bullet, F^*Q, \omega, F^*I)$.
 \end{lemma}
 
-\brian{I may be optimistic, but shouldn't the lemmas below all follow from the fact that the category we are working with is a Grothendieck abelian category?
-In any case, I do like that we've stated them clearly.}
+\brian{I may be optimistic, but shouldn't the lemmas below all follow from the fact that the category we are working with is a Grothendieck abelian category? In any case, I do like that we've stated them clearly.} \chris{I'm not sure what you have in mind (for instance I'm not sure why you would need the Grothendieck condition there), but I think the lemmas below should be formally immediate in this dg category of differentiable cochain complexes setting (like the first one follows in any context where you have an exact sequence $0 \to A \to B \to C \to 0$ and the fact that if $C$ is equivalent to 0 then $A \to B$ is an equivalence, or the same with $A$ and $B \to C$.)}
 
 \begin{lemma} \label{inclusion_and_projection_lemma}
 Let $(\mc E^\bullet, Q)$ be a cochain complex, and let $(\mc C^\bullet, Q')$ be a contractible cochain complex.
@@ -234,7 +233,7 @@ We'll prove this equivalence by first describing an equivalence of the underlyin
 The above argument can be applied identically on a general Calabi-Yau 5-fold $X$.
 \brian{How do we place 10d YM on an arbitrary 5-fold? 
 Are you using something about sugra?
-}
+} \chris{Not an arbitrary 5-fold, but just Calabi-Yau.  I'm not thinking of using sugra.  Instead I want to say that a Calabi-Yau 5-fold has a principal $\SU(5)$ frame bundle.  Take the fields to be sections of the associated vector bundles under the appropriate representations, then use the same action functional: the Lagrangian density is $\SU(5)$ invariant and so will define a density on the 5-fold.}
 
 \pagestyle{bib}
 \printbibliography
