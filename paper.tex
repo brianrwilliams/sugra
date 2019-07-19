@@ -141,6 +141,70 @@ Notice that the BV complex we defined in the previous section is simply the glob
 
 \subsection{From BRST to BV}
 
+\begin{dfn}
+A {\bf classical BRST theory} on a manifold $M$ consists of the following data:
+\begin{itemize}
+\item a $\ZZ$-graded vector bundle $F$ together with the structure of a local $L_\infty$ algebra on the shift $F[-1]$;
+\item a differential operator
+\[
+Q_{BRST} : \cF \to \cF^!  ;
+\]
+\item a local functional $I_{BRST} \in \oloc^+(\cF)$ of polynomial degree $\geq 3$.
+\end{itemize}
+Together, this data must satisfy the master equation
+\[
+[\d_{CE}, Q_{BRST}] + \d_{CE} I_{BRST} = 0 .
+\]
+\brian{even separately, I suppose?}
+\end{dfn}
+
+One can think of the space of field $\cF$ as a (linear) graded manifold.
+In doing so, the $L_\infty$ structure on $\cF[-1]$ determines a vector field $X$ of cohomological degree $+1$ on this graded manifold. 
+The operator $Q$ determines a one-form on $\cF$, and the master equation says that this one-form vanish along the vector field $X$. 
+Similarly, the condition $\d_{CE} I = 0$ means the function $I$ on $\cF$ vanish along $X$. 
+
+From a classical BRST theory $(\cF, Q_{BRST}, I_{BRST})$, one can construct a classical BV theory as follows. 
+Let $\{\ell_k\}$ be the $L_\infty$ structure maps underlying the local Lie algebra $F[-1]$. 
+
+First, we define the free BV theory. 
+This will only use the linear operation on the $L_\infty$ algebra $\cF$, and the operator $Q_{BRST}$. 
+The underlying bundle of the BV theory is
+\[
+E = F \oplus F^! [-1] = F \oplus F^* \otimes {\rm Dens}_M .
+\]
+The differential of the free BV theory is
+\[
+Q = \ell_1 + Q_{BRST} .
+\]
+The BV pairing is defined by the composition
+\[
+E \otimes E = (F \oplus F^![-1]) \otimes (F \oplus F^![-1]) \to F \otimes F^! [-1] \oplus F^![-1] \otimes F \to {\rm Dens}_M [-1] .
+\]
+In the first arrow, we have used the obvious projection. 
+The second arrow is given by the evaluation pairing between $F$ and $F^*$. 
+The data $(\cE, Q, \omega)$ defines a free BV theory. 
+
+The interacting theory is constructed as follows.
+First, note that for $k \geq 2$ the $L_\infty$ structure maps $\{\ell_k\}_{k \geq 2}$ on $\cF$ pull back to multilinear maps on $\cE$ via the obvious projection $p : \cE = \cF \oplus \cF^![-1] \to \cF$. 
+These structure maps assemble into a local functional $I_F \in \oloc^+(\cE)$ defined by
+\[
+I_{F} (e) = \sum_{k \geq 2} \int_M \frac{1}{(k+1)!} \omega(e, (p^*\ell_k) (e, \ldots, e)) . 
+\] 
+Likewise, the BRST action $I_{BRST}$ pulls back to $\cE$, and we define the BV interaction as the sum
+\[
+I_{BV} = I_{F} + p^* I_{BRST} \in \oloc^+(\cE) .
+\]
+
+\begin{lemma}
+Given a classical BRST theory $(F, Q_{BRST}, I_{BRST})$, the data $(E, Q, \omega, I) = (F \oplus F^![-1] , \ell_1 + Q_{BRST} , I_{BV})$ defines a classical BV theory.
+That is, the BV classical master equation
+\[
+Q I + \frac{1}{2} \{I, I\} = 0 \iff (Q + \ell_1) (I_F + p^*I_{BRST}) + \frac{1}{2} \{I_F + p^*I_{BRST}, I_F + p^*I_{BRST}\} = 0
+\]
+holds.
+We refer to this classical BV theory as the {\bf $(-1)$-shifted cotangent bundle} of $\cF$ and by abuse of notation we often denote it simply by $\cE = T^*[-1] \cF$.
+\end{lemma}
+
 \pavel{explain how to get a BV theory from a BRST theory}
 
 %\begin{dfn}
