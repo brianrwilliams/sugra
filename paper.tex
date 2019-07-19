@@ -155,9 +155,11 @@ Together, this data must satisfy the master equation
 \[
 [\d_{CE}, Q_{BRST}] + \d_{CE} I_{BRST} = 0 .
 \]
+where $\d_{CE}$ is the Chevalley-Eilenberg differential defined by the $L_\infty$ structure on $F[-1]$. 
 \brian{even separately, I suppose?}
 \end{dfn}
 
+We can unwrap this definition as follows. 
 One can think of the space of field $\cF$ as a (linear) graded manifold.
 In doing so, the $L_\infty$ structure on $\cF[-1]$ determines a vector field $X$ of cohomological degree $+1$ on this graded manifold. 
 The operator $Q$ determines a one-form on $\cF$, and the master equation says that this one-form vanish along the vector field $X$. 
@@ -176,19 +178,19 @@ The differential of the free BV theory is
 \[
 Q = \ell_1 + Q_{BRST} .
 \]
-The BV pairing is defined by the composition
+The BV pairing $\omega_{F}$ is defined by the composition
 \[
 E \otimes E = (F \oplus F^![-1]) \otimes (F \oplus F^![-1]) \to F \otimes F^! [-1] \oplus F^![-1] \otimes F \to {\rm Dens}_M [-1] .
 \]
-In the first arrow, we have used the obvious projection. 
+The first arrow is the obvious projection. 
 The second arrow is given by the evaluation pairing between $F$ and $F^*$. 
-The data $(\cE, Q, \omega)$ defines a free BV theory. 
+It's immediate to check that the data $(\cE, Q, \omega)$ defines a free BV theory. 
 
 The interacting theory is constructed as follows.
 First, note that for $k \geq 2$ the $L_\infty$ structure maps $\{\ell_k\}_{k \geq 2}$ on $\cF$ pull back to multilinear maps on $\cE$ via the obvious projection $p : \cE = \cF \oplus \cF^![-1] \to \cF$. 
 These structure maps assemble into a local functional $I_F \in \oloc^+(\cE)$ defined by
 \[
-I_{F} (e) = \sum_{k \geq 2} \int_M \frac{1}{(k+1)!} \omega(e, (p^*\ell_k) (e, \ldots, e)) . 
+I_{F} (e) = \sum_{k \geq 2} \int_M \frac{1}{(k+1)!} \omega_F(e, (p^*\ell_k) (e, \ldots, e)) . 
 \] 
 Likewise, the BRST action $I_{BRST}$ pulls back to $\cE$, and we define the BV interaction as the sum
 \[
@@ -196,7 +198,7 @@ I_{BV} = I_{F} + p^* I_{BRST} \in \oloc^+(\cE) .
 \]
 
 \begin{lemma}
-Given a classical BRST theory $(F, Q_{BRST}, I_{BRST})$, the data $(E, Q, \omega, I) = (F \oplus F^![-1] , \ell_1 + Q_{BRST} , I_{BV})$ defines a classical BV theory.
+Given a classical BRST theory $(F, Q_{BRST}, I_{BRST})$, the data $(E, Q, \omega, I) = (F \oplus F^![-1] , \ell_1 + Q_{BRST} , \omega_F, I_{BV})$ defines a classical BV theory.
 That is, the BV classical master equation
 \[
 Q I + \frac{1}{2} \{I, I\} = 0 \iff (Q + \ell_1) (I_F + p^*I_{BRST}) + \frac{1}{2} \{I_F + p^*I_{BRST}, I_F + p^*I_{BRST}\} = 0
@@ -205,7 +207,9 @@ holds.
 We refer to this classical BV theory as the {\bf $(-1)$-shifted cotangent bundle} of $\cF$ and by abuse of notation we often denote it simply by $\cE = T^*[-1] \cF$.
 \end{lemma}
 
-\pavel{explain how to get a BV theory from a BRST theory}
+\begin{proof}
+\brian{shouldn't be hard...}
+\end{proof}
 
 %\begin{dfn}
 %A {\bf classical BRST theory} is a finite rank $\ZZ \times \ZZ / 2$-graded vector bundle $F \to M$ equipped with an even differential operator of cohomological degree $+1$
@@ -215,7 +219,50 @@ We refer to this classical BV theory as the {\bf $(-1)$-shifted cotangent bundle
 %such that $Q
 
 \subsection{Examples of BV-BRST Theories}
-\subsubsection{Partially Holomorphic Examples}
+
+\brian{should we make these definitions, recollections, or just conventions?}
+
+If $M$ is a smooth manifold, its {\em de Rham stack}, as a dg ringed space, is 
+\[
+M_{\rm dR} = \left(M , (\Omega^*_M, \d_{\rm dR})\right) .
+\] 
+
+If $X$ is a complex manifold, there are two naturally associated dg ringed spaces that will be important for us. 
+The first is the $\dbar$-{\em stack}, defined by
+\[
+X_{\dbar} = \left(M , (\Omega^{0,*}_X, \dbar) \right) .
+\]
+The next is the {\em Dolbeault stack}, defined by
+\[
+X_{\rm Dol} = \left(M, (\Omega^{*,*}_X, \dbar)\right) .
+\] 
+Note that as sheaves of dg modules, there is a quasi-isomorphism $(\Omega^{p,*}_M, \dbar) = \Omega^{p, hol}_M$.
+Thus, one can think of the underlying ring of the Dolbeault stack as functions on the shifted holomorphic tangent bundle $T^{1,0} [1] M$ of $M$. 
+
+\subsubsection{Mixed holomorphic/topological BF theory}
+
+\begin{dfn}
+Let $X,Y$ be complex manifolds and $M$ a smooth manifold.
+Let $\fg$ be an $L_\infty$ algebra which is finite dimensional in each cohomological degree. 
+The {\bf mixed holomorphic-Dolbeault-topological BRST theory} \brian{blah, terrible name} on $X \times Y \times M$ is the local $L_\infty$ algebra defined by
+\[
+\cF[-1] = \Omega^{0,*}_X \Hat{\otimes} \Omega^{*,*}_Y \Hat{\otimes} \Omega^*_M \otimes \fg .
+\] 
+The $L_\infty$ structure is the one induced from $\fg$ together with the dg commutative products on differential forms. 
+This is a classical BRST theory by choosing $Q_{BRST} = 0, I_{BRST} = 0$. 
+In other words, $\cF$ is defined by the mapping stack
+\[
+{\rm Map} (X_{\dbar} \times Y_{\rm Dol} \times M_{\rm dR}, B \fg) .
+\]
+
+The {\bf mixed holomorphic-Dolbeault-topological BF theory} is the BV theory given by the $(-1)$-shifted cotangent bundle to $\cF$.
+
+\end{dfn}
+
+\subsubsection{Mixed holomorphic/topological Chern-Simons theory}
+
+The next class of examples of classical BV theories we give are generalizations of Chern-Simons theory. 
+Unlike the examples of mixed BF theory above, these BV theories do not arise, in general, as shifted cotangent bundles. 
 
 Fix a Calabi-Yau manifold $X$ of complex dimension $n$, and let $\fg$ be a $\ZZ/2$-graded Lie algebra with a non-degenerate graded symmetric pairing of parity opposite to $n$. 
 In particular, for odd $n$ we can take an ordinary complex semi-simple Lie algebra $\fg$ with its Killing form. 
