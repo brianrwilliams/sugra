@@ -921,14 +921,41 @@ The {\bf completed algebra of functions} on $\cE(U)$ is
 On global sections, we use the notation $\cO(\cE) = \cO(\cE(M))$. 
 \end{dfn}
 
-\subsection{Homological algebra}
+\subsection{Differentiable vector spaces}
+\def\Mfld{{\rm Mfld}}
 
-\brian{can't do cokernels in CVS, blah blah}
+Let $\Mfld$ denote the site of smooth manifolds (of arbitrary dimension) where the morphisms are smooth maps, and a cover $f : X \to Y$ is a surjective local diffeomorphism.  
+
+\begin{dfn} 
+We use the following notations and naming conventions for sheaves on $\Mfld$:
+\begin{itemize}
+\item a {\bf smooth vector space} is a sheaf of vector spaces on $\Mfld$.
+\item Let $C^\infty$ denote the smooth vector space which assigns the space of smooth functions $C^\infty(X)$ to a smooth manifold $X$.
+\item a $C^\infty$-{\bf module} is a smooth vector space $V$ equipped with a structure of a module over $C^\infty$. 
+If $V$ is a $C^\infty$-module, we denote $C^\infty(X, V) := V(X)$, the valued of $V$ on the smooth manifold $X$.
+\item a {\bf differentiable vector space} is a $C^\infty$-module $V$ equipped with a flat connection
+\[
+\nabla_{X,V} : C^\infty(X, V) \to \Omega^1(X, V)
+\]
+for every smooth manifold $X$, which is required to be natural under pullbacks:
+\[
+f^* \circ \nabla_{Y,V} = \nabla_{X,V} \circ f^*
+\]
+for every smooth map $f : X \to Y$. 
+A map of differentiable vector spaces is a map of $C^\infty$-modules which intertwines the flat connections. 
+\end{itemize}
+\end{dfn}
+
+\subsection{Homological algebra}
 
 There is a functor
 \[
-dif_c : \CVS \to \DVS .
+dif_c : \CVS \to \DVS 
 \]
+from the category of convenient vector spaces to the category of differentiable vector spaces. 
+This functor does not preserve cokernels, so $dif_c$ does not preserve cohomology. 
+In particular, with a naive definition of quasi-isomorphism internal to $\CVS$, the functor $dif_c$ does not preserve quasi-isomorphisms. 
+To avoid this issue, we make the following definition. 
 
 \begin{dfn}
 Suppose $V,W$ are cochain complexes in convenient vector spaces. 
@@ -939,14 +966,11 @@ dif_c (f) : dif_c(V) \to dif_c(W)
 is a quasi-isomorphism of differentiable vector spaces.
 \end{dfn}
 
-\begin{dfn}
-A {\bf filtered differentiable cochain complex} is a sequence of differentiable cochain complexes
-\[
-\cdots \to F_{n-1} V \to F_{n} V \to F_{n+1}V \to \cdots
-\]
-where each map is a monomorphism in each cohomological degree. 
-A filtered differentiable cochain complex is {\bf complete} if the canonical maps $V \to V / F_n V$ induce an isomorphism $V \cong \lim V / F_n V$. 
-\end{dfn}
+The cochain complexes arising in classical field theory are naturally convenient vector spaces. 
+The above definition is used in what we mean by quasi-isomorphism between classical field theories, as in Definition \brian{??}.
+
+Throughout the paper we make use of familiar manipulations with spectral sequences arising from filtrations of cochain complexes internal to differentiable vector spaces. 
+A main tool is the classical Eilenberg-Moore comparison theorem, which is stated as follows.
 
 \begin{thm}[Eilenberg-Moore Comparison]
 Let $f : V \to W$ be a map of filtered cochain complexes in an AB4 abelian category.
@@ -957,6 +981,17 @@ f_r^{pq} :  E_r^{pq} V \to E_r^{pq} W
 \]
 is an isomorphism for all $p,q$, then $f : V \to W$ is a quasi-isomorphism. 
 \end{thm}
+
+The following is the natural definition of a filtered differentiable cochain complex. 
+
+\begin{dfn}
+A {\bf filtered differentiable cochain complex} is a sequence of differentiable cochain complexes
+\[
+\cdots \to F_{n-1} V \to F_{n} V \to F_{n+1}V \to \cdots
+\]
+where each map is a monomorphism in each cohomological degree. 
+A filtered differentiable cochain complex is {\bf complete} if the canonical maps $V \to V / F_n V$ induce an isomorphism $V \cong \lim V / F_n V$. 
+\end{dfn}
 
 The category of differentiable vector space is an AB4 category, in fact, it is actually a Grothendieck abelian category. 
 
@@ -974,6 +1009,8 @@ A {\bf differentiable pro-cochain complex} is a differentiable cochain complex $
 where each map is a monomorphism in each cohomological degree and such that the canonical maps $V \to V / F_n V$ induce a quasi-isomorphism $V \to \lim V / F_n V$. 
 \end{dfn}
 
+\subsubsection{The classical BV complex}
+
 \begin{lem}
 If $(E, \omega, Q, I)$ is the data of a classical theory on $M$, then the BV complex
 \[
@@ -983,8 +1020,13 @@ is a differentiable pro-cochain complex.
 More generally, the classical factorization algebra of observables $\Obs$ is a factorization algebra in differentiable pro-cochain complexes. 
 \end{lem}
 
+The above lemma used the natural filtration on the classical BV complex given by polynomial degree of observables. 
+Since the free part of the differential $Q$ always preserves this filtration, the first term of the resulting spectral sequence simply computes the cohomology of the underlying free theory. 
+The differential on the higher pages depend on the interacting part of of the action. 
+
 \begin{lemma}[Free to Interacting Spectral Sequence] \label{free_int_ss_lemma}
-Let $(E^\bullet, Q, \omega, I)$ be a classical field theory with polynomial interaction.  There is a convergent spectral sequence whose $E_1$ page is the complex of classical observables of the underlying free theory, and whose $E_\infty$ page is equivalent to the complex of classical observables of the interacting theory.
+Let $(E^\bullet, Q, \omega, I)$ be a classical field theory with polynomial interaction.  
+There is a convergent spectral sequence whose $E_1$ page is the complex of classical observables of the underlying free theory, and whose $E_\infty$ page is equivalent to the complex of classical observables of the interacting theory.
 \end{lemma}
 \begin{proof}
 The BV complex is of the form $\left(\cO(\cE), Q + \{I,-\}\right)$.
@@ -1004,7 +1046,7 @@ Thus, the $E_1$ page of the corresponding spectral sequence is the BV cohomology
 \end{proof}
 
 \begin{lemma} \label{invert_quis_lemma}
-Any quasi-isomorphism of cochain complexes admits a quasi-inverse.
+Any quasi-isomorphism of differentiable cochain complexes admits a quasi-inverse.
 \end{lemma}
 \brian{I think Pavel had something to say for this lemma.}
 
