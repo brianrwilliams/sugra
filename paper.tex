@@ -549,7 +549,7 @@ I^{(2)} (Q_1,Q_2 ; \lambda^*) & = \pm \left\<\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2
 \end{definition}
 
 \begin{prop}
-Let $S_{\mr{BV}}$ be the BV action functional in the theory $\fL$, and write $I_{\mr{Poin}}$ for the interaction generating the Lie action of the Poincar\'e algebra \chris{we'll have to see whether we want Poincar\'e or just translation here}. The functional
+Let $S_{\mr{BV}}$ be the BV action functional in the theory $\fL$, and write $I_{\mr{Poin}}$ for the interaction generating the Lie action of the Poincar\'e algebra \chris{we'll have to see whether we want Poincar\'e or just translation here, probably translation, because then there are no $\d_{\mr{Lie}}I^{(i)}$ terms to worry about.  On the other hand we would like to know that the theories are supersymmetric, not just super-translation invariant.  To include rotations and R-symmetries we need to additionally check that some terms like $\d_{\mr{Lie}}+ \{I_{\mr{rotation}} + I_{\text{R-symmetry}}, I^{(i)}\}$ vanish.}. The functional
 \[\fS = S_{\mr{BV}} + I_{\mr{Poin}} + I^{(1)} + I^{(2)} \in \clie^\bu(\mc A) \otimes \cloc^\bu(\fL) [-1]\]
 satisfies the Maurer-Cartan equation
 \begin{equation} 
@@ -570,6 +570,8 @@ We can filter the complex $\clie^\bu(\mc A) \otimes \cloc^\bu(\fL)$ by the numbe
 Taking these terms one at a time, we first note that the vanishing of \ref{10d_MC_BV} is just the fact that the BV action of the 10d super Yang-Mills theory satisfies the classical master equation, along with the fact that this theory is Poincar\'e invariant \chris{ref some earlier discussion}.  The remaining terms are those involving the action of supersymmetries.
 
 First, the term \ref{10d_MC_1} vanishes by \chris{We've discussed this.  First the $\{I_{\mr{Poin}}, I^{(i)}\}$ terms vanish by Poincar\'e invariance of the interaction terms.  Then \ref{10d_MC_1} is zero by Baez--Huerta.  Term \ref{10d_MC_2} is Lemma \ref{10d_onshell_lemma}. Term \ref{10d_MC_3} vanishes because, first $\d_{\mr{Lie}}I^{(2)} = 0$ since ...not sure right now..., then the remaining term vanishes by the trick where we symmetrize in three spinors.  Finally \ref{10d_MC_4} vanishes because $I^{(2)}$ only involves antifields.}
+
+\chris{apart from the Lemma \ref{10d_onshell_lemma}, this is all completely identical for dimensions 3,4,6,10.  Even that lemma only uses abstract gamma matrix manipulations that work in any dimension along with the Baez Huerta rule that applies in those dimensions, so I think we should just state a single result valid for those four theories simultaneously.}
 \end{proof}
 
 
