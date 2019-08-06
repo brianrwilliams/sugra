@@ -7,12 +7,12 @@
 \usepackage{pdflscape}
 \usetikzlibrary{shapes.geometric, arrows, positioning}
 
-\tikzstyle{s16} = [rectangle, rounded corners, minimum width=2cm, minimum height=1cm,text centered, draw=black,fill=red!30]
+\tikzstyle{s16} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=red!30]
 \tikzstyle{s16chiral} = [s16, dashed]
-\tikzstyle{s8} = [rectangle, rounded corners, minimum width=2cm, minimum height=1cm,text centered, draw=black,fill=orange!30]
-\tikzstyle{s4} = [rectangle, rounded corners, minimum width=2cm, minimum height=1cm,text centered, draw=black,fill=yellow!30]
-\tikzstyle{s2chiral} = [rectangle, dashed, rounded corners, minimum width=2cm, minimum height=1cm,text centered, draw=black,fill=green!30]
-\tikzstyle{dimension} = [ellipse, text centered, text width=1cm, minimum height=1cm, draw=black]
+\tikzstyle{s8} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=orange!30]
+\tikzstyle{s4} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=yellow!30]
+\tikzstyle{s2chiral} = [rectangle, dashed, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=green!30]
+\tikzstyle{dimension} = [circle, text centered, text width=0.7cm, minimum height=0.7cm, draw=black]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
 \title{Twists of supersymmetric gauge theories}
@@ -250,7 +250,7 @@ Thus, one can think of the underlying ring of the Dolbeault stack as functions o
 \begin{dfn}
 Let $X,Y$ be complex manifolds and $M$ a smooth manifold.
 Let $\fg$ be an $L_\infty$ algebra which is finite dimensional in each cohomological degree. 
-The {\bf mixed holomorphic-Dolbeault-topological BRST theory} \brian{blah, terrible name} on $X \times Y \times M$ is the local $L_\infty$ algebra defined by
+The {\bf mixed holomorphic-Dolbeault-topological BRST theory} \brian{blah, terrible name} \chris{I don't really understand why this thing needs a name, since it's only a theory in a trivial way, with zero action.  Why not just call this thing $\cF$, call its shifted cotangent something like ``generalized BF theory'', then if $\fg$ has a pairing call the theory built out of $\cF$ with its AKSZ structure something like ``generalized Chern-Simons theory'' (I'm brainstorming other names too: e.g. ``Hodge-Chern-Simons theory'')?  Or do you want to reserve the name Chern-Simons for the case where $\fg$ is a Lie algebra, not an $L_\infty$ algebra?} on $X \times Y \times M$ is the local $L_\infty$ algebra defined by
 \[
 \cF[-1] = \Omega^{0,\bu}_X \Hat{\otimes} \Omega^{\bu,\bu}_Y \Hat{\otimes} \Omega^\bu_M \otimes \fg .
 \] 
@@ -622,6 +622,89 @@ where the $\ZZ/2$-grading on $E$ is the total grading.
 
 \section{Twists}
 
+%\begin{landscape}
+\begin{figure}
+\begin{tikzpicture}[node distance=0.35cm and 0.35cm, text width=1.8cm]
+\node (101) [s16chiral] {Rank $(1, 0)$ $d=5$};
+\node (91) [s16, below=of 101] {Rank $1$ $d=5$};
+\node (82) [s16, below=of 91] {Rank $(1, 1)$ $d=5$};
+\node (81) [s16, left=of 82] {Rank $(1, 0)$ $d=4$};
+\node (825) [right=of 82] {};
+\node (83) [s16, right=of 825] {Rank $(1, 0)$ $d=8$};
+\node (71) [s16, below=of 81] {Rank $1$ $d=4$};
+\node (72) [s16, below=of 82] {Rank $2$ $d=5$};
+\node (73) [s16, below=of 83] {Rank $1$ $d=7$};
+\node (62) [s16, below=of 71] {Rank $(1, 1)$ $d=4$};
+\node (61) [s8, left=of 62] {Rank $(1, 0)$ $d=3$};
+\node (63) [s16, below=of 72] {Rank $(2, 2)$ $d=5$};
+\node (64) [s16chiral, right=of 63] {Rank $(2, 0)$ $d=5$};
+\node (65) [s16, below=of 73, right=of 64] {Rank $(1, 1)$ $d=6$};
+\node (51) [s8, below=of 61] {Rank $1$ $d=3$};
+\node (52) [s16, below=of 62] {Rank $2$ $d=4$};
+\node (53) [s16, below=of 63] {Rank $4$ $d=5$};
+\node (54) [s16, below=of 64] {Rank $2$ $d=5$};
+\node (42) [s8, below=of 51] {Rank $(1, 1)$ $d=3$};
+\node (41) [s4, left=of 42] {Rank $(1, 0)$ $d=2$};
+\node (43) [s16, right=of 42] {Rank $(2, 2)$ $d=4$};
+\node (44) [s16, right=of 43] {Rank $(2, 1)$ $d=4$};
+\node (45) [s8, right=of 44] {Rank $(2, 0)$ $d=4$};
+\node (31) [s4, below=of 41] {Rank $1$ $d=2$};
+\node (32) [s8, below=of 42] {Rank $2$ $d=3$};
+\node (22) [s4, below=of 31] {Rank $(1, 1)$ $d=2$};
+\node (21) [s2chiral, left=of 22] {Rank $(1, 0)$ $d=1$};
+
+\draw[arrow] (101) -- (91);
+\draw[arrow] (91) -- (81);
+\draw[arrow] (91) -- (82);
+\draw[arrow] (81) -- (71);
+\draw[arrow] (82) -- (71);
+\draw[arrow] (82) -- (72);
+\draw[arrow] (83) -- (73);
+\draw[arrow] (71) -- (61);
+\draw[arrow] (71) -- (62);
+\draw[arrow] (72) -- (62);
+\draw[arrow] (72) -- (63);
+\draw[arrow] (73) -- (65);
+\draw[arrow] (61) -- (51);
+\draw[arrow] (62) -- (51);
+\draw[arrow] (62) -- (52);
+\draw[arrow] (63) -- (53);
+\draw[arrow] (64) -- (52);
+\draw[arrow] (64) -- (54);
+\draw[arrow] (65) -- (54);
+\draw[arrow] (51) -- (41);
+\draw[arrow] (51) -- (42);
+\draw[arrow] (52) -- (42);
+\draw[arrow] (52) -- (43);
+\draw[arrow] (53) -- (43);
+\draw[arrow] (54) -- (43);
+\draw[arrow] (54) -- (44);
+\draw[arrow] (54) -- (45);
+\draw[arrow] (41) -- (31);
+\draw[arrow] (42) -- (31);
+\draw[arrow] (42) -- (32);
+\draw[arrow] (43) -- (32);
+\draw[arrow] (44) -- (32);
+\draw[arrow] (45) -- (32);
+\draw[arrow] (31) -- (21);
+\draw[arrow] (31) -- (22);
+\draw[arrow] (32) -- (22);
+
+\node (2d) [dimension, left=of 21] {2d};
+\node (3d) [dimension, above=of 2d] {3d};
+\node (4d) [dimension, above=of 3d] {4d};
+\node (5d) [dimension, above=of 4d] {5d};
+\node (6d) [dimension, above=of 5d] {6d};
+\node (7d) [dimension, above=of 6d] {7d};
+\node (8d) [dimension, above=of 7d] {8d};
+\node (9d) [dimension, above=of 8d] {9d};
+\node (10d) [dimension, above=of 9d] {10d};
+\end{tikzpicture}
+\caption{Orbits of square-zero supercharges.}
+\label{fig:superchargeorbits}
+\end{figure}
+%\end{landscape}
+
 \subsection{Standard Equivalences Between Classical Field Theories}
 In this section, we will collect some standard lemmas that we'll use to simplify the descriptions of twisted supersymmetric field theories below.
 
@@ -680,8 +763,8 @@ The twisted action functional is obtained by adding these terms to the original 
 
 We can now calculate the 10d holomorphic twist.  This calculation is originally due to Baulieu \cite{Baulieu}.
 
-\begin{theorem}
-The holomorphic twist of 10d super Yang-Mills theory on a Calabi-Yau 5-fold $X$ is equivalent to holomorphic Chern-Simons theory on $X$.
+\begin{theorem}\label{10d_twist_thm}
+The holomorphic twist of 10d super Yang-Mills theory on a Calabi-Yau 5-fold $X_5$ is equivalent to holomorphic Chern-Simons theory on $X_5$.
 \end{theorem}
 
 \begin{remark}
@@ -730,27 +813,39 @@ Are you using something about sugra?
 
 
 \subsection{Dimension 9}
+The 9-dimensional $\mc N=1$ super Yang-Mills theory is obtained by dimensional reduction of $\mc N=1$ super Yang-Mills from $\RR^{10}$ to $\RR^9$.  It has BRST fields given by a ghost, a 9d gauge field $A$, a $\gg$-valued scalar field $\phi$, and a Dirac spinor field $\lambda$.
 
-% \cN=1 SYM
+\chris{There is a single non-zero class of square zero supercharges in 9d, which are minimal (i.e. have 5d image).  They are stabilized by $\SU(4)$.  The twisted theory is only $\ZZ/2\ZZ$-graded.}
+
+\begin{theorem}
+The minimal twist of 9d super Yang-Mills theory on the product of a Calabi-Yau 4-fold $X_4$ and an oriented 1-manifold $L = \RR$ or $S^1$ is equivalent to mixed Chern-Simons theory on $X_4 \times L_\mr{dR}$.
+\end{theorem}
+
+The relevant fields for this calculation are those component fields which survived the 10d holomorphic twist of Theorem \ref{10d_twist_thm}.  These fields, in the BRST formalism, decompose as
+\begin{align*}
+B^{10} &= B + A \wedge \d \ol z^5 \in (\Omega^{0,2}(\CC^4; \gg) \oplus \Omega^{0,1}(\CC^4; \gg)) \otimes \Omega^0(\RR x_9) \\
+A^{10}_{0,1} &= A' + \phi \d \ol z^5 \in (\Omega^{0,1}(\CC^4; \gg) \oplus \Omega^0(\CC^4; \gg)) \otimes \Omega^0(\RR x_9)
+\end{align*}
+along with the ghost $c$. \chris{can prove the theorem by the same argument as in 10d, or using dimensional reduction.}
 
 \subsection{Dimension 8}
 
-% \cN=1 SYM
+% \cN=1 SYM, three twists
 
 \subsection{Dimension 7}
 
-% \cN=1 SYM
+% \cN=1 SYM, three twists identical to dimension 8
 
 \subsection{Dimension 6}
 
-% \cN=(1, 1) SYM
+% \cN=(1, 1) SYM, three twists identical to dimension 8
 
-% \cN=(1, 0) SYM with matter in a pseudo-real representation. Construct the L_infinity action of supersymmetry
+% \cN=(1, 0) SYM with matter in a pseudo-real representation, one twist. 
 
 \subsection{Dimension 5}
 
-% \cN=2 SYM
-% \cN=1 SYM with matter in a pseudo-real representation.
+% \cN=2 SYM, three twists
+% \cN=1 SYM with matter in a pseudo-real representation, one twist.
 
 \subsection{Dimension 4}
 
@@ -787,91 +882,6 @@ which together define the (abelian) local Lie algebra
 % \cN=(0,4) SYM with matter
 % \cN=(0,8) SYM with matter
 
-\pagestyle{bib}
-\printbibliography
-
-\begin{landscape}
-\begin{figure}
-\begin{tikzpicture}[node distance=0.5cm and 0.5cm, text width=2cm]
-\node (101) [s16chiral] {Rank $(1, 0)$. $d=5$};
-\node (91) [s16, below=of 101] {Rank $1$. $d=5$};
-\node (82) [s16, below=of 91] {Rank $(1, 1)$. $d=5$};
-\node (81) [s16, left=of 82] {Rank $(1, 0)$. $d=4$};
-\node (825) [right=of 82] {};
-\node (83) [s16, right=of 825] {Rank $(1, 0)$. $d=8$};
-\node (71) [s16, below=of 81] {Rank $1$. $d=4$};
-\node (72) [s16, below=of 82] {Rank $2$. $d=5$};
-\node (73) [s16, below=of 83] {Rank $1$. $d=7$};
-\node (62) [s16, below=of 71] {Rank $(1, 1)$. $d=4$};
-\node (61) [s8, left=of 62] {Rank $(1, 0)$. $d=3$};
-\node (63) [s16, below=of 72] {Rank $(2, 2)$. $d=5$};
-\node (64) [s16chiral, right=of 63] {Rank $(2, 0)$. $d=5$};
-\node (65) [s16, below=of 73, right=of 64] {Rank $(1, 1)$. $d=6$};
-\node (51) [s8, below=of 61] {Rank $1$. $d=3$};
-\node (52) [s16, below=of 62] {Rank $2$. $d=4$};
-\node (53) [s16, below=of 63] {Rank $4$. $d=5$};
-\node (54) [s16, below=of 64] {Rank $2$. $d=5$};
-\node (42) [s8, below=of 51] {Rank $(1, 1)$. $d=3$};
-\node (41) [s4, left=of 42] {Rank $(1, 0)$. $d=2$};
-\node (43) [s16, right=of 42] {Rank $(2, 2)$. $d=4$};
-\node (44) [s16, right=of 43] {Rank $(2, 1)$. $d=4$};
-\node (45) [s8, right=of 44] {Rank $(2, 0)$. $d=4$};
-\node (31) [s4, below=of 41] {Rank $1$. $d=2$};
-\node (32) [s8, below=of 42] {Rank $2$. $d=3$};
-\node (22) [s4, below=of 31] {Rank $(1, 1)$. $d=2$};
-\node (21) [s2chiral, left=of 22] {Rank $(1, 0)$. $d=1$};
-
-\draw[arrow] (101) -- (91);
-\draw[arrow] (91) -- (81);
-\draw[arrow] (91) -- (82);
-\draw[arrow] (81) -- (71);
-\draw[arrow] (82) -- (71);
-\draw[arrow] (82) -- (72);
-\draw[arrow] (83) -- (73);
-\draw[arrow] (71) -- (61);
-\draw[arrow] (71) -- (62);
-\draw[arrow] (72) -- (62);
-\draw[arrow] (72) -- (63);
-\draw[arrow] (73) -- (65);
-\draw[arrow] (61) -- (51);
-\draw[arrow] (62) -- (51);
-\draw[arrow] (62) -- (52);
-\draw[arrow] (63) -- (53);
-\draw[arrow] (64) -- (52);
-\draw[arrow] (64) -- (54);
-\draw[arrow] (65) -- (54);
-\draw[arrow] (51) -- (41);
-\draw[arrow] (51) -- (42);
-\draw[arrow] (52) -- (42);
-\draw[arrow] (52) -- (43);
-\draw[arrow] (53) -- (43);
-\draw[arrow] (54) -- (43);
-\draw[arrow] (54) -- (44);
-\draw[arrow] (54) -- (45);
-\draw[arrow] (41) -- (31);
-\draw[arrow] (42) -- (31);
-\draw[arrow] (42) -- (32);
-\draw[arrow] (43) -- (32);
-\draw[arrow] (44) -- (32);
-\draw[arrow] (45) -- (32);
-\draw[arrow] (31) -- (21);
-\draw[arrow] (31) -- (22);
-\draw[arrow] (32) -- (22);
-
-\node (2d) [dimension, left=of 21] {2d};
-\node (3d) [dimension, above=of 2d] {3d};
-\node (4d) [dimension, above=of 3d] {4d};
-\node (5d) [dimension, above=of 4d] {5d};
-\node (6d) [dimension, above=of 5d] {6d};
-\node (7d) [dimension, above=of 6d] {7d};
-\node (8d) [dimension, above=of 7d] {8d};
-\node (9d) [dimension, above=of 8d] {9d};
-\node (10d) [dimension, above=of 9d] {10d};
-\end{tikzpicture}
-\caption{Orbits of square-zero supercharges.}
-\label{fig:superchargeorbits}
-\end{figure}
-\end{landscape}
 
 \appendix
 
@@ -1053,5 +1063,8 @@ Any quasi-isomorphism of differentiable cochain complexes admits a quasi-inverse
 \section{$\infty$ algebra}
 
 \brian{Not sure if this deserves a whole appendix, but it may be good to spell out what $L_\infty$ modules are, etc..}
+
+\pagestyle{bib}
+\printbibliography
 
 \end{document}
