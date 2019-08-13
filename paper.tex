@@ -551,7 +551,7 @@ So, we calculate
 &=  F_{ij}\delta^{jk}(Q_2 \gamma^i Q_1) \\
 &= \delta_{[Q_1, Q_2]} A,
 \end{align*}
-where on the third line we used the fact that the pairing $\Gamma(-,-)$ is symmetric -- i.e. that $\lambda_1 \gamma^i \lambda_2 = \lambda_2 \gamma^i \lambda_1$ -- and on the fourth line we used the Clifford relation $\gamma^j\gamma^j+\gamma^j\gamma^j = \delta^{jk}$.  Note that, on the gauge fields, the action is a Lie action on the nose, not only on-shell.  Similarly we can calculate, following the calculation in Guillen \cite{Guillen}:
+where on the third line we used the fact that the pairing $\Gamma(-,-)$ is symmetric -- i.e. that $\lambda_1 \gamma^i \lambda_2 = \lambda_2 \gamma^i \lambda_1$ -- and on the fourth line we used the Clifford relation $\gamma^j\gamma^j+\gamma^j\gamma^j = \delta^{jk}$.  Note that, on the gauge fields, the action is a Lie action on the nose, not only on-shell.  Similarly we can calculate, (as in \cite{Guillen}):
 \begin{align*}
 [\delta_{Q_1}, \delta_{Q_2}] \lambda &= (\sd F_{\Gamma(Q_2, \lambda)} Q_1 + \sd F_{\Gamma(Q_1,\lambda)} Q_2) \\
 &= \frac 12((Q_2 (\gamma_j \dd_i - \gamma_i \dd_j) \lambda) (\gamma^i \gamma^j Q_1) + (1 \leftrightarrow 2)) \\
@@ -562,7 +562,7 @@ where on the third line we used the fact that the pairing $\Gamma(-,-)$ is symme
 \end{align*}
 using the fact that 
 \[(\psi_1 \gamma_j \psi_2)(\gamma^j \psi_3) + (\psi_2 \gamma_j \psi_3)(\gamma^j \psi_1) + (\psi_3 \gamma_j \psi_1)(\gamma^j \psi_2) = 0,\]
-as in \cite[Theorem 11]{BaezHuerta}.  Making one more simplification using the Clifford relations, we have
+as in Theorem \ref{3_psi_thm}.  Making one more simplification using the Clifford relations, we have
 \begin{align*}
 [\delta_{Q_1}, \delta_{Q_2}] \lambda &= ((Q_1 \gamma_j Q_2) (\delta^{ij} \dd_i \lambda) - ((Q_1 \gamma_j Q_2) (\gamma^j \gamma^i \dd_i \lambda) - \frac 12(Q_2 \gamma_i \dd_i \lambda)Q_1 - \frac 12(Q_1 \gamma_i \dd_i \lambda)Q_2 \\
 &= \delta_{[Q_1,Q_2]} \lambda - \rho(\Gamma(Q_1,Q_2)) \sd \dd \lambda - \frac 12(Q_2, \sd \dd \lambda)Q_1 - \frac 12(Q_2, \sd \dd \lambda)Q_2.
@@ -581,7 +581,7 @@ We'll rewrite this as a local functional in the theory $\fL$ coupled to the supe
 \begin{definition}
 The off-shell supersymmetry action on complexified Yang-Mills theory on $\RR^{n}$, for $n=3,4,6,10$, is defined to be the cochain
 \[I^{(1)} + I^{(2)} \in \clie^\bu(\mc A) \otimes \cloc^\bu(\fL),\]
-where 
+where \chris{sign}
 \begin{align*}
 I ^{(1)} (Q ; A, \lambda, A^*, \lambda^*) & = \<A^* , \Gamma(Q, \lambda)\> + \<\lambda^*, \sd F_A Q\> \\
 I^{(2)} (Q_1,Q_2 ; \lambda^*) & = \pm \left\<\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right\> .
@@ -600,12 +600,15 @@ This is really just an alternative way of writing the statement of Lemma \ref{on
 
 The functionals $I^{(1)}$ and $I^{(2)}$ are also rotation invariant, in the following sense.
 \begin{lemma} \label{SUSY_rotation_invariance_lemma}
-Let $I_{\mr{rot}}$ be the interaction associated to the action of $\so(n)$ on super Yang-Mills theory from Theorem \ref{YM_Poincare_invariant_prop}.  The functionals $I^{(1)}$ and $I^{(2)}$ are rotation invariant, meaning that
-\[\d_{\mr{Lie}} I^{(i)} = - \{I_{\mr{rot}}, I^{(i)}\},\]
+Let $I_{\mr{Poin}}$ be the interaction associated to the action of $\mf{iso}(n)$ on super Yang-Mills theory from Theorem \ref{YM_Poincare_invariant_prop}.  The functionals $I^{(1)}$ and $I^{(2)}$ are Poincar\'e invariant, meaning that
+\begin{equation}\label{rot_invariance_eqn}
+ \d_{\mr{Lie}} I^{(i)} = - \{I_{\mr{Poin}}, I^{(i)}\},
+\end{equation}
 for $i=1,2$.
 \end{lemma}
 
 \begin{proof}
+First, note that only the action of $\so(n)$ contributes to the two terms in the expression \ref{rot_invariance_eqn}, since 
 \chris{...}
 \end{proof}
 
@@ -634,7 +637,14 @@ Taking these terms one at a time, we first note that the vanishing of the first 
 
 First, the term \ref{MC_1} vanishes by \cite[Proposition 14]{BaezHuerta}.  Baez and Huerta prove that in our four critical dimensions \chris{argue why this is the same}.
 
-In the next term, \ref{MC_2}, the first two summands vanish by Lemma \ref{SUSY_rotation_invariance_lemma}, and the last two summands vanish by Lemma \ref{onshell_interaction_lemma}.  Likewise, in term \ref{MC_3}, the first two summands vanish by Lemma \ref{SUSY_rotation_invariance_lemma}, and the last term vanishes by applying the 3-$\psi$ rule, Theorem \ref{3_psi_thm}.  Indeed \chris{...}.
+In the next term, \ref{MC_2}, the first two summands vanish by Lemma \ref{SUSY_rotation_invariance_lemma}, and the last two summands vanish by Lemma \ref{onshell_interaction_lemma}.  Likewise, in term \ref{MC_3}, the first two summands vanish by Lemma \ref{SUSY_rotation_invariance_lemma}, and the last term vanishes by applying the 3-$\psi$ rule, Theorem \ref{3_psi_thm}.  Indeed, we expand
+\begin{align*}
+ \{I^{(1)}, I^{(2)}\}  &= \left\{\<A^* , \Gamma(Q, \lambda)\>, \left\<\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right\>\right\}\\
+ &= \left\< A^*\;,\; \Gamma\left(Q, \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right)\right\> + \\
+ &\quad + .
+\end{align*}
+\chris{include the terms from the other $\lambda^*$ on the third line.} We can rewrite
+\chris{...}.
 
 Finally, term \ref{MC_4} vanishes because the interaction $I^{(2)}$ only involves antifields: the BV antibracket of two expressions involving only antifields is always zero.
 \end{proof}
