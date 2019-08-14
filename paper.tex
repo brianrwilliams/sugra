@@ -423,11 +423,15 @@ The dimensional reduction of a supersymmetric classical field theory $\mf L$ on 
 \end{prop}
 
 \begin{proof}
- \chris{Proof idea: start with an equivariant action functional $\mf S$ in $n$-dimensions.  There is a cochain map $C^\bullet_{\mr{loc}}(\mf L) \to C^\bullet_{\mr{loc}}(\mf L')$ by restriction.  There is a graded linear map $C^\bullet_{\mr{Lie}(\mf A) \to C^\bullet_{\mr{Lie}(\mf A')$, but it's not a cochain map because it's not compatible with the $\Gamma$-brackets.  However these two maps do, together, define a cochain map
+ \chris{Proof idea: start with a Poincar\'e invariant action functional $\mf S_{\mr{Poin}}$ in $n$-dimensions.  There is a cochain map
+ \[F_{\mr{Poin}} \colon (C^\bullet_{\mr{Lie}(\iso(n)) \otimes C^\bullet_{\mr{loc}}(\mf L))_{\mr{Poin}} \to (C^\bullet_{\mr{Lie}(\iso(m)) \otimes C^\bullet_{\mr{loc}}(\mf L'))_{\mr{Poin}},\]
+ given by the inclusion of $\iso(m) \inj \iso(n)$, and the restriction of fields from $n$ to $m$-dimensions.   We'll check that this map will also be compatible with the antibracket $\{,\}$, so a Maurer Cartan element $\mf S_{\mr{Poin}}$ in $n$-dimensions induces a Maurer-Cartan element $F(\mf S_{\mr{Poin}}) = \mf S'_{\mr{Poin}}$ in $m$-dimensions, i.e a Poincar\'e invariant action functional.
+ 
+ Now include supertranslations.  There is a graded linear map $C^\bullet_{\mr{Lie}(\mf A) \to C^\bullet_{\mr{Lie}(\mf A')$, but it's not a cochain map because it's not compatible with the $\Gamma$-brackets.  However these two maps do, together, define a cochain map
  \[F \colon (C^\bullet_{\mr{Lie}(\mf A) \otimes C^\bullet_{\mr{loc}}(\mf L))_{\mr{Poin}} \to (C^\bullet_{\mr{Lie}(\mf A') \otimes C^\bullet_{\mr{loc}}(\mf L'))_{\mr{Poin}},\]
  on the subcomplex consisting of those functionals where, upon restriction 
  
- We'll check that this map will also be compatible with the antibracket $\{,\}$, so a Maurer Cartan element $\mf S$ in $n$-dimensions induces a Maurer-Cartan element $F(\mf S) = \mf S'$ in $m$-dimensions, i.e a supersymmetric action functional.
+
  }
 \end{proof}
 
