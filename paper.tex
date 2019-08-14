@@ -423,16 +423,10 @@ The dimensional reduction of a supersymmetric classical field theory $\mf L$ on 
 \end{prop}
 
 \begin{proof}
- \chris{Proof idea: start with a Poincar\'e invariant action functional $\mf S_{\mr{Poin}}$ in $n$-dimensions.  There is a cochain map
- \[F_{\mr{Poin}} \colon (C^\bullet_{\mr{Lie}(\iso(n)) \otimes C^\bullet_{\mr{loc}}(\mf L))_{\mr{Poin}} \to (C^\bullet_{\mr{Lie}(\iso(m)) \otimes C^\bullet_{\mr{loc}}(\mf L'))_{\mr{Poin}},\]
- given by the inclusion of $\iso(m) \inj \iso(n)$, and the restriction of fields from $n$ to $m$-dimensions.   We'll check that this map will also be compatible with the antibracket $\{,\}$, so a Maurer Cartan element $\mf S_{\mr{Poin}}$ in $n$-dimensions induces a Maurer-Cartan element $F(\mf S_{\mr{Poin}}) = \mf S'_{\mr{Poin}}$ in $m$-dimensions, i.e a Poincar\'e invariant action functional.
+ \chris{Here's a proof sketch/outline/idea.} Start with a Poincar\'e invariant action functional $\mf S_{\mr{Poin}}$ in $n$-dimensions.  There is a cochain map \[F_{\mr{Poin}} \colon (C^\bullet_{\mr{Lie}}(\mf{iso}(n)) \otimes C^\bullet_{\mr{loc}}(\mf L))\to (C^\bullet_{\mr{Lie}}(\mf{iso}(m)) \otimes C^\bullet_{\mr{loc}}(\mf L')),\] 
+ given by the inclusion of $\mf{iso}(m) \inj \mf{iso}(n)$, and the restriction of a functional to act only those fields which are constant on $(\RR^m)^\perp$.   We'll check that this map will also be compatible with the antibracket $\{,\}$, so a Maurer Cartan element $\mf S_{\mr{Poin}}$ in $n$-dimensions induces a Maurer-Cartan element $F(\mf S_{\mr{Poin}}) = \mf S'_{\mr{Poin}}$ in $m$-dimensions, i.e a Poincar\'e invariant action functional. 
  
- Now include supertranslations.  There is a graded linear map $C^\bullet_{\mr{Lie}(\mf A) \to C^\bullet_{\mr{Lie}(\mf A')$, but it's not a cochain map because it's not compatible with the $\Gamma$-brackets.  However these two maps do, together, define a cochain map
- \[F \colon (C^\bullet_{\mr{Lie}(\mf A) \otimes C^\bullet_{\mr{loc}}(\mf L))_{\mr{Poin}} \to (C^\bullet_{\mr{Lie}(\mf A') \otimes C^\bullet_{\mr{loc}}(\mf L'))_{\mr{Poin}},\]
- on the subcomplex consisting of those functionals where, upon restriction 
- 
-
- }
+ Now include supertranslations, so start with an $\mf A$-invariant action functional $\mf S$ in $n$-dimensions.  There is a graded linear map $C^\bullet_{\mr{Lie}}(\mf A) \to C^\bullet_{\mr{Lie}}(\mf A')$, but it's not a cochain map because it's not compatible with the $\Gamma$-brackets.  Let's apply the graded linear map \[F \colon (C^\bullet_{\mr{Lie}}(\mf A) \otimes C^\bullet_{\mr{loc}}(\mf L))\to (C^\bullet_{\mr{Lie}}(\mf A') \otimes C^\bullet_{\mr{loc}}(\mf L'))\] to $\mf S$ anyway.  We'll find that $\d F(\mf S) - F \d(\mf S)$ vanishes, because the failure of $F$ and $\d$ to commute involves the action of the translations perpendicular to $\RR^m$, which act trivially on the Poincar\'e invariant theory $\mf L'$.  We can then use the same argument as above. 
 \end{proof}
 
 \chris{we could alternatively write this in terms of BRST fields.}
