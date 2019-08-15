@@ -600,14 +600,14 @@ The functionals $I^{(1)}$ and $I^{(2)}$ above satisfy the equation
 \begin{proof}
 This is really just an alternative way of writing the statement of Lemma \ref{onshell_action_lemma}.  Indeed, the functional $\{I^{(1)},I^{(1)}\}$ can be computed as 
 \begin{align*}
-\{I^{(1)},I^{(1)}\} &= \{\<A^* , \delta_Q A\> + \<\lambda^*, \delta_Q \lambda\>, \<A^* , \delta_Q A\> + \<\lambda^*, \delta_Q \lambda\> \} \\
-&= 2(\langle A^*, [\delta_{Q}, \delta_{Q}] A \rangle + \langle \lambda^*, [\delta_{Q}, \delta_{Q}] \lambda \rangle) \\
- &= 2(\langle A^*, \delta_{[Q,Q]} A \rangle + \langle \lambda^*, \delta_{[Q,Q]} \lambda \rangle  - \rho(\Gamma(Q,Q)) \sd \dd \lambda - \frac 12(Q, \sd \dd \lambda)Q - \frac 12(Q, \sd \dd \lambda)Q) \\
- &= 2\langle A^*, \delta_{[Q,Q]} A \rangle + 2\langle \lambda^*, \delta_{[Q,Q]} \lambda \rangle - 2\{S_{\mr{BV}} , I^{(2)}\} \\
+\{I^{(1)},I^{(1)}\} &= \{\<A^* , \delta_{Q_1} A\> + \<\lambda^*, \delta_{Q_1} \lambda\>, \<A^* , \delta_{Q_2} A\> + \<\lambda^*, \delta_{Q_2} \lambda\> \} \\
+&= 2(\langle A^*, [\delta_{Q_1}, \delta_{Q_2}] A \rangle + \langle \lambda^*, [\delta_{Q_1}, \delta_{Q_2}] \lambda \rangle) \\
+ &= 2(\langle A^*, \delta_{[Q_1,Q_2]} A \rangle + \langle \lambda^*, \delta_{[Q_1,Q_2]} \lambda \rangle  - \rho(\Gamma(Q_1,Q_2)) \sd \dd \lambda - \frac 12(Q_1, \sd \dd \lambda)Q_2 - \frac 12(Q_2, \sd \dd \lambda)Q_1) \\
+ &= 2\langle A^*, \delta_{[Q_1,Q_2]} A \rangle + 2\langle \lambda^*, \delta_{[Q_1,Q_2]} \lambda \rangle - 2\{S_{\mr{BV}} , I^{(2)}\} \\
  &=
 \end{align*}
 Here we applied Lemma \ref{onshell_action_lemma} on the third line, and on the last line we used the 
-\chris{What about that $[Q,Q]$ term?  It looks like the interaction $I_{\mr{trans}}$ associated to the translation $[Q,Q]$.}
+\chris{What about that $[Q_1,Q_2]$ term?  It looks like the interaction $I_{\mr{trans}}$ associated to the translation $[Q_1,Q_2]$.}
 \end{proof}
 
 The functionals $I^{(1)}$ and $I^{(2)}$ are also rotation invariant, in the following sense.
@@ -662,10 +662,13 @@ where we used, on the last line, the fact that $(Q, \rho(v)Q') = \langle v, \Gam
 \left\langle\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2))\rho(A^*)Q_3\right\rangle &= - \left\langle\lambda^* \;,\; \rho(A^*)\rho(\Gamma(Q_1,Q_2))Q_3\right\rangle - \langle A^*, \Gamma(Q_1,Q_2) \rangle (\lambda^*, Q_3) \\
 &= - \left\langle A^*\;,\; \Gamma\left(Q_3, \rho(\Gamma(Q_1,Q_2)) \lambda^* \right)\right\rangle + \langle A^*, \Gamma(Q_1,Q_2) \rangle (Q_3, \lambda^*)
 \end{align*}
-since \chris{The equality of the first terms looks write when I write it in indices, not sure how to write it coordinate freely.  Also not sure of the sign of the second term.}
+since \chris{The equality of the first terms looks write when I write it in indices, not sure how to write it coordinate freely.  Also not sure of the sign of the second term.}.
+We therefore conclude that the bracket $\{I^{(1)}, I^{(2)}\}$ is the $(123)$-symmetrization of the expression 
+\[(Q_1, \lambda^*)\langle A^*, \Gamma(Q_2, Q_3)\rangle = \langle A^*, (\Gamma(Q_1,\rho(\Gamma(Q_2,Q_3))\lambda^*) + \Gamma(\lambda^*,\rho(\Gamma(Q_2,Q_3))Q_1))\rangle,\]
+which vanishes by applying Theorem \ref{3_psi_thm} to the two expressions on the right-hand side \chris{This doesn't work: it's only applicable to kill the second term.}.
 \chris{Ok, in earlier notes Pavel claimed that this bracket was the $(123)$-symmetrization of 
 \[\langle A^*, \Gamma(Q_1, \rho(\Gamma(Q_2,Q_3))\lambda^*\rangle + (Q_1,\lambda^*)(A^*, \Gamma(Q_2,Q_3)).\]
-I don't see that here -- is that true?  Maybe I'm missing a simplification?  If anything I'm seeing only the second term (which the 3-$\psi$ rule doesn't apply to).  Maybe it's the difference of two expressions to which the rule does apply?}.
+I don't see that here -- is that true?  I might be missing something.}.
 
 Finally, term \ref{MC_4} vanishes because the interaction $I^{(2)}$ only involves antifields: the BV antibracket of two expressions involving only antifields is always zero.
 \end{proof}
