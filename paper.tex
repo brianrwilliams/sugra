@@ -651,12 +651,21 @@ First, the term \ref{MC_1} vanishes by \cite[Proposition 14]{BaezHuerta}.  Baez 
 
 In the next term, \ref{MC_2}, the first two summands vanish by Lemma \ref{SUSY_rotation_invariance_lemma}, and the last two summands vanish by Lemma \ref{onshell_interaction_lemma}.  Likewise, in term \ref{MC_3}, the first two summands vanish by Lemma \ref{SUSY_rotation_invariance_lemma}, and the last term vanishes by applying the 3-$\psi$ rule, Theorem \ref{3_psi_thm}.  Indeed, we expand
 \begin{align*}
- \{I^{(1)}, I^{(2)}\}  &= \left\{\<A^* , \Gamma(Q, \lambda)\>, \left\<\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right\>\right\}\\
- &= \left\< A^*\;,\; \Gamma\left(Q, \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right)\right\> + \\
- &\quad + .
+ \{I^{(1)}, I^{(2)}\}  &= \left\{\langle A^* , \Gamma(Q_3, \lambda)\rangle, \left\langle\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right\rangle\right\}\\
+ &= \left\langle A^*\;,\; \Gamma\left(Q_3, \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right)\right\rangle + \\
+ &\quad + \left\langle\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2))\rho(A^*)Q_3 + \frac 12 \left( (Q_2, \rho(A^*)Q_3)Q_1 + (Q_1, \rho(A^*)Q_3)Q_2 \right)\right\rangle \\
+ &= \left\langle A^*\;,\; \Gamma\left(Q_3, \rho(\Gamma(Q_1,Q_2)) \lambda^*\right)\right\rangle +  \left\langle\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2))\rho(A^*)Q_3\right\rangle + \\
+ &\quad + (Q_2, \lambda^*)\langle A^*, \Gamma(Q_3, Q_1)\rangle + (Q_1, \lambda^*)\langle A^*, \Gamma(Q_3, Q_2)\rangle,
 \end{align*}
-\chris{include the terms from the other $\lambda^*$ on the third line.} We can rewrite
-\chris{...}.
+where we used, on the last line, the fact that $(Q, \rho(v)Q') = \langle v, \Gamma(Q, Q')\rangle$.  We can simplify this expression by manipulating the second summand.  Indeed,
+\begin{align*}
+\left\langle\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2))\rho(A^*)Q_3\right\rangle &= - \left\langle\lambda^* \;,\; \rho(A^*)\rho(\Gamma(Q_1,Q_2))Q_3\right\rangle - \langle A^*, \Gamma(Q_1,Q_2) \rangle (\lambda^*, Q_3) \\
+&= - \left\langle A^*\;,\; \Gamma\left(Q_3, \rho(\Gamma(Q_1,Q_2)) \lambda^* \right)\right\rangle + \langle A^*, \Gamma(Q_1,Q_2) \rangle (Q_3, \lambda^*)
+\end{align*}
+since \chris{The equality of the first terms looks write when I write it in indices, not sure how to write it coordinate freely.  Also not sure of the sign of the second term.}
+\chris{Ok, in earlier notes Pavel claimed that this bracket was the $(123)$-symmetrization of 
+\[\langle A^*, \Gamma(Q_1, \rho(\Gamma(Q_2,Q_3))\lambda^*\rangle + (Q_1,\lambda^*)(A^*, \Gamma(Q_2,Q_3)).\]
+I don't see that here -- is that true?  Maybe I'm missing a simplification?  If anything I'm seeing only the second term (which the 3-$\psi$ rule doesn't apply to).  Maybe it's the difference of two expressions to which the rule does apply?}.
 
 Finally, term \ref{MC_4} vanishes because the interaction $I^{(2)}$ only involves antifields: the BV antibracket of two expressions involving only antifields is always zero.
 \end{proof}
