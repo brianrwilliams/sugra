@@ -584,21 +584,30 @@ We'll rewrite this as a local functional in the theory $\fL$ coupled to the supe
 \begin{definition}
 The off-shell supersymmetry action on complexified Yang-Mills theory on $\RR^{n}$, for $n=3,4,6,10$, is defined to be the cochain
 \[I^{(1)} + I^{(2)} \in \clie^\bu(\mc A) \otimes \cloc^\bu(\fL),\]
-where \chris{correct sign?}
+where 
 \begin{align*}
 I ^{(1)} (Q ; A, \lambda, A^*, \lambda^*) & = \<A^* , \Gamma(Q, \lambda)\> + \<\lambda^*, \sd F_A Q\> \\
-I^{(2)} (Q_1,Q_2 ; \lambda^*) & = - \left\<\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right\> .
+I^{(2)} (Q_1,Q_2 ; \lambda^*) & =  \left\<\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right\> .
 \end{align*}
 \end{definition}
 
 We can rephrase Lemma \ref{onshell_action_lemma} in terms of these local functionals.
 \begin{lemma} \label{onshell_interaction_lemma}
 The functionals $I^{(1)}$ and $I^{(2)}$ above satisfy the equation
-\[\{I^{(1)},I^{(1)}\} = - 2\{S_{\mr{BV}} , I^{(2)}\}.\]
+\[\{I^{(1)},I^{(1)}\} = -2\{S_{\mr{BV}} , I^{(2)}\}.\]
 \end{lemma}
 
 \begin{proof}
-This is really just an alternative way of writing the statement of Lemma \ref{onshell_action_lemma}.  Indeed, the functional $\{I^{(1)},I^{(1)}\}$ is exactly  \chris{...}
+This is really just an alternative way of writing the statement of Lemma \ref{onshell_action_lemma}.  Indeed, the functional $\{I^{(1)},I^{(1)}\}$ can be computed as 
+\begin{align*}
+\{I^{(1)},I^{(1)}\} &= \{\<A^* , \delta_Q A\> + \<\lambda^*, \delta_Q \lambda\>, \<A^* , \delta_Q A\> + \<\lambda^*, \delta_Q \lambda\> \} \\
+&= 2(\langle A^*, [\delta_{Q}, \delta_{Q}] A \rangle + \langle \lambda^*, [\delta_{Q}, \delta_{Q}] \lambda \rangle) \\
+ &= 2(\langle A^*, \delta_{[Q,Q]} A \rangle + \langle \lambda^*, \delta_{[Q,Q]} \lambda \rangle  - \rho(\Gamma(Q,Q)) \sd \dd \lambda - \frac 12(Q, \sd \dd \lambda)Q - \frac 12(Q, \sd \dd \lambda)Q) \\
+ &= 2\langle A^*, \delta_{[Q,Q]} A \rangle + 2\langle \lambda^*, \delta_{[Q,Q]} \lambda \rangle - 2\{S_{\mr{BV}} , I^{(2)}\} \\
+ &=
+\end{align*}
+Here we applied Lemma \ref{onshell_action_lemma} on the third line, and on the last line we used the 
+\chris{What about that $[Q,Q]$ term?  It looks like the interaction $I_{\mr{trans}}$ associated to the translation $[Q,Q]$.}
 \end{proof}
 
 The functionals $I^{(1)}$ and $I^{(2)}$ are also rotation invariant, in the following sense.
