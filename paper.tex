@@ -662,7 +662,7 @@ where we used, on the last line, the fact that $(Q, \rho(v)Q') = \langle v, \Gam
 \left\langle\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2))\rho(A^*)Q_3\right\rangle &= - \left\langle\lambda^* \;,\; \rho(A^*)\rho(\Gamma(Q_1,Q_2))Q_3\right\rangle - \langle A^*, \Gamma(Q_1,Q_2) \rangle (\lambda^*, Q_3) \\
 &= - \left\langle A^*\;,\; \Gamma\left(Q_3, \rho(\Gamma(Q_1,Q_2)) \lambda^* \right)\right\rangle + \langle A^*, \Gamma(Q_1,Q_2) \rangle (Q_3, \lambda^*)
 \end{align*}
-since \chris{The equality of the first terms looks write when I write it in indices, not sure how to write it coordinate freely.  Also not sure of the sign of the second term.}.
+since \chris{The equality of the first terms looks right when I write it in indices, not sure how to write it coordinate freely.  Also not sure of the sign of the second term.}.
 We therefore conclude that the bracket $\{I^{(1)}, I^{(2)}\}$ is the $(123)$-symmetrization of the expression 
 \[(Q_1, \lambda^*)\langle A^*, \Gamma(Q_2, Q_3)\rangle = \langle A^*, (\Gamma(Q_1,\rho(\Gamma(Q_2,Q_3))\lambda^*) + \Gamma(\lambda^*,\rho(\Gamma(Q_2,Q_3))Q_1))\rangle,\]
 which vanishes by applying Theorem \ref{3_psi_thm} to the two expressions on the right-hand side \chris{This doesn't work: it's only applicable to kill the second term.}.
@@ -933,7 +933,7 @@ Are you using something about sugra?
 \subsection{Dimension 9}
 The 9-dimensional $\mc N=1$ super Yang-Mills theory is obtained by dimensional reduction of $\mc N=1$ super Yang-Mills from $\RR^{10}$ to $\RR^9$.  It has BRST fields given by a ghost, a 9d gauge field $A$, a $\gg$-valued scalar field $\phi$, and a Dirac spinor field $\lambda$.
 
-\chris{There is a single non-zero class of square zero supercharges in 9d, which are minimal (i.e. have 5d image).  They are stabilized by $\SU(4)$.  The twisted theory is only $\ZZ/2\ZZ$-graded.}
+There is a single non-zero equivalence class of square zero supercharges in 9 dimensions. Such supercharges are minimal (i.e. have 5d image).  They are stabilized by $\SU(4)$.  Like in 10 dimensions, the R-symmetry group is trivial, and so the twisted theory by such a supercharge is only $\ZZ/2\ZZ$-graded.
 
 \begin{theorem}
 The minimal twist of 9d super Yang-Mills theory on the product of a Calabi-Yau 4-fold $X_4$ and an oriented 1-manifold $L = \RR$ or $S^1$ is equivalent to mixed Chern-Simons theory on $X_4 \times L_\mr{dR}$.
@@ -947,6 +947,23 @@ A^{10}_{0,1} &= A' + \phi \d \ol z^5 \in (\Omega^{0,1}(\CC^4; \gg) \oplus \Omega
 along with the ghost $c$. \chris{can prove the theorem by the same argument as in 10d, or using dimensional reduction.}
 
 \subsection{Dimension 8}
+The 8-dimensional $\mc N=1$ super Yang-Mills theory is obtained by dimensional reduction of $\mc N=1$ super Yang-Mills from $\RR^{10}$ to $\RR^8$.  It has BRST fields given by a ghost, an 8d gauge field $A$, a pair of $\gg$-valued scalar fields $\phi_1$ and $\phi_2$, and a Dirac spinor field $\lambda = (\lambda_+, \lambda_-) \in S_+ \oplus S_-$.
+
+In 8 dimensions, there are 3 classes of non-equivalent non-zero supercharges by which we can twist.
+\begin{enumerate}
+ \item Pure spinors, with $\lambda_+ = 0$ or $\lambda_- = 0$.  These supercharges are holomorphic.  They are stabilized by $\SU(4)$.  Twists by pure spinors can be made $\ZZ$-graded using a maximal torus in the R-symmetry group $\GL(1)$.
+ \item Impure square-zero spinors with $\lambda_+ = 0$ or $\lambda_- = 0$.  These supercharges are topological.  They are stabilized by $\Spin(7) \sub \SO(8)$.  Again, twists by such supercharges can be made $\ZZ$-graded.
+ \item Square-zero spinors where both $\lambda_+$ and $\lambda_-$ are non-zero.  Such supercharges have a 5-dimensional image in $\CC^8$.  Twists by such supercharges are still only $\ZZ/2\ZZ$-graded.
+\end{enumerate}
+
+When we dimensionally reduce the minimally twisted 10- or 9-dimensional super Yang-Mills theories to 8 dimensions we obtain either the twist by a supercharge of type 1, or of type 3, depending on whether we reduce along an invariant direction or a non-invariant direction. \chris{I should say this more clearly, maybe including some general discussion at the beginning of the section, and referring to the figure.}
+
+\subsubsection{The Holomorphic Twist}
+
+\subsubsection{The Topological Twist}
+
+\subsubsection{The Rank 2 Twist}
+
 
 % \cN=1 SYM, three twists
 
