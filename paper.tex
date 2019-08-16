@@ -2,6 +2,8 @@
 
 \input ./combined_macros.sty
 
+\newcommand{\Dens}{\mathrm{Dens}}
+
 \addbibresource{Twist.bib}
 
 \usepackage{pdflscape}
@@ -30,6 +32,8 @@
 
 Throughout the paper we will mostly work with a $\ZZ\times\ZZ/2$-grading. \emph{Degree} will refer to the first (cohomological) grading and \emph{odd} or \emph{even} to the second (fermionic) grading.
 
+Given a vector bundle $E\rightarrow M$ we denote by $\cE$ the space of smooth sections of $E$. We denote by $\oloc(\cE)$ the space of local functionals on $\cE$ (see \cite[Definition 4.5.1.1]{Book2}). We denote by $\oloc^+(\cE)\subset \oloc(\cE)$ the subspace of local functionals which are at least cubic.
+
 \subsection{Classical BV Theories}
 
 \begin{dfn}
@@ -42,7 +46,7 @@ Q \colon \cE \to \cE [1]
 such that $(1)$: $Q^2 = 0$ and $(2)$: the pair $(\cE , Q)$ is an elliptic complex;
 \item a map of bundles
 \[
-\omega\colon E \otimes E \to {\rm Dens}_M [-1]
+\omega\colon E \otimes E \to \Dens_M [-1]
 \]
 that is
 \begin{enumerate}
@@ -53,12 +57,12 @@ that is
 \end{itemize}
 \end{dfn}
 
-\brian{recall dfn of $\oloc$ of a gr vb.}
+We call $\cE$ the {\bf space of BV fields}.
 
 \begin{dfn}
 A {\bf classical BV field theory} (or simply, classical field theory) is a free BV theory $(E, Q, \omega)$ equipped with an even functional
 \[
-I \in \oloc^+(E)
+I \in \oloc^+(\cE)
 \]
 of cohomological degree zero satisfying the classical master equation 
 \[
@@ -71,7 +75,11 @@ Given a classical field theory $(E, Q, \omega, I)$ we denote by
 the BV action of the theory.
 
 \begin{remark}
-We will also consider $\ZZ/2$-graded classical field theories which are defined as before, but where $E$ has only a single $\ZZ/2$-grading and, correspondigly, $Q$ is simply an odd operator.
+We will also consider {\bf $\ZZ/2$-graded classical field theories} which are defined as before, but where $E$ has only a single $\ZZ/2$-grading and, correspondigly, $Q$ is simply an odd operator.
+\end{remark}
+
+\begin{remark}
+The data of a classical BV theory can be equivalently encoded in an elliptic $L_\infty$ algebra $L=E[-1]$ equipped with a symplectic isomorphism $L\cong L^![-3]$.
 \end{remark}
 
 A local functional induces an endomorphism $\{I,-\}$ on the space of all local functionals $\oloc(E)$. 
@@ -84,7 +92,7 @@ In fact, this has the structure of a differentiable pro-cochain complex, see Def
 We will refer to this as the {\bf classical BV complex} of the theory. 
 
 \begin{dfn}
-A {\bf morphism} of classical field theories (defined on the same manifold $M$) $F\colon (E, Q, \omega, I) \to (E', Q', \omega', I')$ is a linear map of vector bundles
+A {\bf morphism} $F\colon (E, Q, \omega, I) \to (E', Q', \omega', I')$ of classical field theories over the same manifold $M$ is a linear map of vector bundles
 \[
 F\colon E \to E'
 \]
@@ -105,7 +113,7 @@ F^* \colon  \left(\cO(\cE')[-1], Q' + \{I',-\} \right) \xto{\simeq} \left(\cO(\c
 \end{dfn}
 
 For a short background on homological algebra with differentiable pro-cochain complexes, including the notion of quasi-isomorphism, we refer to Appendix \ref{appx: top}.
-For a more thorough introduction, and for which our conventions are based on, we refer to \cite{CG1}. 
+For a more thorough introduction, and for which our conventions are based on, we refer to \cite{Book1}. 
 
 \begin{dfn}
 Let $(E, Q,\omega, I)$ be a classical field theory 
@@ -117,115 +125,75 @@ More generally, an $L_\infty$ {\bf action} is an $\infty$-morphism of super dg L
 \[
 \rho\colon \fg \rightsquigarrow \left(\oloc(E)[-1] , \{-,-\}_\omega, Q + \{I,-\}_\omega\right) .
 \]
-\brian{maybe point to appendix where we can fix conventions for $\infty$-maps}
 \end{dfn}
 
-We denote components of an $\infty$-morphism by $\rho_2, \rho_3, \dots$, so that $\rho_2$ is a morphism of (super) chain complexes.
+We denote components of an $\infty$-morphism by $\rho_2, \rho_3, \dots$, so that $\rho_2$ is a morphism of (super) chain complexes (see Appendix \ref{appx:infinity}).
 
 \subsection{The Classical Factorization Algebra}
 
-\pavel{explain how to obtain a factorization algebra from a classical field theory.}
-
-Let $(E, Q, \omega, I)$ be a classical BV theory. 
-%and suppose $\psi_0 \in \sE$ is a fixed solution to the equations of motion. 
-We recall the formalism of \cite{CG1,CG2} which extracts a factorization algebra on spacetime.
+Let $(E, Q, \omega, I)$ be a classical BV theory. We recall the formalism of \cite{Book1,Book2} which extracts a factorization algebra on spacetime.
 
 \begin{dfn}
-Let $(E, Q, \omega, I)$ be a classical field theory on $M$.
-The {\bf classical factorization algebra of observables} $\Obs$ assigns to an open set $U \subset M$ the commutative dg algebra (in differentiable pro-cochain complexes)
+Let $(E, Q, \omega, I)$ be a classical field theory on $M$. The {\bf classical factorization algebra of observables} $\Obs$ assigns to an open set $U \subset M$ the commutative dg algebra (in differentiable pro-cochain complexes)
 \[
 \Obs(U) = \left(\cO(\cE(U)) , Q + \{I,-\}\right) .
 \]
 \end{dfn}
 
-Notice that the BV complex we defined in the previous section, Equation (\ref{bvplx}), is the global sections of the factorization algebra along $M$.
+Notice that the BV complex we defined in the previous section, Equation (\ref{bvcplx}), is the global sections of the factorization algebra along $M$.
 The BV complex can be thought of as the complex of functions on the derived critical locus of the action functional.
 It makes sense to restrict fields to any open set $U \subset M$. 
 Thus, likewise, the value of the factorization algebra on an open set $U \subset M$ can be interpreted as functions on the critical locus of the action functional where we restrict the theory to $U$. 
 
-The fact that the assignment $U \mapsto \Obs(U)$ defines a factorization algebra can be found in Proposition ?? of \cite{CG2}. 
+The fact that the assignment $U \mapsto \Obs(U)$ defines a factorization algebra can be found in \cite[Section 3]{Book2}. 
 
 \subsection{From BRST to BV}
 
 \begin{dfn}
 A {\bf classical BRST theory} on a manifold $M$ consists of the following data:
 \begin{itemize}
-\item a $\ZZ$-graded vector bundle $F$ together with the structure of a local $L_\infty$ algebra on the shift $F[-1]$;
-\item a differential operator
-\[
-Q_{BRST} : \cF \to \cF^!  ;
-\]
-\item a local functional $I_{BRST} \in \oloc^+(\cF)$ of polynomial degree $\geq 3$.
+\item a $\ZZ\times\ZZ/2$-graded vector bundle $F$ together with the structure of a local $L_\infty$ algebra on the shift $F[-1]$;
+\item A local functional $S_{BRST} \in \oloc(\cF)$ of polynomial degree $\geq 2$.
 \end{itemize}
-Together, this data must satisfy the master equation
-\[
-[\d_{CE}, Q_{BRST}] + \d_{CE} I_{BRST} = 0 .
-\]
-where $\d_{CE}$ is the Chevalley-Eilenberg differential defined by the $L_\infty$ structure on $F[-1]$. 
-\brian{even separately, I suppose?}
+Together, these data must satisfy the equation
+\[Q_{BRST} S_{BRST} = 0,\]
+where $Q_{BRST}$ is the Chevalley--Eilenberg differential defined by the $L_\infty$ structure on $F[-1]$. 
 \end{dfn}
 
-We can unwrap this definition as follows. 
-One can think of the space of field $\cF$ as a (linear) graded manifold.
-In doing so, the $L_\infty$ structure on $\cF[-1]$ determines a vector field $X$ of cohomological degree $+1$ on this graded manifold. 
-The operator $Q$ determines a one-form on $\cF$, and the master equation says that this one-form vanish along the vector field $X$. 
-Similarly, the condition $\d_{CE} I = 0$ means the function $I$ on $\cF$ vanish along $X$. 
+We call $\cF$ the {\bf space of BRST fields}.
 
-From a classical BRST theory $(\cF, Q_{BRST}, I_{BRST})$, one can construct a classical BV theory as follows. 
-Let $\{\ell_k\}$ be the $L_\infty$ structure maps underlying the local Lie algebra $F[-1]$. 
+From a classical BRST theory $(\cF, S_{BRST})$, one can construct a classical BV theory as follows. Let $\{\ell_k\}_{k\geq 1}$ be the $L_\infty$ structure maps underlying the local Lie algebra $F[-1]$.
 
-First, we define the free BV theory. 
-This will only use the linear operation on the $L_\infty$ algebra $\cF$, and the operator $Q_{BRST}$. 
+First, we define the free BV theory. Split $S_{BRST} = S^{free}_{BRST} + I_{BRST}$, where $I_{BRST}\in\oloc^+(\cF)$ and $S^{free}_{BRST}$ is a quadratic local functional which we may view as defining a map
+\[S^{free}_{BRST}\colon F\rightarrow F^!.\]
 The underlying bundle of the BV theory is
 \[
-E = F \oplus F^! [-1] = F \oplus F^* \otimes {\rm Dens}_M .
+E = F \oplus F^! [-1].
 \]
 The differential of the free BV theory is
 \[
-Q = \ell_1 + Q_{BRST} .
+Q = \ell_1 + S^{free}_{BRST}.
 \]
-The BV pairing $\omega_{F}$ is defined by the composition
-\[
-E \otimes E = (F \oplus F^![-1]) \otimes (F \oplus F^![-1]) \to F \otimes F^! [-1] \oplus F^![-1] \otimes F \to {\rm Dens}_M [-1] .
-\]
-The first arrow is the obvious projection. 
-The second arrow is given by the evaluation pairing between $F$ and $F^*$. 
-It's immediate to check that the data $(\cE, Q, \omega)$ defines a free BV theory. 
+The BV pairing $\omega$ on $E$ is defined in terms of the natural pairing between $F$ and $F^!$.
 
-The interacting theory is constructed as follows.
-First, note that for $k \geq 2$ the $L_\infty$ structure maps $\{\ell_k\}_{k \geq 2}$ on $\cF$ pull back to multilinear maps on $\cE$ via the obvious projection $p : \cE = \cF \oplus \cF^![-1] \to \cF$. 
-These structure maps assemble into a local functional $I_F \in \oloc^+(\cE)$ defined by
+The interacting theory is constructed as follows. First, note that for $k \geq 2$ the $L_\infty$ structure maps $\{\ell_k\}_{k \geq 2}$ on $\cF$ pull back to multilinear maps on $\cE$ via the obvious projection $p\colon \cE\rightarrow \cF$. These structure maps assemble into a local functional $I_F \in \oloc^+(\cE)$ defined by
 \[
-I_{F} (e) = \sum_{k \geq 2} \int_M \frac{1}{(k+1)!} \omega_F(e, (p^*\ell_k) (e, \ldots, e)) . 
+I_F (e) = \sum_{k \geq 2} \frac{1}{(k+1)!} \int_M \omega_F(e, (p^*\ell_k) (e, \ldots, e))
 \] 
-Likewise, the BRST action $I_{BRST}$ pulls back to $\cE$, and we define the BV interaction as the sum
+which is linear along $\cF^!$. Likewise, the BRST action $I_{BRST}$ pulls back to $\cE$, and we define the BV interaction as the sum
 \[
 I_{BV} = I_{F} + p^* I_{BRST} \in \oloc^+(\cE) .
 \]
 
 \begin{lemma}
-Given a classical BRST theory $(F, Q_{BRST}, I_{BRST})$, the data $(E, Q, \omega, I) = (F \oplus F^![-1] , \ell_1 + Q_{BRST} , \omega_F, I_{BV})$ defines a classical BV theory.
-That is, the BV classical master equation
-\[
-Q I + \frac{1}{2} \{I, I\} = 0 \iff (Q + \ell_1) (I_F + p^*I_{BRST}) + \frac{1}{2} \{I_F + p^*I_{BRST}, I_F + p^*I_{BRST}\} = 0
-\]
-holds.
-We refer to this classical BV theory as the {\bf $(-1)$-shifted cotangent bundle} of $\cF$ and by abuse of notation we often denote it simply by $\cE = T^*[-1] \cF$.
+Suppose $(F, S_{BRST})$ is a classical BRST theory such that $(\cE, Q)$ defined above is an elliptic complex. Then $(E, Q, \omega, I)$ is a classical BV theory.
 \end{lemma}
 
-\begin{proof}
-\brian{shouldn't be hard...}
-\end{proof}
-
-%\begin{dfn}
-%A {\bf classical BRST theory} is a finite rank $\ZZ \times \ZZ / 2$-graded vector bundle $F \to M$ equipped with an even differential operator of cohomological degree $+1$
-%\[
-%Q : \cF \to \cF[1]
-%\]
-%such that $Q
+We refer to the classical BV theory $(E, Q, \omega, I)$ from the above statement as the {\bf $(-1)$-shifted cotangent bundle} of $\cF$ and by abuse of notation we often denote it simply by $\cE = T^*[-1] \cF$. In the case $S_{BRST} = 0$ we refer to the theory $T^*[-1] \cF$ as a theory of {\bf cotangent type}.
 
 \subsection{Examples of BV-BRST Theories}
 
+\begin{comment}
 \brian{should we make these definitions, recollections, or just conventions?}
 
 If $M$ is a smooth manifold, its {\em de Rham stack}, as a dg ringed space, is 
@@ -243,148 +211,102 @@ The next is the {\em Dolbeault stack}, defined by
 X_{\rm Dol} = \left(M, (\Omega^{\bu,\bu}_X, \dbar)\right) .
 \] 
 Note that as sheaves of dg modules, there is a quasi-isomorphism $(\Omega^{p,*}_M, \dbar) = \Omega^{p, hol}_M$.
-Thus, one can think of the underlying ring of the Dolbeault stack as functions on the shifted holomorphic tangent bundle $T^{1,0} [1] M$ of $M$. 
+Thus, one can think of the underlying ring of the Dolbeault stack as functions on the shifted holomorphic tangent bundle $T^{1,0} [1] M$ of $M$.
+\end{comment}
 
-\subsubsection{Mixed holomorphic/topological BF theory}
-
-\begin{dfn}
-Let $X,Y$ be complex manifolds and $M$ a smooth manifold.
-Let $\fg$ be an $L_\infty$ algebra which is finite dimensional in each cohomological degree. 
-The {\bf mixed holomorphic-Dolbeault-topological BRST theory} \brian{blah, terrible name} \chris{I don't really understand why this thing needs a name, since it's only a theory in a trivial way, with zero action.  Why not just call this thing $\cF$, call its shifted cotangent something like ``generalized BF theory'', then if $\fg$ has a pairing call the theory built out of $\cF$ with its AKSZ structure something like ``generalized Chern-Simons theory'' (I'm brainstorming other names too: e.g. ``Hodge-Chern-Simons theory'')?  Or do you want to reserve the name Chern-Simons for the case where $\fg$ is a Lie algebra, not an $L_\infty$ algebra?} on $X \times Y \times M$ is the local $L_\infty$ algebra defined by
-\[
-\cF[-1] = \Omega^{0,\bu}_X \Hat{\otimes} \Omega^{\bu,\bu}_Y \Hat{\otimes} \Omega^\bu_M \otimes \fg .
-\] 
-The $L_\infty$ structure is the one induced from $\fg$ together with the dg commutative product on differential forms. 
-This is a classical BRST theory by choosing $Q_{BRST} = 0$ and $I_{BRST} = 0$. 
-In other words, $\cF$ is defined by the mapping stack
-\[
-{\rm Map} (X_{\dbar} \times Y_{\rm Dol} \times M_{\rm dR}, B \fg) .
-\]
-
-The {\bf mixed holomorphic-Dolbeault-topological BF theory} is the BV theory given by the $(-1)$-shifted cotangent bundle to $\cF$.
-\end{dfn}
-
-Unpacking the definition \brian{unpack and write out action explicitly?} 
-
-\subsubsection{Mixed holomorphic/topological Chern-Simons theory}
-
-The next class of examples of classical BV theories we give are generalizations of Chern-Simons theory. 
-Unlike the examples of mixed BF theory above, these BV theories do not arise, in general, as shifted cotangent bundles. 
-
-Fix a Calabi-Yau manifold $X$ of {\em complex} dimension $n$, a smooth manifold of {\em real} dimension $m$, and let $\fg$ be a $\ZZ/2$-graded Lie algebra with a non-degenerate graded symmetric pairing of parity opposite to $n+m$. 
-In particular, if $n+m$ is odd, we can take an ordinary complex semi-simple Lie algebra $\fg$ with its Killing form. 
-When $n+m$ is even, we must work with a graded Lie algebra with an odd pairing.
-In any case, we denote the pairing on $\fg$ by $\<-,-\>$. 
+\subsubsection{Generalized BF theory}
 
 \begin{dfn}
-Let $X, M$, and $\fg$ be as above.
-{\bf Mixed Chern-Simons theory} on $X \times M$ with values in $\fg$ is the $\ZZ/2$-graded classical field theory $(E_\mCS, Q_\mCS, \omega_\mCS, I_\mCS)$, where the space of fields is given by
-\[
-\cE_\mCS = \Omega^{0,\bullet}(X) \Hat{\otimes} \Omega^\bu(M) \otimes \fg [1] .
-\]
-The linear part of the BV differential is
-\[
-Q_{\mCS} = \dbar \otimes 1 \otimes 1 + 1 \otimes \otimes 1 \otimes \d_{\dR}
-\]
-where $\dbar$ is the Dolbeault differential on $X$, and $\d_{\dR}$ is the de Rham differential on $M$.
-The pairing $\omega_\hCS$ is
-\[
-\omega_{\hCS} (\alpha,\beta) = \<\alpha \wedge \beta\> \wedge \Omega_X ,
-\]
-where $\Omega_X$ is the Calabi-Yau structure on $X$.
-Finally, the interaction $I_\hCS$ is
-\[
-I_{\hCS}(\alpha) = \frac 16 \<\alpha \wedge [\alpha, \alpha]\> \wedge \Omega_X .
-\]
-As a mapping stack, mixed Chern-Simons is given by
-\[
-{\rm Map} (X_{\dbar} \times M_{\dR} , B \fg) .
-\]
-
-\end{dfn}
-
-By convention, when $X$ is the trivial complex manifold we take $\Omega_X = 1$. 
-
-\begin{eg}
-The most basic  example is to take $X$ trivial and $\dim_{\RR} (M) = 3$.
-Then we obtain ordinary Chern-Simons theory on $M$. 
-Of course, this theory admits an obvious lift to a $\ZZ$-graded BV theory. 
-\end{eg}
-
-\begin{eg} 
-Now, take $M$ to be trivial and let $X$ be a Calabi-Yau $2$-fold, like $\CC^2$.
-Since $n + m = 2$ is even, we must take a graded Lie algebra with odd pairing. 
-First, let $\fh$ be an ordinary Lie algebra equipped with an invariant non-degenerate symmetric pairing $\<-,-\>_\fh$. 
-Define the $\ZZ/2$-graded Lie algebra
-\[
-\fg = \fh[\epsilon_1,\epsilon_2, \epsilon_3] 
-\]
-where $\epsilon_i$ are odd formal variables. 
-
-There is an odd pairing on $\fg$ defined using the pairing on $\fh$ and the Berezin integral along the odd coordinates:
-\[
-\<X , Y\> = \int_{\CC^{0|3}} \d \epsilon_1 \d \epsilon_2 \d \epsilon_3 \<X, Y\>_\fh 
-\] 
-where $X,Y \in \fg = \fh[\epsilon_i]$.
-
-With this data, holomorphic Chern-Simons on the $2$-fold $X$ with values in $\fg = \fh[\epsilon_1,\epsilon_2, \epsilon_3]$ is defined. In fact, in this example, there is a natural lift to a $\ZZ$-graded theory whereby the coordinates $\epsilon_i$ are given cohomological degree $-1$. 
-
-On $X = \CC^2$ with its standard Calabi-Yau form $\Omega_X = \d z_1 \d z_2$ this theory is equivalent to the holomorphic twist of $\cN=4$ super Yang-Mills on $\RR^4$ for the Lie algebra $\fh$. 
-
-\end{eg} 
-
-\subsubsection{Yang-Mills Theory}
-Let us now give an example of a theory which is not partially holomorphic.  We will give a general description of Yang-Mills theory on $\RR^n$, with spinorial matter.  Fix a complex semisimple Lie group $G$ with Lie algebra $\fg$, and a spinorial representation $\Sigma$ of $\so(n;\CC)$ with symmetric equivariant pairing $\Gamma \colon \Sigma \otimes \Sigma \to \CC^n$.  The ordinary fields of super Yang-Mills theory on $\RR^{n}$ consist of:
+Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$. The {\bf generalized BF theory} is the $(-1)$-shifted cotangent bundle of the following classical BRST theory:
 \begin{itemize}
-\item A connection $A \in \Omega^1(\RR^{n} ; \fg)$ on the trivial $G$-bundle;
-\item A $\gg$-valued section $\lambda \in \Omega^0(\RR^{n}) \otimes \Pi \Sigma \otimes \fg$ of the spinor bundle associated to the representation $\Sigma$
-\footnote{If we didn't complexify we would instead consider $G_\RR$ a compact connected Lie group, and a section of a real spinor bundle, whose structure is signature dependent.  For our purposes it's interesting enough to just consider the complexified theory and avoid signature issues.}.  
-\end{itemize}
-These fields are acted upon by the group of gauge transformations -- $G$-valued functions on $\RR^{n}$. 
-Hence, there is a single ghost for the theory given by a $\gg$-valued section of the trivial $G$-bundle $c \in \Omega^0(\RR^{n} ; \fg)$. 
+\item The spacetime is the smooth manifold $X\times Y\times M$.
 
-We can model the stack of fields modulo gauge transformations infinitesimally near the point $0$ by the corresponding BRST complex.  This is the local super Lie algebra
+\item The bundle of BRST fields is the $\ZZ$-graded bundle $F = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1]$, where every field is considered even with respect to the $\ZZ/2$-grading. $F[-1]$ is equipped with a natural local $L_\infty$ algebra structure from $\fg$.
+
+\item The BRST action is $S_{BRST} = 0$.
+\end{itemize}
+\end{dfn}
+
+Let us unpack the definition. Let $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M)$. Then the bundle of BV fields is
+\[E = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1]\oplus \Omega^{\dim(X),\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M\otimes \fg^*[d-2],\]
+where we denote the two fields by $A$ and $B$. The BV action is
+\[S = \int_{X\times Y\times M} \langle B\wedge (\dbar_X + \dbar_Y + \d_{\dR, M}) A\rangle + \sum_{k\geq 1}\frac{1}{k!} \int_{X\times Y\times M} \langle B\wedge \ell_k(A, \dots, A)\rangle,\]
+where $\langle -, -\rangle$ is the natural pairing between $\fg^*$ and $\fg$ and $\ell_k$ denote the components of the $L_\infty$ structure on $\fg$.
+
+\begin{example}
+For $X=Y=\pt$ and $\fg$ an ordinary Lie algebra we recover the usual topological BF theory with the BV action
+\[S = \int_M \left\langle B\wedge \left(\d_\dR A+ \frac{1}{2}[A\wedge A]\right)\right\rangle.\]
+\end{example}
+
+\subsubsection{Generalized Chern--Simons theory}
+
+The next class of examples of classical BV theories we give are generalizations of Chern-Simons theory. Unlike the example of the generalized BF theory, these theories are not of cotangent type.
+
+\begin{dfn}
+Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$. We assume $X$ is equipped with a holomorphic volume form $\Omega_X \in\Omega^{\dim(X), 0}(X)$ and $\fg$ is equipped with a nondegenerate invariant symmetric pairing $\langle-, -\rangle\colon \fg\otimes\fg\rightarrow \CC[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 3]$. The {\bf generalized Chern--Simons theory} is the following classical BV theory:
+\begin{itemize}
+\item The spacetime is the smooth manifold $X\times Y\times M$.
+
+\item The bundle of BV fields is the $\ZZ$-graded bundle $E = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1]$, where every field is considered even with respect to the $\ZZ/2$-grading.
+
+\item $Q = \dbar_X + \dbar_Y + \d_{\dR, M} + \ell_1$.
+
+\item The pairing $\omega\colon E\otimes E\rightarrow \Dens_M[-1]$ is given by the combination of the wedge product of differential forms, integration $\int_{X\times Y\times M} \Omega_X\wedge (-)$ and the pairing $\langle -, -\rangle$ on $\fg$.
+
+\item The interaction term is
+\[I = \sum_{k\geq 2}\frac{1}{(k+1)!} \int_{X\times Y\times M} \Omega_X\wedge \langle A\wedge \ell_k(A, \dots, A)\rangle.\]
+\end{itemize}
+\label{def:generalizedBF}
+\end{dfn}
+
+We may also consider a $\ZZ/2$-graded version of the above theory where $\fg$ is merely $\ZZ/2$-graded.
+
+\begin{example}
+For $X=Y=\pt$, $M$ a 3-manifold and $\fg$ an ordinary Lie algebra we recover the usual 3-dimensional Chern--Simons theory with the BV action
+\[S = \int_M \left(\frac{1}{2}\langle A\wedge \d_{\dR} A\rangle + \frac{1}{6}\langle A\wedge [A\wedge A]\rangle\right).\]
+\end{example}
+
+\begin{example}
+For $Y=M=\pt$, $X$ a Calabi-Yau 3-fold and $\fg$ an ordinary Lie algebra we recover the holomorphic Chern--Simons theory with the BV action
+\[S = \int_X \Omega_X\wedge \left(\frac{1}{2}\langle A\wedge \dbar A\rangle + \frac{1}{6}\langle A\wedge [A\wedge A]\rangle\right).\]
+\end{example}
+
+\begin{example}
+If $\fh$ is an $L_\infty$ algebra, $\fg = \fh \oplus \fh^*[d-3]$ carries a natural $L_\infty$ structure given by combining the original $L_\infty$ structure on the first term and the coadjoint action of the first term on the second term. The $L_\infty$ algebra $\fg$ carries a natural symmetric pairing of degree $d-3$ given by the obvious pairing between $\fh$ and $\fh^*$. Generalized Chern--Simons theory for $\fg$ in this case recovers the generalized BF theory from Definition \ref{def:generalizedBF}.
+\end{example}
+
+\subsubsection{Super Yang--Mills Theory}
+
+Let us now give an example of a theory which is not partially holomorphic. We will give a general description of the Yang--Mills theory on $M=\RR^n$ with adjoint spinorial matter. Fix a Lie algebra $\fg$ equipped with a nondegenerate symmetric bilinear pairing $\langle -, -\rangle$ and a spinorial representation $\Sigma$ of $\so(n; \CC)$ with an $\so(n)$-equivariant pairing $\Gamma \colon \Sym^2(\Sigma)\to \CC^n$ (see Section \ref{sec: susy} for more details on supersymmetry). The fields of super Yang--Mills theory are the following:
+\begin{itemize}
+\item A connection $A \in \Omega^1(\RR^n; \fg)$ on the trivial bundle.
+
+\item A section $\lambda \in \Omega^0(\RR^n; \Pi \Sigma \otimes \fg)$.
+
+\item The ghost field $c\in\Omega^0(\RR^n; \fg)[1]$.
+\end{itemize}
+
+Thus, the bundle of BRST fields is
+\[F = (\Omega^1(M)\oplus \Omega^0(M; \Pi\Sigma)\oplus \Omega^0(M)[1])\otimes \fg.\]
+The corresponding local super dg Lie algebra $L=F[-1]$ is
 \[
 L \;\;\; = \begin{array}{ccccc}
 & \ul{0} & & \ul{1} & \\ 
 & & & & \\
-& \Omega^0(\RR^{n}; \gg) & \to & \Omega^1(\RR^{n}; \gg) \oplus \Omega^0(\RR^{n}; \Pi \Sigma \otimes \gg) & 
+& \Omega^0(M; \gg) & \to & \Omega^1(M; \gg) \oplus \Omega^0(M; \Pi \Sigma \otimes \gg) & 
 \end{array}
 \]
-with the de Rham differential, placed in cohomological degrees 0 and 1, with bracket induced from the Lie bracket on $\gg$.
+whose differential is the de Rham differential $\Omega^0(M; \gg)\rightarrow \Omega^1(M; \gg)$ and the bracket is induced from the Lie bracket on $\gg$.
 
-The action functional for super Yang-Mills theory is given by
-\[S(A,\lambda) = \int_{\RR^{n}} \langle \frac{1}{2} F_A \wedge \ast F_A - (\lambda, \sd D_A \lambda)\rangle,\]
-where $\langle - \rangle_\fg$ denotes an invariant pairing on $\gg$, and where the latter term is obtained using the vector-valued pairing $\Gamma$ on $\Sigma$ to obtain a Dirac operator $\sd D_A \colon \Sigma \to \Sigma^*$. \chris{Brian suggested defining this notation in the section on supersymmety more broadly.  I agree.}
+Denote by $F_A = \d_{\dR} A + \frac{1}{2}[A\wedge A]$ the curvature of $A$ and let $\sd D_A \colon \Sigma \to \Sigma^*$ be the Dirac operator obtained from $\Gamma$ (see Section \ref{sec: susy}). We denote by $\sd\d$ the Dirac operator for the zero connection.
 
-We can re-encode this data in terms of the classical BV complex (see also \cite[Section 3.1]{ElliottYoo1}).  
-This is the local $L_\infty$-algebra $\fL$ on $\RR^{n}$ whose underlying cochain complex takes the form
-\[
-\xymatrix{
-& & \ul{0} & \ul{1} & \ul{2} & \ul{3} \\
-\fL & = & \Omega^0(\RR^{n}; \gg) \ar[r]^{\d} &\Omega^1(\RR^{n}; \gg) \ar[r]^{\d \ast \d} &\Omega^{n-1}(\RR^{n}; \gg) \ar[r]^{\d} &\Omega^{n}(\RR^{n}; \gg) \\
-& & &\Omega^0(\RR^{n}; \Pi \Sigma \otimes \gg) \ar[r]^{\ast \sd \d} &\Omega^{n}(\RR^{n}; \Pi \Sigma^* \otimes \gg), &
-}\]
-with degree $(-3)$ invariant pairing $\<-,-\>$ induced by the invariant pairing on $\gg$ and the evaluation pairing $(-,-)$ between $\Sigma$ and $\Sigma^*$, and with degree 2 and 3 brackets given by the action of $\Omega^0(\RR^{n}; \gg)$ on everything along with
-\begin{align*}
-\ell_2^{\mr{Bos}} \colon \Omega^1(\RR^{n};\gg) \otimes \Omega^1(\RR^{n};\gg) &\to \Omega^{n-1}(\RR^{n};\gg) \\
-(A \otimes B) &\mapsto [A \wedge \ast \mr d B] + [\ast \mr d  A \wedge B] + \mathrm{d} \ast[A \wedge B] \\
-\ell_2^{\mr{Fer}} \colon \Omega^1(\RR^{n};\gg) \otimes \Omega^0(\RR^{n}; \Sigma \otimes \gg) &\to \Omega^{n}(\RR^{10}; \Sigma* \otimes \gg) \\
-(A \otimes \lambda) &\mapsto \ast \sd A \lambda
-\end{align*}
-in degree 2, and the map
-\begin{align*}
-\ell_3 \colon \Omega^1(\RR^{n};\gg) \otimes \Omega^1(\RR^{n};\gg) \otimes \Omega^1(\RR^{n};\gg) &\to \Omega^{n-1}(\RR^{n};\gg) \\
-(A \otimes B \otimes C) &\mapsto [A \wedge \ast[B \wedge C]] + [B \wedge \ast[C \wedge A]] + [C \wedge \ast[A \wedge B]]
-\end{align*}
-in degree 3.
+The BRST action is given by
+\[S(A, \lambda) = \int_M \left\langle \frac{1}{2} F_A \wedge \ast F_A - (\lambda, \sd D_A \lambda)\right\rangle.\]
 
-We obtain the BV action by the formula
-\[
-S_{BV} (\alpha) = \frac{1}{2} \<\alpha , Q_{BV} \alpha\> + \sum_{n \geq 2} \frac{1}{n!} \<\alpha, \ell_n(\alpha,\ldots, \alpha)\> 
-\]
-where $\alpha$ is a general BV field and $Q_{BV}$ is the linear BV differential. 
-The statement that $S_{BV}$ is gauge invariant is encoded by the fact that it satisfies that classical master equation $\{S_{BV}, S_{BV}\} = 0$, which is equivalent to the statement that $S_{BV}$ determines a Mauer-Cartan element in the dg Lie algebra $\cloc^\bu(\fL)[-1]$.
+The associated BV theory $(E, Q, \omega, I)$ is given as follows (see also \cite[Section 3.1]{ElliottYoo1}). Let $A^*, \lambda^*, c^*$ be the antifields corresponding to $A, \lambda, c$ respectively. The bundle of BV fields is
+\[E = \Omega^1(M; \fg)\oplus \Omega^0(M; \Pi\Sigma\otimes \fg)\oplus \Omega^0(M; \fg)[1] \oplus \Omega^{n-1}(M; \fg^*)[-1]\oplus \Omega^n(M; \Pi\Sigma^*\otimes \fg^*)[-1]\oplus \Omega^n(M; \fg^*)[-2].\]
+The pairing $\omega$ on $E$ is induced by the evaluation pairings $\gg^*\otimes \gg\rightarrow \CC$ and $\Sigma^*\otimes\Sigma\rightarrow\CC$. The BV action is given by
+\[S_{BV} = \int_M \left\langle \frac{1}{2} F_A \wedge \ast F_A - (\lambda, \sd D_A \lambda)\right\rangle + (A^*, \d_A c) + (\lambda^*, [\lambda, c]).\]
 
 \subsection{Dimensional Reduction} \label{dim_red_section}
 The idea of the \emph{dimensional reduction} of a rotation invariant classical field theory to a linear subspace of $\RR^n$ is to restrict attention to only those fields with are constant in directions perpendicular to the subspace. 
@@ -915,7 +837,7 @@ which together define the (abelian) local Lie algebra
 \def\CVS{{\rm CVS}}
 \def\DVS{{\rm DVS}}
 
-\brian{We can put all our conventions for topological vector spaces, largely borrowed from \cite{CG1}, here. }
+\brian{We can put all our conventions for topological vector spaces, largely borrowed from \cite{Book1}, here. }
 
 \subsection{Notations and conventions}
 
@@ -1030,7 +952,7 @@ A filtered differentiable cochain complex is {\bf complete} if the canonical map
 
 The category of differentiable vector space is an AB4 category, in fact, it is actually a Grothendieck abelian category. 
 
-\begin{thm}[Theorem 2.2.1 of \cite{CG1}]
+\begin{thm}[{\cite[Theorem 2.2.1]{Book1}}]
 The category $\DVS$ is a Grothendieck abelian category.
 \end{thm}
 
@@ -1086,6 +1008,7 @@ Any quasi-isomorphism of differentiable cochain complexes admits a quasi-inverse
 \brian{I think Pavel had something to say for this lemma.}
 
 \section{$\infty$ algebra}
+\label{appx:infinity}
 
 \brian{Not sure if this deserves a whole appendix, but it may be good to spell out what $L_\infty$ modules are, etc..}
 
