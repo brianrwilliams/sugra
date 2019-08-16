@@ -58,6 +58,7 @@ that is
 \end{dfn}
 
 We call $\cE$ the {\bf space of BV fields}.
+\chris{before the definition below we should probably define the antibracket $\{,\}$ (in terms of the shifted symplectic structure).}
 
 \begin{dfn}
 A {\bf classical BV field theory} (or simply, classical field theory) is a free BV theory $(E, Q, \omega)$ equipped with an even functional
@@ -71,7 +72,7 @@ Q I + \frac{1}{2} \{I,I\} = 0 .
 \end{dfn}
 
 Given a classical field theory $(E, Q, \omega, I)$ we denote by
-\[S = \frac{1}{2} \int_M \omega(e, Q e) + I\in \oloc(E)\]
+\[S_{BV} = \frac{1}{2} \int_M \omega(e, Q e) + I\in \oloc(E)\]
 the BV action of the theory.
 
 \begin{remark}
@@ -115,19 +116,25 @@ F^* \colon  \left(\cO(\cE')[-1], Q' + \{I',-\} \right) \xto{\simeq} \left(\cO(\c
 For a short background on homological algebra with differentiable pro-cochain complexes, including the notion of quasi-isomorphism, we refer to Appendix \ref{appx: top}.
 For a more thorough introduction, and for which our conventions are based on, we refer to \cite{Book1}. 
 
-\begin{dfn}
+\begin{dfn} \label{infinitesimal_action_def}
 Let $(E, Q,\omega, I)$ be a classical field theory 
 A {\bf strict action} of a super Lie algebra $\fg$ on $(E, Q,\omega, I)$ is a map of super dg Lie algebras (in differentiable pro-cochain complexes)
 \[
 \rho\colon \fg \to \left(\oloc(E)[-1] , \{-,-\}_\omega, Q + \{I,-\}_\omega\right) .
 \]
-More generally, an $L_\infty$ {\bf action} is an $\infty$-morphism of super dg Lie algebras
+More generally, an $L_\infty$ {\bf action} is an $\infty$-morphism of super Lie algebras
 \[
 \rho\colon \fg \rightsquigarrow \left(\oloc(E)[-1] , \{-,-\}_\omega, Q + \{I,-\}_\omega\right) .
 \]
 \end{dfn}
 
 We denote components of an $\infty$-morphism by $\rho_2, \rho_3, \dots$, so that $\rho_2$ is a morphism of (super) chain complexes (see Appendix \ref{appx:infinity}).
+
+Concretely, an action of a super dg Lie algebra $\fg$ on a classical field theory is given by an element
+\[\sum_{k\geq 1} I^{(k)}\in \oloc(E)\otimes \widehat{\sym}^{\geq 1}(\fg^*[-1])\]
+which satisfies the Maurer--Cartan equation
+\[\{S_{BV}, I^{(k+1)}\} + \d_{CE} I^{(k)} + \frac{1}{2}\sum_{a+b=k+1} \{I^{(a)}, I^{(b)}\} = 0\]
+for every $k\geq 0$.
 
 \subsection{The Classical Factorization Algebra}
 
@@ -275,7 +282,7 @@ For $Y=M=\pt$, $X$ a Calabi-Yau 3-fold and $\fg$ an ordinary Lie algebra we reco
 If $\fh$ is an $L_\infty$ algebra, $\fg = \fh \oplus \fh^*[d-3]$ carries a natural $L_\infty$ structure given by combining the original $L_\infty$ structure on the first term and the coadjoint action of the first term on the second term. The $L_\infty$ algebra $\fg$ carries a natural symmetric pairing of degree $d-3$ given by the obvious pairing between $\fh$ and $\fh^*$. Generalized Chern--Simons theory for $\fg$ in this case recovers the generalized BF theory from Definition \ref{def:generalizedBF}.
 \end{example}
 
-\subsubsection{Super Yang--Mills Theory}
+\subsubsection{Super Yang--Mills Theory} \label{YM_section}
 
 Let us now give an example of a theory which is not partially holomorphic. We will give a general description of the Yang--Mills theory on $M=\RR^n$ with adjoint spinorial matter. Fix a Lie algebra $\fg$ equipped with a nondegenerate symmetric bilinear pairing $\langle -, -\rangle$ and a spinorial representation $\Sigma$ of $\so(n; \CC)$ with an $\so(n)$-equivariant pairing $\Gamma \colon \Sym^2(\Sigma)\to \CC^n$ (see Section \ref{sec: susy} for more details on supersymmetry). The fields of super Yang--Mills theory are the following:
 \begin{itemize}
@@ -308,6 +315,23 @@ The associated BV theory $(E, Q, \omega, I)$ is given as follows (see also \cite
 The pairing $\omega$ on $E$ is induced by the evaluation pairings $\gg^*\otimes \gg\rightarrow \CC$ and $\Sigma^*\otimes\Sigma\rightarrow\CC$. The BV action is given by
 \[S_{BV} = \int_M \left\langle \frac{1}{2} F_A \wedge \ast F_A - (\lambda, \sd D_A \lambda)\right\rangle + (A^*, \d_A c) + (\lambda^*, [\lambda, c]).\]
 
+We'll conclude this section with a discussion of the Poincar\'e invariance of classical Yang-Mills theory.
+
+\begin{definition}
+The $n$-dimensional {\bf Poincar\'e group} is the group $\mr{ISO}(n) = \SO(n) \ltimes \RR^n$ of isometries of $\RR^n$ with its flat Riemannian metric.  The $n$-dimensional {\bf Poincar\'e algebra} $\mf{iso}(n)$ is the Lie algebra of the Poincar\'e group.
+\end{definition}
+
+The $n$-dimensional Poincar\'e algebra acts, in the sense of Definition \ref{infinitesimal_action_def}, on Yang--Mills theory on $\RR^n$ for any choice $\Sigma$ of matter representation.
+\chris{define the interaction functional $I_\mr{Poin}$ associated to the Poincar\'e action on Yang-Mills theory.}
+
+\begin{prop} \label{YM_Poincare_invariant_prop}
+Yang--Mills theory is \emph{Poincar\'e invariant}.  That is, the classical BV action functional satisfies the Maurer-Cartan equation
+\[\{S_{BV}, I_{\mr{Poin}}\} + \d_{CE} I_{\mr{Poin}} + \frac 12 \{I_{\mr{Poin}}, I_{\mr{Poin}}\} = 0.\]
+\end{prop}
+\begin{proof}
+\chris{...}
+\end{proof}
+
 \subsection{Dimensional Reduction} \label{dim_red_section}
 The idea of the \emph{dimensional reduction} of a rotation invariant classical field theory to a linear subspace of $\RR^n$ is to restrict attention to only those fields with are constant in directions perpendicular to the subspace. 
 
@@ -323,16 +347,19 @@ Finally, the classical interaction is defined similarly: the pullback $p^*$ defi
 Rotation invariance guarantees that the dimensional reduction is independent of the choice of $m$-dimensional subspace of $\RR^n$.
 
 \begin{prop} \label{dim_red_SUSY_prop}
-The dimensional reduction of a supersymmetric classical field theory on $\RR^n$ with supersymmetry algebra $\mf A = (\so(n) \oplus \gg_R) \ltimes (\RR^n \oplus \Pi \Sigma)$ is a supersymmetric classical field theory on $\RR^m$ with supersymmetry algebra $\mf A' = (\so(m) \oplus \gg_R) \ltimes (\RR^m \oplus \Pi \Sigma')$, where $\Sigma'$ is the restriction of the representation $\Sigma$ of $\so(n)$ to a representation of the subalgebra $\so(m)$ of rotations of the subspace $\RR^m \sub \RR^n$.
+The dimensional reduction of a supersymmetric classical field theory $\mf L$ on $\RR^n$ with supersymmetry algebra $\mf A = (\so(n) \oplus \gg_R) \ltimes (\RR^n \oplus \Pi \Sigma)$ is a supersymmetric classical field theory $\mf L'$ on $\RR^m$ with supersymmetry algebra $\mf A' = (\so(m) \oplus \gg_R) \ltimes (\RR^m \oplus \Pi \Sigma')$, where $\Sigma'$ is the restriction of the representation $\Sigma$ of $\so(n)$ to a representation of the subalgebra $\so(m)$ of rotations of the subspace $\RR^m \sub \RR^n$.
 \end{prop}
 
 \begin{proof}
- \chris{I think this will be straightforward.}
+ \chris{Here's a proof sketch/outline/idea.} Start with a Poincar\'e invariant action functional $\mf S_{\mr{Poin}}$ in $n$-dimensions.  There is a cochain map \[F_{\mr{Poin}} \colon (C^\bullet_{\mr{Lie}}(\mf{iso}(n)) \otimes C^\bullet_{\mr{loc}}(\mf L))\to (C^\bullet_{\mr{Lie}}(\mf{iso}(m)) \otimes C^\bullet_{\mr{loc}}(p^* \mf L')),\] 
+ given by the inclusion of $\mf{iso}(m) \inj \mf{iso}(n)$, and the restriction of a functional to act only those fields which are constant on $(\RR^m)^\perp$.   We'll check that this map will also be compatible with the antibracket $\{,\}$, so a Maurer Cartan element $\mf S_{\mr{Poin}}$ in $n$-dimensions induces a Maurer-Cartan element $F(\mf S_{\mr{Poin}}) = \mf S'_{\mr{Poin}}$ in $m$-dimensions, i.e a Poincar\'e invariant action functional. 
+ 
+ Now include supertranslations, so start with an $\mf A$-invariant action functional $\mf S$ in $n$-dimensions.  There is a graded linear map $C^\bullet_{\mr{Lie}}(\mf A) \to C^\bullet_{\mr{Lie}}(\mf A')$, but it's not a cochain map because it's not compatible with the $\Gamma$-brackets.  Let's apply the graded linear map \[F \colon (C^\bullet_{\mr{Lie}}(\mf A) \otimes C^\bullet_{\mr{loc}}(\mf L))\to (C^\bullet_{\mr{Lie}}(\mf A') \otimes C^\bullet_{\mr{loc}}(p^*\mf L'))\] to $\mf S$ anyway.  We'll find that $\d F(\mf S) - F \d(\mf S)$ vanishes, because the failure of $F$ and $\d$ to commute involves the action of the translations perpendicular to $\RR^m$, which act trivially on the Poincar\'e invariant theory $\mf L'$.  We can then use the same argument as above. 
 \end{proof}
 
 \chris{we could alternatively write this in terms of BRST fields.}
 
-\chris{By the way, I see no obstruction to proving the following.  One just needs to check that the action of an infinitesimal symmetry $X$ on the dimensionally reduced theory is by $\phi \mapsto i^*(X(p^*(\phi)))$, so that forming the reduced classical differential commutes with twisting.}
+\chris{By the way, I see no obstruction to proving the following.  One just needs to check that the action of an infinitesimal symmetry $X$ in $\mf A'$ on the dimensionally reduced theory is by $\phi \mapsto i^*(X(p^*(\phi)))$, so that forming the reduced classical differential commutes with twisting.  This should follow from the definition of the supersymmetry algebra action on the reduced theory from the proposition above.}
 \begin{lemma}
 If $\mf A$ is an $n$-dimensional supersymmetry algebra, and $Q \in \mf A$ is a square-zero supercharge, then the operations of dimensional reduction from $\RR^n$ to $\RR^m$ and twisting by $Q$ commute.
 \end{lemma}
@@ -396,15 +423,19 @@ In this section, we will consider pairs $(\mf A, \fL)$ consisting of a supersymm
  \item Dimension $n=6$ with $\Sigma = S_+ \otimes W$ where $W$ is a 2-dimensional symplectic vector space, the 8-dimensional symplectic Weyl representation.
  \item Dimension $n=10$ with $\Sigma = S_+$, the 16-dimensional Weyl representation.
 \end{itemize}
+
+\begin{definition}
+In each case we will write $\wt \Sigma$ for the spin representation obtained from $\Sigma$ by parity reversal, so in dimensions 3 and 4 $\wt \Sigma = \Sigma$, in dimension 6 $\wt \Sigma = S_- \otimes W$, and in dimension 10 $\wt \Sigma = S_-$.
+\end{definition}
+
 We'll construct, in each of these cases, an $L_\infty$ action of the super Lie algebra $\mf A$ on the theory $\fL$.  This construction will proceed in two steps.
 \begin{enumerate}
- \item There is an ordinary Lie action of the super Lie algebra $\mf A$ on the theory $\fL$, extending the standard action of the $n$-dimensional Poincar\'e algebra by isometries of $\RR^{n}$ \chris{define this above}, which is only well-defined on-shell.  In other words, there is a linear map $\delta^{(1)} \colon \mf A \to \cloc^\bu(\fL)[-1]$ which is a Lie action modulo the ideal generated by the equations of motion \chris{induces a Lie homomorphism on cohomology?}.
+ \item There is an ordinary Lie action of the super Lie algebra $\mf A$ on the theory $\fL$, extending the standard action of the $n$-dimensional Poincar\'e algebra by isometries of $\RR^{n}$ as discussed in Section \ref{YM_section}, which is only well-defined on-shell.  In other words, there is a linear map $\delta^{(1)} \colon \mf A \to \cloc^\bu(\fL)[-1]$ which is a Lie action modulo the ideal generated by the equations of motion.
  \item We can promote this on-shell action to an $L_\infty$ map $\delta^{(1)} \colon \mf A \to \cloc^\bu(\fL)[-1]$ by including a quadratic term $\delta^{(2)}$ which ``corrects'' for the failure of the map $\delta^{(1)}$ to be a Lie map on-the-nose.
 \end{enumerate}
-This construction only works in the four special dimensions $3,4,6$ and 10: our argument will use results of Baez and Huerta \cite{BaezHuerta} proven using the structure of the four normed division algebras $\RR, \CC, \bb H$ and $\bb O$.  In particular, we will use the following ``3-$\psi$'s rule'' \chris{see citations in Baez Huerta for more references, which we might include}.  Let $g(v,w)$ denote the Riemannian metric on $\RR^n$.
-%We will write $\wt \Sigma$ for the spin representation obtained from $\Sigma$ by parity reversal, so in dimensions 3 and 4 $\wt \Sigma = \Sigma$, in dimension 6 $\wt \Sigma = S_- \otimes W$, and in dimension 10 $\wt \Sigma = S_-$.
+This construction only works in the four special dimensions $3,4,6$ and 10: our argument will use results of Baez and Huerta \cite{BaezHuerta} proven using the structure of the four normed division algebras $\RR, \CC, \bb H$ and $\bb O$.  In particular, we will use the following ``3-$\psi$'s rule'', discussed in the 10-dimensional case by Schray \cite{Schray} .  Let $g(v,w)$ denote the Riemannian metric on $\RR^n$.
 
-\begin{theorem}[{\cite[Theorem 11]{BaezHuerta}}]
+\begin{theorem}[{\cite[Theorem 11]{BaezHuerta}}] \label{3_psi_thm}
 The multilinear map 
 \[T \colon \Sigma \otimes \Sigma \otimes \Sigma \otimes \Sigma \to \CC,\]
 obtained by symmetrizing the expression $g(\Gamma(\psi_1,\psi_2), \Gamma(\psi_3, \psi_4))$ in the first three variables, is zero.
@@ -427,11 +458,10 @@ where
 \delta_Q A &= \Gamma(Q,\lambda) \\
 \delta_Q \lambda &= \sd F_A Q .
 \end{align*}
-Here, the notation $\sd F_A$ stands for the iterated Clifford multiplication $\sd F_A = F_{ij} \gamma^i \gamma^j$.  We can check that this supersymmetry action does not close off-shell.  Indeed \chris{...}
+Here, the notation $\sd F_A$ stands for the iterated Clifford multiplication $\sd F_A = F_{ij} \gamma^i \gamma^j$.  We can check that this supersymmetry action does not close off-shell.  
 
-\chris{heavily edit the below.}
-\begin{lemma} \label{10d_onshell_lemma}
-Suppose $Q_1, Q_2 \in S_+$ and $(A, \lambda)$ are fields.
+\begin{lemma} \label{onshell_action_lemma}
+Suppose $Q_1, Q_2 \in \Sigma$ and $(A, \lambda)$ are super Yang-Mills fields.
 The following relations hold:
 \begin{itemize}
 \item[(1)] \label{10dsusyA} $ [\delta_{Q_1}, \delta_{Q_2}] A = \delta_{[Q_1, Q_2]} A$.
@@ -441,6 +471,7 @@ Here, the commutator on the left hand side of the equations takes place in the a
 \end{lemma}
 
 \begin{proof}
+\chris{I'm leaving this for now, but Pavel wanted to rewrite this coordinate freely.}
 Both are direct calculations using standard Clifford relations which cite below.
 So, we calculate
 \begin{align*}
@@ -451,7 +482,7 @@ So, we calculate
 &=  F_{ij}\delta^{jk}(Q_2 \gamma^i Q_1) \\
 &= \delta_{[Q_1, Q_2]} A,
 \end{align*}
-where on the third line we used the fact that the pairing $\Gamma(-,-)$ is symmetric -- i.e. that $\lambda_1 \gamma^i \lambda_2 = \lambda_2 \gamma^i \lambda_1$ -- and on the fourth line we used the Clifford relation $\gamma^j\gamma^j+\gamma^j\gamma^j = \delta^{jk}$.  Note that, on the gauge fields, the action is a Lie action on the nose, not only on-shell.  Similarly we can calculate, following the calculation in Guillen \cite{Guillen}:
+where on the third line we used the fact that the pairing $\Gamma(-,-)$ is symmetric -- i.e. that $\lambda_1 \gamma^i \lambda_2 = \lambda_2 \gamma^i \lambda_1$ -- and on the fourth line we used the Clifford relation $\gamma^j\gamma^j+\gamma^j\gamma^j = \delta^{jk}$.  Note that, on the gauge fields, the action is a Lie action on the nose, not only on-shell.  Similarly we can calculate, (as in \cite{Guillen}):
 \begin{align*}
 [\delta_{Q_1}, \delta_{Q_2}] \lambda &= (\sd F_{\Gamma(Q_2, \lambda)} Q_1 + \sd F_{\Gamma(Q_1,\lambda)} Q_2) \\
 &= \frac 12((Q_2 (\gamma_j \dd_i - \gamma_i \dd_j) \lambda) (\gamma^i \gamma^j Q_1) + (1 \leftrightarrow 2)) \\
@@ -462,7 +493,7 @@ where on the third line we used the fact that the pairing $\Gamma(-,-)$ is symme
 \end{align*}
 using the fact that 
 \[(\psi_1 \gamma_j \psi_2)(\gamma^j \psi_3) + (\psi_2 \gamma_j \psi_3)(\gamma^j \psi_1) + (\psi_3 \gamma_j \psi_1)(\gamma^j \psi_2) = 0,\]
-as in \cite[Theorem 11]{BaezHuerta}.  Making one more simplification using the Clifford relations, we have
+as in Theorem \ref{3_psi_thm}.  Making one more simplification using the Clifford relations, we have
 \begin{align*}
 [\delta_{Q_1}, \delta_{Q_2}] \lambda &= ((Q_1 \gamma_j Q_2) (\delta^{ij} \dd_i \lambda) - ((Q_1 \gamma_j Q_2) (\gamma^j \gamma^i \dd_i \lambda) - \frac 12(Q_2 \gamma_i \dd_i \lambda)Q_1 - \frac 12(Q_1 \gamma_i \dd_i \lambda)Q_2 \\
 &= \delta_{[Q_1,Q_2]} \lambda - \rho(\Gamma(Q_1,Q_2)) \sd \dd \lambda - \frac 12(Q_2, \sd \dd \lambda)Q_1 - \frac 12(Q_2, \sd \dd \lambda)Q_2.
@@ -472,11 +503,11 @@ as in \cite[Theorem 11]{BaezHuerta}.  Making one more simplification using the C
 In particular the supersymmetry action is a Lie algebra homomorphism only modulo the ideal generated by the equation of motion $\sd \dd \lambda = 0$.
 In other words, this supersymmetry action only defined an action of the Lie algebra of supertranslations ``on-shell".  This calculation suggests introducing a second order correction to the supersymmetry action on the BV theory, which has the chance of closing off-shell.  Define a second order action depending on the antifield $\lambda^*$ to the gluino $\lambda$ by
 \begin{align*}
-\delta^{(2)} \colon S_+ \otimes S_+ \otimes \Gamma(\RR^{10}; \Pi S_-[-1]) &\to \Gamma(\RR^{10}; \Pi S_+) \\
+\delta^{(2)} \colon \Sigma \otimes \Sigma \otimes \Gamma(\RR^{n}; \Pi \wt \Sigma[-1]) &\to \Gamma(\RR^{n}; \Pi \Sigma) \\
 Q_1 \otimes Q_2 \otimes \lambda^* &\mapsto - \left(\rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right).
 \end{align*}
 
-We'll rewrite this as a local functional in the theory $\fL$ coupled to the $\mc N=(1,0)$ super Lie algebra $\mf A$.
+We'll rewrite this as a local functional in the theory $\fL$ coupled to the supersymmetry Lie algebra $\mf A$.
 
 \begin{definition}
 The off-shell supersymmetry action on complexified Yang-Mills theory on $\RR^{n}$, for $n=3,4,6,10$, is defined to be the cochain
@@ -484,38 +515,106 @@ The off-shell supersymmetry action on complexified Yang-Mills theory on $\RR^{n}
 where 
 \begin{align*}
 I ^{(1)} (Q ; A, \lambda, A^*, \lambda^*) & = \<A^* , \Gamma(Q, \lambda)\> + \<\lambda^*, \sd F_A Q\> \\
-I^{(2)} (Q_1,Q_2 ; \lambda^*) & = \pm \left\<\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right\> .
+I^{(2)} (Q_1,Q_2 ; \lambda^*) & =  \left\<\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right\> .
 \end{align*}
 \end{definition}
 
-\begin{prop}
-Let $S_{\mr{BV}}$ be the BV action functional in the theory $\fL$, and write $I_{\mr{Poin}}$ for the interaction generating the Lie action of the Poincar\'e algebra. The functional
-\[\fS = S_{\mr{BV}} + I_{\mr{Poin}} + I^{(1)} + I^{(2)} \in \clie^\bu(\mc A) \otimes \cloc^\bu(\fL) [-1]\]
-satisfies the Maurer-Cartan equation
-\begin{equation} 
-\label{10d_MC}
-(\d_{\rm Lie} \fS + \frac{1}{2} \left\{\fS , \fS \right\} = 0 .
-\end{equation}
-\end{prop}
-
-\chris{we'll have to see whether we want Poincar\'e or just translation here, probably translation, because then there are no $\d_{\mr{Lie}}I^{(i)}$ terms to worry about.  On the other hand we would like to know that the theories are supersymmetric, not just super-translation invariant.  To include rotations and R-symmetries we need to additionally check that some terms like $\d_{\mr{Lie}}+ \{I_{\mr{rotation}} + I_{\text{R-symmetry}}, I^{(i)}\}$ vanish.}
+We can rephrase Lemma \ref{onshell_action_lemma} in terms of these local functionals.
+\begin{lemma} \label{onshell_interaction_lemma}
+The functionals $I^{(1)}$ and $I^{(2)}$ above satisfy the equation
+\[\{I^{(1)},I^{(1)}\} = -2\{S_{\mr{BV}} , I^{(2)}\}.\]
+\end{lemma}
 
 \begin{proof}
-We can filter the complex $\clie^\bu(\mc A) \otimes \cloc^\bu(\fL)$ by the number of anti-field components in $\fL$.  Using this filtration, the left-hand side of \ref{10d_MC} splits up as
-\begin{align}
-\d_{\rm Lie}  \left( \fS \right) + \frac{1}{2} \left\{ \fS , \fS \right\} &= \d_{\mr{Lie}} I_{\mr{Poin}} + \frac 12 \{S_{\mr{BV}} + I_{\mr{Poin}}, S_{\mr{BV}} + I_{\mr{Poin}}\} \label{10d_MC_BV}\\
-&\quad + \{S_{\mr{BV}}, I^{(1)}\} \label{10d_MC_1}\\
-&\quad + \d_{\mr{Lie}} I^{(1)} + \{S_{\mr{BV}}, I^{(2)}\} + \{I_{\mr{Poin}}, I^{(1)}\} + \frac 12 \{I^{(1)}, I^{(1)}\} \label{10d_MC_2}\\
-&\quad + \d_{\mr{Lie}} I^{(2)} + \{I_{\mr{Poin}}, I^{(2)}\} + \{I^{(1)}, I^{(2)}\} \label{10d_MC_3}\\
-&\quad + \frac 12 \{I^{(2)}, I^{(2)}\}. \label{10d_MC_4}
-\end{align}
-Taking these terms one at a time, we first note that the vanishing of \ref{10d_MC_BV} is just the fact that the BV action of the 10d super Yang-Mills theory satisfies the classical master equation, along with the fact that this theory is Poincar\'e invariant \chris{ref some earlier discussion}.  The remaining terms are those involving the action of supersymmetries.
-
-First, the term \ref{10d_MC_1} vanishes by \chris{We've discussed this.  First the $\{I_{\mr{Poin}}, I^{(i)}\}$ terms vanish by Poincar\'e invariance of the interaction terms.  Then \ref{10d_MC_1} is zero by Baez--Huerta.  Term \ref{10d_MC_2} is Lemma \ref{10d_onshell_lemma}. Term \ref{10d_MC_3} vanishes because, first $\d_{\mr{Lie}}I^{(2)} = 0$ since ...not sure right now..., then the remaining term vanishes by the trick where we symmetrize in three spinors.  Finally \ref{10d_MC_4} vanishes because $I^{(2)}$ only involves antifields.}
-
-\chris{apart from the Lemma \ref{10d_onshell_lemma}, this is all completely identical for dimensions 3,4,6,10.  Even that lemma only uses abstract gamma matrix manipulations that work in any dimension along with the Baez Huerta rule that applies in those dimensions, so I think we should just state a single result valid for those four theories simultaneously.}
+This is really just an alternative way of writing the statement of Lemma \ref{onshell_action_lemma}.  Indeed, the functional $\{I^{(1)},I^{(1)}\}$ can be computed as 
+\begin{align*}
+\{I^{(1)},I^{(1)}\} &= \{\<A^* , \delta_{Q_1} A\> + \<\lambda^*, \delta_{Q_1} \lambda\>, \<A^* , \delta_{Q_2} A\> + \<\lambda^*, \delta_{Q_2} \lambda\> \} \\
+&= 2(\langle A^*, [\delta_{Q_1}, \delta_{Q_2}] A \rangle + \langle \lambda^*, [\delta_{Q_1}, \delta_{Q_2}] \lambda \rangle) \\
+ &= 2(\langle A^*, \delta_{[Q_1,Q_2]} A \rangle + \langle \lambda^*, \delta_{[Q_1,Q_2]} \lambda \rangle  - \rho(\Gamma(Q_1,Q_2)) \sd \dd \lambda - \frac 12(Q_1, \sd \dd \lambda)Q_2 - \frac 12(Q_2, \sd \dd \lambda)Q_1) \\
+ &= 2\langle A^*, \delta_{[Q_1,Q_2]} A \rangle + 2\langle \lambda^*, \delta_{[Q_1,Q_2]} \lambda \rangle - 2\{S_{\mr{BV}} , I^{(2)}\} \\
+ &=
+\end{align*}
+Here we applied Lemma \ref{onshell_action_lemma} on the third line, and on the last line we used the 
+\chris{What about that $[Q_1,Q_2]$ term?  It looks like the interaction $I_{\mr{trans}}$ associated to the translation $[Q_1,Q_2]$.}
 \end{proof}
 
+The functionals $I^{(1)}$ and $I^{(2)}$ are also rotation invariant, in the following sense.
+\begin{lemma} \label{SUSY_rotation_invariance_lemma}
+Let $I_{\mr{Poin}}$ be the interaction associated to the action of $\mf{iso}(n)$ on super Yang-Mills theory from Theorem \ref{YM_Poincare_invariant_prop}.  The functionals $I^{(1)}$ and $I^{(2)}$ are Poincar\'e invariant, meaning that
+\begin{equation}\label{rot_invariance_eqn}
+ \d_{\mr{Lie}} I^{(i)} = - \{I_{\mr{Poin}}, I^{(i)}\},
+\end{equation}
+for $i=1,2$.
+\end{lemma}
+
+\begin{proof}
+First, note that only the action of $\so(n)$ contributes to the two terms in the expression \ref{rot_invariance_eqn}, since the Lie bracket between a supertranslation and an ordinary translation is always zero.  If we then consider the space $\Sigma$ of supertranslations as an $\so(n)$-module, 
+\chris{...}
+\end{proof}
+
+Now that we've defined the supersymmetry action, we can prove the main theorem of this section: that minimal super Yang-Mills theory in dimensions $n=3,4,6$ and 10 is, indeed, a supersymmetric classical field theory.
+
+\begin{theorem} \label{SUSY_YM_theorem}
+Let $S_{\mr{BV}}$ be the BV action functional in the theory $\fL$, and write $I_{\mr{Poin}}$ for the interaction generating the Lie action of the Poincar\'e algebra. The functional
+\[\fS = S_{\mr{BV}} + I_{\mr{Poin}} + I^{(1)} + I^{(2)} \in \clie^\bu(\mf A) \otimes \cloc^\bu(\fL) [-1]\]
+satisfies the Maurer-Cartan equation
+\begin{equation} 
+\label{nd_MC}
+(\d_{\rm Lie} \fS + \frac{1}{2} \left\{\fS , \fS \right\}) = 0 .
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+We can filter the complex $\clie^\bu(\mf A) \otimes \cloc^\bu(\fL)$ by the number of anti-field components in $\fL$.  Using this filtration, the left-hand side of \ref{nd_MC} splits up as
+\begin{align}
+\d_{\rm Lie}  \left( \fS \right) + \frac{1}{2} \left\{ \fS , \fS \right\} &= \d_{\mr{Lie}} I_{\mr{Poin}} + \frac 12 \{S_{\mr{BV}} + I_{\mr{Poin}}, S_{\mr{BV}} + I_{\mr{Poin}}\} \label{MC_BV}\\
+&\quad + \{S_{\mr{BV}}, I^{(1)}\} \label{MC_1}\\
+&\quad + \d_{\mr{Lie}} I^{(1)} + \{I_{\mr{Poin}}, I^{(1)}\} + \{S_{\mr{BV}}, I^{(2)}\} + \frac 12 \{I^{(1)}, I^{(1)}\} \label{MC_2}\\
+&\quad + \d_{\mr{Lie}} I^{(2)} + \{I_{\mr{Poin}}, I^{(2)}\} + \{I^{(1)}, I^{(2)}\} \label{MC_3}\\
+&\quad + \frac 12 \{I^{(2)}, I^{(2)}\}. \label{MC_4}
+\end{align}
+Taking these terms one at a time, we first note that the vanishing of the first term, \ref{MC_BV}, is just the fact that the BV action of the 10d super Yang-Mills theory satisfies the classical master equation, and is Poincar\'e invariant, as in Proposition \ref{YM_Poincare_invariant_prop}. The remaining terms are those involving the action of supersymmetries.
+
+First, the term \ref{MC_1} vanishes by \cite[Proposition 14]{BaezHuerta}.  Baez and Huerta prove that in our four critical dimensions, the variation $\delta^{(1)}S_{\mr{BRST}}$ of the ordinary BRST action functional vanishes.  In particular, this implies that $\delta^{(1)}S_{\mr{BV}} = \{I^{(1)}, S_{\mr{BV}}\}$ also vanishes, since \chris{why?}.
+
+In the next term, \ref{MC_2}, the first two summands vanish by Lemma \ref{SUSY_rotation_invariance_lemma}, and the last two summands vanish by Lemma \ref{onshell_interaction_lemma}.  Likewise, in term \ref{MC_3}, the first two summands vanish by Lemma \ref{SUSY_rotation_invariance_lemma}, and the last term vanishes by applying the 3-$\psi$ rule, Theorem \ref{3_psi_thm}.  Indeed, we expand
+\begin{align*}
+ \{I^{(1)}, I^{(2)}\}  &= \left\{\langle A^* , \Gamma(Q_3, \lambda)\rangle, \left\langle\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right\rangle\right\}\\
+ &= \left\langle A^*\;,\; \Gamma\left(Q_3, \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right)\right\rangle + \\
+ &\quad + \left\langle\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2))\rho(A^*)Q_3 + \frac 12 \left( (Q_2, \rho(A^*)Q_3)Q_1 + (Q_1, \rho(A^*)Q_3)Q_2 \right)\right\rangle \\
+ &= \left\langle A^*\;,\; \Gamma\left(Q_3, \rho(\Gamma(Q_1,Q_2)) \lambda^*\right)\right\rangle +  \left\langle\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2))\rho(A^*)Q_3\right\rangle + \\
+ &\quad + (Q_2, \lambda^*)\langle A^*, \Gamma(Q_3, Q_1)\rangle + (Q_1, \lambda^*)\langle A^*, \Gamma(Q_3, Q_2)\rangle,
+\end{align*}
+where we used, on the last line, the fact that $(Q, \rho(v)Q') = \langle v, \Gamma(Q, Q')\rangle$.  We can simplify this expression by manipulating the second summand.  Indeed,
+\begin{align*}
+\left\langle\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2))\rho(A^*)Q_3\right\rangle &= - \left\langle\lambda^* \;,\; \rho(A^*)\rho(\Gamma(Q_1,Q_2))Q_3\right\rangle - \langle A^*, \Gamma(Q_1,Q_2) \rangle (\lambda^*, Q_3) \\
+&= - \left\langle A^*\;,\; \Gamma\left(Q_3, \rho(\Gamma(Q_1,Q_2)) \lambda^* \right)\right\rangle + \langle A^*, \Gamma(Q_1,Q_2) \rangle (Q_3, \lambda^*)
+\end{align*}
+since \chris{The equality of the first terms looks write when I write it in indices, not sure how to write it coordinate freely.  Also not sure of the sign of the second term.}.
+We therefore conclude that the bracket $\{I^{(1)}, I^{(2)}\}$ is the $(123)$-symmetrization of the expression 
+\[(Q_1, \lambda^*)\langle A^*, \Gamma(Q_2, Q_3)\rangle = \langle A^*, (\Gamma(Q_1,\rho(\Gamma(Q_2,Q_3))\lambda^*) + \Gamma(\lambda^*,\rho(\Gamma(Q_2,Q_3))Q_1))\rangle,\]
+which vanishes by applying Theorem \ref{3_psi_thm} to the two expressions on the right-hand side \chris{This doesn't work: it's only applicable to kill the second term.}.
+\chris{Ok, in earlier notes Pavel claimed that this bracket was the $(123)$-symmetrization of 
+\[\langle A^*, \Gamma(Q_1, \rho(\Gamma(Q_2,Q_3))\lambda^*\rangle + (Q_1,\lambda^*)(A^*, \Gamma(Q_2,Q_3)).\]
+I don't see that here -- is that true?  I might be missing something.}.
+
+Finally, term \ref{MC_4} vanishes because the interaction $I^{(2)}$ only involves antifields: the BV antibracket of two expressions involving only antifields is always zero.
+\end{proof}
+
+We can deduce supersymmetry for other super Yang-Mills theories using dimensional reduction, specifically Proposition \ref{dim_red_SUSY_prop}.
+\begin{corollary}
+Let $n$ be one of the special dimensions $3,4,6$ or 10, and choose $m < n$.  Let $\Sigma'$ be the $\so(m)$ representation obtained by restriction of the $\so(n)$ representation $\Sigma$.  Then the super Poincar\'e algebra
+\[\mf A' = \mf{iso}(m) \oplus \Pi \Sigma',\]
+obtained by restricting the $n$-dimensional super Poincar\'e algebra associated to $\Sigma$, acts on the $m$-dimensional super Yang-Mills theory $\mf L'$ with matter representation $\Sigma'$.
+\end{corollary}
+
+\begin{proof}
+This follows immediately by applying Proposition \ref{dim_red_SUSY_prop} to the $\mf A$-supersymmetric theory $\mf L$ on $\RR^n$.
+\end{proof}
+
+\begin{remark}
+We can further include the action of at least a subalgebra of the algebra of R-symmetries in each example. \chris{quantify which}
+\end{remark}
 
 \subsection{Supersymmetric twisting}
 
