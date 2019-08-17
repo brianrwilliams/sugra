@@ -332,6 +332,39 @@ Yang--Mills theory is \emph{Poincar\'e invariant}.  That is, the classical BV ac
 \chris{...}
 \end{proof}
 
+\subsection{Dimensional Reduction, take 2}
+
+\begin{definition}
+A classical field theory $(E_N, Q_N, \omega_N, I_N)$ on a manifold $N$ is a {\bf dimensional reduction} of the classical field theory $(E_M, Q_M, \omega_M, I_M)$ on a manifold $M$ if we are given the following data:
+\begin{itemize}
+\item A submersion $p\colon M\rightarrow N$ equipped with a fiberwise volume form, i.e. an isomorphism $p^*\Dens_N\cong \Dens_M$.
+
+\item An isomorphism $p^* E_N\cong E_M$.
+\end{itemize}
+These data are required to satisfy the following conditions:
+\begin{itemize}
+\item The diagram
+\[
+\xymatrix{
+p^* E_N\otimes p^* E_N \ar^{\omega_N}[r] \ar^{\sim}[d] & p^*\Dens_N[-1] \ar^{\sim}[d] \\
+E_M\otimes E_M \ar^{\omega_M}[r] & \Dens_M[-1]
+}
+\]
+is commutative.
+
+\item The diagram
+\[
+\xymatrix{
+\cE_N \ar^{Q_N}[r] \ar^{p^*}[d] & \cE_N[1] \ar^{p^*}[d] \\
+\cE_M \ar^{Q_M}[r] & \cE_M[1]
+}
+\]
+is commutative.
+
+\item Under the map $p^*\colon \cE_N\rightarrow \cE_M$ we have $p^* I_M = I_N$.
+\end{itemize}
+\end{definition}
+
 \subsection{Dimensional Reduction} \label{dim_red_section}
 The idea of the \emph{dimensional reduction} of a rotation invariant classical field theory to a linear subspace of $\RR^n$ is to restrict attention to only those fields with are constant in directions perpendicular to the subspace. 
 
