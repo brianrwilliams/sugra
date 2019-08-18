@@ -615,18 +615,18 @@ So, for the functionals at hand, we compute
 \{I_{\mr{rot}}, I^{(1)}\}(A,\lambda, A^\vee, \lambda^\vee, Q, X) &= \<X \cdot A^* , \Gamma(Q, \lambda)\> + \<A^* , \Gamma(Q, X \cdot \lambda)\> + \<X \cdot \lambda^*, \sd F_A Q\> +  \<\lambda^*, \sd F_{X \cdot A} Q\> \\
 &= -\big(A^* , X \cdot \Gamma(Q, \lambda)\> - \<A^* , \Gamma(Q, X \cdot \lambda)\>\big) - \big(\<\lambda^*, X \cdot( \sd F_A Q)\> -  \<\lambda^*, \sd F_{X \cdot A} Q\>\big)\\
 &= - \<A^* , \Gamma(X \cdot Q, \lambda)\> - \<\lambda^*, \sd F_A (X \cdot Q)\>\\
-&= -\d^{\mr{rot}}_{\mr{CE}} I^{(1)},
+&= -\d^{\mr{rot}}_{\mr{CE}} I^{(1)}(A,\lambda, A^\vee, \lambda^\vee, Q, X),
 \end{align*}
 and
 \begin{align*}
-\{I_{\mr{rot}}, I^{(2)}\}(\lambda^\vee, Q_1, Q_2 X) &= \left\<X \cdot \lambda^* \;,\; \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right\> + \\
+\{I_{\mr{rot}}, I^{(2)}\}(\lambda^\vee, Q_1, Q_2, X) &= \left\<X \cdot \lambda^* \;,\; \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right\> + \\
 &\quad + \left\<\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2)) X \cdot \lambda^* + \frac 12 \left((Q_2, X \cdot \lambda^*)Q_1 + (Q_1, X \cdot \lambda^*)Q_2\right)\right\> \\
 &= - \left\<\lambda^* \;,\; X \cdot(\rho(\Gamma(Q_1,Q_2)) \lambda^*) + \frac 12 \left((Q_2, \lambda^*)X \cdot Q_1 + (Q_1, \lambda^*)X \cdot Q_2\right)\right\> + \\
 &\quad + \left\<\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2)) X \cdot \lambda^* - \frac 12 \left((X \cdot Q_2, \lambda^*)Q_1 - (X \cdot Q_1,  \lambda^*)Q_2\right)\right\> \\
 &= - \left\<\lambda^* \;,\; \rho(\Gamma(X \cdot Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)X \cdot Q_1 + (X \cdot Q_1, \lambda^*)Q_2\right)\right\> - (1 \leftrightarrow 2)\\
-&= -\d^{\mr{rot}}_{\mr{CE}} I^{(2)}.
+&= -\d^{\mr{rot}}_{\mr{CE}} I^{(2)}(\lambda^\vee, Q_1, Q_2, X).
 \end{align*}
-\chris{I should take care that the signs I introduce when I move $X$ around are all correct here, and probably include more explanation.}
+\chris{I should take care that the signs I introduce when I move $X$ around are all correct here, and include more explanation.  This argument assumes that $X \cdot \Gamma(Q_1, Q_2) = \Gamma(X \cdot Q_1, Q_2) + \Gamma(Q_1, X \cdot Q_2)$, that $(X \cdot Q_1, Q_2) + (Q_1, X \cdot Q_2) = 0$, and that $X \cdot (\rho(v)Q) = \rho(X \cdot v)Q + \rho(v)(X \cdot Q)$, which I think should follow from $\so(n)$ equivariance of $\Gamma$ and $\rho$, but I should check and verify the signs.}
 \end{proof}
 
 Now that we've defined the supersymmetry action, we can prove the main theorem of this section: that minimal super Yang-Mills theory in dimensions $n=3,4,6$ and 10 is, indeed, a supersymmetric classical field theory.
