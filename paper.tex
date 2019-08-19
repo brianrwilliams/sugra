@@ -238,7 +238,7 @@ Note that as sheaves of dg modules, there is a quasi-isomorphism $(\Omega^{p,*}_
 Thus, one can think of the underlying ring of the Dolbeault stack as functions on the shifted holomorphic tangent bundle $T^{1,0} [1] M$ of $M$.
 \end{comment}
 
-\subsubsection{Generalized BF theory}
+\subsubsection{Generalized BF theory} \label{gen_BF_section}
 
 \begin{definition}
 Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$. The {\bf generalized BF theory} is the $(-1)$-shifted cotangent bundle of the following classical BRST theory:
@@ -262,7 +262,7 @@ For $X=Y=\pt$ and $\fg$ an ordinary Lie algebra we recover the usual topological
 \[S = \int_M \left\langle B\wedge \left(\d_\dR A+ \frac{1}{2}[A\wedge A]\right)\right\rangle.\]
 \end{example}
 
-\subsubsection{Generalized Chern--Simons theory}
+\subsubsection{Generalized Chern--Simons theory} \label{gen_CS_section}
 
 The next class of examples of classical BV theories we give are generalizations of Chern-Simons theory. Unlike the example of the generalized BF theory, these theories are not of cotangent type.
 
@@ -382,6 +382,8 @@ is commutative.
 \end{itemize}
 \end{definition}
 
+\chris{A question: are dimensional reductions, per this definition, unique?  I'd really like the answer to be yes (at least for dimensional reduction along a vector space), so that I can say the twist of a dimensional reduction is equivalent to \emph{the} (unique) dimensional reduction of the twist -- assuming the dimensional reductions before and after twisting exist (which, again, I'd like them to, at least for dimensional reduction along a vector space).}
+
 \subsection{Dimensional Reduction} \label{dim_red_section}
 The idea of the \emph{dimensional reduction} of a rotation invariant classical field theory to a linear subspace of $\RR^n$ is to restrict attention to only those fields with are constant in directions perpendicular to the subspace. 
 
@@ -410,9 +412,33 @@ The dimensional reduction of a supersymmetric classical field theory $\mf L$ on 
 \chris{we could alternatively write this in terms of BRST fields.}
 
 \chris{By the way, I see no obstruction to proving the following.  One just needs to check that the action of an infinitesimal symmetry $X$ in $\mf A'$ on the dimensionally reduced theory is by $\phi \mapsto i^*(X(p^*(\phi)))$, so that forming the reduced classical differential commutes with twisting.  This should follow from the definition of the supersymmetry algebra action on the reduced theory from the proposition above.}
-\begin{lemma}
+\begin{lemma} \label{commuting_twist_and_reduction_lemma}
 If $\mf A$ is an $n$-dimensional supersymmetry algebra, and $Q \in \mf A$ is a square-zero supercharge, then the operations of dimensional reduction from $\RR^n$ to $\RR^m$ and twisting by $Q$ commute.
 \end{lemma}
+
+We'll conclude this section by discussing some examples of dimensional reduction in the context of generalized BF and Chern-Simons theories.  First we'll describe what happens when we dimensionally reduce generalized Chern-Simons theory along $\RR$ in a holomorphic direction.
+
+\begin{lemma} \label{CS_diml_red_lemma}
+Let $\map(X \times C_{\ol \dd}, B\gg)$ be a generalized Chern-Simons theory as in Section \ref{gen_CS_section}, where $C = \CC$ or $\CC^\times$ is a curve, and $X = (X_1)_{\ol \dd} \times (X_2)_{\mr{Dol}} \times (X_3)_{\mr{dR}}$ is arbitrary.  Split $C$ as $L \times \RR$, where $L = \RR$ or $S^1$.  The \chris{assuming uniqueness} dimensional reduction of this theory along the map $X \times C \to X \times L$ is equivalent to the generalized Chern-Simons theory $\map(X \times L_{\mr{dR}}, B\gg)$.
+\end{lemma}
+
+\chris{I haven't made the notation here match the notation in Section \ref{gen_CS_section} yet.}
+
+\begin{proof}
+\chris{sketchy}
+Let us denote the complex of BV fields in our generalized Chern-Simons theory on $X \times C$ by $(E_X \boxtimes \bigwedge^\bullet (T^{0,1}_C)^\vee) \otimes \gg[1]$, with differential on the sheaf of sections given by $Q_X + \ol \dd_C + \ell_1$ and pairing on the sheaf of sections by $\omega_X \boxtimes \omega_C$. Write $p$ for the projection $C \to L$.  It's enough to observe that there is a canonical graded isomorphism $p^*\Omega^\bullet(L) \iso \Omega^{0,\bullet}(C)$ intertwining on the one hand the de Rham and Dolbeault differentials, and on the other hand the two integration maps against the orientation on $L$ and the Calabi-Yau structure on $C$.
+\end{proof}
+
+What about if we, instead, reduce generalized Chern-Simons theory in a de Rham direction?
+
+\begin{lemma} \label{CS_to_BF_diml_red_lemma}
+Consider a generalized Chern-Simons theory of the form $\map(X \times \RR_{\mr{dR}}, B\gg)$, where again $X$ is arbitrary.  The dimensional reduction of this theory along the map $X \times \RR \to X$ is equivalent to the generalized BF type theory $\map(X, T[1]B\gg)$.
+\end{lemma}
+
+\begin{proof}
+\chris{...}
+\end{proof}
+
 
 \section{Supersymmetry} \label{sec: susy}
 
@@ -610,7 +636,7 @@ Let $X$ be an element of $\so(n)$, and write $X \cdot A$ and $X \cdot \lambda$ f
 \]
 Therefore, the operator $\{I_{\mr{rot}}(X), -\}$ on the space of local functionals is freely generated by the operator on linear functionals in the Yang-Mills BV fields given by the action of the rotation $X$.  On the other hand, the Chevalley-Eilenberg differential $\d^{\mr{rot}}_{\mr{CE}}$ is freely generated by the operator on \emph{supertranslations} in $\Sigma$, sending $Q$ to $X \cdot Q$.
 
-So, for the functionals at hand.  We'll use three properties of the action of $\so(n)$: that -- for spinovs $Q_1$ and  $Q_2$, and vectors $v$, we have that $X \cdot \Gamma(Q_1, Q_2) = \Gamma(X \cdot Q_1, Q_2) + \Gamma(Q_1, X \cdot Q_2)$,  $(X \cdot Q_1, Q_2) + (Q_1, X \cdot Q_2) = 0$, and that $X \cdot (\rho(v)Q) = \rho(X \cdot v)Q + \rho(v)(X \cdot Q)$.  These identities all follow from the equivariance of the pairing $\Gamma$, the scalar pairing $(,)$, and the Clifford multiplication $\rho$.  Using these facts, we compute
+So, for the functionals at hand.  We'll use three properties of the action of $\so(n)$: that -- for spinors $Q_1$ and  $Q_2$, and vectors $v$, we have that $X \cdot \Gamma(Q_1, Q_2) = \Gamma(X \cdot Q_1, Q_2) + \Gamma(Q_1, X \cdot Q_2)$,  $(X \cdot Q_1, Q_2) + (Q_1, X \cdot Q_2) = 0$, and that $X \cdot (\rho(v)Q) = \rho(X \cdot v)Q + \rho(v)(X \cdot Q)$.  These identities all follow from the equivariance of the pairing $\Gamma$, the scalar pairing $(,)$, and the Clifford multiplication $\rho$.  Using these facts, we compute
 \begin{align*}
 \{I_{\mr{rot}}, I^{(1)}\}(A,\lambda, A^\vee, \lambda^\vee, Q, X) &= \<X \cdot A^* , \Gamma(Q, \lambda)\> + \<A^* , \Gamma(Q, X \cdot \lambda)\> + \<X \cdot \lambda^*, \sd F_A Q\> +  \<\lambda^*, \sd F_{X \cdot A} Q\> \\
 &= -\big(A^* , X \cdot \Gamma(Q, \lambda)\> - \<A^* , \Gamma(Q, X \cdot \lambda)\>\big) - \big(\<\lambda^*, X \cdot( \sd F_A Q)\> -  \<\lambda^*, \sd F_{X \cdot A} Q\>\big)\\
@@ -939,16 +965,26 @@ The 9-dimensional $\mc N=1$ super Yang-Mills theory is obtained by dimensional r
 
 There is a single non-zero equivalence class of square zero supercharges in 9 dimensions. Such supercharges are minimal (i.e. have 5d image).  They are stabilized by $\SU(4)$.  Like in 10 dimensions, the R-symmetry group is trivial, and so the twisted theory by such a supercharge is only $\ZZ/2\ZZ$-graded.
 
-\begin{theorem}
-The minimal twist of 9d super Yang-Mills theory on the product of a Calabi-Yau 4-fold $X_4$ and an oriented 1-manifold $L = \RR$ or $S^1$ is equivalent to mixed Chern-Simons theory on $X_4 \times L_\mr{dR}$.
-\end{theorem}
-
-The relevant fields for this calculation are those component fields which survived the 10d holomorphic twist of Theorem \ref{10d_twist_thm}.  These fields, in the BRST formalism, decompose as
+Let's describe the twist of 9-dimensional $\mc N=1$ theory with respect to such a supercharge.  The relevant fields for this calculation are those component fields which survived the 10d holomorphic twist of Theorem \ref{10d_twist_thm}.  These fields, in the BRST formalism, decompose, under the action of $\SU(4)$ into the following component fields:
 \begin{align*}
 B^{10} &= B + A \wedge \d \ol z^5 \in (\Omega^{0,2}(\CC^4; \gg) \oplus \Omega^{0,1}(\CC^4; \gg)) \otimes \Omega^0(\RR x_9) \\
 A^{10}_{0,1} &= A' + \phi \d \ol z^5 \in (\Omega^{0,1}(\CC^4; \gg) \oplus \Omega^0(\CC^4; \gg)) \otimes \Omega^0(\RR x_9)
 \end{align*}
-along with the ghost $c$. \chris{can prove the theorem by the same argument as in 10d, or using dimensional reduction.}
+along with the ghost $c$.  We'll describe the twisted action functional using dimensional reduction.
+
+\begin{theorem} \label{9d_twist_thm}
+The minimal twist of 9d super Yang-Mills theory on the product of a Calabi-Yau 4-fold $X_4$ and an oriented 1-manifold $L = \RR$ or $S^1$ is equivalent to mixed Chern-Simons theory on $X_4 \times L_\mr{dR}$.
+\end{theorem}
+
+\begin{proof}
+Let's apply Lemma \ref{commuting_twist_and_reduction_lemma} -- the fact that twisting commutes with dimensional reduction.  Choose a representative element $Q$ in the equivalence class of square-zero supercharges which also squares to zero in the 10d $\mc N=(1,0)$ supersymmetry algebra.  According to Lemma \ref{commuting_twist_and_reduction_lemma}, the twist of 9d $\mc N=1$ super Yang-Mills theory by the supercharge $Q$ is equivalent to the dimensional reduction of holomorphic Chern-Simons theory on $X_4 \times C$, where $C = L \times \RR$ is either the curve $\CC$ if $L = \RR$, or $\CC^\times$ if $L = S^1$. 
+
+As such, it's sufficient to observe that mixed Chern-Simons theorem on $X_4 \times L_{\mr{dR}}$ is a dimensional reduction of holomorphic Chern-Simons theory on $X_4 \times C$, which follows by applying Lemma \ref{CS_diml_red_lemma}.
+\end{proof}
+
+\begin{remark}
+One can, alternatively, prove this theorem using exactly the same methods as Theorem \ref{10d_twist_thm}; the steps that one needs to follow are identical.
+\end{remark}
 
 \subsection{Dimension 8}
 The 8-dimensional $\mc N=1$ super Yang-Mills theory is obtained by dimensional reduction of $\mc N=1$ super Yang-Mills from $\RR^{10}$ to $\RR^8$.  It has BRST fields given by a ghost, an 8d gauge field $A$, a pair of $\gg$-valued scalar fields $\phi_1$ and $\phi_2$, and a Dirac spinor field $\lambda = (\lambda_+, \lambda_-) \in S_+ \oplus S_-$.
@@ -963,13 +999,35 @@ In 8 dimensions, there are 3 classes of inequivalent non-zero supercharges by wh
 When we dimensionally reduce the minimally twisted 10- or 9-dimensional super Yang-Mills theories to 8 dimensions we obtain either the twist by a supercharge of type 1, or of type 3, depending on whether we reduce along an invariant direction or a non-invariant direction. \chris{I should say this more clearly, maybe including some general discussion at the beginning of the section, and referring to the figure.}
 
 \subsubsection{The Holomorphic Twist}
+Square-zero supercharges in the 10d $\mc N=(1,0)$ supersymmetry algebra correspond to holomorphic supercharges in the 8d $\mc N=1$ supersymmetry algebra.  As such, we can calculate the holomorphic twist of 8d $\mc N=1$ super Yang-Mills by dimensionally reducing the holomorphic twist of 10d $\mc N=(1,0)$ super Yang-Mills along a copy of $\CC$.  This theory can, however, be made canonically $\ZZ$-graded.
+
+\begin{theorem} \label{8d_holo_twist_thm}
+The holomorphic twist of 8d $\mc N=1$ super Yang-Mills theory on a Calabi-Yau 4-fold $X_4$ is equivalent to holomorphic BF theory on $X_4$.
+\end{theorem}
+
+\begin{proof}
+We can demonstrate this by applying Lemma \ref{CS_to_BF_diml_red_lemma} to the minimal twist of 9d super Yang-Mills theory, as calculated in Theorem \ref{9d_twist_thm}.  Indeed, \chris{...}
+\end{proof}
+
+
+\subsubsection{The Rank 2 Twist}
+We'll next discuss the example of the twist by a rank 2 spinor, where both $\lambda_+$ and $\lambda_-$ are non-zero.  We can understand this twist by a second application of Lemma \ref{CS_diml_red_lemma} to the 9-dimensional $\mc N=1$ theory, or equivalently, by applying the lemma twice to the 10-dimensional $\mc N=(1,0)$ super Yang-Mills theory.  This twisted theory is only $\ZZ/2\ZZ$-graded, just like its higher-dimensional counterparts.
+
+\begin{theorem} \label{8d_rank2_twist_thm}
+The twist by a rank 2 supercharge of 8d $\mc N=1$ super Yang-Mills theory on the product of a Calabi-Yau 3-fold $X_3$ with a pair $L_1 \times L_2$ of oriented 1-manifolds is equivalent to mixed Chern-Simons theory on $X_3 \times (L_1 \times L_2)_{\mr{dR}}$.
+\end{theorem}
+
+\begin{proof}
+The proof here is identical to the proof of Theorem \ref{9d_twist_thm}, we just start with the holomorphic twist of 10d super Yang-Mills theory on $X_3 \times C_1 \times C_2$, and apply Lemma \ref{CS_diml_red_lemma} twice.
+\end{proof}
+
+\chris{we need to comment on the fact that the rank 2 supercharge is stabilized by $\SU(3)$, but I'm not sure whether this is the entire stabilizer.}
 
 \subsubsection{The Topological Twist}
 
-\subsubsection{The Rank 2 Twist}
+\chris{Here we're going to decompose the Yang-Mills fields under $\spin(7)$.  The vector of $\so(8)$ becomes the 8d Dirac spinor representation, and the two Weyl spinor representations both split as $7+1$, so the fields look like $\psi$, $A_+, A_-, \phi_+, \phi_-$.}
 
 
-% \cN=1 SYM, three twists
 
 \subsection{Dimension 7}
 
