@@ -886,6 +886,8 @@ In the set-up of Lemma \ref{symplectic_composite_lemma}, suppose we're given an 
 We defined a quasi-isomorphism of cochain complexes in Lemma \ref{symplectic_composite_lemma} to be the composite $F$ of the inclusion $i$ of $\mc E^\bullet \oplus \mc C_2^\bullet$ with a quasi-inverse to the projection onto $\mc E^\bullet$: this composite map is a twisted inclusion $\mc E^\bullet \to \mc E^\bullet \oplus \mc C_1^\bullet \oplus \mc C_2^\bullet$ of the form $F \colon \phi \mapsto (\phi, 0, f(\phi))$ for some linear map $f$.  Because, by the hypothesis, all monomial summands of $I$ involving fields in $\mc C_2^\bullet$ also include fields in $\mc C_1^\bullet$, the pullback of $I$ under the map $F$ coincides with the pullback of $I$ under the inclusion map $\phi \mapsto (\phi, 0, 0)$ as required.
 \end{proof}
 
+\subsection{A-Type Twists} \label{A_twist_section}
+\chris{...}
 
 \subsection{Dimension 10}
 We'll begin our discussing of twists of super Yang-Mills theory by studying the twist of 10-dimensional $\mc N=(1,0)$ super Yang-Mills theory, with the supersymmetry action we analyzed in Section \ref{SUSY_action_section}.  In the 10d $\mc N=(1,0)$ supersymmetry algebra there is a unique $\Spin(10)$ orbit of non-trivial square-zero supercharges given by the locus of pure spinors.  These square-zero supercharges are holomorphic.
@@ -967,8 +969,8 @@ There is a single non-zero equivalence class of square zero supercharges in 9 di
 
 Let's describe the twist of 9-dimensional $\mc N=1$ theory with respect to such a supercharge.  The relevant fields for this calculation are those component fields which survived the 10d holomorphic twist of Theorem \ref{10d_twist_thm}.  These fields, in the BRST formalism, decompose, under the action of $\SU(4)$ into the following component fields:
 \begin{align*}
-B^{10} &= B + A \wedge \d \ol z^5 \in (\Omega^{0,2}(\CC^4; \gg) \oplus \Omega^{0,1}(\CC^4; \gg)) \otimes \Omega^0(\RR x_9) \\
-A^{10}_{0,1} &= A' + \phi \d \ol z^5 \in (\Omega^{0,1}(\CC^4; \gg) \oplus \Omega^0(\CC^4; \gg)) \otimes \Omega^0(\RR x_9)
+B^{10} &= B + A \wedge \d \ol z^5 \in (\Omega^{0,2}(\CC^4; \gg) \oplus \Omega^{0,1}(\CC^4; \gg)) \otimes \Omega^0(\RR_{x^9}) \\
+A^{10}_{0,1} &= A' + \phi \d \ol z^5 \in (\Omega^{0,1}(\CC^4; \gg) \oplus \Omega^0(\CC^4; \gg)) \otimes \Omega^0(\RR_{x^9})
 \end{align*}
 along with the ghost $c$.  We'll describe the twisted action functional using dimensional reduction.
 
@@ -998,17 +1000,36 @@ In 8 dimensions, there are 3 classes of inequivalent non-zero supercharges by wh
 
 When we dimensionally reduce the minimally twisted 10- or 9-dimensional super Yang-Mills theories to 8 dimensions we obtain either the twist by a supercharge of type 1, or of type 3, depending on whether we reduce along an invariant direction or a non-invariant direction. \chris{I should say this more clearly, maybe including some general discussion at the beginning of the section, and referring to the figure.}
 
-\subsubsection{The Holomorphic Twist}
+\subsubsection{The Holomorphic and Topological Twists}
 Square-zero supercharges in the 10d $\mc N=(1,0)$ supersymmetry algebra correspond to holomorphic supercharges in the 8d $\mc N=1$ supersymmetry algebra.  As such, we can calculate the holomorphic twist of 8d $\mc N=1$ super Yang-Mills by dimensionally reducing the holomorphic twist of 10d $\mc N=(1,0)$ super Yang-Mills along a copy of $\CC$.  This theory can, however, be made canonically $\ZZ$-graded.
 
+On the other hand, the topological twist -- the twist by an impure Weyl spinor -- of 8d $\mc N=1$ super Yang-Mills theory does not arise by dimensionally reducing a twisted theory in 9 dimensions.  This will be our first example of an A-type twist, as we discussed in Section \ref{A_twist_section} \chris{to add}: we will understand it as a family of degenerations of the holomorphic twist -- the twist by a pure Weyl spinor.
+
+The holomorphic supercharge is stabilized by the group $\SU(4)$, and the topological supercharge is stabilized by $\spin(7)$.  If we want to stabilize the full one-parameter family describing the degeneration, we have to decompose our fields according to the action of the intersection $\SU(4) \cap \spin(7) \iso \SU(3)$.  The BRST fields decompose as
+\begin{align*}
+A &\mapsto A_{0,1} + A_{1,0} + \chi^0_1 + \chi^0_2 \in (\Omega^{0,1}(\CC^3) \oplus \Omega^{1,0}(\CC^3) \oplus \Omega^0(\CC^3)^2) \otimes \Omega^0(\RR^2_{x^7,x^8}) \otimes \gg\\
+\lambda_+ &\mapsto \psi^+_{0,1} + \psi^+_{1,0} + \chi^+_1 + \chi^+_2 \in (\Omega^{0,1}(\CC^3) \oplus \Omega^{1,0}(\CC^3) \oplus \Omega^0(\CC^3)^2) \otimes \Omega^0(\RR^2_{x^7,x^8}) \otimes \gg\\
+\lambda_- &\mapsto \psi^-_{0,1} + \psi^-_{1,0} + \chi^-_1 + \chi^-_2 \in (\Omega^{0,1}(\CC^3) \oplus \Omega^{1,0}(\CC^3) \oplus \Omega^0(\CC^3)^2) \otimes \Omega^0(\RR^2_{x^7,x^8}) \otimes \gg
+\end{align*}
+along with the ghost and the two scalar fields $\phi_1$ and $\phi_2$, which remain unchanged.  In terms of these component fields we can write the BV action functional -- split into its BRST and antifield parts -- as
+\begin{align*}
+S_{\mr{BRST}} &= \\ 
+S_{\mr{anti}} &= .
+\end{align*}
+
+\chris{There might be a clever trick to avoid these calculations, involving the 10d calculation we already did to argue that certain fields definitely don't contribute (the ones that died in the 10d holomorphic twist, so we're left with only $A_{0,1}, \chi^0_1, \phi_1, \psi^+_{0,1}, \psi^+_{1,0}, \psi^-_{0,1}$ and $\chi^-_1$.) -- I need to think about it.}
+
 \begin{theorem} \label{8d_holo_twist_thm}
-The holomorphic twist of 8d $\mc N=1$ super Yang-Mills theory on a Calabi-Yau 4-fold $X_4$ is equivalent to holomorphic BF theory on $X_4$.
+The holomorphic twist of 8d $\mc N=1$ super Yang-Mills theory on a Calabi-Yau 4-fold $X_4$ is equivalent to holomorphic BF theory on $X_4$. If $X_4$ splits into a product $X_3 \times S$ of a Calabi-Yau 3-fold and a flat surface, then this twist degenerates to a one-parameter family of topological twists of the form $\map(X_3 \times S, B\gg)_{\mr{Hod}}$
 \end{theorem}
 
 \begin{proof}
-We can demonstrate this by applying Lemma \ref{CS_to_BF_diml_red_lemma} to the minimal twist of 9d super Yang-Mills theory, as calculated in Theorem \ref{9d_twist_thm}.  Indeed, \chris{...}
+
 \end{proof}
 
+\begin{remark}
+Alternatively, we can calculate the holomorphic twist by applying Lemma \ref{CS_to_BF_diml_red_lemma} to the minimal twist of 9d super Yang-Mills theory.
+\end{remark}
 
 \subsubsection{The Rank 2 Twist}
 We'll next discuss the example of the twist by a rank 2 spinor, where both $\lambda_+$ and $\lambda_-$ are non-zero.  We can understand this twist by a second application of Lemma \ref{CS_diml_red_lemma} to the 9-dimensional $\mc N=1$ theory, or equivalently, by applying the lemma twice to the 10-dimensional $\mc N=(1,0)$ super Yang-Mills theory.  This twisted theory is only $\ZZ/2\ZZ$-graded, just like its higher-dimensional counterparts.
@@ -1022,11 +1043,6 @@ The proof here is identical to the proof of Theorem \ref{9d_twist_thm}, we just 
 \end{proof}
 
 \chris{we need to comment on the fact that the rank 2 supercharge is stabilized by $\SU(3)$, but I'm not sure whether this is the entire stabilizer.}
-
-\subsubsection{The Topological Twist}
-
-\chris{Here we're going to decompose the Yang-Mills fields under $\spin(7)$.  The vector of $\so(8)$ becomes the 8d Dirac spinor representation, and the two Weyl spinor representations both split as $7+1$, so the fields look like $\psi$, $A_+, A_-, \phi_+, \phi_-$.}
-
 
 
 \subsection{Dimension 7}
