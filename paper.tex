@@ -93,14 +93,14 @@ We will also consider {\bf $\ZZ/2$-graded classical field theories} which are de
 The data of a classical BV theory can be equivalently encoded in an elliptic $L_\infty$ algebra $L=E[-1]$ equipped with a symplectic isomorphism $L\cong L^![-3]$.
 \end{remark}
 
-A local functional induces an endomorphism $\{I,-\}$ on the space of all local functionals $\oloc(E)$. 
-It also induces an endomorphism on the larger space of {\em all} functionals $\cO(\cE)$, see Definition \ref{dfn: fnl} in the appendix. 
+A local functional $I$ induces an endomorphism $\{I,-\}$ on the space of all local functionals $\oloc(E)$. 
+It also induces an endomorphism on the larger space of {\em all} functionals $\cO(\cE)$\footnote{Although, for two arbitrary functionals $F, G \in \cO(\cE)$, the bracket $\{F,G\}$ is not defined.}, see Definition \ref{dfn: fnl} in the appendix. 
 The classical master equation implies that the operator $Q + \{I,-\}$ squares to zero on $\cO(\cE)$, and hence every classical field theory defines a cochain complex
 \begin{equation}\label{bvcplx}
 \left(\cO(\cE), Q + \{I,-\}\right) .
 \end{equation}
 In fact, this has the structure of a differentiable pro-cochain complex, see Definition \ref{dfn: pro}. 
-We will refer to this as the {\bf classical BV complex} of the theory. 
+We will refer to this as the {\em classical BV complex} of the theory. 
 
 \begin{definition}
 A {\bf morphism} $F\colon (E, Q, \omega, I) \to (E', Q', \omega', I')$ of classical field theories over the same manifold $M$ is a linear map of vector bundles
@@ -112,7 +112,7 @@ that intertwines the differentials $Q, Q'$, the pairings $\omega, \omega'$, and 
 
 Note that a map of classical field theories induces a map of BV complexes, that is, a map of pro-cochain complexes:
 \[
-F^*\colon \left(\cO (\cE)[-1], Q + \{I,-\} \right) \to \left(\cO (\cE')[-1], Q' + \{I',-\} \right) .
+F^*\colon \left(\cO (\cE')[-1], Q' + \{I',-\} \right) \to \left(\cO (\cE)[-1], Q + \{I,-\} \right).
 \]
 This allows us to make the following definition of an equivalence between classical theories. 
 
@@ -143,11 +143,12 @@ More generally, an $L_\infty$ {\bf action} is an $\infty$-morphism of super Lie 
 \end{definition}
 
 We denote components of an $\infty$-morphism by $\rho_2, \rho_3, \dots$, so that $\rho_2$ is a morphism of (super) chain complexes (see Appendix \ref{appx:infinity}).
+\brian{Is there a reason $\rho_2$ is the linear map. I'd thought $\rho_1$...}
 
-Concretely, an action of a super dg Lie algebra $\fg$ on a classical field theory is given by an element
-\[\sum_{k\geq 1} I^{(k)}\in \oloc(E)\otimes \widehat{\sym}^{\geq 1}(\fg^*[-1])\]
+Concretely, an action $\rho$ of a super dg Lie algebra $\fg$ on a classical field theory is given by an element
+\[I_{\rho} = \sum_{k\geq 1} I_{\rho}^{(k)}\in \oloc(E)\otimes \widehat{\sym}^{\geq 1}(\fg^*[-1])\]
 which satisfies the Maurer--Cartan equation
-\[\{S_{\mr{BV}}, I^{(k+1)}\} + \d_{CE} I^{(k)} + \frac{1}{2}\sum_{a+b=k+1} \{I^{(a)}, I^{(b)}\} = 0\]
+\[\{S_{\mr{BV}}, I_\rho^{(k+1)}\} + \d_{CE} I_{\rho}^{(k)} + \frac{1}{2}\sum_{a+b=k+1} \{I_{\rho}^{(a)}, I_{\rho}^{(b)}\} = 0\]
 for every $k\geq 0$.
 
 \begin{definition}
@@ -782,88 +783,88 @@ where the $\ZZ/2$-grading on $E$ is the total grading.
 
 \section{Twists}
 
-%\begin{landscape}
-\begin{figure}
-\begin{tikzpicture}[node distance=0.35cm and 0.35cm, text width=1.8cm]
-\node (101) [s16chiral] {Rank $(1, 0)$ $d=5$};
-\node (91) [s16, below=of 101] {Rank $1$ $d=5$};
-\node (82) [s16, below=of 91] {Rank $(1, 1)$ $d=5$};
-\node (81) [s16, left=of 82] {Rank $(1, 0)$ $d=4$};
-\node (825) [right=of 82] {};
-\node (83) [s16, right=of 825] {Rank $(1, 0)$ $d=8$};
-\node (71) [s16, below=of 81] {Rank $1$ $d=4$};
-\node (72) [s16, below=of 82] {Rank $2$ $d=5$};
-\node (73) [s16, below=of 83] {Rank $1$ $d=7$};
-\node (62) [s16, below=of 71] {Rank $(1, 1)$ $d=4$};
-\node (61) [s8, left=of 62] {Rank $(1, 0)$ $d=3$};
-\node (63) [s16, below=of 72] {Rank $(2, 2)$ $d=5$};
-\node (64) [s16chiral, right=of 63] {Rank $(2, 0)$ $d=5$};
-\node (65) [s16, below=of 73, right=of 64] {Rank $(1, 1)$ $d=6$};
-\node (51) [s8, below=of 61] {Rank $1$ $d=3$};
-\node (52) [s16, below=of 62] {Rank $2$ $d=4$};
-\node (53) [s16, below=of 63] {Rank $4$ $d=5$};
-\node (54) [s16, below=of 64] {Rank $2$ $d=5$};
-\node (42) [s8, below=of 51] {Rank $(1, 1)$ $d=3$};
-\node (41) [s4, left=of 42] {Rank $(1, 0)$ $d=2$};
-\node (43) [s16, right=of 42] {Rank $(2, 2)$ $d=4$};
-\node (44) [s16, right=of 43] {Rank $(2, 1)$ $d=4$};
-\node (45) [s8, right=of 44] {Rank $(2, 0)$ $d=4$};
-\node (31) [s4, below=of 41] {Rank $1$ $d=2$};
-\node (32) [s8, below=of 42] {Rank $2$ $d=3$};
-\node (22) [s4, below=of 31] {Rank $(1, 1)$ $d=2$};
-\node (21) [s2chiral, left=of 22] {Rank $(1, 0)$ $d=1$};
-
-\draw[arrow] (101) -- (91);
-\draw[arrow] (91) -- (81);
-\draw[arrow] (91) -- (82);
-\draw[arrow] (81) -- (71);
-\draw[arrow] (82) -- (71);
-\draw[arrow] (82) -- (72);
-\draw[arrow] (83) -- (73);
-\draw[arrow] (71) -- (61);
-\draw[arrow] (71) -- (62);
-\draw[arrow] (72) -- (62);
-\draw[arrow] (72) -- (63);
-\draw[arrow] (73) -- (65);
-\draw[arrow] (61) -- (51);
-\draw[arrow] (62) -- (51);
-\draw[arrow] (62) -- (52);
-\draw[arrow] (63) -- (53);
-\draw[arrow] (64) -- (52);
-\draw[arrow] (64) -- (54);
-\draw[arrow] (65) -- (54);
-\draw[arrow] (51) -- (41);
-\draw[arrow] (51) -- (42);
-\draw[arrow] (52) -- (42);
-\draw[arrow] (52) -- (43);
-\draw[arrow] (53) -- (43);
-\draw[arrow] (54) -- (43);
-\draw[arrow] (54) -- (44);
-\draw[arrow] (54) -- (45);
-\draw[arrow] (41) -- (31);
-\draw[arrow] (42) -- (31);
-\draw[arrow] (42) -- (32);
-\draw[arrow] (43) -- (32);
-\draw[arrow] (44) -- (32);
-\draw[arrow] (45) -- (32);
-\draw[arrow] (31) -- (21);
-\draw[arrow] (31) -- (22);
-\draw[arrow] (32) -- (22);
-
-\node (2d) [dimension, left=of 21] {2d};
-\node (3d) [dimension, above=of 2d] {3d};
-\node (4d) [dimension, above=of 3d] {4d};
-\node (5d) [dimension, above=of 4d] {5d};
-\node (6d) [dimension, above=of 5d] {6d};
-\node (7d) [dimension, above=of 6d] {7d};
-\node (8d) [dimension, above=of 7d] {8d};
-\node (9d) [dimension, above=of 8d] {9d};
-\node (10d) [dimension, above=of 9d] {10d};
-\end{tikzpicture}
-\caption{Orbits of square-zero supercharges.}
-\label{fig:superchargeorbits}
-\end{figure}
-%\end{landscape}
+%%\begin{landscape}
+%\begin{figure}
+%\begin{tikzpicture}[node distance=0.35cm and 0.35cm, text width=1.8cm]
+%\node (101) [s16chiral] {Rank $(1, 0)$ $d=5$};
+%\node (91) [s16, below=of 101] {Rank $1$ $d=5$};
+%\node (82) [s16, below=of 91] {Rank $(1, 1)$ $d=5$};
+%\node (81) [s16, left=of 82] {Rank $(1, 0)$ $d=4$};
+%\node (825) [right=of 82] {};
+%\node (83) [s16, right=of 825] {Rank $(1, 0)$ $d=8$};
+%\node (71) [s16, below=of 81] {Rank $1$ $d=4$};
+%\node (72) [s16, below=of 82] {Rank $2$ $d=5$};
+%\node (73) [s16, below=of 83] {Rank $1$ $d=7$};
+%\node (62) [s16, below=of 71] {Rank $(1, 1)$ $d=4$};
+%\node (61) [s8, left=of 62] {Rank $(1, 0)$ $d=3$};
+%\node (63) [s16, below=of 72] {Rank $(2, 2)$ $d=5$};
+%\node (64) [s16chiral, right=of 63] {Rank $(2, 0)$ $d=5$};
+%\node (65) [s16, below=of 73, right=of 64] {Rank $(1, 1)$ $d=6$};
+%\node (51) [s8, below=of 61] {Rank $1$ $d=3$};
+%\node (52) [s16, below=of 62] {Rank $2$ $d=4$};
+%\node (53) [s16, below=of 63] {Rank $4$ $d=5$};
+%\node (54) [s16, below=of 64] {Rank $2$ $d=5$};
+%\node (42) [s8, below=of 51] {Rank $(1, 1)$ $d=3$};
+%\node (41) [s4, left=of 42] {Rank $(1, 0)$ $d=2$};
+%\node (43) [s16, right=of 42] {Rank $(2, 2)$ $d=4$};
+%\node (44) [s16, right=of 43] {Rank $(2, 1)$ $d=4$};
+%\node (45) [s8, right=of 44] {Rank $(2, 0)$ $d=4$};
+%\node (31) [s4, below=of 41] {Rank $1$ $d=2$};
+%\node (32) [s8, below=of 42] {Rank $2$ $d=3$};
+%\node (22) [s4, below=of 31] {Rank $(1, 1)$ $d=2$};
+%\node (21) [s2chiral, left=of 22] {Rank $(1, 0)$ $d=1$};
+%
+%\draw[arrow] (101) -- (91);
+%\draw[arrow] (91) -- (81);
+%\draw[arrow] (91) -- (82);
+%\draw[arrow] (81) -- (71);
+%\draw[arrow] (82) -- (71);
+%\draw[arrow] (82) -- (72);
+%\draw[arrow] (83) -- (73);
+%\draw[arrow] (71) -- (61);
+%\draw[arrow] (71) -- (62);
+%\draw[arrow] (72) -- (62);
+%\draw[arrow] (72) -- (63);
+%\draw[arrow] (73) -- (65);
+%\draw[arrow] (61) -- (51);
+%\draw[arrow] (62) -- (51);
+%\draw[arrow] (62) -- (52);
+%\draw[arrow] (63) -- (53);
+%\draw[arrow] (64) -- (52);
+%\draw[arrow] (64) -- (54);
+%\draw[arrow] (65) -- (54);
+%\draw[arrow] (51) -- (41);
+%\draw[arrow] (51) -- (42);
+%\draw[arrow] (52) -- (42);
+%\draw[arrow] (52) -- (43);
+%\draw[arrow] (53) -- (43);
+%\draw[arrow] (54) -- (43);
+%\draw[arrow] (54) -- (44);
+%\draw[arrow] (54) -- (45);
+%\draw[arrow] (41) -- (31);
+%\draw[arrow] (42) -- (31);
+%\draw[arrow] (42) -- (32);
+%\draw[arrow] (43) -- (32);
+%\draw[arrow] (44) -- (32);
+%\draw[arrow] (45) -- (32);
+%\draw[arrow] (31) -- (21);
+%\draw[arrow] (31) -- (22);
+%\draw[arrow] (32) -- (22);
+%
+%\node (2d) [dimension, left=of 21] {2d};
+%\node (3d) [dimension, above=of 2d] {3d};
+%\node (4d) [dimension, above=of 3d] {4d};
+%\node (5d) [dimension, above=of 4d] {5d};
+%\node (6d) [dimension, above=of 5d] {6d};
+%\node (7d) [dimension, above=of 6d] {7d};
+%\node (8d) [dimension, above=of 7d] {8d};
+%\node (9d) [dimension, above=of 8d] {9d};
+%\node (10d) [dimension, above=of 9d] {10d};
+%\end{tikzpicture}
+%\caption{Orbits of square-zero supercharges.}
+%\label{fig:superchargeorbits}
+%\end{figure}
+%%\end{landscape}
 
 \subsection{Standard Equivalences Between Classical Field Theories}
 In this section, we will collect some standard lemmas that we'll use to simplify the descriptions of twisted supersymmetric field theories below.
