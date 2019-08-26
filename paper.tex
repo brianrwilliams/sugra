@@ -57,10 +57,22 @@ that is
 \end{itemize}
 \end{definition}
 
-We call $\cE$ the {\bf space of BV fields}.  The pairing $\omega$ equips the algebra of local functionals on $E$ with a shifted Poisson bracket, in the following way.
+We call $\cE$ the {\em space of BV fields}.  
+The pairing $\omega$ equips the algebra of local functionals on $E$ with a shifted bracket, in the following way.
+In Section 3 of \cite{CosRenorm}, it is shown that to every {\em local} functional $f \in \cO(\cE)$ there exists a symplectic vector field $X_f$ on $\cE$ whose Hamiltonian function is $f$. 
+Note that if $f$ is degree $n$, then $X_f$ is of degree $n+1$ due to the degree of $\omega$. 
+
 \begin{definition}
-The \emph{BV antibracket} $\{-,-\}$ is the \chris{give at least an informal definition and a reference to a formal definition in the book \cite{Book2}.  Also cite \cite{WittenAntibracket}.}
+The {\bf BV antibracket} $\{-,-\}$ is the bilinear map of cohomological degree $+1$
+\[
+\{-,-\} : \oloc(\cE) \times \oloc(\cE) \to \oloc(\cE)
+\]
+defined by sending a pair $(f,g)$ to the local functional $X_f (g)$.
+\chris{Also cite \cite{WittenAntibracket}.}
 \end{definition}
+
+This pairing is graded symmetric and satisfies the graded Jacobi identity.
+Note that since local functionals do not form an algebra, it is not a (shifted) Poisson bracket. 
 
 \begin{definition}
 A {\bf classical BV field theory} (or simply, classical field theory) is a free BV theory $(E, Q, \omega)$ equipped with an even functional
