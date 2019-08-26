@@ -1,0 +1,211 @@
+\documentclass[12pt]{amsart}
+
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{amssymb}
+\usepackage{eucal}
+\usepackage[all]{xy}
+
+\textwidth=16.5cm
+\oddsidemargin=0cm
+\evensidemargin=0cm
+\textheight=22cm
+\topmargin=0cm
+
+\binoppenalty=10000
+\relpenalty=10000
+
+\newcommand{\B}{\mathrm{B}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\g}{\mathfrak{g}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\T}{\mathrm{T}}
+\newcommand{\Z}{\mathbf{Z}}
+
+\newcommand{\ch}{\mathrm{ch}}
+\newcommand{\Dol}{\mathrm{Dol}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\Map}{\mathrm{Map}}
+
+\newcommand{\defterm}[1]{\textbf{\emph{#1}}}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Propostiion}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{example}[thm]{Example}
+
+\begin{document}
+\title{Twists}
+\author{Pavel Safronov}
+\maketitle
+
+Compactification:
+\begin{itemize}
+\item $\Map((N\times S^1)_{\dR}, X)$ compactifies to $\Map(N_{dR}, \T[-1] X)$.
+
+\item If $\Sigma$ is a complex curve and $L$ a 1-manifold, $\Map(\Sigma, X)$ compactifies to $\Map(L_{\dR}, X)$.
+\end{itemize}
+
+If an anomaly is not listed, the theory is not anomalous.
+
+\section{$d=2$}
+
+To define an $\cN=(2, 0)$ $\sigma$-model need a complex manifold $X$ with a holomorphic vector bundle $\cE$. If $\cE=\T_X$, we can enhance it to $\cN=(2, 2)$ supersymmetry. Let $E\rightarrow X$ be the total space.
+
+\begin{itemize}
+\item The rank $(1, 0)$ twist on $\Sigma$ gives $\T^*[-1]\Map(\Sigma, E[-1])$. It only has a one-loop anomaly which is given by $\chi(\Sigma) c_1(E[-1])$ and $\ch_2(E[-1])$.
+
+\item If $\cE=\T_X$, this is
+\[\T^*[-1]\Map(\Sigma, \T[-1]X)\cong \Map(\Sigma_{\Dol}, \T^*[1] X).\]
+It only has a one-loop anomaly given by $\chi(\Sigma) c_1(X)$.
+
+\item The rank $(1, 1)$ A-twist gives $\T^*[-1]\Map(\Sigma, X)_{\dR}$.
+
+\item The rank $(1, 1)$ B-twist gives $\Map(\Sigma_{\dR}, \T^*[1] X)$. The anomaly is the same as for the holomorphic twist.
+\end{itemize}
+
+To define an $\cN=(2, 2)$ Yang--Mills theory we need a compact group $K$ and a complex $K$-representation $V$. Let $G$ be the complexification of $K$.
+
+\begin{itemize}
+\item The rank $(1, 0)$ twist on $\Sigma$ gives
+\[\T^*[-1]\Map(\Sigma, \T[-1][V/G])\cong \Map(\Sigma_{\Dol}, \T^*[1][V/G]).\]
+It only has a one-loop anomaly given by $\chi(\Sigma) c_1([V/G])$.
+
+\item The rank $(1, 1)$ A-twist gives $\T^*[-1]\Map(\Sigma, [V/G])_{\dR}$.
+
+\item The rank $(1, 1)$ B-twist gives $\Map(\Sigma_{\dR}, \T^*[1] [V/G])$. The anomaly is the same as for the holomorphic twist
+\end{itemize}
+
+\section{$d=3$}
+
+To define an $\cN=2$ Yang--Mills theory we need a compact group $K$ and a complex $K$-representation $V$. If $V$ is the adjoint representation, the supersymmetry is enhanced to $\cN=4$.
+
+\begin{itemize}
+\item The rank $1$ twist on $\Sigma\times L$ where $\Sigma$ is a CY curve and $L$ is a 1-manifold gives $\T^*[-1]\Map(\Sigma\times L_{\dR}, [V/G])$.
+
+\item For $V=\g$ get
+\[\T^*[-1]\Map(\Sigma\times L_{\dR}, \T[-1]\B G)\cong \Map(\Sigma_{\Dol}\times L_{\dR}, \T^*[2] \B G).\]
+
+\item The rank $2$ A-twist gives $\T^*[-1]\Map(\Sigma\times L_{\dR}, \B G)_{\dR}$.
+
+\item The rank $2$ B-twist on a 3-manifold $M$ gives $\Map(M_{\dR}, \T^*[2] \B G)$.
+\end{itemize}
+
+We can also add $\cN=4$ matter. For this pick a complex $K$-representation $W$. If $W=\g$ we obtain $\cN=8$ supersymmetry. Then:
+
+\begin{itemize}
+\item The rank $2$ A-twist gives $\T^*[-1]\Map(\Sigma\times L_{\dR}, [W/G])_{\dR}$.
+
+\item The rank $2$ B-twist gives $\Map(M_{\dR}, \T^*[2] [W/G])$.
+\end{itemize}
+
+\section{$d=4$}
+
+To define an $\cN=1$ Yang--Mills theory we need a compact group $K$ and a complex $K$-representation $V$. The theta-term is zero. If $V$ is the adjoint representation, the supersymmetry is enhanced to $\cN=2$. We consider a complex surface $M^4=\Sigma_1\times \Sigma_2$.
+
+\begin{itemize}
+\item The rank $(1, 0)$ twist gives $\T^*[-1]\Map(M^4, [V/G])$. It only has a one-loop anomaly which in flat space is given by $\ch_3([V/G])$.
+
+\item For $V=\g$ get
+\[\T^*[-1]\Map(M, \T[-1]\B G)\cong \T^*[-1]\Map((\Sigma_1)_{\Dol}\times \Sigma_2, \B G).\]
+It only has a one-loop anomaly given by $\chi(\Sigma_1) \ch_2(\B G)$.
+
+\item The rank $(2, 0)$ twist gives $\T^*[-1]\Map(M^4, \B G)_{\dR}$. It compactifies to the 3d A-twist.
+
+\item The rank $(1, 1)$ twist gives $\T^*[-1]\Map((\Sigma_1)_{\dR}\times \Sigma_2, \B G)$. It compactifies to the 3d B-twist or the 3d holomorphic twist. The anomaly is the same as in the holomorphic twist.
+\end{itemize}
+
+We can again add $\cN=2$ matter given a complex $K$-representation $W$:
+\begin{itemize}
+\item The rank $(2, 0)$ twist gives $\T^*[-1]\Map(M^4, [W/G])_{\dR}$.
+
+\item The rank $(1, 1)$ twist gives $\T^*[-1]\Map((\Sigma_1)_{\dR}\times \Sigma_2, [W/G])$.
+\end{itemize}
+
+In the case $W=\g$ (i.e. we have $\cN=4$)
+\begin{itemize}
+\item The rank $(1, 0)$ twist gives
+\[\T^*[-1]\Map((\Sigma_1)_{\Dol}\times (\Sigma_2)_{\Dol}, \B G).\]
+
+\item The rank $(1, 1)$ twist gives
+\[\T^*[-1]\Map((\Sigma_1)_{\dR}\times (\Sigma_2)_{\Dol}, \B G).\]
+
+\item The rank $(2, 0)$ twist gives
+\[\T^*[-1]\Map((\Sigma_1)_{\Dol}\times \Sigma_2, \B G)_{\dR}.\]
+
+\item The special rank $(2, 2)$ twist gives
+\[\T^*[-1]\Map((\Sigma_1)_{\dR}\times (\Sigma_2)_{\dR}, \B G).\]
+
+\item The generic rank $(2, 2)$ twist gives
+\[\T^*[-1]\Map((\Sigma_1)_{\dR}\times \Sigma_2, \B G)_{\dR}.\]
+\end{itemize}
+
+\section{$d=5$}
+
+We consider $M^5=M^4\times L$ where $M^4=\Sigma_1\times \Sigma_2$ is a complex surface and $L$ is a 1-manifold.
+
+\begin{itemize}
+\item The rank $1$ twist gives $\T^*[-1]\Map(M^4\times L_{\dR}, [W/G])$.
+
+\item If $W=\g$ get $\T^*[-1]\Map(M\times L_{\dR}, \T[-1]\B G)$.
+
+\item The rank $2$ topological twist gives $\T^*[-1]\Map(M^4\times L_{\dR}, \B G)_{\dR}$.
+
+\item The rank $2$ partially topological twist gives $\T^*[-1]\Map((\Sigma_1)_{\dR}\times \Sigma_2\times L_{\dR}, \B G)$.
+
+\item The rank $4$ twist gives $\Map(M^5_{\dR}, \B G)$. This is $\Z/2$-graded.
+\end{itemize}
+
+\section{$d=6$}
+
+Let $M^6=M^4\times \Sigma$ be a complex 3-fold.
+
+$\cN=(1, 0)$ Yang--Mills:
+\begin{itemize}
+\item The rank $(1, 0)$ twist gives $\T^*[-1]\Map(M^6, [W/G])$. It only has a one-loop anomaly. In flat spacetime it is given by $\ch_4([W/G])$.
+\end{itemize}
+
+$\cN=(1, 1)$ Yang--Mills:
+\begin{itemize}
+\item The rank $(1, 1)$ topological twist gives $\T^*[-1]\Map(M^6, \B G)_{\dR}$.
+
+\item The rank $(1, 1)$ partially topological twist gives $\T^*[-1]\Map(M^4\times \Sigma_{\dR}, \B G)$. It only has a one-loop anomaly when $\chi(\Sigma)\neq 0$ and $c_1(M)\neq 0$ in which case it is $\ch_2(\B G)$.
+
+\item The rank $(2, 2)$ twist gives $\Map(M^2\times (M^4)_{\dR}, \B G)$. This is $\Z/2$-graded. It has a one-loop anomaly given by $\chi(M^4) \ch_2(\B G)$.
+\end{itemize}
+
+\section{$d=7$}
+
+\begin{itemize}
+\item The topological twist is $\Map(M^6\times L_{\dR}, \B G)_{\dR}$.
+
+\item The holomorphic rank 1 twist is $\T^*[-1]\Map(M^6\times L_{\dR}, \B G)$.
+
+\item The rank 2 twist is $\Map(M^4\times (M^3)_{\dR}, \B G)$. This is $\Z/2$-graded.
+\end{itemize}
+
+\section{$d=8$}
+
+\begin{itemize}
+\item The twist by a pure spinor rank $(1, 0)$ supercharge gives $\T^*[-1]\Map(M^8, \B G)$.
+
+\item The twist by an impure spinor rank $(1, 0)$ supercharge gives $\Map(M^8, \B G)_{\dR}$.
+
+\item The twist by a rank $(1, 1)$ supercharge gives $\Map((M^6)\times (M^2)_{\dR}, \B G)$. This is $\Z/2$-graded. Its one-loop anomaly vanishes for instance when $M^2$ is flat. If $M^2$ is not flat while $M^6$ is, the one-loop anomaly is given by $\ch_4(\B G)$.
+\end{itemize}
+
+\section{$d=9$}
+
+\begin{itemize}
+\item The twist by a pure spinor supercharge gives $\Map(M^8\times L_{\dR}, \B G)$. This is $\Z/2$-graded.
+\end{itemize}
+
+\section{$d=10$}
+
+\begin{itemize}
+\item The rank $1$ twist gives $\Map(M^{10}, \B G)$. This is $\Z/2$-graded. Its one-loop anomaly in flat spacetime is $\ch_6(\B G)$.
+\end{itemize}
+
+\end{document}
