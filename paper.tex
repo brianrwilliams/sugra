@@ -987,6 +987,8 @@ A^{10}_{0,1} &= A' + \phi \d \ol z^5 \in (\Omega^{0,1}(\CC^4; \gg) \oplus \Omega
 \end{align*}
 along with the ghost $c$.  We'll describe the twisted action functional using dimensional reduction.
 
+\brian{Where is the one-form in the $\RR$-direction? Are we identifying that with $\phi$?}
+
 \begin{theorem} \label{9d_twist_thm}
 The minimal twist of 9d super Yang-Mills theory on the product of a Calabi-Yau 4-fold $X_4$ and an oriented 1-manifold $L = \RR$ or $S^1$ is equivalent to mixed Chern-Simons theory on $X_4 \times L_\mr{dR}$.
 \end{theorem}
@@ -1081,18 +1083,59 @@ The proof here is identical to the proof of Theorem \ref{9d_twist_thm}, we just 
 
 \subsubsection{$\cN=1$ SYM with matter} 
 
-Let $R$ be a complex representation of $\mf g$.
+The 4-dimensional $\mc N=1$ pure super Yang-Mills theory has BRST fields given by a ghost $c$, a 4d gauge field $A$, and a Lie algebra valued Weyl spinor field $\lambda$. 
+In addition, $4$-dimensional supersymmetry supports a chiral (anti-chiral matter) multiplet, which comprises a complex scalar $\phi$ and a left (right) Weyl spinor $\psi_+$ ($\psi_-$). 
 
-The matter sector of the theory is labeled by the BRST fields:
-\begin{itemize}
-\item Two scalars $\varphi_{\pm} \in C^\infty (\RR^4) \otimes R$;
-\item Weyl fermions $\psi_{\pm} \in \Pi C^\infty(\RR^4) \otimes S_{\pm} \otimes R$ 
-\end{itemize} 
-which together define the (abelian) local Lie algebra
+The most general theory $4$-dimensional $\mc N = 1$ theory we will consider is super Yang-Mills theory valued in a Lie algebra $\fg$ coupled to a chiral multiplet with values in a complex $\fg$-representation $R$. 
+This means that the fields $\phi, \psi_+$ take values in $R$ and $\Bar{\phi}, \psi_-$ take values in $R^*$. 
+We have written down the action for supersymmetric Yang-Mills numerous times. 
+The kinetic action for $4$-dimensional $\mc N = 1$ matter is of the form
 \[
-\mathcal E_{\rm matter}^{\cN=1} = C^\infty (\RR^4) \otimes R^{\oplus 2} \oplus  \Pi C^\infty(\RR^4) \otimes (S_{+}  \otimes R \oplus S_- \otimes R) .
+S_{\rm matter} (\phi, \Bar{\phi}, \psi_+, \psi_-) = \int \d^4 x \; \<\partial_{x_i} \phi , \partial_{x_i} \Bar{\phi}\>_R + \int \d^4 x \; \<\psi_+ , \sd \dd \psi_-\>_R .
 \]
-\subsection{Dimension 3}
+Here $\<-,-\>_R$ denotes the obvious pairing between $R$ and $R^*$. 
+Super Yang-Mills couples to the matter via the action 
+\[
+S_{\rm couple} = \int \d^4 x \;
+\]
+
+The action by supersymmetry for the $4$-dimensional matter theory is encoded by a linear and quadratic functional
+\begin{align*}
+I^{(1)} (Q_+, Q_-) & = \int \<\phi^*, (Q_+, \psi_+)\>_R + \int \<\Bar{\phi}^*, (Q_-, \psi_-)\>_R + \int \<\psi^*_+, Q_+ \d \phi\>_R + \int \<\psi_-^*, Q_- \d \Bar{\phi}\>_R \\
+I^{(2)} (Q_+ \otimes Q_-) & = \int \<\psi^*_- , \rho(\Gamma(Q_+, Q_-)) \psi_+\>_R
+\end{align*}
+
+There is a single non-zero equivalence class of square zero supercharges in $4$-dimensional $\mc N = 1$, which we fix from hereon. 
+Such supercharges are minimal (i.e. have 2d image).  
+They are stabilized by $\SU(2)$ \brian{really $U(2)$, i think}.  
+The R-symmetry group is $U(1)$, and so the twisted theory by such a supercharge is always $\ZZ$-graded.
+
+We first decompose the fields of the 4-dimensional $\mc N=1$ theory with respect to the $\SU(2)$ stabilizer.
+The fields of the pure Yang-Mills part decomposes as:
+\begin{align*}
+c & \mapsto c \in \Omega^0(\CC^2 ; \fg) \\
+A & \mapsto A_{0,1} + A_{1,0} \in \Omega^{0,1}(\CC^2 ; \fg) \oplus \Omega^{1,0}(\CC^2 ; \fg) \\
+\lambda & \mapsto \chi + \psi_{1,0} + B_{0,2} \in \Omega^0(\CC^2 ; \fg) \oplus \Omega^{1,0}(\CC^2 ; \fg) \oplus \Omega^{0,2}(\CC^2 ; \fg)
+\end{align*}
+
+The matter fields decompose as
+\begin{align*}
+\phi & \mapsto \phi \in \Omega^0 (\CC^2 ; R) \\
+\psi_+ & \mapsto \gamma_{0,1} \in \Omega^{0,1}(\CC^2 ; R) \\
+\psi_- & \mapsto \beta_0 + \beta_{2,0} \in \Omega^{0,0}(\CC^2 ; R^*) \oplus \Omega^{2,0}(\CC^2 ; R^*) .
+\end{align*}
+
+%
+%The matter sector of the theory is labeled by the BRST fields:
+%\begin{itemize}
+%\item Two scalars $\varphi_{\pm} \in C^\infty (\RR^4) \otimes R$;
+%\item Weyl fermions $\psi_{\pm} \in \Pi C^\infty(\RR^4) \otimes S_{\pm} \otimes R$ 
+%\end{itemize} 
+%which together define the (abelian) local Lie algebra
+%\[
+%\mathcal E_{\rm matter}^{\cN=1} = C^\infty (\RR^4) \otimes R^{\oplus 2} \oplus  \Pi C^\infty(\RR^4) \otimes (S_{+}  \otimes R \oplus S_- \otimes R) .
+%\]
+%\subsection{Dimension 3}
 
 % \cN=8 SYM
 % \cN=4 SYM with matter in a pseudo-real representation
