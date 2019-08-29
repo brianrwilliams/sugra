@@ -11,7 +11,7 @@
 
 \tikzstyle{s16} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=red!30]
 \tikzstyle{s16chiral} = [s16, dashed]
-\tikzstyle{s8} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=orange!30]
+\tikzstyle{s8 } = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=orange!30]
 \tikzstyle{s4} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=yellow!30]
 \tikzstyle{s2chiral} = [rectangle, dashed, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=green!30]
 \tikzstyle{dimension} = [circle, text centered, text width=0.7cm, minimum height=0.7cm, draw=black]
@@ -57,10 +57,22 @@ that is
 \end{itemize}
 \end{definition}
 
-We call $\cE$ the {\bf space of BV fields}.  The pairing $\omega$ equips the algebra of local functionals on $E$ with a shifted Poisson bracket, in the following way.
+We call $\cE$ the {\em space of BV fields}.  
+The pairing $\omega$ equips the algebra of local functionals on $E$ with a shifted bracket, in the following way.
+In Section 3 of \cite{CosRenorm}, it is shown that to every {\em local} functional $f \in \cO(\cE)$ there exists a symplectic vector field $X_f$ on $\cE$ whose Hamiltonian function is $f$. 
+Note that if $f$ is degree $n$, then $X_f$ is of degree $n+1$ due to the degree of $\omega$. 
+
 \begin{definition}
-The \emph{BV antibracket} $\{-,-\}$ is the \chris{give at least an informal definition and a reference to a formal definition in the book \cite{Book2}.  Also cite \cite{WittenAntibracket}.}
+The {\bf BV antibracket} $\{-,-\}$ is the bilinear map of cohomological degree $+1$
+\[
+\{-,-\} : \oloc(\cE) \times \oloc(\cE) \to \oloc(\cE)
+\]
+defined by sending a pair $(f,g)$ to the local functional $X_f (g)$.
+\chris{Also cite \cite{WittenAntibracket}.}
 \end{definition}
+
+This pairing is graded symmetric and satisfies the graded Jacobi identity.
+Note that since local functionals do not form an algebra, it is not a (shifted) Poisson bracket. 
 
 \begin{definition}
 A {\bf classical BV field theory} (or simply, classical field theory) is a free BV theory $(E, Q, \omega)$ equipped with an even functional
@@ -81,14 +93,14 @@ We will also consider {\bf $\ZZ/2$-graded classical field theories} which are de
 The data of a classical BV theory can be equivalently encoded in an elliptic $L_\infty$ algebra $L=E[-1]$ equipped with a symplectic isomorphism $L\cong L^![-3]$.
 \end{remark}
 
-A local functional induces an endomorphism $\{I,-\}$ on the space of all local functionals $\oloc(E)$. 
-It also induces an endomorphism on the larger space of {\em all} functionals $\cO(\cE)$, see Definition \ref{dfn: fnl} in the appendix. 
+A local functional $I$ induces an endomorphism $\{I,-\}$ on the space of all local functionals $\oloc(E)$. 
+It also induces an endomorphism on the larger space of {\em all} functionals $\cO(\cE)$\footnote{Although, for two arbitrary functionals $F, G \in \cO(\cE)$, the bracket $\{F,G\}$ is not defined.}, see Definition \ref{dfn: fnl} in the appendix. 
 The classical master equation implies that the operator $Q + \{I,-\}$ squares to zero on $\cO(\cE)$, and hence every classical field theory defines a cochain complex
 \begin{equation}\label{bvcplx}
 \left(\cO(\cE), Q + \{I,-\}\right) .
 \end{equation}
 In fact, this has the structure of a differentiable pro-cochain complex, see Definition \ref{dfn: pro}. 
-We will refer to this as the {\bf classical BV complex} of the theory. 
+We will refer to this as the {\em classical BV complex} of the theory. 
 
 \begin{definition}
 A {\bf morphism} $F\colon (E, Q, \omega, I) \to (E', Q', \omega', I')$ of classical field theories over the same manifold $M$ is a linear map of vector bundles
@@ -100,7 +112,7 @@ that intertwines the differentials $Q, Q'$, the pairings $\omega, \omega'$, and 
 
 Note that a map of classical field theories induces a map of BV complexes, that is, a map of pro-cochain complexes:
 \[
-F^*\colon \left(\cO (\cE)[-1], Q + \{I,-\} \right) \to \left(\cO (\cE')[-1], Q' + \{I',-\} \right) .
+F^*\colon \left(\cO (\cE')[-1], Q' + \{I',-\} \right) \to \left(\cO (\cE)[-1], Q + \{I,-\} \right).
 \]
 This allows us to make the following definition of an equivalence between classical theories. 
 
@@ -131,11 +143,12 @@ More generally, an $L_\infty$ {\bf action} is an $\infty$-morphism of super Lie 
 \end{definition}
 
 We denote components of an $\infty$-morphism by $\rho_2, \rho_3, \dots$, so that $\rho_2$ is a morphism of (super) chain complexes (see Appendix \ref{appx:infinity}).
+\brian{Is there a reason $\rho_2$ is the linear map. I'd thought $\rho_1$...}
 
-Concretely, an action of a super dg Lie algebra $\fg$ on a classical field theory is given by an element
-\[\sum_{k\geq 1} I^{(k)}\in \oloc(E)\otimes \widehat{\sym}^{\geq 1}(\fg^*[-1])\]
+Concretely, an action $\rho$ of a super dg Lie algebra $\fg$ on a classical field theory is given by an element
+\[I_{\rho} = \sum_{k\geq 1} I_{\rho}^{(k)}\in \oloc(E)\otimes \widehat{\sym}^{\geq 1}(\fg^*[-1])\]
 which satisfies the Maurer--Cartan equation
-\[\{S_{\mr{BV}}, I^{(k+1)}\} + \d_{CE} I^{(k)} + \frac{1}{2}\sum_{a+b=k+1} \{I^{(a)}, I^{(b)}\} = 0\]
+\[\{S_{\mr{BV}}, I_\rho^{(k+1)}\} + \d_{CE} I_{\rho}^{(k)} + \frac{1}{2}\sum_{a+b=k+1} \{I_{\rho}^{(a)}, I_{\rho}^{(b)}\} = 0\]
 for every $k\geq 0$.
 
 \begin{definition}
@@ -770,88 +783,88 @@ where the $\ZZ/2$-grading on $E$ is the total grading.
 
 \section{Twists}
 
-%\begin{landscape}
-\begin{figure}
-\begin{tikzpicture}[node distance=0.35cm and 0.35cm, text width=1.8cm]
-\node (101) [s16chiral] {Rank $(1, 0)$ $d=5$};
-\node (91) [s16, below=of 101] {Rank $1$ $d=5$};
-\node (82) [s16, below=of 91] {Rank $(1, 1)$ $d=5$};
-\node (81) [s16, left=of 82] {Rank $(1, 0)$ $d=4$};
-\node (825) [right=of 82] {};
-\node (83) [s16, right=of 825] {Rank $(1, 0)$ $d=8$};
-\node (71) [s16, below=of 81] {Rank $1$ $d=4$};
-\node (72) [s16, below=of 82] {Rank $2$ $d=5$};
-\node (73) [s16, below=of 83] {Rank $1$ $d=7$};
-\node (62) [s16, below=of 71] {Rank $(1, 1)$ $d=4$};
-\node (61) [s8, left=of 62] {Rank $(1, 0)$ $d=3$};
-\node (63) [s16, below=of 72] {Rank $(2, 2)$ $d=5$};
-\node (64) [s16chiral, right=of 63] {Rank $(2, 0)$ $d=5$};
-\node (65) [s16, below=of 73, right=of 64] {Rank $(1, 1)$ $d=6$};
-\node (51) [s8, below=of 61] {Rank $1$ $d=3$};
-\node (52) [s16, below=of 62] {Rank $2$ $d=4$};
-\node (53) [s16, below=of 63] {Rank $4$ $d=5$};
-\node (54) [s16, below=of 64] {Rank $2$ $d=5$};
-\node (42) [s8, below=of 51] {Rank $(1, 1)$ $d=3$};
-\node (41) [s4, left=of 42] {Rank $(1, 0)$ $d=2$};
-\node (43) [s16, right=of 42] {Rank $(2, 2)$ $d=4$};
-\node (44) [s16, right=of 43] {Rank $(2, 1)$ $d=4$};
-\node (45) [s8, right=of 44] {Rank $(2, 0)$ $d=4$};
-\node (31) [s4, below=of 41] {Rank $1$ $d=2$};
-\node (32) [s8, below=of 42] {Rank $2$ $d=3$};
-\node (22) [s4, below=of 31] {Rank $(1, 1)$ $d=2$};
-\node (21) [s2chiral, left=of 22] {Rank $(1, 0)$ $d=1$};
-
-\draw[arrow] (101) -- (91);
-\draw[arrow] (91) -- (81);
-\draw[arrow] (91) -- (82);
-\draw[arrow] (81) -- (71);
-\draw[arrow] (82) -- (71);
-\draw[arrow] (82) -- (72);
-\draw[arrow] (83) -- (73);
-\draw[arrow] (71) -- (61);
-\draw[arrow] (71) -- (62);
-\draw[arrow] (72) -- (62);
-\draw[arrow] (72) -- (63);
-\draw[arrow] (73) -- (65);
-\draw[arrow] (61) -- (51);
-\draw[arrow] (62) -- (51);
-\draw[arrow] (62) -- (52);
-\draw[arrow] (63) -- (53);
-\draw[arrow] (64) -- (52);
-\draw[arrow] (64) -- (54);
-\draw[arrow] (65) -- (54);
-\draw[arrow] (51) -- (41);
-\draw[arrow] (51) -- (42);
-\draw[arrow] (52) -- (42);
-\draw[arrow] (52) -- (43);
-\draw[arrow] (53) -- (43);
-\draw[arrow] (54) -- (43);
-\draw[arrow] (54) -- (44);
-\draw[arrow] (54) -- (45);
-\draw[arrow] (41) -- (31);
-\draw[arrow] (42) -- (31);
-\draw[arrow] (42) -- (32);
-\draw[arrow] (43) -- (32);
-\draw[arrow] (44) -- (32);
-\draw[arrow] (45) -- (32);
-\draw[arrow] (31) -- (21);
-\draw[arrow] (31) -- (22);
-\draw[arrow] (32) -- (22);
-
-\node (2d) [dimension, left=of 21] {2d};
-\node (3d) [dimension, above=of 2d] {3d};
-\node (4d) [dimension, above=of 3d] {4d};
-\node (5d) [dimension, above=of 4d] {5d};
-\node (6d) [dimension, above=of 5d] {6d};
-\node (7d) [dimension, above=of 6d] {7d};
-\node (8d) [dimension, above=of 7d] {8d};
-\node (9d) [dimension, above=of 8d] {9d};
-\node (10d) [dimension, above=of 9d] {10d};
-\end{tikzpicture}
-\caption{Orbits of square-zero supercharges.}
-\label{fig:superchargeorbits}
-\end{figure}
-%\end{landscape}
+%%\begin{landscape}
+%\begin{figure}
+%\begin{tikzpicture}[node distance=0.35cm and 0.35cm, text width=1.8cm]
+%\node (101) [s16chiral] {Rank $(1, 0)$ $d=5$};
+%\node (91) [s16, below=of 101] {Rank $1$ $d=5$};
+%\node (82) [s16, below=of 91] {Rank $(1, 1)$ $d=5$};
+%\node (81) [s16, left=of 82] {Rank $(1, 0)$ $d=4$};
+%\node (825) [right=of 82] {};
+%\node (83) [s16, right=of 825] {Rank $(1, 0)$ $d=8$};
+%\node (71) [s16, below=of 81] {Rank $1$ $d=4$};
+%\node (72) [s16, below=of 82] {Rank $2$ $d=5$};
+%\node (73) [s16, below=of 83] {Rank $1$ $d=7$};
+%\node (62) [s16, below=of 71] {Rank $(1, 1)$ $d=4$};
+%\node (61) [s8, left=of 62] {Rank $(1, 0)$ $d=3$};
+%\node (63) [s16, below=of 72] {Rank $(2, 2)$ $d=5$};
+%\node (64) [s16chiral, right=of 63] {Rank $(2, 0)$ $d=5$};
+%\node (65) [s16, below=of 73, right=of 64] {Rank $(1, 1)$ $d=6$};
+%\node (51) [s8, below=of 61] {Rank $1$ $d=3$};
+%\node (52) [s16, below=of 62] {Rank $2$ $d=4$};
+%\node (53) [s16, below=of 63] {Rank $4$ $d=5$};
+%\node (54) [s16, below=of 64] {Rank $2$ $d=5$};
+%\node (42) [s8, below=of 51] {Rank $(1, 1)$ $d=3$};
+%\node (41) [s4, left=of 42] {Rank $(1, 0)$ $d=2$};
+%\node (43) [s16, right=of 42] {Rank $(2, 2)$ $d=4$};
+%\node (44) [s16, right=of 43] {Rank $(2, 1)$ $d=4$};
+%\node (45) [s8, right=of 44] {Rank $(2, 0)$ $d=4$};
+%\node (31) [s4, below=of 41] {Rank $1$ $d=2$};
+%\node (32) [s8, below=of 42] {Rank $2$ $d=3$};
+%\node (22) [s4, below=of 31] {Rank $(1, 1)$ $d=2$};
+%\node (21) [s2chiral, left=of 22] {Rank $(1, 0)$ $d=1$};
+%
+%\draw[arrow] (101) -- (91);
+%\draw[arrow] (91) -- (81);
+%\draw[arrow] (91) -- (82);
+%\draw[arrow] (81) -- (71);
+%\draw[arrow] (82) -- (71);
+%\draw[arrow] (82) -- (72);
+%\draw[arrow] (83) -- (73);
+%\draw[arrow] (71) -- (61);
+%\draw[arrow] (71) -- (62);
+%\draw[arrow] (72) -- (62);
+%\draw[arrow] (72) -- (63);
+%\draw[arrow] (73) -- (65);
+%\draw[arrow] (61) -- (51);
+%\draw[arrow] (62) -- (51);
+%\draw[arrow] (62) -- (52);
+%\draw[arrow] (63) -- (53);
+%\draw[arrow] (64) -- (52);
+%\draw[arrow] (64) -- (54);
+%\draw[arrow] (65) -- (54);
+%\draw[arrow] (51) -- (41);
+%\draw[arrow] (51) -- (42);
+%\draw[arrow] (52) -- (42);
+%\draw[arrow] (52) -- (43);
+%\draw[arrow] (53) -- (43);
+%\draw[arrow] (54) -- (43);
+%\draw[arrow] (54) -- (44);
+%\draw[arrow] (54) -- (45);
+%\draw[arrow] (41) -- (31);
+%\draw[arrow] (42) -- (31);
+%\draw[arrow] (42) -- (32);
+%\draw[arrow] (43) -- (32);
+%\draw[arrow] (44) -- (32);
+%\draw[arrow] (45) -- (32);
+%\draw[arrow] (31) -- (21);
+%\draw[arrow] (31) -- (22);
+%\draw[arrow] (32) -- (22);
+%
+%\node (2d) [dimension, left=of 21] {2d};
+%\node (3d) [dimension, above=of 2d] {3d};
+%\node (4d) [dimension, above=of 3d] {4d};
+%\node (5d) [dimension, above=of 4d] {5d};
+%\node (6d) [dimension, above=of 5d] {6d};
+%\node (7d) [dimension, above=of 6d] {7d};
+%\node (8d) [dimension, above=of 7d] {8d};
+%\node (9d) [dimension, above=of 8d] {9d};
+%\node (10d) [dimension, above=of 9d] {10d};
+%\end{tikzpicture}
+%\caption{Orbits of square-zero supercharges.}
+%\label{fig:superchargeorbits}
+%\end{figure}
+%%\end{landscape}
 
 \subsection{Standard Equivalences Between Classical Field Theories}
 In this section, we will collect some standard lemmas that we'll use to simplify the descriptions of twisted supersymmetric field theories below.
@@ -974,6 +987,8 @@ A^{10}_{0,1} &= A' + \phi \d \ol z^5 \in (\Omega^{0,1}(\CC^4; \gg) \oplus \Omega
 \end{align*}
 along with the ghost $c$.  We'll describe the twisted action functional using dimensional reduction.
 
+\brian{Where is the one-form in the $\RR$-direction? Are we identifying that with $\phi$?}
+
 \begin{theorem} \label{9d_twist_thm}
 The minimal twist of 9d super Yang-Mills theory on the product of a Calabi-Yau 4-fold $X_4$ and an oriented 1-manifold $L = \RR$ or $S^1$ is equivalent to mixed Chern-Simons theory on $X_4 \times L_\mr{dR}$.
 \end{theorem}
@@ -1074,18 +1089,59 @@ The proof here is identical to the proof of Theorem \ref{9d_twist_thm}, we just 
 
 \subsubsection{$\cN=1$ SYM with matter} 
 
-Let $R$ be a complex representation of $\mf g$.
+The 4-dimensional $\mc N=1$ pure super Yang-Mills theory has BRST fields given by a ghost $c$, a 4d gauge field $A$, and a Lie algebra valued Weyl spinor field $\lambda$. 
+In addition, $4$-dimensional supersymmetry supports a chiral (anti-chiral matter) multiplet, which comprises a complex scalar $\phi$ and a left (right) Weyl spinor $\psi_+$ ($\psi_-$). 
 
-The matter sector of the theory is labeled by the BRST fields:
-\begin{itemize}
-\item Two scalars $\varphi_{\pm} \in C^\infty (\RR^4) \otimes R$;
-\item Weyl fermions $\psi_{\pm} \in \Pi C^\infty(\RR^4) \otimes S_{\pm} \otimes R$ 
-\end{itemize} 
-which together define the (abelian) local Lie algebra
+The most general theory $4$-dimensional $\mc N = 1$ theory we will consider is super Yang-Mills theory valued in a Lie algebra $\fg$ coupled to a chiral multiplet with values in a complex $\fg$-representation $R$. 
+This means that the fields $\phi, \psi_+$ take values in $R$ and $\Bar{\phi}, \psi_-$ take values in $R^*$. 
+We have written down the action for supersymmetric Yang-Mills numerous times. 
+The kinetic action for $4$-dimensional $\mc N = 1$ matter is of the form
 \[
-\mathcal E_{\rm matter}^{\cN=1} = C^\infty (\RR^4) \otimes R^{\oplus 2} \oplus  \Pi C^\infty(\RR^4) \otimes (S_{+}  \otimes R \oplus S_- \otimes R) .
+S_{\rm matter} (\phi, \Bar{\phi}, \psi_+, \psi_-) = \int \d^4 x \; \<\partial_{x_i} \phi , \partial_{x_i} \Bar{\phi}\>_R + \int \d^4 x \; \<\psi_+ , \sd \dd \psi_-\>_R .
 \]
-\subsection{Dimension 3}
+Here $\<-,-\>_R$ denotes the obvious pairing between $R$ and $R^*$. 
+Super Yang-Mills couples to the matter via the action 
+\[
+S_{\rm couple} = \int \d^4 x \;
+\]
+
+The action by supersymmetry for the $4$-dimensional matter theory is encoded by a linear and quadratic functional
+\begin{align*}
+I^{(1)} (Q_+, Q_-) & = \int \<\phi^*, (Q_+, \psi_+)\>_R + \int \<\Bar{\phi}^*, (Q_-, \psi_-)\>_R + \int \<\psi^*_+, Q_+ \d \phi\>_R + \int \<\psi_-^*, Q_- \d \Bar{\phi}\>_R \\
+I^{(2)} (Q_+ \otimes Q_-) & = \int \<\psi^*_- , \rho(\Gamma(Q_+, Q_-)) \psi_+\>_R
+\end{align*}
+
+There is a single non-zero equivalence class of square zero supercharges in $4$-dimensional $\mc N = 1$, which we fix from hereon. 
+Such supercharges are minimal (i.e. have 2d image).  
+They are stabilized by $\SU(2)$ \brian{really $U(2)$, i think}.  
+The R-symmetry group is $U(1)$, and so the twisted theory by such a supercharge is always $\ZZ$-graded.
+
+We first decompose the fields of the 4-dimensional $\mc N=1$ theory with respect to the $\SU(2)$ stabilizer.
+The fields of the pure Yang-Mills part decomposes as:
+\begin{align*}
+c & \mapsto c \in \Omega^0(\CC^2 ; \fg) \\
+A & \mapsto A_{0,1} + A_{1,0} \in \Omega^{0,1}(\CC^2 ; \fg) \oplus \Omega^{1,0}(\CC^2 ; \fg) \\
+\lambda & \mapsto \chi + \psi_{1,0} + B_{0,2} \in \Omega^0(\CC^2 ; \fg) \oplus \Omega^{1,0}(\CC^2 ; \fg) \oplus \Omega^{0,2}(\CC^2 ; \fg)
+\end{align*}
+
+The matter fields decompose as
+\begin{align*}
+\phi & \mapsto \phi \in \Omega^0 (\CC^2 ; R) \\
+\psi_+ & \mapsto \gamma_{0,1} \in \Omega^{0,1}(\CC^2 ; R) \\
+\psi_- & \mapsto \beta_0 + \beta_{2,0} \in \Omega^{0,0}(\CC^2 ; R^*) \oplus \Omega^{2,0}(\CC^2 ; R^*) .
+\end{align*}
+
+%
+%The matter sector of the theory is labeled by the BRST fields:
+%\begin{itemize}
+%\item Two scalars $\varphi_{\pm} \in C^\infty (\RR^4) \otimes R$;
+%\item Weyl fermions $\psi_{\pm} \in \Pi C^\infty(\RR^4) \otimes S_{\pm} \otimes R$ 
+%\end{itemize} 
+%which together define the (abelian) local Lie algebra
+%\[
+%\mathcal E_{\rm matter}^{\cN=1} = C^\infty (\RR^4) \otimes R^{\oplus 2} \oplus  \Pi C^\infty(\RR^4) \otimes (S_{+}  \otimes R \oplus S_- \otimes R) .
+%\]
+%\subsection{Dimension 3}
 
 % \cN=8 SYM
 % \cN=4 SYM with matter in a pseudo-real representation
