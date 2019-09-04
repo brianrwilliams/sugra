@@ -254,7 +254,7 @@ Thus, one can think of the underlying ring of the Dolbeault stack as functions o
 \subsubsection{Generalized BF theory} \label{gen_BF_section}
 
 \begin{definition}
-Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$. The {\bf generalized BF theory} is the $(-1)$-shifted cotangent bundle of the following classical BRST theory:
+Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$. The {\bf generalized $BF$ theory} is the $(-1)$-shifted cotangent bundle of the following classical BRST theory:
 \begin{itemize}
 \item The spacetime is the smooth manifold $X\times Y\times M$.
 
@@ -271,9 +271,27 @@ where we denote the two fields by $A$ and $B$. The BV action is
 where $\langle -, -\rangle$ is the natural pairing between $\fg^*$ and $\fg$ and $\ell_k$ denote the components of the $L_\infty$ structure on $\fg$.
 
 \begin{example}
-For $X=Y=\pt$ and $\fg$ an ordinary Lie algebra we recover the usual topological BF theory with the BV action
+For $X=Y=\pt$ and $\fg$ an ordinary Lie algebra we recover the usual topological $BF$ theory with the BV action
 \[S = \int_M \left\langle B\wedge \left(\d_\dR A+ \frac{1}{2}[A\wedge A]\right)\right\rangle.\]
 \end{example}
+
+Generally speaking, $BF$ theories will be the output of twisting a supersymmetric gauge theory. 
+In fact, a special case also applies to twisting theories of matter, which we will refer to as a $\beta\gamma$-system. 
+
+\begin{definition}
+Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix a complex vector space $V$. The {\bf generalized $\beta\gamma$ system} is the BV theory given by the $(-1)$-shifted cotangent bundle of the following classical BRST theory:
+\begin{itemize}
+\item The spacetime is the smooth manifold $X\times Y\times M$.
+
+\item The bundle of BRST fields is the $\ZZ$-graded bundle $F = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes V$, where every field is considered even with respect to the $\ZZ/2$-grading. $F[-1]$ is equipped with an $L_\infty$ structure with $\ell_{k} = 0$ for $k \geq 2$. 
+
+\item The BRST action is $S_{BRST} = 0$.
+\end{itemize}
+\end{definition}
+
+The generalized $\beta\gamma$ system is a special case of generalized $BF$ theory in the case that the $L_\infty$ aglebra is $\fg = V[-1]$, with trivial $L_\infty$ structure. 
+
+\brian{Should we say something about coupling here?}
 
 \subsubsection{Generalized Chern--Simons theory} \label{gen_CS_section}
 
@@ -1078,6 +1096,39 @@ The proof here is identical to the proof of Theorem \ref{9d_twist_thm}, we just 
 
 % \cN=(1, 0) SYM with matter in a pseudo-real representation, one twist. 
 
+\subsubsection{$\cN=(1,0)$ with matter}
+
+The $6$-dimensional $\mc N = (1,0)$ super Yang-Mills theory has BRST fields given by a ghost $c$, a $6$-dimensional gauge field $A$, and a Lie algebra valued spinor
+\[
+\lambda_+ \in \Omega^0(\RR^6) \otimes S_+^{6d} \otimes W \otimes \fg 
+\]
+where $W$ is a (complex) $2$-dimensional symplectic vector space. 
+The tensor product $S_+^{6d} \otimes W$ forms the $8$-dimensional symplectic Weyl representation. 
+
+A general theory of matter for $\cN = (1,0)$ supersymmetry arranges into a hypermultiplet which has the following BRST description.
+Let $S_-^{6d}$ be the negative $\so(6)$ irreducible spin representation and suppose $R$ is a (complex) symplectic $\fg$-representation, with symplectic pairing labeled by $\<-,-\>_R$. 
+The BRST fields of the $(1,0)$ hypermultiplet consist of a $W \otimes R$-valued scalar
+\[
+\phi \in \Omega^0(\RR^6) \otimes W \otimes R
+\]
+and an $R$ valued negative Weyl spinor
+\[
+\psi_- \in \Omega^0(\RR^6) \otimes S_-^{6d} \otimes R .
+\]
+Denote the induced symplectic pairing on $W \otimes R$ by $\<-,-\>_{W \otimes R}$. 
+The action of the free hypermultiplet is given by
+\[
+S_{\rm matter} (\phi, \psi_-) = \frac{1}{2} \int_{\RR^6} \d^6 x \; \<\partial_{x_i} \phi , \partial_{x_i} \phi\>_{W \otimes R} + \frac{1}{2} \int_{\RR^6} \d^6 x \;\<\psi_-, \sd \dd \psi_-\>_R .
+\]
+
+The action of supersymmetry on the $6$-dimensional matter theory is encoded by a linear and quadratic functional:
+\begin{align*}
+I^{(1)} (Q) & = \int \<\phi^*, (Q, \psi_-)\>_{W \otimes R} + \int \<\psi^*_-, \rho(\d \phi) Q\>_R \\
+I^{(2)} (Q_1 \otimes Q_2) & = \int \<\psi^*_- , \rho(\Gamma(Q_1, Q_2)) \psi_-\>_R 
+\end{align*}
+where we recall that the pairing is of the form $\Gamma : \Sigma^{\otimes 2} = (S_+ \otimes W)^{\otimes 2} \to V$. \brian{I'm also using $(S_+)^* = S_-$.}
+
+
 \subsection{Dimension 5}
 
 % \cN=2 SYM, three twists
@@ -1109,7 +1160,7 @@ S_{\rm couple} = \int \d^4 x \;
 
 The action of supersymmetry on the $4$-dimensional matter theory is encoded by a linear and quadratic functional:
 \begin{align*}
-I^{(1)} (Q_+, Q_-) & = \int \<\phi^*, (Q_+, \psi_+)\>_R + \int \<\Bar{\phi}^*, (Q_-, \psi_-)\>_R + \int \<\psi^*_+, Q_+ \d \phi\>_R + \int \<\psi_-^*, Q_- \d \Bar{\phi}\>_R \\
+I^{(1)} (Q_+, Q_-) & = \int \<\phi^*, (Q_+, \psi_+)\>_R + \int \<\Bar{\phi}^*, (Q_-, \psi_-)\>_R + \int \<\psi^*_+, \rho(\d \phi) Q_+ \>_R + \int \<\psi_-^*, \rho(\d \Bar{\phi}) Q_-\>_R \\
 I^{(2)} (Q_+ \otimes Q_-) & = \int \<\psi^*_- , \rho(\Gamma(Q_+, Q_-)) \psi_+\>_R.
 \end{align*}
 
