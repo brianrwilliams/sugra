@@ -1092,31 +1092,31 @@ The proof here is identical to the proof of Theorem \ref{9d_twist_thm}, we just 
 \subsubsection{$\cN=1$ SYM with matter} 
 
 The 4-dimensional $\mc N=1$ pure super Yang-Mills theory has BRST fields given by a ghost $c$, a 4d gauge field $A$, and a Lie algebra valued Weyl spinor field $\lambda$. 
-In addition, $4$-dimensional supersymmetry supports a chiral (anti-chiral matter) multiplet, which comprises a complex scalar $\phi$ and a left (right) Weyl spinor $\psi_+$ ($\psi_-$). 
+In addition, $4$-dimensional supersymmetry supports a chiral (or anti-chiral) matter multiplet, which comprises a complex scalar $\phi$ and a left (right) Weyl spinor $\psi_+$ ($\psi_-$). 
 
 The most general theory $4$-dimensional $\mc N = 1$ theory we will consider is super Yang-Mills theory valued in a Lie algebra $\fg$ coupled to a chiral multiplet with values in a complex $\fg$-representation $R$. 
 This means that the fields $\phi, \psi_+$ take values in $R$ and $\Bar{\phi}, \psi_-$ take values in $R^*$. 
-We have written down the action for supersymmetric Yang-Mills numerous times. 
-The kinetic action for $4$-dimensional $\mc N = 1$ matter is of the form
+We have written down the action for supersymmetric Yang-Mills theory numerous times. 
+The kinetic part of the action functional for $4$-dimensional $\mc N = 1$ matter is of the form
 \[
 S_{\rm matter} (\phi, \Bar{\phi}, \psi_+, \psi_-) = \int \d^4 x \; \<\partial_{x_i} \phi , \partial_{x_i} \Bar{\phi}\>_R + \int \d^4 x \; \<\psi_+ , \sd \dd \psi_-\>_R .
 \]
-Here $\<-,-\>_R$ denotes the obvious pairing between $R$ and $R^*$. 
+Here $\<-,-\>_R$ incorporates the obvious pairing between $R$ and $R^*$. 
 Super Yang-Mills couples to the matter via the action 
 \[
 S_{\rm couple} = \int \d^4 x \;
 \]
 
-The action by supersymmetry for the $4$-dimensional matter theory is encoded by a linear and quadratic functional
+The action of supersymmetry on the $4$-dimensional matter theory is encoded by a linear and quadratic functional:
 \begin{align*}
 I^{(1)} (Q_+, Q_-) & = \int \<\phi^*, (Q_+, \psi_+)\>_R + \int \<\Bar{\phi}^*, (Q_-, \psi_-)\>_R + \int \<\psi^*_+, Q_+ \d \phi\>_R + \int \<\psi_-^*, Q_- \d \Bar{\phi}\>_R \\
-I^{(2)} (Q_+ \otimes Q_-) & = \int \<\psi^*_- , \rho(\Gamma(Q_+, Q_-)) \psi_+\>_R
+I^{(2)} (Q_+ \otimes Q_-) & = \int \<\psi^*_- , \rho(\Gamma(Q_+, Q_-)) \psi_+\>_R.
 \end{align*}
 
-There is a single non-zero equivalence class of square zero supercharges in $4$-dimensional $\mc N = 1$, which we fix from hereon. 
+There is a single non-zero equivalence class of square zero supercharges in $4$-dimensional $\mc N = 1$, which we fix from here on. 
 Such supercharges are minimal (i.e. have 2d image).  
-They are stabilized by $\SU(2)$ \brian{really $U(2)$, i think}.  
-The R-symmetry group is $U(1)$, and so the twisted theory by such a supercharge is always $\ZZ$-graded.
+They are stabilized by $\SU(2)$ \brian{really $U(2)$, i think} \chris{Agreed: a minimal square zero spinor of positive helicity is stabilized by $\SU(2)_-$, but also by a torus in $\SU(2)_+$.}.  
+The R-symmetry group is $U(1)$, and the twisted theory by such a supercharge can always be made $\ZZ$-graded.
 
 We first decompose the fields of the 4-dimensional $\mc N=1$ theory with respect to the $\SU(2)$ stabilizer.
 The fields of the pure Yang-Mills part decomposes as:
