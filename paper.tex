@@ -24,6 +24,8 @@
 
 \begin{document}
 
+\tableofcontents
+
 \maketitle
 
 \section*{Introduction}
@@ -1083,7 +1085,7 @@ The proof here is identical to the proof of Theorem \ref{9d_twist_thm}, we just 
 
 \subsubsection{$\cN=1$ SYM with matter} 
 
-The 4-dimensional $\mc N=1$ pure super Yang-Mills theory has BRST fields given by a ghost $c$, a 4d gauge field $A$, and a Lie algebra valued Weyl spinor field $\lambda$. 
+The 4-dimensional $\mc N=1$ pure super Yang-Mills theory has BRST fields given by a ghost $c$, a gauge field $A$, and a Lie algebra valued Weyl spinor field $\lambda$. 
 In addition, $4$-dimensional supersymmetry supports a chiral (anti-chiral matter) multiplet, which comprises a complex scalar $\phi$ and a left (right) Weyl spinor $\psi_+$ ($\psi_-$). 
 
 The most general theory $4$-dimensional $\mc N = 1$ theory we will consider is super Yang-Mills theory valued in a Lie algebra $\fg$ coupled to a chiral multiplet with values in a complex $\fg$-representation $R$. 
@@ -1094,17 +1096,39 @@ The kinetic action for $4$-dimensional $\mc N = 1$ matter is of the form
 S_{\rm matter} (\phi, \Bar{\phi}, \psi_+, \psi_-) = \int \d^4 x \; \<\partial_{x_i} \phi , \partial_{x_i} \Bar{\phi}\>_R + \int \d^4 x \; \<\psi_+ , \sd \dd \psi_-\>_R .
 \]
 Here $\<-,-\>_R$ denotes the obvious pairing between $R$ and $R^*$. 
-Super Yang-Mills couples to the matter via the action 
+The coupling to Super Yang-Mills couples to the matter via the action \brian{what to say}
 \[
 S_{\rm couple} = \int \d^4 x \;
 \]
+Let $S_{\rm BV}$ denote the full BV action of $\mc N = 1$ super Yang-Mills coupled to matter.
 
-The action by supersymmetry for the $4$-dimensional matter theory is encoded by a linear and quadratic functional
+The BV action is clearly Poincar\'{e} invariant, so there is an interaction $I_{\rm Poin}$ encoding the action by the $4$-dimensional Poincar\'{e} algebra.
+
+As in Section \ref{symmetry_section}, we encode the action by supersymmetry for the $4$-dimensional matter theory by the functionals
 \begin{align*}
-I^{(1)} (Q_+, Q_-) & = \int \<\phi^*, (Q_+, \psi_+)\>_R + \int \<\Bar{\phi}^*, (Q_-, \psi_-)\>_R + \int \<\psi^*_+, Q_+ \d \phi\>_R + \int \<\psi_-^*, Q_- \d \Bar{\phi}\>_R \\
-I^{(2)} (Q_+ \otimes Q_-) & = \int \<\psi^*_- , \rho(\Gamma(Q_+, Q_-)) \psi_+\>_R
+I^{(1)}_{\rm matter} (Q_+, Q_-) & = \int \<\phi^*, (Q_+, \psi_+)\>_R + \int \<\Bar{\phi}^*, (Q_-, \psi_-)\>_R + \int \<\psi^*_+, Q_+ \d \phi\>_R + \int \<\psi_-^*, Q_- \d \Bar{\phi}\>_R \\
+I^{(2)}_{\rm matter} (Q_+ \otimes Q_-) & = \int \<\psi^*_- , \rho(\Gamma(Q_+, Q_-)) \psi_+\>_R 
 \end{align*}
+where $Q_\pm \in S_{\pm}$. 
 
+Also define $I^{(1)}_{\rm gauge}$ and $I^{(2)}_{\rm gauge}$. \brian{this is so similar to the 10d case. How do you suggest we do this?}
+
+\begin{prop} 
+Let $I^{(1)} = I^{(1)}_{\rm matter} + I^{(1)}_{\rm gauge}$ and $I^{(2)} = I^{(2)}_{\rm matter} + I^{(2)}_{\rm gauge}$. 
+Then, the functional
+\[
+\fS = S_{\rm BV} + I_{\rm Poin} + I^{(1)} + I^{(2)} \in \clie^\bu(\mf A) \otimes \cloc^\bu(\fL) [-1]
+\]
+satisfies the Maurer-Cartan equation
+\[
+\left(\d_{\rm Lie} \fS + \frac{1}{2} \{\fS, \fS\} \right) = 0 .
+\]
+\end{prop}
+
+Note that $I^{(1)}$ is linear in the supersymmetry algebra, and $I^{(2)}$ is quadratic.
+Thus, the induced action on the $4$-dimensional $\mc N=1$ theory by the supersymmetry algebra $\mf A$ is an $L_\infty$ action.
+
+We proceed to describe the twist of this general $4$-dimensional $\mc N=1$ gauge theory. 
 There is a single non-zero equivalence class of square zero supercharges in $4$-dimensional $\mc N = 1$, which we fix from hereon. 
 Such supercharges are minimal (i.e. have 2d image).  
 They are stabilized by $\SU(2)$ \brian{really $U(2)$, i think}.  
