@@ -256,7 +256,7 @@ Thus, one can think of the underlying ring of the Dolbeault stack as functions o
 \subsubsection{Generalized BF theory} \label{gen_BF_section}
 
 \begin{definition}
-Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$. The {\bf generalized BF theory} is the $(-1)$-shifted cotangent bundle of the following classical BRST theory:
+Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$. The {\bf generalized $BF$ theory} is the $(-1)$-shifted cotangent bundle of the following classical BRST theory:
 \begin{itemize}
 \item The spacetime is the smooth manifold $X\times Y\times M$.
 
@@ -273,9 +273,27 @@ where we denote the two fields by $A$ and $B$. The BV action is
 where $\langle -, -\rangle$ is the natural pairing between $\fg^*$ and $\fg$ and $\ell_k$ denote the components of the $L_\infty$ structure on $\fg$.
 
 \begin{example}
-For $X=Y=\pt$ and $\fg$ an ordinary Lie algebra we recover the usual topological BF theory with the BV action
+For $X=Y=\pt$ and $\fg$ an ordinary Lie algebra we recover the usual topological $BF$ theory with the BV action
 \[S = \int_M \left\langle B\wedge \left(\d_\dR A+ \frac{1}{2}[A\wedge A]\right)\right\rangle.\]
 \end{example}
+
+Generally speaking, $BF$ theories will be the output of twisting a supersymmetric gauge theory. 
+In fact, a special case also applies to twisting theories of matter, which we will refer to as a $\beta\gamma$-system. 
+
+\begin{definition}
+Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix a complex vector space $V$. The {\bf generalized $\beta\gamma$ system} is the BV theory given by the $(-1)$-shifted cotangent bundle of the following classical BRST theory:
+\begin{itemize}
+\item The spacetime is the smooth manifold $X\times Y\times M$.
+
+\item The bundle of BRST fields is the $\ZZ$-graded bundle $F = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes V$, where every field is considered even with respect to the $\ZZ/2$-grading. $F[-1]$ is equipped with an $L_\infty$ structure with $\ell_{k} = 0$ for $k \geq 2$. 
+
+\item The BRST action is $S_{BRST} = 0$.
+\end{itemize}
+\end{definition}
+
+The generalized $\beta\gamma$ system is a special case of generalized $BF$ theory in the case that the $L_\infty$ aglebra is $\fg = V[-1]$, with trivial $L_\infty$ structure. 
+
+\brian{Should we say something about coupling here?}
 
 \subsubsection{Generalized Chern--Simons theory} \label{gen_CS_section}
 
@@ -1015,12 +1033,12 @@ In 8 dimensions, there are 3 classes of inequivalent non-zero supercharges by wh
  \item Square-zero spinors where both $\lambda_+$ and $\lambda_-$ are non-zero.  Such supercharges have a 5-dimensional image in $\CC^8$.  Twists by such supercharges are still only $\ZZ/2\ZZ$-graded.
 \end{enumerate}
 
-When we dimensionally reduce the minimally twisted 10- or 9-dimensional super Yang-Mills theories to 8 dimensions we obtain either the twist by a supercharge of type 1, or of type 3, depending on whether we reduce along an invariant direction or a non-invariant direction. \chris{I should say this more clearly, maybe including some general discussion at the beginning of the section, and referring to the figure.}
+When we dimensionally reduce the minimally twisted 10- or 9-dimensional super Yang-Mills theories to 8 dimensions we obtain either the twist by a supercharge of type 1, or of type 3, depending on whether we reduce along an invariant direction or a non-invariant direction, as indicated on the ``8d'' row of Figure \ref{fig:superchargeorbits}.  The topological twist (type 2 in the list above) appears in the right-most column of the figure, and is not obtained by dimensional reduction from higher dimensions.
 
 \subsubsection{The Holomorphic and Topological Twists}
-Square-zero supercharges in the 10d $\mc N=(1,0)$ supersymmetry algebra correspond to holomorphic supercharges in the 8d $\mc N=1$ supersymmetry algebra.  As such, we can calculate the holomorphic twist of 8d $\mc N=1$ super Yang-Mills by dimensionally reducing the holomorphic twist of 10d $\mc N=(1,0)$ super Yang-Mills along a copy of $\CC$.  This theory can, however, be made canonically $\ZZ$-graded.
+Square-zero supercharges in the 10d $\mc N=(1,0)$ supersymmetry algebra correspond to holomorphic supercharges in the 8d $\mc N=1$ supersymmetry algebra.  As such, we can calculate the holomorphic twist of 8d $\mc N=1$ super Yang-Mills by dimensionally reducing the holomorphic twist of 10d $\mc N=(1,0)$ super Yang-Mills along a copy of $\CC$.  This theory can, unlike its 10- and 9-dimensional analogues, be made canonically $\ZZ$-graded.
 
-On the other hand, the topological twist -- the twist by an impure Weyl spinor -- of 8d $\mc N=1$ super Yang-Mills theory does not arise by dimensionally reducing a twisted theory in 9 dimensions.  This will be our first example of an A-type twist, as we discussed in Section \ref{A_twist_section} \chris{to add}: we will understand it as a family of degenerations of the holomorphic twist -- the twist by a pure Weyl spinor.
+On the other hand, the topological twist -- the twist by an impure Weyl spinor -- of 8d $\mc N=1$ super Yang-Mills theory does not arise by dimensionally reducing a twisted theory in 9 dimensions.  This will be our first example of an A-type twist, as we discussed in Section \ref{A_twist_section} \chris{to add}: we will understand it as a one parameter family of supercharges, degenerating at zero to the holomorphic twist -- the twist by a pure Weyl spinor.
 
 The holomorphic supercharge is stabilized by the group $\SU(4)$, and the topological supercharge is stabilized by $\spin(7)$.  If we want to stabilize the full one-parameter family describing the degeneration, we have to decompose our fields according to the action of the intersection $\SU(4) \cap \spin(7) \iso \SU(3)$.  The BRST fields decompose as
 \begin{align*}
@@ -1028,20 +1046,28 @@ A &\mapsto A_{0,1} + A_{1,0} + \chi^0_1 + \chi^0_2 \in (\Omega^{0,1}(\CC^3) \opl
 \lambda_+ &\mapsto \psi^+_{0,1} + \psi^+_{1,0} + \chi^+_1 + \chi^+_2 \in (\Omega^{0,1}(\CC^3) \oplus \Omega^{1,0}(\CC^3) \oplus \Omega^0(\CC^3)^2) \otimes \Omega^0(\RR^2_{x^7,x^8}) \otimes \gg\\
 \lambda_- &\mapsto \psi^-_{0,1} + \psi^-_{1,0} + \chi^-_1 + \chi^-_2 \in (\Omega^{0,1}(\CC^3) \oplus \Omega^{1,0}(\CC^3) \oplus \Omega^0(\CC^3)^2) \otimes \Omega^0(\RR^2_{x^7,x^8}) \otimes \gg
 \end{align*}
-along with the ghost and the two scalar fields $\phi_1$ and $\phi_2$, which remain unchanged.  In terms of these component fields we can write the BV action functional -- split into its BRST and antifield parts -- as
+along with the ghost $c$ and the two scalar fields $\phi_1$ and $\phi_2$, which remain unchanged.  In terms of these component fields we can write the action of our 1-parameter family of supercharges, which we'll denote by $Q_{\mr{hol}} + tQ'$.  We choose the two supercharge $Q_{\mr{hol}}$ and $Q'$ to each be pure individually, but to have impure sum.  The action of such a supercharge can be written in terms of a quadratic and a cubic interaction as
+\begin{align*}
+I^{(1)}_t &= \int \langle A_{1,0}^\vee, \psi_{1,0}^- + t\psi_{1,0}^+\rangle + \langle \phi_1^\vee, \chi_1^+ + t\chi_1^- \rangle + \langle \phi_2^\vee, \chi_2^- + t\chi_2^+ \rangle + \langle (\chi_1^-)\vee + t(\chi_1^+)^\vee, \Lambda F_{1,1} \rangle + \\
+&\quad + \langle (\psi^-_{1,0})^\vee + t(\psi^+_{1,0})^\vee, F_{0,2} \rangle + \langle (\psi^-_{0,1})^\vee + t(\psi^+_{0,1})^\vee, \ol \dd_{A_{0,1}} (\phi_1 + \chi_1^0) \rangle \\
+I^{(2)}_t &= \int \langle (\chi_1^+)^\vee + t(\chi_1^-)^\vee, (\chi_1^+)^\vee \rangle.
+\end{align*}
+\chris{This is a bit of a mess, but it's a first pass guess, and I think it's correct for $t=0$.  I want to identify $F_{0,2}$ on a CY3 with a $(1,0)$ form.}
+
+We can also write the BV action functional -- split into its BRST and antifield parts -- as
 \begin{align*}
 S_{\mr{BRST}} &= \\ 
 S_{\mr{anti}} &= .
 \end{align*}
 
-\chris{There might be a clever trick to avoid these calculations, involving the 10d calculation we already did to argue that certain fields definitely don't contribute (the ones that died in the 10d holomorphic twist, so we're left with only $A_{0,1}, \chi^0_1, \phi_1, \psi^+_{0,1}, \psi^+_{1,0}, \psi^-_{0,1}$ and $\chi^-_1$.) -- I need to think about it.}
+\chris{There might be a clever trick to avoid these action functional calculations, involving the 10d calculation we already did to argue that certain fields definitely don't contribute (the ones that died in the 10d holomorphic twist, so we're left with only $A_{0,1}, \chi^0_1, \phi_1, \psi^+_{0,1}, \psi^+_{1,0}, \psi^-_{1,0}$ and $\chi^-_1$.) -- I need to think about it.}
 
 \begin{theorem} \label{8d_holo_twist_thm}
 The holomorphic twist of 8d $\mc N=1$ super Yang-Mills theory on a Calabi-Yau 4-fold $X_4$ is equivalent to holomorphic BF theory on $X_4$. If $X_4$ splits into a product $X_3 \times S$ of a Calabi-Yau 3-fold and a flat surface, then this twist degenerates to a one-parameter family of topological twists of the form $\map(X_3 \times S, B\gg)_{\mr{Hod}}$
 \end{theorem}
 
 \begin{proof}
-
+\chris{Strategy: compute the holomorphic twist, as in 10d, and see which fields survive.  Then consider the perturbation of the twisted action.  Show that it doesn't change the fields that survive, maybe using a spectral sequence associated to the perturbation, and compute how the BV differential deforms.}
 \end{proof}
 
 \begin{remark}
@@ -1072,6 +1098,39 @@ The proof here is identical to the proof of Theorem \ref{9d_twist_thm}, we just 
 
 % \cN=(1, 0) SYM with matter in a pseudo-real representation, one twist. 
 
+\subsubsection{$\cN=(1,0)$ with matter}
+
+The $6$-dimensional $\mc N = (1,0)$ super Yang-Mills theory has BRST fields given by a ghost $c$, a $6$-dimensional gauge field $A$, and a Lie algebra valued spinor
+\[
+\lambda_+ \in \Omega^0(\RR^6) \otimes S_+^{6d} \otimes W \otimes \fg 
+\]
+where $W$ is a (complex) $2$-dimensional symplectic vector space. 
+The tensor product $S_+^{6d} \otimes W$ forms the $8$-dimensional symplectic Weyl representation. 
+
+A general theory of matter for $\cN = (1,0)$ supersymmetry arranges into a hypermultiplet which has the following BRST description.
+Let $S_-^{6d}$ be the negative $\so(6)$ irreducible spin representation and suppose $R$ is a (complex) symplectic $\fg$-representation, with symplectic pairing labeled by $\<-,-\>_R$. 
+The BRST fields of the $(1,0)$ hypermultiplet consist of a $W \otimes R$-valued scalar
+\[
+\phi \in \Omega^0(\RR^6) \otimes W \otimes R
+\]
+and an $R$ valued negative Weyl spinor
+\[
+\psi_- \in \Omega^0(\RR^6) \otimes S_-^{6d} \otimes R .
+\]
+Denote the induced symplectic pairing on $W \otimes R$ by $\<-,-\>_{W \otimes R}$. 
+The action of the free hypermultiplet is given by
+\[
+S_{\rm matter} (\phi, \psi_-) = \frac{1}{2} \int_{\RR^6} \d^6 x \; \<\partial_{x_i} \phi , \partial_{x_i} \phi\>_{W \otimes R} + \frac{1}{2} \int_{\RR^6} \d^6 x \;\<\psi_-, \sd \dd \psi_-\>_R .
+\]
+
+The action of supersymmetry on the $6$-dimensional matter theory is encoded by a linear and quadratic functional:
+\begin{align*}
+I^{(1)} (Q) & = \int \<\phi^*, (Q, \psi_-)\>_{W \otimes R} + \int \<\psi^*_-, \rho(\d \phi) Q\>_R \\
+I^{(2)} (Q_1 \otimes Q_2) & = \int \<\psi^*_- , \rho(\Gamma(Q_1, Q_2)) \psi_-\>_R 
+\end{align*}
+where we recall that the pairing is of the form $\Gamma : \Sigma^{\otimes 2} = (S_+ \otimes W)^{\otimes 2} \to V$. \brian{I'm also using $(S_+)^* = S_-$.}
+
+
 \subsection{Dimension 5}
 
 % \cN=2 SYM, three twists
@@ -1085,18 +1144,19 @@ The proof here is identical to the proof of Theorem \ref{9d_twist_thm}, we just 
 
 \subsubsection{$\cN=1$ SYM with matter} 
 
-The 4-dimensional $\mc N=1$ pure super Yang-Mills theory has BRST fields given by a ghost $c$, a gauge field $A$, and a Lie algebra valued Weyl spinor field $\lambda$. 
-In addition, $4$-dimensional supersymmetry supports a chiral (anti-chiral matter) multiplet, which comprises a complex scalar $\phi$ and a left (right) Weyl spinor $\psi_+$ ($\psi_-$). 
+The 4-dimensional $\mc N=1$ pure super Yang-Mills theory has BRST fields given by a ghost $c$, a 4d gauge field $A$, and a Lie algebra valued Weyl spinor field $\lambda$. 
+In addition, $4$-dimensional supersymmetry supports a chiral (or anti-chiral) matter multiplet, which comprises a complex scalar $\phi$ and a left (right) Weyl spinor $\psi_+$ ($\psi_-$). 
 
 The most general theory $4$-dimensional $\mc N = 1$ theory we will consider is super Yang-Mills theory valued in a Lie algebra $\fg$ coupled to a chiral multiplet with values in a complex $\fg$-representation $R$. 
 This means that the fields $\phi, \psi_+$ take values in $R$ and $\Bar{\phi}, \psi_-$ take values in $R^*$. 
-We have written down the action for supersymmetric Yang-Mills numerous times. 
-The kinetic action for $4$-dimensional $\mc N = 1$ matter is of the form
+We have written down the action for supersymmetric Yang-Mills theory numerous times. 
+The kinetic part of the action functional for $4$-dimensional $\mc N = 1$ matter is of the form
 \[
 S_{\rm matter} (\phi, \Bar{\phi}, \psi_+, \psi_-) = \int \d^4 x \; \<\partial_{x_i} \phi , \partial_{x_i} \Bar{\phi}\>_R + \int \d^4 x \; \<\psi_+ , \sd \dd \psi_-\>_R .
 \]
-Here $\<-,-\>_R$ denotes the obvious pairing between $R$ and $R^*$. 
-The coupling to Super Yang-Mills couples to the matter via the action \brian{what to say}
+
+Here $\<-,-\>_R$ incorporates the obvious pairing between $R$ and $R^*$. 
+Super Yang-Mills couples to the matter via the action 
 \[
 S_{\rm couple} = \int \d^4 x \;
 \]
@@ -1104,10 +1164,10 @@ Let $S_{\rm BV}$ denote the full BV action of $\mc N = 1$ super Yang-Mills coupl
 
 The BV action is clearly Poincar\'{e} invariant, so there is an interaction $I_{\rm Poin}$ encoding the action by the $4$-dimensional Poincar\'{e} algebra.
 
-As in Section \ref{symmetry_section}, we encode the action by supersymmetry for the $4$-dimensional matter theory by the functionals
+The action of supersymmetry on the $4$-dimensional matter theory is encoded by a linear and quadratic functional:
 \begin{align*}
-I^{(1)}_{\rm matter} (Q_+, Q_-) & = \int \<\phi^*, (Q_+, \psi_+)\>_R + \int \<\Bar{\phi}^*, (Q_-, \psi_-)\>_R + \int \<\psi^*_+, Q_+ \d \phi\>_R + \int \<\psi_-^*, Q_- \d \Bar{\phi}\>_R \\
-I^{(2)}_{\rm matter} (Q_+ \otimes Q_-) & = \int \<\psi^*_- , \rho(\Gamma(Q_+, Q_-)) \psi_+\>_R 
+I^{(1)} (Q_+, Q_-) & = \int \<\phi^*, (Q_+, \psi_+)\>_R + \int \<\Bar{\phi}^*, (Q_-, \psi_-)\>_R + \int \<\psi^*_+, \rho(\d \phi) Q_+ \>_R + \int \<\psi_-^*, \rho(\d \Bar{\phi}) Q_-\>_R \\
+I^{(2)} (Q_+ \otimes Q_-) & = \int \<\psi^*_- , \rho(\Gamma(Q_+, Q_-)) \psi_+\>_R.
 \end{align*}
 where $Q_\pm \in S_{\pm}$. 
 
@@ -1128,11 +1188,10 @@ satisfies the Maurer-Cartan equation
 Note that $I^{(1)}$ is linear in the supersymmetry algebra, and $I^{(2)}$ is quadratic.
 Thus, the induced action on the $4$-dimensional $\mc N=1$ theory by the supersymmetry algebra $\mf A$ is an $L_\infty$ action.
 
-We proceed to describe the twist of this general $4$-dimensional $\mc N=1$ gauge theory. 
-There is a single non-zero equivalence class of square zero supercharges in $4$-dimensional $\mc N = 1$, which we fix from hereon. 
+There is a single non-zero equivalence class of square zero supercharges in $4$-dimensional $\mc N = 1$, which we fix from here on. 
 Such supercharges are minimal (i.e. have 2d image).  
-They are stabilized by $\SU(2)$ \brian{really $U(2)$, i think}.  
-The R-symmetry group is $U(1)$, and so the twisted theory by such a supercharge is always $\ZZ$-graded.
+They are stabilized by $\SU(2)$ \brian{really $U(2)$, i think} \chris{Agreed: a minimal square zero spinor of positive helicity is stabilized by $\SU(2)_-$, but also by a torus in $\SU(2)_+$.}.  
+The R-symmetry group is $U(1)$, and the twisted theory by such a supercharge can always be made $\ZZ$-graded.
 
 We first decompose the fields of the 4-dimensional $\mc N=1$ theory with respect to the $\SU(2)$ stabilizer.
 The fields of the pure Yang-Mills part decomposes as:
