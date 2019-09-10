@@ -32,7 +32,7 @@
 
 \section{The BV-BRST Formalism}
 
-Throughout the paper we will mostly work with a $\ZZ\times\ZZ/2$-grading. \emph{Degree} will refer to the first (cohomological) grading and \emph{odd} or \emph{even} to the second (fermionic) grading.
+Throughout the paper we will mostly work with a $\ZZ\times\ZZ/2$-grading. \emph{Degree} will refer to the first (cohomological) grading and \emph{odd} or \emph{even} to the second (fermionic) grading. For an element $x$ we denote by $|x|\in\ZZ/2$ the total degree.
 
 Given a vector bundle $E\rightarrow M$ we denote by $\cE$ the space of smooth sections of $E$. We denote by $\oloc(\cE)$ the space of local functionals on $\cE$ (see \cite[Definition 4.5.1.1]{Book2}). We denote by $\oloc^+(\cE)\subset \oloc(\cE)$ the subspace of local functionals which are at least cubic.
 
@@ -61,20 +61,20 @@ that is
 
 We call $\cE$ the {\em space of BV fields}.  
 The pairing $\omega$ equips the algebra of local functionals on $E$ with a shifted bracket, in the following way.
-In Section 3 of \cite{CosRenorm}, it is shown that to every {\em local} functional $f \in \cO(\cE)$ there exists a symplectic vector field $X_f$ on $\cE$ whose Hamiltonian function is $f$. 
+In \cite[Chapter 5, Section 3]{CostelloBook}, it is shown that to every {\em local} functional $f \in \cO(\cE)$ there exists a symplectic vector field $X_f$ on $\cE$ whose Hamiltonian function is $f$. 
 Note that if $f$ is degree $n$, then $X_f$ is of degree $n+1$ due to the degree of $\omega$. 
 
 \begin{definition}
-The {\bf BV antibracket} $\{-,-\}$ is the bilinear map of cohomological degree $+1$
+The {\bf BV bracket} $\{-,-\}$ is the bilinear map of cohomological degree $+1$
 \[
-\{-,-\} : \oloc(\cE) \times \oloc(\cE) \to \oloc(\cE)
+\{-,-\}\colon \oloc(\cE) \times \oloc(\cE) \to \oloc(\cE)
 \]
 defined by sending a pair $(f,g)$ to the local functional $X_f (g)$.
-\chris{Also cite \cite{WittenAntibracket}.}
 \end{definition}
 
-This pairing is graded symmetric and satisfies the graded Jacobi identity.
-Note that since local functionals do not form an algebra, it is not a (shifted) Poisson bracket. 
+The BV bracket satisfies the symmetry property
+\[\{f, g\} = (-1)^{|f| |g|} \{g, f\}\]
+and the graded Jacobi identity. Note that since local functionals do not form an algebra, it is not a (shifted) Poisson bracket. 
 
 \begin{definition}
 A {\bf classical BV field theory} (or simply, classical field theory) is a free BV theory $(E, Q, \omega)$ equipped with an even functional
@@ -130,43 +130,35 @@ For a more thorough introduction, and for which our conventions are based on, we
 
 \subsection{Symmetries in the Classical BV Formalism} \label{symmetry_section}
 
-\chris{The idea, and a description of the kind of infinitesimal symmetries we're talking about (maybe just by a super Lie algebra in this paper, although we allow $L_\infty$ actions).  More generally we might consider the action of general local $L_\infty$ algebras.}
-
-\begin{definition} \label{infinitesimal_action_def}
-Let $(E, Q,\omega, I)$ be a classical field theory 
-A {\bf strict action} of a super Lie algebra $\fg$ on $(E, Q,\omega, I)$ is a map of super dg Lie algebras (in differentiable pro-cochain complexes)
-\[
-\rho\colon \fg \to \left(\oloc(E)[-1] , \{-,-\}_\omega, Q + \{I,-\}_\omega\right) .
-\]
-More generally, an $L_\infty$ {\bf action} is an $\infty$-morphism of super Lie algebras
-\[
-\rho\colon \fg \rightsquigarrow \left(\oloc(E)[-1] , \{-,-\}_\omega, Q + \{I,-\}_\omega\right) .
-\]
-\end{definition}
-
-We denote components of an $\infty$-morphism by $\rho_2, \rho_3, \dots$, so that $\rho_2$ is a morphism of (super) chain complexes (see Appendix \ref{appx:infinity}).
-\brian{Is there a reason $\rho_2$ is the linear map. I'd thought $\rho_1$...}
-
-Concretely, an action $\rho$ of a super dg Lie algebra $\fg$ on a classical field theory is given by an element
-\[I_{\rho} = \sum_{k\geq 1} I_{\rho}^{(k)}\in \oloc(E)\otimes \widehat{\sym}^{\geq 1}(\fg^*[-1])\]
-which satisfies the Maurer--Cartan equation
-\[\{S_{\mr{BV}}, I_\rho^{(k+1)}\} + \d_{CE} I_{\rho}^{(k)} + \frac{1}{2}\sum_{a+b=k+1} \{I_{\rho}^{(a)}, I_{\rho}^{(b)}\} = 0\]
-for every $k\geq 0$.
+In this section we define what it means for a Lie algebra to act on a classical field theory. Let $(E, Q,\omega, I)$ be a classical field theory and $\fg$ a super Lie algebra. Consider the graded vector space
+\[C^\bullet(\fg, \oloc(\cE)) = \bigoplus_n \hom(\wedge^n \fg, \oloc(\cE))[-n]\]
+parametrizing multilinear maps $f\colon \fg^{\otimes n}\rightarrow \oloc(\cE)$ which satisfy the antisymmetry property
+\[f(x_1, \dots, x_i, x_{i+1}, \dots, x_n) = -(-1)^{|x_1||x_2|} f(x_1, \dots, x_{i+1}, x_i, \dots, x_n).\]
+We follow the sign conventions of \cite{SafronovCoisoInt}, so the Chevalley--Eilenberg differential on $C^\bullet(\fg, \oloc(\cE))$ is given by the formula
+\[(\d_{CE} f)(x_1, \dots, x_n) = \sum_{i < j}(-1)^{|x_i| \sum_{p=1}^{i-1} |x_p| + |x_j| \sum_{p=1,p\neq i}^{j-1} |x_p| +i+j+|f|} f([x_i, x_j], x_1, \dots, \widehat{x}_i, \dots, \widehat{x}_j, \dots, x_n)\]
+and the BV bracket by the formula
+\[\{f, g\}(x_1, \dots, x_{k+l}) = \sum_{\sigma\in S_{k, l}} \mathrm{sgn}(\sigma) (-1)^{\epsilon+\epsilon_1} \{f(x_{\sigma(1)}, \dots, x_{\sigma(k)}), g(x_{\sigma(k+1)}, \dots, x_{\sigma(k+l)})\},\]
+where $S_{k, l}$ is the set of $(k, l)$-shuffles, $\epsilon$ is the usual Koszul sign and
+\[\epsilon_1 = |g|k + \sum_{i=1}^k |x_{\sigma(i)}|(l+|g|).\]
 
 \begin{definition}
-\chris{The definition of the Chevalley-Eilenberg complex with coefficients, in particular the cup product / bracket, with its correct sign.  Pavel suggested saying that $C^\bullet(\gg; V) = \hom(\sym^\bullet(\gg[1]), V)$, and following the sign rule he used in \cite[Section 2.1]{SafronovCoisoInt}.}
+\label{infinitesimal_action_def}
+Let $(E, Q,\omega, I)$ be a classical field theory. An {\bf action} of a super Lie algebra $\fg$ on $(E, Q, \omega, I)$ is an element
+\[I_{\rho} = \sum_{k\geq 0} I^{(k)}\in C^\bullet(\fg, \oloc(\cE)),\]
+where $I^{(0)} = I$ and $I^{(k)}\colon \fg^{\otimes k}\rightarrow \oloc(\cE)$, which satisfies the Maurer--Cartan equation
+\[(Q + \d_{CE}) I_\rho + \frac{1}{2} \{I_\rho, I_\rho\} = 0.\]
 \end{definition}
+
+We may also define actions of supergroups on classical field theories.
 
 \begin{definition}
-\chris{The definition of the equivariant observables in a classical BV theory with a symmetry as the relative Chevalley Eilenberg complex with coefficients in local functionals, with its anti-bracket.}
+\label{group_action_def}
+Let $(E, Q, \omega, I)$ be a classical field theory. An {\bf action} of a supergroup $G$ on $(E, Q, \omega, I)$ is an action of $G$ on $\cE$ preserving the symplectic pairing $\omega$, differential $Q$ and $I$ together with an action $I_\rho$ of its super Lie algebra $\fg$ with $I^{(k)} = 0$ for $k\geq 2$ such that for every $x\in\fg$ the vector field $X_{I^{(1)}(x)}$ on $\cE$ coincides with the infinitesimal action on $\cE$.
 \end{definition}
-
 
 \begin{remark}
-\chris{Remark on the d\'ecalage isomorphism with a reference, then give an interpretation of the relative Chevalley-Eilenberg complex after applying this isomorphism as the inclusion of background fields valued in the constant sheaf with value $\gg$.}
+While we allow for $L_\infty$ actions of Lie algebras, we only consider strict actions of Lie groups.
 \end{remark}
-
-\chris{mention smooth group actions, with a reference.}
 
 \subsection{The Classical Factorization Algebra}
 
@@ -230,28 +222,12 @@ Suppose $(F, S_{BRST})$ is a classical BRST theory such that $(\cE, Q)$ defined 
 
 We refer to the classical BV theory $(E, Q, \omega, I)$ from the above statement as the {\bf $(-1)$-shifted cotangent bundle} of $\cF$ and by abuse of notation we often denote it simply by $\cE = T^*[-1] \cF$. In the case $S_{BRST} = 0$ we refer to the theory $T^*[-1] \cF$ as a theory of {\bf cotangent type}.
 
+If the fields of the classical BRST theory are denoted by $\phi$, we denote their antifields in the classical BV theory by $\phi^*$, so that
+\[\{\phi(x), \phi^*(y)\} = \{\phi^*(y), \phi(x)\} = \delta(x-y).\]
+
 \subsection{Examples of BV-BRST Theories}
 
-\begin{comment}
-\brian{should we make these definitions, recollections, or just conventions?}
-
-If $M$ is a smooth manifold, its {\em de Rham stack}, as a dg ringed space, is 
-\[
-M_{\rm dR} = \left(M , (\Omega^\bu_M, \d_{\rm dR})\right) .
-\] 
-
-If $X$ is a complex manifold, there are two naturally associated dg ringed spaces that will be important for us. 
-The first is the $\dbar$-{\em stack}, defined by
-\[
-X_{\dbar} = \left(M , (\Omega^{0,\bu}_X, \dbar) \right) .
-\]
-The next is the {\em Dolbeault stack}, defined by
-\[
-X_{\rm Dol} = \left(M, (\Omega^{\bu,\bu}_X, \dbar)\right) .
-\] 
-Note that as sheaves of dg modules, there is a quasi-isomorphism $(\Omega^{p,*}_M, \dbar) = \Omega^{p, hol}_M$.
-Thus, one can think of the underlying ring of the Dolbeault stack as functions on the shifted holomorphic tangent bundle $T^{1,0} [1] M$ of $M$.
-\end{comment}
+In this section we give some examples of classical field theories we will use. All theories we consider in this section except for the Yang--Mills theory are $\ZZ$-graded, i.e. all fields are considered even with respect to the $\ZZ/2$-grading.
 
 \subsubsection{Generalized BF theory} \label{gen_BF_section}
 
@@ -260,7 +236,7 @@ Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty
 \begin{itemize}
 \item The spacetime is the smooth manifold $X\times Y\times M$.
 
-\item The bundle of BRST fields is the $\ZZ$-graded bundle $F = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1]$, where every field is considered even with respect to the $\ZZ/2$-grading. $F[-1]$ is equipped with a natural local $L_\infty$ algebra structure from $\fg$.
+\item The bundle of BRST fields is the $\ZZ$-graded bundle $F = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1]$. $F[-1]$ is equipped with a natural local $L_\infty$ algebra structure from $\fg$.
 
 \item The BRST action is $S_{BRST} = 0$.
 \end{itemize}
@@ -278,14 +254,14 @@ For $X=Y=\pt$ and $\fg$ an ordinary Lie algebra we recover the usual topological
 \end{example}
 
 Generally speaking, $BF$ theories will be the output of twisting a supersymmetric gauge theory. 
-In fact, a special case also applies to twisting theories of matter, which we will refer to as a $\beta\gamma$-system. 
+In fact, a special case also applies to twisting theories of matter, which we will refer to as a $\beta\gamma$ system. 
 
 \begin{definition}
 Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix a complex vector space $V$. The {\bf generalized $\beta\gamma$ system} is the BV theory given by the $(-1)$-shifted cotangent bundle of the following classical BRST theory:
 \begin{itemize}
 \item The spacetime is the smooth manifold $X\times Y\times M$.
 
-\item The bundle of BRST fields is the $\ZZ$-graded bundle $F = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes V$, where every field is considered even with respect to the $\ZZ/2$-grading. $F[-1]$ is equipped with an $L_\infty$ structure with $\ell_{k} = 0$ for $k \geq 2$. 
+\item The bundle of BRST fields is the $\ZZ$-graded bundle $F = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes V$. $F[-1]$ is equipped with an $L_\infty$ structure with $\ell_{k} = 0$ for $k \geq 2$. 
 
 \item The BRST action is $S_{BRST} = 0$.
 \end{itemize}
@@ -304,7 +280,7 @@ Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty
 \begin{itemize}
 \item The spacetime is the smooth manifold $X\times Y\times M$.
 
-\item The bundle of BV fields is the $\ZZ$-graded bundle $E = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1]$, where every field is considered even with respect to the $\ZZ/2$-grading.
+\item The bundle of BV fields is the $\ZZ$-graded bundle $E = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1]$.
 
 \item $Q = \dbar_X + \dbar_Y + \d_{\dR, M} + \ell_1$.
 
@@ -334,53 +310,50 @@ If $\fh$ is an $L_\infty$ algebra, $\fg = \fh \oplus \fh^*[d-3]$ carries a natur
 
 \subsubsection{Super Yang--Mills Theory} \label{YM_section}
 
-Let us now give an example of a theory which is not partially holomorphic. We will give a general description of the Yang--Mills theory on $M=\RR^n$ with adjoint spinorial matter. Fix a Lie algebra $\fg$ equipped with a nondegenerate symmetric bilinear pairing $\langle -, -\rangle$ and a spinorial representation $\Sigma$ of $\so(n; \CC)$ with an $\so(n)$-equivariant pairing $\Gamma \colon \Sym^2(\Sigma)\to \CC^n$ (see Section \ref{sec: susy} for more details on supersymmetry). The fields of super Yang--Mills theory are the following:
+Let us now give an example of a theory which is not partially holomorphic. We will give a general description of the Yang--Mills theory on a vector space $V_\RR = \RR^n$ with adjoint spinorial matter. Denote by $V=V_\RR\otimes_\RR \CC$ its complexification.
+
+Fix a Lie algebra $\fg$ equipped with a nondegenerate symmetric bilinear pairing $\langle -, -\rangle$ and a spinorial representation $\Sigma$ of $\so(V)$ with an $\so(V)$-equivariant pairing $\Gamma \colon \Sym^2(\Sigma)\to V$ (see Section \ref{sec: susy} for more details on supersymmetry). The fields of super Yang--Mills theory are the following:
 \begin{itemize}
-\item A connection $A \in \Omega^1(\RR^n; \fg)$ on the trivial bundle.
+\item A connection $A \in \Omega^1(V_\RR; \fg)$ on the trivial bundle.
 
-\item A section $\lambda \in \Omega^0(\RR^n; \Pi \Sigma \otimes \fg)$.
+\item A section $\lambda \in \Omega^0(V_\RR; \Pi \Sigma \otimes \fg)$.
 
-\item The ghost field $c\in\Omega^0(\RR^n; \fg)[1]$.
+\item The ghost field $c\in\Omega^0(V_\RR; \fg)[1]$.
 \end{itemize}
 
 Thus, the bundle of BRST fields is
-\[F = (\Omega^1(M)\oplus \Omega^0(M; \Pi\Sigma)\oplus \Omega^0(M)[1])\otimes \fg.\]
+\[F = (\Omega^1(V_\RR)\oplus \Omega^0(V_\RR; \Pi\Sigma)\oplus \Omega^0(V_\RR)[1])\otimes \fg.\]
 The corresponding local super dg Lie algebra $L=F[-1]$ is
 \[
 L \;\;\; = \begin{array}{ccccc}
 & \ul{0} & & \ul{1} & \\ 
 & & & & \\
-& \Omega^0(M; \gg) & \to & \Omega^1(M; \gg) \oplus \Omega^0(M; \Pi \Sigma \otimes \gg) & 
+& \Omega^0(V_\RR; \gg) & \to & \Omega^1(V_\RR; \gg) \oplus \Omega^0(V_\RR; \Pi \Sigma \otimes \gg) & 
 \end{array}
 \]
-whose differential is the de Rham differential $\Omega^0(M; \gg)\rightarrow \Omega^1(M; \gg)$ and the bracket is induced from the Lie bracket on $\gg$.
+whose differential is the de Rham differential $\Omega^0(V_\RR; \gg)\rightarrow \Omega^1(V_\RR; \gg)$ and the bracket is induced from the Lie bracket on $\gg$.
 
 Denote by $F_A = \d_{\dR} A + \frac{1}{2}[A\wedge A]$ the curvature of $A$ and let $\sd D_A \colon \Sigma \to \Sigma^*$ be the Dirac operator obtained from $\Gamma$ (see Section \ref{sec: susy}). We denote by $\sd\d$ the Dirac operator for the zero connection.
 
 The BRST action is given by
-\[S(A, \lambda) = \int_M \left\langle \frac{1}{2} F_A \wedge \ast F_A - (\lambda, \sd D_A \lambda)\right\rangle.\]
+\[S(A, \lambda) = \int_{V_\RR} \left\langle \frac{1}{2} F_A \wedge \ast F_A - (\lambda, \sd D_A \lambda)\right\rangle.\]
 
 The associated BV theory $(E, Q, \omega, I)$ is given as follows (see also \cite[Section 3.1]{ElliottYoo1}). Let $A^*, \lambda^*, c^*$ be the antifields corresponding to $A, \lambda, c$ respectively. The bundle of BV fields is
-\[E = \Omega^1(M; \fg)\oplus \Omega^0(M; \Pi\Sigma\otimes \fg)\oplus \Omega^0(M; \fg)[1] \oplus \Omega^{n-1}(M; \fg^*)[-1]\oplus \Omega^n(M; \Pi\Sigma^*\otimes \fg^*)[-1]\oplus \Omega^n(M; \fg^*)[-2].\]
+\[E = \Omega^1(V_\RR; \fg)\oplus \Omega^0(V_\RR; \Pi\Sigma\otimes \fg)\oplus \Omega^0(V_\RR; \fg)[1] \oplus \Omega^{n-1}(V_\RR; \fg^*)[-1]\oplus \Omega^n(V_\RR; \Pi\Sigma^*\otimes \fg^*)[-1]\oplus \Omega^n(V_\RR; \fg^*)[-2].\]
 The pairing $\omega$ on $E$ is induced by the evaluation pairings $\gg^*\otimes \gg\rightarrow \CC$ and $\Sigma^*\otimes\Sigma\rightarrow\CC$. The BV action is given by
-\[S_{BV} = \int_M \left\langle \frac{1}{2} F_A \wedge \ast F_A - (\lambda, \sd D_A \lambda)\right\rangle + (A^*, \d_A c) + (\lambda^*, [\lambda, c]).\]
+\[S_{BV} = \int_{V_\RR} \left\langle \frac{1}{2} F_A \wedge \ast F_A - (\lambda, \sd D_A \lambda)\right\rangle + (A^*, \d_A c) + (\lambda^*, [\lambda, c]).\]
 
-We'll conclude this section with a discussion of the Poincar\'e invariance of classical Yang-Mills theory.
+We conclude this section with a discussion of the Poincar\'e invariance of classical Yang--Mills theory.
 
 \begin{definition}
-The $n$-dimensional {\bf Poincar\'e group} is the group $\mr{ISO}(n) = \SO(n) \ltimes \RR^n$ of isometries of $\RR^n$ with its flat Riemannian metric.  The $n$-dimensional {\bf Poincar\'e algebra} $\mf{iso}(n)$ is the Lie algebra of the Poincar\'e group.
+The {\bf Poincar\'e group} is $\mr{ISO}(V_\RR) = \Spin(V_\RR) \ltimes \RR^n$. The {\bf Poincar\'e algebra} is its complexified Lie algebra $\mf{iso}(V)$.
 \end{definition}
 
-The $n$-dimensional Poincar\'e algebra acts, in the sense of Definition \ref{infinitesimal_action_def}, on Yang--Mills theory on $\RR^n$ for any choice $\Sigma$ of matter representation.
-\chris{define the interaction functional $I_\mr{Poin}$ associated to the Poincar\'e action on Yang-Mills theory.}
-
-\begin{prop} \label{YM_Poincare_invariant_prop}
-Yang--Mills theory is \emph{Poincar\'e invariant}.  That is, the classical BV action functional satisfies the Maurer-Cartan equation
-\[\{S_{BV}, I_{\mr{Poin}}\} + \d_{CE} I_{\mr{Poin}} + \frac 12 \{I_{\mr{Poin}}, I_{\mr{Poin}}\} = 0.\]
-\end{prop}
-\begin{proof}
-\chris{...}
-\end{proof}
+The Poincar\'e group acts, in the sense of Definition \ref{group_action_def}, on Yang--Mills theory on $\RR^n$ for any choice $\Sigma$ of matter representation. Indeed, there is an obvious Poincar\'e action on fields where we use that $\Sigma$ is a representation of $\Spin(V_\RR)$. The corresponding Hamiltonian is given by
+\[
+I_{\mr{Poin}}(v) = \int_{V_\RR} (v.A) \wedge A^* + (v.\lambda) \lambda^* + (v.c)c^*,
+\]
+where $v\in\mf{iso}(V)$.
 
 \subsection{Dimensional Reduction, take 2}
 
@@ -476,6 +449,8 @@ Consider a generalized Chern-Simons theory of the form $\map(X \times \RR_{\mr{d
 \section{Supersymmetry} \label{sec: susy}
 
 In this section we recall the framework for supersymmetry following \cite{ElliottSafronov} and \cite{DeligneSpinors}, we refer there for more details.
+
+\subsection{Supersymmetry algebras}
 
 Let $V_\RR = \RR^n$ endowed with its nondegenerate bilinear form and $V=V_\RR\otimes_\RR\CC$ its complexification. Consider the Lie algebra $\so(V)$. Let us recall the following facts:
 \begin{itemize}
