@@ -1,0 +1,65 @@
+\documentclass[10pt, oneside]{article}
+
+\input ./combined_macros.sty
+
+\newcommand{\Dens}{\mathrm{Dens}}
+
+\addbibresource{Twist.bib}
+
+\usepackage{pdflscape}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+\tikzstyle{s16} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=red!30]
+\tikzstyle{s16chiral} = [s16, dashed]
+\tikzstyle{s8 } = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=orange!30]
+\tikzstyle{s4} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=yellow!30]
+\tikzstyle{s2chiral} = [rectangle, dashed, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=green!30]
+\tikzstyle{dimension} = [circle, text centered, text width=0.7cm, minimum height=0.7cm, draw=black]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\title{Twists of supersymmetric gauge theories}
+\author{Chris Elliott\and Pavel Safronov \and Brian Williams}
+
+\date{\today}
+
+\begin{document}
+
+As we break 10d SYM from $\spin(10)$ to further subgroups of the spin group, the super Yang-Mills fields decompose as follows:
+\[
+\xymatrix{
+&\lambda \ar[dl]_{\to \Spin(8)} \ar[dr]^{\to \SU(5)} &\\
+\lambda_+, \lambda_- \ar[dr]_{\to \SU(4)} &&B_{0,2}, \psi_{1,0}, \chi \ar[dl]^{\to \SU(4)} \\
+&(B_{0,2}^+, \psi_{0,1}^-), (\psi_{1,0}^+, \wt \chi), \chi \ar[d]_{\to \SU(3)} &\\
+&((\psi_{1,0}^+, \psi_{0,1}^+), (\psi_{0,1}^-, \chi^-)), ((\psi_{1,0}^-, \wt \chi^-), \wt \chi^+), \chi^+ &
+}\]
+for the fermions and
+\[\xymatrix{
+&A \ar[dl]_{\to \Spin(8)} \ar[dr]^{\to \SU(5)} & \\
+A,\phi, \wt \phi \ar[dr]_{\to \SU(4)} &&A_{0,1}, A_{1,0} \ar[dl]^{\to \SU(4)} \\
+&A_{0,1},A_{1,0},\phi, \wt \phi \ar[d]_{\to \SU(3)} & \\
+&A_{0,1},A_{1,0},(\phi_1,  \phi_1),(\wt \phi_2, \wt \phi_2)&
+}
+\]
+for the bosons.  Here, for the fermions, the $+,-$ superscripts indicate whether we came from $\lambda_+$ or $\lambda_-$ (and the way the fields decompose otherwise is indicated by the brackets in a way I hope is more-or-less clear).  
+
+If we reduce the holomorphically twisted 10d theory to 8d, so restrict from $\SU(5)$ to $\SU(4)$, we can pick up a $\ZZ$-grading, where the fields coming from $\lambda_{\pm}$ have weight $\pm 1$, and where the surviving bosonic scalar $\phi$ has weight $-2$.  The components in the BV complex look like
+\[\xymatrix{
+&c \ar[r] &A_{0,1} \ar[r] &B_{0,2} \ar[r] &\psi_{0,1}^\vee \ar[r] &\phi^\vee \\
+\phi \ar[r] &\psi_{0,1} \ar[r] &B_{0,2}^\vee \ar[r] &A_{0,1}^\vee \ar[r] &c^\vee &
+}\]
+in degrees $-2, \ldots, 3$.  Now, if we reduce further to $\SU(3)$ representations, this can be rewritten as 
+\[\xymatrix{
+&c \ar[r] \ar[dr] &A_{0,1} \ar[r] \ar[dr] &\psi^+_{1,0} \ar[r] \ar[dr] &\chi^{-\vee} \ar[dr] & \\
+&&\phi_2 \ar[r]  &\psi^+_{0,1} \ar[r]  &\psi^{-\vee}_{0,1} \ar[r] &\phi_1^\vee \\
+\phi_1 \ar[r] \ar[dr] &\psi_{0,1}^- \ar[r] \ar[dr] &\psi^{+\vee}_{0,1} \ar[r] \ar[dr] &\phi_2^\vee \ar[dr] && \\
+&\chi^- \ar[r]  &\psi^{+\vee}_{1,0} \ar[r]  &A_{0,1}^\vee \ar[r] &c^\vee&
+}\]
+Note that this looks like the shifted cotangent to the complex $(\Omega^{0,\bullet}(\CC^3) \otimes \Omega^\bullet(\RR^2))[1]$.
+
+If we want to turn on the isomorphism between the two shifted copies of the complex, it looks like we need a pair of functionals that look something like
+\begin{align*}
+I^{(1)}_t &= t \int \langle c^\vee, \phi_1 \rangle + \langle A_{0,1}^\vee, \psi_{0,1}^- \rangle + \langle \phi_2^\vee, \chi^- \rangle \\
+I^{(2)}_t &= t \int \dvol \Lambda (\psi_{1,0}^{+\vee} \wedge \psi_{0,1}^{+\vee}).
+\end{align*}
+I'm a bit concerned about this, because it's unclear how $c^\vee$ could appear from our description of the supersymmetry action.
+\end{document}
