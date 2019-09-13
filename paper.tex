@@ -269,7 +269,7 @@ Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix a complex ve
 
 The generalized $\beta\gamma$ system is a special case of generalized $BF$ theory in the case that the $L_\infty$ aglebra is $\fg = V[-1]$, with trivial $L_\infty$ structure. 
 
-\brian{Should we say something about coupling here?}
+\brian{Should we say something about how the holomorphic theories couple here?}
 
 \subsubsection{Generalized Chern--Simons theory} \label{gen_CS_section}
 
@@ -1077,13 +1077,6 @@ The proof here is identical to the proof of Theorem \ref{9d_twist_thm}, we just 
 
 \subsubsection{$\cN=(1,0)$ with matter}
 
-The $6$-dimensional $\mc N = (1,0)$ super Yang-Mills theory has BRST fields given by a ghost $c$, a $6$-dimensional gauge field $A$, and a Lie algebra valued spinor
-\[
-\lambda_+ \in \Omega^0(\RR^6) \otimes S_+^{6d} \otimes W \otimes \fg 
-\]
-where $W$ is a (complex) $2$-dimensional symplectic vector space. 
-The tensor product $S_+^{6d} \otimes W$ forms the $8$-dimensional symplectic Weyl representation. 
-
 A general theory of matter for $\cN = (1,0)$ supersymmetry arranges into a hypermultiplet which has the following BRST description.
 Let $S_-^{6d}$ be the negative $\so(6)$ irreducible spin representation and suppose $R$ is a (complex) symplectic $\fg$-representation, with symplectic pairing labeled by $\<-,-\>_R$. 
 The BRST fields of the $(1,0)$ hypermultiplet consist of a $W \otimes R$-valued scalar
@@ -1106,7 +1099,54 @@ I^{(1)} (Q) & = \int \<\phi^*, (Q, \psi_-)\>_{W \otimes R} + \int \<\psi^*_-, \r
 I^{(2)} (Q_1 \otimes Q_2) & = \int \<\psi^*_- , \rho(\Gamma(Q_1, Q_2)) \psi_-\>_R 
 \end{align*}
 where we recall that the pairing is of the form $\Gamma : \Sigma^{\otimes 2} = (S_+ \otimes W)^{\otimes 2} \to V$. \brian{I'm also using $(S_+)^* = S_-$.}
+These functionals provide an off-shell action of $\cN = (1,0)$ supersymmetry on the free hypermultiplet, as the following proposition shows.
+Below, $\fL_{\rm matter}$ is the abelian local Lie algebra describing the free hypermultiplet, and $\mf A$ is the $(0,1)$ supertranslation algebra.  
+As always, $I_{\rm Poin}$ is the action functional encoding ordinary Poincar\'{e} invariance. 
 
+\begin{prop}[\cite{SWchar}]
+The functional
+\[
+\fS_{\rm matter} = S_{\rm matter} + I_{\rm Poin} + I^{(1)} + I^{(2)} \in \clie^\bu(\mf A) \otimes \cloc^\bu(\fL_{\rm matter}) [-1]
+\]
+satisfies the Maurer-Cartan equation
+\[
+\left(\d_{\rm Lie} \fS_{\rm matter} + \frac{1}{2} \{\fS_{\rm matter}, \fS_{\rm matter}\} \right) = 0 .
+\]
+\end{prop}
+\begin{proof}
+\brian{Do this already! It's almost identical to the proof in 4d, just need to do a bit of translation.} 
+\end{proof}
+
+Next, we move on to the $6$-dimensional $\cN=(1,0)$ super Yang-Mills. 
+The theory has BRST fields given by a ghost $c$, a $6$-dimensional gauge field $A$, and a Lie algebra valued spinor
+\[
+\lambda_+ \in \Omega^0(\RR^6) \otimes S_+^{6d} \otimes W \otimes \fg 
+\]
+where $W$ is a (complex) $2$-dimensional symplectic vector space. 
+The tensor product $S_+^{6d} \otimes W$ forms the $8$-dimensional symplectic Weyl representation. 
+The action of supersymmetry on the $6$-dimensional matter theory is encoded by a linear and quadratic functional:
+\begin{align*}
+I_{\rm gauge}^{(1)}(Q) & = \int \<A^*, \Gamma(Q, \lambda_+)\> + \<\lambda^*, \sd F_A Q\> \\
+I_{\rm gauge}^{(2)}(Q_1 \otimes Q_2) & = \int \left\<\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right\>  .
+\end{align*}
+These functionals define an off-shell action of the $\cN = (0,1)$ supersymmetry on the vector multiplet, as the following proposition states. 
+Below, $\fL_{\rm gauge}$ denotes the local Lie algebra describing super Yang-Mills, and $S_{\rm BV, gauge}$ is the full BV action. 
+
+\begin{prop}[\cite{SWchar}]
+The functional
+\[
+\fS_{\rm gauge} = S_{\rm BV, gauge} + I_{\rm Poin} + I_{\rm gauge}^{(1)} + I_{\rm gauge}^{(2)} \in \clie^\bu(\mf A) \otimes \cloc^\bu(\fL_{\rm gauge}) [-1]
+\]
+satisfies the Maurer-Cartan equation
+\[
+\left(\d_{\rm Lie} \fS_{\rm gauge} + \frac{1}{2} \{\fS_{\rm gauge}, \fS_{\rm gauge}\} \right) = 0 .
+\]
+\end{prop}
+\begin{proof}
+\brian{Do this already! It's almost identical to the proof in 4d, just need to do a bit of translation.} 
+\end{proof}
+
+\brian{now on to couplings...}
 
 \subsection{Dimension 5}
 
@@ -1123,6 +1163,7 @@ where we recall that the pairing is of the form $\Gamma : \Sigma^{\otimes 2} = (
 
 The 4-dimensional $\mc N=1$ pure super Yang-Mills theory has BRST fields given by a ghost $c$, a 4d gauge field $A$, and a Lie algebra valued Weyl spinor field $\lambda$. 
 In addition, $4$-dimensional supersymmetry supports a chiral (or anti-chiral) matter multiplet, which comprises a complex scalar $\phi$ and a left (right) Weyl spinor $\psi_+$ ($\psi_-$). 
+We note that the results in the section have appeared in \cite{SW4d}. 
 
 The most general theory $4$-dimensional $\mc N = 1$ theory we will consider is super Yang-Mills theory valued in a Lie algebra $\fg$ coupled to a chiral multiplet with values in a complex $\fg$-representation $R$. 
 This means that the fields $\phi, \psi_+$ take values in $R$ and $\Bar{\phi}, \psi_-$ take values in $R^*$. 
@@ -1148,9 +1189,14 @@ I^{(2)} (Q_+ \otimes Q_-) & = \int \<\psi^*_- , \rho(\Gamma(Q_+, Q_-)) \psi_+\>_
 \end{align*}
 where $Q_\pm \in S_{\pm}$. 
 
-Also define $I^{(1)}_{\rm gauge}$ and $I^{(2)}_{\rm gauge}$. \brian{this is so similar to the 10d case. How do you suggest we do this?}
+Also define $I^{(1)}_{\rm gauge}$ and $I^{(2)}_{\rm gauge}$ by:
+\begin{align*}
+I^{(1)}_{\rm gauge} (Q_+, Q_-) & = \int \<A^* , \Gamma(Q_+ + Q_-, \lambda)\> + \<\lambda^*, \sd F_A (Q_+ + Q_-)\> \\
+I^{(2)}_{\rm gauge} (Q_+ \otimes Q_-) & = \int \left\<\lambda^*, \rho(\Gamma(Q_+, Q_-)) \lambda^* + \frac{1}{2} ((Q_+, \lambda^*) Q_- + (Q_-, \lambda^*)Q_+)\right\> .
+\end{align*}
 
-\begin{prop} 
+
+\begin{prop}[\cite{SWchar}]
 Let $I^{(1)} = I^{(1)}_{\rm matter} + I^{(1)}_{\rm gauge}$ and $I^{(2)} = I^{(2)}_{\rm matter} + I^{(2)}_{\rm gauge}$. 
 Then, the functional
 \[
@@ -1185,6 +1231,9 @@ The matter fields decompose as
 \psi_- & \mapsto \beta_0 + \beta_{2,0} \in \Omega^{0,0}(\CC^2 ; R^*) \oplus \Omega^{2,0}(\CC^2 ; R^*) .
 \end{align*}
 
+\begin{prop}[\cite{SWchar}]
+The minimal twist of 4d $\cN=1$ super Yang-Mills coupled to the $\cN=1$ chiral multiplet on \brian{a complex surface or $\CC^2$} is equivalent to holomorphic $BF$ theory coupled to the holomorphic $\beta\gamma$ system. 
+\end{prop}
 %
 %The matter sector of the theory is labeled by the BRST fields:
 %\begin{itemize}
