@@ -1,0 +1,123 @@
+\documentclass[12pt]{amsart}
+
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{amssymb}
+\usepackage[all]{xy}
+\usepackage{slashed}
+\usepackage{cleveref}
+
+\newcommand{\dvol}{\mathrm{dVol}}
+\newcommand{\sD}{\slashed{D}}
+\newcommand{\g}{\mathfrak{g}}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lm}[thm]{Lemma}
+
+\textwidth=16.5cm
+\oddsidemargin=0cm
+\evensidemargin=0cm
+\textheight=22cm
+\topmargin=0cm
+
+\binoppenalty=10000
+\relpenalty=10000
+
+\begin{document}
+
+\section{}
+
+\subsection{Useful formulas}
+
+The relationship between Clifford multiplication and $\Gamma$ is
+\[(v, \Gamma(Q_1, Q_2)) = \langle Q_1, \rho(v) Q_2\rangle.\]
+
+For a one-form $\beta$ we have
+\[\alpha\wedge \beta = (\ast\alpha, \beta)\dvol.\]
+
+\subsection{Computation}
+To simplify the notation, we drop the integral, the pairing on $\g$ and the volume form.
+
+The BRST action is
+\[S_{BRST} = \frac{1}{2} F_A\wedge \ast F_A - \langle\lambda, \sD_A\lambda\rangle.\]
+
+The BV action is
+\[S_{BV} = \frac{1}{2} F_A\wedge \ast F_A - \langle\lambda, \sD_A\lambda\rangle + (d_A c, A^*) - \langle[\lambda, c], \lambda^*\rangle + \frac{1}{2}([c, c], c^*).\]
+
+The supersymmetry action is given by
+\begin{align*}
+I^{(1)}(Q) &= \Gamma(Q, \lambda)\wedge A^*\rangle + \frac{1}{2} \langle \rho(F_A) Q, \lambda^*\rangle \\
+I^{(2)}(Q_1, Q_2) &= (\Gamma(Q_1, Q_2), \Gamma(\lambda^*, \lambda^*)) + \langle Q_1, \lambda^*\rangle \langle Q_2, \lambda^*\rangle
+\end{align*}
+
+We need to check
+\begin{align}
+\{S_{BV}, I^{(1)}\} &= 0 \label{eq:num1} \\
+\{S_{BV}, I^{(2)}\} + d_{CE} I^{(1)} + \frac{1}{2}\{I^{(1)}, I^{(1)}\} &= 0 \label{eq:num2} \\
+d_{CE} I^{(2)} + \{I^{(1)}, I^{(2)}\} &= 0. \label{eq:num3}
+\end{align}
+
+\subsection{Checking \eqref{eq:num1}}
+
+\begin{lm}[Snygg]
+Suppose $X$ is an adjoint-valued $p$-form and $Q$ a constant spinor. Then
+\[\sD_A(\rho(X)Q) = \rho(d_A X) Q+ (-1)^{n(p+1)}\rho(\ast d_A \ast X) Q.\]
+\label{lm:snygg}
+\end{lm}
+
+\begin{lm}
+\[\{I^{(1)}(Q), S_{BV}\} = (\Gamma(Q, \lambda), \Gamma(\lambda, \lambda)).\]
+\end{lm}
+\begin{proof}
+Let us split $S_{BV} = \sum_{i=1}^5 S_{BV}^i$ into individual summands.
+
+The first term gives
+\begin{align*}
+\{I^{(1)}(Q), S_{BV}^1\} &= d_A \Gamma(Q, \lambda)\wedge \ast F_A\\
+&= \Gamma(Q, \lambda)\wedge d_A \ast F_A \\
+&= (-1)^{n-1} d_A\ast F_A\wedge \Gamma(Q, \lambda) \\
+&= (-1)^{n-1} (\ast d_A \ast F_A, \Gamma(Q, \lambda)).
+\end{align*}
+
+The second term gives
+\begin{align*}
+\{I^{(1)}(Q), S_{BV}^2\} &= (\lambda, \rho(\Gamma(Q, \lambda))\lambda) - (\rho(F_A) Q, \sD_A\lambda) \\
+&= (\Gamma(Q, \lambda), \Gamma(\lambda, \lambda)) + (\lambda, \sD_A(\rho(F_A) Q)) \\
+&= (\Gamma(Q, \lambda), \Gamma(\lambda, \lambda)) + (-1)^n (\lambda, \rho(\ast d_A\ast F_A) Q),
+\end{align*}
+where we have used Lemma \cref{lm:snygg} and the Bianchi identity in the last line.
+
+The third term gives
+\begin{align*}
+\{I^{(1)}(Q), S_{BV}^3\} &= [\Gamma(Q, \lambda), c]\wedge A^* + \frac{1}{2}(\rho(d_A d_A c)Q, \lambda^*) \\
+&= \Gamma(Q, [\lambda, c])\wedge A^* + \frac{1}{2}(\rho([F_A, c]) Q, \lambda^*).
+\end{align*}
+
+The fourth term gives
+\begin{align*}
+\{I^{(1)}(Q), S_{BV}^4\} &= -\frac{1}{2}([\rho(F_A) Q, c], \lambda^*) - \Gamma(Q, [\lambda, c])\wedge A^*.
+\end{align*}
+
+The fifth term gives
+\[\{I^{(1)}(Q), S_{BV}^5\} = 0.\]
+\end{proof}
+
+\subsection{Checking \eqref{eq:num2}}
+
+We have
+\begin{align*}
+\{I^{(1)}, I^{(1)}\}(Q_1, Q_2) &= -2\{I^{(1)}(Q_1), I^{(1)}(Q_2)\} \\
+&= -\langle \rho(d_A \Gamma(Q_1, \lambda))Q_2, \lambda^*\rangle - \Gamma(Q_2, \rho(F_A)Q_1)\wedge A^* + 1\leftrightarrow 2
+\end{align*}
+
+\[
+(d_{CE} I^{(1)})(Q_1, Q_2) = -L_{\Gamma(Q_1, Q_2)}(A)\wedge A^* - \langle\Gamma(Q_1, Q_2).\lambda, \lambda^*\rangle - (\Gamma(Q_1, Q_2).c) c^*
+\]
+
+\[
+\{S_{BV}, I^{(2)}(Q_1, Q_2)\} = 2(\Gamma(Q_1, Q_2), \Gamma(\lambda^*, \sD_A \lambda + [\lambda^*, c])) + (Q_1, \lambda^*)(Q_2, \sD_A \lambda + [\lambda^*, c]) + 1\leftrightarrow 2
+\]
+
+\textbf{Question}. For two spinors $Q_1, Q_2$ and a two-form $X$, is the following true?
+\[\Gamma(Q_1, \rho(X) Q_2) + \Gamma(Q_2, \rho(X) Q_1) = \iota_{\Gamma(Q_1, Q_2)} X\]
+
+\end{document}
