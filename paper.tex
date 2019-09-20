@@ -683,7 +683,7 @@ We can filter the complex $\clie^\bu(\mf A) \otimes \cloc^\bu(\fL)$ by the numbe
 &\quad + \d_{\mr{CE}} I^{(2)} + \{I_{\mr{Poin}}, I^{(2)}\} + \{I^{(1)}, I^{(2)}\} \label{MC_3}\\
 &\quad + \frac 12 \{I^{(2)}, I^{(2)}\}. \label{MC_4}
 \end{align}
-Taking these terms one at a time, we first note that the vanishing of the first term, \ref{MC_BV}, is just the fact that the BV action of the 10d super Yang-Mills theory satisfies the classical master equation, and is Poincar\'e invariant, as in Proposition \ref{YM_Poincare_invariant_prop}. The remaining terms are those involving the action of supersymmetries.
+Taking these terms one at a time, we first note that the vanishing of the first term, \ref{MC_BV}, is just the fact that the BV action of the 10d super Yang-Mills theory \brian{here is a statement about 10d, but the theorem is about dimensions 3,4, 6, 10} satisfies the classical master equation, and is Poincar\'e invariant, as in Proposition \ref{YM_Poincare_invariant_prop}. The remaining terms are those involving the action of supersymmetries.
 
 First, the term \ref{MC_1} vanishes by \cite[Proposition 14]{BaezHuerta}.  Baez and Huerta prove that in our four critical dimensions, the variation $\delta^{(1)}S_{\mr{BRST}}$ of the ordinary BRST action functional vanishes.  In particular, this implies that $\delta^{(1)}S_{\mr{BV}} = \{I^{(1)}, S_{\mr{BV}}\}$ also vanishes, since \chris{why?}.
 
@@ -1129,10 +1129,11 @@ The action of supersymmetry on the $6$-dimensional matter theory is encoded by a
 I_{\rm gauge}^{(1)}(Q) & = \int \<A^*, \Gamma(Q, \lambda_+)\> + \<\lambda^*, \sd F_A Q\> \\
 I_{\rm gauge}^{(2)}(Q_1 \otimes Q_2) & = \int \left\<\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right\>  .
 \end{align*}
-These functionals define an off-shell action of the $\cN = (0,1)$ supersymmetry on the vector multiplet, as the following proposition states. 
+These functionals define an off-shell action of the $\cN = (0,1)$ supersymmetry on the vector multiplet, which we proved above in Theorem \label{SUSY_YM_theorem}, and state below as a proposition. 
 Below, $\fL_{\rm gauge}$ denotes the local Lie algebra describing super Yang-Mills, and $S_{\rm BV, gauge}$ is the full BV action. 
 
-\begin{prop}[\cite{SWchar}]
+ implies the following proposition for $6d$
+\begin{prop}[special case of Theorem \ref{SUSY_YM_theorem}]
 The functional
 \[
 \fS_{\rm gauge} = S_{\rm BV, gauge} + I_{\rm Poin} + I_{\rm gauge}^{(1)} + I_{\rm gauge}^{(2)} \in \clie^\bu(\mf A) \otimes \cloc^\bu(\fL_{\rm gauge}) [-1]
@@ -1142,11 +1143,6 @@ satisfies the Maurer-Cartan equation
 \left(\d_{\rm Lie} \fS_{\rm gauge} + \frac{1}{2} \{\fS_{\rm gauge}, \fS_{\rm gauge}\} \right) = 0 .
 \]
 \end{prop}
-\begin{proof}
-\brian{Do this already! It's almost identical to the proof in 4d, just need to do a bit of translation.} 
-\end{proof}
-
-\brian{now on to couplings...}
 
 \subsection{Dimension 5}
 
@@ -1163,22 +1159,19 @@ satisfies the Maurer-Cartan equation
 
 The 4-dimensional $\mc N=1$ pure super Yang-Mills theory has BRST fields given by a ghost $c$, a 4d gauge field $A$, and a Lie algebra valued Weyl spinor field $\lambda$. 
 In addition, $4$-dimensional supersymmetry supports a chiral (or anti-chiral) matter multiplet, which comprises a complex scalar $\phi$ and a left (right) Weyl spinor $\psi_+$ ($\psi_-$). 
-We note that the results in the section have appeared in \cite{SW4d}. 
 
 The most general theory $4$-dimensional $\mc N = 1$ theory we will consider is super Yang-Mills theory valued in a Lie algebra $\fg$ coupled to a chiral multiplet with values in a complex $\fg$-representation $R$. 
 This means that the fields $\phi, \psi_+$ take values in $R$ and $\Bar{\phi}, \psi_-$ take values in $R^*$. 
-We have written down the action for supersymmetric Yang-Mills theory numerous times. 
+We have written down the action for supersymmetric pure Yang-Mills theory numerous times, which we call $S_{\rm gauge}$ here. 
 The kinetic part of the action functional for $4$-dimensional $\mc N = 1$ matter is of the form
 \[
 S_{\rm matter} (\phi, \Bar{\phi}, \psi_+, \psi_-) = \int \d^4 x \; \<\partial_{x_i} \phi , \partial_{x_i} \Bar{\phi}\>_R + \int \d^4 x \; \<\psi_+ , \sd \dd \psi_-\>_R .
 \]
 
 Here $\<-,-\>_R$ incorporates the obvious pairing between $R$ and $R^*$. 
-Super Yang-Mills couples to the matter via the action 
-\[
-S_{\rm couple} = \int \d^4 x \;
-\]
-Let $S_{\rm BV}$ denote the full BV action of $\mc N = 1$ super Yang-Mills coupled to matter.
+There is also a term $S_{\rm couple}$ describing the coupling between Yang-Mills and the matter fields. 
+Since we will not need the explicit form of the coupling in the untwisted theory, we do not give the formula here. 
+Let $S_{\rm BV} = S_{\rm gauge} + S_{\rm matter} + S_{\rm couple}$ denote the full BV action of $\mc N = 1$ super Yang-Mills coupled to matter.
 
 The BV action is clearly Poincar\'{e} invariant, so there is an interaction $I_{\rm Poin}$ encoding the action by the $4$-dimensional Poincar\'{e} algebra.
 
@@ -1195,6 +1188,8 @@ I^{(1)}_{\rm gauge} (Q_+, Q_-) & = \int \<A^* , \Gamma(Q_+ + Q_-, \lambda)\> + \
 I^{(2)}_{\rm gauge} (Q_+ \otimes Q_-) & = \int \left\<\lambda^*, \rho(\Gamma(Q_+, Q_-)) \lambda^* + \frac{1}{2} ((Q_+, \lambda^*) Q_- + (Q_-, \lambda^*)Q_+)\right\> .
 \end{align*}
 
+These functionals prescribe an off-shell action of $4$-dimensional $\cN=1$ super Yang-Mills coupled to matter, as we state in the following proposition.
+The result appears in \cite{SWchar}, and we do not repeat the proof here. 
 
 \begin{prop}[\cite{SWchar}]
 Let $I^{(1)} = I^{(1)}_{\rm matter} + I^{(1)}_{\rm gauge}$ and $I^{(2)} = I^{(2)}_{\rm matter} + I^{(2)}_{\rm gauge}$. 
@@ -1213,10 +1208,10 @@ Thus, the induced action on the $4$-dimensional $\mc N=1$ theory by the supersym
 
 There is a single non-zero equivalence class of square zero supercharges in $4$-dimensional $\mc N = 1$, which we fix from here on. 
 Such supercharges are minimal (i.e. have 2d image).  
-They are stabilized by $\SU(2)$ \brian{really $U(2)$, i think} \chris{Agreed: a minimal square zero spinor of positive helicity is stabilized by $\SU(2)_-$, but also by a torus in $\SU(2)_+$.}.  
+They are stabilized by ${\rm U}(2)$; indeed a minimal square zero spinor of positive (negative) helicity is stabilized by $\SU(2)_-$ ($\SU(2)_+$), but also by a torus in $\SU(2)_+$ ($\SU(2)_-$).  
 The R-symmetry group is $U(1)$, and the twisted theory by such a supercharge can always be made $\ZZ$-graded.
 
-We first decompose the fields of the 4-dimensional $\mc N=1$ theory with respect to the $\SU(2)$ stabilizer.
+We first decompose the fields of the 4-dimensional $\mc N=1$ theory with respect to the ${\rm U}(2)$ stabilizer.
 The fields of the pure Yang-Mills part decomposes as:
 \begin{align*}
 c & \mapsto c \in \Omega^0(\CC^2 ; \fg) \\
@@ -1231,8 +1226,30 @@ The matter fields decompose as
 \psi_- & \mapsto \beta_0 + \beta_{2,0} \in \Omega^{0,0}(\CC^2 ; R^*) \oplus \Omega^{2,0}(\CC^2 ; R^*) .
 \end{align*}
 
+There are symmetries in the untwisted theory that will remain symmetries upon twisting. 
+\begin{itemize}
+\item The twisted theory is a shifted cotangent theory in the BV formalism. 
+This means that the action functional of the holomorphic theory must be linear in the fields $B$ and $\beta$ of the holomorphic BF and holomorphic $\beta\gamma$ system, respectively. 
+\item The action functional is invariant with respect to the group $\U(2)$ symmetry, which is the stabilizer of the fixed holomorphic supercharge.
+\item The action functional is translation invariant, this follows from the fact that the untwisted theory has an 
+\end{itemize}
+
+Let $\fg$ and $R$ be a Lie algebra together with a representation.
+Define the following graded Lie algebra
+\[
+\sG_{\cN=1} = \fg[z_1,z_2] \ltimes \left(\d^2 z \; \fg^* [z_1,z_2] [-1] \oplus R[z_1,z_2][-1] \oplus \d^2 z \; R^*[z_1,z_2]\right) .
+\]
+Also, denote by $\CC^2_{\rm trans}$ the abelian Lie algebra which acts on $\sG_{\cN=1}$ by the constant coefficient holomorphic vector fields $\partial_1 = \frac{\partial}{\partial z_1}$ and $\partial_2 = \frac{\partial}{\partial z_2}$. 
+
+\begin{prop}
+The equivalence classes of translation invariant couplings between holomorphic BF theory with values in $\fg$ and the holomorphic $\beta\gamma$ system with values in $R$ on the complex manifold $\CC^2$ are in bijective correspondence with the Lie algebra homology / cohomology:
+\[
+\clieu_\bu\left(\CC^2_{\rm trans}, \clie^\bu(\sG_{\cN=1})\right) [2] .
+\]
+\end{prop}
+
 \begin{prop}[\cite{SWchar}]
-The minimal twist of 4d $\cN=1$ super Yang-Mills coupled to the $\cN=1$ chiral multiplet on \brian{a complex surface or $\CC^2$} is equivalent to holomorphic $BF$ theory coupled to the holomorphic $\beta\gamma$ system. 
+The minimal twist of 4d $\cN=1$ super Yang-Mills with Lie algebra $\fg$ coupled to the $\cN=1$ chiral multiplet valued in a representation $R$ on \brian{a complex surface or $\CC^2$} is equivalent to holomorphic $BF$ theory for the Lie algebra $\fg$ coupled to the holomorphic $\beta\gamma$ system with values in the representation $R$. 
 \end{prop}
 %
 %The matter sector of the theory is labeled by the BRST fields:
