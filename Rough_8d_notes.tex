@@ -28,16 +28,16 @@ As we break 10d SYM from $\spin(10)$ to further subgroups of the spin group, the
 \[
 \xymatrix{
 &\lambda \ar[dl]_{\to \Spin(8)} \ar[dr]^{\to \SU(5)} &\\
-\lambda_+, \lambda_- \ar[dr]_{\to \SU(4)} &&B_{0,2}, \psi_{1,0}, \chi \ar[dl]^{\to \SU(4)} \\
-&(B_{0,2}^+, \psi_{0,1}^-), (\psi_{1,0}^+, \wt \chi), \chi \ar[d]_{\to \SU(3)} &\\
-&((\psi_{1,0}^+, \psi_{0,1}^+), (\psi_{0,1}^-, \chi^-)), ((\psi_{1,0}^-, \wt \chi^-), \wt \chi^+), \chi^+ &
+\lambda_+, \lambda_- \ar[dr]_{\to \SU(4)} \ar[d]_{\to \Spin(7)} &&B_{0,2}, \psi_{1,0}, \chi \ar[dl]^{\to \SU(4)} \\
+(A_7^+, \wt \chi^+), (A_7^-, \wt \chi^-) \ar[dr] &(B_{0,2}^+, \psi_{0,1}^-), (\psi_{1,0}^+, \wt \chi), \chi \ar[d]_{\to \SU(3)} &\\
+ &((\psi_{1,0}^+, \psi_{0,1}^+), (\psi_{0,1}^-, \chi^-)), ((\psi_{1,0}^-, \wt \chi^-), \wt \chi^+), \chi^+ &
 }\]
 for the fermions and
 \[\xymatrix{
 &A \ar[dl]_{\to \Spin(8)} \ar[dr]^{\to \SU(5)} & \\
-A,\phi, \wt \phi \ar[dr]_{\to \SU(4)} &&A_{0,1}, A_{1,0} \ar[dl]^{\to \SU(4)} \\
-&A_{0,1},A_{1,0},\phi, \wt \phi \ar[d]_{\to \SU(3)} & \\
-&A_{0,1},A_{1,0},(\phi_1,  \phi_1),(\wt \phi_2, \wt \phi_2)&
+A,\phi, \wt \phi \ar[dr]_{\to \SU(4)} \ar[d]_{\to \Spin(7)} &&A_{0,1}, A_{1,0} \ar[dl]^{\to \SU(4)} \\
+\lambda_7, \phi, \wt \phi \ar[dr] &A_{0,1},A_{1,0},\phi, \wt \phi \ar[d]_{\to \SU(3)} & \\
+&A_{0,1},A_{1,0},(\phi_1,  \phi_2),(\wt \phi_1, \wt \phi_2)&
 }
 \]
 for the bosons.  Here, for the fermions, the $+,-$ superscripts indicate whether we came from $\lambda_+$ or $\lambda_-$ (and the way the fields decompose otherwise is indicated by the brackets in a way I hope is more-or-less clear).  
@@ -58,8 +58,14 @@ Note that this looks like the shifted cotangent to the complex $(\Omega^{0,\bull
 
 If we want to turn on the isomorphism between the two shifted copies of the complex, it looks like we need a pair of functionals that look something like
 \begin{align*}
-I^{(1)}_t &= t \int \langle c^\vee, \phi_1 \rangle + \langle A_{0,1}^\vee, \psi_{0,1}^- \rangle + \langle \phi_2^\vee, \chi^- \rangle \\
-I^{(2)}_t &= t \int \dvol \Lambda (\psi_{1,0}^{+\vee} \wedge \psi_{0,1}^{+\vee}).
+I^{(1)}_t &= t \int \langle A_{0,1}^\vee, \psi_{0,1}^- \rangle + \langle \phi_2^\vee, \chi^- \rangle \\
+I^{(2)}_t &= t \int \langle c^\vee, \phi_1 \rangle + \dvol \Lambda (\psi_{1,0}^{+\vee} \wedge \psi_{0,1}^{+\vee}).
 \end{align*}
-I'm a bit concerned about this, because it's unclear how $c^\vee$ could appear from our description of the supersymmetry action.
+
+%Let's now restrict the fields in the untwisted classical BV theory now, not to $\SU(4)$ but to $\Spin(7)$, and try to determine the action %of the impure twist using the fact that it is supposed to be compatible with $\Spin(7)$.  This theory should also be $\ZZ$-graded.  The %components in the BV complex look like
+%\[\xymatrix{
+%. 
+%}\]
+%again in degrees 
+
 \end{document}
