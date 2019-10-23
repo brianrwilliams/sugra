@@ -597,7 +597,20 @@ So, we calculate
 &=  F_{ij}\delta^{jk}(Q_2 \gamma^i Q_1) \\
 &= \delta_{[Q_1, Q_2]} A,
 \end{align*}
-where on the third line we used the fact that the pairing $\Gamma(-,-)$ is symmetric -- i.e. that $\lambda_1 \gamma^i \lambda_2 = \lambda_2 \gamma^i \lambda_1$ -- and on the fourth line we used the Clifford relation $\gamma^j\gamma^j+\gamma^j\gamma^j = \delta^{jk}$.  Note that, on the gauge fields, the action is a Lie action on the nose, not only on-shell.  Similarly we can calculate, (as in \cite{Guillen}):
+where on the third line we used the fact that the pairing $\Gamma(-,-)$ is symmetric -- i.e. that $\lambda_1 \gamma^i \lambda_2 = \lambda_2 \gamma^i \lambda_1$ -- and on the fourth line we used the Clifford relation $\gamma^j\gamma^j+\gamma^j\gamma^j = \delta^{jk}$.  
+
+\brian{Here's the coordinate free argument. 
+\begin{align*}
+[\delta_{Q_1}, \delta_{Q_2}] A &= (\Gamma(Q_2,\sd F_A Q_1) + \Gamma(Q_1,\sd F_A Q_2)) \\ 
+& = i_{[Q_1,Q_2]} (F_A) \\ & = L_{[Q_1,Q_2]} (A) + \d_A(i_X A) .
+\end{align*}
+In the second line we have used the identity 
+\[
+\Gamma(Q_1, \rho(\omega) Q_2) + \Gamma(Q_2, \rho(\omega) Q_1) = i_{[Q_1,Q_2]} (\omega)
+\]
+which holds for every two-form $\omega$. 
+}
+Note that, on the gauge fields, the action is a Lie action on the nose, not only on-shell.  Similarly we can calculate, (as in \cite{Guillen}):
 \begin{align*}
 [\delta_{Q_1}, \delta_{Q_2}] \lambda &= (\sd F_{\Gamma(Q_2, \lambda)} Q_1 + \sd F_{\Gamma(Q_1,\lambda)} Q_2) \\
 &= \frac 12((Q_2 (\gamma_j \dd_i - \gamma_i \dd_j) \lambda) (\gamma^i \gamma^j Q_1) + (1 \leftrightarrow 2)) \\
@@ -1177,14 +1190,18 @@ The BV action is clearly Poincar\'{e} invariant, so there is an interaction $I_{
 
 The action of supersymmetry on the $4$-dimensional matter theory is encoded by a linear and quadratic functional:
 \begin{align*}
-I^{(1)} (Q_+, Q_-) & = \int \<\phi^*, (Q_+, \psi_+)\>_R + \int \<\Bar{\phi}^*, (Q_-, \psi_-)\>_R + \int \<\psi^*_+, \rho(\d \phi) Q_+ \>_R + \int \<\psi_-^*, \rho(\d \Bar{\phi}) Q_-\>_R \\
-I^{(2)} (Q_+ \otimes Q_-) & = \int \<\psi^*_- , \rho(\Gamma(Q_+, Q_-)) \psi_+\>_R.
+I^{(1)}_{\rm matter} (Q_+ + Q_-) & = \int \<\phi^*, (Q_+, \psi_+)\>_R + \int \<\Bar{\phi}^*, (Q_-, \psi_-)\>_R + \int \<\psi^*_+, \rho(\d \phi) Q_- \>_R + \int \<\psi_-^*, \rho(\d \Bar{\phi}) Q_+\>_R \\
+I^{(2)}_{\rm matter} (Q_+ \otimes Q_-) & = \int \<\psi^*_- , \rho(\Gamma(Q_+, Q_-)) \psi_+^*\>_R +.
 \end{align*}
 where $Q_\pm \in S_{\pm}$. 
+As usual, we will use the notation $\delta_Q$ to denote the endomorphism on fields satisfying
+\[
+I^{(1)}_{\rm matter} = \int \<\phi^* + \Bar{\phi}^* + \psi^*_+ + \psi_-^*, \delta_Q(\phi + \Bar{\phi} + \psi_+ + \psi_-) \> .
+\]
 
 Also define $I^{(1)}_{\rm gauge}$ and $I^{(2)}_{\rm gauge}$ by:
 \begin{align*}
-I^{(1)}_{\rm gauge} (Q_+, Q_-) & = \int \<A^* , \Gamma(Q_+ + Q_-, \lambda)\> + \<\lambda^*, \sd F_A (Q_+ + Q_-)\> \\
+I^{(1)}_{\rm gauge} (Q_+ + Q_-) & = \int \<A^* , \Gamma(Q_+ + Q_-, \lambda)\> + \<\lambda^*, \sd F_A (Q_+ + Q_-)\> \\
 I^{(2)}_{\rm gauge} (Q_+ \otimes Q_-) & = \int \left\<\lambda^*, \rho(\Gamma(Q_+, Q_-)) \lambda^* + \frac{1}{2} ((Q_+, \lambda^*) Q_- + (Q_-, \lambda^*)Q_+)\right\> .
 \end{align*}
 
@@ -1205,6 +1222,52 @@ satisfies the Maurer-Cartan equation
 
 Note that $I^{(1)}$ is linear in the supersymmetry algebra, and $I^{(2)}$ is quadratic.
 Thus, the induced action on the $4$-dimensional $\mc N=1$ theory by the supersymmetry algebra $\mf A$ is an $L_\infty$ action.
+
+\begin{proof}
+First, consider the pure matter sector $\fS_{\rm matter} = S_{\rm matter} + I_{\rm Poin} + I^{(1)}_{\rm matter} + I^{(2)}_{\rm matter}$. 
+We will show that $\fS_{\rm matter}$ satisfies the classical master equation. 
+It is clear that
+\[
+\d_{\rm Lie} S_{\rm matter} + \d_{\rm Lie} (I^{(1)}_{\rm matter} + I^{(2)}_{\rm matter}) + \frac{1}{2} \{S_{\rm matter} + I_{\rm Poin}, S_{\rm matter} + I_{\rm Poin}\} = 0 ,
+\]
+so we only need to consider the terms involving $\{S_{\rm matter}, I_{\rm matter}^{(1)}\}$, $\{S_{\rm matter}, I^{(2)}_{\rm matter}\}$, $\d_{\rm Lie} I_{\rm Poin}$, and $\{I^{(1)}_{\rm matter}, I^{(1)}_{\rm matter}\}$. 
+
+\brian{should I say something about why the term $\{S_{\rm matter}, I^{(1)}\} = 0$.}
+
+The BV bracket $\{I_{\rm matter}^{(1)}, I_{\rm matter}^{(1)}\}$ reads:
+\[
+\{I^{(1)}, I^{(1)}\}(Q_+ + Q_-, Q_+' + Q_-') = \int \left\<\phi^* + \Bar{\phi}^* + \psi^*_+ + \psi_-^*, [\delta_{Q_+ + Q_-}, \delta_{Q_+' + Q_-'}] \left(\phi + \Bar{\phi}^* + \psi_+ + \psi_-\right) \right\>  .
+\]
+Now
+\begin{align*} 
+[\delta_{Q_+ + Q_-}, \delta_{Q_+' + Q_-'}] (\phi + \Bar{\phi}) & = (\delta_{Q_+} + \delta_{Q_-}) \left(\<Q'_+, \psi_+\>_+ + \<Q'_-, \psi_-\>_-\right) - (\delta_{Q'_+} + \delta_{Q'_-}) \left(\<Q_+, \psi_+\>_+ + \<Q_-, \psi_-\>_-\right) \\ & = \<Q'_+, \rho(\d \phi) Q_-\>_+ + \<Q'_-, \rho(\d \Bar{\phi}) Q_+\>_- -  \<Q_+, \rho(\d \phi) Q'_-\>_+ - \<Q_-, \rho(\d \Bar{\phi}) Q'_+\>_- \\ & = (\d (\phi + \Bar{\phi}), \Gamma(Q_+ + Q_-, Q_+' + Q_-')) \\ & = L_{[Q_++Q_-, Q_+'+Q_-']} (\phi + \Bar{\phi}) \\ & = \delta_{[Q_+ + Q_-, Q_+' + Q_-']} (\phi + \Bar{\phi})
+\end{align*}
+In the third line we have used the identity $(v, \Gamma(Q_1, Q_2)) = \<\rho(v) Q_1, Q_2\>$ where $Q_i \in S$, $v \in V$, $\<-,-\>$ is the spinor pairing, and $(-,-)$ is the inner product on $V$. 
+The third line follows from the relation $(\d \phi, v) = L_v (\phi)$ where $L_v$ is the Lie derivative. 
+Let $I_{\rm Poin}(\phi,\Bar{\phi})$ be the piece of $I_{\rm Poin}$ depending on $\phi, \Bar{\phi}$ and their antifields.
+This calculation implies
+\[
+\left(\d_{CE} I_{\rm Poin}(\phi, \Bar{\phi}) + \frac{1}{2} \left\{I_{\rm matter}^{(1)}(\phi, \Bar{\phi}), I_{\rm matter}^{(1)}(\phi, \Bar{\phi})\right\} \right) (Q_+ + Q_- , Q_+' + Q_-') = 0
+\]
+for all $Q_\pm, Q_\pm'$. 
+
+Next, we prove the following lemma involving the pieces of $I^{(1)}_{\rm matter}$, $I^{(2)}_{\rm matter}$ involving $\psi_\pm$.
+This will finish the proof that the pure matter sector $\fS_{\rm matter}$ satisfies the classical master equation. 
+\begin{lem}
+\[
+\d_{CE} I_{\rm Poin}(\psi_\pm) + \{S_{\rm matter}, I_{\rm matter}^{(2)}\} + \frac{1}{2} \{I_{\rm matter}^{(1)}(\psi_\pm), I_{\rm matter}^{(1)}(\psi_\pm)\} = 0.
+\]
+\end{lem}
+\begin{proof}
+
+\begin{align*}
+[\delta_{Q_+ + Q_-}, \delta_{Q_+' + Q_-'}] (\psi_+ + \psi_-) & = Fierz / 3 \psi \\ & = \delta_{[Q_+ + Q_-, Q_+' + Q_-']} (\psi_+ + \psi_-) \pm \rho(\Gamma(Q_++Q_-, Q_+' + Q_-')) \cdot \sd \dd (\psi_+ + \psi_-) .
+\end{align*}
+\end{proof} 
+
+Next, we move on to the gauge sector $\fS_{\rm gauge} = S_{\rm BV, gauge} + I_{\rm Poin} + I^{(1)}_{\rm gauge} + I^{(2)}_{\rm gauge}$. 
+\end{proof}
+
 
 There is a single non-zero equivalence class of square zero supercharges in $4$-dimensional $\mc N = 1$, which we fix from here on. 
 Such supercharges are minimal (i.e. have 2d image).  
@@ -1231,15 +1294,19 @@ There are symmetries in the untwisted theory that will remain symmetries upon tw
 \item The twisted theory is a shifted cotangent theory in the BV formalism. 
 This means that the action functional of the holomorphic theory must be linear in the fields $B$ and $\beta$ of the holomorphic BF and holomorphic $\beta\gamma$ system, respectively. 
 \item The action functional is invariant with respect to the group $\U(2)$ symmetry, which is the stabilizer of the fixed holomorphic supercharge.
-\item The action functional is translation invariant, this follows from the fact that the untwisted theory has an 
+\item The action functional is translation invariant, this follows from the fact that the untwisted theory has a 
 \end{itemize}
 
+The first symmetry we exploit is translation invariance. 
+There is a general fact that translation invariant couplings can be described neatly in terms of the Lie algebra homology / cohomology of a certain Lie algebra. 
 Let $\fg$ and $R$ be a Lie algebra together with a representation.
 Define the following graded Lie algebra
 \[
-\sG_{\cN=1} = \fg[z_1,z_2] \ltimes \left(\d^2 z \; \fg^* [z_1,z_2] [-1] \oplus R[z_1,z_2][-1] \oplus \d^2 z \; R^*[z_1,z_2]\right) .
+\sG_{\cN=1} = \left(\fg[z_1,z_2] \ltimes \d^2 z \; \fg^* [z_1,z_2] [-1]\right) \oplus \left(R[z_1,z_2][-1] \oplus \d^2 z \; R^*[z_1,z_2]\right) .
 \]
+One can think of the Lie algebra $\sG_{\cN=1}$ as the $\infty$-jets at $0 \in \CC^2$ \brian{finish} of the Lie algebra describing at 
 Also, denote by $\CC^2_{\rm trans}$ the abelian Lie algebra which acts on $\sG_{\cN=1}$ by the constant coefficient holomorphic vector fields $\partial_1 = \frac{\partial}{\partial z_1}$ and $\partial_2 = \frac{\partial}{\partial z_2}$. 
+
 
 \begin{prop}
 The equivalence classes of translation invariant couplings between holomorphic BF theory with values in $\fg$ and the holomorphic $\beta\gamma$ system with values in $R$ on the complex manifold $\CC^2$ are in bijective correspondence with the Lie algebra homology / cohomology:
