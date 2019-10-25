@@ -1232,7 +1232,22 @@ It is clear that
 \]
 so we only need to consider the terms involving $\{S_{\rm matter}, I_{\rm matter}^{(1)}\}$, $\{S_{\rm matter}, I^{(2)}_{\rm matter}\}$, $\d_{\rm Lie} I_{\rm Poin}$, and $\{I^{(1)}_{\rm matter}, I^{(1)}_{\rm matter}\}$. 
 
+Throughout this proof we drop the pairing $\<-,-\>_R$ from the notation.
+Also, we continue to denote the spinorial pairing by $\<-,-\>$ and the standard inner product by $(-,-)$. 
+
 \brian{should I say something about why the term $\{S_{\rm matter}, I^{(1)}\} = 0$.}
+The equality $\{S_{\rm matter}, I^{(1)}\} = 0$ simply says that $S_{\rm matter}$ is invariant under the usual linear supersymmetric action.
+The argument for this is completely standard, see for instance \brian{refs}, but we repeat it here for concreteness. 
+The BV bracket involving terms in $S_{\rm matter}$ depending on $\phi,\Bar{\phi}$ is:
+\begin{align*}
+\frac{1}{2} \left\{ \int \d \phi \wedge * \d \Bar{\phi} \; , \; I^{(1)} \right\} & = \int \d (\<Q_+, \psi_+\>) \wedge * \d \Bar{\phi} + \int \d \phi \wedge * \d (\<Q_-, \psi_-\>) \\
+& = \pm \int (\Gamma(\sd \dd \psi_+, Q_+), \d \Bar{\phi}) \pm \int (\d \phi, \Gamma(\sd \dd \psi_-, Q_-)) .
+\end{align*}
+The BV bracket involving terms in $S_{\rm matter}$ depending on $\psi_\pm$ is:
+\begin{align*}
+\frac{1}{2} \left\{\int \<\psi_+ , \sd \dd \psi_-\> \; , \; I^{(1)} \right\} & = \int \<\rho(\d \phi) Q_-, \sd \dd \psi_-\> = \int \<\psi_+, \sd \dd (\rho(\d \Bar{\phi}) Q_+)\> \\ & =  \int \<\rho(\d \phi) Q_-, \sd \dd \psi_-\> = \int \<\sd \dd \psi_+, (\rho(\d \Bar{\phi}) Q_+)\> \\ & = \int (\d \phi, \Gamma(\sd \dd \psi_-, Q_-)) + \int (\d \Bar{\phi}, \Gamma(\sd \dd \psi_+, Q_+)) 
+\end{align*}
+\brian{Get the signs right and these terms should cancel.}
 
 The BV bracket $\{I_{\rm matter}^{(1)}, I_{\rm matter}^{(1)}\}$ reads:
 \[
@@ -1294,7 +1309,7 @@ There are symmetries in the untwisted theory that will remain symmetries upon tw
 \begin{itemize}
 \item The twisted theory is a shifted cotangent theory in the BV formalism. 
 This means that the action functional of the holomorphic theory must be linear in the fields $B$ and $\beta$ of the holomorphic BF and holomorphic $\beta\gamma$ system, respectively. 
-\item The action functional is invariant with respect to the group $\U(2)$ symmetry, which is the stabilizer of the fixed holomorphic supercharge.
+\item The action functional is invariant with respect to the group ${\rm U}(2)$ symmetry, which is the stabilizer of the fixed holomorphic supercharge.
 \item The action functional is translation invariant, this follows from the fact that the untwisted theory has a 
 \end{itemize}
 
