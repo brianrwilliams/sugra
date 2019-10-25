@@ -1236,16 +1236,17 @@ so we only need to consider the terms involving $\{S_{\rm matter}, I_{\rm matter
 
 The BV bracket $\{I_{\rm matter}^{(1)}, I_{\rm matter}^{(1)}\}$ reads:
 \[
-\{I^{(1)}, I^{(1)}\}(Q_+ + Q_-, Q_+' + Q_-') = \int \left\<\phi^* + \Bar{\phi}^* + \psi^*_+ + \psi_-^*, [\delta_{Q_+ + Q_-}, \delta_{Q_+' + Q_-'}] \left(\phi + \Bar{\phi}^* + \psi_+ + \psi_-\right) \right\>  .
+\{I^{(1)}_{\rm matter}, I^{(1)}_{\rm matter}\}(Q_+ + Q_-, Q_+' + Q_-') = 2 \int \left\<\phi^* + \Bar{\phi}^* + \psi^*_+ + \psi_-^*, [\delta_{Q_+ + Q_-}, \delta_{Q_+' + Q_-'}] \left(\phi + \Bar{\phi} + \psi_+ + \psi_-\right) \right\>  .
 \]
 Now
 \begin{align*} 
-[\delta_{Q_+ + Q_-}, \delta_{Q_+' + Q_-'}] (\phi + \Bar{\phi}) & = (\delta_{Q_+} + \delta_{Q_-}) \left(\<Q'_+, \psi_+\>_+ + \<Q'_-, \psi_-\>_-\right) - (\delta_{Q'_+} + \delta_{Q'_-}) \left(\<Q_+, \psi_+\>_+ + \<Q_-, \psi_-\>_-\right) \\ & = \<Q'_+, \rho(\d \phi) Q_-\>_+ + \<Q'_-, \rho(\d \Bar{\phi}) Q_+\>_- -  \<Q_+, \rho(\d \phi) Q'_-\>_+ - \<Q_-, \rho(\d \Bar{\phi}) Q'_+\>_- \\ & = (\d (\phi + \Bar{\phi}), \Gamma(Q_+ + Q_-, Q_+' + Q_-')) \\ & = L_{[Q_++Q_-, Q_+'+Q_-']} (\phi + \Bar{\phi}) \\ & = \delta_{[Q_+ + Q_-, Q_+' + Q_-']} (\phi + \Bar{\phi})
+[\delta_{Q_+ + Q_-}, \delta_{Q_+' + Q_-'}] (\phi + \Bar{\phi}) & = (\delta_{Q_+} + \delta_{Q_-}) \left(\<Q'_+, \psi_+\>_+ + \<Q'_-, \psi_-\>_-\right) - (\delta_{Q'_+} + \delta_{Q'_-}) \left(\<Q_+, \psi_+\>_+ + \<Q_-, \psi_-\>_-\right) \\ & = \<Q'_+, \rho(\d \phi) Q_-\>_+ + \<Q'_-, \rho(\d \Bar{\phi}) Q_+\>_- -  \<Q_+, \rho(\d \phi) Q'_-\>_+ - \<Q_-, \rho(\d \Bar{\phi}) Q'_+\>_- \\ & = (\d (\phi + \Bar{\phi}), \Gamma(Q_+ + Q_-, Q_+' + Q_-')) \\ & = L_{[Q_++Q_-, Q_+'+Q_-']} (\phi + \Bar{\phi}) %\\ & = \delta_{[Q_+ + Q_-, Q_+' + Q_-']} (\phi + \Bar{\phi})
 \end{align*}
 In the third line we have used the identity $(v, \Gamma(Q_1, Q_2)) = \<\rho(v) Q_1, Q_2\>$ where $Q_i \in S$, $v \in V$, $\<-,-\>$ is the spinor pairing, and $(-,-)$ is the inner product on $V$. 
 The third line follows from the relation $(\d \phi, v) = L_v (\phi)$ where $L_v$ is the Lie derivative. 
 Let $I_{\rm Poin}(\phi,\Bar{\phi})$ be the piece of $I_{\rm Poin}$ depending on $\phi, \Bar{\phi}$ and their antifields.
-This calculation implies
+The last line above is simply the Lie derivative with respect to the translation invariant vector field $[Q_++Q_-, Q_+'+Q_-']$ on the field $\phi + \Bar{\phi}$, which is precisely the symmetry encoded by $I_{\rm Poin}$.
+Thus, this calculation implies
 \[
 \left(\d_{CE} I_{\rm Poin}(\phi, \Bar{\phi}) + \frac{1}{2} \left\{I_{\rm matter}^{(1)}(\phi, \Bar{\phi}), I_{\rm matter}^{(1)}(\phi, \Bar{\phi})\right\} \right) (Q_+ + Q_- , Q_+' + Q_-') = 0
 \]
