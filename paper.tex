@@ -1030,39 +1030,96 @@ Square-zero supercharges in the 10d $\mc N=(1,0)$ supersymmetry algebra correspo
 
 On the other hand, the topological twist -- the twist by an impure Weyl spinor -- of 8d $\mc N=1$ super Yang-Mills theory does not arise by dimensionally reducing a twisted theory in 9 dimensions.  This will be our first example of an A-type twist, as we discussed in Section \ref{A_twist_section} \chris{to add}: we will understand it as a one parameter family of supercharges, degenerating at zero to the holomorphic twist -- the twist by a pure Weyl spinor.
 
-The holomorphic supercharge is stabilized by the group $\SU(4)$, and the topological supercharge is stabilized by $\spin(7)$.  If we want to stabilize the full one-parameter family describing the degeneration, we have to decompose our fields according to the action of the intersection $\SU(4) \cap \spin(7) \iso \SU(3)$.  The BRST fields decompose as
-\begin{align*}
-A &\mapsto A_{0,1} + A_{1,0} + \phi_2 + \wt \phi_2 \in (\Omega^{0,1}(\CC^3) \oplus \Omega^{1,0}(\CC^3) \oplus \Omega^0(\CC^3)^2) \otimes \Omega^0(\RR^2_{x^7,x^8}) \otimes \gg\\
-\lambda_+ &\mapsto \psi^+_{0,1} + \psi^+_{1,0} + \chi^+ + \wt \chi^+ \in (\Omega^{0,1}(\CC^3) \oplus \Omega^{1,0}(\CC^3) \oplus \Omega^0(\CC^3)^2) \otimes \Omega^0(\RR^2_{x^7,x^8}) \otimes \gg\\
-\lambda_- &\mapsto \psi^-_{0,1} + \psi^-_{1,0} + \chi^- + \wt \chi^- \in (\Omega^{0,1}(\CC^3) \oplus \Omega^{1,0}(\CC^3) \oplus \Omega^0(\CC^3)^2) \otimes \Omega^0(\RR^2_{x^7,x^8}) \otimes \gg
-\end{align*}
-along with the ghost $c$ and the two scalar fields $\phi_1$ and $\wt \phi_1$, which remain unchanged.  In terms of these component fields we can write the action of our 1-parameter family of supercharges, which we'll denote by $Q_{\mr{hol}} + tQ'$.  We choose the two supercharge $Q_{\mr{hol}}$ and $Q'$ to each be pure individually, but to have impure sum.  The action of such a supercharge can be written in terms of a quadratic and a cubic interaction as
-\begin{align*}
-I^{(1)}_t &= \int \langle A_{1,0}^\vee, \psi_{1,0}^- + t\psi_{1,0}^+\rangle + \langle \phi_1^\vee, \chi^+ + t\chi^- \rangle + \langle \phi_2^\vee, \wt \chi^- + t\wt \chi^+ \rangle + \langle (\chi^-)\vee + t(\chi^+)^\vee, \Lambda F_{1,1} \rangle + \\
-&\quad + \langle (\psi^-_{1,0})^\vee + t(\psi^+_{1,0})^\vee, F_{0,2} \rangle + \langle (\psi^-_{0,1})^\vee + t(\psi^+_{0,1})^\vee, \ol \dd_{A_{0,1}} (\phi_1 + \phi_2) \rangle \\
-I^{(2)}_t &= \int \langle (\chi^+)^\vee + t(\chi^-)^\vee, (\chi^+)^\vee \rangle.
-\end{align*}
-\chris{This is a bit of a mess, but it's a first pass guess, and I think it's correct for $t=0$.  I want to identify $F_{0,2}$ on a CY3 with a $(1,0)$ form.}
+The holomorphic supercharge is stabilized by the group $\SU(4)$, and the topological supercharge is stabilized by $\spin(7)$.  If we want to stabilize the full one-parameter family describing the degeneration, we have to decompose our fields according to the action of the intersection $\SU(4) \cap \spin(7) \iso \SU(3)$ \chris{check this claim: can we see it in terms of the Dynkin diagrams?}.  So, let's begin by establishing notation for the BRST fields of maximal super Yang-Mills after reduction to representations of various subgroups of $\SO(10)$.  We can write this schematically in the following way.
 
-We can also write the BV action functional -- split into its BRST and antifield parts -- as
+First, let us consider the reduction of the 10d spinor $\lambda$.  We have already described the decomposition of the spinor representation into irreducible summands for the group $\SU(5)$: it decomposes into a sum $B_{0,2} + \psi_{1,0} + \chi$ of a $(0,2)$-form, a $(1,0)$-form, and a scalar (all valued in the Lie algebra $\gg$).  We have also already described its decomposition into irreducible summands for the group $\mr O(8)$: it splits into a positive and a negative Weyl spinor, $\lambda^+ + \lambda^-$.  Let us continue to decompose these fields into smaller subgroups.  We indicate this schematically as follows (Figure \ref{fig:8dfermiondecomp}).
+\begin{figure}[!h]
+\[
+\xymatrix{
+&\lambda \ar[dl]_{\to\,  \mr{O}(8)} \ar[dr]^{\to\,  \SU(5)} &\\
+\lambda^+, \lambda^- \ar[dr]_{\to\,  \SU(4)} \ar[d]_{\to\,  \Spin(7)} &&B_{0,2}, \psi_{1,0}, \chi \ar[dl]^{\to\,  \SU(4)} \\
+(A_7^+, \wt \chi^+), \lambda^- \ar[dr] &(B_{0,2}^+, \psi_{0,1}^-), (\psi_{1,0}^+, \wt \chi^-), \chi^- \ar[d]_{\to\,  \SU(3)} &\\
+ &((\psi_{1,0}^+, \psi_{0,1}^+), (\psi_{0,1}^-, \chi^-)), ((\psi_{1,0}^-, \wt \chi^-), \wt \chi^+), \chi^+. &
+}\]
+\caption{Decomposition of the 10d fermionic field $\lambda$ upon restriction to subgroups of $\mr O(10)$.}
+\label{fig:8dfermiondecomp}
+\end{figure}
+In this diagram, the superscript $\pm$ indicates whether each component field arose as a summand of $\lambda^+$ or $\lambda^-$.  The $\chi^\pm$ and $\wt \chi^\pm$ are $\gg$-valued scalars, and the fields $A_7^\pm$ are $\gg$-valued elements of the vector representation of $\spin(7)$.  Finally, we have used parentheses to indicate how the fields decompose under the restriction from $\SU(n)$ to $\SU(n-1)$.
+
+We can do the same for the decomposition of the 10d gauge field $A$.  Again, we indicate this schematically as follows (Figure \ref{fig:8dbosondecomp}).
+\begin{figure}[!h]
+\[\xymatrix{
+&A \ar[dl]_{\to\,  \mr{O}(8)} \ar[dr]^{\to\,  \SU(5)} & \\
+A,\phi_1, \wt \phi_1 \ar[dr]_{\to\,  \SU(4)} \ar[d]_{\to\,  \Spin(7)} &&A_{0,1}, A_{1,0} \ar[dl]^{\to\,  \SU(4)} \\
+\lambda_7, \phi_1, \wt \phi_1 \ar[dr] &A_{0,1},A_{1,0},\phi_1, \wt \phi_1 \ar[d]_{\to\,  \SU(3)} & \\
+&(A_{0,1}, \phi_2) ,(A_{1,0}, \wt \phi_2) \phi_1, \wt \phi_1.&
+}
+\]
+\caption{Decomposition of the 10d bosonic field $A$ upon restriction to subgroups of $\mr O(10)$.}
+\label{fig:8dbosondecomp}
+\end{figure}
+Now $\phi_i$ and $\wt \phi_i$ denote $\gg$-valued scalar fields, and $\lambda_7$ denotes a field valued in the spinor representation of $\Spin(7)$.
+
+Using this decomposition, we can describe the supersymmetric interaction terms $I^{(1)}$ and $I^{(2)}$ after reduction from 10d to 8d, with respect to various subgroups of $\mr O(8)$.  We begin by considering $\mr O(8)$ itself.
+\begin{prop} \label{O8_decomposition_of_susy_prop}
+
+After reduction to $\mr O(8)$, the interaction terms $I^{(1)}$ and $I^{(2)}$ become
 \begin{align*}
-S_{\mr{BRST}} &= \\ 
-S_{\mr{anti}} &= .
+I^{(1)}(Q^+) &= \langle A^\vee, \Gamma(Q^+, \lambda^-)\rangle + \langle \phi_1,^\vee (Q^+,\lambda^+)\rangle + \langle \lambda^{+\vee}, \sd F_A Q_+ \rangle + \langle \lambda^{-\vee}, \rho(\dd \phi_1)Q_+ \rangle\\
+I^{(2)}(Q^+, Q^+) &= (\lambda^{+\vee}, \lambda^{+\vee})(Q^+,Q^+) + (\lambda^{+\vee},Q^+)^2 + \langle c^\vee, \phi_1\rangle(Q_+,Q_+)
 \end{align*}
-
-\chris{There might be a clever trick to avoid these action functional calculations, involving the 10d calculation we already did to argue that certain fields definitely don't contribute (the ones that died in the 10d holomorphic twist, so we're left with only $c, A_{0,1}, \phi_1, \phi_2 \psi^+_{0,1}, \psi^+_{1,0}, \psi^-_{0,1}$ and $\chi^-$, and their antifields.) -- I need to think about it.}
-
-\begin{theorem} \label{8d_holo_twist_thm}
-The holomorphic twist of 8d $\mc N=1$ super Yang-Mills theory on a Calabi-Yau 4-fold $X_4$ is equivalent to holomorphic BF theory on $X_4$. If $X_4$ splits into a product $X_3 \times S$ of a Calabi-Yau 3-fold and a flat surface, then this twist degenerates to a one-parameter family of topological twists of the form $\map(X_3 \times S, B\gg)_{\mr{Hod}}$
-\end{theorem}
+if $Q^+$ is an element of $S_+$, and
+\begin{align*}
+I^{(1)}(Q^-) &= \langle A^\vee, \Gamma(Q^-, \lambda^+)\rangle + \langle \wt \phi_1^\vee, (Q^-,\lambda^-)\rangle+ \langle \lambda^{-\vee}, \sd F_A Q_- \rangle + \langle \lambda^{+\vee}, \rho(\dd \wt \phi_1)Q_- \rangle\\
+I^{(2)}(Q^-, Q^-) &= (\lambda^{-\vee}, \lambda^{-\vee})(Q^-,Q^-) + (\lambda^{-\vee},Q^-)^2 + \langle c^\vee, \wt \phi_1\rangle(Q_-,Q_-)
+\end{align*}
+if $Q^-$ is an element of $S_-$.
+\end{prop}
 
 \begin{proof}
-\chris{Strategy: compute the holomorphic twist, as in 10d, and see which fields survive.  Then consider the perturbation of the twisted action.  Show that it doesn't change the fields that survive, maybe using a spectral sequence associated to the perturbation, and compute how the BV differential deforms.}
+There are two ingredients in this calculation: we have to decompose our fields as representations of $\mr O(8)$, and simultaneously we have to write the 10d $\Gamma(-,-)$ pairing in terms of the corresponding pairing for 8d spinors, upon dimensional reduction. \chris{Pavel gave this argument, in terms of light-cone coordinates.}
 \end{proof}
 
 \begin{remark}
-Alternatively, we can calculate the holomorphic twist by applying Lemma \ref{CS_to_BF_diml_red_lemma} to the minimal twist of 9d super Yang-Mills theory.
+A Weyl spinor $Q_\pm$ corresponds to a holomorphic twist (i.e. comes from a 10d square zero supercharge) exactly when $(Q_\pm,Q_\pm)=0$ -- in that case many of the terms in the interaction above will vanish.
 \end{remark}
+
+Let us now consider the further reductions to $\SU(4)$, to $\spin(7)$, and to their intersection $\SU(3)$.  We will use the form of the supersymmetric interaction term above to prove the following.
+
+\begin{theorem} \label{8d_holo_twist_thm}
+The holomorphic twist of 8d $\mc N=1$ super Yang-Mills theory on a Calabi-Yau 4-fold $X_4$ is equivalent to holomorphic BF theory on $X_4$. If $X_4$ splits into a product $X_3 \times S$ of a Calabi-Yau 3-fold and a flat surface, then this twist degenerates to a one-parameter family of topological twists of the form $\map(X_3 \times S, B\gg)_{\mr{Hod}}$.
+\end{theorem}
+
+\begin{proof}
+We begin by describing the twist by a holomorphic supercharge $Q_+$, on a Calabi-Yau 4-fold $X_4$.  We can do this by by applying Lemma \ref{CS_to_BF_diml_red_lemma} to the minimal twist of 9d super Yang-Mills theory.  More explicitly, the minimal twist of 9d super Yang-Mills theory on $X_4 \times L$ is modelled by mixed Chern-Simons theory on $X_4 \times L_\mr{dR}$. Lemma \ref{CS_to_BF_diml_red_lemma} says that if we reduce this mixed Chern-Simons theory in the $L$-direction, we obtain a holomorphic BF theory described by $\map(X_4, T[1]B\gg)$
+
+Note that, unlike in 9d, this theory can be made $\ZZ$-graded, rather than just $\ZZ/2\ZZ$-graded.  To do so, we consider the action of the 8d R-symmetry group $\CC^\times$, where $S_+$ has weight $+1$ and $S_-$ has weight $-1$, so in particular the holomorphic supercharge $Q_+$ has weight 1.  We've chosen notation for our component fields that makes it easy to read off the R-symmetry weight of each field: fermions with superscript $+$ have weight $+1$, fermions with superscript $-$ have weight $-1$, the bosonic scalars $\phi_1$ and $\wt \phi_1$ have weight -$2$, and the other bosons have weight 0.  With respect to this $\ZZ$-grading, the classical BV complex, as an $\SU(4)$-module, has the form
+\[\xymatrix{&\Omega^0(X_4; \gg)_c \ar[r] &\Omega^{0,1}(X_4; \gg)_{A_{0,1}} \ar[r] &\Omega^{0,2}(X_4; \gg)_{B^+_{0,2}} \ar[r] &\Omega^{0,3}(X_4; \gg)_{\psi_{0,1}^{-\vee}} \ar[r] &\Omega^{0,4}(X_4; \gg)_{\phi_1^\vee} \\
+\Omega^0(X_4; \gg)_{\phi_1} \ar[r] &\Omega^{0,1}(X_4; \gg)_{\psi_{0,1}^{-}} \ar[r] &\Omega^{0,2}(X_4; \gg)_{B^{+\vee}_{0,2}} \ar[r] &\Omega^{0,3}(X_4; \gg)_{A_{0,1}^\vee} \ar[r] &\Omega^{0,4}(X_4; \gg)_{c^\vee}&
+}\]
+placed in cohomological degrees $-2, \ldots, 3$.
+
+Now, suppose $X_4$ splits into a product of the form $X_3 \times S$.  If we restrict to $\SU(3)$ representations, our classical BV complex becomes
+
+\resizebox{1.05\textwidth}{!}{$\xymatrix@C-20pt{&\Omega^0(X_3 \times S; \gg)_c \ar[r] \ar[rd] &\Omega^{0,1}(X_3 \times S; \gg)_{A_{0,1}} \ar[r] \ar[rd] &\Omega^{0,2}(X_3 \times S; \gg)_{\psi^+_{1,0}} \ar[r]  &\Omega^{0,3}(X_3 \times S; \gg)_{\chi^{-\vee}} \ar[rd] & \\
+&&\Omega^0(X_3 \times S; \gg\omega)_{\phi_2} \ar[r] &\Omega^{0,1}(X_3 \times S; \gg\omega)_{\psi^{+}_{0,1}} \ar[r] &\Omega^{0,2}(X_3 \times S; \gg\omega)_{\psi^{-\vee}_{0,1}} \ar[r] &\Omega^{0,3}(X_3 \times S; \gg\omega)_{\phi_{1}^{\vee}} \\
+\Omega^0(X_3 \times S; \gg)_{\phi_1} \ar[r] \ar[rd] &\Omega^{0,1}(X_3 \times S; \gg)_{\psi_{0,1}^{-}} \ar[r] \ar[rd] &\Omega^{0,2}(X_3 \times S; \gg)_{\psi^{+\vee}_{0,1}} \ar[r] \ar[rd] &\Omega^{0,3}(X_3 \times S; \gg)_{\phi_{2}^\vee} \ar[rd]&& \\
+&\Omega^0(X_3 \times S; \gg\omega)_{\phi_1} \ar[r] &\Omega^{0,1}(X_3 \times S; \gg\omega)_{\psi_{1,0}^{+\vee}} \ar[r] &\Omega^{0,2}(X_3 \times S; \gg\omega)_{A_{0,1}^\vee} \ar[r] &\Omega^{0,3}(X_3 \times S; \gg\omega)_{c^\vee}&}
+$}
+where Dolbeault forms here refer to forms on $X_3$, and $\omega$ denotes the volume form on $S$.
+
+Let $Q = Q^+ + tQ'$ be a generically topological 1-parameter family of supercharges in $S_+$, where $Q'$ is an impure spinor stabilized by $\spin(7)$.  The supercharges $Q_+$ and $Q'$ automatically commute, so to complete the proof it remains for us to compute the action of the further supercharge $Q'$ on the classical BV complex above.  To do so we will use the description of the supersymmetry action from Proposition \ref{O8_decomposition_of_susy_prop}.  So, we'll first observe that several summands of $I^{(1)}(Q')$ and $I^{(2)}(Q')$ are forced to vanish.  In $I^{(1)}(Q')$, the term pairing $\lambda_+^\vee$ and $A$ cannot be $\spin(7)$-invariant, so must vanish.  The same applies to the term pairing $\lambda_-^\vee$ and $\phi_1$. We are left with, in terms of $\Spin(7)$-fields,
+\begin{align*}
+I^{(1)}(tQ') &= t\langle\lambda_7^\vee, \lambda^-\rangle + t\langle \phi_1^\vee, \chi^+\rangle \\
+I^{(2)}(tQ', tQ') &= t^2\langle c^\vee, \phi_1\rangle + t^2 (A_7^{+\vee} , A_7^{+\vee}),
+\end{align*}
+where we pair $A_7^{+\vee}$ with itself using the restriction of the scalar pairing on $S_+$ to the 7d vector representation \chris{can probably be phrased in terms of the $\spin(7)$-structure somehow}.  Restricting to representations of $\SU(3)$, this takes the form
+\begin{align*}
+I^{(1)}(tQ') &= t\langle A_{0,1}^\vee, \psi{0,1}^-\rangle + t\langle \phi_1^\vee, \chi^+\rangle \\
+I^{(2)}(tQ', tQ') &= t^2\langle c^\vee, \phi_1\rangle + t^2 \Lambda(\psi_{0,1}^{+\vee} \wedge \psi_{1,0}^{-\vee}),
+\end{align*}
+plus terms that vanish in the $Q_+$-twist.  We can then read off the deformation of the $Q_+$-twist by $Q'$: the further differential associated to the $Q'$ supersymmetry turns on an isomorphism between the two copies of $\Omega^{0,\bullet}(X_3, \Omega^\bullet(S;\gg))$ in the $Q_+$-twisted classical BV complex.  This is exactly the classical field theory described by $\map(X_3 \times S, B\gg)_{\mr{Hod}}$, as required.
+\end{proof}
 
 \subsubsection{The Rank 2 Twist}
 We'll next discuss the example of the twist by a rank 2 spinor, where both $\lambda_+$ and $\lambda_-$ are non-zero.  We can understand this twist by a second application of Lemma \ref{CS_diml_red_lemma} to the 9-dimensional $\mc N=1$ theory, or equivalently, by applying the lemma twice to the 10-dimensional $\mc N=(1,0)$ super Yang-Mills theory.  This twisted theory is only $\ZZ/2\ZZ$-graded, just like its higher-dimensional counterparts.
