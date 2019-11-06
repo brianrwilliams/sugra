@@ -154,7 +154,18 @@ We may also define actions of supergroups on classical field theories.
 
 \begin{definition}
 \label{group_action_def}
-Let $(E, Q, \omega, I)$ be a classical field theory. An {\bf action} of a supergroup $G$ on $(E, Q, \omega, I)$ is an action of $G$ on $\cE$ preserving the symplectic pairing $\omega$, differential $Q$ and $I$ together with an action $I_\rho$ of its super Lie algebra $\fg$ with $I^{(k)} = 0$ for $k\geq 2$ such that for every $x\in\fg$ the vector field $X_{I^{(1)}(x)}$ on $\cE$ coincides with the infinitesimal action on $\cE$.
+Let $(E, Q, \omega, I)$ be a classical field theory and $G$ is a supergroup acting on spacetime $M$. An {\bf action} of $G$ on $(E, Q, \omega, I)$ is given by the following data:
+\begin{itemize}
+\item An action of $G$ on $\cE$ compatible with the $G$-action on $M$.
+
+\item An action $I_\rho$ of its super Lie algebra $\fg$ with $I^{(k)} = 0$ for $k\geq 2$.
+\end{itemize}
+These are required to satisfy the following conditions:
+\begin{itemize}
+\item The $G$-action on $\cE$ preserves the symplectic pairing $\omega$, differential $Q$ and the interaction term $I$.
+
+\item For every $x\in\fg$, the vctor field $X_{I^{(1)}(x)}$ on $\cE$ coincides with the infinitesimal action on $\cE$.
+\end{itemize}
 \end{definition}
 
 \begin{remark}
@@ -226,7 +237,7 @@ We refer to the classical BV theory $(E, Q, \omega, I)$ from the above statement
 If the fields of the classical BRST theory are denoted by $\phi$, we denote their antifields in the classical BV theory by $\phi^*$, so that
 \[\{\phi(x), \phi^*(y)\} = \{\phi^*(y), \phi(x)\} = \delta(x-y).\]
 
-\subsection{Examples of BV-BRST Theories}
+\subsection{Examples of Classical Field Theories}
 
 In this section we give some examples of classical field theories we will use. All theories we consider in this section except for the Yang--Mills theory are $\ZZ$-graded, i.e. all fields are considered even with respect to the $\ZZ/2$-grading.
 
@@ -241,7 +252,13 @@ Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty
 
 \item The BRST action is $S_{BRST} = 0$.
 \end{itemize}
+We denote the space of BV fields by $\cE = \map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[d] B\fg)$, where $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1$.
+\label{def:generalizedBF}
 \end{definition}
+
+\begin{remark}
+We do not provide any interpretation for the above mapping space and simply view it as a compact way of referring to the theory above.
+\end{remark}
 
 Let us unpack the definition. Let $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M)$. Then the bundle of BV fields is
 \[E = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1]\oplus \Omega^{\dim(X),\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M\otimes \fg^*[d-2],\]
@@ -290,7 +307,8 @@ Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty
 \item The interaction term is
 \[I = \sum_{k\geq 2}\frac{1}{(k+1)!} \int_{X\times Y\times M} \Omega_X\wedge \langle A\wedge \ell_k(A, \dots, A)\rangle.\]
 \end{itemize}
-\label{def:generalizedBF}
+We denote the space of BV fields by $\cE = \map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B \fg)$.
+\label{def:generalizedCS}
 \end{definition}
 
 We may also consider a $\ZZ/2$-graded version of the above theory where $\fg$ is merely $\ZZ/2$-graded.
@@ -366,14 +384,10 @@ for $v\in\mf{iso}(V)$, where $v.\lambda$ contains both a derivative and the $\so
 
 \subsection{Dimensional Reduction, take 2}
 
-\begin{definition}
-A classical field theory $(E_N, Q_N, \omega_N, I_N)$ on a manifold $N$ is a {\bf dimensional reduction} of the classical field theory $(E_M, Q_M, \omega_M, I_M)$ on a manifold $M$ if we are given the following data:
-\begin{itemize}
-\item A submersion $p\colon M\rightarrow N$ equipped with a fiberwise volume form, i.e. an isomorphism $p^*\Dens_N\cong \Dens_M$.
+In this section we formulate the procedure of dimensional reduction of a classical field theory. Fix a submersion $p\colon M\rightarrow N$ equipped with a fiberwise volume form, i.e. an isomorphism $p^*\Dens_N\cong \Dens_M$.
 
-\item An isomorphism $p^* E_N\cong E_M$.
-\end{itemize}
-These data are required to satisfy the following conditions:
+\begin{definition}
+A classical field theory $(E_N, Q_N, \omega_N, I_N)$ on a manifold $N$ is a {\bf dimensional reduction} of the classical field theory $(E_M, Q_M, \omega_M, I_M)$ on a manifold $M$ if one is given the data of an isomorphism $p^* E_N\cong E_M$ of the bundles of BV fields satisfying the following conditions:
 \begin{itemize}
 \item The diagram
 \[
@@ -397,7 +411,61 @@ is commutative.
 \end{itemize}
 \end{definition}
 
-\chris{A question: are dimensional reductions, per this definition, unique?  I'd really like the answer to be yes (at least for dimensional reduction along a vector space), so that I can say the twist of a dimensional reduction is equivalent to \emph{the} (unique) dimensional reduction of the twist -- assuming the dimensional reductions before and after twisting exist (which, again, I'd like them to, at least for dimensional reduction along a vector space).}
+We have an obvious notion of isomorphisms of dimensional reductions: these are isomorphisms of classical field theories on $N$ which are compatible with the isomorphisms $p^* E_N\cong E_M$. Thus, dimensional reductions of a given classical field theory on $M$ form a groupoid.
+
+\begin{prop}
+Suppose $(E_M, Q_M, \omega_M, I_M)$ is a classical field theory on $M$ and $p\colon M\rightarrow N$ is a homotopy equivalence. Then the groupoid of dimensional reductions of $(E_M, Q_M, \omega_M, I_M)$ is either contractible or empty.
+
+Suppose $M=N\times \RR$ and choose a translation-invariant density along the $\RR$ direction. If the original classical field theory is translation-invariant along the $\RR$ direction, dimensional reductions exist.
+\label{prop:dimensionalreductionunique}
+\end{prop}
+\begin{proof} \textbf{Uniqueness}. We begin by showing that any two dimensional reductions are isomorphic and moreover such an isomorphism is unique if it exists. Since $p\colon M\rightarrow N$ is a homotopy equivalence, the functor $p^*$ establishes an isomorphism between the category of graded vector bundles on $N$ and on $M$. In a similar way, $p^*$ establishes an equivalence between the category of graded vector bundles $E_N$ on $N$ equipped with a nondegenerate pairing $E_N\otimes E_N\rightarrow \Dens_N[-1]$ and a similar category for $M$.
+
+Since $\cE_N\rightarrow \cE_M$ is injective, the diagram
+\[
+\xymatrix{
+\cE_N \ar^{Q_N}[r] \ar^{p^*}[d] & \cE_N[1] \ar^{p^*}[d] \\
+\cE_M \ar^{Q_M}[r] & \cE_M[1]
+}
+\]
+uniquely determines $Q_N$ from $Q_M$. Moreover, the condition $p^* I_M = I_N$ uniquely determines $N$.
+
+\textbf{Existence}. Now suppose $(E_M, Q_M, \omega_M, I_M)$ is translation-invariant along the $\RR$ direction. Translation invariance provides the descent datum to construct the bundle of fields $E_N$ on $N$ equipped with a nondegenerate pairing $\omega_N$. Moreover, it shows that the differential $Q_M$ preserves the subspace $\cE_N\hookrightarrow \cE_M$. The restriction of $I_M$ under the same embedding is independent of the $\RR$ factor by translation invariance, so $I_N=p^* I_M$ is again a local functional.
+\end{proof}
+
+By the previous Proposition we may simply talk about \emph{the} dimensional reduction of a given classical field theory when the fibers of $p$ are contractible. We will now describe dimensional reductions of the classical Chern--Simons theory.
+
+\begin{prop}
+Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$ equipped with a nondegenerate invariant pairing and consider the generalized Chern--Simons theory
+\[\map(X\times Y_{\mr{Dol}}\times (M\times \RR)_{\mr{dR}}, B\fg).\]
+Its dimensional reduction along the projection $p\colon X\times Y\times (M\times \RR)\rightarrow X\times Y\times M$ is isomorphic to the generalized BF theory
+\[\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1] B\fg).\]
+\end{prop}
+\begin{proof}
+To simplify the proof, we assume $X=Y=M=\pt$. Then $\fg$ carries a $(-2)$-shifted pairing $\langle-,-\rangle$. In particular, the generalized BF theory
+\[\map(\pt, T^*[-1] B \fg)\]
+has the bundle of BV fields $\fg[1] \oplus \fg^*[-2]$. We may identify it with $\fg[1]\oplus \fg$, where the pairing $\omega_N$ pairs the two factors using $\langle-,-\rangle$.
+
+We may identify $p^*(\fg[1]\oplus \fg)\cong \Omega^\bullet_{\RR}\otimes \fg[1]$. Under this identification the integration pairing $\omega_M$ on differential forms reduces to the pairing $\omega_N$. The de Rham differential vanishes on translation-invariant forms which shows a compatibility of dimensional reduction with the differentials $Q$. Finally, in both cases the interaction term comes from the $L_\infty$ structure on $\fg$.
+\end{proof}
+
+\begin{prop}
+Let $X,Y,M,\fg$ be as before. Equip $\CC$ with a holomorphic volume form $\d z$ and consider the generalized Chern--Simons theory
+\[\map((X\times \CC)\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B\fg).\]
+Its dimensional reduction along the projection $p\colon (X\times \CC)\times Y\times M\rightarrow X\times Y\times (M\times \RR)$ induced by the projection $\CC\rightarrow \RR$ given by $(x, y)\mapsto x$ is isomorphic to the generalized Chern--Simons theory
+\[\map(X\times Y_{\mr{Dol}}\times (M\times \RR)_{\mr{dR}}, B\fg).\]
+\end{prop}
+\begin{proof}
+We may assume $X,Y,M=\pt$ as in the previous proof.
+
+We have
+\[\Omega^{0, \bullet}_{\CC}\cong \underline{\CC}\oplus \underline{\CC}\d \overline{z}[-1]\]
+and
+\[\Omega^\bullet_{\RR}\cong \underline{\CC}\oplus \underline{\CC} \d x[-1].\]
+Under the pullback map
+\[\Omega^\bullet(\RR; \CC)\rightarrow \Omega^\bullet(\CC)\rightarrow \Omega^{0, \bullet}(\CC)\]
+the integration map $\int_\CC \d z\wedge (-)\colon \Omega^{0, \bullet}(\CC)\rightarrow \CC$ reduces to the integration map $\int_\RR (-)\colon \Omega^{\bullet}(\RR;\CC)\rightarrow \CC$.
+\end{proof}
 
 \subsection{Dimensional Reduction} \label{dim_red_section}
 The idea of the \emph{dimensional reduction} of a rotation invariant classical field theory to a linear subspace of $\RR^n$ is to restrict attention to only those fields with are constant in directions perpendicular to the subspace. 
@@ -713,6 +781,8 @@ We can further include the action of at least a subalgebra of the algebra of R-s
 
 \subsection{Supersymmetric twisting}
 
+\pavel{$Q$ denotes both the differential on fields and the supercharge.} 
+
 \begin{definition}
 A {\bf square-zero supercharge} is a nonzero element $Q\in\Sigma$ such that $\Gamma(Q, Q)=0$.
 \end{definition}
@@ -757,6 +827,27 @@ Without a twisting homomorphism $\alpha$, we obtain a $\ZZ/2$-graded classical f
 \[(E, \d + \{\rho_2(Q), -\}, \omega, I + \rho_3(Q) + \dots),\]
 where the $\ZZ/2$-grading on $E$ is the total grading.
 \end{remark}
+
+\subsection{Compactification of supersymmetric theories}
+
+Suppose $V_\RR=\RR^n$ as before and choose a subspace $W_\RR\subset V_\RR$, so that $V_\RR = W_\RR\oplus W^\perp_\RR$. We denote $W=W_{\RR}\otimes_{\RR} \CC$.
+
+Fix a spinorial representation $\Sigma$ of $\so(V)$, a nondegenerate pairing $\Gamma_V\colon \sym^2(\Sigma)\rightarrow V$ and a group of $R$-symmetries $G_V$. We have a natural embedding
+\[\so(W)\oplus \so(W^{\perp})\subset \so(V),\]
+so $\Sigma$ restricts to a spinorial $\so(W)$ representation. We define the dimensionally reduced $\Gamma$-pairing as the composite
+\[\Gamma_W\colon \sym^2(\Sigma)\xrightarrow{\Gamma_V} V\rightarrow W,\]
+where the last map is the orthogonal projection onto $W$. Finally, we have a new $R$-symmetry group
+\[G_W = G_V\times \Spin(W^\perp_\RR).\]
+
+Recall from Proposition \ref{prop:dimensionalreductionunique} that dimensional reduction of theories along the projection $p\colon V_\RR\rightarrow W_\RR$ exist and are unique. We have the following generalization of this statement to supersymmetric theories.
+
+\begin{prop}
+Suppose $(E, Q, \omega, I)$ is a supersymmetric classical field theory on $V_\RR$. Then its dimensional reduction along $p\colon V_\RR\rightarrow W_\RR$ has a unique compatible supersymmetric structure.
+\end{prop}
+
+\begin{prop}
+Fix a twisting datum $(Q, \alpha)$, where $\Gamma_V(Q, Q) = 0$. Then the dimensional reduction of the twist of the classical field theory $E$ is isomorphic to the twist of the dimensional reduction of $E$.
+\end{prop}
 
 \subsection{Twisting Homomorphisms and Curved Backgrounds}
 
