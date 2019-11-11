@@ -1222,10 +1222,12 @@ Here $\<-,-\>_R$ denotes the duality pairing between the representation $R$ and 
 There is also a term $S_{\rm couple}$ describing the coupling between Yang-Mills and the matter fields, which we record here:
 \begin{align*}
 S_{\rm couple} & = \pm g \int \<\psi_+, [\lambda_+, \phi]\>_R \pm g \int \<\psi_-, [\lambda_-, \Bar{\phi}]\>_{R^*} \\
-& \pm g \int [A, \phi] \wedge * \d_{A} \Bar{\phi} \pm g \int [A, \Bar{\phi}] \wedge * \d_A \phi \\
-&\brian{where does this term come from \pm g^2 \int \<(\phi \Bar{\phi}), * (\phi \Bar{\phi})\>_R}
+& \pm g \int [A, \phi] \wedge * \d_{A} \Bar{\phi} \pm g \int [A, \Bar{\phi}] \wedge * \d_A \phi
 \end{align*}
 \brian{add terms involving antifields}
+\brian{There is a term of the form $\pm g^2 \int \<(\phi \Bar{\phi}), * (\phi \Bar{\phi})\>_R$ that is usually written down.
+This indeed changes the EOM, and is needed to compensate an extra term in the definition of $I_{\rm gauge}^{(1)}$ when we couple to matter. My claim is that if we disregard both of these terms we will get a consistent supersymmetric system still.
+}
 
 The action
 \[
@@ -1251,6 +1253,12 @@ The action of supersymmetry on the gauge sector is encoded by the functionals:
 I^{(1)}_{\rm gauge} (Q_+ + Q_-) & = \int \<A^* , \Gamma(Q_+ + Q_-, \lambda_+ + \lambda_-)\> + \<\lambda_+^*+\lambda_-^*, \sd F_A (Q_+ + Q_-)\> \\
 I^{(2)}_{\rm gauge} (Q_+ \otimes Q_-) & = \int \left\<\lambda^*, \rho(\Gamma(Q_+, Q_-)) \lambda^* + \frac{1}{2} ((Q_+, \lambda_+^*+\lambda_-^*) Q_- + (Q_-, \lambda^*_+ + \lambda_-^*)Q_+)\right\> .
 \end{align*}
+\brian{C and P claim there should be some extra terms in $I^{(2)}_{\rm gauge}$ coming from reduction. 
+If a few of those terms are of the form $\<\lambda_-^*, \lambda_-^*\>\<Q_-,Q_-\>$ and $\<\lambda_+^*, \lambda_+^*\>\<Q_+,Q_+\>$ we'd be in business. 
+The issue is that in the twist calculation below has an extra copy of a complex involving components of $\lambda_-^*$ in degree zero and $\lambda_-$ in degree $+1$.
+Such terms would turn this acyclic.
+Can we see why such terms are {\em necessary} to preserve off-shell SUSY?
+}
 
 These functionals prescribe an off-shell action of $4$-dimensional $\cN=1$ super Yang-Mills coupled to matter, as we summarize in the following proposition.
 
@@ -1302,6 +1310,7 @@ The computation of the remaining terms in the matter sector are summarized in th
 \d_{CE} I_{\rm Poin} + \{S_{\rm matter}, I_{\rm matter}^{(2)}\} + \frac{1}{2} \{I_{\rm matter}^{(1)}, I_{\rm matter}^{(1)}\} = 0.
 \]
 \end{lem}
+\brian{extra terms in $I^{(2)}$?}
 \begin{proof}
 
 First, we compute the BV bracket $\{I_{\rm matter}^{(1)}, I_{\rm matter}^{(1)}\}$:
