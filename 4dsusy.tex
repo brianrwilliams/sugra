@@ -1,0 +1,228 @@
+\documentclass[10pt, oneside]{article}
+
+\input ./combined_macros.sty
+
+\newcommand{\Cl}{\mathrm{Cl}}
+\newcommand{\Dens}{\mathrm{Dens}}
+
+\addbibresource{Twist.bib}
+
+\usepackage{pdflscape}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+\tikzstyle{s16} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=red!30]
+\tikzstyle{s16chiral} = [s16, dashed]
+\tikzstyle{s8 } = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=orange!30]
+\tikzstyle{s4} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=yellow!30]
+\tikzstyle{s2chiral} = [rectangle, dashed, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=green!30]
+\tikzstyle{dimension} = [circle, text centered, text width=0.7cm, minimum height=0.7cm, draw=black]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\title{4d $\cN=1$}
+\author{Chris Elliott\and Pavel Safronov \and Brian Williams}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\subsection{Theories of matter}
+To define the chiral multiplet we fix a complex vector space $R$, and denote the natural pairing between $R$ and $R^*$ by $\<-,-\>_R$. 
+The spinorial pairing $\<-,-\> : S_\pm \otimes S_\pm \to \CC$ induces a pairing between $S_\pm \otimes R$ and $S_{\pm} \otimes R^*$ that we also denote by $\<-,-\>_R$. 
+
+The field content for the 4-dimensional chiral multiplet with values in a complex vector space $R$ is:
+\begin{itemize}
+\item a pair of scalars $\phi \in C^\infty(\RR^4 ; R)$ and $\Bar{\phi} \in C^\infty(\RR^4 ; R^*)$.
+\item a left Weyl spinor $\psi_+ \in C^\infty(\RR^4 ; R \otimes S_+)$ and a right Weyl spinor $\psi_- \in C^\infty(\RR^4 ; R^* \otimes S_-)$.
+\end{itemize}
+
+The space of BRST fields is 
+\[
+F = C^\infty(\RR^4 ; R \oplus R^* \oplus R \otimes S_+ \oplus R^* \otimes S_-) .
+\]
+
+The BRST action is
+\[
+S (\phi, \Bar{\phi}, \psi_\pm) = \int_{\RR^4} \d^4 x \; \<\d \phi , * \d \Bar{\phi}\>_R + \int \d^4 x \; \<\psi_+ , \sd \dd \psi_-\>_R .
+\]
+
+\subsection{Matter multiplets}
+
+In some dimensions $n \leq 6$ there exists {\em matter} representations of supersymmetry. 
+
+\begin{itemize}
+\item Dimension $n=4$, the chiral multiplet.
+\item Dimension $n=6$, hyper multiplet. 
+\end{itemize}
+
+\subsubsection{The chiral multiplet}
+
+The action of the odd part of the $4d$ $\cN=1$ supersymmetry algebra on the $4$-dimensional matter theory is encoded by the following linear and quadratic functionals 
+\begin{align*}
+I^{(1)}(Q) & = \int \<\phi^* + \Bar{\phi}^*, (Q, \psi_+ + \psi_-)\>_R + \<\psi_+^* + \psi_-^*, \rho(\d \phi + \d \Bar{\phi})Q \>_R \\
+I^{(2)}  (Q_1 \otimes Q_2) & = \int \frac{1}{4}(\Gamma(Q_1, Q_2), \Gamma(\psi_+^* + \psi_-^*, \psi_+^*+\psi_-^*)) - \frac{1}{2}(Q_1, \psi_+^* + \psi_-^*)(Q_2, \psi_+^*+\psi_-^*)
+\end{align*}
+for $Q, Q_1, Q_2 \in S_+ \oplus S_-$
+
+\begin{thm}
+The functional $\fS = S + I_{\rm Poin}^{(1)} + I^{(1)} + I^{(2)}$ with $I_{\rm Poin}$ as in Section \ref{??} satisfies the classical master equation
+\[
+\d_{\rm Lie} \fS + \frac{1}{2} \{\fS, \fS\} = 0 .
+\]
+\end{thm}
+
+\section{scrap}
+
+The 4-dimensional $\mc N=1$ pure super Yang-Mills theory has BRST fields given by a ghost $c$, a 4d gauge field $A$, and a pair of opposite chirality Lie algebra valued Weyl spinor fields $\lambda_\pm$:
+In addition, $4$-dimensional supersymmetry supports a chiral (or anti-chiral) matter multiplet, which comprises a complex scalar $\phi$ and a left (right) Weyl spinor $\psi_+$ ($\psi_-$).
+
+The most general theory $4$-dimensional $\mc N = 1$ theory we will consider is super Yang-Mills theory valued in a Lie algebra $\fg$ minimally coupled to a chiral multiplet with values in a complex $\fg$-representation $R$. 
+The field content for the BRST fields in the gauge sector is:
+\[
+(c, A, \lambda_\pm) \in (\Omega^0(\RR^4) \oplus \Omega^1(\RR^4) \oplus \Omega^0(\RR^4) \otimes \Pi S_\pm) \otimes \fg .
+\]
+
+For the chiral multiplet, the fields $\phi, \psi_+$ take values in $R$ and $\Bar{\phi}, \psi_-$ take values in $R^*$:
+\[
+(\phi, \psi_+) \in \Omega^0(\RR^4) \otimes (R \oplus R \otimes \Pi S_+) \;\;\; , \;\;\; (\Bar{\phi}, \psi_-) \in \Omega^0(\RR^4) \otimes (R^* \oplus R^* \otimes \Pi S_-) .
+\]
+
+Th full BV action for $\cN=1$ supersymmetric pure Yang-Mills theory on $\RR^4$ was defined in Section \ref{YM_section}, which we call $S_{\rm BV, gauge}$ in this section.
+
+The kinetic part of the action functional for $4$-dimensional $\mc N = 1$ chiral multiplet is of the form
+\[
+S_{\rm matter} (\phi, \Bar{\phi}, \psi_{\pm}) = \int \d^4 x \; \<\d \phi , * \d \Bar{\phi}\>_R + \int \d^4 x \; \<\psi_+ , \sd \dd \psi_-\>_R .
+\]
+Here $\<-,-\>_R$ denotes the duality pairing between the representation $R$ and its dual $R^*$. 
+
+There is also a term $S_{\rm couple}$ describing the coupling between Yang-Mills and the matter fields, which we record here:
+\begin{align*}
+S_{\rm couple} & = \pm g \int \<\psi_+, [\lambda_+, \phi]\>_R \pm g \int \<\psi_-, [\lambda_-, \Bar{\phi}]\>_{R^*} \\
+& \pm g \int [A, \phi] \wedge * \d_{A} \Bar{\phi} \pm g \int [A, \Bar{\phi}] \wedge * \d_A \phi
+\end{align*}
+\brian{add terms involving antifields}
+\brian{There is a term of the form $\pm g^2 \int \<(\phi \Bar{\phi}), * (\phi \Bar{\phi})\>_R$ that is usually written down.
+This indeed changes the EOM, and is needed to compensate an extra term in the definition of $I_{\rm gauge}^{(1)}$ when we couple to matter. My claim is that if we disregard both of these terms we will get a consistent supersymmetric system still.
+}
+
+The action
+\[
+S_{\rm BV} = S_{BV}(\phi, \Bar{\phi}, \psi_\pm , A, \lambda_\pm, \; {\rm a.f's}) = S_{\rm BV, gauge}(A, \lambda_\pm, \; {\rm a.f's}) + S_{\rm matter}(\phi, \Bar{\phi}, \psi_\pm) + S_{\rm couple} (\phi, \Bar{\phi}, \psi_\pm , A, \lambda_\pm, \; {\rm a.f's}) 
+\]
+is the full BV action of $\mc N = 1$ super Yang-Mills coupled to matter.
+
+The full BV action $S_{\rm BV}$ is clearly Poincar\'{e} invariant, so there is a functional $I_{\rm Poin}$ encoding the action by the $4$-dimensional Poincar\'{e} algebra.
+
+The action of supersymmetry on the $4$-dimensional matter theory is encoded by a linear and quadratic functional:
+\begin{align*}
+I^{(1)}_{\rm matter} (Q_+ + Q_-) & = \int \<\phi^*, (Q_+, \psi_+)\>_R + \int \<\Bar{\phi}^*, (Q_-, \psi_-)\>_R + \int \<\psi^*_+, \rho(\d \phi) Q_- \>_R + \int \<\psi_-^*, \rho(\d \Bar{\phi}) Q_+\>_R \\
+I^{(2)}_{\rm matter} (Q_+ \otimes Q_-) & = \int \<\psi^*_- , \rho(\Gamma(Q_+, Q_-)) \psi_+^*\>_R + \brian{write this differently?}.
+\end{align*}
+where $Q_\pm \in S_{\pm}$. 
+As usual, we will use the notation $\delta_Q$ to denote the endomorphism on fields satisfying
+\[
+I^{(1)}_{\rm matter} = \int \<\phi^* + \Bar{\phi}^* + \psi^*_+ + \psi_-^*, \delta_Q(\phi + \Bar{\phi} + \psi_+ + \psi_-) \> .
+\]
+
+The action of supersymmetry on the gauge sector is encoded by the functionals:
+\begin{align*}
+I^{(1)}_{\rm gauge} (Q_+ + Q_-) & = \int \<A^* , \Gamma(Q_+ + Q_-, \lambda_+ + \lambda_-)\> + \<\lambda_+^*+\lambda_-^*, \sd F_A (Q_+ + Q_-)\> \\
+I^{(2)}_{\rm gauge} (Q_+ \otimes Q_-) & = \int \left\<\lambda^*, \rho(\Gamma(Q_+, Q_-)) \lambda^* + \frac{1}{2} ((Q_+, \lambda_+^*+\lambda_-^*) Q_- + (Q_-, \lambda^*_+ + \lambda_-^*)Q_+)\right\> .
+\end{align*}
+\brian{C and P claim there should be some extra terms in $I^{(2)}_{\rm gauge}$ coming from reduction. 
+If a few of those terms are of the form $\<\lambda_-^*, \lambda_-^*\>\<Q_-,Q_-\>$ and $\<\lambda_+^*, \lambda_+^*\>\<Q_+,Q_+\>$ we'd be in business. 
+The issue is that in the twist calculation below has an extra copy of a complex involving components of $\lambda_-^*$ in degree zero and $\lambda_-$ in degree $+1$.
+Such terms would turn this acyclic.
+Can we see why such terms are {\em necessary} to preserve off-shell SUSY?
+}
+
+These functionals prescribe an off-shell action of $4$-dimensional $\cN=1$ super Yang-Mills coupled to matter, as we summarize in the following proposition.
+
+%The result appears in \cite{SWchar}, and we do not repeat the proof here. 
+
+\begin{prop}[\cite{SWchar}]
+Let $I^{(1)} = I^{(1)}_{\rm matter} + I^{(1)}_{\rm gauge}$ and $I^{(2)} = I^{(2)}_{\rm matter} + I^{(2)}_{\rm gauge}$. 
+Then, the functional
+\[
+\fS = S_{\rm BV} + I_{\rm Poin} + I^{(1)} + I^{(2)} \in \clie^\bu(\mf A) \otimes \cloc^\bu(\fL) [-1]
+\]
+satisfies the Maurer-Cartan equation
+\[
+\left(\d_{\rm Lie} \fS + \frac{1}{2} \{\fS, \fS\} \right) = 0 .
+\]
+\end{prop}
+
+Notice that we have not introduced any auxiliary fields, which is at the cost of us formulating the action of superysmmetry as an $L_\infty$ action by the super Lie algebra of supertranslations. 
+
+
+\begin{proof}
+Throughout this proof we drop the pairing $\<-,-\>_R$ from the notation.
+Also, we continue to denote the spinorial pairing by $\<-,-\>$ and the standard inner product by $(-,-)$. 
+
+First, consider the pure matter sector $\fS_{\rm matter} = S_{\rm matter} + I_{\rm Poin} + I^{(1)}_{\rm matter} + I^{(2)}_{\rm matter}$. 
+We will show that $\fS_{\rm matter}$ satisfies the classical master equation. 
+From the form of $S_{\rm matter}$ and by Poincar\'{e} invariance of the matter action, it is clear that
+\[
+\d_{\rm Lie} S_{\rm matter} + \d_{\rm Lie} (I^{(1)}_{\rm matter} + I^{(2)}_{\rm matter}) + \frac{1}{2} \{S_{\rm matter} + I_{\rm Poin}, S_{\rm matter} + I_{\rm Poin}\} = 0 .
+\]
+So, we only need to consider the terms involving $\{S_{\rm matter}, I_{\rm matter}^{(1)}\}$, $\{S_{\rm matter}, I^{(2)}_{\rm matter}\}$, $\d_{\rm Lie} I_{\rm Poin}$, and $\{I^{(1)}_{\rm matter}, I^{(1)}_{\rm matter}\}$. 
+
+The equality $\{S_{\rm matter}, I_{\rm matter}^{(1)}\} = 0$ simply says that $S_{\rm matter}$ is invariant under the usual linear supersymmetric action.
+The argument for this is completely standard, see for instance \brian{refs}, but we repeat it here for completeness. 
+The BV bracket involving terms in $S_{\rm matter}$ depending on $\phi,\Bar{\phi}$ is:
+\begin{align*}
+\frac{1}{2} \left\{ \int \d \phi \wedge * \d \Bar{\phi} \; , \; I_{\rm matter}^{(1)} \right\} & = \int \d (\<Q_+, \psi_+\>) \wedge * \d \Bar{\phi} + \int \d \phi \wedge * \d (\<Q_-, \psi_-\>) \\
+& = \pm \int (\Gamma(\sd \dd \psi_+, Q_+), \d \Bar{\phi}) \pm \int (\d \phi, \Gamma(\sd \dd \psi_-, Q_-)) .
+\end{align*}
+The BV bracket involving terms in $S_{\rm matter}$ depending on $\psi_\pm$ is:
+\begin{align*}
+\frac{1}{2} \left\{\int \<\psi_+ , \sd \dd \psi_-\> \; , \; I_{\rm matter}^{(1)} \right\} & = \int \<\rho(\d \phi) Q_-, \sd \dd \psi_-\> = \int \<\psi_+, \sd \dd (\rho(\d \Bar{\phi}) Q_+)\> \\ & =  \int \<\rho(\d \phi) Q_-, \sd \dd \psi_-\> = \int \<\sd \dd \psi_+, (\rho(\d \Bar{\phi}) Q_+)\> \\ & = \int (\d \phi, \Gamma(\sd \dd \psi_-, Q_-)) + \int (\d \Bar{\phi}, \Gamma(\sd \dd \psi_+, Q_+)) 
+\end{align*}
+\brian{Get the signs right and these terms should cancel.}
+
+The computation of the remaining terms in the matter sector are summarized in the following lemma. 
+\begin{lem}
+\[
+\d_{CE} I_{\rm Poin} + \{S_{\rm matter}, I_{\rm matter}^{(2)}\} + \frac{1}{2} \{I_{\rm matter}^{(1)}, I_{\rm matter}^{(1)}\} = 0.
+\]
+\end{lem}
+\brian{extra terms in $I^{(2)}$?}
+\begin{proof}
+
+First, we compute the BV bracket $\{I_{\rm matter}^{(1)}, I_{\rm matter}^{(1)}\}$:
+\[
+\{I^{(1)}_{\rm matter}, I^{(1)}_{\rm matter}\}(Q_+ + Q_-, Q_+' + Q_-') = 2 \int \left\<\phi^* + \Bar{\phi}^* + \psi^*_+ + \psi_-^*, [\delta_{Q_+ + Q_-}, \delta_{Q_+' + Q_-'}] \left(\phi + \Bar{\phi} + \psi_+ + \psi_-\right) \right\>  .
+\]
+We first focus on terms involving variations of $\phi, \Bar{\phi}$:
+\begin{align*} 
+[\delta_{Q_+ + Q_-}, \delta_{Q_+' + Q_-'}] (\phi + \Bar{\phi}) & = (\delta_{Q_+} + \delta_{Q_-}) \left(\<Q'_+, \psi_+\>_+ + \<Q'_-, \psi_-\>_-\right) - (\delta_{Q'_+} + \delta_{Q'_-}) \left(\<Q_+, \psi_+\>_+ + \<Q_-, \psi_-\>_-\right) \\ & = \<Q'_+, \rho(\d \phi) Q_-\>_+ + \<Q'_-, \rho(\d \Bar{\phi}) Q_+\>_- -  \<Q_+, \rho(\d \phi) Q'_-\>_+ - \<Q_-, \rho(\d \Bar{\phi}) Q'_+\>_- \\ & = (\d (\phi + \Bar{\phi}), \Gamma(Q_+ + Q_-, Q_+' + Q_-')) \\ & = L_{[Q_++Q_-, Q_+'+Q_-']} (\phi + \Bar{\phi}) %\\ & = \delta_{[Q_+ + Q_-, Q_+' + Q_-']} (\phi + \Bar{\phi})
+\end{align*}
+In the third line we have used the identity $(v, \Gamma(Q_1, Q_2)) = \<\rho(v) Q_1, Q_2\>$ where $Q_i \in S$, $v \in V$, $\<-,-\>$ is the spinor pairing, and $(-,-)$ is the inner product on $V$. 
+The third line follows from the relation $(\d \phi, v) = L_v (\phi)$ where $L_v$ is the Lie derivative. 
+
+Let $I_{\rm Poin}(\phi,\Bar{\phi})$ be the piece of $I_{\rm Poin}$ depending on $\phi, \Bar{\phi}$ and their antifields.
+The last line above is simply the Lie derivative with respect to the translation invariant vector field $[Q_++Q_-, Q_+'+Q_-']$ on the field $\phi + \Bar{\phi}$, which is precisely the symmetry encoded by $I_{\rm Poin}$.
+Thus, this calculation implies
+\[
+\left(\d_{CE} I_{\rm Poin}(\phi, \Bar{\phi}) + \frac{1}{2} \left\{I_{\rm matter}^{(1)}(\phi, \Bar{\phi}), I_{\rm matter}^{(1)}(\phi, \Bar{\phi})\right\} \right) (Q_+ + Q_- , Q_+' + Q_-') = 0
+\]
+for all $Q_\pm, Q_\pm'$. 
+
+Next, we focus on the terms in the statement of the lemma involving the functionals which on the fields $\psi_{\pm}$: $I_{\rm Poin}(\psi_{\pm})$, $I^{(1)}_{\rm matter}(\psi_{\pm})$, and $I^{(2)}_{\rm matter}$. 
+We must show
+\[
+\left(\d_{CE} I_{\rm Poin}(\psi_\pm) + \{S_{\rm matter}, I_{\rm matter}^{(2)}\} + \frac{1}{2} \{I_{\rm matter}^{(1)}(\psi_\pm), I_{\rm matter}^{(1)}(\psi_\pm)\}\right) (Q_+, Q_-, Q_+' + Q_-') = 0.
+\]
+for all $Q_\pm, Q_\pm'$.
+
+We start by computing the variation of $\psi_+ + \psi_-$:
+\begin{align*}
+[\delta_{Q_+ + Q_-}, \delta_{Q_+' + Q_-'}] (\psi_+ + \psi_-) & = \brian{Fierz / 3 \psi} \\ & = \delta_{[Q_+ + Q_-, Q_+' + Q_-']} (\psi_+ + \psi_-) \pm \rho(\Gamma(Q_++Q_-, Q_+' + Q_-')) \cdot \sd \dd (\psi_+ + \psi_-) .
+\end{align*}
+\end{proof} 
+
+Next, we move on to the pure gauge sector $\fS_{\rm gauge} = S_{\rm BV, gauge} + I_{\rm Poin} + I^{(1)}_{\rm gauge} + I^{(2)}_{\rm gauge}$. 
+\end{proof}
+
+\end{document}
