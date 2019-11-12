@@ -45,7 +45,7 @@ F = C^\infty(\RR^4 ; R \oplus R^* \oplus R \otimes S_+ \oplus R^* \otimes S_-) .
 
 The BRST action is
 \[
-S (\phi, \Bar{\phi}, \psi_\pm) = - \int_{\RR^4} (\d \phi \wedge * \d \Bar{\phi})_R + \int (\psi_+ , \sd \dd \psi_-)_R .
+S (\phi, \Bar{\phi}, \psi_\pm) = \int_{\RR^4}  - (\d \phi \wedge * \d \Bar{\phi})_R + (\psi_+ , \sd \dd \psi_-)_R .
 \]
 
 \subsection{Matter multiplets}
@@ -58,6 +58,20 @@ This is called the $\cN=1$ chiral multiplet.
 \item Dimension $n=6$, with $\Sigma = S_+ \oplus W_+$ (or $\Sigma = S_- \otimes W_-$), with $W_+$ (or $W_-$) a complex, symplectic representation. This is called the $\cN=(1,0)$ (or $\cN=(0,1)$) hyper multiplet. 
 \end{itemize}
 
+\begin{lem}
+\label{lem: oneform}
+Let $\alpha$ be any $1$-form on $V$, $\psi \in C^\infty(V, \Sigma)$,  and $Q \in \Sigma$. 
+Then
+\[
+\d (Q, \psi) \wedge * \alpha = * (\rho(\alpha)Q, \sd \dd \psi) .
+\]
+\end{lem}
+\begin{proof}
+Let $V_\alpha$ denote the vector field corresponding to $\alpha$. 
+Note that $\d(Q,\psi) \wedge * \alpha = * (Q, V_\alpha . \psi)$. 
+The result then follows from invariance of $(-,-)$ and the formula $\sd \dd \psi = \rho(\d x_i) (\partial_i \psi)$. 
+\end{proof}
+
 \subsubsection{The chiral multiplet}
 
 In this subsection, $S_+ / S_-$ denote the positive/negative irreducible spin representations of $\mf{so}(4; \CC)$. 
@@ -65,7 +79,7 @@ In this subsection, $S_+ / S_-$ denote the positive/negative irreducible spin re
 The action of the odd part of the $4d$ $\cN=1$ supersymmetry algebra on the $4$-dimensional matter theory is encoded by the following linear and quadratic functionals 
 \begin{align*}
 I^{(1)}(Q) & = \int \<\phi^*, (Q, \psi_+)\>_R + \<\Bar{\phi}^*, (Q, \psi_-)\>_R + \<\psi_+^*, \rho(\d \phi)Q \>_R +  \<\psi_-^*, \rho(\d \Bar{\phi})Q \>_R \\
-I^{(2)}  (Q_1 \otimes Q_2) & = \int \frac{1}{2}(\Gamma(Q_1, Q_2), \Gamma(\psi_+^*, \psi_-^*)) - \int (Q_1, \psi_+^*)(Q_2, \psi_-^*) - \int (Q_2, \psi_+^*)(Q_1, \psi_-^*) 
+I^{(2)}  (Q_1 \otimes Q_2) & = \int \frac{1}{2}(\Gamma(Q_1, Q_2), \Gamma(\psi_+^*, \psi_-^*)) - (Q_1, \psi_+^*)(Q_2, \psi_-^*) - \int (Q_2, \psi_+^*)(Q_1, \psi_-^*) 
 \end{align*}
 for $Q, Q_1, Q_2 \in S_+ \oplus S_-$
 
@@ -96,14 +110,15 @@ One has $\{S, I^{(1)}\} (Q) = 0$ for all $Q \in S_+ + S_-$.
 \begin{proof}
 The BV bracket involving terms in $S$ depending on $\phi,\Bar{\phi}$ is:
 \begin{align*}
-- \left\{\d \phi \wedge * \d \Bar{\phi} \; , \; I^{(1)} \right\}  (Q) & = \d (Q, \psi_+) \wedge * \d \Bar{\phi} + \d \phi \wedge * \d (Q_-, \psi_-) \\
-& = \Gamma(\sd \dd \psi_+, Q) \wedge * \d \Bar{\phi} \pm \d \phi \wedge * \Gamma(\sd \dd \psi_-, Q_-) .
+- \left\{\d \phi \wedge * \d \Bar{\phi} \; , \; I^{(1)} \right\}  (Q) & = \d (Q, \psi_+) \wedge * \d \Bar{\phi} + \d \phi \wedge * \d (Q_-, \psi_-) 
+%\\
+%& = \Gamma(\sd \dd \psi_+, Q) \wedge * \d \Bar{\phi} \pm \d \phi \wedge * \Gamma(\sd \dd \psi_-, Q_-) .
 \end{align*}
 The BV bracket involving terms in $S$ depending on $\psi_\pm$ is:
 \begin{align*}
 \left\{ (\psi_+ , \sd \dd \psi_-) \; , \; I^{(1)} \right\} (Q) & = (\rho(\d \phi) Q, \sd \dd \psi_-) + (\psi_+, \sd \dd (\rho(\d \Bar{\phi}) Q)) \\ & =  (\rho(\d \phi) Q, \sd \dd \psi_-) - (\sd \dd \psi_+, (\rho(\d \Bar{\phi}) Q) \\ & = \d \phi \wedge * \Gamma(\sd \dd \psi_-, Q) - \d \Bar{\phi} \wedge * \Gamma(\sd \dd \psi_+, Q)
 \end{align*}
-Adding the two terms up, we see that $\{S,I^{(1)}\}(Q) = 0$, as desired. 
+Adding the two terms up, we see that $\{S,I^{(1)}\}(Q) = 0$ by Lemma \ref{lem: oneform} as desired. 
 \end{proof}
 
 Next, we move on to the second equation in (\ref{CMEchiral2}). 
