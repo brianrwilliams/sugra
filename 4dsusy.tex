@@ -28,13 +28,14 @@
 \maketitle
 
 \subsection{Theories of matter}
-To define the chiral multiplet we fix a complex vector space $R$, and denote the natural pairing between $R$ and $R^*$ by $\<-,-\>_R$. 
-The spinorial pairing $\<-,-\> : S_\pm \otimes S_\pm \to \CC$ induces a pairing between $S_\pm \otimes R$ and $S_{\pm} \otimes R^*$ that we also denote by $\<-,-\>_R$. 
+In this subsection, $S_+ / S_-$ denote the positive/negative irreducible spin representations of $\mf{so}(4; \CC)$. 
+To define the chiral multiplet we fix a complex vector space $R$.
+The spinorial pairing $(-,-) : S_\pm \otimes S_\pm \to \CC$ induces a pairing between $S_\pm \otimes R$ and $S_{\pm} \otimes R^*$ that we also denote by $(-,-)_R$. 
 
 The field content for the 4-dimensional chiral multiplet with values in a complex vector space $R$ is:
 \begin{itemize}
 \item a pair of scalars $\phi \in C^\infty(\RR^4 ; R)$ and $\Bar{\phi} \in C^\infty(\RR^4 ; R^*)$.
-\item a left Weyl spinor $\psi_+ \in C^\infty(\RR^4 ; R \otimes S_+)$ and a right Weyl spinor $\psi_- \in C^\infty(\RR^4 ; R^* \otimes S_-)$.
+\item a positive Weyl spinor $\psi_+ \in C^\infty(\RR^4 ; R \otimes S_+)$ and a negative Weyl spinor $\psi_- \in C^\infty(\RR^4 ; R^* \otimes S_-)$.
 \end{itemize}
 
 The space of BRST fields is 
@@ -44,33 +45,128 @@ F = C^\infty(\RR^4 ; R \oplus R^* \oplus R \otimes S_+ \oplus R^* \otimes S_-) .
 
 The BRST action is
 \[
-S (\phi, \Bar{\phi}, \psi_\pm) = \int_{\RR^4} \d^4 x \; \<\d \phi , * \d \Bar{\phi}\>_R + \int \d^4 x \; \<\psi_+ , \sd \dd \psi_-\>_R .
+S (\phi, \Bar{\phi}, \psi_\pm) = - \int_{\RR^4} (\d \phi \wedge * \d \Bar{\phi})_R + \int (\psi_+ , \sd \dd \psi_-)_R .
 \]
 
 \subsection{Matter multiplets}
 
-In some dimensions $n \leq 6$ there exists {\em matter} representations of supersymmetry. 
+In some dimensions $n \leq 6$ there exists the following {\em matter} representations of supersymmetry. 
 
 \begin{itemize}
-\item Dimension $n=4$, the chiral multiplet.
-\item Dimension $n=6$, hyper multiplet. 
+\item Dimension $n=4$, with $\Sigma = S_+ \otimes R \oplus S_- \otimes R^*$, with $R$ a complex vector space.
+This is called the $\cN=1$ chiral multiplet.
+\item Dimension $n=6$, with $\Sigma = S_+ \oplus W_+$ (or $\Sigma = S_- \otimes W_-$), with $W_+$ (or $W_-$) a complex, symplectic representation. This is called the $\cN=(1,0)$ (or $\cN=(0,1)$) hyper multiplet. 
 \end{itemize}
 
 \subsubsection{The chiral multiplet}
 
+In this subsection, $S_+ / S_-$ denote the positive/negative irreducible spin representations of $\mf{so}(4; \CC)$. 
+
 The action of the odd part of the $4d$ $\cN=1$ supersymmetry algebra on the $4$-dimensional matter theory is encoded by the following linear and quadratic functionals 
 \begin{align*}
-I^{(1)}(Q) & = \int \<\phi^* + \Bar{\phi}^*, (Q, \psi_+ + \psi_-)\>_R + \<\psi_+^* + \psi_-^*, \rho(\d \phi + \d \Bar{\phi})Q \>_R \\
-I^{(2)}  (Q_1 \otimes Q_2) & = \int \frac{1}{4}(\Gamma(Q_1, Q_2), \Gamma(\psi_+^* + \psi_-^*, \psi_+^*+\psi_-^*)) - \frac{1}{2}(Q_1, \psi_+^* + \psi_-^*)(Q_2, \psi_+^*+\psi_-^*)
+I^{(1)}(Q) & = \int \<\phi^*, (Q, \psi_+)\>_R + \<\Bar{\phi}^*, (Q, \psi_-)\>_R + \<\psi_+^*, \rho(\d \phi)Q \>_R +  \<\psi_-^*, \rho(\d \Bar{\phi})Q \>_R \\
+I^{(2)}  (Q_1 \otimes Q_2) & = \int \frac{1}{2}(\Gamma(Q_1, Q_2), \Gamma(\psi_+^*, \psi_-^*)) - \int (Q_1, \psi_+^*)(Q_2, \psi_-^*) - \int (Q_2, \psi_+^*)(Q_1, \psi_-^*) 
 \end{align*}
 for $Q, Q_1, Q_2 \in S_+ \oplus S_-$
 
 \begin{thm}
-The functional $\fS = S + I_{\rm Poin}^{(1)} + I^{(1)} + I^{(2)}$ with $I_{\rm Poin}$ as in Section \ref{??} satisfies the classical master equation
-\[
+The functional $\fS = S + I^{(1)} + I^{(2)}$ satisfies the classical master equation
+\begin{equation}\label{CMEchiral}
 \d_{\rm Lie} \fS + \frac{1}{2} \{\fS, \fS\} = 0 .
-\]
+\end{equation}
 \end{thm}
+
+Before proving the theorem, we decompose the classical master equation (\ref{CMEchiral}) into the following equations:
+\begin{equation}\label{CMEchiral2}
+\begin{array}{rrrrrr}
+\{S , I^{(1)}\} & = & 0 \\ 
+\{S, I^{(2)}\} + \d_{CE} I^{(1)} + \frac{1}{2} \{I^{(1)}, I^{(1)}\} & = & 0 \\
+\d_{CE} I^{(2)} + \{I^{(1)}, I^{(2)}\} & =& 0 \\
+\{I^{(2)}, I^{(2)}\} & =& 0
+\end{array}
+\end{equation}
+
+The last equation is automatically satisfied since $I^{(2)}$ is independent of $\phi, \Bar{\phi}$, and $\psi_{\pm}$. 
+
+The first equation in (\ref{CMEchiral2}) states that the classical action for the chiral multiplet is supersymmetric. 
+
+\begin{lemma} 
+One has $\{S, I^{(1)}\} (Q) = 0$ for all $Q \in S_+ + S_-$. 
+\end{lemma}
+\begin{proof}
+The BV bracket involving terms in $S$ depending on $\phi,\Bar{\phi}$ is:
+\begin{align*}
+- \left\{\d \phi \wedge * \d \Bar{\phi} \; , \; I^{(1)} \right\}  (Q) & = \d (Q, \psi_+) \wedge * \d \Bar{\phi} + \d \phi \wedge * \d (Q_-, \psi_-) \\
+& = \Gamma(\sd \dd \psi_+, Q) \wedge * \d \Bar{\phi} \pm \d \phi \wedge * \Gamma(\sd \dd \psi_-, Q_-) .
+\end{align*}
+The BV bracket involving terms in $S$ depending on $\psi_\pm$ is:
+\begin{align*}
+\left\{ (\psi_+ , \sd \dd \psi_-) \; , \; I^{(1)} \right\} (Q) & = (\rho(\d \phi) Q, \sd \dd \psi_-) + (\psi_+, \sd \dd (\rho(\d \Bar{\phi}) Q)) \\ & =  (\rho(\d \phi) Q, \sd \dd \psi_-) - (\sd \dd \psi_+, (\rho(\d \Bar{\phi}) Q) \\ & = \d \phi \wedge * \Gamma(\sd \dd \psi_-, Q) - \d \Bar{\phi} \wedge * \Gamma(\sd \dd \psi_+, Q)
+\end{align*}
+Adding the two terms up, we see that $\{S,I^{(1)}\}(Q) = 0$, as desired. 
+\end{proof}
+
+Next, we move on to the second equation in (\ref{CMEchiral2}). 
+
+\begin{lemma} 
+One has
+\begin{equation}\label{CMEchiral3}
+\{S, I^{(2)}\} + \d_{CE} I^{(1)} + \frac{1}{2} \{I^{(1)}, I^{(1)}\} = 0 .
+\end{equation}
+\end{lemma}
+\begin{proof}
+Evaluating the equation (\ref{CMEchiral3}) on $v_1,v_2 \mf{iso}(V)$ reduces to the claim that (??) defines a strict Lie action. 
+Evaluating on $v \in \mf{iso}(V)$ and $Q \in S_+ \oplus S_-$, the claim reduces to the fact that $I^{(1)}$ is Poincar\'{e} invariant.
+So, the only nontrivial term to check is the evaluation on $Q_1,Q_2 \in S_+ \oplus S_-$. 
+
+The individual terms are:
+\begin{align*}
+\{I^{(1)}, I^{(1)}\}(Q_1, Q_2) = & - \phi^* (Q_1, \rho(\d \phi) Q_2) - \phi^* (Q_2, \rho(\d \phi)Q_1) \\ & - \Bar{\phi}^* (Q_1, \rho(\d \Bar{\phi}) Q_2) - \Bar{\phi}^* (Q_2, \rho(\d \Bar{\phi})Q_1) \\ &  -  (\psi_+^*, \rho(\d(Q_1,\psi_+))Q_2) - (\psi_+^*, \rho(\d(Q_2, \psi_+)) Q_1) \\ & - (\psi_-^*, \rho(\d(Q_1, \psi_-)) Q_2) - (\psi_-^*, \rho(\d(Q_2, \psi_-))Q_1) 
+\end{align*}
+
+\begin{align*}
+(\d_{CE}I^{(1)})(Q_1,Q_2) = & - \phi^* L_{\Gamma(Q_1,Q_2)} (\phi) - \Bar{\phi}^* L_{\Gamma(Q_1,Q_2)} \Bar{\phi} \\ &  - (\psi_+^* , \Gamma(Q_1,Q_2) . \psi_+) - (\psi_-^*, \Gamma(Q_1,Q_2) . \psi_-)
+\end{align*}
+
+and
+\begin{align*}
+\{S, I^{(2)}(Q_1,Q_2)\} = & 
+\end{align*}
+
+We first collect all terms in Equation (\ref{CMEchiral3}) proportional to $\phi^*$:
+\[
+- \frac{1}{2} (Q_1, \rho(\d\phi) Q_2) - \frac{1}{2} (Q_2, \rho(\d \phi) Q_1) - L_{\Gamma(Q_1,Q_2)} \phi .
+\]
+By Proposition \ref{??}
+\brian{ $v \wedge \Gamma(Q_1, Q_2) = (Q_1 , \rho(v) Q_2)$} we observe that the first two terms cancel with the third term. 
+Similarly, all terms proportional to $\Bar{\phi}^*$ also vanish. 
+
+Next, we collect all terms in Equation (\ref{CMEchiral3}) proportional to $\psi_+^*$:
+\begin{align*}
+& - \frac{1}{2} \rho(\d(Q_1,\psi_+))Q_2 - \frac{1}{2} \rho(\d(Q_2, \psi_+)) Q_1 - \Gamma(Q_1,Q_2) . \psi_+
+\\ 
+& \pm \frac{1}{2} \rho(\Gamma(Q_1,Q_2)) \sd \dd \psi_+ \mp \frac{1}{2} (Q_2, \sd \dd \psi_+)Q_1 \mp \frac{1}{2} (Q_1, \sd \dd \psi_+)Q_2
+\end{align*}
+
+\end{proof}
+
+\begin{lemma}
+\[\{I^{(1)}, I^{(2)}\}(Q_1, Q_2, Q_3) = 0\]
+for every $Q_1, Q_2, Q_3\in S_+ \oplus S_-$.
+\end{lemma}
+\begin{proof}
+We have
+\begin{align*}
+\{I^{(1)}(Q_1), I^{(2)}(Q_2, Q_3)\} = 
+\end{align*}
+
+$\{I^{(1)}, I^{(2)}\}$ is obtained by cyclically symmetrizing the above expression. By Proposition \ref{prop:3psi} the cyclic symmetrization of the term with $c^*$ is zero. The Clifford relation implies that
+%\begin{align*}
+%\frac{1}{2} (\Gamma(Q_2, Q_3), \Gamma(\rho(A^*) Q_1, \lambda^*)) &= -\frac{1}{2}(\Gamma(Q_2, Q_3), \Gamma(\rho(A^*)\lambda^*, Q_1)) + (\Gamma(Q_2, Q_3), A^*) (Q_1, \lambda^*) \\
+%&= -\frac{1}{2}(\rho(\Gamma(Q_2, Q_3)) Q_1, \rho(A^*)\lambda^*) + (\Gamma(Q_2, Q_3), A^*) (Q_1, \lambda^*).
+%\end{align*}
+%Therefore, again using Proposition \ref{prop:3psi} we see that the cyclic symmetrization of the terms with $A^*$ vanishes.
+\end{proof}
 
 \section{scrap}
 
