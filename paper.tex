@@ -387,12 +387,12 @@ for $v\in\mf{iso}(V)$, where $v.\lambda$ contains both a derivative and the $\so
 
 \brian{does this warrant it's own definition?}
 
-\subsection{Dimensional Reduction, take 2}
+\subsection{Dimensional Reduction} \label{dim_red_section}
 
-In this section we formulate the procedure of dimensional reduction of a classical field theory. Fix a submersion $p\colon M\rightarrow N$ equipped with a fiberwise volume form, i.e. an isomorphism $p^*\Dens_N\cong \Dens_M$.
+In this section we formulate the procedure of dimensional reduction of a classical field theory. Fix a submersion $p\colon M\rightarrow N$ equipped with a fiberwise volume form, i.e. an isomorphism $p^*\Dens_N\cong \Dens_M$.  The idea is that the \emph{dimensional reduction} of a classical field theory on $M$ along the submersion $p$ is the theory obtained by restricting to those fields which are constant along the fibers of $p$.  We will begin with an abstract definition of dimensional reduction, then prove that if $M = N \times \RR^k$, and we consider field theories which are translation invariant along the fiber, then this procedure is well-defined.
 
 \begin{definition}
-A classical field theory $(E_N, Q_N, \omega_N, I_N)$ on a manifold $N$ is a {\bf dimensional reduction} of the classical field theory $(E_M, Q_M, \omega_M, I_M)$ on a manifold $M$ if one is given the data of an isomorphism $p^* E_N\cong E_M$ of the bundles of BV fields satisfying the following conditions:
+We say that a classical field theory $(E_N, Q_N, \omega_N, I_N)$ on $N$ is a {\bf dimensional reduction} along $p$ of the classical field theory $(E_M, Q_M, \omega_M, I_M)$ on a manifold $M$ if one is given the data of an isomorphism $p^* E_N\cong E_M$ of the bundles of BV fields satisfying the following conditions:
 \begin{itemize}
 \item The diagram
 \[
@@ -416,7 +416,7 @@ is commutative.
 \end{itemize}
 \end{definition}
 
-We have an obvious notion of isomorphisms of dimensional reductions: these are isomorphisms of classical field theories on $N$ which are compatible with the isomorphisms $p^* E_N\cong E_M$. Thus, dimensional reductions of a given classical field theory on $M$ form a groupoid.
+We have an obvious notion of isomorphisms of dimensional reductions: these are isomorphisms of classical field theories on $N$ which are compatible with the isomorphisms $p^* E_N\cong E_M$. Thus, the collection of dimensional reductions of a given classical field theory on $M$ forms a groupoid.  In fact, when dimensional reduction makes sense, this groupoid is always contractible.
 
 \begin{prop}
 Suppose $(E_M, Q_M, \omega_M, I_M)$ is a classical field theory on $M$ and $p\colon M\rightarrow N$ is a homotopy equivalence. Then the groupoid of dimensional reductions of $(E_M, Q_M, \omega_M, I_M)$ is either contractible or empty.
@@ -424,6 +424,9 @@ Suppose $(E_M, Q_M, \omega_M, I_M)$ is a classical field theory on $M$ and $p\co
 Suppose $M=N\times \RR$ and choose a translation-invariant density along the $\RR$ direction. If the original classical field theory is translation-invariant along the $\RR$ direction, dimensional reductions exist.
 \label{prop:dimensionalreductionunique}
 \end{prop}
+
+Therefore, it makes sense to talk about ``the'' dimensional reduction of a classical field theory along the projection $p \colon N \times \RR \to N$: there exists a dimensional reduction which is unique up to canonical isomorphism.
+
 \begin{proof} \textbf{Uniqueness}. We begin by showing that any two dimensional reductions are isomorphic and moreover such an isomorphism is unique if it exists. Since $p\colon M\rightarrow N$ is a homotopy equivalence, the functor $p^*$ establishes an isomorphism between the category of graded vector bundles on $N$ and on $M$. In a similar way, $p^*$ establishes an equivalence between the category of graded vector bundles $E_N$ on $N$ equipped with a nondegenerate pairing $E_N\otimes E_N\rightarrow \Dens_N[-1]$ and a similar category for $M$.
 
 Since $\cE_N\rightarrow \cE_M$ is injective, the diagram
@@ -438,14 +441,15 @@ uniquely determines $Q_N$ from $Q_M$. Moreover, the condition $p^* I_M = I_N$ un
 \textbf{Existence}. Now suppose $(E_M, Q_M, \omega_M, I_M)$ is translation-invariant along the $\RR$ direction. Translation invariance provides the descent datum to construct the bundle of fields $E_N$ on $N$ equipped with a nondegenerate pairing $\omega_N$. Moreover, it shows that the differential $Q_M$ preserves the subspace $\cE_N\hookrightarrow \cE_M$. The restriction of $I_M$ under the same embedding is independent of the $\RR$ factor by translation invariance, so $I_N=p^* I_M$ is again a local functional.
 \end{proof}
 
-By the previous Proposition we may simply talk about \emph{the} dimensional reduction of a given classical field theory when the fibers of $p$ are contractible. We will now describe dimensional reductions of the classical Chern--Simons theory.
+We will now describe dimensional reductions of the classical Chern--Simons theory.
 
-\begin{prop}
+\begin{prop} \label{CS_diml_red_prop}
 Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$ equipped with a nondegenerate invariant pairing and consider the generalized Chern--Simons theory
 \[\map(X\times Y_{\mr{Dol}}\times (M\times \RR)_{\mr{dR}}, B\fg).\]
 Its dimensional reduction along the projection $p\colon X\times Y\times (M\times \RR)\rightarrow X\times Y\times M$ is isomorphic to the generalized BF theory
 \[\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1] B\fg).\]
 \end{prop}
+
 \begin{proof}
 To simplify the proof, we assume $X=Y=M=\pt$. Then $\fg$ carries a $(-2)$-shifted pairing $\langle-,-\rangle$. In particular, the generalized BF theory
 \[\map(\pt, T^*[-1] B \fg)\]
@@ -472,61 +476,14 @@ Under the pullback map
 the integration map $\int_\CC \d z\wedge (-)\colon \Omega^{0, \bullet}(\CC)\rightarrow \CC$ reduces to the integration map $\int_\RR (-)\colon \Omega^{\bullet}(\RR;\CC)\rightarrow \CC$.
 \end{proof}
 
-\subsection{Dimensional Reduction} \label{dim_red_section}
-The idea of the \emph{dimensional reduction} of a rotation invariant classical field theory to a linear subspace of $\RR^n$ is to restrict attention to only those fields with are constant in directions perpendicular to the subspace. 
 
-\begin{definition}
-Let $i\colon \RR^m \inj \RR^n$ be the inclusion of a linear subspace, and let $p \colon \RR^n \to \RR^m$ be the corresponding orthogonal projection. Let $(E, \omega, Q, I)$ be a rotation invariant classical field theory on $\RR^n$.  The \emph{dimensional reduction} of the classical field theory from $\RR^n$ to $\RR^m$ is the classical field theory whose underlying bundle of fields is the pullback bundle $i^*E$, with the following structure.  The symplectic pairing is defined as the composite
-\[(i^*\mc E \otimes i^*\mc E)(U) \iso (p^*i^*\mc E \otimes p^*i^*\mc E)(U \times (\RR^m)^\perp) \to (\mc E \otimes \mc E)(U \times (\RR^m)^\perp) \overset \omega \to \dens(U \times (\RR^m)^\perp),\]
-with the observation that the density we obtain splits canonically into a density on $U$ and a constant density on $(\RR^m)^\perp$.  The classical differential $Q \colon i^*\mc E(U) \to i^*\mc E(U)$ is defined by
-\[\phi \mapsto i^*(Q(p^*(\phi))).\]
-Finally, the classical interaction is defined similarly: the pullback $p^*$ defines a map from $\mc O(\mc E)$ to $\mc O(i^*\mc E)$ that preserves locality \footnote{Intuitively, given a local functional on fields on $\RR^n$, restrict to a local functional on those fields constant in directions perpendicular to $\RR^m$.}: there is a canonical map defined on an open set $U \sub \RR^m$ by
-\[\sym^k \mc E^\vee(U\times (\RR^m)^\perp) \to \sym^k p^*i^*\mc E^\vee(U\times (\RR^m)^\perp) \iso \sym^k i^*\mc E(U).\]
-\end{definition}
+%\begin{lemma} \label{CS_diml_red_lemma}
+%Let $\map(X \times C_{\ol \dd}, B\gg)$ be a generalized Chern-Simons theory as in Section \ref{gen_CS_section}, where $C = \CC$ or $\CC^\times$ is a curve, and $X = (X_1)_{\ol \dd} \times (X_2)_{\mr{Dol}} \times (X_3)_{\mr{dR}}$ is arbitrary.  Split $C$ as $L \times \RR$, where $L = \RR$ or $S^1$.  The \chris{assuming uniqueness} dimensional reduction of this theory along the map $X \times C \to X \times L$ is equivalent to the generalized Chern-Simons theory $\map(X \times L_{\mr{dR}}, B\gg)$.
+%\end{lemma}
 
-Rotation invariance guarantees that the dimensional reduction is independent of the choice of $m$-dimensional subspace of $\RR^n$.
-
-\begin{prop} \label{dim_red_SUSY_prop}
-The dimensional reduction of a supersymmetric classical field theory $\mf L$ on $\RR^n$ with supersymmetry algebra $\mf A = (\so(n) \oplus \gg_R) \ltimes (\RR^n \oplus \Pi \Sigma)$ is a supersymmetric classical field theory $\mf L'$ on $\RR^m$ with supersymmetry algebra $\mf A' = (\so(m) \oplus \gg_R) \ltimes (\RR^m \oplus \Pi \Sigma')$, where $\Sigma'$ is the restriction of the representation $\Sigma$ of $\so(n)$ to a representation of the subalgebra $\so(m)$ of rotations of the subspace $\RR^m \sub \RR^n$.
-\end{prop}
-
-\begin{proof}
- \chris{Here's a proof sketch/outline/idea.} Start with a Poincar\'e invariant action functional $\mf S_{\mr{Poin}}$ in $n$-dimensions.  There is a cochain map \[F_{\mr{Poin}} \colon (C^\bullet_{\mr{Lie}}(\mf{iso}(n)) \otimes C^\bullet_{\mr{loc}}(\mf L))\to (C^\bullet_{\mr{Lie}}(\mf{iso}(m)) \otimes C^\bullet_{\mr{loc}}(p^* \mf L')),\] 
- given by the inclusion of $\mf{iso}(m) \inj \mf{iso}(n)$, and the restriction of a functional to act only those fields which are constant on $(\RR^m)^\perp$.   We'll check that this map will also be compatible with the antibracket $\{,\}$, so a Maurer Cartan element $\mf S_{\mr{Poin}}$ in $n$-dimensions induces a Maurer-Cartan element $F(\mf S_{\mr{Poin}}) = \mf S'_{\mr{Poin}}$ in $m$-dimensions, i.e a Poincar\'e invariant action functional. 
- 
- Now include supertranslations, so start with an $\mf A$-invariant action functional $\mf S$ in $n$-dimensions.  There is a graded linear map $C^\bullet_{\mr{Lie}}(\mf A) \to C^\bullet_{\mr{Lie}}(\mf A')$, but it's not a cochain map because it's not compatible with the $\Gamma$-brackets.  Let's apply the graded linear map \[F \colon (C^\bullet_{\mr{Lie}}(\mf A) \otimes C^\bullet_{\mr{loc}}(\mf L))\to (C^\bullet_{\mr{Lie}}(\mf A') \otimes C^\bullet_{\mr{loc}}(p^*\mf L'))\] to $\mf S$ anyway.  We'll find that $\d F(\mf S) - F \d(\mf S)$ vanishes, because the failure of $F$ and $\d$ to commute involves the action of the translations perpendicular to $\RR^m$, which act trivially on the Poincar\'e invariant theory $\mf L'$.  We can then use the same argument as above. 
-\end{proof}
-
-\chris{we could alternatively write this in terms of BRST fields.}
-
-\chris{By the way, I see no obstruction to proving the following.  One just needs to check that the action of an infinitesimal symmetry $X$ in $\mf A'$ on the dimensionally reduced theory is by $\phi \mapsto i^*(X(p^*(\phi)))$, so that forming the reduced classical differential commutes with twisting.  This should follow from the definition of the supersymmetry algebra action on the reduced theory from the proposition above.}
-\begin{lemma} \label{commuting_twist_and_reduction_lemma}
-If $\mf A$ is an $n$-dimensional supersymmetry algebra, and $Q \in \mf A$ is a square-zero supercharge, then the operations of dimensional reduction from $\RR^n$ to $\RR^m$ and twisting by $Q$ commute.
-\end{lemma}
-
-We'll conclude this section by discussing some examples of dimensional reduction in the context of generalized BF and Chern-Simons theories.  First we'll describe what happens when we dimensionally reduce generalized Chern-Simons theory along $\RR$ in a holomorphic direction.
-
-\begin{lemma} \label{CS_diml_red_lemma}
-Let $\map(X \times C_{\ol \dd}, B\gg)$ be a generalized Chern-Simons theory as in Section \ref{gen_CS_section}, where $C = \CC$ or $\CC^\times$ is a curve, and $X = (X_1)_{\ol \dd} \times (X_2)_{\mr{Dol}} \times (X_3)_{\mr{dR}}$ is arbitrary.  Split $C$ as $L \times \RR$, where $L = \RR$ or $S^1$.  The \chris{assuming uniqueness} dimensional reduction of this theory along the map $X \times C \to X \times L$ is equivalent to the generalized Chern-Simons theory $\map(X \times L_{\mr{dR}}, B\gg)$.
-\end{lemma}
-
-\chris{I haven't made the notation here match the notation in Section \ref{gen_CS_section} yet.}
-
-\begin{proof}
-\chris{sketchy}
-Let us denote the complex of BV fields in our generalized Chern-Simons theory on $X \times C$ by $(E_X \boxtimes \bigwedge^\bullet (T^{0,1}_C)^\vee) \otimes \gg[1]$, with differential on the sheaf of sections given by $Q_X + \ol \dd_C + \ell_1$ and pairing on the sheaf of sections by $\omega_X \boxtimes \omega_C$. Write $p$ for the projection $C \to L$.  It's enough to observe that there is a canonical graded isomorphism $p^*\Omega^\bullet(L) \iso \Omega^{0,\bullet}(C)$ intertwining on the one hand the de Rham and Dolbeault differentials, and on the other hand the two integration maps against the orientation on $L$ and the Calabi-Yau structure on $C$.
-\end{proof}
-
-What about if we, instead, reduce generalized Chern-Simons theory in a de Rham direction?
-
-\begin{lemma} \label{CS_to_BF_diml_red_lemma}
-Consider a generalized Chern-Simons theory of the form $\map(X \times \RR_{\mr{dR}}, B\gg)$, where again $X$ is arbitrary.  The dimensional reduction of this theory along the map $X \times \RR \to X$ is equivalent to the generalized BF type theory $\map(X, T[1]B\gg)$.
-\end{lemma}
-
-\begin{proof}
-\chris{...}
-\end{proof}
-
+%\begin{lemma} \label{CS_to_BF_diml_red_lemma}
+%Consider a generalized Chern-Simons theory of the form $\map(X \times \RR_{\mr{dR}}, B\gg)$, where again $X$ is arbitrary.  The dimensional reduction of this theory along the map $X \times \RR \to X$ is equivalent to the generalized BF type theory $\map(X, T[1]B\gg)$.
+%\end{lemma}
 
 \section{Supersymmetry} \label{sec: susy}
 
@@ -836,21 +793,22 @@ Without a twisting homomorphism $\alpha$, we obtain a $\ZZ/2$-graded classical f
 where the $\ZZ/2$-grading on $E$ is the total grading.
 \end{remark}
 
-\subsection{Compactification of supersymmetric theories}
+\subsection{Dimensional Reduction of Supersymmetric Theories}
 
 Suppose $V_\RR=\RR^n$ as before and choose a subspace $W_\RR\subset V_\RR$, so that $V_\RR = W_\RR\oplus W^\perp_\RR$. We denote $W=W_{\RR}\otimes_{\RR} \CC$.
 
-Fix a spinorial representation $\Sigma$ of $\so(V)$, a nondegenerate pairing $\Gamma_V\colon \sym^2(\Sigma)\rightarrow V$ and a group of $R$-symmetries $G_V$. We have a natural embedding
+Fix a spinorial representation $\Sigma$ of $\so(V)$, a nondegenerate pairing $\Gamma_V\colon \sym^2(\Sigma)\rightarrow V$ and a group of $R$-symmetries $G_V$.  This datum generates a supersymmetry algebra, which we'll denote by $\mf A$.  We have a natural embedding
 \[\so(W)\oplus \so(W^{\perp})\subset \so(V),\]
 so $\Sigma$ restricts to a spinorial $\so(W)$ representation. We define the dimensionally reduced $\Gamma$-pairing as the composite
 \[\Gamma_W\colon \sym^2(\Sigma)\xrightarrow{\Gamma_V} V\rightarrow W,\]
 where the last map is the orthogonal projection onto $W$. Finally, we have a new $R$-symmetry group
 \[G_W = G_V\times \Spin(W^\perp_\RR).\]
+This datum generates a supersymmetry algebra $\mf A'$ in dimension $\mr{dim}(W_\RR)$.
 
-Recall from Proposition \ref{prop:dimensionalreductionunique} that dimensional reduction of theories along the projection $p\colon V_\RR\rightarrow W_\RR$ exist and are unique. We have the following generalization of this statement to supersymmetric theories.
+Recall from Proposition \ref{prop:dimensionalreductionunique} that the dimensional reduction of a classical field theory along the projection $p\colon V_\RR\rightarrow W_\RR$ exists and is unique. We have the following generalization of this statement to supersymmetric theories.
 
 \begin{prop}
-Suppose $(E, Q, \omega, I)$ is a supersymmetric classical field theory on $V_\RR$. Then its dimensional reduction along $p\colon V_\RR\rightarrow W_\RR$ has a unique compatible supersymmetric structure.
+Suppose $(E, Q, \omega, I)$ is an $\mf A$-supersymmetric classical field theory on $V_\RR$. Then its dimensional reduction along the projection $p\colon V_\RR\rightarrow W_\RR$ has a unique compatible $\mf A'$-supersymmetric structure.
 \end{prop}
 
 \begin{prop}
