@@ -69,20 +69,20 @@ As usual, we denote the antifields by $\phi^*$ and $\psi^*$.
 The action of supersymmetry is given by a linear and quadratic functional:
 \begin{align*}
 I^{(1)} (Q) & = \int (\phi^*, (Q, \psi))_{W_+ \otimes U} + (\psi^*, \rho(\d \phi) Q)_U \\
-I^{(2)} (Q_1 , Q_2) & =  \int \frac{1}{4}(\Gamma(Q_1, Q_2)_{W_+} , \Gamma(\psi^*, \psi^*)_{U}) - \frac{1}{2} (Q_1, \psi^*)_U(Q_2, \psi^*)_U  .
+I^{(2)} (Q_1 , Q_2) & =  \int \frac{1}{4}(\Gamma(Q_1, Q_2)_{W_+} , \Gamma(\psi^*, \psi^*)_{U}) \textcolor{red}{-\frac{1}{2} (Q_1, \psi^*)_U(Q_2, \psi^*)_U  }.
 \end{align*}
 where $Q, Q_1,Q_2 \in \Sigma = S_+ \otimes W_+$. 
 We point out some conventions in the definition of $I^{(2)}$. 
-First, we define $\Gamma (Q_1,Q_2)_{W_+} \in V$ as the image of $Q_1 \otimes Q_2$ under the composition
+Define $\Gamma (Q_1,Q_2)_{W_+} \in V$ as the image of $Q_1 \otimes Q_2$ under the composition
 \[
 \Sigma \otimes \Sigma = (S_+ \otimes W_+) \otimes (S_+ \otimes W_+) \cong (S_+ \otimes S_+) \otimes (W_+ \otimes W_+) \xto{\Gamma \otimes \omega_{W_+}} V .
 \]
-Similarly, $\Gamma(\psi^*, \psi^*)_U \in V$ is defined as the image of $\psi^* \otimes \psi^*$ under the composition 
-\[
-(S_+ \otimes U) \otimes (S_+ \otimes U) \cong (S_+ \otimes S_+) \otimes (U \otimes U) \xto{\Gamma \otimes \omega_{U}} V .
-\]
-The pairing in the first term in $I^{(2)}$ is then induced from the natural one on $V$. 
-Also, $(Q_1, \psi^*)$ is defined as the image of $Q_1 \otimes \psi^*$ under the composition \brian{is this one zero???}
+%Similarly, $\Gamma(\psi^*, \psi^*)_U \in V$ is defined as the image of $\psi^* \otimes \psi^*$ under the composition 
+%\[
+%(S_+ \otimes U) \otimes (S_+ \otimes U) \cong (S_+ \otimes S_+) \otimes (U \otimes U) \xto{\Gamma \otimes \omega_{U}} V .
+%\]
+%The pairing in the first term in $I^{(2)}$ is then induced from the natural one on $V$. 
+%Also, $(Q_1, \psi^*)$ is defined as the image of $Q_1 \otimes \psi^*$ under the composition \brian{is this one zero???}
 
 The following result states that these functionals encode an off-shell action of six-dimensional $\cN=(1,0)$ supersymmetry on the half hypermultiplet valued in $U$. 
 The proof is very similar to the case of the four-dimensional $\cN=1$ chiral multiplet. 
@@ -147,8 +147,9 @@ The individual terms are:
 
 and
 \begin{align*}
-\{S, I^{(2)}(Q_1,Q_2)\} = & \frac{1}{2} \Gamma(Q_1,Q_2) \Gamma(\psi^*, \sd \dd \psi) - \frac{1}{2} (Q_1, \psi^*) (Q_2, \sd \dd \psi) - \frac{1}{2} (Q_1, \sd \dd \psi) (Q_2, \psi^*) .
+\{S, I^{(2)}(Q_1,Q_2)\} = & \frac{1}{2} \Gamma(Q_1,Q_2) \Gamma(\psi^*, \sd \dd \psi) \textcolor{red}{- \frac{1}{2} (Q_1, \psi^*) (Q_2, \sd \dd \psi) - \frac{1}{2} (Q_1, \sd \dd \psi) (Q_2, \psi^*) }.
 \end{align*}
+Note that we can rewrite this as $\frac{1}{2} \rho(\Gamma(Q_1, Q_2)) \sd \dd \psi$. 
 
 We first collect all terms in Equation (\ref{CMEhyper3}) proportional to $\phi^*$:
 \[
@@ -161,9 +162,9 @@ Next, we collect all terms in Equation (\ref{CMEhyper3}) proportional to $\psi^*
 \begin{align*}
 & - \frac{1}{2} \rho(\d(Q_1,\psi))Q_2 - \frac{1}{2} \rho(\d(Q_2, \psi)) Q_1 - \Gamma(Q_1,Q_2) . \psi
 \\ 
-& + \frac{1}{2} \rho(\Gamma(Q_1,Q_2)) \sd \dd \psi - \frac{1}{2} (Q_2, \sd \dd \psi)Q_1 - \frac{1}{2} (Q_1, \sd \dd \psi)Q_2
+& + \frac{1}{2} \rho(\Gamma(Q_1,Q_2)) \sd \dd \psi \textcolor{red}{ - \frac{1}{2} (Q_2, \sd \dd \psi)Q_1 - \frac{1}{2} (Q_1, \sd \dd \psi)Q_2}
 \end{align*}
-By \label{prop:cliffordactionproperties} item (2), the first, second, fifth, and sixth terms combine to give
+By Proposition \ref{prop:cliffordactionproperties} item (2), the first, second, and fourth terms combine to give
 \[
 - \frac{1}{2} \left( \sd \dd \rho(\Gamma(Q,\psi)) Q_2 + \sd \dd \rho(\Gamma(Q_2, \psi))Q_1 \right)  .
 \]
