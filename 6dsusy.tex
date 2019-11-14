@@ -27,6 +27,16 @@
 
 \maketitle
 
+\brian{This holds for $\Sigma = S_+ \otimes W_+$.}
+
+\begin{prop}\label{prop: new3psi}
+Suppose $Q_1,Q_2 \in \Sigma = S_+ \otimes W_+$ and $Q_3 \in S_-$. 
+Then
+\[
+(Q_1, Q_3) Q_2 + (Q_2, Q_3)Q_1 = \rho(\Gamma(Q_1,Q_2)) Q_3
+\]
+\end{prop}
+
 \subsection{The (half) hyper multiplet}
 
 In this subsection, $S_+ / S_-$ denote the positive/negative irreducible spin representations of $\mf{so}(6; \CC)$. 
@@ -159,18 +169,20 @@ By the Clifford identity
 \brian{ $v \wedge \Gamma(Q_1, Q_2) = (Q_1 , \rho(v) Q_2)$} we observe that the first two terms cancel with the third term.  
 
 Next, we collect all terms in Equation (\ref{CMEhyper3}) proportional to $\psi^*$:
-\begin{align*}
-& - \frac{1}{2} \rho(\d(Q_1,\psi))Q_2 - \frac{1}{2} \rho(\d(Q_2, \psi)) Q_1 - \Gamma(Q_1,Q_2) . \psi
+\begin{equation}\label{psistar}
+\begin{array}{cccc}
+& - & \displaystyle \frac{1}{2} \rho(\d(Q_1,\psi))Q_2 - \frac{1}{2} \rho(\d(Q_2, \psi)) Q_1 - \Gamma(Q_1,Q_2) . \psi
 \\ 
-& + \frac{1}{2} \rho(\Gamma(Q_1,Q_2)) \sd \dd \psi \textcolor{red}{ - \frac{1}{2} (Q_2, \sd \dd \psi)Q_1 - \frac{1}{2} (Q_1, \sd \dd \psi)Q_2}
-\end{align*}
-By Proposition \ref{prop:cliffordactionproperties} item (2), the first, second, and fourth terms combine to give
+& + &\displaystyle \frac{1}{2} \rho(\Gamma(Q_1,Q_2)) \sd \dd \psi \textcolor{red}{ - \frac{1}{2} (Q_2, \sd \dd \psi)Q_1 - \frac{1}{2} (Q_1, \sd \dd \psi)Q_2}
+\end{array}
+\end{equation}
+By Proposition \ref{prop:cliffordactionproperties} item (3), the first and second terms can be written as:
 \[
-- \frac{1}{2} \left( \sd \dd \rho(\Gamma(Q,\psi)) Q_2 + \sd \dd \rho(\Gamma(Q_2, \psi))Q_1 \right)  .
+- \frac{1}{2} \rho(\d(Q_1,\psi))Q_2 - \frac{1}{2} \rho(\d(Q_2, \psi)) Q_1 = - \frac{1}{2} \sd \dd \left( (Q_1, \psi)Q_2 + (Q_2 , \psi)Q_1 \right).
 \]
-This term is equal to $\frac{1}{2} \sd \dd \rho(\Gamma(Q_1,Q_2)) \psi$ by \ref{prop:3psi}. 
-The Clifford relation implies this term cancels with the remaining terms. 
-
+Applying Proposition \ref{prop: new3psi}, to $Q_3 = \psi$, this becomes $-\frac{1}{2} \sd \dd \rho(\Gamma(Q_1,Q_2) \psi)$. 
+Finally, by the Clifford identity, the sum of this term with the fourth term in (\ref{psistar}) is precisely $\Gamma(Q_1,Q_2) . \psi$.
+So the expression (\ref{psistar}) is identically zero. 
 \end{proof}
 
 \begin{lemma}
