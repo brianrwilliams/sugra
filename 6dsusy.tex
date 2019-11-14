@@ -1,0 +1,259 @@
+\documentclass[10pt, oneside]{article}
+
+\input ./combined_macros.sty
+
+\newcommand{\Cl}{\mathrm{Cl}}
+\newcommand{\Dens}{\mathrm{Dens}}
+
+\addbibresource{Twist.bib}
+
+\usepackage{pdflscape}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+\tikzstyle{s16} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=red!30]
+\tikzstyle{s16chiral} = [s16, dashed]
+\tikzstyle{s8 } = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=orange!30]
+\tikzstyle{s4} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=yellow!30]
+\tikzstyle{s2chiral} = [rectangle, dashed, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=green!30]
+\tikzstyle{dimension} = [circle, text centered, text width=0.7cm, minimum height=0.7cm, draw=black]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\title{4d $\cN=1$}
+\author{Chris Elliott\and Pavel Safronov \and Brian Williams}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\subsection{The (half) hyper multiplet}
+
+In this subsection, $S_+ / S_-$ denote the positive/negative irreducible spin representations of $\mf{so}(6; \CC)$. 
+The spinorial representation we will be interested in is $\Sigma = S_+ \otimes W_+$, where $\dim_{\CC}(W_+) = 2$ is a two-dimensional multiplicity space. 
+To define the half hyper multiplet we fix a complex, symplectic vector space $U$ whose symplectic form we call $\omega_U$.
+We combine the symplectic forms $\omega_U, \omega_{W_+}$ to define a pairing 
+\[
+(-,-)_{W_+ \otimes U}  := \omega_{W_+} \otimes \omega_U : (W_+ \otimes U)^{\otimes 2} \to \CC .
+\]
+The spinorial pairing $(-,-) : S_+ \otimes S_- \to \CC$ together with the obvious symplectic form $\omega_{W_+}$ on $W_+$, and the symplectic form $\omega_U$ on $U$ induces a pairing (that we denote by the same symbol)
+\[
+(-,-)_U : (S_\pm \otimes U) \otimes (S_\mp \otimes U) \to \CC .
+%(-,-)_U : (S_\pm \otimes W_+ \otimes U)^{\otimes 2} \to \CC  
+\]
+
+\begin{remark}
+The terminology ``half" hyper multiplet is to be consistent with the terminology in the physics literature. 
+The (full) hyper multiplet refers to a multiplet which depends on the choice of a (not necessarily symplectic) vector space $R$. 
+The relationship between the two is obtained by looking at the cotangent space $U = T^*R$.
+That is, the half hyper multiplet with values in the symplectic vector space $U = T^* R$ (with its obvious symplectic structure) is the (full) hyper multiplet for $R$. 
+\end{remark}
+
+The field content for the 6-dimensional half hyper multiplet with values in $U$ is:
+\begin{itemize}
+\item a scalar valued in $W_+ \otimes U$; $\phi \in C^\infty(\RR^4 ; W_+ \otimes U)$;
+\item a negative Weyl spinor valued in $U$; $\psi \in C^\infty(\RR^4 ; S_- \otimes U)$ .
+\end{itemize}
+
+The space of BRST fields is thus
+\[
+F = C^\infty(\RR^4 ; W_+ \otimes U \oplus S_- \otimes U) .
+\]
+
+The BRST action is
+\[
+S (\phi, \psi) = \int_{\RR^4} - \frac{1}{2}  (\d \phi \wedge * \d \phi)_{W_+ \otimes U} + \frac{1}{2} (\psi , \sd \dd \psi)_U .
+\]
+As usual, we denote the antifields by $\phi^*$ and $\psi^*$. 
+
+The action of supersymmetry is given by a linear and quadratic functional:
+\begin{align*}
+I^{(1)} (Q) & = \int (\phi^*, (Q, \psi))_{W_+ \otimes U} + (\psi^*, \rho(\d \phi) Q)_U \\
+I^{(2)} (Q_1 , Q_2) & =  \int \frac{1}{4}(\Gamma(Q_1, Q_2)_{W_+} , \Gamma(\psi^*, \psi^*)_{U}) - \frac{1}{2} (Q_1, \psi^*)_U(Q_2, \psi^*)_U  .
+\end{align*}
+where $Q, Q_1,Q_2 \in \Sigma = S_+ \otimes W_+$. 
+We point out some conventions in the definition of $I^{(2)}$. 
+First, we define $\Gamma (Q_1,Q_2)_{W_+} \in V$ as the image of $Q_1 \otimes Q_2$ under the composition
+\[
+\Sigma \otimes \Sigma = (S_+ \otimes W_+) \otimes (S_+ \otimes W_+) \cong (S_+ \otimes S_+) \otimes (W_+ \otimes W_+) \xto{\Gamma \otimes \omega_{W_+}} V .
+\]
+Similarly, $\Gamma(\psi^*, \psi^*)_U \in V$ is defined as the image of $\psi^* \otimes \psi^*$ under the composition 
+\[
+(S_+ \otimes U) \otimes (S_+ \otimes U) \cong (S_+ \otimes S_+) \otimes (U \otimes U) \xto{\Gamma \otimes \omega_{U}} V .
+\]
+The pairing in the first term in $I^{(2)}$ is then induced from the natural one on $V$. 
+Also, $(Q_1, \psi^*)$ is defined as the image of $Q_1 \otimes \psi^*$ under the composition \brian{is this one zero???}
+
+The following result states that these functionals encode an off-shell action of six-dimensional $\cN=(1,0)$ supersymmetry on the half hypermultiplet valued in $U$. 
+The proof is very similar to the case of the four-dimensional $\cN=1$ chiral multiplet. 
+
+\begin{thm}
+The functional $\fS = S + I^{(1)} + I^{(2)}$ satisfies the classical master equation
+\begin{equation}\label{CMEhyper}
+\d_{\rm Lie} \fS + \frac{1}{2} \{\fS, \fS\} = 0 .
+\end{equation}
+\end{thm}
+
+We decompose the classical master equation (\ref{CMEhyper}) into the following equations:
+\begin{equation}\label{CMEhyper2}
+\begin{array}{rrrrrr}
+\{S , I^{(1)}\} & = & 0 \\ 
+\{S, I^{(2)}\} + \d_{CE} I^{(1)} + \frac{1}{2} \{I^{(1)}, I^{(1)}\} & = & 0 \\
+\d_{CE} I^{(2)} + \{I^{(1)}, I^{(2)}\} & =& 0 \\
+\{I^{(2)}, I^{(2)}\} & =& 0
+\end{array}
+\end{equation}
+
+The last equation is automatically satisfied since $I^{(2)}$ is independent of $\phi$ and $\psi$. 
+
+The first equation in (\ref{CMEhyper2}) states that the classical action for the chiral multiplet is supersymmetric. 
+
+\begin{lemma} 
+One has $\{S, I^{(1)}\} (Q) = 0$ for all $Q \in \Sigma$. 
+\end{lemma}
+\begin{proof}
+Observe
+\[
+- \{\d \phi \wedge * \d \phi, \phi^*  (Q, \psi) \} = - 2 \d (Q, \psi) \wedge * \d \phi .
+\]
+and
+\[
+\{(\psi, \sd \dd \psi) , (\psi^*, \rho(\d \phi) Q) \} = 2 (\rho(\d \phi) Q, \sd \dd \psi) \d^4 x .
+\]
+The sum of these two terms is zero by Lemma \ref{lem: oneform}. 
+\end{proof}
+
+Next, we move on to the second equation in (\ref{CMEhyper2}). 
+
+\begin{lemma} 
+One has
+\begin{equation}\label{CMEhyper3}
+\{S, I^{(2)}\} + \d_{CE} I^{(1)} + \frac{1}{2} \{I^{(1)}, I^{(1)}\} = 0 .
+\end{equation}
+\end{lemma}
+\begin{proof}
+Evaluating the equation (\ref{CMEhyper3}) on $v_1,v_2 \mf{iso}(V)$ reduces to the claim that (??) defines a strict Lie action. 
+Evaluating on $v \in \mf{iso}(V)$ and $Q \in \Sigma$, the claim reduces to the fact that $I^{(1)}$ is Poincar\'{e} invariant.
+So, the only nontrivial term to check is the evaluation on $Q_1,Q_2 \in \Sigma$. 
+
+The individual terms are:
+\begin{align*}
+\{I^{(1)}, I^{(1)}\}(Q_1, Q_2) = & - \phi^* (Q_1, \rho(\d \phi) Q_2) - \phi^* (Q_2, \rho(\d \phi)Q_1) \\ &  -  (\psi^*, \rho(\d(Q_1,\psi))Q_2) - (\psi^*, \rho(\d(Q_2, \psi)) Q_1) 
+\end{align*}
+
+\begin{align*}
+(\d_{CE}I^{(1)})(Q_1,Q_2) = & - \phi^* L_{\Gamma(Q_1,Q_2)} (\phi) - (\psi^*, \Gamma(Q_1,Q_2) . \psi)
+\end{align*}
+
+and
+\begin{align*}
+\{S, I^{(2)}(Q_1,Q_2)\} = & \frac{1}{2} \Gamma(Q_1,Q_2) \Gamma(\psi^*, \sd \dd \psi) - \frac{1}{2} (Q_1, \psi^*) (Q_2, \sd \dd \psi) - \frac{1}{2} (Q_1, \sd \dd \psi) (Q_2, \psi^*) .
+\end{align*}
+
+We first collect all terms in Equation (\ref{CMEhyper3}) proportional to $\phi^*$:
+\[
+- \frac{1}{2} (Q_1, \rho(\d\phi) Q_2) - \frac{1}{2} (Q_2, \rho(\d \phi) Q_1) - L_{\Gamma(Q_1,Q_2)} \phi .
+\]
+By the Clifford identity
+\brian{ $v \wedge \Gamma(Q_1, Q_2) = (Q_1 , \rho(v) Q_2)$} we observe that the first two terms cancel with the third term.  
+
+Next, we collect all terms in Equation (\ref{CMEhyper3}) proportional to $\psi^*$:
+\begin{align*}
+& - \frac{1}{2} \rho(\d(Q_1,\psi))Q_2 - \frac{1}{2} \rho(\d(Q_2, \psi)) Q_1 - \Gamma(Q_1,Q_2) . \psi
+\\ 
+& + \frac{1}{2} \rho(\Gamma(Q_1,Q_2)) \sd \dd \psi - \frac{1}{2} (Q_2, \sd \dd \psi)Q_1 - \frac{1}{2} (Q_1, \sd \dd \psi)Q_2
+\end{align*}
+By \label{prop:cliffordactionproperties} item (2), the first, second, fifth, and sixth terms combine to give
+\[
+- \frac{1}{2} \left( \sd \dd \rho(\Gamma(Q,\psi)) Q_2 + \sd \dd \rho(\Gamma(Q_2, \psi))Q_1 \right)  .
+\]
+This term is equal to $\frac{1}{2} \sd \dd \rho(\Gamma(Q_1,Q_2)) \psi$ by \ref{prop:3psi}. 
+The Clifford relation implies this term cancels with the remaining terms. 
+
+\end{proof}
+
+\begin{lemma}
+\[\{I^{(1)}, I^{(2)}\}(Q_1, Q_2, Q_3) = 0\]
+for every $Q_1, Q_2, Q_3\in S_+ \oplus S_-$.
+\end{lemma}
+\begin{proof}
+We have
+\begin{align*}
+\{I^{(1)}(Q_1), I^{(2)}(Q_2, Q_3)\} = \frac{1}{2} (\Gamma(Q_2, Q_3), \Gamma(\rho(\d
+\end{align*}
+
+$\{I^{(1)}, I^{(2)}\}$ is obtained by cyclically symmetrizing the above expression. By Proposition \ref{prop:3psi} the cyclic symmetrization of the term with $c^*$ is zero. The Clifford relation implies that
+
+\end{proof}
+\newpage
+
+\section{SCRAP}
+
+A general theory of matter for $\cN = (1,0)$ supersymmetry arranges into a hypermultiplet which has the following BRST description.
+Let $S_-^{6d}$ be the negative $\so(6)$ irreducible spin representation and suppose $R$ is a (complex) symplectic $\fg$-representation, with symplectic pairing labeled by $\<-,-\>_R$. 
+The BRST fields of the $(1,0)$ hypermultiplet consist of a $W \otimes R$-valued scalar
+\[
+\phi \in \Omega^0(\RR^6) \otimes W \otimes R
+\]
+and an $R$ valued negative Weyl spinor
+\[
+\psi_- \in \Omega^0(\RR^6) \otimes S_-^{6d} \otimes R .
+\]
+Denote the induced symplectic pairing on $W \otimes R$ by $\<-,-\>_{W \otimes R}$. 
+The action of the free hypermultiplet is given by
+\[
+S_{\rm matter} (\phi, \psi_-) = \frac{1}{2} \int_{\RR^6} \d^6 x \; \<\partial_{x_i} \phi , \partial_{x_i} \phi\>_{W \otimes R} + \frac{1}{2} \int_{\RR^6} \d^6 x \;\<\psi_-, \sd \dd \psi_-\>_R .
+\]
+
+The action of supersymmetry on the $6$-dimensional matter theory is encoded by a linear and quadratic functional:
+\begin{align*}
+I^{(1)} (Q) & = \int \<\phi^*, (Q, \psi_-)\>_{W \otimes R} + \int \<\psi^*_-, \rho(\d \phi) Q\>_R \\
+I^{(2)} (Q_1 \otimes Q_2) & = \int \<\psi^*_- , \rho(\Gamma(Q_1, Q_2)) \psi_-\>_R 
+\end{align*}
+where we recall that the pairing is of the form $\Gamma : \Sigma^{\otimes 2} = (S_+ \otimes W)^{\otimes 2} \to V$. \brian{I'm also using $(S_+)^* = S_-$.}
+These functionals provide an off-shell action of $\cN = (1,0)$ supersymmetry on the free hypermultiplet, as the following proposition shows.
+Below, $\fL_{\rm matter}$ is the abelian local Lie algebra describing the free hypermultiplet, and $\mf A$ is the $(0,1)$ supertranslation algebra.  
+As always, $I_{\rm Poin}$ is the action functional encoding ordinary Poincar\'{e} invariance. 
+
+\begin{prop}[\cite{SWchar}]
+The functional
+\[
+\fS_{\rm matter} = S_{\rm matter} + I_{\rm Poin} + I^{(1)} + I^{(2)} \in \clie^\bu(\mf A) \otimes \cloc^\bu(\fL_{\rm matter}) [-1]
+\]
+satisfies the Maurer-Cartan equation
+\[
+\left(\d_{\rm Lie} \fS_{\rm matter} + \frac{1}{2} \{\fS_{\rm matter}, \fS_{\rm matter}\} \right) = 0 .
+\]
+\end{prop}
+\begin{proof}
+\brian{Do this already! It's almost identical to the proof in 4d, just need to do a bit of translation.} 
+\end{proof}
+
+Next, we move on to the $6$-dimensional $\cN=(1,0)$ super Yang-Mills. 
+The theory has BRST fields given by a ghost $c$, a $6$-dimensional gauge field $A$, and a Lie algebra valued spinor
+\[
+\lambda_+ \in \Omega^0(\RR^6) \otimes S_+^{6d} \otimes W \otimes \fg 
+\]
+where $W$ is a (complex) $2$-dimensional symplectic vector space. 
+The tensor product $S_+^{6d} \otimes W$ forms the $8$-dimensional symplectic Weyl representation. 
+The action of supersymmetry on the $6$-dimensional matter theory is encoded by a linear and quadratic functional:
+\begin{align*}
+I_{\rm gauge}^{(1)}(Q) & = \int \<A^*, \Gamma(Q, \lambda_+)\> + \<\lambda^*, \sd F_A Q\> \\
+I_{\rm gauge}^{(2)}(Q_1 \otimes Q_2) & = \int \left\<\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right\>  .
+\end{align*}
+These functionals define an off-shell action of the $\cN = (0,1)$ supersymmetry on the vector multiplet, which we proved above in Theorem \label{SUSY_YM_theorem}, and state below as a proposition. 
+Below, $\fL_{\rm gauge}$ denotes the local Lie algebra describing super Yang-Mills, and $S_{\rm BV, gauge}$ is the full BV action. 
+
+ implies the following proposition for $6d$
+\begin{prop}[special case of Theorem \ref{SUSY_YM_theorem}]
+The functional
+\[
+\fS_{\rm gauge} = S_{\rm BV, gauge} + I_{\rm Poin} + I_{\rm gauge}^{(1)} + I_{\rm gauge}^{(2)} \in \clie^\bu(\mf A) \otimes \cloc^\bu(\fL_{\rm gauge}) [-1]
+\]
+satisfies the Maurer-Cartan equation
+\[
+\left(\d_{\rm Lie} \fS_{\rm gauge} + \frac{1}{2} \{\fS_{\rm gauge}, \fS_{\rm gauge}\} \right) = 0 .
+\]
+\end{prop}
+
+\end{document}

@@ -154,7 +154,18 @@ We may also define actions of supergroups on classical field theories.
 
 \begin{definition}
 \label{group_action_def}
-Let $(E, Q, \omega, I)$ be a classical field theory. An {\bf action} of a supergroup $G$ on $(E, Q, \omega, I)$ is an action of $G$ on $\cE$ preserving the symplectic pairing $\omega$, differential $Q$ and $I$ together with an action $I_\rho$ of its super Lie algebra $\fg$ with $I^{(k)} = 0$ for $k\geq 2$ such that for every $x\in\fg$ the vector field $X_{I^{(1)}(x)}$ on $\cE$ coincides with the infinitesimal action on $\cE$.
+Let $(E, Q, \omega, I)$ be a classical field theory and $G$ is a supergroup acting on spacetime $M$. An {\bf action} of $G$ on $(E, Q, \omega, I)$ is given by the following data:
+\begin{itemize}
+\item An action of $G$ on $\cE$ compatible with the $G$-action on $M$.
+
+\item An action $I_\rho$ of its super Lie algebra $\fg$ with $I^{(k)} = 0$ for $k\geq 2$.
+\end{itemize}
+These are required to satisfy the following conditions:
+\begin{itemize}
+\item The $G$-action on $\cE$ preserves the symplectic pairing $\omega$, differential $Q$ and the interaction term $I$.
+
+\item For every $x\in\fg$, the vctor field $X_{I^{(1)}(x)}$ on $\cE$ coincides with the infinitesimal action on $\cE$.
+\end{itemize}
 \end{definition}
 
 \begin{remark}
@@ -226,7 +237,7 @@ We refer to the classical BV theory $(E, Q, \omega, I)$ from the above statement
 If the fields of the classical BRST theory are denoted by $\phi$, we denote their antifields in the classical BV theory by $\phi^*$, so that
 \[\{\phi(x), \phi^*(y)\} = \{\phi^*(y), \phi(x)\} = \delta(x-y).\]
 
-\subsection{Examples of BV-BRST Theories}
+\subsection{Examples of Classical Field Theories}
 
 In this section we give some examples of classical field theories we will use. All theories we consider in this section except for the Yang--Mills theory are $\ZZ$-graded, i.e. all fields are considered even with respect to the $\ZZ/2$-grading.
 
@@ -241,7 +252,13 @@ Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty
 
 \item The BRST action is $S_{BRST} = 0$.
 \end{itemize}
+We denote the space of BV fields by $\cE = \map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[d] B\fg)$, where $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1$.
+\label{def:generalizedBF}
 \end{definition}
+
+\begin{remark}
+We do not provide any interpretation for the above mapping space and simply view it as a compact way of referring to the theory above.
+\end{remark}
 
 Let us unpack the definition. Let $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M)$. Then the bundle of BV fields is
 \[E = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1]\oplus \Omega^{\dim(X),\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M\otimes \fg^*[d-2],\]
@@ -268,9 +285,10 @@ Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix a complex ve
 \end{itemize}
 \end{definition}
 
-The generalized $\beta\gamma$ system is a special case of generalized $BF$ theory in the case that the $L_\infty$ aglebra is $\fg = V[-1]$, with trivial $L_\infty$ structure. 
-
-\brian{Should we say something about how the holomorphic theories couple here?}
+\begin{rmk}
+This is a special case of generalized BF theory:
+the generalized $\beta\gamma$ system is generalized $BF$ theory in the case that the $L_\infty$ aglebra is $\fg = V[-1]$, with trivial $L_\infty$ structure. 
+\end{rmk}
 
 \brian{Symplectic, non-polarized version.}
 
@@ -293,7 +311,8 @@ Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty
 \item The interaction term is
 \[I = \sum_{k\geq 2}\frac{1}{(k+1)!} \int_{X\times Y\times M} \Omega_X\wedge \langle A\wedge \ell_k(A, \dots, A)\rangle.\]
 \end{itemize}
-\label{def:generalizedBF}
+We denote the space of BV fields by $\cE = \map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B \fg)$.
+\label{def:generalizedCS}
 \end{definition}
 
 We may also consider a $\ZZ/2$-graded version of the above theory where $\fg$ is merely $\ZZ/2$-graded.
@@ -367,16 +386,16 @@ I^{(1)}(v) = \int_{V_\RR} -(L_{v}A, A^*) - (v.\lambda, \lambda^*) - (v.c)c^*,
 \end{equation}
 for $v\in\mf{iso}(V)$, where $v.\lambda$ contains both a derivative and the $\so(V)$ action on $\Sigma$.
 
+\subsubsection{The free scalar and free fermion}
+
+\brian{does this warrant it's own definition?}
+
 \subsection{Dimensional Reduction, take 2}
 
-\begin{definition}
-A classical field theory $(E_N, Q_N, \omega_N, I_N)$ on a manifold $N$ is a {\bf dimensional reduction} of the classical field theory $(E_M, Q_M, \omega_M, I_M)$ on a manifold $M$ if we are given the following data:
-\begin{itemize}
-\item A submersion $p\colon M\rightarrow N$ equipped with a fiberwise volume form, i.e. an isomorphism $p^*\Dens_N\cong \Dens_M$.
+In this section we formulate the procedure of dimensional reduction of a classical field theory. Fix a submersion $p\colon M\rightarrow N$ equipped with a fiberwise volume form, i.e. an isomorphism $p^*\Dens_N\cong \Dens_M$.
 
-\item An isomorphism $p^* E_N\cong E_M$.
-\end{itemize}
-These data are required to satisfy the following conditions:
+\begin{definition}
+A classical field theory $(E_N, Q_N, \omega_N, I_N)$ on a manifold $N$ is a {\bf dimensional reduction} of the classical field theory $(E_M, Q_M, \omega_M, I_M)$ on a manifold $M$ if one is given the data of an isomorphism $p^* E_N\cong E_M$ of the bundles of BV fields satisfying the following conditions:
 \begin{itemize}
 \item The diagram
 \[
@@ -400,7 +419,61 @@ is commutative.
 \end{itemize}
 \end{definition}
 
-\chris{A question: are dimensional reductions, per this definition, unique?  I'd really like the answer to be yes (at least for dimensional reduction along a vector space), so that I can say the twist of a dimensional reduction is equivalent to \emph{the} (unique) dimensional reduction of the twist -- assuming the dimensional reductions before and after twisting exist (which, again, I'd like them to, at least for dimensional reduction along a vector space).}
+We have an obvious notion of isomorphisms of dimensional reductions: these are isomorphisms of classical field theories on $N$ which are compatible with the isomorphisms $p^* E_N\cong E_M$. Thus, dimensional reductions of a given classical field theory on $M$ form a groupoid.
+
+\begin{prop}
+Suppose $(E_M, Q_M, \omega_M, I_M)$ is a classical field theory on $M$ and $p\colon M\rightarrow N$ is a homotopy equivalence. Then the groupoid of dimensional reductions of $(E_M, Q_M, \omega_M, I_M)$ is either contractible or empty.
+
+Suppose $M=N\times \RR$ and choose a translation-invariant density along the $\RR$ direction. If the original classical field theory is translation-invariant along the $\RR$ direction, dimensional reductions exist.
+\label{prop:dimensionalreductionunique}
+\end{prop}
+\begin{proof} \textbf{Uniqueness}. We begin by showing that any two dimensional reductions are isomorphic and moreover such an isomorphism is unique if it exists. Since $p\colon M\rightarrow N$ is a homotopy equivalence, the functor $p^*$ establishes an isomorphism between the category of graded vector bundles on $N$ and on $M$. In a similar way, $p^*$ establishes an equivalence between the category of graded vector bundles $E_N$ on $N$ equipped with a nondegenerate pairing $E_N\otimes E_N\rightarrow \Dens_N[-1]$ and a similar category for $M$.
+
+Since $\cE_N\rightarrow \cE_M$ is injective, the diagram
+\[
+\xymatrix{
+\cE_N \ar^{Q_N}[r] \ar^{p^*}[d] & \cE_N[1] \ar^{p^*}[d] \\
+\cE_M \ar^{Q_M}[r] & \cE_M[1]
+}
+\]
+uniquely determines $Q_N$ from $Q_M$. Moreover, the condition $p^* I_M = I_N$ uniquely determines $N$.
+
+\textbf{Existence}. Now suppose $(E_M, Q_M, \omega_M, I_M)$ is translation-invariant along the $\RR$ direction. Translation invariance provides the descent datum to construct the bundle of fields $E_N$ on $N$ equipped with a nondegenerate pairing $\omega_N$. Moreover, it shows that the differential $Q_M$ preserves the subspace $\cE_N\hookrightarrow \cE_M$. The restriction of $I_M$ under the same embedding is independent of the $\RR$ factor by translation invariance, so $I_N=p^* I_M$ is again a local functional.
+\end{proof}
+
+By the previous Proposition we may simply talk about \emph{the} dimensional reduction of a given classical field theory when the fibers of $p$ are contractible. We will now describe dimensional reductions of the classical Chern--Simons theory.
+
+\begin{prop}
+Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$ equipped with a nondegenerate invariant pairing and consider the generalized Chern--Simons theory
+\[\map(X\times Y_{\mr{Dol}}\times (M\times \RR)_{\mr{dR}}, B\fg).\]
+Its dimensional reduction along the projection $p\colon X\times Y\times (M\times \RR)\rightarrow X\times Y\times M$ is isomorphic to the generalized BF theory
+\[\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1] B\fg).\]
+\end{prop}
+\begin{proof}
+To simplify the proof, we assume $X=Y=M=\pt$. Then $\fg$ carries a $(-2)$-shifted pairing $\langle-,-\rangle$. In particular, the generalized BF theory
+\[\map(\pt, T^*[-1] B \fg)\]
+has the bundle of BV fields $\fg[1] \oplus \fg^*[-2]$. We may identify it with $\fg[1]\oplus \fg$, where the pairing $\omega_N$ pairs the two factors using $\langle-,-\rangle$.
+
+We may identify $p^*(\fg[1]\oplus \fg)\cong \Omega^\bullet_{\RR}\otimes \fg[1]$. Under this identification the integration pairing $\omega_M$ on differential forms reduces to the pairing $\omega_N$. The de Rham differential vanishes on translation-invariant forms which shows a compatibility of dimensional reduction with the differentials $Q$. Finally, in both cases the interaction term comes from the $L_\infty$ structure on $\fg$.
+\end{proof}
+
+\begin{prop}
+Let $X,Y,M,\fg$ be as before. Equip $\CC$ with a holomorphic volume form $\d z$ and consider the generalized Chern--Simons theory
+\[\map((X\times \CC)\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B\fg).\]
+Its dimensional reduction along the projection $p\colon (X\times \CC)\times Y\times M\rightarrow X\times Y\times (M\times \RR)$ induced by the projection $\CC\rightarrow \RR$ given by $(x, y)\mapsto x$ is isomorphic to the generalized Chern--Simons theory
+\[\map(X\times Y_{\mr{Dol}}\times (M\times \RR)_{\mr{dR}}, B\fg).\]
+\end{prop}
+\begin{proof}
+We may assume $X,Y,M=\pt$ as in the previous proof.
+
+We have
+\[\Omega^{0, \bullet}_{\CC}\cong \underline{\CC}\oplus \underline{\CC}\d \overline{z}[-1]\]
+and
+\[\Omega^\bullet_{\RR}\cong \underline{\CC}\oplus \underline{\CC} \d x[-1].\]
+Under the pullback map
+\[\Omega^\bullet(\RR; \CC)\rightarrow \Omega^\bullet(\CC)\rightarrow \Omega^{0, \bullet}(\CC)\]
+the integration map $\int_\CC \d z\wedge (-)\colon \Omega^{0, \bullet}(\CC)\rightarrow \CC$ reduces to the integration map $\int_\RR (-)\colon \Omega^{\bullet}(\RR;\CC)\rightarrow \CC$.
+\end{proof}
 
 \subsection{Dimensional Reduction} \label{dim_red_section}
 The idea of the \emph{dimensional reduction} of a rotation invariant classical field theory to a linear subspace of $\RR^n$ is to restrict attention to only those fields with are constant in directions perpendicular to the subspace. 
@@ -534,6 +607,7 @@ on $\Sigma$ and $\Sigma^*$.
 
 \begin{thm}
 The functional $I_\rho = I_{BV} + I^{(1)} + I^{(2)}$ with
+\brian{Where is the Poincare part?}
 \begin{align*}
 I^{(1)}(Q) &= \int (\Gamma(Q, \lambda), A^*) + \frac{1}{2}(\rho(F_A), \lambda^*) \\
 I^{(2)}(Q_1, Q_2) &= \int \frac{1}{4}(\Gamma(Q_1, Q_2), \Gamma(\lambda^*, \lambda^*)) - \frac{1}{2}(Q_1, \lambda^*)(Q_2, \lambda^*) - \iota_{\Gamma(Q_1, Q_2)} A c^*
@@ -541,6 +615,8 @@ I^{(2)}(Q_1, Q_2) &= \int \frac{1}{4}(\Gamma(Q_1, Q_2), \Gamma(\lambda^*, \lambd
 satisfies the classical master equation
 \[(Q+\d_{CE}) I_{\rho} + \frac{1}{2}\{I_\rho, I_\rho\} = 0.\]
 \label{thm:vectormultipletSUSY}
+\brian{confused by the notation here. Is $Q$ a supercharge or a linear BRST operator?}
+\brian{Also, we should be consistent and either use $S_{BV}$ or $I_{BV}$.}
 \end{thm}
 
 The rest of the section will be devoted to the proof of the above theorem.
@@ -716,6 +792,8 @@ We can further include the action of at least a subalgebra of the algebra of R-s
 
 \subsection{Supersymmetric twisting}
 
+\pavel{$Q$ denotes both the differential on fields and the supercharge.} 
+
 \begin{definition}
 A {\bf square-zero supercharge} is a nonzero element $Q\in\Sigma$ such that $\Gamma(Q, Q)=0$.
 \end{definition}
@@ -760,6 +838,27 @@ Without a twisting homomorphism $\alpha$, we obtain a $\ZZ/2$-graded classical f
 \[(E, \d + \{\rho_2(Q), -\}, \omega, I + \rho_3(Q) + \dots),\]
 where the $\ZZ/2$-grading on $E$ is the total grading.
 \end{remark}
+
+\subsection{Compactification of supersymmetric theories}
+
+Suppose $V_\RR=\RR^n$ as before and choose a subspace $W_\RR\subset V_\RR$, so that $V_\RR = W_\RR\oplus W^\perp_\RR$. We denote $W=W_{\RR}\otimes_{\RR} \CC$.
+
+Fix a spinorial representation $\Sigma$ of $\so(V)$, a nondegenerate pairing $\Gamma_V\colon \sym^2(\Sigma)\rightarrow V$ and a group of $R$-symmetries $G_V$. We have a natural embedding
+\[\so(W)\oplus \so(W^{\perp})\subset \so(V),\]
+so $\Sigma$ restricts to a spinorial $\so(W)$ representation. We define the dimensionally reduced $\Gamma$-pairing as the composite
+\[\Gamma_W\colon \sym^2(\Sigma)\xrightarrow{\Gamma_V} V\rightarrow W,\]
+where the last map is the orthogonal projection onto $W$. Finally, we have a new $R$-symmetry group
+\[G_W = G_V\times \Spin(W^\perp_\RR).\]
+
+Recall from Proposition \ref{prop:dimensionalreductionunique} that dimensional reduction of theories along the projection $p\colon V_\RR\rightarrow W_\RR$ exist and are unique. We have the following generalization of this statement to supersymmetric theories.
+
+\begin{prop}
+Suppose $(E, Q, \omega, I)$ is a supersymmetric classical field theory on $V_\RR$. Then its dimensional reduction along $p\colon V_\RR\rightarrow W_\RR$ has a unique compatible supersymmetric structure.
+\end{prop}
+
+\begin{prop}
+Fix a twisting datum $(Q, \alpha)$, where $\Gamma_V(Q, Q) = 0$. Then the dimensional reduction of the twist of the classical field theory $E$ is isomorphic to the twist of the dimensional reduction of $E$.
+\end{prop}
 
 \subsection{Twisting Homomorphisms and Curved Backgrounds}
 
@@ -1120,73 +1219,6 @@ The proof here is identical to the proof of Theorem \ref{9d_twist_thm}, we just 
 
 \subsubsection{$\cN=(1,0)$ with matter}
 
-A general theory of matter for $\cN = (1,0)$ supersymmetry arranges into a hypermultiplet which has the following BRST description.
-Let $S_-^{6d}$ be the negative $\so(6)$ irreducible spin representation and suppose $R$ is a (complex) symplectic $\fg$-representation, with symplectic pairing labeled by $\<-,-\>_R$. 
-The BRST fields of the $(1,0)$ hypermultiplet consist of a $W \otimes R$-valued scalar
-\[
-\phi \in \Omega^0(\RR^6) \otimes W \otimes R
-\]
-and an $R$ valued negative Weyl spinor
-\[
-\psi_- \in \Omega^0(\RR^6) \otimes S_-^{6d} \otimes R .
-\]
-Denote the induced symplectic pairing on $W \otimes R$ by $\<-,-\>_{W \otimes R}$. 
-The action of the free hypermultiplet is given by
-\[
-S_{\rm matter} (\phi, \psi_-) = \frac{1}{2} \int_{\RR^6} \d^6 x \; \<\partial_{x_i} \phi , \partial_{x_i} \phi\>_{W \otimes R} + \frac{1}{2} \int_{\RR^6} \d^6 x \;\<\psi_-, \sd \dd \psi_-\>_R .
-\]
-
-The action of supersymmetry on the $6$-dimensional matter theory is encoded by a linear and quadratic functional:
-\begin{align*}
-I^{(1)} (Q) & = \int \<\phi^*, (Q, \psi_-)\>_{W \otimes R} + \int \<\psi^*_-, \rho(\d \phi) Q\>_R \\
-I^{(2)} (Q_1 \otimes Q_2) & = \int \<\psi^*_- , \rho(\Gamma(Q_1, Q_2)) \psi_-\>_R 
-\end{align*}
-where we recall that the pairing is of the form $\Gamma : \Sigma^{\otimes 2} = (S_+ \otimes W)^{\otimes 2} \to V$. \brian{I'm also using $(S_+)^* = S_-$.}
-These functionals provide an off-shell action of $\cN = (1,0)$ supersymmetry on the free hypermultiplet, as the following proposition shows.
-Below, $\fL_{\rm matter}$ is the abelian local Lie algebra describing the free hypermultiplet, and $\mf A$ is the $(0,1)$ supertranslation algebra.  
-As always, $I_{\rm Poin}$ is the action functional encoding ordinary Poincar\'{e} invariance. 
-
-\begin{prop}[\cite{SWchar}]
-The functional
-\[
-\fS_{\rm matter} = S_{\rm matter} + I_{\rm Poin} + I^{(1)} + I^{(2)} \in \clie^\bu(\mf A) \otimes \cloc^\bu(\fL_{\rm matter}) [-1]
-\]
-satisfies the Maurer-Cartan equation
-\[
-\left(\d_{\rm Lie} \fS_{\rm matter} + \frac{1}{2} \{\fS_{\rm matter}, \fS_{\rm matter}\} \right) = 0 .
-\]
-\end{prop}
-\begin{proof}
-\brian{Do this already! It's almost identical to the proof in 4d, just need to do a bit of translation.} 
-\end{proof}
-
-Next, we move on to the $6$-dimensional $\cN=(1,0)$ super Yang-Mills. 
-The theory has BRST fields given by a ghost $c$, a $6$-dimensional gauge field $A$, and a Lie algebra valued spinor
-\[
-\lambda_+ \in \Omega^0(\RR^6) \otimes S_+^{6d} \otimes W \otimes \fg 
-\]
-where $W$ is a (complex) $2$-dimensional symplectic vector space. 
-The tensor product $S_+^{6d} \otimes W$ forms the $8$-dimensional symplectic Weyl representation. 
-The action of supersymmetry on the $6$-dimensional matter theory is encoded by a linear and quadratic functional:
-\begin{align*}
-I_{\rm gauge}^{(1)}(Q) & = \int \<A^*, \Gamma(Q, \lambda_+)\> + \<\lambda^*, \sd F_A Q\> \\
-I_{\rm gauge}^{(2)}(Q_1 \otimes Q_2) & = \int \left\<\lambda^* \;,\; \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac 12 \left((Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*)Q_2\right)\right\>  .
-\end{align*}
-These functionals define an off-shell action of the $\cN = (0,1)$ supersymmetry on the vector multiplet, which we proved above in Theorem \label{SUSY_YM_theorem}, and state below as a proposition. 
-Below, $\fL_{\rm gauge}$ denotes the local Lie algebra describing super Yang-Mills, and $S_{\rm BV, gauge}$ is the full BV action. 
-
- implies the following proposition for $6d$
-\begin{prop}[special case of Theorem \ref{SUSY_YM_theorem}]
-The functional
-\[
-\fS_{\rm gauge} = S_{\rm BV, gauge} + I_{\rm Poin} + I_{\rm gauge}^{(1)} + I_{\rm gauge}^{(2)} \in \clie^\bu(\mf A) \otimes \cloc^\bu(\fL_{\rm gauge}) [-1]
-\]
-satisfies the Maurer-Cartan equation
-\[
-\left(\d_{\rm Lie} \fS_{\rm gauge} + \frac{1}{2} \{\fS_{\rm gauge}, \fS_{\rm gauge}\} \right) = 0 .
-\]
-\end{prop}
-
 \subsection{Dimension 5}
 
 % \cN=2 SYM, three twists
@@ -1197,150 +1229,6 @@ satisfies the Maurer-Cartan equation
 % \cN=4 SYM
 % \cN=2 SYM with matter in a pseudo-real representation
 % \cN=1 SYM with matter in a complex representation
-
-\subsubsection{$\cN=1$ SYM with matter} 
-
-The 4-dimensional $\mc N=1$ pure super Yang-Mills theory has BRST fields given by a ghost $c$, a 4d gauge field $A$, and a pair of opposite chirality Lie algebra valued Weyl spinor fields $\lambda_\pm$:
-In addition, $4$-dimensional supersymmetry supports a chiral (or anti-chiral) matter multiplet, which comprises a complex scalar $\phi$ and a left (right) Weyl spinor $\psi_+$ ($\psi_-$).
-
-The most general theory $4$-dimensional $\mc N = 1$ theory we will consider is super Yang-Mills theory valued in a Lie algebra $\fg$ minimally coupled to a chiral multiplet with values in a complex $\fg$-representation $R$. 
-The field content for the BRST fields in the gauge sector is:
-\[
-(c, A, \lambda_\pm) \in (\Omega^0(\RR^4) \oplus \Omega^1(\RR^4) \oplus \Omega^0(\RR^4) \otimes \Pi S_\pm) \otimes \fg .
-\]
-
-For the chiral multiplet, the fields $\phi, \psi_+$ take values in $R$ and $\Bar{\phi}, \psi_-$ take values in $R^*$:
-\[
-(\phi, \psi_+) \in \Omega^0(\RR^4) \otimes (R \oplus R \otimes \Pi S_+) \;\;\; , \;\;\; (\Bar{\phi}, \psi_-) \in \Omega^0(\RR^4) \otimes (R^* \oplus R^* \otimes \Pi S_-) .
-\]
-
-Th full BV action for $\cN=1$ supersymmetric pure Yang-Mills theory on $\RR^4$ was defined in Section \ref{YM_section}, which we call $S_{\rm BV, gauge}$ in this section.
-
-The kinetic part of the action functional for $4$-dimensional $\mc N = 1$ chiral multiplet is of the form
-\[
-S_{\rm matter} (\phi, \Bar{\phi}, \psi_{\pm}) = \int \d^4 x \; \<\d \phi , * \d \Bar{\phi}\>_R + \int \d^4 x \; \<\psi_+ , \sd \dd \psi_-\>_R .
-\]
-Here $\<-,-\>_R$ denotes the duality pairing between the representation $R$ and its dual $R^*$. 
-
-There is also a term $S_{\rm couple}$ describing the coupling between Yang-Mills and the matter fields, which we record here:
-\begin{align*}
-S_{\rm couple} & = \pm g \int \<\psi_+, [\lambda_+, \phi]\>_R \pm g \int \<\psi_-, [\lambda_-, \Bar{\phi}]\>_{R^*} \\
-& \pm g \int [A, \phi] \wedge * \d_{A} \Bar{\phi} \pm g \int [A, \Bar{\phi}] \wedge * \d_A \phi \\
-&\brian{where does this term come from \pm g^2 \int \<(\phi \Bar{\phi}), * (\phi \Bar{\phi})\>_R}
-\end{align*}
-\brian{add terms involving antifields}
-
-The action
-\[
-S_{\rm BV} = S_{BV}(\phi, \Bar{\phi}, \psi_\pm , A, \lambda_\pm, \; {\rm a.f's}) = S_{\rm BV, gauge}(A, \lambda_\pm, \; {\rm a.f's}) + S_{\rm matter}(\phi, \Bar{\phi}, \psi_\pm) + S_{\rm couple} (\phi, \Bar{\phi}, \psi_\pm , A, \lambda_\pm, \; {\rm a.f's}) 
-\]
-is the full BV action of $\mc N = 1$ super Yang-Mills coupled to matter.
-
-The full BV action $S_{\rm BV}$ is clearly Poincar\'{e} invariant, so there is a functional $I_{\rm Poin}$ encoding the action by the $4$-dimensional Poincar\'{e} algebra.
-
-The action of supersymmetry on the $4$-dimensional matter theory is encoded by a linear and quadratic functional:
-\begin{align*}
-I^{(1)}_{\rm matter} (Q_+ + Q_-) & = \int \<\phi^*, (Q_+, \psi_+)\>_R + \int \<\Bar{\phi}^*, (Q_-, \psi_-)\>_R + \int \<\psi^*_+, \rho(\d \phi) Q_- \>_R + \int \<\psi_-^*, \rho(\d \Bar{\phi}) Q_+\>_R \\
-I^{(2)}_{\rm matter} (Q_+ \otimes Q_-) & = \int \<\psi^*_- , \rho(\Gamma(Q_+, Q_-)) \psi_+^*\>_R + \brian{write this differently?}.
-\end{align*}
-where $Q_\pm \in S_{\pm}$. 
-As usual, we will use the notation $\delta_Q$ to denote the endomorphism on fields satisfying
-\[
-I^{(1)}_{\rm matter} = \int \<\phi^* + \Bar{\phi}^* + \psi^*_+ + \psi_-^*, \delta_Q(\phi + \Bar{\phi} + \psi_+ + \psi_-) \> .
-\]
-
-The action of supersymmetry on the gauge sector is encoded by the functionals:
-\begin{align*}
-I^{(1)}_{\rm gauge} (Q_+ + Q_-) & = \int \<A^* , \Gamma(Q_+ + Q_-, \lambda_+ + \lambda_-)\> + \<\lambda_+^*+\lambda_-^*, \sd F_A (Q_+ + Q_-)\> \\
-I^{(2)}_{\rm gauge} (Q_+ \otimes Q_-) & = \int \left\<\lambda^*, \rho(\Gamma(Q_+, Q_-)) \lambda^* + \frac{1}{2} ((Q_+, \lambda_+^*+\lambda_-^*) Q_- + (Q_-, \lambda^*_+ + \lambda_-^*)Q_+)\right\> .
-\end{align*}
-
-These functionals prescribe an off-shell action of $4$-dimensional $\cN=1$ super Yang-Mills coupled to matter, as we summarize in the following proposition.
-
-%The result appears in \cite{SWchar}, and we do not repeat the proof here. 
-
-\begin{prop}[\cite{SWchar}]
-Let $I^{(1)} = I^{(1)}_{\rm matter} + I^{(1)}_{\rm gauge}$ and $I^{(2)} = I^{(2)}_{\rm matter} + I^{(2)}_{\rm gauge}$. 
-Then, the functional
-\[
-\fS = S_{\rm BV} + I_{\rm Poin} + I^{(1)} + I^{(2)} \in \clie^\bu(\mf A) \otimes \cloc^\bu(\fL) [-1]
-\]
-satisfies the Maurer-Cartan equation
-\[
-\left(\d_{\rm Lie} \fS + \frac{1}{2} \{\fS, \fS\} \right) = 0 .
-\]
-\end{prop}
-
-Notice that we have not introduced any auxiliary fields, which is at the cost of us formulating the action of superysmmetry as an $L_\infty$ action by the super Lie algebra of supertranslations. 
-
-
-\begin{proof}
-Throughout this proof we drop the pairing $\<-,-\>_R$ from the notation.
-Also, we continue to denote the spinorial pairing by $\<-,-\>$ and the standard inner product by $(-,-)$. 
-
-First, consider the pure matter sector $\fS_{\rm matter} = S_{\rm matter} + I_{\rm Poin} + I^{(1)}_{\rm matter} + I^{(2)}_{\rm matter}$. 
-We will show that $\fS_{\rm matter}$ satisfies the classical master equation. 
-From the form of $S_{\rm matter}$ and by Poincar\'{e} invariance of the matter action, it is clear that
-\[
-\d_{\rm Lie} S_{\rm matter} + \d_{\rm Lie} (I^{(1)}_{\rm matter} + I^{(2)}_{\rm matter}) + \frac{1}{2} \{S_{\rm matter} + I_{\rm Poin}, S_{\rm matter} + I_{\rm Poin}\} = 0 .
-\]
-So, we only need to consider the terms involving $\{S_{\rm matter}, I_{\rm matter}^{(1)}\}$, $\{S_{\rm matter}, I^{(2)}_{\rm matter}\}$, $\d_{\rm Lie} I_{\rm Poin}$, and $\{I^{(1)}_{\rm matter}, I^{(1)}_{\rm matter}\}$. 
-
-The equality $\{S_{\rm matter}, I_{\rm matter}^{(1)}\} = 0$ simply says that $S_{\rm matter}$ is invariant under the usual linear supersymmetric action.
-The argument for this is completely standard, see for instance \brian{refs}, but we repeat it here for completeness. 
-The BV bracket involving terms in $S_{\rm matter}$ depending on $\phi,\Bar{\phi}$ is:
-\begin{align*}
-\frac{1}{2} \left\{ \int \d \phi \wedge * \d \Bar{\phi} \; , \; I_{\rm matter}^{(1)} \right\} & = \int \d (\<Q_+, \psi_+\>) \wedge * \d \Bar{\phi} + \int \d \phi \wedge * \d (\<Q_-, \psi_-\>) \\
-& = \pm \int (\Gamma(\sd \dd \psi_+, Q_+), \d \Bar{\phi}) \pm \int (\d \phi, \Gamma(\sd \dd \psi_-, Q_-)) .
-\end{align*}
-The BV bracket involving terms in $S_{\rm matter}$ depending on $\psi_\pm$ is:
-\begin{align*}
-\frac{1}{2} \left\{\int \<\psi_+ , \sd \dd \psi_-\> \; , \; I_{\rm matter}^{(1)} \right\} & = \int \<\rho(\d \phi) Q_-, \sd \dd \psi_-\> = \int \<\psi_+, \sd \dd (\rho(\d \Bar{\phi}) Q_+)\> \\ & =  \int \<\rho(\d \phi) Q_-, \sd \dd \psi_-\> = \int \<\sd \dd \psi_+, (\rho(\d \Bar{\phi}) Q_+)\> \\ & = \int (\d \phi, \Gamma(\sd \dd \psi_-, Q_-)) + \int (\d \Bar{\phi}, \Gamma(\sd \dd \psi_+, Q_+)) 
-\end{align*}
-\brian{Get the signs right and these terms should cancel.}
-
-The computation of the remaining terms in the matter sector are summarized in the following lemma. 
-\begin{lem}
-\[
-\d_{CE} I_{\rm Poin} + \{S_{\rm matter}, I_{\rm matter}^{(2)}\} + \frac{1}{2} \{I_{\rm matter}^{(1)}, I_{\rm matter}^{(1)}\} = 0.
-\]
-\end{lem}
-\begin{proof}
-
-First, we compute the BV bracket $\{I_{\rm matter}^{(1)}, I_{\rm matter}^{(1)}\}$:
-\[
-\{I^{(1)}_{\rm matter}, I^{(1)}_{\rm matter}\}(Q_+ + Q_-, Q_+' + Q_-') = 2 \int \left\<\phi^* + \Bar{\phi}^* + \psi^*_+ + \psi_-^*, [\delta_{Q_+ + Q_-}, \delta_{Q_+' + Q_-'}] \left(\phi + \Bar{\phi} + \psi_+ + \psi_-\right) \right\>  .
-\]
-We first focus on terms involving variations of $\phi, \Bar{\phi}$:
-\begin{align*} 
-[\delta_{Q_+ + Q_-}, \delta_{Q_+' + Q_-'}] (\phi + \Bar{\phi}) & = (\delta_{Q_+} + \delta_{Q_-}) \left(\<Q'_+, \psi_+\>_+ + \<Q'_-, \psi_-\>_-\right) - (\delta_{Q'_+} + \delta_{Q'_-}) \left(\<Q_+, \psi_+\>_+ + \<Q_-, \psi_-\>_-\right) \\ & = \<Q'_+, \rho(\d \phi) Q_-\>_+ + \<Q'_-, \rho(\d \Bar{\phi}) Q_+\>_- -  \<Q_+, \rho(\d \phi) Q'_-\>_+ - \<Q_-, \rho(\d \Bar{\phi}) Q'_+\>_- \\ & = (\d (\phi + \Bar{\phi}), \Gamma(Q_+ + Q_-, Q_+' + Q_-')) \\ & = L_{[Q_++Q_-, Q_+'+Q_-']} (\phi + \Bar{\phi}) %\\ & = \delta_{[Q_+ + Q_-, Q_+' + Q_-']} (\phi + \Bar{\phi})
-\end{align*}
-In the third line we have used the identity $(v, \Gamma(Q_1, Q_2)) = \<\rho(v) Q_1, Q_2\>$ where $Q_i \in S$, $v \in V$, $\<-,-\>$ is the spinor pairing, and $(-,-)$ is the inner product on $V$. 
-The third line follows from the relation $(\d \phi, v) = L_v (\phi)$ where $L_v$ is the Lie derivative. 
-
-Let $I_{\rm Poin}(\phi,\Bar{\phi})$ be the piece of $I_{\rm Poin}$ depending on $\phi, \Bar{\phi}$ and their antifields.
-The last line above is simply the Lie derivative with respect to the translation invariant vector field $[Q_++Q_-, Q_+'+Q_-']$ on the field $\phi + \Bar{\phi}$, which is precisely the symmetry encoded by $I_{\rm Poin}$.
-Thus, this calculation implies
-\[
-\left(\d_{CE} I_{\rm Poin}(\phi, \Bar{\phi}) + \frac{1}{2} \left\{I_{\rm matter}^{(1)}(\phi, \Bar{\phi}), I_{\rm matter}^{(1)}(\phi, \Bar{\phi})\right\} \right) (Q_+ + Q_- , Q_+' + Q_-') = 0
-\]
-for all $Q_\pm, Q_\pm'$. 
-
-Next, we focus on the terms in the statement of the lemma involving the functionals which on the fields $\psi_{\pm}$: $I_{\rm Poin}(\psi_{\pm})$, $I^{(1)}_{\rm matter}(\psi_{\pm})$, and $I^{(2)}_{\rm matter}$. 
-We must show
-\[
-\left(\d_{CE} I_{\rm Poin}(\psi_\pm) + \{S_{\rm matter}, I_{\rm matter}^{(2)}\} + \frac{1}{2} \{I_{\rm matter}^{(1)}(\psi_\pm), I_{\rm matter}^{(1)}(\psi_\pm)\}\right) (Q_+, Q_-, Q_+' + Q_-') = 0.
-\]
-for all $Q_\pm, Q_\pm'$.
-
-We start by computing the variation of $\psi_+ + \psi_-$:
-\begin{align*}
-[\delta_{Q_+ + Q_-}, \delta_{Q_+' + Q_-'}] (\psi_+ + \psi_-) & = \brian{Fierz / 3 \psi} \\ & = \delta_{[Q_+ + Q_-, Q_+' + Q_-']} (\psi_+ + \psi_-) \pm \rho(\Gamma(Q_++Q_-, Q_+' + Q_-')) \cdot \sd \dd (\psi_+ + \psi_-) .
-\end{align*}
-\end{proof} 
-
-Next, we move on to the pure gauge sector $\fS_{\rm gauge} = S_{\rm BV, gauge} + I_{\rm Poin} + I^{(1)}_{\rm gauge} + I^{(2)}_{\rm gauge}$. 
-\end{proof}
 
 
 There is a single non-zero equivalence class of square zero supercharges in $4$-dimensional $\mc N = 1$, which we fix from here on.
