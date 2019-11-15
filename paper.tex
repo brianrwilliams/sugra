@@ -1211,7 +1211,7 @@ In dimension 6 there are two possible supersymmetry groups by which we can act. 
 Let us write the BRST fields in $\mc N=(1,1)$ super Yang Mills on $\RR^6$ as $c$, the ghost, along with:
 \begin{itemize}
  \item Bosons: a gauge field $A$, along with 4 scalars $\{\phi_i\}$.  These transform in the vector representation of the R-symmetry group $\Spin(4)_R$, i.e. the tensor product $W_+ \otimes W_-$ of the two fundamental representations of $\Sp(W_+) \times \Sp(W_-)$.  We'll write just $\phi$ for the scalars, viewed as a section of the trivial $W_+ \otimes W_-$-bundle on $\RR^6$.
- \item Fermions: spinor fields $\psi^+ \otimes u^+$ and $\psi^- \otimes u^-$ valued in $S_+ \otimes W_+$ and $S_- \otimes W_-$ respectively.
+ \item Fermions: spinor fields $\lambda^+ \otimes u^+$ and $\lambda^- \otimes u^-$ valued in $S_+ \otimes W_+$ and $S_- \otimes W_-$ respectively.
 \end{itemize}
 
 \begin{prop} \label{O6_decomposition_of_susy_prop}
@@ -1226,18 +1226,46 @@ I^{(1)}(Q^-) &= \langle A^\vee, \Gamma(Q^-, \lambda^-)\rangle\omega(w^-,u^-) + \
 I^{(2)}(Q^-, Q^-) &= \left(\langle\lambda^{-\vee},Q^-\rangle\langle u^{-\vee}, w^- \rangle\right)^2
 \end{align*}
 if $Q^- \otimes W_-$ is an element of $S_- \otimes W_-$.  In each of these expressions, we have suppressed in the notation some contractions of tensors between $W_+ \otimes W_-$ and its dual.  There is an additional term in $I^{(2)}$ associated to the action of a rank $(1,1)$ supercharge $Q^+ + Q^-$, which takes the form
-\[I^{(2)}(Q^+, Q^-) = (\lambda^{+\vee}, \lambda^{-\vee})(Q^+,Q^-) \langle, u^{+\vee} \otimes u^{-\vee}, w^+ \otimes w^-\rangle + \langle c^\vee, \phi \rangle(Q^+,Q^-) w^+ \otimes w^-. \]
+\[I^{(2)}(Q^+, Q^-) = (\lambda^{+\vee}, \lambda^{-\vee})(Q^+,Q^-) \langle u^{+\vee} \otimes u^{-\vee}, w^+ \otimes w^-\rangle + \langle c^\vee, \phi \rangle(Q^+,Q^-) w^+ \otimes w^-. \]
 \end{prop}
 
 \begin{remark}
 If we set $\lambda^- \otimes u^-$ and $\phi$ to zero, and consider only the action of $Q^+ \otimes w^+$, then we recover the supersymmetry action for the $\mc N=(1,0)$ pure gauge theory.  If instead we set $\lambda^+ \otimes u^+$ and $A$ to zero, and consider only the action of $Q^- \otimes w^-$ then we recover the supersymmetry action for the $\mc N=(1,0)$ pure matter theory.
 \end{remark}
 
+In the 6 dimensional $\mc N=(1,1)$ supersymmetry algebra, there are now 4 classes of inequivalent non-zero supercharges by which we can twist.
+\begin{enumerate}
+ \item Rank $(1,0)$ spinors, $Q^+ \otimes w^+$.  These automatically square to zero, and are holomorphic, like in the $\mc N=(1,0)$ supersymmetry algebra.
+ \item Rank $(1,1)$ spinors, $Q = Q^+ \otimes w^+ + Q^- \otimes w^-$.  These automatically square to zero, and split into two inequivalent classes:
+ \begin{enumerate}
+ \item \chris{4 invariant directions}
+ \item \chris{topological (this twist is a degeneration of the previous type)}
+ \end{enumerate}
+ \item Rank $(2,2)$ square-zero spinors.  These supercharges have 5-dimensional image in $\CC^6$.  The corresponding twists are only $\ZZ/2\ZZ$-graded.
+\end{enumerate}
+
+We already considered the holomorphic twist in the previous subsection.  The remaining three classes are new: they all arise via appropriate dimensional reductions from twists of 7d $\mc N=1$ super Yang-Mills.
+
+\chris{types 2a and 2b fit into a family of the form $\mr{Map}(S_2 \times \Sigma_{\mr{dR}}, BG)_{\mr{Hod}}$.  Type 3 gives $\mr{Map}(\Sigma \times (M_4)_{\mr{dR}}, BG)$.}
 
 \subsection{Dimension 5}
 
-% \cN=2 SYM, three twists
-% \cN=1 SYM with matter in a pseudo-real representation, one twist.
+\subsubsection{$\mc N = 1$ Super Yang-Mills with a Hypermultiplet}
+
+\subsubsection{$\mc N = 2$ Super Yang-Mills Theory}
+
+Exactly as in the case of 6d $\mc N=(1,1)$ supersymmetry algebra, there are 4 inequivalent classes of twists.
+\begin{enumerate}
+ \item Rank $1$ spinors, $Q \otimes w$.  These automatically square to zero, and admit three invariant directions.  Twists by such supercharges were already described in the previous subsection.
+ \item Rank $2$ square-zero spinors.  Like in dimension 6, these split into two inequivalent classes:
+ \begin{enumerate}
+ \item \chris{4 invariant directions}
+ \item \chris{topological (this twist is a degeneration of the previous type)}
+ \end{enumerate}
+ \item Rank $4$ square-zero spinors.  These supercharges are also topological.  The corresponding twists are only $\ZZ/2\ZZ$-graded.
+\end{enumerate}
+
+\chris{types 2a and 2b fit into a family of the form $\mr{Map}(\Sigma \times (M_3)_{\mr{dR}}, BG)_{\mr{Hod}}$.  Type 3 gives $\mr{Map}((M_5)_{\mr{dR}}, BG)$.}
 
 \subsection{Dimension 4}
 
