@@ -783,9 +783,11 @@ This follows immediately by applying Proposition \ref{dim_red_SUSY_prop} to the 
 We can further include the action of at least a subalgebra of the algebra of R-symmetries in each example. \chris{quantify which}
 \end{remark}
 
-\subsection{Chiral multiplet}
+\subsection{Supersymmetric matter}
 
 \pavel{6d $\cN=(1, 0)$ and 4d $\cN=1$.}
+
+\subsection{Supersymmetric couplings}
 
 \subsection{Supersymmetric twisting}
 
@@ -1214,7 +1216,7 @@ The proof here is identical to the proof of Theorem \ref{9d_twist_thm}, we just 
 
 % \cN=(1, 0) SYM with matter in a pseudo-real representation, one twist. 
 
-\subsubsection{$\cN=(1,0)$ with matter}
+\subsubsection{$\cN=(1,0)$ with hypermultiplet matter}
 
 \subsection{Dimension 5}
 
@@ -1227,12 +1229,16 @@ The proof here is identical to the proof of Theorem \ref{9d_twist_thm}, we just 
 % \cN=2 SYM with matter in a pseudo-real representation
 % \cN=1 SYM with matter in a complex representation
 
-
+\subsubsection{$\cN=1$ with chiral multiplet matter}
 There is a single non-zero equivalence class of square zero supercharges in $4$-dimensional $\mc N = 1$, which we fix from here on.
 For concreteness, we will fix a nonzero supercharge of negative chirality $$Q = Q_- \in S_-$$ to twist by. 
 Such supercharges are minimal (i.e. have two dimensional image).  
 They are stabilized by ${\rm U}(2)$; indeed a minimal square zero spinor of positive (negative) helicity is stabilized by $\SU(2)_-$ ($\SU(2)_+$), but also by a torus in $\SU(2)_+$ ($\SU(2)_-$).  
 The R-symmetry group is $U(1)$, and the twisted theory by such a supercharge can always be made $\ZZ$-graded.
+
+\begin{prop}[See also \cite{SWchar}]
+The minimal twist of 4d $\cN=1$ super Yang-Mills with Lie algebra $\fg$ coupled to the $\cN=1$ chiral multiplet valued in a representation $R$ on \brian{a complex surface or $\CC^2$} is equivalent to holomorphic $BF$ theory for the Lie algebra $\fg$ coupled to the holomorphic $\beta\gamma$ system with values in the representation $R$. 
+\end{prop}
 
 \begin{itemize}
 \item[(1)] 
@@ -1254,7 +1260,7 @@ A^* & \mapsto B_{2,1} + B_{1,2} \in \Omega^{2,1}(\CC^2;\fg) \oplus \Omega^{1,2}(
 
 The matter fields decompose as
 \begin{align*}
-\phi & \mapsto \phi \in \Omega^0 (\CC^2 ; R) \\
+\phi & \mapsto \gamma_0 \in \Omega^0 (\CC^2 ; R) \\
 \Bar{\phi} & \mapsto \Bar{\phi} \in \Omega^{2,2}(\CC^2 ; R^*) \\
 \psi_+ & \mapsto \gamma_{0,1} \in \Omega^{0,1}(\CC^2 ; R) \\
 \psi_- & \mapsto \beta_{2,0} + \Tilde{\beta}_{2,2} \in \Omega^{2,0}(\CC^2 ; R^*) \oplus \Omega^{2,2}(\CC^2 ; R^*) 
@@ -1267,41 +1273,36 @@ and their antifields:
 \psi^*_- & \mapsto \Tilde{\gamma}_0 + \gamma_{0,2} \in \Omega^{0,0}(\CC^2 ; R) \oplus \Omega^{0,2}(\CC^2 ; R) 
 \end{align*}
 
-There are symmetries in the untwisted theory that will remain symmetries upon twisting. 
-\begin{itemize}
-\item The twisted theory is a shifted cotangent theory in the BV formalism. 
-This means that the action functional of the holomorphic theory must be linear in the fields $B$ and $\beta$ of the holomorphic BF and holomorphic $\beta\gamma$ system, respectively. 
-
-\item The action functional is invariant with respect to the group $\mr U(2)$ symmetry, which is the stabilizer of the fixed holomorphic supercharge.
-\item The action functional is invariant with respect to the group ${\rm U}(2)$ symmetry, which is the stabilizer of the fixed holomorphic supercharge.
-\item The action functional is translation invariant, this follows from the fact that the untwisted theory has a 
-\end{itemize}
-
-The first symmetry we exploit is translation invariance. 
-There is a general fact that translation invariant couplings can be described neatly in terms of the Lie algebra homology / cohomology of a certain Lie algebra. 
-Let $\fg$ and $R$ be a Lie algebra together with a representation.
-Define the following graded Lie algebra
 \item[(2)] Next, we study the linear differential in the twisted theory. 
 At the linear level, the matter and gauge sectors completely decouple. 
+
+For the gauge sector, the linear differential on the twisted BV complex is the following:
+\[
+\xymatrix{
+\ul{-1} & \ul{0} & \ul{1} & \ul{2} \\
+\Omega^0(\CC^2; \fg)_{A_0} \ar[r]^-{\dbar} & \Omega^{0,1}(\CC^2; \fg)_{A_{0,1}} \ar@{.>}[r]^-{\dbar} & \Omega^{0,2}(\CC^2; R)_{A_{0,2} } &  \\
+& \Omega^{2,0}(\CC^2; \fg)_{B_{2,0}} \ar@{.>}[r]^-{\dbar} & \Omega^{2,1}(\CC^2; \fg)_{B_{2,1}} \ar[r] & \Omega^{2,2}(\CC^2 , \fg)_{B_{2,2}} \\
+\Omega^{1,0} (\CC^2; \fg)_{\lambda_{1,0}} \ar@{.>}[r]^-{=} & \Omega^{1,0}(\CC^2; \fg)_{A_{1,0}} & \Omega^{2,1}(\CC^2; \fg)_{B_{1,2}} \ar@{.>}[r]^-{=} & \Omega^{2,1}(\CC^2; \fg)_{\lambda_{1,2}} \\
+& \Omega^0(\CC^2 ; \fg)_{\lambda_0^*} \ar@{.>}[r]^-{=} & \Omega^0(\CC^2 ; \fg)_{\lambda_0} & 
+}
+\]
+The solid arrows represent the piece of the linear differential coming from the original linear BV differential of the untwisted theory.
+The dotted arrows represent the piece of the linear differential which depends on the supercharge $Q = Q_-$ we are twisting by. 
+This complex is equivalent to the linearized piece holomorphic BF theory on $\CC^2_{\dbar}$ with values in $\fg$. 
+
 For the matter sector, the linear differential is:
 \[
 \xymatrix{
 \ul{-1} & \ul{0} & \ul{1} & \ul{2} \\
-& \Omega^0(\CC^2; R)_{\gamma_0} \ar[r] & \Omega^{0,1}(\CC^2; R)_{\gamma_{0,1}} \ar[r] & \Omega^{0,2}(\CC^2; R)_{\gamma_{0,2} } \\
-\Omega^0(\CC^2; R^*)_{\beta_{2,0}} \ar[r] & \Omega^{2,1}(\CC^2; R^*)_{\beta_{2,1}} \ar[r] & \Omega^{2,2}(\CC^2 , R^*)_{\beta_{2,2}} \\
-\Omega^{2,2} (\CC^2; R^*)_{\Tilde{\beta}_{2,2}} \ar[r]^-{=}& \Omega^{2,2}(\CC^2; R^*)_{\Bar{\phi}} & \Omega^{0,0}(\CC^2; R)_{\Bar{\phi}^*} \ar[r]^-{=} & \Omega^{0,0}(\CC^2; R)_{\Tilde{\gamma}_0}
+& \Omega^0(\CC^2; R)_{\gamma_0} \ar@{.>}[r]^-{\dbar} & \Omega^{0,1}(\CC^2; R)_{\gamma_{0,1}} \ar[r]^-{\dbar} & \Omega^{0,2}(\CC^2; R)_{\gamma_{0,2} } \\
+\Omega^0(\CC^2; R^*)_{\beta_{2,0}} \ar[r]^-{\dbar} & \Omega^{2,1}(\CC^2; R^*)_{\beta_{2,1}} \ar@{.>}[r]^-{\dbar} & \Omega^{2,2}(\CC^2 , R^*)_{\beta_{2,2}} \\
+\Omega^{2,2} (\CC^2; R^*)_{\Tilde{\beta}_{2,2}} \ar@{.>}[r]^-{=}& \Omega^{2,2}(\CC^2; R^*)_{\Bar{\phi}} & \Omega^{0,0}(\CC^2; R)_{\Bar{\phi}^*} \ar@{.>}[r]^-{=} & \Omega^{0,0}(\CC^2; R)_{\Tilde{\gamma}_0}
 }
 \]
-For the gauge sector, the linear differential is:
-\[
-\xymatrix{
-\ul{-1} & \ul{0} & \ul{1} & \ul{2} \\
-\Omega^0(\CC^2; \fg)_{A_0} \ar[r] & \Omega^{0,1}(\CC^2; \fg)_{A_{0,1}} \ar[r] & \Omega^{0,2}(\CC^2; R)_{A_{0,2} } &  \\
-& \Omega^{2,0}(\CC^2; \fg)_{B_{2,0}} \ar[r] & \Omega^{2,1}(\CC^2; \fg)_{B_{2,1}} \ar[r] & \Omega^{2,2}(\CC^2 , \fg)_{B_{2,2}} \\
-\Omega^{1,0} (\CC^2; \fg)_{\lambda_{1,0}} \ar[r]^-{=} & \Omega^{1,0}(\CC^2; \fg)_{A_{1,0}} & \Omega^{2,1}(\CC^2; \fg)_{B_{1,2}} \ar[r]^-{=} & \Omega^{2,1}(\CC^2; \fg)_{\lambda_{1,2}} \\
-& \Omega^0(\CC^2 ; \fg)_{\lambda_0^*} & \Omega^0(\CC^2 ; \fg)_{\lambda_0} & 
-}
-\]
+This complex is equivalent to the holomorphic $\beta\gamma$ system on $\CC^2_{\dbar}$ with values in $R$. 
+
+\item[(3)] 
+We now observe that the interacting parts of the twisted theory agree with the interactions of holomorphic BF theory coupled to the $\beta\gamma$ system. 
 \end{itemize}
 
 %There are symmetries in the untwisted theory that will remain symmetries upon twisting. 
@@ -1330,9 +1331,13 @@ For the gauge sector, the linear differential is:
 %\]
 %\end{prop}
 
-\begin{prop}[\cite{SWchar}]
-The minimal twist of 4d $\cN=1$ super Yang-Mills with Lie algebra $\fg$ coupled to the $\cN=1$ chiral multiplet valued in a representation $R$ on \brian{a complex surface or $\CC^2$} is equivalent to holomorphic $BF$ theory for the Lie algebra $\fg$ coupled to the holomorphic $\beta\gamma$ system with values in the representation $R$. 
-\end{prop}
+
+\subsubsection{$\cN=2$ SYM with hypermultiplet matter}
+%quaternionic is hyperkahler
+%pseudo-real is quaternionic
+
+\subsubsection{$\cN=4$ SYM}
+
 %
 %The matter sector of the theory is labeled by the BRST fields:
 %\begin{itemize}
