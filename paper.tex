@@ -788,7 +788,183 @@ We can further include the action of at least a subalgebra of the algebra of R-s
 
 \subsection{Supersymmetric matter}
 
-\pavel{6d $\cN=(1, 0)$ and 4d $\cN=1$.}
+\subsubsection{The 4d $\cN=1$ chiral multiplet}
+
+
+\subsubsection{The 6d $\cN=(1, 0)$ hypermultiplet}
+
+In this subsection, $S_+ / S_-$ denote the positive/negative irreducible spin representations of $\mf{so}(6; \CC)$. 
+The spinorial representation we will be interested in is $\Sigma = S_+ \otimes W_+$, where $\dim_{\CC}(W_+) = 2$ is a two-dimensional multiplicity space. 
+To define the half hyper multiplet we fix a complex, symplectic vector space $U$ whose symplectic form we call $\omega_U$.
+We combine the symplectic forms $\omega_U, \omega_{W_+}$ to define a pairing 
+\[
+(-,-)_{W_+ \otimes U}  := \omega_{W_+} \otimes \omega_U : (W_+ \otimes U)^{\otimes 2} \to \CC .
+\]
+The spinorial pairing $(-,-) : S_+ \otimes S_- \to \CC$ together with the obvious symplectic form $\omega_{W_+}$ on $W_+$, and the symplectic form $\omega_U$ on $U$ induces a pairing (that we denote by the same symbol)
+\[
+(-,-)_U : (S_\pm \otimes U) \otimes (S_\mp \otimes U) \to \CC .
+%(-,-)_U : (S_\pm \otimes W_+ \otimes U)^{\otimes 2} \to \CC  
+\]
+
+\begin{remark}
+The terminology ``half" hyper multiplet is to be consistent with the terminology in the physics literature. 
+The (full) hyper multiplet refers to a multiplet which depends on the choice of a (not necessarily symplectic) vector space $R$. 
+The relationship between the two is obtained by looking at the cotangent space $U = T^*R$.
+That is, the half hyper multiplet with values in the symplectic vector space $U = T^* R$ (with its obvious symplectic structure) is the (full) hyper multiplet for $R$. 
+\end{remark}
+
+The field content for the 6-dimensional half hyper multiplet with values in $U$ is:
+\begin{itemize}
+\item a scalar valued in $W_+ \otimes U$; $\phi \in C^\infty(\RR^4 ; W_+ \otimes U)$;
+\item a negative Weyl spinor valued in $U$; $\psi \in C^\infty(\RR^4 ; S_- \otimes U)$ .
+\end{itemize}
+
+The space of BRST fields is thus
+\[
+F = C^\infty(\RR^4 ; W_+ \otimes U \oplus S_- \otimes U) .
+\]
+
+The BRST action is
+\[
+S (\phi, \psi) = \int_{\RR^4} - \frac{1}{2}  (\d \phi \wedge * \d \phi)_{W_+ \otimes U} + \frac{1}{2} (\psi , \sd \dd \psi)_U .
+\]
+As usual, we denote the antifields by $\phi^*$ and $\psi^*$. 
+
+The action of supersymmetry is given by a linear and quadratic functional:
+\begin{align*}
+I^{(1)} (Q) & = \int (\phi^*, (Q, \psi))_{W_+ \otimes U} + (\psi^*, \rho(\d \phi) Q)_U \\
+I^{(2)} (Q_1 , Q_2) & =  \int \frac{1}{4}(\Gamma(Q_1, Q_2)_{W_+} , \Gamma(\psi^*, \psi^*)_{U}) 
+%\textcolor{red}{-\frac{1}{2} (Q_1, \psi^*)_U(Q_2, \psi^*)_U  }.
+\end{align*}
+where $Q, Q_1,Q_2 \in \Sigma = S_+ \otimes W_+$. 
+We point out some conventions in the definition of $I^{(2)}$. 
+Define $\Gamma (Q_1,Q_2)_{W_+} \in V$ as the image of $Q_1 \otimes Q_2$ under the composition
+\[
+\Sigma \otimes \Sigma = (S_+ \otimes W_+) \otimes (S_+ \otimes W_+) \cong (S_+ \otimes S_+) \otimes (W_+ \otimes W_+) \xto{\Gamma \otimes \omega_{W_+}} V .
+\]
+
+In order to prove the hypermultiplet is supersymmetric, we will need to following proposition about $6$-dimensional spinor representations. 
+
+\begin{prop}\label{prop: new3psi}
+Suppose $Q_1,Q_2 \in \Sigma = S_+ \otimes W_+$ and $Q_3 \in S_-$. 
+Then
+\[
+(Q_1, Q_3) Q_2 + (Q_2, Q_3)Q_1 = \rho(\Gamma(Q_1,Q_2)) Q_3
+\]
+\end{prop}
+
+%Similarly, $\Gamma(\psi^*, \psi^*)_U \in V$ is defined as the image of $\psi^* \otimes \psi^*$ under the composition 
+%\[
+%(S_+ \otimes U) \otimes (S_+ \otimes U) \cong (S_+ \otimes S_+) \otimes (U \otimes U) \xto{\Gamma \otimes \omega_{U}} V .
+%\]
+%The pairing in the first term in $I^{(2)}$ is then induced from the natural one on $V$. 
+%Also, $(Q_1, \psi^*)$ is defined as the image of $Q_1 \otimes \psi^*$ under the composition \brian{is this one zero???}
+
+The following result states that these functionals encode an off-shell action of six-dimensional $\cN=(1,0)$ supersymmetry on the half hypermultiplet valued in $U$. 
+The proof is very similar to the case of the four-dimensional $\cN=1$ chiral multiplet. 
+
+\begin{thm}
+The functional $\fS = S + I^{(1)} + I^{(2)}$ satisfies the classical master equation
+\begin{equation}\label{CMEhyper}
+\d_{\rm Lie} \fS + \frac{1}{2} \{\fS, \fS\} = 0 .
+\end{equation}
+\end{thm}
+
+We decompose the classical master equation (\ref{CMEhyper}) into the following equations:
+\begin{equation}\label{CMEhyper2}
+\begin{array}{rrrrrr}
+\{S , I^{(1)}\} & = & 0 \\ 
+\{S, I^{(2)}\} + \d_{CE} I^{(1)} + \frac{1}{2} \{I^{(1)}, I^{(1)}\} & = & 0 \\
+\d_{CE} I^{(2)} + \{I^{(1)}, I^{(2)}\} & =& 0 \\
+\{I^{(2)}, I^{(2)}\} & =& 0
+\end{array}
+\end{equation}
+
+The last equation is automatically satisfied since $I^{(2)}$ is independent of $\phi$ and $\psi$. 
+
+The first equation in (\ref{CMEhyper2}) states that the classical action for the chiral multiplet is supersymmetric. 
+
+\begin{lemma} 
+One has $\{S, I^{(1)}\} (Q) = 0$ for all $Q \in \Sigma$. 
+\end{lemma}
+\begin{proof}
+Observe
+\[
+- \{\d \phi \wedge * \d \phi, \phi^*  (Q, \psi) \} = - 2 \d (Q, \psi) \wedge * \d \phi .
+\]
+and
+\[
+\{(\psi, \sd \dd \psi) , (\psi^*, \rho(\d \phi) Q) \} = 2 (\rho(\d \phi) Q, \sd \dd \psi) \d^4 x .
+\]
+The sum of these two terms is zero by Lemma \ref{lem: oneform}. 
+\end{proof}
+
+Next, we move on to the second equation in (\ref{CMEhyper2}). 
+
+\begin{lemma} 
+One has
+\begin{equation}\label{CMEhyper3}
+\{S, I^{(2)}\} + \d_{CE} I^{(1)} + \frac{1}{2} \{I^{(1)}, I^{(1)}\} = 0 .
+\end{equation}
+\end{lemma}
+\begin{proof}
+Evaluating expression (\ref{CMEhyper3}) on $v_1,v_2 \in \mf{iso}(V)$ reduces to the claim that (??) defines a strict Lie action. 
+Evaluating on $v \in \mf{iso}(V)$ and $Q \in \Sigma$, the claim reduces to the fact that $I^{(1)}$ is Poincar\'{e} invariant.
+So, the only nontrivial term to check is the evaluation on $Q_1,Q_2 \in \Sigma$. 
+
+The individual terms are:
+\begin{align*}
+\{I^{(1)}, I^{(1)}\}(Q_1, Q_2) = & - \phi^* (Q_1, \rho(\d \phi) Q_2) - \phi^* (Q_2, \rho(\d \phi)Q_1) \\ &  -  (\psi^*, \rho(\d(Q_1,\psi))Q_2) - (\psi^*, \rho(\d(Q_2, \psi)) Q_1) 
+\end{align*}
+
+\begin{align*}
+(\d_{CE}I^{(1)})(Q_1,Q_2) = & - \phi^* L_{\Gamma(Q_1,Q_2)} (\phi) - (\psi^*, \Gamma(Q_1,Q_2) . \psi)
+\end{align*}
+
+and
+\begin{align*}
+\{S, I^{(2)}(Q_1,Q_2)\} = & \frac{1}{2} \Gamma(Q_1,Q_2) \Gamma(\psi^*, \sd \dd \psi) 
+% \textcolor{red}{- \frac{1}{2} (Q_1, \psi^*) (Q_2, \sd \dd \psi) - \frac{1}{2} (Q_1, \sd \dd \psi) (Q_2, \psi^*) }.
+\end{align*}
+Note that we can rewrite this as $\frac{1}{2} \rho(\Gamma(Q_1, Q_2)) \sd \dd \psi$. 
+
+We first collect all terms in Equation (\ref{CMEhyper3}) proportional to $\phi^*$:
+\[
+- \frac{1}{2} (Q_1, \rho(\d\phi) Q_2) - \frac{1}{2} (Q_2, \rho(\d \phi) Q_1) - L_{\Gamma(Q_1,Q_2)} \phi .
+\]
+By the Clifford identity
+\brian{ $v \wedge \Gamma(Q_1, Q_2) = (Q_1 , \rho(v) Q_2)$} we observe that the first two terms cancel with the third term.  
+
+Next, we collect all terms in Equation (\ref{CMEhyper3}) proportional to $\psi^*$:
+\begin{equation}\label{psistar}
+\begin{array}{cccc}
+& - & \displaystyle \frac{1}{2} \rho(\d(Q_1,\psi))Q_2 - \frac{1}{2} \rho(\d(Q_2, \psi)) Q_1 - \Gamma(Q_1,Q_2) . \psi
+\\ 
+& + &\displaystyle \frac{1}{2} \rho(\Gamma(Q_1,Q_2)) \sd \dd \psi 
+%\textcolor{red}{ - \frac{1}{2} (Q_2, \sd \dd \psi)Q_1 - \frac{1}{2} (Q_1, \sd \dd \psi)Q_2}
+\end{array}
+\end{equation}
+By Proposition \ref{prop:cliffordactionproperties} item (3), the first and second terms can be written as:
+\[
+- \frac{1}{2} \rho(\d(Q_1,\psi))Q_2 - \frac{1}{2} \rho(\d(Q_2, \psi)) Q_1 = - \frac{1}{2} \sd \dd \left( (Q_1, \psi)Q_2 + (Q_2 , \psi)Q_1 \right).
+\]
+Applying Proposition \ref{prop: new3psi}, to $Q_3 = \psi$, this becomes $-\frac{1}{2} \sd \dd \rho(\Gamma(Q_1,Q_2) \psi)$. 
+Finally, by the Clifford identity, the sum of this term with the fourth term in (\ref{psistar}) is precisely $\Gamma(Q_1,Q_2) . \psi$.
+So the expression (\ref{psistar}) is identically zero. 
+\end{proof}
+
+\begin{lemma}
+\[\{I^{(1)}, I^{(2)}\}(Q_1, Q_2, Q_3) = 0\]
+for every $Q_1, Q_2, Q_3\in \Sigma$.
+\end{lemma}
+\begin{proof}
+We have
+\begin{align*}
+\{I^{(1)}(Q_1), I^{(2)}(Q_2, Q_3)\} & = \frac{1}{2} (\Gamma(Q_2, Q_3), \Gamma(\psi^*, \phi^* Q_1)) \\ & = (\psi^*, \phi^* \rho(\Gamma(Q_2,Q_3)) Q_1)  .
+\end{align*}
+The expression
+$\{I^{(1)}, I^{(2)}\}(Q_1,Q_2,Q_3$ is obtained by cyclically symmetrizing the above expression. By Proposition \ref{prop:3psi} the cyclic symmetrization is identically zero.
+\end{proof}
 
 \subsection{Supersymmetric couplings}
 
