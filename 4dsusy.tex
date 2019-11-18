@@ -60,10 +60,10 @@ This is called the $\cN=1$ chiral multiplet.
 
 \begin{lem}
 \label{lem: oneform}
-Let $\alpha$ be any $1$-form on $V$, $\psi \in C^\infty(V, \Sigma)$,  and $Q \in \Sigma$. 
+Let $v \in V$, $\psi \in C^\infty(V, \Sigma)$, and $Q \in \Sigma$. 
 Then
 \[
-\d (Q, \psi) \wedge * \alpha = * (\rho(\alpha)Q, \sd \dd \psi) .
+(v, \d (Q, \psi))_V = (\rho(v)Q, \sd \dd \psi)_{\Sigma} .
 \]
 \end{lem}
 \begin{proof}
@@ -72,6 +72,24 @@ Note that $\d(Q,\psi) \wedge * \alpha = * (Q, V_\alpha . \psi)$.
 The result then follows from invariance of $(-,-)$ and the formula $\sd \dd \psi = \rho(\d x_i) (\partial_i \psi)$. 
 \end{proof}
 
+\begin{lem}
+\label{lem: silly}
+For $Q_1,Q_2 \in \Sigma$ and $\psi_+ \in S_+$ we have
+\[
+\rho(\d(Q_1, \psi_+)) Q_2 = \rho(\Gamma(Q_1, \sd \dd \psi_+))Q_2
+\]
+\end{lem}
+
+\brian{I'd also  like the following  to be true.
+\begin{prop}
+Suppose $Q_+ \in S_+$, $Q_-\in S_-$, and $\psi_+ \in C^\infty(V , S_+)$. 
+Then
+\[
+\sd \dd (\rho(\Gamma(Q_+, Q_-)) \psi_+) = \rho(\d(Q_+, \psi_+)) Q_- + (Q_-, \sd \dd \psi_+)Q_+ .
+\]
+\end{prop}
+}
+
 \subsubsection{The chiral multiplet}
 
 In this subsection, $S_+ / S_-$ denote the positive/negative irreducible spin representations of $\mf{so}(4; \CC)$. 
@@ -79,9 +97,16 @@ In this subsection, $S_+ / S_-$ denote the positive/negative irreducible spin re
 The action of the odd part of the $4d$ $\cN=1$ supersymmetry algebra on the $4$-dimensional matter theory is encoded by the following linear and quadratic functionals 
 \begin{align*}
 I^{(1)}(Q) & = \int \<\phi^*, (Q, \psi_+)\>_R + \<\Bar{\phi}^*, (Q, \psi_-)\>_R + \<\psi_+^*, \rho(\d \phi)Q \>_R +  \<\psi_-^*, \rho(\d \Bar{\phi})Q \>_R \\
-I^{(2)}  (Q_1 \otimes Q_2) & = \int \frac{1}{2}(\Gamma(Q_1, Q_2), \Gamma(\psi_+^*, \psi_-^*)) - (Q_1, \psi_+^*)(Q_2, \psi_-^*) - \int (Q_2, \psi_+^*)(Q_1, \psi_-^*) 
+I^{(2)}  (Q_1 \otimes Q_2) & = \int \frac{1}{2}(\Gamma(Q_1, Q_2), \Gamma(\psi_+^*, \psi_-^*)_R) - ((Q_1, \psi_+^*),(Q_2, \psi_-^*))_R - ((Q_2, \psi_+^*),(Q_1, \psi_-^*))_R
 \end{align*}
 for $Q, Q_1, Q_2 \in S_+ \oplus S_-$
+A word on the notation used in the definition of $I^{(2)}$. 
+The $V$-valued pairing $\Gamma(\psi_+^*, \psi_-^*)_R$ denotes the image of $\psi_+^* \otimes \psi_-^*$ under the composition
+\[
+(S_+ \otimes R^*) \otimes (S_- \otimes R) \cong (S_+ \otimes S_-) \otimes (R^* \otimes R) \xto{\Gamma \otimes (-,-)_R} V .
+\]
+Additionally, we view $(Q_1, \psi_+^*)$ as a scalar valued in $R^*$ and $(Q_2, \psi_-^*)$ as a scalar valued in $R$. 
+The pairing $((Q_1, \psi_+^*),(Q_2, \psi_-^*))_R$ is the obvious one between $R$ and $R^*$. 
 
 \begin{thm}
 The functional $\fS = S + I^{(1)} + I^{(2)}$ satisfies the classical master equation
@@ -110,13 +135,13 @@ One has $\{S, I^{(1)}\} (Q) = 0$ for all $Q \in S_+ + S_-$.
 \begin{proof}
 The BV bracket involving terms in $S$ depending on $\phi,\Bar{\phi}$ is:
 \begin{align*}
-- \left\{\d \phi \wedge * \d \Bar{\phi} \; , \; I^{(1)} \right\}  (Q) & = \d (Q, \psi_+) \wedge * \d \Bar{\phi} + \d \phi \wedge * \d (Q_-, \psi_-) 
+- \left\{(\d \phi, \d \Bar{\phi}) \; , \; I^{(1)} \right\}  (Q) & = (\d (Q, \psi_+), \d \Bar{\phi}) + (\d \phi, \d (Q_-, \psi_-))
 %\\
 %& = \Gamma(\sd \dd \psi_+, Q) \wedge * \d \Bar{\phi} \pm \d \phi \wedge * \Gamma(\sd \dd \psi_-, Q_-) .
 \end{align*}
 The BV bracket involving terms in $S$ depending on $\psi_\pm$ is:
 \begin{align*}
-\left\{ (\psi_+ , \sd \dd \psi_-) \; , \; I^{(1)} \right\} (Q) & = (\rho(\d \phi) Q, \sd \dd \psi_-) + (\psi_+, \sd \dd (\rho(\d \Bar{\phi}) Q)) \\ & =  (\rho(\d \phi) Q, \sd \dd \psi_-) - (\sd \dd \psi_+, (\rho(\d \Bar{\phi}) Q) \\ & = \d \phi \wedge * \Gamma(\sd \dd \psi_-, Q) - \d \Bar{\phi} \wedge * \Gamma(\sd \dd \psi_+, Q)
+\left\{ (\psi_+ , \sd \dd \psi_-) \; , \; I^{(1)} \right\} (Q) & = (\rho(\d \phi) Q, \sd \dd \psi_-) + (\psi_+, \sd \dd (\rho(\d \Bar{\phi}) Q)) \\ & =  (\rho(\d \phi) Q, \sd \dd \psi_-) - (\sd \dd \psi_+, (\rho(\d \Bar{\phi}) Q) \\ & =( \d \phi , \Gamma(\sd \dd \psi_-, Q)) - (\d \Bar{\phi} , \Gamma(\sd \dd \psi_+, Q))
 \end{align*}
 Adding the two terms up, we see that $\{S,I^{(1)}\}(Q) = 0$ by Lemma \ref{lem: oneform} as desired. 
 \end{proof}
@@ -145,14 +170,17 @@ The individual terms are:
 
 and
 \begin{align*}
-\{S, I^{(2)}(Q_1,Q_2)\} = & 
+\{S, I^{(2)}(Q_1,Q_2)\} = \left\{(\psi_+ , \sd \dd \psi_-), I^{(2)} \right\} = & \Gamma(Q_1,Q_2) \Gamma(\psi_+^*, \sd \dd \psi_+) - (Q_1 , \psi_+^*)(Q_2, \sd \dd \psi_+) - (Q_2, \psi_+^*)(Q_1, \sd\dd \psi_+)  \\ 
+ + & \Gamma(Q_1, Q_2) \Gamma(\psi_-^*, \sd \dd \psi_-) - (Q_1 , \psi_-^*)(Q_2, \sd \dd \psi_-) - (Q_2, \psi_-^*)(Q_1, \sd\dd \psi_-) \\
+ = & (\psi_+^*, \rho(\Gamma(Q_1,Q_2)) \sd \dd \psi_+) - (Q_1 , \psi_+^*)(Q_2, \sd \dd \psi_+) - (Q_2, \psi_+^*)(Q_1, \sd\dd \psi_+) \\ 
+ + & (\psi_-^*, \rho(\Gamma(Q_1,Q_2)) \sd \dd \psi_-) - (Q_1 , \psi_-^*)(Q_2, \sd \dd \psi_-) - (Q_2, \psi_-^*)(Q_1, \sd\dd \psi_-) .
 \end{align*}
 
 We first collect all terms in Equation (\ref{CMEchiral3}) proportional to $\phi^*$:
 \[
 - \frac{1}{2} (Q_1, \rho(\d\phi) Q_2) - \frac{1}{2} (Q_2, \rho(\d \phi) Q_1) - L_{\Gamma(Q_1,Q_2)} \phi .
 \]
-By Proposition \ref{??}
+By the Clifford identity
 \brian{ $v \wedge \Gamma(Q_1, Q_2) = (Q_1 , \rho(v) Q_2)$} we observe that the first two terms cancel with the third term. 
 Similarly, all terms proportional to $\Bar{\phi}^*$ also vanish. 
 
@@ -162,7 +190,16 @@ Next, we collect all terms in Equation (\ref{CMEchiral3}) proportional to $\psi_
 \\ 
 & \pm \frac{1}{2} \rho(\Gamma(Q_1,Q_2)) \sd \dd \psi_+ \mp \frac{1}{2} (Q_2, \sd \dd \psi_+)Q_1 \mp \frac{1}{2} (Q_1, \sd \dd \psi_+)Q_2
 \end{align*}
+By Lemma \ref{lem: silly} the first, second terms, and fourth terms are equal to 
+\[
+-\frac{1}{2}   \rho(\Gamma(Q_1, \sd \dd \psi_+))Q_2 - \frac{1}{2}   \rho(\Gamma(Q_2, \sd \dd \psi_+))Q_1 + \frac{1}{2} \rho(\Gamma(Q_1,Q_2)) \sd \dd \psi_+
+\]
+This is zero by Proposition \brian{3-psi}. 
 
+The remaining terms are
+\[
+- \Gamma(Q_1,Q_2) . \psi_+ + \frac{1}{2} (Q_2, \sd \dd \psi_+)Q_1 + \frac{1}{2} (Q_1, \sd \dd \psi_+)Q_2 .
+\]
 \end{proof}
 
 \begin{lemma}
@@ -335,5 +372,9 @@ We start by computing the variation of $\psi_+ + \psi_-$:
 
 Next, we move on to the pure gauge sector $\fS_{\rm gauge} = S_{\rm BV, gauge} + I_{\rm Poin} + I^{(1)}_{\rm gauge} + I^{(2)}_{\rm gauge}$. 
 \end{proof}
+1405.99
+
+387.00
+318.99
 
 \end{document}

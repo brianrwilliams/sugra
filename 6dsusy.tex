@@ -18,7 +18,7 @@
 \tikzstyle{dimension} = [circle, text centered, text width=0.7cm, minimum height=0.7cm, draw=black]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
-\title{4d $\cN=1$}
+\title{6d $\cN=(1,0)$}
 \author{Chris Elliott\and Pavel Safronov \and Brian Williams}
 
 \date{\today}
@@ -79,7 +79,8 @@ As usual, we denote the antifields by $\phi^*$ and $\psi^*$.
 The action of supersymmetry is given by a linear and quadratic functional:
 \begin{align*}
 I^{(1)} (Q) & = \int (\phi^*, (Q, \psi))_{W_+ \otimes U} + (\psi^*, \rho(\d \phi) Q)_U \\
-I^{(2)} (Q_1 , Q_2) & =  \int \frac{1}{4}(\Gamma(Q_1, Q_2)_{W_+} , \Gamma(\psi^*, \psi^*)_{U}) \textcolor{red}{-\frac{1}{2} (Q_1, \psi^*)_U(Q_2, \psi^*)_U  }.
+I^{(2)} (Q_1 , Q_2) & =  \int \frac{1}{4}(\Gamma(Q_1, Q_2)_{W_+} , \Gamma(\psi^*, \psi^*)_{U}) 
+%\textcolor{red}{-\frac{1}{2} (Q_1, \psi^*)_U(Q_2, \psi^*)_U  }.
 \end{align*}
 where $Q, Q_1,Q_2 \in \Sigma = S_+ \otimes W_+$. 
 We point out some conventions in the definition of $I^{(2)}$. 
@@ -157,7 +158,8 @@ The individual terms are:
 
 and
 \begin{align*}
-\{S, I^{(2)}(Q_1,Q_2)\} = & \frac{1}{2} \Gamma(Q_1,Q_2) \Gamma(\psi^*, \sd \dd \psi) \textcolor{red}{- \frac{1}{2} (Q_1, \psi^*) (Q_2, \sd \dd \psi) - \frac{1}{2} (Q_1, \sd \dd \psi) (Q_2, \psi^*) }.
+\{S, I^{(2)}(Q_1,Q_2)\} = & \frac{1}{2} \Gamma(Q_1,Q_2) \Gamma(\psi^*, \sd \dd \psi) 
+% \textcolor{red}{- \frac{1}{2} (Q_1, \psi^*) (Q_2, \sd \dd \psi) - \frac{1}{2} (Q_1, \sd \dd \psi) (Q_2, \psi^*) }.
 \end{align*}
 Note that we can rewrite this as $\frac{1}{2} \rho(\Gamma(Q_1, Q_2)) \sd \dd \psi$. 
 
@@ -173,7 +175,8 @@ Next, we collect all terms in Equation (\ref{CMEhyper3}) proportional to $\psi^*
 \begin{array}{cccc}
 & - & \displaystyle \frac{1}{2} \rho(\d(Q_1,\psi))Q_2 - \frac{1}{2} \rho(\d(Q_2, \psi)) Q_1 - \Gamma(Q_1,Q_2) . \psi
 \\ 
-& + &\displaystyle \frac{1}{2} \rho(\Gamma(Q_1,Q_2)) \sd \dd \psi \textcolor{red}{ - \frac{1}{2} (Q_2, \sd \dd \psi)Q_1 - \frac{1}{2} (Q_1, \sd \dd \psi)Q_2}
+& + &\displaystyle \frac{1}{2} \rho(\Gamma(Q_1,Q_2)) \sd \dd \psi 
+%\textcolor{red}{ - \frac{1}{2} (Q_2, \sd \dd \psi)Q_1 - \frac{1}{2} (Q_1, \sd \dd \psi)Q_2}
 \end{array}
 \end{equation}
 By Proposition \ref{prop:cliffordactionproperties} item (3), the first and second terms can be written as:
@@ -192,11 +195,10 @@ for every $Q_1, Q_2, Q_3\in S_+ \oplus S_-$.
 \begin{proof}
 We have
 \begin{align*}
-\{I^{(1)}(Q_1), I^{(2)}(Q_2, Q_3)\} = \frac{1}{2} (\Gamma(Q_2, Q_3), \Gamma(\rho(\d
+\{I^{(1)}(Q_1), I^{(2)}(Q_2, Q_3)\} & = \frac{1}{2} (\Gamma(Q_2, Q_3), \Gamma(\psi^*, \phi^* Q_1)) \\ & = (\psi^*, \phi^* \rho(\Gamma(Q_2,Q_3)) Q_1)  .
 \end{align*}
-
-$\{I^{(1)}, I^{(2)}\}$ is obtained by cyclically symmetrizing the above expression. By Proposition \ref{prop:3psi} the cyclic symmetrization of the term with $c^*$ is zero. The Clifford relation implies that
-
+The expression
+$\{I^{(1)}, I^{(2)}\}(Q_1,Q_2,Q_3$ is obtained by cyclically symmetrizing the above expression. By Proposition \ref{prop:3psi} the cyclic symmetrization is identically zero.
 \end{proof}
 \newpage
 
