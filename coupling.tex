@@ -1,0 +1,106 @@
+\documentclass[10pt, oneside]{article}
+
+\input ./combined_macros.sty
+
+\newcommand{\Cl}{\mathrm{Cl}}
+\newcommand{\Dens}{\mathrm{Dens}}
+
+\addbibresource{Twist.bib}
+
+\usepackage{pdflscape}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+\tikzstyle{s16} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=red!30]
+\tikzstyle{s16chiral} = [s16, dashed]
+\tikzstyle{s8 } = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=orange!30]
+\tikzstyle{s4} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=yellow!30]
+\tikzstyle{s2chiral} = [rectangle, dashed, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=green!30]
+\tikzstyle{dimension} = [circle, text centered, text width=0.7cm, minimum height=0.7cm, draw=black]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\title{4d $\cN=1$}
+\author{Chris Elliott\and Pavel Safronov \and Brian Williams}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\subsection{Supersymmetric coupling}
+\subsubsection{The 6d vector multiplet coupled to the hypermultiplet}
+
+Let $S_{\rm gauge}$ and $S_{\rm matter}$ be the BV actions for the $6d$ $\cN=(1,0)$ vector and hyper multiplets, respectively. 
+The coupled theory has action $S_{\rm gauge} + S_{\rm matter} + I_{\rm couple}$ where
+\[
+I_{\rm couple} = g (\psi, [A, \psi])_U + g (\d_{A} \phi, [A,\phi])_U + g (\psi, [\lambda, \phi])_U + g (\phi, (\lambda, \psi))_U + g (\psi^*, [c, \psi])_U + g (\phi^*, [c, \phi])_U + g^2 \left((\phi, \phi)_U\right)^2 .
+\]
+\brian{
+The notation $(\lambda, \psi) \in C^\infty(\RR^6 ; U)$ means we act by the representation and then use the scalar pairing.}
+
+The action of supersymmetry on the pure vector multiplet was constructed in Section \ref{sec: vector} and was encoded by linear and quadratic functionals that we denote $I^{(1)}_{\rm gauge}$ and $I^{(2)}_{\rm gauge}$. 
+The action of supersymmetry on the pure hyper multiplet was constructed in Section \ref{sec: hyper} and was encoded by linear and quadratic functionals that we denote $I^{(1)}_{\rm matter}$ and $I^{(2)}_{\rm matter}$. 
+Additionally, in the coupled theory, there are the following new terms in the action of supersymmetry:
+\begin{align*}
+I^{(1)}_{\rm couple} (Q) & = \int g (\psi^*, \rho([A, \phi]) Q)_U + \frac{1}{2} g (\lambda^*, Q \mu(\phi))_\fg \\
+I^{(2)} (Q_1 , Q_2) & =  \brian{are any terms necessary here?}
+\end{align*}
+\brian{
+It looks like we need to choose a moment map $\mu : U^{\otimes 2} \to \fg^*$. }
+
+\begin{thm}
+Let $S_{\rm BV} = S_{\rm gauge} + S_{\rm matter} + I_{\rm couple}$ be the full BV action for the coupled vector to hyper multiplet and let
+\begin{align*}
+I^{(1)} & = I^{(1)}_{\rm gauge} + I^{(1)}_{\rm matter} + I^{(1)}_{\rm couple} \\
+I^{(2)} & = I^{(2)}_{\rm gauge} + I^{(2)}_{\rm matter} .
+\end{align*}
+Then, $\fS = S_{\rm BV} + I^{(1)} + I^{(2)}$ satisfies the classical master equation
+\begin{equation}\label{CMEcouple}
+\d_{\rm Lie} \fS + \frac{1}{2} \{\fS, \fS\} = 0 .
+\end{equation}
+\end{thm}
+
+We have already seen that $S_{\rm BV}$ is consistent, so satisifies the ordinary classical master equation $\{S_{\rm BV}, S_{\rm BV}\}$. 
+We decompose the remaining terms in the classical master equation \ref{CMEcouple} into components based on the cardinality of the number of odd supersymmetry inputs, many of which have already been studied in Sections \ref{sec: vector} and \ref{sec: hyper}. 
+The new equations we must verify are the following:
+\begin{equation}\label{CMEhyper2}
+\begin{array}{rrrrrr}
+\{S_{\rm BV} , I^{(1)}_{\rm couple}\} + \{I_{\rm couple}, I^{(1)}_{\rm gauge} + I^{(1)}_{\rm matter}\} + \{I_{\rm couple}, I^{(1)}_{\rm couple}\} & = & 0 \\ 
+\d_{CE} I^{(1)}_{\rm couple} + \{I^{(1)}_{\rm gauge} + I^{(1)}_{\rm matter}, I^{(1)}_{\rm couple}\} + \frac{1}{2} \{I_{\rm couple}^{(1)}, I_{\rm couple}^{(1)}\} & = & 0 \\
+\{I_{\rm couple}^{(1)}, I^{(2)}\} & =& 0 \\
+%\{I^{(2)}, I^{(2)}\} & =& 0
+\end{array}
+\end{equation}
+
+\begin{lem} One has
+\[
+\{S_{\rm BV} , I^{(1)}_{\rm couple}\} + \{I_{\rm couple}, I^{(1)}_{\rm gauge} + I^{(1)}_{\rm matter}\} + \{I_{\rm couple}, I^{(1)}_{\rm couple}\}  =  0 
+\]
+\end{lem}
+\begin{proof}
+First, we compute
+\begin{align*}
+\{S_{\rm BV} , I^{(1)}_{\rm couple}\} = & g (\rho([A, \phi]) Q, \sd \dd \psi) + g (\psi^*, \rho([\d_A c, \phi]) Q) + g (\sd \dd_A \lambda, \mu(\phi) Q) + g (\lambda^*, [c, \mu(\phi) Q]) 
+\end{align*}
+Next,
+\begin{align*}
+\{I_{\rm couple} , I^{(1)}_{\rm gauge} + I^{(1)}_{\rm matter}\} = & g (\psi, \rho(\Gamma(Q, \lambda)) \psi] + g (\d_A \phi, [\Gamma(Q, \lambda), \phi]) + g (\psi, [\rho(F_A) Q, \phi]) \\ + & g (\d_A \phi, [A, (Q, \psi)]) + g (\psi, [\lambda, (Q, \psi)]) + g (\phi^*, [c, (Q,\psi)]) + g^2 (\phi, \phi) (\phi, (Q, \psi)) \\ + & g ([A, \psi] , \rho(\d \phi)Q) + g ([\lambda, \phi] , \rho (\d \phi) Q) + g (\psi^*, [c , \rho(\d(\phi)) Q]) . 
+\end{align*}
+Finally,
+\begin{align*}
+\{I_{\rm couple}, I^{(1)}_{\rm couple}\} = & g^2 (\rho([A,\phi]) Q, [Q,\psi]) + g^2 (\rho([A,\phi]) Q, [\lambda, \phi]) + g^2 (\psi^*, \rho([A, [c,\phi]]) Q) \\ + & g^2 (\psi, [\mu(\phi) Q, \phi]) + g^2 (\lambda^*, \mu([c,\phi], \phi) Q)
+\end{align*}
+
+Now, we collect all terms depending on the fields $A, \phi, \psi$:
+\begin{align*}
+\end{align*} 
+
+Here, we collect all terms depending only on $\psi$ and $\lambda$:
+\[
+- (\psi, \rho(\Gamma(Q, \lambda)) \psi) + (\psi, [\lambda, (Q, \psi)]) + (\psi, Q) (\lambda, \psi)
+\]
+This expression vanishes by Proposition \ref{prop: new3psi}.
+\end{proof}
+
+
+\end{document}
