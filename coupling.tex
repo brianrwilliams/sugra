@@ -32,21 +32,21 @@
 
 Let $S_{\rm gauge}$ and $S_{\rm matter}$ be the BV actions for the $6d$ $\cN=(1,0)$ vector and hyper multiplets, respectively. 
 The coupled theory has action $S_{\rm gauge} + S_{\rm matter} + I_{\rm couple}$ where
-\[
-I_{\rm couple} = g (\psi, [A, \psi])_U + g (\d_{A} \phi, [A,\phi])_U + g (\psi, [\lambda, \phi])_U + g (\phi, (\lambda, \psi))_U + g (\psi^*, [c, \psi])_U + g (\phi^*, [c, \phi])_U + g^2 \left((\phi, \phi)_U\right)^2 .
-\]
+\begin{align*}
+I_{\rm couple} = & - g (\psi, [A, \psi])_U - g (\d_{A} \phi, [A,\phi])_U \\ + & g (\psi, [\lambda, \phi])_U + g (\phi, (\lambda, \psi))_U + g (\lambda, \mu(\phi, \psi))_\fg \\ + & g (\psi^*, [c, \psi])_U + g (\phi^*, [c, \phi])_U \\ + & g^2 \left(\mu(\phi, \phi), \mu(\phi, \phi) \right)_\fg .
+\end{align*}
+ \brian{I need to nail down this Yukawa}
 \brian{
-The notation $(\lambda, \psi) \in C^\infty(\RR^6 ; U)$ means we act by the representation and then use the scalar pairing.}
+It looks like we need to choose a moment map $\mu : U^{\otimes 2} \to \fg^*$. }
 
 The action of supersymmetry on the pure vector multiplet was constructed in Section \ref{sec: vector} and was encoded by linear and quadratic functionals that we denote $I^{(1)}_{\rm gauge}$ and $I^{(2)}_{\rm gauge}$. 
 The action of supersymmetry on the pure hyper multiplet was constructed in Section \ref{sec: hyper} and was encoded by linear and quadratic functionals that we denote $I^{(1)}_{\rm matter}$ and $I^{(2)}_{\rm matter}$. 
 Additionally, in the coupled theory, there are the following new terms in the action of supersymmetry:
 \begin{align*}
 I^{(1)}_{\rm couple} (Q) & = \int g (\psi^*, \rho([A, \phi]) Q)_U + \frac{1}{2} g (\lambda^*, Q \mu(\phi))_\fg \\
-I^{(2)} (Q_1 , Q_2) & =  \brian{are any terms necessary here?}
+I^{(2)} (Q_1 , Q_2) & = 0 
 \end{align*}
-\brian{
-It looks like we need to choose a moment map $\mu : U^{\otimes 2} \to \fg^*$. }
+\brian{It appears there are no additional $L_\infty$ corrections}
 
 \begin{thm}
 Let $S_{\rm BV} = S_{\rm gauge} + S_{\rm matter} + I_{\rm couple}$ be the full BV action for the coupled vector to hyper multiplet and let
@@ -84,14 +84,14 @@ First, we compute
 \end{align*}
 Next,
 \begin{align*}
-\{I_{\rm couple} , I^{(1)}_{\rm gauge} + I^{(1)}_{\rm matter}\} = & g (\psi, \rho(\Gamma(Q, \lambda)) \psi] + g (\d_A \phi, [\Gamma(Q, \lambda), \phi]) + g (\psi, [\rho(F_A) Q, \phi]) \\ + & g (\d_A \phi, [A, (Q, \psi)]) + g (\psi, [\lambda, (Q, \psi)]) + g (\phi^*, [c, (Q,\psi)]) + g^2 (\phi, \phi) (\phi, (Q, \psi)) \\ + & g ([A, \psi] , \rho(\d \phi)Q) + g ([\lambda, \phi] , \rho (\d \phi) Q) + g (\psi^*, [c , \rho(\d(\phi)) Q]) . 
+\{I_{\rm couple} , I^{(1)}_{\rm gauge} + I^{(1)}_{\rm matter}\} = & - g (\psi, \rho(\Gamma(Q, \lambda)) \psi] - g (\d_A \phi, [\Gamma(Q, \lambda), \phi]) + g (\psi, [\rho(F_A) Q, \phi]) \\ + & g (\d_A \phi, [A, (Q, \psi)]) + g (\psi, [\lambda, (Q, \psi)]) + g (\phi^*, [c, (Q,\psi)]) +  g (\psi, (Q  , \psi) \lambda) \\ + & g^2 (\mu(\phi, \phi) , \mu(\phi, (Q, \psi)) + g ([A, \psi] , \rho(\d \phi)Q) + g ([\lambda, \phi] , \rho (\d \phi) Q) + g (\psi^*, [c , \rho(\d(\phi)) Q]) . 
 \end{align*}
 Finally,
 \begin{align*}
-\{I_{\rm couple}, I^{(1)}_{\rm couple}\} = & g^2 (\rho([A,\phi]) Q, [Q,\psi]) + g^2 (\rho([A,\phi]) Q, [\lambda, \phi]) + g^2 (\psi^*, \rho([A, [c,\phi]]) Q) \\ + & g^2 (\psi, [\mu(\phi) Q, \phi]) + g^2 (\lambda^*, \mu([c,\phi], \phi) Q)
+\{I_{\rm couple}, I^{(1)}_{\rm couple}\} = & g^2 (\rho([A,\phi]) Q, [Q,\psi]) + g^2 (\rho([A,\phi]) Q, [\lambda, \phi]) + g^2 (\psi^*, \rho([A, [c,\phi]]) Q) \\ + & g^2 (\psi, [\mu(\phi, \phi) Q, \phi]) + g^2  (\phi, (\mu(\phi, \phi)Q, \psi) ) + g^2 (\lambda^*, \mu([c,\phi], \phi) Q) \\ + & g^2 (\mu(\phi, \psi), \mu(\phi,\phi) Q)
 \end{align*}
 
-Now, we collect all terms depending on the fields $A, \phi, \psi$:
+Here, we collect all terms depending on the fields $A, \phi, \psi$:
 \begin{align*}
 \end{align*} 
 
@@ -100,6 +100,13 @@ Here, we collect all terms depending only on $\psi$ and $\lambda$:
 - (\psi, \rho(\Gamma(Q, \lambda)) \psi) + (\psi, [\lambda, (Q, \psi)]) + (\psi, Q) (\lambda, \psi)
 \]
 This expression vanishes by Proposition \ref{prop: new3psi}.
+
+Here, we collect all terms involving only $\phi$ and $\psi$:
+\begin{align*}
+& \pm  (\psi, [\mu(\phi, \phi) Q, \phi]) +  (\phi, (\mu(\phi, \phi)Q, \psi) ) \\
+\pm & (\mu(\phi, \phi) , \mu(\phi, (Q, \psi)) \pm (\mu(\phi, \psi), \mu(\phi,\phi)Q)
+\end{align*}
+\brian{I want to say each line is zero.}
 
 Here, we collect all terms depending only on $\lambda^*, \phi$ and $c$:
 \[
