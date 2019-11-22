@@ -446,7 +446,7 @@ uniquely determines $Q_N$ from $Q_M$. Moreover, the condition $p^* I_M = I_N$ un
 
 We will now describe dimensional reductions of the classical Chern--Simons theory.
 
-\begin{prop} \label{CS_diml_red_prop}
+\begin{prop} \label{CS_to_BF_diml_red_prop}
 Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$ equipped with a nondegenerate invariant pairing and consider the generalized Chern--Simons theory
 \[\map(X\times Y_{\mr{Dol}}\times (M\times \RR)_{\mr{dR}}, B\fg).\]
 Its dimensional reduction along the projection $p\colon X\times Y\times (M\times \RR)\rightarrow X\times Y\times M$ is isomorphic to the generalized BF theory
@@ -461,12 +461,13 @@ has the bundle of BV fields $\fg[1] \oplus \fg^*[-2]$. We may identify it with $
 We may identify $p^*(\fg[1]\oplus \fg)\cong \Omega^\bullet_{\RR}\otimes \fg[1]$. Under this identification the integration pairing $\omega_M$ on differential forms reduces to the pairing $\omega_N$. The de Rham differential vanishes on translation-invariant forms which shows a compatibility of dimensional reduction with the differentials $Q$. Finally, in both cases the interaction term comes from the $L_\infty$ structure on $\fg$.
 \end{proof}
 
-\begin{prop}
+\begin{prop} \label{CS_diml_red_prop}
 Let $X,Y,M,\fg$ be as before. Equip $\CC$ with a holomorphic volume form $\d z$ and consider the generalized Chern--Simons theory
 \[\map((X\times \CC)\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B\fg).\]
 Its dimensional reduction along the projection $p\colon (X\times \CC)\times Y\times M\rightarrow X\times Y\times (M\times \RR)$ induced by the projection $\CC\rightarrow \RR$ given by $(x, y)\mapsto x$ is isomorphic to the generalized Chern--Simons theory
 \[\map(X\times Y_{\mr{Dol}}\times (M\times \RR)_{\mr{dR}}, B\fg).\]
 \end{prop}
+
 \begin{proof}
 We may assume $X,Y,M=\pt$ as in the previous proof.
 
@@ -478,15 +479,6 @@ Under the pullback map
 \[\Omega^\bullet(\RR; \CC)\rightarrow \Omega^\bullet(\CC)\rightarrow \Omega^{0, \bullet}(\CC)\]
 the integration map $\int_\CC \d z\wedge (-)\colon \Omega^{0, \bullet}(\CC)\rightarrow \CC$ reduces to the integration map $\int_\RR (-)\colon \Omega^{\bullet}(\RR;\CC)\rightarrow \CC$.
 \end{proof}
-
-
-%\begin{lemma} \label{CS_diml_red_lemma}
-%Let $\map(X \times C_{\ol \dd}, B\gg)$ be a generalized Chern-Simons theory as in Section \ref{gen_CS_section}, where $C = \CC$ or $\CC^\times$ is a curve, and $X = (X_1)_{\ol \dd} \times (X_2)_{\mr{Dol}} \times (X_3)_{\mr{dR}}$ is arbitrary.  Split $C$ as $L \times \RR$, where $L = \RR$ or $S^1$.  The \chris{assuming uniqueness} dimensional reduction of this theory along the map $X \times C \to X \times L$ is equivalent to the generalized Chern-Simons theory $\map(X \times L_{\mr{dR}}, B\gg)$.
-%\end{lemma}
-
-%\begin{lemma} \label{CS_to_BF_diml_red_lemma}
-%Consider a generalized Chern-Simons theory of the form $\map(X \times \RR_{\mr{dR}}, B\gg)$, where again $X$ is arbitrary.  The dimensional reduction of this theory along the map $X \times \RR \to X$ is equivalent to the generalized BF type theory $\map(X, T[1]B\gg)$.
-%\end{lemma}
 
 \section{Supersymmetry} \label{sec: susy}
 
@@ -1220,7 +1212,7 @@ The minimal twist of 9d super Yang-Mills theory on the product of a Calabi-Yau 4
 \begin{proof}
 Let's apply Lemma \ref{commuting_twist_and_reduction_lemma} -- the fact that twisting commutes with dimensional reduction.  Choose a representative element $Q$ in the equivalence class of square-zero supercharges which also squares to zero in the 10d $\mc N=(1,0)$ supersymmetry algebra.  According to Lemma \ref{commuting_twist_and_reduction_lemma}, the twist of 9d $\mc N=1$ super Yang-Mills theory by the supercharge $Q$ is equivalent to the dimensional reduction of holomorphic Chern-Simons theory on $X_4 \times C$, where $C = L \times \RR$ is either the curve $\CC$ if $L = \RR$, or $\CC^\times$ if $L = S^1$. 
 
-As such, it's sufficient to observe that mixed Chern-Simons theorem on $X_4 \times L_{\mr{dR}}$ is a dimensional reduction of holomorphic Chern-Simons theory on $X_4 \times C$, which follows by applying Lemma \ref{CS_diml_red_lemma}.
+As such, it's sufficient to observe that mixed Chern-Simons theorem on $X_4 \times L_{\mr{dR}}$ is a dimensional reduction of holomorphic Chern-Simons theory on $X_4 \times C$, which follows by applying Lemma \ref{CS_diml_red_prop}.
 \end{proof}
 
 \begin{remark}
@@ -1305,7 +1297,7 @@ The holomorphic twist of 8d $\mc N=1$ super Yang-Mills theory on a Calabi-Yau 4-
 \end{theorem}
 
 \begin{proof}
-We begin by describing the twist by a holomorphic supercharge $Q_+$, on a Calabi-Yau 4-fold $X_4$.  We can do this by by applying Lemma \ref{CS_to_BF_diml_red_lemma} to the minimal twist of 9d super Yang-Mills theory.  More explicitly, the minimal twist of 9d super Yang-Mills theory on $X_4 \times L$ is modelled by mixed Chern-Simons theory on $X_4 \times L_\mr{dR}$. Lemma \ref{CS_to_BF_diml_red_lemma} says that if we reduce this mixed Chern-Simons theory in the $L$-direction, we obtain a holomorphic BF theory described by $\map(X_4, T[1]B\gg)$
+We begin by describing the twist by a holomorphic supercharge $Q_+$, on a Calabi-Yau 4-fold $X_4$.  We can do this by by applying Lemma \ref{CS_to_BF_diml_red_prop} to the minimal twist of 9d super Yang-Mills theory.  More explicitly, the minimal twist of 9d super Yang-Mills theory on $X_4 \times L$ is modelled by mixed Chern-Simons theory on $X_4 \times L_\mr{dR}$. Lemma \ref{CS_to_BF_diml_red_prop} says that if we reduce this mixed Chern-Simons theory in the $L$-direction, we obtain a holomorphic BF theory described by $\map(X_4, T[1]B\gg)$
 
 Note that, unlike in 9d, this theory can be made $\ZZ$-graded, rather than just $\ZZ/2\ZZ$-graded.  To do so, we consider the action of the 8d R-symmetry group $\CC^\times$, where $S_+$ has weight $+1$ and $S_-$ has weight $-1$, so in particular the holomorphic supercharge $Q_+$ has weight 1.  We've chosen notation for our component fields that makes it easy to read off the R-symmetry weight of each field: fermions with superscript $+$ have weight $+1$, fermions with superscript $-$ have weight $-1$, the bosonic scalars $\phi_1$ and $\wt \phi_1$ have weight -$2$, and the other bosons have weight 0.  With respect to this $\ZZ$-grading, the classical BV complex, as an $\SU(4)$-module, has the form
 \[\xymatrix{&\Omega^0(X_4; \gg)_c \ar[r] &\Omega^{0,1}(X_4; \gg)_{A_{0,1}} \ar[r] &\Omega^{0,2}(X_4; \gg)_{B^+_{0,2}} \ar[r] &\Omega^{0,3}(X_4; \gg)_{\psi_{0,1}^{-\vee}} \ar[r] &\Omega^{0,4}(X_4; \gg)_{\phi_1^\vee} \\
@@ -1336,20 +1328,20 @@ plus terms that vanish in the $Q_+$-twist.  We can then read off the deformation
 \end{proof}
 
 \subsubsection{The Rank 2 Twist}
-We'll next discuss the example of the twist by a rank 2 spinor, where both $\lambda_+$ and $\lambda_-$ are non-zero.  We can understand this twist by a second application of Lemma \ref{CS_diml_red_lemma} to the 9-dimensional $\mc N=1$ theory, or equivalently, by applying the lemma twice to the 10-dimensional $\mc N=(1,0)$ super Yang-Mills theory.  This twisted theory is only $\ZZ/2\ZZ$-graded, just like its higher-dimensional counterparts.
+We'll next discuss the example of the twist by a rank 2 spinor, where both $\lambda_+$ and $\lambda_-$ are non-zero.  We can understand this twist by a second application of Lemma \ref{CS_diml_red_prop} to the 9-dimensional $\mc N=1$ theory, or equivalently, by applying the lemma twice to the 10-dimensional $\mc N=(1,0)$ super Yang-Mills theory.  This twisted theory is only $\ZZ/2\ZZ$-graded, just like its higher-dimensional counterparts.
 
 \begin{theorem} \label{8d_rank2_twist_thm}
 The twist by a rank 2 supercharge of 8d $\mc N=1$ super Yang-Mills theory on the product of a Calabi-Yau 3-fold $X_3$ with a pair $L_1 \times L_2$ of oriented 1-manifolds is equivalent to mixed Chern-Simons theory on $X_3 \times (L_1 \times L_2)_{\mr{dR}}$.
 \end{theorem}
 
 \begin{proof}
-The proof here is identical to the proof of Theorem \ref{9d_twist_thm}, we just start with the holomorphic twist of 10d super Yang-Mills theory on $X_3 \times C_1 \times C_2$, and apply Lemma \ref{CS_diml_red_lemma} twice.
+The proof here is identical to the proof of Theorem \ref{9d_twist_thm}, we just start with the holomorphic twist of 10d super Yang-Mills theory on $X_3 \times C_1 \times C_2$, and apply Lemma \ref{CS_diml_red_prop} twice.
 \end{proof}
 
 \chris{we need to comment on the fact that the rank 2 supercharge is stabilized by $\SU(3)$, but I'm not sure whether this is the entire stabilizer.}
 
 
-\subsection{Dimension 7}
+\subsection{Dimension 7} \label{7d_section}
 The 7-dimensional $\mc N=1$ super Yang-Mills theory is obtained by dimensional reduction of $\mc N=1$ super Yang-Mills from $\RR^{10}$ to $\RR^7$.  It has BRST fields given by a ghost, a 7d gauge field $A$, three $\gg$-valued scalar fields $\phi_1$, $\phi_2$ and $\phi_3$, and a symplectic Dirac spinor field $\lambda$ in $S \otimes W$, where $W$ is a 2-dimensional symplectic vector space.
 
 In 7 dimensions, exactly like in 8-dimensions, there are 3 classes of inequivalent non-zero supercharges by which we can twist.
@@ -1380,7 +1372,7 @@ The twist by a rank 2 supercharge of 7d $\mc N=1$ super Yang-Mills theory on the
 \subsection{Dimension 6}
 In dimension 6 there are two possible supersymmetry groups by which we can act.  There is a minimal supersymmetric field theory with $\mc N=(1,0)$ supersymmetry, consisting of a pure gauge theory coupled to matter living in a symplectic representation $V$.  If $V \iso T^*\gg$, then the $(1,0)$ supersymmetry can be enhanced to $\mc N=(1,1)$ supersymmetry.  This is the theory one obtains by compactifying 10d $\mc N=1$ super Yang-Mills down to $\RR^6$.
 
-\subsubsection{$\mc N = (1,0)$ Super Yang-Mills Theory with Matter}
+\subsubsection{$\mc N = (1,0)$ Super Yang-Mills Theory with Matter} \label{6d_10_section}
 
 \subsubsection{$\mc N = (1,1)$ Super Yang-Mills Theory}
 
@@ -1439,18 +1431,81 @@ The twist by a rank $(2,2)$ supercharge of 6d $\mc N=(1,1)$ super Yang-Mills the
 \end{proof}
 
 \subsection{Dimension 5}
+The 5-dimensional $\mc N=k$ supersymmetry algebra has odd part $\Sigma \iso S \otimes W$, where $S$ is the 4-dimensional spinor representation of $\Spin(5) \iso \Sp(4)$, and where $W$ is a $2k$-dimensional symplectic vector space.  The maximal supersymmetric gauge theory has $\mc N=2$.  However, there are $\mc N=1$ super Yang-Mills theory for every choice $U$ of symplectic representation of the gauge group.
 
 \subsubsection{$\mc N = 1$ Super Yang-Mills Theory with Matter}
+We begin by treating $\mc N=1$ Super Yang-Mills theory with gauge group $G$, with a matter (half) hypermultiplet valued in a symplectic representation $U$.  This is the theory obtained from 6d $\mc N=(1,0)$ super Yang-Mills theory with matter, after dimensional reduction to 5 dimensions.
+
+\vspace{-10pt}
+\paragraph{Fields:} We can describe the BRST fields of $\mc N=1$ super Yang-Mills by restricting the 6d fields from section \ref{6d_10_section} to representations of the group $\mr O(5)$.  In addition to the ghost $c$, the fields we obtain are
+\begin{itemize}
+ \item $\gg$-valued bosons: a gauge field $A \in \Omega^1(\RR^5; \gg)$, and a scalar $\phi' \in \Omega^1(\RR^5; \gg)$.
+ \item $U$-valued bosons: a (symplectic) scalar field $\phi \in \Omega^0(\RR^5; W \otimes U)$.
+ \item $\gg$-valued fermions: a spinor $\lambda \in \Omega^0(\RR^5; S \otimes W \otimes \gg)$.
+ \item $U$-valued fermions: a spinor $\psi \in \Omega^0(\RR^5; S \otimes W \otimes U)$.
+\end{itemize}
+
+\vspace{-10pt}
+\paragraph{Supersymmetry action:} Let $Q, Q_1$ and $Q_2$ be $\mc N=1$ supercharges.  We can describe the supersymmetry action as follows.
+\begin{prop}
+The supersymmetry action $I^{(1)} = I^{(1)}_{\mr{gauge}} + I^{(1)}_{\mr{matter}} + I^{(1)}_{\mr{couple}}$ and $I^{(2)} = I^{(2)}_{\mr{gauge}} + I^{(2)}_{\mr{matter}}$ from Section \ref{6d_10_section} restricts to 5-dimensional $\mc N=1$ fields as follows:
+\begin{align*}
+I^{(1)}_{\mr{gauge}}(Q) &= \int \\
+I^{(1)}_{\mr{matter}}(Q) &= \int \\I^{(1)}_{\mr{gauge}}(Q) &= \int \\
+I^{(2)}_{\mr{couple}}(Q_1,Q_2) &= \int  \\
+I^{(2)}_{\mr{gauge}}(Q_1,Q_2) &= \int \\
+I^{(2)}_{\mr{matter}}(Q_1,Q_2) &= \int 
+\end{align*}
+\end{prop}
+
+\begin{proof}
+\chris{...}
+\end{proof}
+
+\vspace{-10pt}
+\paragraph{Twisting data:}
+There is a unique class of square-zero supercharges in the 5d $\mc N=1$ supersymmetry algebra.  Twists by such supercharges are minimal: they are invariant in three directions.  The stabilizer of a minimal supercharge is isomorphic to $\SU(2) \sub \Spin(5)$.
+
+\begin{theorem} \label{5d_holo_twist_theorem}
+The minimal twist of 5d $\mc N=1$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$, on the product of a Calabi-Yau surface $S$ and an oriented 1-manifold $L$ is equivalent to the generalized BF theory $\mr{Map}(S \times L_{\mr{dR}}, U//G)$.
+\end{theorem}
+
+\begin{proof}
+This follows from the calculation of the minimal twist in 6-dimensional $\mc N=(1,0)$ theory in \chris{ref} above, by applying Proposition \ref{CS_diml_red_prop}.
+\end{proof}
 
 \subsubsection{$\mc N = 2$ Super Yang-Mills Theory}
 
-Exactly as in the case of the 6d $\mc N=(1,1)$ supersymmetry algebra, there are 4 inequivalent classes of twists.
+\paragraph{Fields:} We can describe the BRST fields of $\mc N=2$ super Yang-Mills by restricting the fields of maximal super Yang-Mills from 10d, or alternatively by restricting the 7d $\mc N=1$ fields from section \ref{7d_section}, to representations of the group $\mr O(5)$.  In addition to the ghost $c$, the fields we obtain are
+\begin{itemize}
+ \item Bosons: A gauge field $A \in \Omega^1(\RR^5; \gg)$, and five scalars $\phi_1 ,\ldots, \phi_5 \in \Omega^1(\RR^5; \gg)$.
+ \item Fermions: A pair of spinors $\lambda_1$ and $\lambda_2$ in $\Omega^0(\RR^5; S \otimes W \otimes \gg)$.
+\end{itemize}
+We could alternatively have obtained these fields by considering the $\mc N=1$ 5d super Yang-Mills theory, with matter valued in the symplectic representation $T^*\gg$.
+
+\vspace{-10pt}
+\paragraph{Supersymmetry action:} Let $Q, Q_1$ and $Q_2$ be $\mc N=2$ supercharges.  We can describe the supersymmetry action as follows.
+\begin{prop}
+The supersymmetry action $I^{(1)}$ and $I^{(2)}$ from \chris{ref} restricts to 5-dimensional $\mc N=1$ fields as
+\begin{align*}
+I^{(1)}(Q) &= \int \\
+I^{(2)}(Q_1,Q_2) &= \int 
+\end{align*}
+\end{prop}
+
+\begin{proof}
+This follows by restricting the 6d $\mc N=(1,1)$ supersymmetry action further to $\mr O(5)$.  Indeed \chris{...}
+\end{proof}
+
+\vspace{-10pt}
+\paragraph{Twisting data:}
+Exactly as in the case of the 6d $\mc N=(1,1)$ supersymmetry algebra, there are 4 inequivalent classes of twists (see \cite[Section 4.5]{ElliottSafronov}).  These supercharges all occur as square zero supercharges in the 6-dimensional $\mc N=(1,1)$ supersymmetry algebra from the previous section.
 \begin{enumerate}
  \item Rank $1$ spinors, $Q \otimes w$.  These automatically square to zero, and admit three invariant directions.  Twists by such supercharges were already described in the previous subsection.
  \item Rank $2$ square-zero spinors.  Like in dimension 6, these split into two inequivalent classes:
  \begin{enumerate}
- \item Generically, $Q$ is topological.
- \item There is a special locus where $Q$ has 4 invariant directions.  The former class can be realised as a degeneration of this case.
+ \item The open locus, consisting of topological supercharges.
+ \item There is a special locus consisting of supercharges with 4 invariant directions.  The former class can be realised as a degeneration of this case.
  \end{enumerate}
  \item Rank $4$ square-zero spinors.  These supercharges are also topological.  The corresponding twists are only $\ZZ/2\ZZ$-graded.
 \end{enumerate}
@@ -1463,6 +1518,16 @@ The twist of 5d $\mc N=2$ super Yang-Mills theory by a rank $2$ supercharge with
  
 \end{proof}
 
+Let us describe the partition function of the A-type topological twist appearing at generic points of this family.  
+\begin{theorem}
+\chris{Something about the Haydys-Witten equations...}
+\end{theorem}
+
+\begin{proof}
+ 
+\end{proof}
+
+
 \begin{theorem} \label{5d_rk4_twist_thm}
 The twist by a rank $4$ supercharge of 5d $\mc N=2$ super Yang-Mills theory on ah an oriented 5-manifold $M_5$ is equivalent to 5d Chern-Simons theory on $M_5$.
 \end{theorem}
@@ -1470,7 +1535,7 @@ The twist by a rank $4$ supercharge of 5d $\mc N=2$ super Yang-Mills theory on a
 \begin{proof}
  
 \end{proof}
-
+ 
 \subsection{Dimension 4}
 
 % \cN=4 SYM
