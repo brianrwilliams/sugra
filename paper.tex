@@ -1220,23 +1220,15 @@ One can, alternatively, prove this theorem using exactly the same methods as The
 \end{remark}
 
 \subsection{Dimension 8}
-The 8-dimensional $\mc N=1$ super Yang-Mills theory is obtained by dimensional reduction of $\mc N=1$ super Yang-Mills from $\RR^{10}$ to $\RR^8$.  It has BRST fields given by a ghost, an 8d gauge field $A$, a pair of $\gg$-valued scalar fields $\phi_1$ and $\wt \phi_1$, and a Dirac spinor field $\lambda = (\lambda_+, \lambda_-) \in S_+ \oplus S_-$.
+\vspace{-10pt}
+\paragraph{Fields:} 
+The 8-dimensional $\mc N=1$ super Yang-Mills theory is obtained by dimensional reduction of $\mc N=1$ super Yang-Mills from $\RR^{10}$ to $\RR^8$.  It has BRST fields given by a ghost $c$ along with the following.
+\begin{itemize}
+ \item Bosons: an 8d gauge field $A$ in $\Omega^1(\RR^8; \gg)$, and a pair of $\gg$-valued scalar fields $\phi_1$ and $\wt \phi_1$ in $\Omega^0(\RR^8; \gg)$.
+ \item Fermions: a Dirac spinor field $\lambda = (\lambda_+, \lambda_-) \in \Omega^0(\RR^8; \gg \otimes(S_+ \oplus S_-))$.
+\end{itemize}
 
-In 8 dimensions, there are 3 classes of inequivalent non-zero supercharges by which we can twist.
-\begin{enumerate}
- \item Pure spinors, for which either $\lambda_+ = 0$ or $\lambda_- = 0$.  These supercharges are holomorphic.  They are stabilized by $\SU(4)$.  Twists by pure spinors can be made $\ZZ$-graded using a maximal torus in the R-symmetry group $\GL(1)$.
- \item Impure square-zero spinors with $\lambda_+ = 0$ or $\lambda_- = 0$.  These supercharges are topological.  They are stabilized by $\Spin(7) \sub \SO(8)$.  Again, twists by such supercharges can be made $\ZZ$-graded.
- \item Square-zero spinors where both $\lambda_+$ and $\lambda_-$ are non-zero.  Such supercharges have a 5-dimensional image in $\CC^8$.  Twists by such supercharges are still only $\ZZ/2\ZZ$-graded.
-\end{enumerate}
-
-When we dimensionally reduce the minimally twisted 10- or 9-dimensional super Yang-Mills theories to 8 dimensions we obtain either the twist by a supercharge of type 1, or of type 3, depending on whether we reduce along an invariant direction or a non-invariant direction, as indicated on the ``8d'' row of Figure \ref{fig:superchargeorbits}.  The topological twist (type 2 in the list above) appears in the right-most column of the figure, and is not obtained by dimensional reduction from higher dimensions.
-
-\subsubsection{The Holomorphic and Topological Twists}
-Square-zero supercharges in the 10d $\mc N=(1,0)$ supersymmetry algebra correspond to holomorphic supercharges in the 8d $\mc N=1$ supersymmetry algebra.  As such, we can calculate the holomorphic twist of 8d $\mc N=1$ super Yang-Mills by dimensionally reducing the holomorphic twist of 10d $\mc N=(1,0)$ super Yang-Mills along a copy of $\CC$.  This theory can, unlike its 10- and 9-dimensional analogues, be made canonically $\ZZ$-graded.
-
-On the other hand, the topological twist -- the twist by an impure Weyl spinor -- of 8d $\mc N=1$ super Yang-Mills theory does not arise by dimensionally reducing a twisted theory in 9 dimensions.  This will be our first example of an A-type twist, as we discussed in Section \ref{A_twist_section} \chris{to add}: we will understand it as a one parameter family of supercharges, degenerating at zero to the holomorphic twist -- the twist by a pure Weyl spinor.
-
-The holomorphic supercharge is stabilized by the group $\SU(4)$, and the topological supercharge is stabilized by $\spin(7)$.  If we want to stabilize the full one-parameter family describing the degeneration, we have to decompose our fields according to the action of the intersection $\SU(4) \cap \spin(7) \iso \SU(3)$ \chris{check this claim: can we see it in terms of the Dynkin diagrams?}.  So, let's begin by establishing notation for the BRST fields of maximal super Yang-Mills after reduction to representations of various subgroups of $\SO(10)$.  We can write this schematically in the following way.
+We will see shortly that in the 8d $\mc N=1$ supersymmetry algebra there are holomorphic square-zero supercharges stabilized by the group $\SU(4)$, and topological square-zero supercharges stabilized by $\spin(7)$.  If we want to stabilize the full one-parameter family describing the degeneration, we have to decompose our fields according to the action of the intersection $\SU(4) \cap \spin(7) \iso \SU(3)$ \chris{check this claim: can we see it in terms of the Dynkin diagrams?}.  So, let's begin by establishing notation for the BRST fields of maximal super Yang-Mills after reduction to representations of various subgroups of $\SO(10)$.  We can write this schematically in the following way.
 
 First, let us consider the reduction of the 10d spinor $\lambda$.  We have already described the decomposition of the spinor representation into irreducible summands for the group $\SU(5)$: it decomposes into a sum $B_{0,2} + \psi_{1,0} + \chi$ of a $(0,2)$-form, a $(1,0)$-form, and a scalar (all valued in the Lie algebra $\gg$).  We have also already described its decomposition into irreducible summands for the group $\mr O(8)$: it splits into a positive and a negative Weyl spinor, $\lambda^+ + \lambda^-$.  Let us continue to decompose these fields into smaller subgroups.  We indicate this schematically as follows (Figure \ref{fig:8dfermiondecomp}).
 \begin{figure}[!h]
@@ -1266,7 +1258,9 @@ A,\phi_1, \wt \phi_1 \ar[dr]_{\to\,  \SU(4)} \ar[d]_{\to\,  \Spin(7)} &&A_{0,1},
 \end{figure}
 Now $\phi_i$ and $\wt \phi_i$ denote $\gg$-valued scalar fields, and $\lambda_7$ denotes a field valued in the spinor representation of $\Spin(7)$.
 
-Using this decomposition, we can describe the supersymmetric interaction terms $I^{(1)}$ and $I^{(2)}$ after reduction from 10d to 8d, with respect to various subgroups of $\mr O(8)$.  We begin by considering $\mr O(8)$ itself.
+\vspace{-10pt}
+\paragraph{Supersymmetry action:} 
+Using the decomposition of the fields described above, we can describe the supersymmetric interaction terms $I^{(1)}$ and $I^{(2)}$ after reduction from 10d to 8d, with respect to various subgroups of $\mr O(8)$.  We begin by considering $\mr O(8)$ itself.
 
 \begin{prop} \label{O8_decomposition_of_susy_prop}
 After reduction to $\mr O(8)$, the interaction terms $I^{(1)}$ and $I^{(2)}$ become
@@ -1289,6 +1283,21 @@ There are two ingredients in this calculation: we have to decompose our fields a
 \begin{remark}
 A Weyl spinor $Q_\pm$ corresponds to a holomorphic twist (i.e. comes from a 10d square zero supercharge) exactly when $(Q_\pm,Q_\pm)=0$ -- in that case many of the terms in the interaction above will vanish.
 \end{remark}
+
+\vspace{-10pt}
+\paragraph{Twisting data:}
+In 8 dimensions, there are 3 classes of inequivalent non-zero supercharges by which we can twist.
+\begin{enumerate}
+ \item Pure spinors, for which either $\lambda_+ = 0$ or $\lambda_- = 0$.  These supercharges are holomorphic.  They are stabilized by $\SU(4)$.  Twists by pure spinors can be made $\ZZ$-graded using a maximal torus in the R-symmetry group $\GL(1)$.
+ \item Impure square-zero spinors with $\lambda_+ = 0$ or $\lambda_- = 0$.  These supercharges are topological.  They are stabilized by $\Spin(7) \sub \SO(8)$.  Again, twists by such supercharges can be made $\ZZ$-graded.
+ \item Square-zero spinors where both $\lambda_+$ and $\lambda_-$ are non-zero.  Such supercharges have a 5-dimensional image in $\CC^8$.  Twists by such supercharges are still only $\ZZ/2\ZZ$-graded.
+\end{enumerate}
+
+When we dimensionally reduce the minimally twisted 10- or 9-dimensional super Yang-Mills theories to 8 dimensions we obtain either the twist by a supercharge of type 1, or of type 3, depending on whether we reduce along an invariant direction or a non-invariant direction, as indicated on the ``8d'' row of Figure \ref{fig:superchargeorbits}.  The topological twist (type 2 in the list above) appears in the right-most column of the figure, and is not obtained by dimensional reduction from higher dimensions.
+
+Square-zero supercharges in the 10d $\mc N=(1,0)$ supersymmetry algebra correspond to holomorphic supercharges in the 8d $\mc N=1$ supersymmetry algebra.  As such, we can calculate the holomorphic twist of 8d $\mc N=1$ super Yang-Mills by dimensionally reducing the holomorphic twist of 10d $\mc N=(1,0)$ super Yang-Mills along a copy of $\CC$.  This theory can, unlike its 10- and 9-dimensional analogues, be made canonically $\ZZ$-graded.
+
+On the other hand, the topological twist -- the twist by an impure Weyl spinor -- of 8d $\mc N=1$ super Yang-Mills theory does not arise by dimensionally reducing a twisted theory in 9 dimensions.  This will be our first example of an A-type twist, as we discussed in Section \ref{A_twist_section} \chris{to add}: we will understand it as a one parameter family of supercharges, degenerating at zero to the holomorphic twist -- the twist by a pure Weyl spinor.
 
 Let us now consider the further reductions to $\SU(4)$, to $\spin(7)$, and to their intersection $\SU(3)$.  We will use the form of the supersymmetric interaction term above to prove the following.
 
@@ -1327,7 +1336,6 @@ I^{(2)}(tQ', tQ') &= t^2\langle c^\vee, \phi_1\rangle + t^2 \Lambda(\psi_{0,1}^{
 plus terms that vanish in the $Q_+$-twist.  We can then read off the deformation of the $Q_+$-twist by $Q'$: the further differential associated to the $Q'$ supersymmetry turns on an isomorphism between the two copies of $\Omega^{0,\bullet}(X_3, \Omega^\bullet(S;\gg))$ in the $Q_+$-twisted classical BV complex.  This is exactly the classical field theory described by $\map(X_3 \times S, B\gg)_{\mr{Hod}}$, as required.
 \end{proof}
 
-\subsubsection{The Rank 2 Twist}
 We'll next discuss the example of the twist by a rank 2 spinor, where both $\lambda_+$ and $\lambda_-$ are non-zero.  We can understand this twist by a second application of Lemma \ref{CS_diml_red_prop} to the 9-dimensional $\mc N=1$ theory, or equivalently, by applying the lemma twice to the 10-dimensional $\mc N=(1,0)$ super Yang-Mills theory.  This twisted theory is only $\ZZ/2\ZZ$-graded, just like its higher-dimensional counterparts.
 
 \begin{theorem} \label{8d_rank2_twist_thm}
@@ -1451,16 +1459,12 @@ We begin by treating $\mc N=1$ Super Yang-Mills theory with gauge group $G$, wit
 The supersymmetry action $I^{(1)} = I^{(1)}_{\mr{gauge}} + I^{(1)}_{\mr{matter}} + I^{(1)}_{\mr{couple}}$ and $I^{(2)} = I^{(2)}_{\mr{gauge}} + I^{(2)}_{\mr{matter}}$ from Section \ref{6d_10_section} restricts to 5-dimensional $\mc N=1$ fields as follows:
 \begin{align*}
 I^{(1)}_{\mr{gauge}}(Q) &= \int \\
-I^{(1)}_{\mr{matter}}(Q) &= \int \\I^{(1)}_{\mr{gauge}}(Q) &= \int \\
+I^{(1)}_{\mr{matter}}(Q) &= \int \\
 I^{(2)}_{\mr{couple}}(Q_1,Q_2) &= \int  \\
 I^{(2)}_{\mr{gauge}}(Q_1,Q_2) &= \int \\
 I^{(2)}_{\mr{matter}}(Q_1,Q_2) &= \int 
 \end{align*}
 \end{prop}
-
-\begin{proof}
-\chris{...}
-\end{proof}
 
 \vspace{-10pt}
 \paragraph{Twisting data:}
@@ -1474,7 +1478,7 @@ The minimal twist of 5d $\mc N=1$ super Yang-Mills theory with gauge group $G$ a
 This follows from the calculation of the minimal twist in 6-dimensional $\mc N=(1,0)$ theory in \chris{ref} above, by applying Proposition \ref{CS_diml_red_prop}.
 \end{proof}
 
-\subsubsection{$\mc N = 2$ Super Yang-Mills Theory}
+\subsubsection{$\mc N = 2$ Super Yang-Mills Theory} \label{5d_2_section}
 
 \paragraph{Fields:} We can describe the BRST fields of $\mc N=2$ super Yang-Mills by restricting the fields of maximal super Yang-Mills from 10d, or alternatively by restricting the 7d $\mc N=1$ fields from section \ref{7d_section}, to representations of the group $\mr O(5)$.  In addition to the ghost $c$, the fields we obtain are
 \begin{itemize}
@@ -1651,6 +1655,30 @@ We now observe that the interacting parts of the twisted theory agree with the i
 
 \subsubsection{$\cN=4$ SYM}
 
+\vspace{-10pt}
+\paragraph{Fields:} We can describe the BRST fields of $\mc N=4$ super Yang-Mills by restricting the 5d $\mc N=2$ fields from section \ref{5d_2_section} to representations of the group $\mr O(4)$.  In addition to the ghost $c$, the fields we obtain are
+\begin{itemize}
+ \item Bosons: a gauge field $A \in \Omega^1(\RR^4; \gg)$, and six scalars, which we'll denote by $\phi \in \Omega^1(\RR^4; \gg \otimes \wedge^2(W))$.
+ \item Fermions: four spinors, which we'll denote by $(\lambda_+ \otimes u_+, \lambda_- \otimes u_u) \in \Omega^0(\RR^5; (S_+ \otimes W \oplus S_- \otimes W^*) \otimes \gg)$.
+\end{itemize}
+
+\vspace{-10pt}
+\paragraph{Supersymmetry action:} 
+\begin{prop}
+Consider a square-zero supercharge $Q = Q_+ \otimes w_+ + Q_- \otimes w_-$.  After reduction to $\mr O(4)$, the interaction terms $I^{(1)}$ and $I^{(2)}$ become
+\begin{align*}
+I^{(1)}(Q) &= \int (\Gamma(Q_+, \lambda_-)(w_+,u_-), A^*) + (\Gamma(Q_-, \lambda_+)(w_-,u_+), A^*) + \langle Q_+, \lambda_+ \rangle (w_+ \wedge u_+, \phi^*) + \langle Q_-, \lambda_- \rangle (\omega(w_- \wedge u_-), \phi^*) + \\
+&\quad + \frac12 \bigg( \langle \rho(F_A)Q_+, \lambda_+^*\rangle(w_+,u_+^*) + \langle \rho(F_A)Q_-, \lambda_-^*\rangle(w_-,u_-^*) +\\
+&\qquad \qquad \qquad \qquad \langle\rho(\d_A (w_+ \wedge u_-^*,\phi))Q_+, \lambda_-^*\rangle + \langle\rho(\d_A (\omega(w_- \wedge u_+^*)),\phi)Q_-, \lambda_+^*\rangle \bigg),
+\end{align*}
+and
+\begin{align*}
+I^{(2)}(Q_1, Q_2) &= \int \frac 12 \left( g(\Gamma(Q_+, Q_-), \Gamma(\lambda^*_+, \lambda^*_-)) (w_+, w_-) (u_+^*,u_-^*) \right) + \\
+&\quad - \frac 12 \big( \langle Q_+,\lambda_+^*\rangle^2(w_+,u_+^*)^2 + \langle Q_-,\lambda_-^*\rangle^2(w_-,u_-^*)^2 \big) - \langle Q_+,\lambda_+^*\rangle \langle Q_-, \lambda_-^*\rangle (w_+,u_+^*)(w_-,u_-^*) +\\
+&\quad - (\langle Q_+, Q_+ \rangle (\omega^{-1}(w_+ \wedge w_+),\phi) + \langle Q_-, Q_- \rangle (w_- \wedge w_-,\phi)  ) c^*,
+\end{align*}
+where $\omega$ indicates the canonical isomorphism $\omega \colon \wedge^2(W^*) \to \wedge^2(W)$ (the Killing form for $\so(W^*)$).
+\end{prop}
 %
 %The matter sector of the theory is labeled by the BRST fields:
 %\begin{itemize}
