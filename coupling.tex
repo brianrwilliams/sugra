@@ -30,6 +30,12 @@
 \subsection{Supersymmetric coupling}
 \subsubsection{The 6d vector multiplet coupled to the hypermultiplet}
 
+\brian{Some conventions
+\begin{itemize}
+\item For $x \in \fg$ and $a \in U$ I will write $[x, a]$ for the action of $x$ on $a$. 
+\end{itemize}
+}
+
 We choose a quadratic moment map $\mu : U^{\otimes 2} \to \fg^*$ which satisfying
 \[
 (x, \mu(a, b))_{\fg} = ([x, a], b)_U
@@ -96,7 +102,7 @@ First, we compute
 \end{align*}
 Next,
 \begin{align*}
-\{I_{\rm couple} , I^{(1)}_{\rm gauge} + I^{(1)}_{\rm matter}\} = & - g (\Gamma(Q, \lambda), (\mu \otimes \Gamma)(\psi,\psi)) - g (\Gamma(Q, \lambda), \mu(\phi, \d_A \phi)) + g (\rho(F_A)Q , \mu(\phi, \psi)) \\ + & g (A, \mu((Q, \psi), \d_A \phi)) + g (A, (\mu \otimes \Gamma)(\psi, \rho(\d \phi) Q)) + g (\lambda, \mu((Q, \psi), \psi)) + g (\lambda, \mu(\phi, \rho(\d \phi)  Q)) \\ + & g (\phi^*, [c, (Q,\psi)])  + g (\psi^*, \rho(\d [c , \phi ]) Q) + g^2 (\mu(\phi, \phi) , \mu(\phi, (Q, \psi)) . 
+\{I_{\rm couple} , I^{(1)}_{\rm gauge} + I^{(1)}_{\rm matter}\} = & - g (\Gamma(Q, \lambda), (\mu \otimes \Gamma)(\psi,\psi)) - g (\Gamma(Q, \lambda), \mu(\phi, \d_A \phi)) + g (\rho(F_A)Q , \mu(\phi, \psi)) \\ + & g (A, \mu((Q, \psi), \d_A \phi)) + g (A, (\mu \otimes \Gamma)(\psi, \rho(\d \phi) Q)) + g (\lambda, \mu((Q, \psi), \psi)) + g (\lambda, \mu(\phi, \rho(\d \phi)  Q)) \\ + & g (\phi^*, [c, (Q,\psi)])  + g (\psi^*, \rho( [c ,\d \phi ]) Q) + g^2 (\mu(\phi, \phi) , \mu(\phi, (Q, \psi)) . 
 \end{align*}
 Finally,
 \begin{align*}
@@ -112,9 +118,20 @@ Here, we collect all terms involving only $A, \phi, \psi$:
 
 Here, we collect all terms involving only $\psi$ and $\lambda$:
 \[
-- (\psi, \rho(\Gamma(Q, \lambda)) \psi) + (\lambda, \mu((Q,\psi), \psi)) = - (\psi, \rho(\Gamma(Q, \lambda)) \psi) + (\psi, [\lambda, (Q, \psi)]) + (\psi, Q) (\lambda, \psi)
+- (\psi, \rho(\Gamma(Q, \lambda)) \psi) + (\lambda, \mu((Q,\psi), \psi))
 \]
-This expression vanishes by Proposition \ref{prop: new3psi}.
+By Proposition \ref{prop: new3psi} we have
+\[
+(\psi, \rho(\Gamma(Q, \lambda)) \psi) = (\psi, [\lambda, (Q, \psi)] ) .
+\]
+So, by the moment map condition the total expression involving $\psi, \lambda$ vanishes. 
+
+Here, we collect all terms involving only $\lambda$ and $\phi$:
+\[
+(\lambda, \mu( \phi, \rho(\d \phi)Q)) - ([\Gamma(\lambda, Q), \phi], \d \phi). 
+\]
+By the moment map condition the first term is $([\lambda, \phi], \rho(\d \phi) Q)$. 
+So, by the Clifford relation, these terms cancel. 
 
 Here, we collect all terms involving only $A, \phi$ and $\psi$:
 
@@ -125,15 +142,25 @@ Here, we collect all terms involving only $\phi$ and $\psi$:
 \pm & (\mu(\phi, \phi) , \mu(\phi, (Q, \psi)) \pm (\mu(\phi, \psi), \mu(\phi,\phi)Q)
 \end{align*}
 Since $(\mu(\phi, \psi), \mu(\phi,\phi)Q) = (\mu(\phi, \phi) , \mu(\phi, (Q, \psi))$ this expression is identically zero. 
+\brian{fix signs}
 
 Here, we collect all terms involving only $\phi^*, c$ and $\psi$:
+\[
+(\phi^*, [c, (Q, \psi)]) \pm (\phi^*, (Q, [c,\psi])) 
+\]
+which clearly vanishes. 
 
+Here, we collect all terms involving only $\psi^*$, $c$, and $\phi$:
+\[
+(\psi^*, [c, \rho(\d \phi) Q]) \pm (\psi^*, \rho( [c ,\d \phi ]) Q) 
+\]
+which clearly vanishes. 
 
 Here, we collect all terms involving only $\psi^*$, $c$, $A$, and $\phi$:
 \[
-\pm (\psi^*, \rho([\d_A c, \phi]) Q) + (\psi^*, [c, \rho(\d \phi) Q]) + (\psi^*, \rho([A,[c,\phi]]) Q) .
+\pm (\psi^*, [c, \rho([A,\phi]) Q]) \pm (\psi^*, \rho([A,[c,\phi]]) Q) 
 \]
-By the Jacobi identity, this simplifies to $\pm(\psi^*, [c, \d_A \phi] Q)$. \brian{stuck here}.
+which clearly vanishes. 
 %Thus, the sum of the last two terms cancels with the first term. 
 
 Here, we collect all terms depending only on $\lambda^*, \phi$ and $c$:
