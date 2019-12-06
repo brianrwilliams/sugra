@@ -18,7 +18,7 @@
 \tikzstyle{dimension} = [circle, text centered, text width=0.7cm, minimum height=0.7cm, draw=black]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
-\title{4d $\cN=1$}
+\title{Coupling}
 \author{Chris Elliott\and Pavel Safronov \and Brian Williams}
 
 \date{\today}
@@ -30,17 +30,29 @@
 \subsection{Supersymmetric coupling}
 \subsubsection{The 6d vector multiplet coupled to the hypermultiplet}
 
+We choose a quadratic moment map $\mu : U^{\otimes 2} \to \fg^*$ which satisfying
+\[
+(x, \mu(a, b))_{\fg} = ([x, a], b)_U
+\]
+for all $x \in \fg$, and $a,b \in U$.
+
 Let $S_{\rm gauge}$ and $S_{\rm matter}$ be the BV actions for the $6d$ $\cN=(1,0)$ vector and hyper multiplets, respectively. 
 The coupled theory has action $S_{\rm gauge} + S_{\rm matter} + I_{\rm couple}$ where
 \begin{align*}
-I_{\rm couple} = & - g (\psi, [A, \psi])_U - g (\d_{A} \phi, [A,\phi])_U \\ + & g (\psi, [\lambda, \phi])_U + g (\phi, (\lambda, \psi))_U + g (\lambda, \mu(\phi, \psi))_\fg \\ + & g (\psi^*, [c, \psi])_U + g (\phi^*, [c, \phi])_U \\ + & g^2 \left(\mu(\phi, \phi), \mu(\phi, \phi) \right)_\fg .
+I_{\rm couple} = &- g (A, \mu \otimes \Gamma (\psi, \psi)_\fg - g (A, \mu(\d \phi, \phi)) - g (A, \mu(\phi, [A, \phi]))_\fg \\ + & 
+%g (\psi, [\lambda, \phi])_U + g (\phi, (\lambda, \psi))_U + 
+g (\lambda, \mu(\phi, \psi))_\fg \\ + & g (\psi^*, [c, \psi])_U + g (\phi^*, [c, \phi])_U \\ + & g^2 \left(\mu(\phi, \phi), \mu(\phi, \phi) \right)_\fg .
 \end{align*}
- \brian{I need to nail down this Yukawa}
-\brian{
-It looks like we need to choose a moment map $\mu : U^{\otimes 2} \to \fg^*$. }
 
-The action of supersymmetry on the pure vector multiplet was constructed in Section \ref{sec: vector} and was encoded by linear and quadratic functionals that we denote $I^{(1)}_{\rm gauge}$ and $I^{(2)}_{\rm gauge}$. 
-The action of supersymmetry on the pure hyper multiplet was constructed in Section \ref{sec: hyper} and was encoded by linear and quadratic functionals that we denote $I^{(1)}_{\rm matter}$ and $I^{(2)}_{\rm matter}$. 
+%\begin{align*}
+%I_{\rm couple} = & - g (A, \mu \otimes \Gamma (\psi, \psi)_\fg - g (A, \mu(\d \phi, \phi)) - g (A, \mu(\phi, [A, \phi]))_\fg \\ + & 
+%%g (\psi, [\lambda, \phi])_U + g (\phi, (\lambda, \psi))_U + 
+%g (\lambda, \mu(\phi, \psi))_\fg \\ + & g (c, \mu(\psi^*, \psi])_\fg + g (c, \mu(\phi^*, \phi))_\fg \\ + & g^2 \left(\mu(\phi, \phi), \mu(\phi, \phi) \right)_\fg .
+%\end{align*}
+
+
+The action of supersymmetry on the pure vector multiplet was constructed in Section \ref{sec: vector} and was shown to be encoded by linear and quadratic functionals that we denote $I^{(1)}_{\rm gauge}$ and $I^{(2)}_{\rm gauge}$. 
+The action of supersymmetry on the pure hyper multiplet was constructed in Section \ref{sec: hyper} and was shown to be encoded by linear and quadratic functionals that we denote $I^{(1)}_{\rm matter}$ and $I^{(2)}_{\rm matter}$. 
 Additionally, in the coupled theory, there are the following new terms in the action of supersymmetry:
 \begin{align*}
 I^{(1)}_{\rm couple} (Q) & = \int g (\psi^*, \rho([A, \phi]) Q)_U + \frac{1}{2} g (\lambda^*, Q \mu(\phi))_\fg \\
@@ -80,33 +92,49 @@ The new equations we must verify are the following:
 \begin{proof}
 First, we compute
 \begin{align*}
-\{S_{\rm BV} , I^{(1)}_{\rm couple}\} = & g (\rho([A, \phi]) Q, \sd \dd \psi) + g (\psi^*, \rho([\d_A c, \phi]) Q) + g (\sd \dd_A \lambda, \mu(\phi) Q) + g (\lambda^*, [c, \mu(\phi) Q]) 
+\{S_{\rm BV} , I^{(1)}_{\rm couple}\} = & g (\rho([A, \phi]) Q, \sd \dd \psi) + g (\psi^*, \rho([\d_A c, \phi]) Q) + \frac{1}{2} g (\sd \dd_A \lambda, \mu(\phi, \phi) Q) + g (\lambda^*, [c, \mu(\phi) Q]) 
 \end{align*}
 Next,
 \begin{align*}
-\{I_{\rm couple} , I^{(1)}_{\rm gauge} + I^{(1)}_{\rm matter}\} = & - g (\psi, \rho(\Gamma(Q, \lambda)) \psi] - g (\d_A \phi, [\Gamma(Q, \lambda), \phi]) + g (\psi, [\rho(F_A) Q, \phi]) \\ + & g (\d_A \phi, [A, (Q, \psi)]) + g (\psi, [\lambda, (Q, \psi)]) + g (\phi^*, [c, (Q,\psi)]) +  g (\psi, (Q  , \psi) \lambda) \\ + & g^2 (\mu(\phi, \phi) , \mu(\phi, (Q, \psi)) + g ([A, \psi] , \rho(\d \phi)Q) + g ([\lambda, \phi] , \rho (\d \phi) Q) + g (\psi^*, [c , \rho(\d(\phi)) Q]) . 
+\{I_{\rm couple} , I^{(1)}_{\rm gauge} + I^{(1)}_{\rm matter}\} = & - g (\Gamma(Q, \lambda), (\mu \otimes \Gamma)(\psi,\psi)) - g (\Gamma(Q, \lambda), \mu(\phi, \d_A \phi)) + g (\rho(F_A)Q , \mu(\phi, \psi)) \\ + & g (A, \mu((Q, \psi), \d_A \phi)) + g (A, (\mu \otimes \Gamma)(\psi, \rho(\d \phi) Q)) + g (\lambda, \mu((Q, \psi), \psi)) + g (\lambda, \mu(\phi, \rho(\d \phi)  Q)) \\ + & g (\phi^*, [c, (Q,\psi)])  + g (\psi^*, \rho(\d [c , \phi ]) Q) + g^2 (\mu(\phi, \phi) , \mu(\phi, (Q, \psi)) . 
 \end{align*}
 Finally,
 \begin{align*}
-\{I_{\rm couple}, I^{(1)}_{\rm couple}\} = & g^2 (\rho([A,\phi]) Q, [Q,\psi]) + g^2 (\rho([A,\phi]) Q, [\lambda, \phi]) + g^2 (\psi^*, \rho([A, [c,\phi]]) Q) \\ + & g^2 (\psi, [\mu(\phi, \phi) Q, \phi]) + g^2  (\phi, (\mu(\phi, \phi)Q, \psi) ) + g^2 (\lambda^*, \mu([c,\phi], \phi) Q) \\ + & g^2 (\mu(\phi, \psi), \mu(\phi,\phi) Q)
+\{I_{\rm couple}, I^{(1)}_{\rm couple}\} = & g^2 (A, (\mu \otimes \Gamma)(\psi, \rho([A, \phi]) Q)) + g^2 (\lambda, \mu(\phi, \rho([A, \phi]) Q)) + g^2 (\mu(\phi, \phi)Q , \mu(\phi, \psi)) \\
++ &g^2 (\psi^*, \rho([A, [c,\phi]]) Q) + g^2 (\psi^*, [c, \rho([A,\phi])Q]) + g^2 (\lambda^*, \mu([c,\phi], \phi) Q)  
 \end{align*}
+%& g^2 (\rho([A,\phi]) Q, [Q,\psi]) + g^2 (\rho([A,\phi]) Q, [\lambda, \phi]) + g^2 (\psi^*, \rho([A, [c,\phi]]) Q) \\ + & g^2 (\mu(\phi,\phi)Q , \mu(\phi,\psi)) + g^2 (\lambda^*, \mu([c,\phi], \phi) Q) \\ + & g^2 (\mu(\phi, \psi), \mu(\phi,\phi) Q)
 
-Here, we collect all terms depending on the fields $A, \phi, \psi$:
+Here, we collect all terms involving only $A, \phi, \psi$:
 \begin{align*}
+& 
 \end{align*} 
 
-Here, we collect all terms depending only on $\psi$ and $\lambda$:
+Here, we collect all terms involving only $\psi$ and $\lambda$:
 \[
-- (\psi, \rho(\Gamma(Q, \lambda)) \psi) + (\psi, [\lambda, (Q, \psi)]) + (\psi, Q) (\lambda, \psi)
+- (\psi, \rho(\Gamma(Q, \lambda)) \psi) + (\lambda, \mu((Q,\psi), \psi)) = - (\psi, \rho(\Gamma(Q, \lambda)) \psi) + (\psi, [\lambda, (Q, \psi)]) + (\psi, Q) (\lambda, \psi)
 \]
 This expression vanishes by Proposition \ref{prop: new3psi}.
 
+Here, we collect all terms involving only $A, \phi$ and $\psi$:
+
+Here, we collect all terms involving only $A, \lambda$ and $\phi$:
+
 Here, we collect all terms involving only $\phi$ and $\psi$:
 \begin{align*}
-& \pm  (\psi, [\mu(\phi, \phi) Q, \phi]) +  (\phi, (\mu(\phi, \phi)Q, \psi) ) \\
 \pm & (\mu(\phi, \phi) , \mu(\phi, (Q, \psi)) \pm (\mu(\phi, \psi), \mu(\phi,\phi)Q)
 \end{align*}
-\brian{I want to say each line is zero.}
+Since $(\mu(\phi, \psi), \mu(\phi,\phi)Q) = (\mu(\phi, \phi) , \mu(\phi, (Q, \psi))$ this expression is identically zero. 
+
+Here, we collect all terms involving only $\phi^*, c$ and $\psi$:
+
+
+Here, we collect all terms involving only $\psi^*$, $c$, $A$, and $\phi$:
+\[
+\pm (\psi^*, \rho([\d_A c, \phi]) Q) + (\psi^*, [c, \rho(\d \phi) Q]) + (\psi^*, \rho([A,[c,\phi]]) Q) .
+\]
+By the Jacobi identity, this simplifies to $\pm(\psi^*, [c, \d_A \phi] Q)$. \brian{stuck here}.
+%Thus, the sum of the last two terms cancels with the first term. 
 
 Here, we collect all terms depending only on $\lambda^*, \phi$ and $c$:
 \[
@@ -115,5 +143,49 @@ Here, we collect all terms depending only on $\lambda^*, \phi$ and $c$:
 Since $\mu : U^{\otimes 2} \to \fg^*$ is $\fg$-invariant, this expression vanishes. 
 \end{proof}
 
+
+\begin{lem} 
+We have $\{I_{\rm couple}^{(1)}, I^{(2)}\} = 0$. 
+\end{lem}
+\begin{proof}
+This follows from the simple observation that $I^{(2)}$ only involves the antifields $\lambda^*$, $\psi^*$ whereas $I^{(1)}_{\rm couple}$ only involves the fields $A$ and $\phi$.
+So by type reasons, all terms in the bracket are zero.
+\end{proof}
+
+\section{The holomorphic twist}
+
+The holomorphic twist of the 6d $\cN=(1,0)$ vector multiplet coupled to the hyper multiplet can be described in the BV formalism as a ($\ZZ/2$-graded) generalized Chern-Simons theory on any Calabi-Yau $3$-fold $X$. 
+
+Suppose the vector multiplet takes values in a Lie algebra $\fg$ and the hyper multiplet is valued in a symplectic $\fg$-representation $(U,\omega_U)$. 
+Define the following graded Lie algebra
+\[
+\begin{array}{ccccccccc}
+&&& \ul{0}  & & \ul{1} & & \ul{2} \\
+\fg_U & = && \fg & & U & & \fg^*
+\end{array}
+\]
+where the Lie brackets are given by:
+\begin{itemize}
+\item the usual Lie bracket $\fg \otimes \fg \to \fg$;
+\item the representation $\fg \otimes U[-1] \to U[-1]$;
+\item the coadjoint action $\fg \otimes \fg^*[-2] \to \fg^*[-2]$;
+\item the moment map $\mu_k : (U[-1])^{\otimes k} \to \fg^*[-2]$ \brian{could be $L_\infty$-maps, $k=2$ is the ordinary situation.}
+\end{itemize}
+
+The Lie algebra has a natural nondegenerate invariant pairing $\omega$ of degree $(+2)$ defined by combining the symplectic pairing $\omega_U$ on $U$ together with the natural dual pairing between $\fg$ and its dual. 
+
+Given $\fg_U$ we can consider generalized Chern-Simons theory on $(X, \Omega^{0,\bu})$ with values in $\fg_U$.
+Note that this is only a $\ZZ/2$-graded theory in the BV formalism, since $\fg_U$ has a pairing of degree $+2$ and $\dim_\CC (X) = 3$. 
+The underlying space of BV fields is 
+\[
+\Omega^{0,\bu}_X \otimes \fg_U [1]
+\]
+and the action functional is of Chern-Simons type $S(\alpha) = \int_X (\alpha, \dbar \alpha) + \sum_{k\geq 2}\frac{1}{(k+1)!} \int_{X} \Omega_X\wedge \langle \alpha \wedge \ell_k(\alpha, \dots, \alpha)\rangle.$
+
+For the specific graded Lie algebra $\fg_U$ we can decompose $\alpha = A + \varphi + B$ where $A$ is $\fg$-valued, $\varphi$ is $U$-valued, and $B$ is $\fg^*$-valued.
+The action then takes the form
+\[
+S(A + \varphi + B) = \int_X \left(B, \dbar A + \frac{1}{2} [A,A] \right)_\fg + \omega_U \left(\varphi, \dbar \varphi + [A, \varphi] \right) + \sum_{k\geq 2} (A, \mu(\varphi, \ldots, \varphi))_\fg .
+\]
 
 \end{document}
