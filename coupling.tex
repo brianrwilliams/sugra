@@ -81,14 +81,26 @@ Then, $\fS = S_{\rm BV} + I^{(1)} + I^{(2)}$ satisfies the classical master equa
 We have already seen that $S_{\rm BV}$ is consistent, so satisifies the ordinary classical master equation $\{S_{\rm BV}, S_{\rm BV}\}$. 
 We decompose the remaining terms in the classical master equation \ref{CMEcouple} into components based on the cardinality of the number of odd supersymmetry inputs, many of which have already been studied in Sections \ref{sec: vector} and \ref{sec: hyper}. 
 The new equations we must verify are the following:
-\begin{equation}\label{CMEhyper2}
+\begin{equation}\label{CMEcouple}
 \begin{array}{rrrrrr}
 \{S_{\rm BV} , I^{(1)}_{\rm couple}\} + \{I_{\rm couple}, I^{(1)}_{\rm gauge} + I^{(1)}_{\rm matter}\} + \{I_{\rm couple}, I^{(1)}_{\rm couple}\} & = & 0 \\ 
-\d_{CE} I^{(1)}_{\rm couple} + \{I^{(1)}_{\rm gauge} + I^{(1)}_{\rm matter}, I^{(1)}_{\rm couple}\} + \frac{1}{2} \{I_{\rm couple}^{(1)}, I_{\rm couple}^{(1)}\} & = & 0 \\
+\{I_{\rm couple}, I^{(2)}_{\rm gauge} + I^{(2)}_{\rm matter}\} + \d_{CE} I^{(1)}_{\rm couple} + \{I^{(1)}_{\rm gauge} + I^{(1)}_{\rm matter}, I^{(1)}_{\rm couple}\} + \frac{1}{2} \{I_{\rm couple}^{(1)}, I_{\rm couple}^{(1)}\} & = & 0 \\
 \{I_{\rm couple}^{(1)}, I^{(2)}\} & =& 0 \\
 %\{I^{(2)}, I^{(2)}\} & =& 0
 \end{array}
 \end{equation}
+
+The third equation is zero by type reasons.
+\begin{lem} 
+We have $\{I_{\rm couple}^{(1)}, I^{(2)}\} = 0$. 
+\end{lem}
+\begin{proof}
+This follows from the simple observation that $I^{(2)}$ only involves the antifields $\lambda^*$, $\psi^*$ whereas $I^{(1)}_{\rm couple}$ only involves the fields $A$ and $\phi$.
+So by type reasons, all terms in the bracket are zero.
+\end{proof}
+
+This leaves us to verify the first two equations of (\ref{CMEcouple}). 
+We begin with the first equation. 
 
 \begin{lem} One has
 \[
@@ -170,14 +182,39 @@ Here, we collect all terms depending only on $\lambda^*, \phi$ and $c$:
 Since $\mu : U^{\otimes 2} \to \fg^*$ is $\fg$-invariant, this expression vanishes. 
 \end{proof}
 
+Finally, we verify the second equation in (\ref{CMEcouple}). 
 
-\begin{lem} 
-We have $\{I_{\rm couple}^{(1)}, I^{(2)}\} = 0$. 
+\begin{lem}
+One has
+\[
+\{I_{\rm couple}, I^{(2)}_{\rm gauge} + I^{(2)}_{\rm matter}\} + \d_{CE} I^{(1)}_{\rm couple} + \{I^{(1)}_{\rm gauge} + I^{(1)}_{\rm matter}, I^{(1)}_{\rm couple}\} + \frac{1}{2} \{I_{\rm couple}^{(1)}, I_{\rm couple}^{(1)}\} =  0.
+\]
 \end{lem}
 \begin{proof}
-This follows from the simple observation that $I^{(2)}$ only involves the antifields $\lambda^*$, $\psi^*$ whereas $I^{(1)}_{\rm couple}$ only involves the fields $A$ and $\phi$.
-So by type reasons, all terms in the bracket are zero.
+The second and fourth terms are zero by type reasons.
+Thus, we must show
+\begin{equation}\label{CMEcouple2}
+\{I_{\rm couple}, I^{(2)}_{\rm gauge} + I^{(2)}_{\rm matter}\} +  \{I^{(1)}_{\rm gauge} + I^{(1)}_{\rm matter}, I^{(1)}_{\rm couple}\} = 0
+\end{equation}
+
+We begin by expanding $\{I_{\rm couple}, I^{(2)}_{\rm gauge}\}$:
+\begin{align*}
+\{I_{\rm couple}, I^{(2)}_{\rm gauge}\} (Q_1,Q_2) = & (\rho(\Gamma(Q_1,Q_2)) \lambda^*, \mu(\phi,\psi)) + (Q_1, \mu(\phi, \psi)) (Q_2, \lambda^*) + (Q_1, \lambda^*)(Q_2 \mu(\phi,\psi)) \\ + & (\psi^*, [i_{\Gamma(Q_1,Q_2)} A , \psi]) + (\phi^*, [i_{\Gamma(Q_1,Q_2)} A , \phi])
+\end{align*}
+
+Next, we expand $\{I_{\rm couple}, I^{(2)}_{\rm matter}\}$:
+\begin{align*}
+\{I_{\rm couple}, I^{(2)}_{\rm matter}\} = & (\rho(\Gamma(Q_1,Q_2)) \psi^*, [A, \psi]) + (\lambda, \mu(\phi, \rho(\Gamma(Q_1,Q_2)) \psi^*)) +  (\psi^*, [c, \rho(\Gamma(Q_1,Q_2)) \psi^*])
+\end{align*}
+
+Expanding $\{I^{(1)}_{\rm gauge}, I^{(1)}_{\rm couple}\}$:
+\begin{align*}
+\{I^{(1)}_{\rm gauge}, I^{(1)}_{\rm couple}\} = (\phi^* Q_1 , \rho([A,\phi]) Q_2) + \brian{finish}
+\end{align*}
+
 \end{proof}
+
+
 
 \section{The holomorphic twist}
 
