@@ -585,6 +585,7 @@ One has the following:
 \begin{enumerate}
 \item For $X\in\wedge^2(V)$ and $Q_1,Q_2\in\Sigma$ we have
 \[\Gamma(Q_1, \rho(X) Q_2) + \Gamma(Q_2, \rho(X) Q_1) = -2\iota_{\Gamma(Q_1, Q_2)} X.\]
+\brian{is there a similar expression for one-forms?}
 
 \item Suppose $Q_1,Q_2\in\Sigma$ and $\lambda\in\Gamma(M, \Sigma\otimes \fg)$. Then
 \[\sd{D}_A\rho(\Gamma(Q_1, \lambda)) Q_2 = \rho(d_A \Gamma(Q_1, \lambda)) Q_2 + (Q_1, \sd{D}_A \lambda) Q_2.\]
@@ -782,7 +783,7 @@ As usual, we denote the antifields by $\phi^*$ and $\psi^*$.
 The action of supersymmetry is given by a linear and quadratic functional:
 \begin{align*}
 I^{(1)} (Q) & = \int (\phi^*, (Q, \psi))_{W_+ \otimes U} + (\psi^*, \rho(\d \phi) Q)_U \\
-I^{(2)} (Q_1 , Q_2) & =  \int \frac{1}{4}(\Gamma(Q_1, Q_2)_{W_+} , \Gamma(\psi^*, \psi^*)_{U}) 
+I^{(2)} (Q_1 , Q_2) & =  \int \frac{1}{4}(\Gamma(Q_1, Q_2)_{W_+} , \Gamma(\psi^*, \psi^*)_{U}) %
 %\textcolor{red}{-\frac{1}{2} (Q_1, \psi^*)_U(Q_2, \psi^*)_U  }.
 \end{align*}
 where $Q, Q_1,Q_2 \in \Sigma = S_+ \otimes W_+$. 
@@ -833,17 +834,17 @@ The last equation is automatically satisfied since $I^{(2)}$ is independent of $
 
 The first equation in (\ref{CMEhyper2}) states that the classical action for the chiral multiplet is supersymmetric. 
 
-\begin{lemma} 
+\begin{lemma} \label{lem: hyper1}
 One has $\{S, I^{(1)}\} (Q) = 0$ for all $Q \in \Sigma$. 
 \end{lemma}
 \begin{proof}
 Observe
 \[
-- \{\d \phi \wedge * \d \phi, \phi^*  (Q, \psi) \} = - 2 \d (Q, \psi) \wedge * \d \phi .
+- \{(\d \phi , \d \phi), (\phi^* , (Q, \psi)) \} = - 2 (\d (Q, \psi) , \d \phi ) .
 \]
 and
 \[
-\{(\psi, \sd \dd \psi) , (\psi^*, \rho(\d \phi) Q) \} = 2 (\rho(\d \phi) Q, \sd \dd \psi) \d^4 x .
+\{(\psi, \sd \dd \psi) , (\psi^*, \rho(\d \phi) Q) \} = 2 (\rho(\d \phi) Q, \sd \dd \psi) .
 \]
 The sum of these two terms is zero by Lemma \ref{lem: oneform}. 
 \end{proof}
