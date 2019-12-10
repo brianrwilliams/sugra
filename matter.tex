@@ -1,0 +1,91 @@
+\documentclass[10pt, oneside]{article}
+
+\input ./combined_macros.sty
+
+\newcommand{\Cl}{\mathrm{Cl}}
+\newcommand{\Dens}{\mathrm{Dens}}
+
+\addbibresource{Twist.bib}
+
+\usepackage{pdflscape}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+\tikzstyle{s16} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=red!30]
+\tikzstyle{s16chiral} = [s16, dashed]
+\tikzstyle{s8 } = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=orange!30]
+\tikzstyle{s4} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=yellow!30]
+\tikzstyle{s2chiral} = [rectangle, dashed, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=green!30]
+\tikzstyle{dimension} = [circle, text centered, text width=0.7cm, minimum height=0.7cm, draw=black]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\title{Matter, uniformly}
+\author{Chris Elliott\and Pavel Safronov \and Brian Williams}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{definition}
+Let $\fg$ be a Lie algebra.
+An even (resp. odd) {\bf supersymmetric matter pair} is a pair $(\SS, U)$ where 
+\begin{itemize}
+\item[(1)] $\SS$ is a $\ZZ/2$-graded spinorial representation equipped with an even (resp. odd) nondegenerate $V$-valued pairing
+\[
+\Gamma : \wedge^2(\SS)^0 \xto{\cong} V
+\]
+(resp. $\Gamma : \wedge^2(\SS)^1 \xto{\cong} V$), and
+
+\item[(2)] $U$ is an even (resp. odd) symplectic $\fg$-representation.
+\end{itemize}
+\end{definition}
+
+\begin{lem}
+For a fixed Lie algebra $\fg$, a complete classification of the supersymmetric matter pairs \brian{Should we say minimal here? What about dimension 3 and 2?} (for dimensions $n \geq 2$) are:
+\begin{itemize}
+\item[(1)] Dimension $n = 4$. 
+There is an odd supersymmetric matter pair $(\SS = S_+ \oplus S_-, U = R \oplus R^*)$ where the odd pairing $\Gamma : S_+ \otimes S_- \xto{\cong} V$ is the usual $\Gamma$ pairing. Here, $R$ is a $\fg$-representation, and in the odd symplectic representation $U = R \oplus R^*$ we view $R$ as even and $R^*$ as odd. 
+\item[(2)] Dimension $n=6$.
+There are two even supersymmetric matter pairs: $(\SS = S_+ \otimes W_+, U)$ and $(\SS = S_- \otimes W_-, U)$ where $W_\pm$ is a $2$-dimension symplectic vector space and $U$ is a symplectic $\fg$-representation. 
+The even nondegenerate pairings are the usual $\Gamma$ pairings $\Gamma : \wedge^2 (S_\pm) \xto{\cong} V$ 
+\end{itemize}
+\end{lem}
+
+\begin{prop}
+\brian{how to state $3 \psi$-rule}
+
+\begin{itemize}
+\item[(1)] Dimension $n = 4$.
+Suppose $Q_+ \oplus Q_- \in S_+ \oplus S_-$.
+Then, the following diagram commutes
+\[
+\xymatrix{
+S_+ \otimes S_- \ar[dr]_-{(Q_+ + Q_-,-)} \ar[rr]^-{\Gamma} & & V \ar[dl]^-{\rho(v)} \\
+& S_+ \oplus S_- &  
+}
+\]
+\item[(2)] Dimension $n = 6$. 
+Suppose $Q \in S_\mp$.
+Then, the following diagram commutes
+\[
+\xymatrix{
+\wedge^2 S_\pm \ar[dr]_-{(Q,-)} \ar[rr]^-{\Gamma} & & V \ar[dl]^-{\rho(v)} \\
+& S_\pm & 
+}
+\]
+\end{itemize}
+\end{prop}
+
+To a supersymmetric matter pair we will associate a free BV theory whose underlying BRST fields consist of:
+\begin{itemize}
+\item a scalar $\phi \in C^\infty(\RR^n ; \SS^*)$;
+\item a negative Weyl spinor valued in $U$; $\psi \in C^\infty(\RR^4 ; S_- \otimes U)$ .
+\begin{dfn}
+The BRST theory associated to a supersymmetric matter pair (even or odd) $(\SS, U)$ has underlying bundle of BRST fields:
+\[
+
+
+
+
+\end{document}
