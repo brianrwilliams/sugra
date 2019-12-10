@@ -5,6 +5,8 @@
 \newcommand{\Cl}{\mathrm{Cl}}
 \newcommand{\Dens}{\mathrm{Dens}}
 
+\newcommand{\defterm}[1]{\textbf{\emph{#1}}}
+
 \addbibresource{Twist.bib}
 
 \usepackage{pdflscape}
@@ -12,7 +14,7 @@
 
 \tikzstyle{s16} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=red!30]
 \tikzstyle{s16chiral} = [s16, dashed]
-\tikzstyle{s8 } = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=orange!30]
+\tikzstyle{s8} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=orange!30]
 \tikzstyle{s4} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=yellow!30]
 \tikzstyle{s2chiral} = [rectangle, dashed, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=green!30]
 \tikzstyle{dimension} = [circle, text centered, text width=0.7cm, minimum height=0.7cm, draw=black]
@@ -40,7 +42,7 @@ Given a vector bundle $E\rightarrow M$ we denote by $\cE$ the space of smooth se
 \subsection{Classical BV Theories}
 
 \begin{definition}
-A {\bf free BV theory} on a manifold $M$ is the data:
+A \defterm{free BV theory} on a manifold $M$ is the data:
 \begin{itemize}
 \item a finite rank $\ZZ\times\ZZ/2$-graded vector bundle $E \to M$ equipped with an even differential operator of cohomological degree $+1$
 \[
@@ -60,25 +62,28 @@ that is
 \end{itemize}
 \end{definition}
 
-We call $\cE$ the {\em space of BV fields}.  
-The pairing $\omega$ equips the algebra of local functionals on $E$ with a shifted bracket, in the following way.
-In \cite[Chapter 5, Section 3]{CostelloBook}, it is shown that to every {\em local} functional $f \in \cO(\cE)$ there exists a symplectic vector field $X_f$ on $\cE$ whose Hamiltonian function is $f$. 
+We call $\cE$ the \defterm{space of BV fields}.  
+The pairing $\omega$ equips the algebra of local functionals on $E$ with a shifted bracket, in the following way. In \cite[Chapter 5, Section 3]{CostelloBook}, it is shown that to every functional $f \in \oloc(\cE)$ there exists a symplectic vector field $X_f$ on $\cE$ whose Hamiltonian function is $f$. 
 Note that if $f$ is degree $n$, then $X_f$ is of degree $n+1$ due to the degree of $\omega$. 
 
 \begin{definition}
-The {\bf BV bracket} $\{-,-\}$ is the bilinear map of cohomological degree $+1$
+The \defterm{BV bracket} $\{-,-\}$ is the bilinear map of cohomological degree $+1$
 \[
 \{-,-\}\colon \oloc(\cE) \times \oloc(\cE) \to \oloc(\cE)
 \]
 defined by sending a pair $(f,g)$ to the local functional $X_f (g)$.
 \end{definition}
 
+\begin{remark}
+Note that the BV bracket in fact defines a bilinear map $\{-, -\}\colon \oloc(\cE)\times\cO(\cE)\rightarrow \cO(\cE)$. However, it does \emph{not} define a bracket on $\cO(\cE)$ itself.
+\end{remark}
+
 The BV bracket satisfies the symmetry property
 \[\{f, g\} = (-1)^{|f| |g|} \{g, f\}\]
 and the graded Jacobi identity. Note that since local functionals do not form an algebra, it is not a (shifted) Poisson bracket. 
 
 \begin{definition}
-A {\bf classical BV field theory} (or simply, classical field theory) is a free BV theory $(E, Q, \omega)$ equipped with an even functional
+A \defterm{classical BV field theory} (or simply, classical field theory) is a free BV theory $(E, Q, \omega)$ equipped with an even functional
 \[I \in \oloc^+(\cE)\]
 of cohomological degree zero satisfying the classical master equation 
 \[Q I + \frac{1}{2} \{I,I\} = 0 .\]
@@ -89,16 +94,14 @@ Given a classical field theory $(E, Q, \omega, I)$ we denote by
 the BV action of the theory.
 
 \begin{remark}
-We will also consider {\bf $\ZZ/2$-graded classical field theories} which are defined as before, but where $E$ has only a single $\ZZ/2$-grading and, correspondigly, $Q$ is simply an odd operator.
+We will also consider \defterm{$\ZZ/2$-graded classical field theories} which are defined as before, but where $E$ has only a single $\ZZ/2$-grading and, correspondigly, $Q$ is simply an odd operator.
 \end{remark}
 
 \begin{remark}
-The data of a classical BV theory can be equivalently encoded in an elliptic $L_\infty$ algebra $L=E[-1]$ equipped with a symplectic isomorphism $L\cong L^![-3]$.
+The data of a classical BV theory can be equivalently encoded in an elliptic $L_\infty$ algebra $L=E[-1]$ equipped with a cyclic structure, i.e. a symplectic isomorphism $L\cong L^![-3]$.
 \end{remark}
 
-A local functional $I$ induces an endomorphism $\{I,-\}$ on the space of all local functionals $\oloc(E)$. 
-It also induces an endomorphism on the larger space of {\em all} functionals $\cO(\cE)$\footnote{Although, for two arbitrary functionals $F, G \in \cO(\cE)$, the bracket $\{F,G\}$ is not defined.}, see Definition \ref{dfn: fnl} in the appendix. 
-The classical master equation implies that the operator $Q + \{I,-\}$ squares to zero on $\cO(\cE)$, and hence every classical field theory defines a cochain complex
+A local functional $I$ induces an endomorphism $\{I,-\}$ on the space of all functionals $\cO(E)$. The classical master equation implies that the operator $Q + \{I,-\}$ squares to zero on $\cO(\cE)$, and hence every classical field theory defines a cochain complex
 \begin{equation}\label{bvcplx}
 \left(\cO(\cE), Q + \{I,-\}\right) .
 \end{equation}
@@ -106,24 +109,7 @@ In fact, this has the structure of a differentiable pro-cochain complex, see Def
 We will refer to this as the {\em classical BV complex} of the theory. 
 
 \begin{definition}
-A {\bf morphism} $F\colon (E, Q, \omega, I) \to (E', Q', \omega', I')$ of classical field theories over the same manifold $M$ is a linear map of vector bundles
-\[
-F\colon E \to E'
-\]
-that intertwines the differentials $Q, Q'$, the pairings $\omega, \omega'$, and the interactions $I,I'$. 
-\end{definition}
-
-Note that a map of classical field theories induces a map of BV complexes, that is, a map of pro-cochain complexes:
-\[
-F^*\colon \left(\cO (\cE')[-1], Q' + \{I',-\} \right) \to \left(\cO (\cE)[-1], Q + \{I,-\} \right).
-\]
-This allows us to make the following definition of an equivalence between classical theories. 
-
-\begin{definition} \label{equivalence_def}
-A morphism of classical field theories $F\colon (E, Q, \omega, I) \to (E', Q', \omega', I')$ is an {\bf equivalence} if it induces a quasi-isomorphism of differentiable pro-cochain complexes
-\[
-F^* \colon  \left(\cO(\cE')[-1], Q' + \{I',-\} \right) \xto{\simeq} \left(\cO(\cE)[-1], Q + \{I,-\} \right) .
-\]
+A \defterm{morphism} $F\colon (E, Q, \omega, I) \rightsquigarrow (E', Q', \omega', I')$ of classical field theories over the same manifold $M$ is a nonlinear map of vector bundles $E\rightsquigarrow E'$, i.e. a collection $F=\sum_{n\geq 1}^\infty F$ of poly-differential operators $F_n\colon \Sym^n(E)\rightarrow E'$, that intertwines the differentials $Q, Q'$, the pairings $\omega, \omega'$, and the interactions $I,I'$. A morphism is an \defterm{equivalence} if the map $F_1\colon (\cE, Q)\rightarrow (\cE', Q')$ is a quasi-isomorphism.
 \end{definition}
 
 For a short background on homological algebra with differentiable pro-cochain complexes, including the notion of quasi-isomorphism, we refer to Appendix \ref{appx: top}.
@@ -144,7 +130,7 @@ where $S_{k, l}$ is the set of $(k, l)$-shuffles, $\epsilon$ is the usual Koszul
 
 \begin{definition}
 \label{infinitesimal_action_def}
-Let $(E, Q,\omega, I)$ be a classical field theory. An {\bf action} of a super Lie algebra $\fg$ on $(E, Q, \omega, I)$ is an element
+Let $(E, Q,\omega, I)$ be a classical field theory. An \defterm{action} of a super Lie algebra $\fg$ on $(E, Q, \omega, I)$ is an element
 \[I_{\rho} = \sum_{k\geq 0} I^{(k)}\in C^\bullet(\fg, \oloc(\cE)),\]
 where $I^{(0)} = I$ and $I^{(k)}\colon \fg^{\otimes k}\rightarrow \oloc(\cE)$, which satisfies the Maurer--Cartan equation
 \[(Q + \d_{CE}) I_\rho + \frac{1}{2} \{I_\rho, I_\rho\} = 0.\]
@@ -154,7 +140,7 @@ We may also define actions of supergroups on classical field theories.
 
 \begin{definition}
 \label{group_action_def}
-Let $(E, Q, \omega, I)$ be a classical field theory and $G$ is a supergroup acting on spacetime $M$. An {\bf action} of $G$ on $(E, Q, \omega, I)$ is given by the following data:
+Let $(E, Q, \omega, I)$ be a classical field theory and $G$ is a supergroup acting on spacetime $M$. An \defterm{action} of $G$ on $(E, Q, \omega, I)$ is given by the following data:
 \begin{itemize}
 \item An action of $G$ on $\cE$ compatible with the $G$-action on $M$.
 
@@ -177,7 +163,7 @@ While we allow for $L_\infty$ actions of Lie algebras, we only consider strict a
 Let $(E, Q, \omega, I)$ be a classical BV theory. We recall the formalism of \cite{Book1,Book2} which extracts a factorization algebra on spacetime.
 
 \begin{definition}
-Let $(E, Q, \omega, I)$ be a classical field theory on $M$. The {\bf classical factorization algebra of observables} $\Obs$ assigns to an open set $U \subset M$ the commutative dg algebra (in differentiable pro-cochain complexes)
+Let $(E, Q, \omega, I)$ be a classical field theory on $M$. The \defterm{classical factorization algebra of observables} $\Obs$ assigns to an open set $U \subset M$ the commutative dg algebra (in differentiable pro-cochain complexes)
 \[
 \Obs(U) = \left(\cO(\cE(U)) , Q + \{I,-\}\right) .
 \]
@@ -193,7 +179,7 @@ The fact that the assignment $U \mapsto \Obs(U)$ defines a factorization algebra
 \subsection{From BRST to BV}
 
 \begin{definition}
-A {\bf classical BRST theory} on a manifold $M$ consists of the following data:
+A \defterm{classical BRST theory} on a manifold $M$ consists of the following data:
 \begin{itemize}
 \item a $\ZZ\times\ZZ/2$-graded vector bundle $F$ together with the structure of a local $L_\infty$ algebra on the shift $F[-1]$;
 \item A local functional $S_{BRST} \in \oloc(\cF)$ of polynomial degree $\geq 2$.
@@ -203,7 +189,7 @@ Together, these data must satisfy the equation
 where $Q_{BRST}$ is the Chevalley--Eilenberg differential defined by the $L_\infty$ structure on $F[-1]$. 
 \end{definition}
 
-We call $\cF$ the {\bf space of BRST fields}.
+We call $\cF$ the \defterm{space of BRST fields}.
 
 From a classical BRST theory $(\cF, S_{BRST})$, one can construct a classical BV theory as follows. Let $\{\ell_k\}_{k\geq 1}$ be the $L_\infty$ structure maps underlying the local Lie algebra $F[-1]$.
 
@@ -232,7 +218,7 @@ I_{\mr{BV}} = I_{F} + p^* I_{BRST} \in \oloc^+(\cE) .
 Suppose $(F, S_{BRST})$ is a classical BRST theory such that $(\cE, Q)$ defined above is an elliptic complex. Then $(E, Q, \omega, I)$ is a classical BV theory.
 \end{lemma}
 
-We refer to the classical BV theory $(E, Q, \omega, I)$ from the above statement as the {\bf $(-1)$-shifted cotangent bundle} of $\cF$ and by abuse of notation we often denote it simply by $\cE = T^*[-1] \cF$. In the case $S_{BRST} = 0$ we refer to the theory $T^*[-1] \cF$ as a theory of {\bf cotangent type}.
+We refer to the classical BV theory $(E, Q, \omega, I)$ from the above statement as the \defterm{$(-1)$-shifted cotangent bundle} of $\cF$ and by abuse of notation we often denote it simply by $\cE = T^*[-1] \cF$. In the case $S_{BRST} = 0$ we refer to the theory $T^*[-1] \cF$ as a theory of \defterm{cotangent type}.
 
 If the fields of the classical BRST theory are denoted by $\phi$, we denote their antifields in the classical BV theory by $\phi^*$, so that
 \[\{\phi(x), \phi^*(y)\} = \{\phi^*(y), \phi(x)\} = \delta(x-y).\]
@@ -244,7 +230,7 @@ In this section we give some examples of classical field theories we will use. A
 \subsubsection{Generalized BF theory} \label{gen_BF_section}
 
 \begin{definition}
-Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$. The {\bf generalized $BF$ theory} is the $(-1)$-shifted cotangent bundle of the following classical BRST theory:
+Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$. The \defterm{generalized $BF$ theory} is the $(-1)$-shifted cotangent bundle of the following classical BRST theory:
 \begin{itemize}
 \item The spacetime is the smooth manifold $X\times Y\times M$.
 
@@ -275,7 +261,7 @@ Generally speaking, $BF$ theories will be the output of twisting a supersymmetri
 In fact, a special case also applies to twisting theories of matter, which we will refer to as a $\beta\gamma$ system. 
 
 \begin{definition}
-Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix a complex vector space $V$. The {\bf generalized $\beta\gamma$ system} is the BV theory given by the $(-1)$-shifted cotangent bundle of the following classical BRST theory:
+Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix a complex vector space $V$. The \defterm{generalized $\beta\gamma$ system} is the BV theory given by the $(-1)$-shifted cotangent bundle of the following classical BRST theory:
 \begin{itemize}
 \item The spacetime is the smooth manifold $X\times Y\times M$.
 
@@ -298,7 +284,7 @@ the generalized $\beta\gamma$ system is generalized $BF$ theory in the case that
 The next class of examples of classical BV theories we give are generalizations of Chern-Simons theory. Unlike the example of the generalized BF theory, these theories are not of cotangent type.
 
 \begin{definition}
-Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$. We assume $X$ is equipped with a holomorphic volume form $\Omega_X \in\Omega^{\dim(X), 0}(X)$ and $\fg$ is equipped with a nondegenerate invariant symmetric pairing $\langle-, -\rangle\colon \fg\otimes\fg\rightarrow \CC[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 3]$. The {\bf generalized Chern--Simons theory} is the following classical BV theory:
+Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$. We assume $X$ is equipped with a holomorphic volume form $\Omega_X \in\Omega^{\dim(X), 0}(X)$ and $\fg$ is equipped with a nondegenerate invariant symmetric pairing $\langle-, -\rangle\colon \fg\otimes\fg\rightarrow \CC[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 3]$. The \defterm{generalized Chern--Simons theory} is the following classical BV theory:
 \begin{itemize}
 \item The spacetime is the smooth manifold $X\times Y\times M$.
 
@@ -376,7 +362,7 @@ The pairing $\omega$ on $E$ is induced by the evaluation pairings $\gg^*\otimes 
 We conclude this section with a discussion of the Poincar\'e invariance of classical Yang--Mills theory.
 
 \begin{definition}
-The {\bf Poincar\'e group} is $\mr{ISO}(V_\RR) = \Spin(V_\RR) \ltimes \RR^n$. The {\bf Poincar\'e algebra} is its complexified Lie algebra $\mf{iso}(V)$.
+The \defterm{Poincar\'e group} is $\mr{ISO}(V_\RR) = \Spin(V_\RR) \ltimes \RR^n$. The \defterm{Poincar\'e algebra} is its complexified Lie algebra $\mf{iso}(V)$.
 \end{definition}
 
 The Poincar\'e group acts, in the sense of Definition \ref{group_action_def}, on Yang--Mills theory on $\RR^n$. Indeed, there is an obvious Poincar\'e action on fields where we use that $\Sigma$ is a representation of $\Spin(V_\RR)$. The corresponding Hamiltonian is given by
@@ -395,7 +381,7 @@ for $v\in\mf{iso}(V)$, where $v.\lambda$ contains both a derivative and the $\so
 In this section we formulate the procedure of dimensional reduction of a classical field theory. Fix a submersion $p\colon M\rightarrow N$ equipped with a fiberwise volume form, i.e. an isomorphism $p^*\Dens_N\cong \Dens_M$.  The idea is that the \emph{dimensional reduction} of a classical field theory on $M$ along the submersion $p$ is the theory obtained by restricting to those fields which are constant along the fibers of $p$.  We will begin with an abstract definition of dimensional reduction, then prove that if $M = N \times \RR^k$, and we consider field theories which are translation invariant along the fiber, then this procedure is well-defined.
 
 \begin{definition}
-We say that a classical field theory $(E_N, Q_N, \omega_N, I_N)$ on $N$ is a {\bf dimensional reduction} along $p$ of the classical field theory $(E_M, Q_M, \omega_M, I_M)$ on a manifold $M$ if one is given the data of an isomorphism $p^* E_N\cong E_M$ of the bundles of BV fields satisfying the following conditions:
+We say that a classical field theory $(E_N, Q_N, \omega_N, I_N)$ on $N$ is a \defterm{dimensional reduction} along $p$ of the classical field theory $(E_M, Q_M, \omega_M, I_M)$ on a manifold $M$ if one is given the data of an isomorphism $p^* E_N\cong E_M$ of the bundles of BV fields satisfying the following conditions:
 \begin{itemize}
 \item The diagram
 \[
@@ -488,19 +474,19 @@ In this section we recall the framework for supersymmetry following \cite{Elliot
 
 Let $V_\RR = \RR^n$ endowed with its nondegenerate bilinear form and $V=V_\RR\otimes_\RR\CC$ its complexification. Consider the Lie algebra $\so(V)$. Let us recall the following facts:
 \begin{itemize}
-\item If $n$ is odd, $\so(V)$ has a distinguished fundamental representation called the {\bf spin} representation $S$.
+\item If $n$ is odd, $\so(V)$ has a distinguished fundamental representation called the \defterm{spin} representation $S$.
 
-\item If $n$ is even, $\so(V)$ has a pair of distinguished fundamental representations called the {\bf semi-spin} representations $S_+, S_-$.
+\item If $n$ is even, $\so(V)$ has a pair of distinguished fundamental representations called the \defterm{semi-spin} representations $S_+, S_-$.
 \end{itemize}
 
 \begin{definition}
-A {\bf spinorial representation} $\Sigma$ is a sum of spin or semi-spin representations of $\so(V)$.
+A \defterm{spinorial representation} $\Sigma$ is a sum of spin or semi-spin representations of $\so(V)$.
 \end{definition}
 
 So, in odd dimensions we have $\Sigma=S\otimes W$ and in even dimensions we have $\Sigma=S_+\otimes W_+\oplus S_-\otimes W_-$, where $W$ denotes a multiplicity space.
 
 \begin{definition}
-Fix a spinorial representation $\Sigma$ and a nondegenerate $\so(V)$-equivariant pairing $\Gamma\colon \sym^2(\Sigma)\rightarrow V$. The {\bf supertranslation Lie algebra} is the $\so(V)$-equivariant super Lie algebra $T=\Pi\Sigma\oplus V$ whose only nontrivial bracket is given by $\Gamma$.
+Fix a spinorial representation $\Sigma$ and a nondegenerate $\so(V)$-equivariant pairing $\Gamma\colon \sym^2(\Sigma)\rightarrow V$. The \defterm{supertranslation Lie algebra} is the $\so(V)$-equivariant super Lie algebra $T=\Pi\Sigma\oplus V$ whose only nontrivial bracket is given by $\Gamma$.
 \end{definition}
 
 For a given spinorial representation, the pairing $\Gamma$ is unique up to a scale, so a supertranslation Lie algebra is specified by fixing a spinorial representation. In turn, a spinorial representation is determined by the dimension of the multiplicity space, so we will talk about $\mc{N}$ or $(\mc{N}_+, \mc{N}_-)$ supertranslation Lie algebras, where the numbers are specified as follows:
@@ -520,7 +506,7 @@ Fix the following data:
 
 \item An $\so(V)$-equivariant nondegenerate pairing $\Gamma\colon \sym^2(\Sigma)\rightarrow V$.
 
-\item A complex Lie group $G_R$, the {\bf group of $R$-symmetries}, which is a subgroup of $\so(V)$-equivariant automorphisms of $(\Sigma, \Gamma)$.
+\item A complex Lie group $G_R$, the \defterm{group of $R$-symmetries}, which is a subgroup of $\so(V)$-equivariant automorphisms of $(\Sigma, \Gamma)$.
 \end{itemize}
 
 Note that the supertranslation Lie algebra $T$ is a $\Spin(V_\RR)\times G_R$-equivariant super Lie algebra.
@@ -528,7 +514,7 @@ Note that the supertranslation Lie algebra $T$ is a $\Spin(V_\RR)\times G_R$-equ
 Consider a spacetime manifold $M$ which is an affine space over $V_\RR$. Let $\ISO(V_\RR) = \Spin(V_\RR)\ltimes V_\RR$ be the Poincar\'{e} group which acts in the obvious way on $M$.
 
 \begin{definition}
-A classical field theory $(E, Q, \omega, I)$ is {\bf supersymmetric} if $E\rightarrow M$ is an $\ISO(V_\RR)\times G_R$-equivariant vector bundle and the infinitesimal strict action of the translation Lie algebra $V$ on the classical theory is extended to a $\Spin(V_\RR)\times G_R$-equivariant $L_\infty$ action of the supertranslation Lie algebra $T$ on the classical theory.
+A classical field theory $(E, Q, \omega, I)$ is \defterm{supersymmetric} if $E\rightarrow M$ is an $\ISO(V_\RR)\times G_R$-equivariant vector bundle and the infinitesimal strict action of the translation Lie algebra $V$ on the classical theory is extended to a $\Spin(V_\RR)\times G_R$-equivariant $L_\infty$ action of the supertranslation Lie algebra $T$ on the classical theory.
 \end{definition}
 
 \subsection{Vector multiplet} \label{sect:vectormultipletSUSY}
@@ -922,17 +908,17 @@ $\{I^{(1)}, I^{(2)}\}(Q_1,Q_2,Q_3$ is obtained by cyclically symmetrizing the ab
 \pavel{$Q$ denotes both the differential on fields and the supercharge.} 
 
 \begin{definition}
-A {\bf square-zero supercharge} is a nonzero element $Q\in\Sigma$ such that $\Gamma(Q, Q)=0$.
+A \defterm{square-zero supercharge} is a nonzero element $Q\in\Sigma$ such that $\Gamma(Q, Q)=0$.
 \end{definition}
 
 It is shown in \cite[Proposition 3.25]{ElliottSafronov} that the image of $\Gamma(Q, -)\colon \Sigma\rightarrow V$ has dimension at least $n/2$. We will use the following adjectives for square-zero supercharges depending on $d=\dim(\mathrm{im}\Gamma(Q, -))$:
 \begin{itemize}
-\item A supercharge $Q$ is {\bf topological} if $d = n$.
+\item A supercharge $Q$ is \defterm{topological} if $d = n$.
 
-\item A supercharge $Q$ is {\bf holomorphic} if $n$ is even and $d=n/2$.
+\item A supercharge $Q$ is \defterm{holomorphic} if $n$ is even and $d=n/2$.
 \end{itemize}
 
-In the intermediate case we refer to $Q$ as a {\bf holomorphic-topological} (alternatively, partially topological) supercharge. The collection of all square-zero supercharges in dimensions 2 through 10 (where one restricts to supersymmetries with at most 16 supercharges) was studied in \cite{ElliottSafronov} and \cite{EagerSaberiWalcher}. In particular, orbits of square-zero supercharges under the $R$-symmetry group, $\Spin(V)$ and the obvious scaling action of $\CC^\times$ are shown in Figure \ref{fig:superchargeorbits}:
+In the intermediate case we refer to $Q$ as a \defterm{holomorphic-topological} (alternatively, partially topological) supercharge. The collection of all square-zero supercharges in dimensions 2 through 10 (where one restricts to supersymmetries with at most 16 supercharges) was studied in \cite{ElliottSafronov} and \cite{EagerSaberiWalcher}. In particular, orbits of square-zero supercharges under the $R$-symmetry group, $\Spin(V)$ and the obvious scaling action of $\CC^\times$ are shown in Figure \ref{fig:superchargeorbits}:
 \begin{itemize}
 \item The color denotes the amount of supersymmetries: red denotes 16 supercharges, orange 8 supercharges, yellow 4 supercharges and green 2 supercharges. Dashed border denotes chiral supersymmetry (i.e. $(\cN_+, 0)$ in even dimensions).
 
@@ -944,13 +930,13 @@ In the intermediate case we refer to $Q$ as a {\bf holomorphic-topological} (alt
 \end{itemize}
 
 \begin{definition}
-A {\bf twisting datum} is a pair $(Q, \alpha)$, where $Q\in\Sigma$ is a square-zero supercharge and $\alpha\colon U(1)\rightarrow G_R$ is a homomorphism under which $Q$ has weight $1$.
+A \defterm{twisting datum} is a pair $(Q, \alpha)$, where $Q\in\Sigma$ is a square-zero supercharge and $\alpha\colon U(1)\rightarrow G_R$ is a homomorphism under which $Q$ has weight $1$.
 \end{definition}
 
-We will call $\alpha$ in a twisting datum a {\bf twisting homomorphism}.
+We will call $\alpha$ in a twisting datum a \defterm{twisting homomorphism}.
 
 \begin{definition} \label{def:twisting}
-Suppose $(E, \d, \omega, I)$ is a supersymmetric classical field theory and $(Q, \alpha)$ is a twisting datum. The {\bf $Q$-twisted classical field theory} is the classical field theory $(E^Q, \d + \{\rho_2(Q), -\}, \omega, I + \rho_3(Q) + \dots)$, where
+Suppose $(E, \d, \omega, I)$ is a supersymmetric classical field theory and $(Q, \alpha)$ is a twisting datum. The \defterm{$Q$-twisted classical field theory} is the classical field theory $(E^Q, \d + \{\rho_2(Q), -\}, \omega, I + \rho_3(Q) + \dots)$, where
 \[E^Q = \bigoplus_{n=-\infty}^\infty \Pi^n E(n)[-n]\]
 for $E(n)$ the component of $E$ which has $\alpha$-weight $n$.
 \end{definition}
@@ -1747,7 +1733,7 @@ Then
 
 \begin{definition}\label{dfn: fnl}
 Let $E$ be a vector bundle on $M$ and $U \subset M$.
-The {\bf completed algebra of functions} on $\cE(U)$ is
+The \defterm{completed algebra of functions} on $\cE(U)$ is
 \[
 \cO(\cE(U)) = \prod_{n = 0}^\infty {\rm Hom}_{\rm CVS} \left(\cE(U)^{\Hat{\otimes}_\beta n}, \CC\right)_{S_n} .
 \]
@@ -1762,11 +1748,11 @@ Let $\Mfld$ denote the site of smooth manifolds (of arbitrary dimension) where t
 \begin{definition} 
 We use the following notations and naming conventions for sheaves on $\Mfld$:
 \begin{itemize}
-\item a {\bf smooth vector space} is a sheaf of vector spaces on $\Mfld$.
+\item a \defterm{smooth vector space} is a sheaf of vector spaces on $\Mfld$.
 \item Let $C^\infty$ denote the smooth vector space which assigns the space of smooth functions $C^\infty(X)$ to a smooth manifold $X$.
-\item a $C^\infty$-{\bf module} is a smooth vector space $V$ equipped with a structure of a module over $C^\infty$. 
+\item a \defterm{$C^\infty$-module} is a smooth vector space $V$ equipped with a structure of a module over $C^\infty$. 
 If $V$ is a $C^\infty$-module, we denote $C^\infty(X, V) := V(X)$, the valued of $V$ on the smooth manifold $X$.
-\item a {\bf differentiable vector space} is a $C^\infty$-module $V$ equipped with a flat connection
+\item a \defterm{differentiable vector space} is a $C^\infty$-module $V$ equipped with a flat connection
 \[
 \nabla_{X,V} : C^\infty(X, V) \to \Omega^1(X, V)
 \]
@@ -1792,7 +1778,7 @@ To avoid this issue, we make the following definition.
 
 \begin{definition}
 Suppose $V,W$ are cochain complexes in convenient vector spaces. 
-A cochain map $f : V \to W$ is a {\bf quasi-isomorphism} if the map
+A cochain map $f\colon V \to W$ is a \defterm{quasi-isomorphism} if the map
 \[
 dif_c (f) : dif_c(V) \to dif_c(W)
 \]
@@ -1818,12 +1804,12 @@ is an isomorphism for all $p,q$, then $f : V \to W$ is a quasi-isomorphism.
 The following is the natural definition of a filtered differentiable cochain complex. 
 
 \begin{definition}
-A {\bf filtered differentiable cochain complex} is a sequence of differentiable cochain complexes
+A \defterm{filtered differentiable cochain complex} is a sequence of differentiable cochain complexes
 \[
 \cdots \to F_{n-1} V \to F_{n} V \to F_{n+1}V \to \cdots
 \]
 where each map is a monomorphism in each cohomological degree. 
-A filtered differentiable cochain complex is {\bf complete} if the canonical maps $V \to V / F_n V$ induce an isomorphism $V \cong \lim V / F_n V$. 
+A filtered differentiable cochain complex is \defterm{complete} if the canonical maps $V \to V / F_n V$ induce an isomorphism $V \cong \lim V / F_n V$. 
 \end{definition}
 
 The category of differentiable vector space is an AB4 category, in fact, it is actually a Grothendieck abelian category. 
@@ -1835,7 +1821,7 @@ The category $\DVS$ is a Grothendieck abelian category.
 In particular, we can freely apply the Eilenberg-Moore comparison result to the types of topological cochain complexes we come across in the BV formalism. 
 
 \begin{definition}\label{dfn: pro}
-A {\bf differentiable pro-cochain complex} is a differentiable cochain complex $V$ with a filtration
+A \defterm{differentiable pro-cochain complex} is a differentiable cochain complex $V$ with a filtration
 \[
 \cdots \to F_{n-1} V \to F_{n} V \to F_{n+1}V \to \cdots
 \]
