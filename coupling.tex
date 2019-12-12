@@ -45,7 +45,7 @@ for all $x \in \fg$, and $a,b \in U$.
 Let $S_{\rm gauge}$ and $S_{\rm matter}$ be the BV actions for the $6d$ $\cN=(1,0)$ vector and hyper multiplets, respectively. 
 The coupled theory has action $S_{\rm gauge} + S_{\rm matter} + I_{\rm couple}$ where
 \begin{align*}
-I_{\rm couple} = &- g (A, \mu \otimes \Gamma (\psi, \psi)_\fg - g (A, \mu(\d \phi, \phi)) - g (A, \mu(\phi, [A, \phi]))_\fg \\ + & 
+I_{\rm couple} = & g (A, \mu \otimes \Gamma (\psi, \psi))_\fg - g (A, \mu(\d \phi, \phi)) - g (A, \mu(\phi, [A, \phi]))_\fg \\  - & 
 %g (\psi, [\lambda, \phi])_U + g (\phi, (\lambda, \psi))_U + 
 g (\lambda, \mu(\phi, \psi))_\fg \\ + & g (\psi^*, [c, \psi])_U + g (\phi^*, [c, \phi])_U \\ + & g^2 \left(\mu(\phi, \phi), \mu(\phi, \phi) \right)_\fg .
 \end{align*}
@@ -62,7 +62,7 @@ The action of supersymmetry on the pure hyper multiplet was constructed in Secti
 Additionally, in the coupled theory, there are the following new terms in the action of supersymmetry:
 \begin{align*}
 I^{(1)}_{\rm couple} (Q) & = \int g (\psi^*, \rho([A, \phi]) Q)_U + \frac{1}{2} g (\lambda^*, Q \mu(\phi))_\fg \\
-I^{(2)} (Q_1 , Q_2) & = 0 
+I_{\rm couple}^{(2)} (Q_1 , Q_2) & = 0 
 \end{align*}
 \brian{It appears there are no additional $L_\infty$ corrections}
 
@@ -199,46 +199,46 @@ Thus, we must show
 
 We begin by expanding $\{I_{\rm couple}, I^{(2)}_{\rm gauge}\}$:
 \begin{align*}
-\{I_{\rm couple}, I^{(2)}_{\rm gauge}\} (Q_1,Q_2) = & (\rho(\Gamma(Q_1,Q_2)) \lambda^*, \mu(\phi,\psi)) + (Q_1, \mu(\phi, \psi)) (Q_2, \lambda^*) + (Q_1, \lambda^*)(Q_2 \mu(\phi,\psi)) \\ + & (\psi^*, [i_{\Gamma(Q_1,Q_2)} A , \psi]) + (\phi^*, [i_{\Gamma(Q_1,Q_2)} A , \phi])
+\{I_{\rm couple}, I^{(2)}_{\rm gauge}\} (Q_1,Q_2) = & - \frac{1}{2} (\rho(\Gamma(Q_1,Q_2)) \lambda^*, \mu(\phi,\psi)) - \frac{1}{2} (Q_1, \mu(\phi, \psi)) (Q_2, \lambda^*) - \frac{1}{2} (Q_1, \lambda^*)(Q_2 \mu(\phi,\psi)) \\ + & (\psi^*, [i_{\Gamma(Q_1,Q_2)} A , \psi]) + (\phi^*, [i_{\Gamma(Q_1,Q_2)} A , \phi])
 \end{align*}
 
 Next, we expand $\{I_{\rm couple}, I^{(2)}_{\rm matter}\}$:
 \begin{align*}
-\{I_{\rm couple}, I^{(2)}_{\rm matter}\} (Q_1,Q_2) = & (\rho(\Gamma(Q_1,Q_2)) \psi^*, [A, \psi]) + (\lambda, \mu(\phi, \rho(\Gamma(Q_1,Q_2)) \psi^*)) \\ & + (\Gamma(Q_1, Q_2), \Gamma([c, \psi^*], \psi^*)) + (\Gamma(Q_1, Q_2), \Gamma(\psi^*, [c, \psi^*])).
+\{I_{\rm couple}, I^{(2)}_{\rm matter}\} (Q_1,Q_2) = & \frac{1}{2} (\rho(\Gamma(Q_1,Q_2)) \psi^*, [A, \psi]) - \frac{1}{2}(\lambda, \mu(\phi, \rho(\Gamma(Q_1,Q_2)) \psi^*)) \\ & + (\Gamma(Q_1, Q_2), \Gamma([c, \psi^*], \psi^*)) + (\Gamma(Q_1, Q_2), \Gamma(\psi^*, [c, \psi^*])).
 \end{align*} 
 The last line vanishes by the $\fg$-invariance of the symplectic pairing for $U$. 
 
 Expanding $\{I^{(1)}_{\rm gauge}, I^{(1)}_{\rm couple}\}$:
 \begin{align*}
-\{I^{(1)}_{\rm gauge}, I^{(1)}_{\rm couple}\}(Q_1,Q_2) = & (\psi^*, \rho([\Gamma(Q_1, \lambda), \phi]) Q_2) + (\psi^*, \rho([\Gamma(Q_2, \lambda), \phi]) Q_1) \\ + & (A^*, \Gamma(Q_1, \mu(\phi, \phi) Q_2)) - (A^*, \Gamma(Q_2, \mu(\phi, \phi) Q_1)) . 
+\{I^{(1)}_{\rm gauge}, I^{(1)}_{\rm couple}\}(Q_1,Q_2) = & - (\psi^*, \rho([\Gamma(Q_1, \lambda), \phi]) Q_2) -(\psi^*, \rho([\Gamma(Q_2, \lambda), \phi]) Q_1) \\ + & (A^*, \Gamma(Q_1, \mu(\phi, \phi) Q_2)) - (A^*, \Gamma(Q_2, \mu(\phi, \phi) Q_1)) . 
 \end{align*}
 Notice the term proportional to $A^*$ vanishes. 
 
 \begin{align*}
-\{I^{(1)}_{\rm matter}, I^{(1)}_{\rm couple}\}  (Q_1,Q_2) = & (\phi^* Q_1 , \rho([A,\phi]) Q_2) + (\phi^* Q_2 , \rho([A,\phi]) Q_1) \\ + &  (\psi^*, \rho([A, (Q_1, \psi)]) Q_2) +  (\psi^*, \rho([A, (Q_2, \psi)]) Q_1) \\ + & (\lambda^*, \mu((Q_1, \psi), \phi) Q_2) +  (\lambda^*, \mu((Q_2, \psi), \phi) Q_1) 
+\{I^{(1)}_{\rm matter}, I^{(1)}_{\rm couple}\}  (Q_1,Q_2) = & \pm (\phi^* Q_1 , \rho([A,\phi]) Q_2) \pm (\phi^* Q_2 , \rho([A,\phi]) Q_1) \\ -  &  (\psi^*, \rho([A, (Q_1, \psi)]) Q_2) - (\psi^*, \rho([A, (Q_2, \psi)]) Q_1) \\ - & (\lambda^*, \mu((Q_1, \psi), \phi) Q_2) -  (\lambda^*, \mu((Q_2, \psi), \phi) Q_1) 
 \end{align*}
 
 We collect terms involving $\phi, A$ and $\phi^*$:
 \[
-\pm [i_{\Gamma(Q_1, Q_2)} A, \phi] + (Q_1, \rho([A,\phi])Q_2) + (Q_2, \rho([A,\phi])Q_1)
+[i_{\Gamma(Q_1, Q_2)} A, \phi] \pm (Q_1, \rho([A,\phi])Q_2) \pm (Q_2, \rho([A,\phi])Q_1)
 \]
-By Proposition \ref{prop:cliffordactionproperties} the last two terms cancel with the first term. 
+By Proposition \ref{prop:cliffordactionproperties} the last two terms cancel with the first term. \brian{Pavel, what is the version of that identity we need to use here, that proposition isn't quite what we need. This is the only sign I'm unsure of in this proposition.}
 
 Next, we collect terms involving $\phi, \psi$ and $\lambda^*$. 
 This term is obtained by taking the $\fg$-pairing of $\mu(\phi, \psi)$ with
 \[
-\pm \rho(\Gamma(Q_1,Q_2)) \lambda^* + (Q_2, \lambda^*)Q_1 + (Q_1, \lambda^*) Q_2
+-\frac{1}{2} \rho(\Gamma(Q_1,Q_2)) \lambda^* + \frac{1}{2} (Q_2, \lambda^*)Q_1 + \frac{1}{2} (Q_1, \lambda^*) Q_2
 \]
 which vanishes by Proposition \ref{prop: new3psi}.
 
 Next, we collect terms involving $\lambda, \phi, \psi^*$.
 This term can be written as pairing the antifield $\psi^*$ with the field
 \[
-\rho(\Gamma(Q_1,Q_2)) [\lambda, \phi] + \rho([\Gamma(Q_1,\lambda), \phi]) Q_2  + \rho([\Gamma(Q_2,\lambda), \phi]) Q_1. 
+- \frac{1}{2} \rho(\Gamma(Q_1,Q_2)) [\lambda, \phi] - \frac{1}{2} \rho([\Gamma(Q_1,\lambda), \phi]) Q_2  - \frac{1}{2} \rho([\Gamma(Q_2,\lambda), \phi]) Q_1. 
 \]
 This whole expression is equal to applying the $\fg$-valued field 
 \[
-\rho(\Gamma(Q_1,Q_2)) \lambda + \rho(\Gamma(Q_1,\lambda)) Q_2  + \rho(\Gamma(Q_2,\lambda)) Q_1
+- \frac{1}{2} \rho(\Gamma(Q_1,Q_2)) \lambda - \frac{1}{2} \rho(\Gamma(Q_1,\lambda)) Q_2  - \frac{1}{2} \rho(\Gamma(Q_2,\lambda)) Q_1
 \]
 to the field $\phi$ by the representation. 
 This expression vanished by Proposition \ref{prop:3psi}.
@@ -246,11 +246,11 @@ This expression vanished by Proposition \ref{prop:3psi}.
 Finally, we collect terms involving $\psi^*,A$ and $\psi$.
 This can be written as the pairing of the antifield $\psi^*$ with the field
 \[
-\pm [A, \rho(\Gamma(Q_1,Q_2)) \psi] + \rho([A, (Q_1, \psi)]) Q_2 + \rho([A, (Q_2, \psi)]) Q_1 .
+\frac{1}{2} [A, \rho(\Gamma(Q_1,Q_2)) \psi] -\frac{1}{2} \rho([A, (Q_1, \psi)]) Q_2 - \frac{1}{2} \rho([A, (Q_2, \psi)]) Q_1 .
 \] 
 This expression is equal to applying the $\fg$-valued field $A$ to the field
 \[
-\pm \rho(\Gamma(Q_1,Q_2)) \psi + (Q_1, \psi) Q_2 + (Q_2, \psi) Q_1
+\frac{1}{2} \rho(\Gamma(Q_1,Q_2)) \psi -\frac{1}{2} (Q_1, \psi) Q_2 -\frac{1}{2} (Q_2, \psi) Q_1
 \]
 which vanishes by Proposition \ref{prop: new3psi}.
 
