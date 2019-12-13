@@ -44,7 +44,7 @@ Here $\Phi$ is a representation of $\gg$ and $\Psi$ is a representation of $\so(
 \begin{enumerate}
  \item A first-order differential operator $\sd \dd \colon \Psi \to \Psi^*$.
  \item An operator $\rho_\Psi \colon V_n \otimes \Psi^* \to \Psi$.
- \item A gamma pairing $\Gamma \colon \sym^2 \Psi \to V_n$.
+ \item A gamma pairing $\Gamma_\Psi \colon \sym^2 \Psi \to V_n$.
  \item A moment map pairing $\mu \colon \sym^2 \Phi \to \gg$.
  \item An additional $\gg$-equivariant map $Y \colon \Sigma \otimes \Psi \to \Phi$, or equivalently, using $\mu$, either a map $Y_\mu\colon \Sigma \otimes \Psi \otimes \Phi \to \gg$ or $Y_\mu^* \colon \Sigma \otimes \Phi \to \gg \otimes \Psi^*$.
 \end{enumerate}
@@ -53,14 +53,14 @@ With this data in mind, we define the action, and the coupling to supercharges $
 \begin{align*}
 S_{\mr{gauge}} &= \int \left\langle -\frac{1}{4} F_A \wedge \ast F_A + \frac{1}{2}(\lambda, \sd D_A \lambda)\right\rangle - (\d_A c, A^*) + ([\lambda, c], \lambda^*) + \frac{1}{2}([c, c], c^*)\\
 S_{\mr{matter}} &= \int - \frac{1}{2}  (\d \phi \wedge * \d \phi) + \frac{1}{2} (\psi , \sd \dd \psi)\\
-I_{\mr{couple}} &= \int g\big( \eta(A, \Gamma (\psi, \psi)) - \frac 12 \eta(A, \d_A \mu( \phi, \phi)) - 
+I_{\mr{couple}} &= \int g\big( \eta(A, \Gamma_\Psi(\psi, \psi)) - \frac 12 \eta(A, \d_A \mu( \phi, \phi)) - 
 \kappa \circ Y_\mu(\lambda,\psi,\phi)  +  (\psi^*, [c, \psi])_U + \\
 &\qquad\qquad\qquad\qquad\qquad\qquad +  (\phi^*, [c, \phi])\big)  +  g^2 \left(\mu(\phi, \phi), \mu(\phi, \phi) \right) \\
 I^{(1)}_{\mr{gauge}}(Q) &= \int (\Gamma(Q, \lambda), A^*) + \frac{1}{2}(\rho(F_A), \lambda^*) \\
 I^{(1)}_{\mr{matter}}(Q) &= \int (\phi^*, Y(Q, \psi)) + (\psi^*, \rho(\d \phi) Q)\\
 I^{(1)}_{\mr{couple}}(Q) &= \int g (\psi^*, \kappa \circ \rho_\Psi \circ (1 \otimes Y_\mu^*)(A, Q, \phi)) + \frac{1}{2} g (\lambda^*, Q \otimes \mu(\phi,\phi)) \\
 I^{(2)}_{\mr{gauge}}(Q_1,Q_2) &= \int \frac{1}{4}(\Gamma(Q_1, Q_2), \Gamma(\lambda^*, \lambda^*)) - \frac{1}{2}(Q_1, \lambda^*)(Q_2, \lambda^*) - (\iota_{\Gamma(Q_1, Q_2)} A, c^*) \\
-I^{(2)}_{\mr{matter}}(Q_1,Q_2) &= \int \frac{1}{4}(\Gamma(Q_1, Q_2) , \Gamma(\psi^*, \psi^*)).
+I^{(2)}_{\mr{matter}}(Q_1,Q_2) &= \int \frac{1}{4}(\Gamma(Q_1, Q_2) , \Gamma_{\Psi^*}(\psi^*, \psi^*)).
 \end{align*}
 
 With all of this, along with an appropriate version of the ``$3\psi$-rule'' -- which should say something about the compatibility of these structures, along with the claim that the map from either $\wedge^2S_+$, $S_+ \otimes S_-$ or $\sym^2 S$ to $V_n$ is an isomorphism -- I speculate the supersymmetry calculation should work symmetrically.  The $3\psi$ rule should just be the following.
