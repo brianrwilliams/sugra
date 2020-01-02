@@ -1365,9 +1365,49 @@ The twist by a rank 2 supercharge of 7d $\mc N=1$ super Yang-Mills theory on the
 \end{proof}
 
 \subsection{Dimension 6}
-In dimension 6 there are two possible supersymmetry groups by which we can act.  There is a minimal supersymmetric field theory with $\mc N=(1,0)$ supersymmetry, consisting of a pure gauge theory coupled to matter living in a symplectic representation $V$.  If $V \iso T^*\gg$, then the $(1,0)$ supersymmetry can be enhanced to $\mc N=(1,1)$ supersymmetry.  This is the theory one obtains by compactifying 10d $\mc N=1$ super Yang-Mills down to $\RR^6$.
+
+In dimension 6 there are two possible supersymmetry groups by which we can act.  There is a minimal supersymmetric field theory with $\mc N=(1,0)$ supersymmetry, consisting of a pure gauge theory coupled to matter living in a symplectic representation $V$.  
+If $V \iso T^*\gg$, then the $(1,0)$ supersymmetry can be enhanced to $\mc N=(1,1)$ supersymmetry.  
+This is the theory one obtains by compactifying 10d $\mc N=1$ super Yang-Mills down to $\RR^6$.
 
 \subsubsection{$\mc N = (1,0)$ Super Yang-Mills Theory with Matter} \label{6d_10_section}
+
+The general theory of $\mc N = (1,0)$ coupled to matter has been exhibited in Section \ref{sec: couple}. 
+The fields are:
+\begin{itemize}
+\item $\fg$-valued bosons: a gauge field $A \in \Omega^1(\RR^6;\fg)$.
+\item $\fg$-valued fermions: a spinor $\lambda \in C^\infty(\RR^6 ; S_+ \otimes W_+ \otimes \fg)$. 
+\item $U$-valued scalars: $\phi \in C^\infty(\RR^6 ; W_+ \otimes U)$;
+\item $U$-valued fermions: $\psi \in C^\infty(\RR^6 ; S_- \otimes U)$ .
+\end{itemize}
+
+The interaction terms encoding $\mc N = (1,0)$ supersymmetry $I^{(1)}$ and $I^{(2)}$ are:
+\begin{align*}
+I^{(1)} & = I^{(1)}_{\rm gauge} + I^{(1)}_{\rm matter} + I^{(1)}_{\rm couple} \\
+I^{(2)} & = I^{(2)}_{\rm gauge} + I^{(2)}_{\rm matter} 
+\end{align*}
+where
+\begin{align*}
+I_{\rm gauge}^{(1)}(Q) &= (\Gamma(Q, \lambda), A^*)_\fg + \frac{1}{2}(\rho(F_A), \lambda^*)_\fg \\
+I_{\rm gauge}^{(2)}(Q_1, Q_2) &= \frac{1}{4}(\Gamma(Q_1, Q_2), \Gamma(\lambda^*, \lambda^*)_\fg) - \frac{1}{2}((Q_1, \lambda^*),(Q_2, \lambda^*))_\fg - \iota_{\Gamma(Q_1, Q_2)} A c^*\\
+I^{(1)}_{\rm matter} (Q) & = (\phi^*, (Q, \psi))_{W_+ \otimes U} + (\psi^*, \rho(\d \phi) Q)_U \\
+I^{(2)}_{\rm matter} (Q_1 , Q_2) & =  \frac{1}{4}(\Gamma(Q_1, Q_2)_{W_+} , \Gamma(\psi^*, \psi^*)_{U}) \\
+I^{(1)}_{\rm couple} (Q) & = g (\psi^*, \rho([A, \phi]) Q)_U + \frac{1}{2} g (\lambda^*, Q \mu(\phi,\phi))_\fg 
+%\textcolor{red}{-\frac{1}{2} (Q_1, \psi^*)_U(Q_2, \psi^*)_U  }.
+\end{align*}
+
+Choose a polarized basis $W_+ = {\rm span}_{\CC}\{w_1, w_2\}$.
+Without loss of generality we will twist with respect to a supercharge of the form $Q = q_+ \otimes w_1 \in S_+ \otimes W_+$. 
+
+We decompose the fields with respect to $\U(5) \hookrightarrow \SO(6)$:
+\begin{align*}
+c & \mapsto A^0 \in \Omega^{0,0}(\CC^3 ; \fg) \\
+A & \mapsto A^{1,0} + A^{0,1} \in \Omega^{1,0}(\CC^3 ; \fg) \oplus \Omega^{0,1}(\CC^3) \\
+\lambda & \mapsto \lambda^0_1 w_1 + \lambda_2^0 w_2 + A^{0,2} w_1 +  \Tilde{\lambda}^{0,2} w_2\in \Omega^{0}(\CC^3 ; W_+ \otimes \fg) \oplus \Omega^{0,2}(\CC^3 ; W_+ \otimes \fg) \\
+\phi & \mapsto A 
+\end{align*} 
+where the $A^{\bu, \bu}, \lambda^{\bu,\bu}, \Tilde{\lambda}^{\bu,\bu}$ are all $\fg$-valued forms. 
+
 
 \subsubsection{$\mc N = (1,1)$ Super Yang-Mills Theory}
 
