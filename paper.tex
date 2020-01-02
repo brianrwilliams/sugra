@@ -2,8 +2,12 @@
 
 \input ./combined_macros.sty
 
+\newcommand{\BV}{\mathrm{BV}}
 \newcommand{\Cl}{\mathrm{Cl}}
 \newcommand{\Dens}{\mathrm{Dens}}
+\newcommand{\gauge}{\mathrm{gauge}}
+\newcommand{\matter}{\mathrm{matter}}
+\renewcommand{\Re}{\mathrm{Re}}
 
 \newcommand{\defterm}[1]{\textbf{\emph{#1}}}
 
@@ -33,11 +37,15 @@
 
 \section*{Introduction}
 
+\part{Supersymmetric Gauge Theory}
+
 \section{The BV-BRST Formalism}
 
 Throughout the paper we will mostly work with a $\ZZ\times\ZZ/2$-grading. \emph{Degree} will refer to the first (cohomological) grading and \emph{odd} or \emph{even} to the second (fermionic) grading. For an element $x$ we denote by $|x|\in\ZZ/2$ the total degree.
 
-Given a vector bundle $E\rightarrow M$ we denote by $\cE$ the space of smooth sections of $E$. We denote by $\oloc(\cE)$ the space of local functionals on $\cE$ (see \cite[Definition 4.5.1.1]{Book2}). We denote by $\oloc^+(\cE)\subset \oloc(\cE)$ the subspace of local functionals which are at least cubic.
+Given a vector bundle $E\rightarrow M$ we denote by $\cE$ the space of smooth sections of $E$. We denote by $\oloc(\cE)$ the space of local functionals on $\cE$ (see \cite[Definition 4.5.1.1]{Book2}). An element of $\oloc(\cE)$ will be denoted by
+\[\int_M \omega(\phi, \phi', \dots),\]
+where $\omega$ is a density on $M$ depending on infinite jets of sections of $E$. Note, however, that the integral here is a formal symbol. We denote by $\oloc^+(\cE)\subset \oloc(\cE)$ the subspace of local functionals which are at least cubic.
 
 \subsection{Classical BV Theories}
 
@@ -57,30 +65,20 @@ that is
 \begin{enumerate}
 \item[$(1)$] fiberwise nondegenerate,
 \item[$(2)$] graded skew symmetric, and
-\item[$(3)$] satisfies $\int_M \omega\<e_0, Q e_1\> = (-1)^{|e_0|} \int_M \omega(Q e_0, e_1)$ where $e_i$ are compactly supported sections of $E$ .
+\item[$(3)$] satisfies $\int_M \omega(e_0, Q e_1) = (-1)^{|e_0|} \int_M \omega(Q e_0, e_1)$ where $e_i$ are compactly supported sections of $E$ .
 \end{enumerate}
 \end{itemize}
 \end{definition}
 
-We call $\cE$ the \defterm{space of BV fields}.  
-The pairing $\omega$ equips the algebra of local functionals on $E$ with a shifted bracket, in the following way. In \cite[Chapter 5, Section 3]{CostelloBook}, it is shown that to every functional $f \in \oloc(\cE)$ there exists a symplectic vector field $X_f$ on $\cE$ whose Hamiltonian function is $f$. 
-Note that if $f$ is degree $n$, then $X_f$ is of degree $n+1$ due to the degree of $\omega$. 
-
-\begin{definition}
-The \defterm{BV bracket} $\{-,-\}$ is the bilinear map of cohomological degree $+1$
+We call $\cE$ the \defterm{space of BV fields}. The pairing $\omega$ equips the algebra of local functionals on $E$ with a \defterm{BV bracket} (see \cite[Chapter 5.3]{CostelloBook})
 \[
-\{-,-\}\colon \oloc(\cE) \times \oloc(\cE) \to \oloc(\cE)
+\{-,-\}\colon \oloc(\cE) \times \oloc(\cE) \to \oloc(\cE).
 \]
-defined by sending a pair $(f,g)$ to the local functional $X_f (g)$.
-\end{definition}
-
-\begin{remark}
-Note that the BV bracket in fact defines a bilinear map $\{-, -\}\colon \oloc(\cE)\times\cO(\cE)\rightarrow \cO(\cE)$. However, it does \emph{not} define a bracket on $\cO(\cE)$ itself.
-\end{remark}
 
 The BV bracket satisfies the symmetry property
 \[\{f, g\} = (-1)^{|f| |g|} \{g, f\}\]
-and the graded Jacobi identity. Note that since local functionals do not form an algebra, it is not a (shifted) Poisson bracket. 
+and the Leibniz rule
+
 
 \begin{definition}
 A \defterm{classical BV field theory} (or simply, classical field theory) is a free BV theory $(E, Q, \omega)$ equipped with an even functional
@@ -101,19 +99,54 @@ We will also consider \defterm{$\ZZ/2$-graded classical field theories} which ar
 The data of a classical BV theory can be equivalently encoded in an elliptic $L_\infty$ algebra $L=E[-1]$ equipped with a cyclic structure, i.e. a symplectic isomorphism $L\cong L^![-3]$.
 \end{remark}
 
-A local functional $I$ induces an endomorphism $\{I,-\}$ on the space of all functionals $\cO(E)$. The classical master equation implies that the operator $Q + \{I,-\}$ squares to zero on $\cO(\cE)$, and hence every classical field theory defines a cochain complex
-\begin{equation}\label{bvcplx}
-\left(\cO(\cE), Q + \{I,-\}\right) .
-\end{equation}
-In fact, this has the structure of a differentiable pro-cochain complex, see Definition \ref{dfn: pro}. 
-We will refer to this as the {\em classical BV complex} of the theory. 
-
 \begin{definition}
-A \defterm{morphism} $F\colon (E, Q, \omega, I) \rightsquigarrow (E', Q', \omega', I')$ of classical field theories over the same manifold $M$ is a nonlinear map of vector bundles $E\rightsquigarrow E'$, i.e. a collection $F=\sum_{n\geq 1}^\infty F$ of poly-differential operators $F_n\colon \Sym^n(E)\rightarrow E'$, that intertwines the differentials $Q, Q'$, the pairings $\omega, \omega'$, and the interactions $I,I'$. A morphism is an \defterm{equivalence} if the map $F_1\colon (\cE, Q)\rightarrow (\cE', Q')$ is a quasi-isomorphism.
+A \defterm{morphism} $F\colon (E, Q, \omega, I) \rightsquigarrow (E', Q', \omega', I')$ of classical field theories over the same manifold $M$ is a nonlinear map of vector bundles $E\rightsquigarrow E'$, i.e. a collection $F=\sum_{n\geq 1}^\infty F$ of poly-differential operators $F_n\colon \Sym^n(E)\rightarrow E'$, that intertwines the differentials $Q, Q'$, the pairings $\omega, \omega'$, and the interactions $I,I'$. A morphism is a \defterm{perturbative equivalence} if the map $F_1\colon (\cE, Q)\rightarrow (\cE', Q')$ is a quasi-isomorphism. A classical field theory is \defterm{perturbatively trivial} if it is perturbatively equivalent to the zero theory.
 \end{definition}
 
-For a short background on homological algebra with differentiable pro-cochain complexes, including the notion of quasi-isomorphism, we refer to Appendix \ref{appx: top}.
-For a more thorough introduction, and for which our conventions are based on, we refer to \cite{Book1}.
+We will now describe two primitive examples of equivalences of classical field theories which will be useful in simplifying twisted theories. First, we consider the process of integrating out an auxiliary field.
+
+\begin{prop}
+Fix a volume form $\dvol_M$ on $M$. Suppose $(E, Q, \omega, I)$ is a classical field theory, where $E\cong E_0\oplus (\cO_M\oplus \Dens_M[-1])$ with the symplectic pairing $\omega$ given by a sum of a symplectic pairing $\omega_0$ on $E_0$ and the standard symplectic pairing on the second summand. Denote by $\phi$ a section of $\cO_M$ and by $\phi^*$ a section of $\Dens_M[-1]$. Suppose the BV action is
+\[S_{BV} = S_0 + \frac{1}{2} \int \dvol_M (\phi^2 - 2\phi S_1),\]
+where $S_0$ and $S_1$ are independent of $\phi$. Then the theory $(E, Q, \omega, I)$ is perturbatively equivalent to the theory $(E_0, Q_0, \omega_0, I')$ with the BV action $S_0 - S_1^2/2$, where we set $\phi^* = 0$ and $\phi = S_1$.
+\label{prop:integrateoutfield}
+\end{prop}
+
+\begin{proof}
+Concretely, suppose that the linear part of $S_1$ is given by an operator $Q_1$, and the interacting part of $Q_1$ is given by a functional $I_1 = \sum_{n=1}^\infty I_1^n$.  Then we define the required perturbative equivalence as follows.  First $F_1(e) = (e, Q_1(e), 0) \in E$.  Then, for $n > 1$, define
+\begin{align*}
+F_n \colon \sym^n(E_0) &\to E \\
+e_1 \otimes \cdots \otimes e_n &\mapsto (0, I_1^n(e_1, \ldots, e_n), 0).
+\end{align*}
+These $F_n$ manifestly intertwine the pairings $\omega$ and $\omega'$.  To see that they intertwine the action functionals, we observe that 
+\begin{align*}
+S(F(e)) &= S(e, S_1(e), 0) \\
+&= S_0(e) + \frac 12 \dvol_M \int S_1(e)^2 - 2 S_1(e)^2) \\
+&= S_0(e) - \frac 12 S_1(e)^2 \\
+&= S'(e).
+\end{align*}
+Finally, $F_1$ is a quasi-isomorphism with quasi-inverse given by the projection $(E,Q) \to (E_0,Q_0)$, therefore our specified morphism is an equivalence.
+\end{proof}
+
+We may also remove a trivial BRST doublet.
+
+\begin{prop}
+Suppose $(E, Q, \omega, I)$ is a classical field theory, $F\rightarrow M$ is a graded vector bundle, such that $E\cong E_0\oplus E_1\oplus E_1^![-1]\oplus E_1^!\oplus E_1[-1]$. Denote by $\phi, \phi^*$ sections of $E_1,E_1^![-1]$ and by $\psi, \psi^*$ sections of $E_1^!, E_1[-1]$. Suppose
+\[Q\phi + \{I, \phi\} = \phi - f_\psi \in E_1[-1] ,\qquad Q\psi + \{I, \psi\} = \psi - f_{\phi} \in E_1^![-1],\]
+where $f_\phi$ is independent of $\psi$ and $f_{\psi}$ is independent of $\phi$. Then the theory $(E, Q, \omega, I)$ is perturbatively equivalent to the theory $(E_0, Q_0, \omega_0, I_0)$ with the BV action obtained by setting $\phi = f_\psi, \phi^* = 0,  \psi = f_\phi, \psi^* = 0$ in the original BV action.
+\label{prop:BRSTdoublet}
+\end{prop}
+
+\begin{proof}
+Again, concretely, we'll write $\sum_{n \ge 1} f^{(n)}_\phi$ and $\sum_{n \ge 1} f^{(n)}_{\psi}$ for the Taylor expansions of $f_\phi$ and $f_{\psi}$ respectively.  We can write out a morphism of classical BV theories $F \colon E_0 \to E$ by defining $F_1(e) = (e, f^{(1)}_{\phi}(e),0,f^{(1)}_\psi(e),0)$, and for $n > 1$ defining 
+\[F_n(e_1\otimes e_n) = (0, f^{(n)}_{\phi}(e_1, \ldots, e_n), 0, f^{(n)}_{\psi}(e_1, \ldots, e_n)).\]
+Again, these $F_n$ manifestly intertwine the pairings on $E_0$ and $E$, since the image of $F_n$ lands in an isotropic summand of the $E_1\oplus E_1^![-1]\oplus E_1^!\oplus E_1[-1]$ part of $E$.  Also, by construction, the $F_n$ intertwine the action functionals, since
+\begin{align*}
+S(F(e)) &= S_0(e) + \frac{1}{2} \int_M \omega(f_\psi(e), f_\phi(e) - f_\phi(e)) + \omega(f_\phi(e), f_\psi(e) - f_\psi(e)) \\
+&= S_0(e).
+\end{align*}
+Again, $F_1$ is a quasi-isomorphism between the classical BV complexes with quasi-inverse given by the projection onto the summand $E_0$.
+\end{proof}
 
 \subsection{Symmetries in the Classical BV Formalism} \label{symmetry_section}
 
@@ -150,7 +183,7 @@ These are required to satisfy the following conditions:
 \begin{itemize}
 \item The $G$-action on $\cE$ preserves the symplectic pairing $\omega$, differential $Q$ and the interaction term $I$.
 
-\item For every $x\in\fg$, the vctor field $X_{I^{(1)}(x)}$ on $\cE$ coincides with the infinitesimal action on $\cE$.
+\item For every $x\in\fg$, the vector field $X_{I^{(1)}(x)}$ on $\cE$ coincides with the infinitesimal action on $\cE$.
 \end{itemize}
 \end{definition}
 
@@ -159,6 +192,8 @@ While we allow for $L_\infty$ actions of Lie algebras, we only consider strict a
 \end{remark}
 
 \subsection{The Classical Factorization Algebra}
+
+\pavel{Is this section needed?} \chris{something is needed if we want to connect to the story from our previous paper: we'd like to say that all of these twisted SUSY field theories (or rather, the topological ones) produce $\bb E_n$ algebras, no?  Certainly not all of them are interesting.  I don't know whether we need the section here, but we would like to say something somewhere.}
 
 Let $(E, Q, \omega, I)$ be a classical BV theory. We recall the formalism of \cite{Book1,Book2} which extracts a factorization algebra on spacetime.
 
@@ -170,9 +205,9 @@ Let $(E, Q, \omega, I)$ be a classical field theory on $M$. The \defterm{classic
 \end{definition}
 
 Notice that the BV complex we defined in the previous section, Equation (\ref{bvcplx}), is the global sections of the factorization algebra along $M$.
-The BV complex can be thought of as the complex of functions on the derived critical locus of the action functional.
+The BV complex can be thought of as the complex of functions on the derived critical locus of the BRST action.
 It makes sense to restrict fields to any open set $U \subset M$. 
-Thus, likewise, the value of the factorization algebra on an open set $U \subset M$ can be interpreted as functions on the critical locus of the action functional where we restrict the theory to $U$. 
+Thus, likewise, the value of the factorization algebra on an open set $U \subset M$ can be interpreted as functions on the critical locus of the BRST action where we restrict the theory to $U$. 
 
 The fact that the assignment $U \mapsto \Obs(U)$ defines a factorization algebra can be found in \cite[Section 3]{Book2}. 
 
@@ -225,7 +260,7 @@ If the fields of the classical BRST theory are denoted by $\phi$, we denote thei
 
 \subsection{Examples of Classical Field Theories}
 
-In this section we give some examples of classical field theories we will use. All theories we consider in this section except for the Yang--Mills theory are $\ZZ$-graded, i.e. all fields are considered even with respect to the $\ZZ/2$-grading.
+In this section we give some examples of classical field theories we will use. All theories we consider in this section are $\ZZ$-graded, i.e. all fields are considered even with respect to the $\ZZ/2$-grading.
 
 \subsubsection{Generalized BF theory} \label{gen_BF_section}
 
@@ -317,65 +352,6 @@ For $Y=M=\pt$, $X$ a Calabi-Yau 3-fold and $\fg$ an ordinary Lie algebra we reco
 If $\fh$ is an $L_\infty$ algebra, $\fg = \fh \oplus \fh^*[d-3]$ carries a natural $L_\infty$ structure given by combining the original $L_\infty$ structure on the first term and the coadjoint action of the first term on the second term. The $L_\infty$ algebra $\fg$ carries a natural symmetric pairing of degree $d-3$ given by the obvious pairing between $\fh$ and $\fh^*$. Generalized Chern--Simons theory for $\fg$ in this case recovers the generalized BF theory from Definition \ref{def:generalizedBF}.
 \end{example}
 
-\subsubsection{Yang--Mills Theory with Spinorial Matter} \label{YM_section}
-
-Let us now give an example of a theory which is not partially holomorphic. We will give a general description of the Yang--Mills theory on a vector space $V_\RR = \RR^n$ with adjoint spinorial matter. Denote by $V=V_\RR\otimes_\RR \CC$ its complexification.
-
-Fix a Lie algebra $\fg$ equipped with a nondegenerate symmetric bilinear pairing $\langle -, -\rangle$ and a spinorial representation $\Sigma$ of $\so(V)$ with an $\so(V)$-equivariant pairing $\Gamma \colon \Sym^2(\Sigma)\to V$. We define the Clifford action $\rho\colon V\rightarrow \hom(\Sigma, \Sigma^*)$ by
-\begin{equation}
-(\rho(v) Q_1, Q_2) = (v, \Gamma(Q_1, Q_2))
-\label{eq:Gammaspinorpairing}
-\end{equation}
-for any $Q_1, Q_2\in\Sigma$ and $v\in V$.
-
-The fields of Yang--Mills theory are as follows:
-\begin{itemize}
-\item A connection $A \in \Omega^1(V_\RR; \fg)$ on the trivial bundle.
-
-\item A section $\lambda \in \Omega^0(V_\RR; \Pi \Sigma \otimes \fg)$.
-
-\item The ghost field $c\in\Omega^0(V_\RR; \fg)[1]$.
-\end{itemize}
-
-Thus, the bundle of BRST fields is
-\[F = (\Omega^1(V_\RR)\oplus \Omega^0(V_\RR; \Pi\Sigma)\oplus \Omega^0(V_\RR)[1])\otimes \fg.\]
-The corresponding local super dg Lie algebra $L=F[-1]$ is
-\[
-L \;\;\; = \begin{array}{ccccc}
-& \ul{0} & & \ul{1} & \\ 
-& & & & \\
-& \Omega^0(V_\RR; \gg) & \to & \Omega^1(V_\RR; \gg) \oplus \Omega^0(V_\RR; \Pi \Sigma \otimes \gg) & 
-\end{array}
-\]
-whose differential is the de Rham differential $\Omega^0(V_\RR; \gg)\rightarrow \Omega^1(V_\RR; \gg)$ and the bracket is induced from the Lie bracket on $\gg$.
-
-Denote by $F_A = \d_{\dR} A + \frac{1}{2}[A\wedge A]$ the curvature of $A$ and let $\sd D_A \colon \Sigma \to \Sigma^*$ be the Dirac operator obtained from $\Gamma$ (see Section \ref{sec: susy}).
-
-The BRST action is given by
-\[S(A, \lambda) = \int_{V_\RR} \left\langle -\frac{1}{4} F_A \wedge \ast F_A + \frac{1}{2}(\lambda, \sd D_A \lambda)\right\rangle.\]
-
-The associated BV theory $(E, Q, \omega, I)$ is given as follows (see also \cite[Section 3.1]{ElliottYoo1}). Let $A^*, \lambda^*, c^*$ be the antifields corresponding to $A, \lambda, c$ respectively. The bundle of BV fields is
-\[E = \Omega^1(V_\RR; \fg)\oplus \Omega^0(V_\RR; \Pi\Sigma\otimes \fg)\oplus \Omega^0(V_\RR; \fg)[1] \oplus \Omega^{n-1}(V_\RR; \fg^*)[-1]\oplus \Omega^n(V_\RR; \Pi\Sigma^*\otimes \fg^*)[-1]\oplus \Omega^n(V_\RR; \fg^*)[-2].\]
-The pairing $\omega$ on $E$ is induced by the evaluation pairings $\gg^*\otimes \gg\rightarrow \CC$ and $\Sigma^*\otimes\Sigma\rightarrow\CC$. The BV action is given by
-\[S_{BV} = \int_{V_\RR} \left\langle -\frac{1}{4} F_A \wedge \ast F_A + \frac{1}{2}(\lambda, \sd D_A \lambda)\right\rangle - (\d_A c, A^*) + ([\lambda, c], \lambda^*) + \frac{1}{2}([c, c], c^*).\]
-
-We conclude this section with a discussion of the Poincar\'e invariance of classical Yang--Mills theory.
-
-\begin{definition}
-The \defterm{Poincar\'e group} is $\mr{ISO}(V_\RR) = \Spin(V_\RR) \ltimes \RR^n$. The \defterm{Poincar\'e algebra} is its complexified Lie algebra $\mf{iso}(V)$.
-\end{definition}
-
-The Poincar\'e group acts, in the sense of Definition \ref{group_action_def}, on Yang--Mills theory on $\RR^n$. Indeed, there is an obvious Poincar\'e action on fields where we use that $\Sigma$ is a representation of $\Spin(V_\RR)$. The corresponding Hamiltonian is given by
-\begin{equation}
-I^{(1)}(v) = \int_{V_\RR} -(L_{v}A, A^*) - (v.\lambda, \lambda^*) - (v.c)c^*,
-\label{eq:Poincareaction}
-\end{equation}
-for $v\in\mf{iso}(V)$, where $v.\lambda$ contains both a derivative and the $\so(V)$ action on $\Sigma$.
-
-\subsubsection{The free scalar and free fermion}
-
-\brian{does this warrant it's own definition?}
-
 \subsection{Dimensional Reduction} \label{dim_red_section}
 
 In this section we formulate the procedure of dimensional reduction of a classical field theory. Fix a submersion $p\colon M\rightarrow N$ equipped with a fiberwise volume form, i.e. an isomorphism $p^*\Dens_N\cong \Dens_M$.  The idea is that the \emph{dimensional reduction} of a classical field theory on $M$ along the submersion $p$ is the theory obtained by restricting to those fields which are constant along the fibers of $p$.  We will begin with an abstract definition of dimensional reduction, then prove that if $M = N \times \RR^k$, and we consider field theories which are translation invariant along the fiber, then this procedure is well-defined.
@@ -413,9 +389,6 @@ Suppose $(E_M, Q_M, \omega_M, I_M)$ is a classical field theory on $M$ and $p\co
 Suppose $M=N\times \RR$ and choose a translation-invariant density along the $\RR$ direction. If the original classical field theory is translation-invariant along the $\RR$ direction, dimensional reductions exist.
 \label{prop:dimensionalreductionunique}
 \end{prop}
-
-Therefore, it makes sense to talk about ``the'' dimensional reduction of a classical field theory along the projection $p \colon N \times \RR \to N$: there exists a dimensional reduction which is unique up to canonical isomorphism.
-
 \begin{proof} \textbf{Uniqueness}. We begin by showing that any two dimensional reductions are isomorphic and moreover such an isomorphism is unique if it exists. Since $p\colon M\rightarrow N$ is a homotopy equivalence, the functor $p^*$ establishes an isomorphism between the category of graded vector bundles on $N$ and on $M$. In a similar way, $p^*$ establishes an equivalence between the category of graded vector bundles $E_N$ on $N$ equipped with a nondegenerate pairing $E_N\otimes E_N\rightarrow \Dens_N[-1]$ and a similar category for $M$.
 
 Since $\cE_N\rightarrow \cE_M$ is injective, the diagram
@@ -429,6 +402,10 @@ uniquely determines $Q_N$ from $Q_M$. Moreover, the condition $p^* I_M = I_N$ un
 
 \textbf{Existence}. Now suppose $(E_M, Q_M, \omega_M, I_M)$ is translation-invariant along the $\RR$ direction. Translation invariance provides the descent datum to construct the bundle of fields $E_N$ on $N$ equipped with a nondegenerate pairing $\omega_N$. Moreover, it shows that the differential $Q_M$ preserves the subspace $\cE_N\hookrightarrow \cE_M$. The restriction of $I_M$ under the same embedding is independent of the $\RR$ factor by translation invariance, so $I_N=p^* I_M$ is again a local functional.
 \end{proof}
+
+\begin{remark}
+Therefore, it makes sense to talk about ``the'' dimensional reduction of a classical field theory along the projection $p \colon N \times \RR \to N$: there exists a dimensional reduction which is unique up to a canonical isomorphism.
+\end{remark}
 
 We will now describe dimensional reductions of the classical Chern--Simons theory.
 
@@ -472,7 +449,7 @@ In this section we recall the framework for supersymmetry following \cite{Elliot
 
 \subsection{Supersymmetry algebras}
 
-Let $V_\RR = \RR^n$ endowed with its nondegenerate bilinear form and $V=V_\RR\otimes_\RR\CC$ its complexification. Consider the Lie algebra $\so(V)$. Let us recall the following facts:
+Let $V_\RR = \RR^n$ endowed with a nondegenerate symmetric bilinear form and $V=V_\RR\otimes_\RR\CC$ its complexification. Consider the Lie algebra $\so(V)$. Let us recall the following facts:
 \begin{itemize}
 \item If $n$ is odd, $\so(V)$ has a distinguished fundamental representation called the \defterm{spin} representation $S$.
 
@@ -511,398 +488,92 @@ Fix the following data:
 
 Note that the supertranslation Lie algebra $T$ is a $\Spin(V_\RR)\times G_R$-equivariant super Lie algebra.
 
-Consider a spacetime manifold $M$ which is an affine space over $V_\RR$. Let $\ISO(V_\RR) = \Spin(V_\RR)\ltimes V_\RR$ be the Poincar\'{e} group which acts in the obvious way on $M$.
+Consider a spacetime manifold $M$ which is an affine space over $V_\RR$. Let $\ISO(V_\RR) = \Spin(V_\RR)\ltimes V_\RR$ be the \defterm{Poincar\'{e} group} which acts in the obvious way on $M$.
 
 \begin{definition}
 A classical field theory $(E, Q, \omega, I)$ is \defterm{supersymmetric} if $E\rightarrow M$ is an $\ISO(V_\RR)\times G_R$-equivariant vector bundle and the infinitesimal strict action of the translation Lie algebra $V$ on the classical theory is extended to a $\Spin(V_\RR)\times G_R$-equivariant $L_\infty$ action of the supertranslation Lie algebra $T$ on the classical theory.
 \end{definition}
 
-\subsection{Vector multiplet} \label{sect:vectormultipletSUSY}
+\subsection{Division algebras and supersymmetry}
+\label{sect:divisionalgebras}
 
-For certain choices of the spinorial representation, the Yang--Mills theory from Section \ref{YM_section} admits an action of supersymmetry. In this section we consider pairs consisting of a supersymmetry algebra and an instance of Yang--Mills theory with matter, in one of the following four situations:
-\begin{itemize}
- \item Dimension $n=3$ with $\Sigma = S$, the 2-dimensional Dirac representation.
- \item Dimension $n=4$ with $\Sigma = S_+ \oplus S_-$, 4-dimensional Dirac representation.
- \item Dimension $n=6$ with $\Sigma = S_+ \otimes W$ where $W$ is a 2-dimensional symplectic vector space, the 8-dimensional symplectic Weyl representation.
- \item Dimension $n=10$ with $\Sigma = S_+$, the 16-dimensional Weyl representation.
-\end{itemize}
-These correspond to the 3d $\cN=1$, 4d $\cN=1$, 6d $\cN=(1, 0)$ and 10d $\cN=(1, 0)$ vector multiplets respectively.
+We will now recall a relationship between certain ``minimal'' supersymmetry algebras and division algebras. Our treatment will essentially follow \cite{BaezHuerta}.
 
-We will construct, in each of these cases, an $L_\infty$ action of the super Lie algebra $\mf{A}$ on the theory. Following Definition \ref{infinitesimal_action_def}, we have to construct a collection of functionals $I^{(1)}, I^{(2)}, \dots$, where $I^{(k)}\colon \mf{A}^{\otimes k}\rightarrow \oloc(\cE)$, satisfying the classical master equation. The supersymmetry action we construct will extend the Poincar\'{e} action from \eqref{eq:Poincareaction}, so we just have to specify the values of $I^{(k)}$ on the supersymmetry generators in $\Sigma$.
-
-Recall that $\Gamma\colon\Sym^2(\Sigma)\rightarrow V$ gives rise to an action map
-\[\rho\colon V\otimes \Sigma\longrightarrow \Sigma^*\]
-by \eqref{eq:Gammaspinorpairing}. We may also identify $\wedge^2(V)\rightarrow \so(V)$ via
-\[\omega\mapsto (w\mapsto -2\iota_{(w, -)} \omega).\]
-This gives rise to an action map
-\[\wedge^2(V)\otimes \Sigma\longrightarrow \Sigma\]
-of two-forms on spinors. Finally, we choose a pairing $\Gamma\colon \Sym^2(\Sigma^*)\rightarrow V$ which again induces an action map $\rho\colon V\otimes \Sigma^*\rightarrow \Sigma$ which satisfies the Clifford relation
-\[\rho(v_1)\rho(v_2) + \rho(v_2)\rho(v_1) = 2(v_1, v_2)\]
-on $\Sigma$ and $\Sigma^*$.
-
-\begin{thm}
-The functional $I_\rho = I_{BV} + I^{(1)} + I^{(2)}$ with
-\brian{Where is the Poincare part?}
-\begin{align*}
-I^{(1)}(Q) &= \int (\Gamma(Q, \lambda), A^*) + \frac{1}{2}(\rho(F_A), \lambda^*) \\
-I^{(2)}(Q_1, Q_2) &= \int \frac{1}{4}(\Gamma(Q_1, Q_2), \Gamma(\lambda^*, \lambda^*)) - \frac{1}{2}(Q_1, \lambda^*)(Q_2, \lambda^*) - \iota_{\Gamma(Q_1, Q_2)} A c^*
-\end{align*}
-satisfies the classical master equation
-\[(Q+\d_{CE}) I_{\rho} + \frac{1}{2}\{I_\rho, I_\rho\} = 0.\]
-\label{thm:vectormultipletSUSY}
-\brian{confused by the notation here. Is $Q$ a supercharge or a linear BRST operator?}
-\brian{Also, we should be consistent and either use $S_{BV}$ or $I_{BV}$.}
-\end{thm}
-
-The rest of the section will be devoted to the proof of the above theorem.
-
-Consider the map $q\colon \wedge^\bullet(V)\rightarrow \Cl(V)$ given by antisymmetrization, so that, for instance,
-\begin{equation}
-q(v_1\wedge v_2) = v_1v_2 - (v_1, v_2).
-\label{eq:quantizationtwoforms}
-\end{equation}
-
-The resulting action $\wedge^2(V)\otimes \Sigma\rightarrow \Sigma$ then coincides with the original action of $\so(V)$ on the spinorial representation $\Sigma$.
-
-The following properties of the Clifford action will be useful. Here the first property expresses $\so(V)$-invariance of the pairing $\Gamma\colon\Sigma\otimes \Sigma\rightarrow V$, the second property follows from \eqref{eq:quantizationtwoforms} and the third property was proved in \cite[equation 7.6]{Snygg}.
-
-\begin{prop}
-One has the following:
+Let $A_\RR$ be a (possibly non-associative) real algebra equipped with an antiinvolution $\sigma\colon A_\RR\rightarrow A_\RR$. We make the following assumptions:
 \begin{enumerate}
-\item For $X\in\wedge^2(V)$ and $Q_1,Q_2\in\Sigma$ we have
-\[\Gamma(Q_1, \rho(X) Q_2) + \Gamma(Q_2, \rho(X) Q_1) = -2\iota_{\Gamma(Q_1, Q_2)} X.\]
-\brian{is there a similar expression for one-forms?}
+\item The map $\Re(x)=x\mapsto (x + \sigma(x))/2$ defines a projector onto the subspace of $A_\RR$ spanned by the unit.
 
-\item Suppose $Q_1,Q_2\in\Sigma$ and $\lambda\in\Gamma(M, \Sigma\otimes \fg)$. Then
-\[\sd{D}_A\rho(\Gamma(Q_1, \lambda)) Q_2 = \rho(d_A \Gamma(Q_1, \lambda)) Q_2 + (Q_1, \sd{D}_A \lambda) Q_2.\]
-
-\item Suppose $Q\in\Sigma$ and $X\in\Omega^2(M; \fg)$. Then
-\[\sd{D}_A(\rho(X) Q) = \rho(d_A X)Q + (-1)^n\rho(\ast d_A\ast X) Q.\]
+\item By the previous assumption we have a quadratic form $x\sigma(x)\colon A_\RR\rightarrow \RR$. We assume that it is nondegenerate.
 \end{enumerate}
-\label{prop:cliffordactionproperties}
-\end{prop}
 
-In addition, we have the following important property of the $\Gamma$-pairing which holds in the above cases. This was proved in \cite{Schray} in dimension 10 and explained in \cite{BaezHuerta} using division algebras in all dimensions.
+For a $2\times 2$-matrix $M$ with entries in $A_\RR$ we define its hermitian adjoint $M^\dagger$ by transposing the matrix and applying $\sigma$ to the entries. We define $V_\RR$ to be the space of $2\times 2$ Hermitian matrices with values in $A_\RR$, so that $\dim(V_\RR) = \dim(A_\RR) + 2$. $V_\RR$ carries a nondegenerate quadratic form given by $M\mapsto -\det(M)$. Moreover, it carries an orthogonal involution $\widetilde{M} = M - \tr(M)\cdot 1$.
+
+We denote the complexification of $A_\RR$ by $A=A\otimes_\RR \CC$ and extend $\sigma$ $\CC$-linearly to $A$. So, the complexification $V=V\otimes_\RR\CC$ is the space of $2\times 2$ Hermitian matrices with values in $A$.
+
+Given a left $A$-module, we may turn it into a right $A$-module via the antiinvolution $\sigma\colon A\rightarrow A$. Since $A$ is a Frobenius algebra, we have the following basic construction 
+
+\begin{lemma}
+Suppose $M$ is a left $A$-module and $N$ a right $A$-module equipped with a nondegenerate pairing $(-, -)\colon M\otimes N\rightarrow \CC$ satisfying $(am, n) = (m, na)$ for every $a\in A$, $m\in M$ and $n\in N$. Then there is a unique map $(-, -)^A\colon M\otimes N\rightarrow A$ of $(A, A)$-bimodules whose real part is $(-, -)$.
+\label{lm:extendpairing}
+\end{lemma}
+
+Let $\Sigma=A\oplus A$ and $\Sigma^* = A\oplus A$. We have action maps
+\[V\otimes \Sigma\rightarrow \Sigma^*,\qquad V\otimes \Sigma^*\rightarrow \Sigma\]
+given, respectively, by
+\[\rho(M)Q = M Q,\qquad \rho(M)Q = \widetilde{M} Q.\]
+
+The following is proved in \cite[Proposition 6]{BaezHuerta}.
 
 \begin{prop}
-Suppose $Q_1, Q_2, Q_3\in\Sigma$. Then
-\[\rho(\Gamma(Q_1, Q_2))Q_3 + \rho(\Gamma(Q_2, Q_3))Q_1 + \rho(\Gamma(Q_3, Q_1))Q_2 = 0.\]
-\label{prop:3psi}
+The action maps $V\otimes \Sigma\rightarrow \Sigma^*$ and $V\otimes \Sigma^*\rightarrow \Sigma$ satisfy the Clifford relation
+\[\rho(M)\rho(M) = -\det(M)\cdot 1.\]
 \end{prop}
 
-We are now ready to prove Theorem \ref{thm:vectormultipletSUSY}. The classical master equation decomposes into the following equations:
-\begin{align*}
-\{S_{BV}, I^{(1)}\} &= 0 \\
-\{S_{BV}, I^{(2)}\} + \d_{CE} I^{(1)} + \frac{1}{2}\{I^{(1)}, I^{(1)}\} &= 0 \\
-\d_{CE} I^{(2)} + \{I^{(1)}, I^{(2)}\} &= 0 \\
-\{I^{(2)}, I^{(2)}\} &= 0.
-\end{align*}
+We have a nondegenerate scalar spinorial pairing
+\[\Sigma\otimes \Sigma^*\longrightarrow \CC\]
+given by
+\[(Q_1, Q_2) = \Re(Q_1^\dagger Q_2).\]
+It obviously satisfies $(Q_1 \sigma(a), Q_2) = (Q_1, Q_2 a)$. The extension to an $A$-valued pairing provided by Lemma \ref{lm:extendpairing} is given by
+\[(Q_1, Q_2)^A = Q_1^\dagger Q_2.\]
 
-Note that the last equation is automatically satisfied since $I^{(2)}$ is independent of $\lambda$ and $c$. The rest of the claims will be proved in a sequence of Lemmas. To simplify the expressions, we drop the integrals and omit the natural pairings.
+By duality we obtain maps $\Gamma\colon\Sym^2(\Sigma)\rightarrow V$ and $\Gamma\colon \Sym^2(\Sigma^*)\rightarrow V$ given, respectively, by
+\[\Gamma(Q_1, Q_2) = \widetilde{Q_1Q_2^\dagger + Q_2Q_1^\dagger},\qquad \Gamma(Q_1, Q_2) = Q_1Q_2^\dagger + Q_2Q_1^\dagger.\]
 
-\begin{lemma}
-One has $\{S_{BV}, I^{(1)}(Q)\} = 0$.
-\end{lemma}
-\begin{proof}
-Let us decompose $S_{BV} = \sum_{i=1}^5 S_{BV}^i$ into individual summands.
-
-The first term gives
-\begin{align*}
-\{S_{BV}^1, I^{(1)}(Q)\} &= -\frac{1}{2} d_A \Gamma(Q, \lambda)\wedge \ast F_A\\
-&= -\frac{1}{2} \Gamma(Q, \lambda)\wedge d_A \ast F_A \\
-&= -\frac{1}{2}(-1)^{n-1} d_A\ast F_A\wedge \Gamma(Q, \lambda) \\
-&= -\frac{1}{2}(-1)^{n-1} (\ast d_A \ast F_A, \Gamma(Q, \lambda)).
-\end{align*}
-
-The second term gives
-\begin{align*}
-\{S_{BV}^2, I^{(1)}(Q)\} &= -\frac{1}{2}(\lambda, \rho(\Gamma(Q, \lambda))\lambda) + \frac{1}{2}(\rho(F_A) Q, \sd{D}_A\lambda) \\
-&= -\frac{1}{2}(\Gamma(Q, \lambda), \Gamma(\lambda, \lambda))  - \frac{1}{2}(\lambda, \sd{D}_A(\rho(F_A) Q)) \\
-&= -\frac{1}{2}(\Gamma(Q, \lambda), \Gamma(\lambda, \lambda)) - \frac{1}{2} (-1)^n (\lambda, \rho(\ast d_A\ast F_A) Q),
-\end{align*}
-where we have used Proposition \ref{prop:cliffordactionproperties} (property (3)) and the Bianchi identity in the last line.
-
-By \eqref{eq:Gammaspinorpairing} and Proposition \ref{prop:3psi} we have $(\Gamma(Q, \lambda), \Gamma(\lambda, \lambda)) = 0$, so $\{S_{BV}^1 + S_{BV}^2, I^{(1)}(Q)\} = 0$.
-
-The third term gives
-\begin{align*}
-\{S_{BV}^3, I^{(1)}(Q)\} &= -[\Gamma(Q, \lambda), c]\wedge A^* - \frac{1}{2}\langle\rho(d_A d_A c)Q, \lambda^*\rangle \\
-&= -\Gamma(Q, [\lambda, c])\wedge A^* - \frac{1}{2}(\rho([F_A, c]) Q, \lambda^*).
-\end{align*}
-
-The fourth term gives
-\begin{align*}
-\{S_{BV}^4, I^{(1)}(Q)\} &= \frac{1}{2}([\rho(F_A) Q, c], \lambda^*) + \Gamma(Q, [\lambda, c])\wedge A^*.
-\end{align*}
-
-Again, we get $\{S_{BV}^3 + S_{BV}^4, I^{(1)}(Q)\}$ = 0. The fifth term gives $\{S_{BV}^5, I^{(1)}(Q)\} = 0$.
-\end{proof}
-
-\begin{remark}
-The previous Lemma expresses the fact that the super Yang--Mills action is supersymmetric which is one of the main results of \cite{BaezHuerta}.
-\end{remark}
-
-\begin{lemma}
-One has
-\[\{S_{BV}, I^{(2)}\} + \d_{CE} I^{(1)} + \frac{1}{2}\{I^{(1)}, I^{(1)}\} = 0.\]
-\end{lemma}
-\begin{proof}
-Evaluating the equation
-\[\{S_{BV}, I^{(2)}\} + \d_{CE} I^{(1)} + \frac{1}{2}\{I^{(1)}, I^{(1)}\} = 0\]
-on $v_1, v_2\in \mf{iso}(V)$, the claim reduces to the fact that \eqref{eq:Poincareaction} defines a strict Lie action. Evaluating it on $v\in\mf{iso}(V)$ and $Q\in\Sigma$, the claim reduces to the fact that $I^{(1)}$ is Poincar\'{e}-invariant. So, the only nontrivial check is for $Q_1,Q_2\in\Sigma$.
-
-The individual terms are
-\begin{align*}
-\{I^{(1)}, I^{(1)}\}(Q_1, Q_2) = &-2\{I^{(1)}(Q_1), I^{(1)}(Q_2)\} \\
-= &-(\rho(d_A \Gamma(Q_1, \lambda)) Q_2, \lambda^*) - \Gamma(Q_2, \rho(F_A)Q_1)\wedge A^* \\
-&-(\rho(d_A \Gamma(Q_2, \lambda)) Q_1, \lambda^*) - \Gamma(Q_1, \rho(F_A)Q_2)\wedge A^*,
-\end{align*}
-\begin{align*}
-(\d_{CE} I^{(1)})(Q_1, Q_2) &= I^{(1)}(\Gamma(Q_1, Q_2)) \\
-&= -L_{\Gamma(Q_1, Q_2)}(A)\wedge A^* -(\Gamma(Q_1, Q_2).\lambda, \lambda^*) - (\Gamma(Q_1, Q_2).c) c^*
-\end{align*}
-and
-\begin{align*}
-\{S_{BV}, I^{(2)}(Q_1, Q_2)\} = &-\frac{1}{2}(Q_2, \lambda^*)(Q_1, \sd{D}_A \lambda + [c, \lambda^*]) - \frac{1}{2}(Q_1, \lambda^*)(Q_2, \sd{D}_A \lambda + [c, \lambda^*]) \\
-&+\frac{1}{2}(\Gamma(Q_1, Q_2), \Gamma(\lambda^*, \sd{D}_A \lambda + [c, \lambda^*])) + \iota_{\Gamma(Q_1, Q_2)}(d_A c) c^* + d_A\iota_{\Gamma(Q_1, Q_2)} A\wedge A^* \\
-&+ ([\lambda, \iota_{\Gamma(Q_1, Q_2)}A], \lambda^*) - [\iota_{\Gamma(Q_1, Q_2)} A, c] c^*
-\end{align*}
-The total coefficient in front of $A^*$ is
-\[-\frac{1}{2}\Gamma(Q_1, \rho(F_A)Q_2) - \frac{1}{2}\Gamma(Q_2, \rho(F_A) Q_1) - L_{\Gamma(Q_1, Q_2)} A + d_A \iota_{\Gamma(Q_1, Q_2)} A.\]
-Using Proposition \ref{prop:cliffordactionproperties} (property (1)) we get that the sum of the first two terms is $\iota_{\Gamma(Q_1, Q_2)}F_A$ which cancels the last two terms.
-
-The total coefficient in front of $c^*$ is
-\[-\Gamma(Q_1, Q_2).c + \iota_{\Gamma(Q_1, Q_2)}(d_A c) - [\iota_{\Gamma(Q_1, Q_2)} A, c] = 0.\]
-
-The total coefficient in front of $\lambda^*$ is
-\begin{align*}
-&-\frac{1}{2}\rho(d_A \Gamma(Q_1, \lambda))Q_2 -\frac{1}{2}\rho(d_A \Gamma(Q_2, \lambda))Q_1 - \Gamma(Q_1, Q_2).\lambda \\
-&+ \frac{1}{2}\rho(\Gamma(Q_1, Q_2))\sd{D}_A\lambda - \frac{1}{2}(Q_2, \sd{D}_A\lambda) Q_1 -\frac{1}{2}(Q_1, \sd{D}_A\lambda) Q_2 + [\lambda, (\Gamma(Q_1, Q_2), A)]
-\end{align*}
-Using Proposition \ref{prop:cliffordactionproperties} (property (2)) the first, second, fifth and sixth terms combine to
-\[-\frac{1}{2} \sd{D}_A\rho(\Gamma(Q_1, \lambda))Q_2 - \frac{1}{2} \sd{D}_A\rho(\Gamma(Q_2, \lambda)) Q_1\]
-which is equal to $\frac{1}{2} \sd{D}_A \rho(\Gamma(Q_1, Q_2))\lambda$ by Proposition \ref{prop:3psi}. Using the Clifford relation this term cancels the rest of the terms.
-\end{proof}
-
-Evaluating the equation
-\[\d_{CE} I^{(2)} + \{I^{(1)}, I^{(2)}\} = 0\]
-on $v_1, v_2, v_3\in\mf{iso}(V)$ or on $v_1, v_2\in\mf{iso}(V)$ and $Q\in\Sigma$ we automatically get zero. Evaluating it on $v\in\mf{iso}(V)$ and $Q_1, Q_2\in\Sigma$ we get Poincar\'{e}-invariance of $I^{(2)}$.
-
-\begin{lemma}
-\[\{I^{(1)}, I^{(2)}\}(Q_1, Q_2, Q_3) = 0\]
-for every $Q_1, Q_2, Q_3\in\Sigma$.
-\end{lemma}
-\begin{proof}
-We have
-\begin{align*}
-\{I^{(1)}(Q_1), I^{(2)}(Q_2, Q_3)\} = &-\iota_{\Gamma(Q_2, Q_3)}\Gamma(Q_1, \lambda) c^* + \frac{1}{2} (\Gamma(Q_2, Q_3), \Gamma(\rho(A^*) Q_1, \lambda^*)) \\
-&- \frac{1}{2}(Q_2, \rho(A^*)Q_1)(Q_3, \lambda^*) - \frac{1}{2}(Q_3, \rho(A^*) Q_1)(Q_2, \lambda^*).
-\end{align*}
-
-$\{I^{(1)}, I^{(2)}\}$ is obtained by cyclically symmetrizing the above expression. By Proposition \ref{prop:3psi} the cyclic symmetrization of the term with $c^*$ is zero. The Clifford relation implies that
-\begin{align*}
-\frac{1}{2} (\Gamma(Q_2, Q_3), \Gamma(\rho(A^*) Q_1, \lambda^*)) &= -\frac{1}{2}(\Gamma(Q_2, Q_3), \Gamma(\rho(A^*)\lambda^*, Q_1)) + (\Gamma(Q_2, Q_3), A^*) (Q_1, \lambda^*) \\
-&= -\frac{1}{2}(\rho(\Gamma(Q_2, Q_3)) Q_1, \rho(A^*)\lambda^*) + (\Gamma(Q_2, Q_3), A^*) (Q_1, \lambda^*).
-\end{align*}
-Therefore, again using Proposition \ref{prop:3psi} we see that the cyclic symmetrization of the terms with $A^*$ vanishes.
-\end{proof}
-
-We can deduce supersymmetry for other super Yang-Mills theories using dimensional reduction, specifically Proposition \ref{dim_red_SUSY_prop}.
-\begin{corollary}
-Let $n$ be one of the special dimensions $3,4,6$ or 10, and choose $m < n$.  Let $\Sigma'$ be the $\so(m)$ representation obtained by restriction of the $\so(n)$ representation $\Sigma$.  Then the super Poincar\'e algebra
-\[\mf A' = \mf{iso}(m) \oplus \Pi \Sigma',\]
-obtained by restricting the $n$-dimensional super Poincar\'e algebra associated to $\Sigma$, acts on the $m$-dimensional super Yang-Mills theory $\mf L'$ with matter representation $\Sigma'$.
-\end{corollary}
-
-\begin{proof}
-This follows immediately by applying Proposition \ref{dim_red_SUSY_prop} to the $\mf A$-supersymmetric theory $\mf L$ on $\RR^n$.
-\end{proof}
-
-\begin{remark}
-We can further include the action of at least a subalgebra of the algebra of R-symmetries in each example. \chris{quantify which}
-\end{remark}
-
-\subsection{Supersymmetric matter}
-
-\subsubsection{The 4d $\cN=1$ chiral multiplet}
-
-
-\subsubsection{The 6d $\cN=(1, 0)$ hypermultiplet}
-
-In this subsection, $S_+ / S_-$ denote the positive/negative irreducible spin representations of $\mf{so}(6; \CC)$. 
-The spinorial representation we will be interested in is $\Sigma = S_+ \otimes W_+$, where $\dim_{\CC}(W_+) = 2$ is a two-dimensional multiplicity space. 
-To define the half hyper multiplet we fix a complex, symplectic vector space $U$ whose symplectic form we call $\omega_U$.
-We combine the symplectic forms $\omega_U, \omega_{W_+}$ to define a pairing 
-\[
-(-,-)_{W_+ \otimes U}  := \omega_{W_+} \otimes \omega_U : (W_+ \otimes U)^{\otimes 2} \to \CC .
-\]
-The spinorial pairing $(-,-) : S_+ \otimes S_- \to \CC$ together with the obvious symplectic form $\omega_{W_+}$ on $W_+$, and the symplectic form $\omega_U$ on $U$ induces a pairing (that we denote by the same symbol)
-\[
-(-,-)_U : (S_\pm \otimes U) \otimes (S_\mp \otimes U) \to \CC .
-%(-,-)_U : (S_\pm \otimes W_+ \otimes U)^{\otimes 2} \to \CC  
-\]
-
-\begin{remark}
-The terminology ``half" hyper multiplet is to be consistent with the terminology in the physics literature. 
-The (full) hyper multiplet refers to a multiplet which depends on the choice of a (not necessarily symplectic) vector space $R$. 
-The relationship between the two is obtained by looking at the cotangent space $U = T^*R$.
-That is, the half hyper multiplet with values in the symplectic vector space $U = T^* R$ (with its obvious symplectic structure) is the (full) hyper multiplet for $R$. 
-\end{remark}
-
-The field content for the 6-dimensional half hyper multiplet with values in $U$ is:
-\begin{itemize}
-\item a scalar valued in $W_+ \otimes U$; $\phi \in C^\infty(\RR^4 ; W_+ \otimes U)$;
-\item a negative Weyl spinor valued in $U$; $\psi \in C^\infty(\RR^4 ; S_- \otimes U)$ .
-\end{itemize}
-
-The space of BRST fields is thus
-\[
-F = C^\infty(\RR^4 ; W_+ \otimes U \oplus S_- \otimes U) .
-\]
-
-The BRST action is
-\[
-S (\phi, \psi) = \int_{\RR^4} - \frac{1}{2}  (\d \phi \wedge * \d \phi)_{W_+ \otimes U} + \frac{1}{2} (\psi , \sd \dd \psi)_U .
-\]
-As usual, we denote the antifields by $\phi^*$ and $\psi^*$. 
-
-The action of supersymmetry is given by a linear and quadratic functional:
-\begin{align*}
-I^{(1)} (Q) & = \int (\phi^*, (Q, \psi))_{W_+ \otimes U} + (\psi^*, \rho(\d \phi) Q)_U \\
-I^{(2)} (Q_1 , Q_2) & =  \int \frac{1}{4}(\Gamma(Q_1, Q_2)_{W_+} , \Gamma(\psi^*, \psi^*)_{U}) %
-%\textcolor{red}{-\frac{1}{2} (Q_1, \psi^*)_U(Q_2, \psi^*)_U  }.
-\end{align*}
-where $Q, Q_1,Q_2 \in \Sigma = S_+ \otimes W_+$. 
-We point out some conventions in the definition of $I^{(2)}$. 
-Define $\Gamma (Q_1,Q_2)_{W_+} \in V$ as the image of $Q_1 \otimes Q_2$ under the composition
-\[
-\Sigma \otimes \Sigma = (S_+ \otimes W_+) \otimes (S_+ \otimes W_+) \cong (S_+ \otimes S_+) \otimes (W_+ \otimes W_+) \xto{\Gamma \otimes \omega_{W_+}} V .
-\]
-
-In order to prove the hypermultiplet is supersymmetric, we will need to following proposition about $6$-dimensional spinor representations. 
-
-\begin{prop}\label{prop: new3psi}
-Suppose $Q_1,Q_2 \in \Sigma = S_+ \otimes W_+$ and $Q_3 \in S_-$. 
-Then
-\[
-(Q_1, Q_3) Q_2 + (Q_2, Q_3)Q_1 = \rho(\Gamma(Q_1,Q_2)) Q_3
-\]
-\end{prop}
-
-%Similarly, $\Gamma(\psi^*, \psi^*)_U \in V$ is defined as the image of $\psi^* \otimes \psi^*$ under the composition 
-%\[
-%(S_+ \otimes U) \otimes (S_+ \otimes U) \cong (S_+ \otimes S_+) \otimes (U \otimes U) \xto{\Gamma \otimes \omega_{U}} V .
-%\]
-%The pairing in the first term in $I^{(2)}$ is then induced from the natural one on $V$. 
-%Also, $(Q_1, \psi^*)$ is defined as the image of $Q_1 \otimes \psi^*$ under the composition \brian{is this one zero???}
-
-The following result states that these functionals encode an off-shell action of six-dimensional $\cN=(1,0)$ supersymmetry on the half hypermultiplet valued in $U$. 
-The proof is very similar to the case of the four-dimensional $\cN=1$ chiral multiplet. 
+We will now state two important properties of $\Gamma$ and the spinorial pairing. The following statement was proved in \cite[Theorem 11]{BaezHuerta} (see also \cite{Schray} for the case $\dim(V)=10$).
 
 \begin{thm}
-The functional $\fS = S + I^{(1)} + I^{(2)}$ satisfies the classical master equation
-\begin{equation}\label{CMEhyper}
-\d_{\rm Lie} \fS + \frac{1}{2} \{\fS, \fS\} = 0 .
-\end{equation}
+Suppose $A$ is alternative, i.e. $a\otimes b\otimes c\mapsto (ab)c - a(bc)$ is completely antisymmetric. For $Q_1, Q_2, Q_3\in\Sigma$ we have
+\[\rho(\Gamma(Q_1, Q_2))Q_3 + \rho(\Gamma(Q_2, Q_3))Q_1 + \rho(\Gamma(Q_2, Q_3))Q_1 = 0.\]
+\label{thm:3psi}
 \end{thm}
 
-We decompose the classical master equation (\ref{CMEhyper}) into the following equations:
-\begin{equation}\label{CMEhyper2}
-\begin{array}{rrrrrr}
-\{S , I^{(1)}\} & = & 0 \\ 
-\{S, I^{(2)}\} + \d_{CE} I^{(1)} + \frac{1}{2} \{I^{(1)}, I^{(1)}\} & = & 0 \\
-\d_{CE} I^{(2)} + \{I^{(1)}, I^{(2)}\} & =& 0 \\
-\{I^{(2)}, I^{(2)}\} & =& 0
-\end{array}
-\end{equation}
+If we moreover assume $A$ is associative, there is a relationship between the scalar spinorial pairing and $\Gamma$.
 
-The last equation is automatically satisfied since $I^{(2)}$ is independent of $\phi$ and $\psi$. 
-
-The first equation in (\ref{CMEhyper2}) states that the classical action for the chiral multiplet is supersymmetric. 
-
-\begin{lemma} \label{lem: hyper1}
-One has $\{S, I^{(1)}\} (Q) = 0$ for all $Q \in \Sigma$. 
-\end{lemma}
+\begin{thm}
+Suppose $A$ is associative. For $Q_1, Q_2\in\Sigma$ and $Q_3\in\Sigma^*$ we have
+\[Q_1(Q_2, Q_3)^A + Q_2(Q_1, Q_3)^A = \rho(\Gamma(Q_1, Q_2)) Q_3.\]
+\label{thm:matter3psi}
+\end{thm}
 \begin{proof}
-Observe
-\[
-- \{(\d \phi , \d \phi), (\phi^* , (Q, \psi)) \} = - 2 (\d (Q, \psi) , \d \phi ) .
-\]
-and
-\[
-\{(\psi, \sd \dd \psi) , (\psi^*, \rho(\d \phi) Q) \} = 2 (\rho(\d \phi) Q, \sd \dd \psi) .
-\]
-The sum of these two terms is zero by Lemma \ref{lem: oneform}. 
+The right-hand side is
+\[(Q_1Q_2^\dagger + Q_2Q_1^\dagger)Q_3\]
+which by associativity can be rewritten as
+\[Q_1(Q_2^\dagger Q_3) + Q_2(Q_1^\dagger Q_3)\]
+which is the left-hand side.
 \end{proof}
 
-Next, we move on to the second equation in (\ref{CMEhyper2}). 
+We will be interested in the following four examples:
+\begin{enumerate}
+\item $A_\RR = \RR$. We have $\dim(V) = 3$ and $\Sigma$ is the spin representation of $\Spin(3)$ (3d $\mc N=1$ supersymmetry).
 
-\begin{lemma} 
-One has
-\begin{equation}\label{CMEhyper3}
-\{S, I^{(2)}\} + \d_{CE} I^{(1)} + \frac{1}{2} \{I^{(1)}, I^{(1)}\} = 0 .
-\end{equation}
-\end{lemma}
-\begin{proof}
-Evaluating expression (\ref{CMEhyper3}) on $v_1,v_2 \in \mf{iso}(V)$ reduces to the claim that (??) defines a strict Lie action. 
-Evaluating on $v \in \mf{iso}(V)$ and $Q \in \Sigma$, the claim reduces to the fact that $I^{(1)}$ is Poincar\'{e} invariant.
-So, the only nontrivial term to check is the evaluation on $Q_1,Q_2 \in \Sigma$. 
+\item $A_\RR = \CC$. We have $A = \CC[x]/(x^2+1)$ with $\sigma(x) = -x$. Moreover, $\dim(V) = 4$ and $\Sigma=S_+\oplus S_-$ is the sum of semi-spin representations (4d $\mc N=1$ supersymmetry).
 
-The individual terms are:
-\begin{align*}
-\{I^{(1)}, I^{(1)}\}(Q_1, Q_2) = & - \phi^* (Q_1, \rho(\d \phi) Q_2) - \phi^* (Q_2, \rho(\d \phi)Q_1) \\ &  -  (\psi^*, \rho(\d(Q_1,\psi))Q_2) - (\psi^*, \rho(\d(Q_2, \psi)) Q_1) 
-\end{align*}
+\item $A_\RR = \mathbb{H}$. We have $A=\eend(W_+)$, where $W_+$ is a two-dimensional symplectic vector space with $\sigma$ given by the dual operator. Moreover, $\dim(V) = 6$ and $\Sigma = S_+\oplus W_+$ (6d $\mc N=(1, 0)$ supersymmetry).
 
-\begin{align*}
-(\d_{CE}I^{(1)})(Q_1,Q_2) = & - \phi^* L_{\Gamma(Q_1,Q_2)} (\phi) - (\psi^*, \Gamma(Q_1,Q_2) . \psi)
-\end{align*}
+\item $A_\RR = \mathbb{O}$. We have $\dim(V) = 10$ and $\Sigma = S_+$ is a semi-spin representation (10d $\mc N=(1, 0)$ supersymmetry).
+\end{enumerate}
 
-and
-\begin{align*}
-\{S, I^{(2)}(Q_1,Q_2)\} = & \frac{1}{2} \Gamma(Q_1,Q_2) \Gamma(\psi^*, \sd \dd \psi) 
-% \textcolor{red}{- \frac{1}{2} (Q_1, \psi^*) (Q_2, \sd \dd \psi) - \frac{1}{2} (Q_1, \sd \dd \psi) (Q_2, \psi^*) }.
-\end{align*}
-Note that we can rewrite this as $\frac{1}{2} \rho(\Gamma(Q_1, Q_2)) \sd \dd \psi$. 
-
-We first collect all terms in Equation (\ref{CMEhyper3}) proportional to $\phi^*$:
-\[
-- \frac{1}{2} (Q_1, \rho(\d\phi) Q_2) - \frac{1}{2} (Q_2, \rho(\d \phi) Q_1) - L_{\Gamma(Q_1,Q_2)} \phi .
-\]
-By the Clifford identity
-\brian{ $v \wedge \Gamma(Q_1, Q_2) = (Q_1 , \rho(v) Q_2)$} we observe that the first two terms cancel with the third term.  
-
-Next, we collect all terms in Equation (\ref{CMEhyper3}) proportional to $\psi^*$:
-\begin{equation}\label{psistar}
-\begin{array}{cccc}
-& - & \displaystyle \frac{1}{2} \rho(\d(Q_1,\psi))Q_2 - \frac{1}{2} \rho(\d(Q_2, \psi)) Q_1 - \Gamma(Q_1,Q_2) . \psi
-\\ 
-& + &\displaystyle \frac{1}{2} \rho(\Gamma(Q_1,Q_2)) \sd \dd \psi 
-%\textcolor{red}{ - \frac{1}{2} (Q_2, \sd \dd \psi)Q_1 - \frac{1}{2} (Q_1, \sd \dd \psi)Q_2}
-\end{array}
-\end{equation}
-By Proposition \ref{prop:cliffordactionproperties} item (3), the first and second terms can be written as:
-\[
-- \frac{1}{2} \rho(\d(Q_1,\psi))Q_2 - \frac{1}{2} \rho(\d(Q_2, \psi)) Q_1 = - \frac{1}{2} \sd \dd \left( (Q_1, \psi)Q_2 + (Q_2 , \psi)Q_1 \right).
-\]
-Applying Proposition \ref{prop: new3psi}, to $Q_3 = \psi$, this becomes $-\frac{1}{2} \sd \dd \rho(\Gamma(Q_1,Q_2) \psi)$. 
-Finally, by the Clifford identity, the sum of this term with the fourth term in (\ref{psistar}) is precisely $\Gamma(Q_1,Q_2) . \psi$.
-So the expression (\ref{psistar}) is identically zero. 
-\end{proof}
-
-\begin{lemma}
-\[\{I^{(1)}, I^{(2)}\}(Q_1, Q_2, Q_3) = 0\]
-for every $Q_1, Q_2, Q_3\in \Sigma$.
-\end{lemma}
-\begin{proof}
-We have
-\begin{align*}
-\{I^{(1)}(Q_1), I^{(2)}(Q_2, Q_3)\} & = \frac{1}{2} (\Gamma(Q_2, Q_3), \Gamma(\psi^*, \phi^* Q_1)) \\ & = (\psi^*, \phi^* \rho(\Gamma(Q_2,Q_3)) Q_1)  .
-\end{align*}
-The expression
-$\{I^{(1)}, I^{(2)}\}(Q_1,Q_2,Q_3$ is obtained by cyclically symmetrizing the above expression. By Proposition \ref{prop:3psi} the cyclic symmetrization is identically zero.
-\end{proof}
-
-\subsection{Supersymmetric couplings}
+All four examples are alternative, while the first three examples are moreover associative.
 
 \subsection{Supersymmetric twisting}
 
@@ -979,12 +650,490 @@ The following proposition is an immediate consequence of Proposition \ref{prop:s
 
 \begin{prop}
 Fix a twisting datum $(Q, \alpha)$, where $\Gamma_V(Q, Q) = 0$. Then the dimensional reduction of the twist of the classical field theory $E$ is isomorphic to the twist of the dimensional reduction of $E$.
+\label{prop:twistdimensionalreduction}
 \end{prop}
 
 \subsection{Twisting Homomorphisms and Curved Backgrounds}
 
+\subsection{A-Type Twists} \label{A_twist_section}
+\chris{...}
 
-\section{Twists}
+\section{Supersymmetric Yang--Mills theories}
+
+In this section we construct supersymmetry action on all super Yang--Mills theories. We have the following variants of the super Yang--Mills theory depending on $\dim(\Sigma)$:
+\begin{itemize}
+\item (16 supercharges). This theory exists in dimensions 2 through 10 and it depends on a Lie algebra $\fg$.
+
+\item (8 supercharges). This theory exists in dimensions 2 through 6 and it depends on a Lie algebra $\fg$ together with a symplectic $\fg$-representation $U$.
+
+\item (4 supercharges). This theory exists in dimensions 2 through 4 and it depends on a Lie algebra $\fg$ together with a $\fg$-representation $R$.
+
+\item (2 supercharges). This theory exists in dimensions 2 through 3 and it depends on a Lie algebra $\fg$ together with an orthogonal $\fg$-representation $P$.
+\end{itemize}
+
+In each case the lower-dimensional theories are obtained by dimensional reduction from the theory in the highest dimension: for instance, 7d $\mc N=1$ super Yang--Mills (16 supercharges) is obtained by dimensional reduction from 10d $\mc N=(1, 0)$ super Yang--Mills. So, it will be enough to construct the supersymmetry action in these highest-dimensional theories.
+
+\subsection{Pure super Yang--Mills theory}
+\label{sect:gaugemultipletSUSY}
+
+We begin with a description of the pure minimally supersymmetric Yang--Mills theories in dimensions 3, 4, 6 and 10.
+
+Fix an \emph{alternative} algebra $A$ as in Section \ref{sect:divisionalgebras} and consider the associated vector space $V=A\oplus \CC^2$ and the spinorial representations $\Sigma$ and $\Sigma^*$. Let $\fg$ be a Lie algebra equipped with a nondegenerate symmetric bilinear pairing. The fields of the Yang--Mills theory are as follows:
+\begin{itemize}
+\item A connection $A \in \Omega^1(V_\RR; \fg)$ on the trivial bundle.
+
+\item A spinor $\lambda \in \Gamma(V_\RR; \Pi \Sigma \otimes \fg)$.
+
+\item A ghost field $c\in\Gamma(V_\RR; \Pi\fg)$.
+\end{itemize}
+We also introduce their antifields $A^*\in\Omega^1(V_\RR; \Pi\fg)$, $\lambda\in\Gamma(V_\RR; \Sigma^*\otimes \fg)$ and $c^*\in\Gamma(V_\RR; \fg)$.
+
+Denote by $F_A = \d A + \frac{1}{2}[A\wedge A]$ the curvature of $A$ and let $\sd\d_A$ be the twisted Dirac operator obtained from $\Gamma$ (see Section \ref{sect:spinors}).
+
+The BRST action is given by
+\[S(A, \lambda) = \int_{V_\RR}\dvol \left( -\frac{1}{4} (F_A, F_A) + \frac{1}{2}(\lambda, \sd \d_A \lambda)\right).\]
+
+We introduce the gauge transformations
+\[\delta A = -\d_A c,\qquad \delta \lambda = [c, \lambda],\]
+so that the BV action is given by
+\begin{equation}
+S_{\gauge} = \int_{V_\RR}\dvol \left( -\frac{1}{4} (F_A, F_A) + \frac{1}{2}(\lambda, \sd\d_A \lambda) + (\d_A c, A^*) + ([c, \lambda], \lambda^*) + \frac{1}{2}([c, c], c^*)\right).
+\label{eq:YMBVaction}
+\end{equation}
+
+To simplify the notation, the pairing on $\fg$ from now on will be implicit.
+
+The Poincar\'e group acts, in the sense of Definition \ref{group_action_def}, on Yang--Mills theory on $\RR^n$. Indeed, there is an obvious Poincar\'e action on fields where we use that $\Sigma$ is a representation of $\Spin(V_\RR)$. The corresponding Hamiltonian is given by
+\begin{equation}
+I_{\gauge}^{(1)}(v) = \int_{V_\RR}\dvol\left( (L_{v}A, A^*) - (v.\lambda, \lambda^*) - (v.c)c^*\right),
+\label{eq:YMPoincareaction}
+\end{equation}
+for $v\in\mf{iso}(V)$, where $v.\lambda$ contains both a derivative and the $\so(V)$ action on $\Sigma$.
+
+We will now construct an $L_\infty$ action of the super Lie algebra $\mf{A}$ on the theory. Following Definition \ref{infinitesimal_action_def}, we have to construct a collection of functionals $I_{\gauge}^{(1)}, I_{\gauge}^{(2)}, \dots$, where $I_{\gauge}^{(k)}\colon \mf{A}^{\otimes k}\rightarrow \oloc(\cE)$, satisfying the classical master equation. The supersymmetry action we construct will extend the Poincar\'{e} action from \eqref{eq:YMPoincareaction}, so we just have to specify the values of $I_{\gauge}^{(k)}$ on the supersymmetry generators in $\Sigma$. The action of supersymmetry is given by a linear and quadratic functionals
+\begin{align*}
+I_{\gauge}^{(1)}(Q) &= \int_{V_\RR}\dvol\left( -(\Gamma(Q, \lambda), A^*) + \frac{1}{2}(\rho(F_A)Q, \lambda^*)\right) \\
+I_{\gauge}^{(2)}(Q_1, Q_2) &= \int_{V_\RR}\dvol\left( \frac{1}{4}(\Gamma(Q_1, Q_2), \Gamma(\lambda^*, \lambda^*)) - \frac{1}{2}(Q_1, \lambda^*)(Q_2, \lambda^*) - \iota_{\Gamma(Q_1, Q_2)} A c^*\right).
+\end{align*}
+
+\begin{thm}
+The functional $\fS_{\gauge} = S_{\gauge} + I_{\gauge}^{(1)} + I_{\gauge}^{(2)}$ satisfies the classical master equation
+\[\d_{CE} \fS_{\gauge} + \frac{1}{2}\{\fS_{\gauge}, \fS_{\gauge}\} = 0.\]
+\label{thm:gaugemultipletSUSY}
+\end{thm}
+
+The rest of the section will be devoted to the proof of the above theorem. The classical master equation decomposes into the following equations:
+\begin{align*}
+\{S_{\gauge}, I_{\gauge}^{(1)}\} &= 0 \\
+\{S_{\gauge}, I_{\gauge}^{(2)}\} + \d_{CE} I_{\gauge}^{(1)} + \frac{1}{2}\{I_{\gauge}^{(1)}, I_{\gauge}^{(1)}\} &= 0 \\
+\d_{CE} I_{\gauge}^{(2)} + \{I_{\gauge}^{(1)}, I_{\gauge}^{(2)}\} &= 0 \\
+\{I_{\gauge}^{(2)}, I_{\gauge}^{(2)}\} &= 0.
+\end{align*}
+
+Note that the last equation is automatically satisfied since $I_{\gauge}^{(2)}$ is independent of $\lambda$ and $c$. The rest of the claims will be proved in a sequence of Lemmas. To simplify the expressions, we drop the integrals.
+
+\begin{lemma}
+One has $\{S_{\gauge}, I_{\gauge}^{(1)}(Q)\} = 0$.
+\label{lm:gaugemultiplet1}
+\end{lemma}
+\begin{proof}
+Let us decompose $S_{\gauge} = \sum_{i=1}^5 S_{\gauge}^i$ into individual summands.
+
+The first term gives
+\begin{align*}
+\{S_{\gauge}^1, I_{\gauge}^{(1)}(Q)\} &= -\frac{1}{2} (\d_A \Gamma(Q, \lambda), F_A)\\
+&= -\frac{1}{2}(-1)^{n-1} (\ast \d_A \ast F_A, \Gamma(Q, \lambda)).
+\end{align*}
+
+The second term gives
+\begin{align*}
+\{S_{\gauge}^2, I_{\gauge}^{(1)}(Q)\} &= -\frac{1}{2}(\lambda, \rho(\Gamma(Q, \lambda))\lambda) + \frac{1}{2}(\rho(F_A) Q, \sd{\d}_A\lambda) \\
+&= -\frac{1}{2}(\Gamma(Q, \lambda), \Gamma(\lambda, \lambda))  - \frac{1}{2}(\lambda, \sd{\d}_A(\rho(F_A) Q)) \\
+&= -\frac{1}{2}(\Gamma(Q, \lambda), \Gamma(\lambda, \lambda)) - \frac{1}{2} (-1)^n (\lambda, \rho(\ast \d_A\ast F_A) Q),
+\end{align*}
+where we have used Proposition \ref{prop:cliffordactionproperty3} and the Bianchi identity in the last line.
+
+By \eqref{eq:Gammaspinorpairing} and Theorem \ref{thm:3psi} we have $(\Gamma(Q, \lambda), \Gamma(\lambda, \lambda)) = 0$, so $\{S_{\gauge}^1 + S_{\gauge}^2, I_{\gauge}^{(1)}(Q)\} = 0$.
+
+Finally, $\{S_{\gauge}^3 + S_{\gauge}^4 + S_{\gauge}^5, I_{\gauge}^{(1)}(Q)\} = 0$ due to gauge-invariance of $I^{(1)}(Q)$.
+\end{proof}
+
+\begin{remark}
+The previous Lemma expresses the fact that the pure super Yang--Mills action is supersymmetric; our proof essentially follows \cite{BaezHuerta}.
+\end{remark}
+
+\begin{lemma}
+One has
+\[\{S_{\gauge}, I_{\gauge}^{(2)}\} + \d_{CE} I_{\gauge}^{(1)} + \frac{1}{2}\{I_{\gauge}^{(1)}, I_{\gauge}^{(1)}\} = 0.\]
+\label{lm:gaugemultiplet2}
+\end{lemma}
+\begin{proof}
+Evaluating the equation
+\[\{S_{\gauge}, I_{\gauge}^{(2)}\} + \d_{CE} I_{\gauge}^{(1)} + \frac{1}{2}\{I_{\gauge}^{(1)}, I_{\gauge}^{(1)}\} = 0\]
+on $v_1, v_2\in \mf{iso}(V)$, the claim reduces to the fact that \eqref{eq:YMPoincareaction} defines a strict Lie action. Evaluating it on $v\in\mf{iso}(V)$ and $Q\in\Sigma$, the claim reduces to the fact that $I_{\gauge}^{(1)}$ is Poincar\'{e}-invariant. So, the only nontrivial check is for $Q_1,Q_2\in\Sigma$.
+
+The individual terms are
+\begin{align*}
+\frac{1}{2}\{I_{\gauge}^{(1)}, I_{\gauge}^{(1)}\}(Q_1, Q_2) = &-\{I_{\gauge}^{(1)}(Q_1), I_{\gauge}^{(1)}(Q_2)\} \\
+= &-\frac{1}{2}(\rho(\d_A \Gamma(Q_1, \lambda)) Q_2, \lambda^*) + \frac{1}{2}(\Gamma(Q_2, \rho(F_A)Q_1), A^*) \\
+&-\frac{1}{2}(\rho(\d_A \Gamma(Q_2, \lambda)) Q_1, \lambda^*) + \frac{1}{2}(\Gamma(Q_1, \rho(F_A)Q_2), A^*),
+\end{align*}
+\begin{align*}
+(\d_{CE} I_{\gauge}^{(1)})(Q_1, Q_2) &= I_{\gauge}^{(1)}(\Gamma(Q_1, Q_2)) \\
+&= (L_{\Gamma(Q_1, Q_2)}(A), A^*) -(\Gamma(Q_1, Q_2).\lambda, \lambda^*) - (\Gamma(Q_1, Q_2).c) c^*
+\end{align*}
+and
+\begin{align*}
+\{S_{\gauge}, I_{\gauge}^{(2)}(Q_1, Q_2)\} = &-\frac{1}{2}(Q_2, \lambda^*)(Q_1, \sd{\d}_A \lambda + [c, \lambda^*]) - \frac{1}{2}(Q_1, \lambda^*)(Q_2, \sd{\d}_A \lambda + [c, \lambda^*]) \\
+&+\frac{1}{2}(\Gamma(Q_1, Q_2), \Gamma(\lambda^*, \sd{\d}_A \lambda + [c, \lambda^*])) + \iota_{\Gamma(Q_1, Q_2)}(\d_A c) c^* - (\d_A\iota_{\Gamma(Q_1, Q_2)} A, A^*) \\
+&+ ([\lambda, \iota_{\Gamma(Q_1, Q_2)}A], \lambda^*) - [\iota_{\Gamma(Q_1, Q_2)} A, c] c^*
+\end{align*}
+The total coefficient in front of $A^*$ is
+\[\frac{1}{2}\Gamma(Q_1, \rho(F_A)Q_2) + \frac{1}{2}\Gamma(Q_2, \rho(F_A) Q_1) + L_{\Gamma(Q_1, Q_2)} A - \d_A \iota_{\Gamma(Q_1, Q_2)} A.\]
+Using Proposition \ref{prop:cliffordactionproperty1} we get that the sum of the first two terms is $-\iota_{\Gamma(Q_1, Q_2)}F_A$ which cancels the last two terms.
+
+The total coefficient in front of $c^*$ is
+\[-\Gamma(Q_1, Q_2).c + \iota_{\Gamma(Q_1, Q_2)}(\d_A c) - [\iota_{\Gamma(Q_1, Q_2)} A, c] = 0.\]
+
+The total coefficient in front of $\lambda^*$ is
+\begin{align*}
+&-\frac{1}{2}\rho(\d_A \Gamma(Q_1, \lambda))Q_2 -\frac{1}{2}\rho(\d_A \Gamma(Q_2, \lambda))Q_1 - \Gamma(Q_1, Q_2).\lambda \\
+&+ \frac{1}{2}\rho(\Gamma(Q_1, Q_2))\sd{\d}_A\lambda - \frac{1}{2}(Q_2, \sd{\d}_A\lambda) Q_1 -\frac{1}{2}(Q_1, \sd{\d}_A\lambda) Q_2 + [\lambda, (\Gamma(Q_1, Q_2), A)]
+\end{align*}
+Using Proposition \ref{prop:cliffordactionproperty2} the first, second, fifth and sixth terms combine to
+\[-\frac{1}{2} \sd{\d}_A\rho(\Gamma(Q_1, \lambda))Q_2 - \frac{1}{2} \sd{\d}_A\rho(\Gamma(Q_2, \lambda)) Q_1\]
+which is equal to $\frac{1}{2} \sd{\d}_A \rho(\Gamma(Q_1, Q_2))\lambda$ by Theorem \ref{thm:3psi}. Using the Clifford relation this term cancels the rest of the terms.
+\end{proof}
+
+Evaluating the equation
+\[\d_{CE} I_{\gauge}^{(2)} + \{I_{\gauge}^{(1)}, I_{\gauge}^{(2)}\} = 0\]
+on $v_1, v_2, v_3\in\mf{iso}(V)$ or on $v_1, v_2\in\mf{iso}(V)$ and $Q\in\Sigma$ we automatically get zero. Evaluating it on $v\in\mf{iso}(V)$ and $Q_1, Q_2\in\Sigma$ we get Poincar\'{e}-invariance of $I_{\gauge}^{(2)}$.
+
+\begin{lemma}
+\[\{I_{\gauge}^{(1)}, I_{\gauge}^{(2)}\}(Q_1, Q_2, Q_3) = 0\]
+for every $Q_1, Q_2, Q_3\in\Sigma$.
+\label{lm:gaugemultiplet3}
+\end{lemma}
+\begin{proof}
+We have
+\begin{align*}
+\{I_{\gauge}^{(1)}(Q_1), I_{\gauge}^{(2)}(Q_2, Q_3)\} = &-\iota_{\Gamma(Q_2, Q_3)}\Gamma(Q_1, \lambda) c^* - \frac{1}{2} (\Gamma(Q_2, Q_3), \Gamma(\rho(A^*) Q_1, \lambda^*)) \\
+&+ \frac{1}{2}(Q_2, \rho(A^*)Q_1)(Q_3, \lambda^*) + \frac{1}{2}(Q_3, \rho(A^*) Q_1)(Q_2, \lambda^*).
+\end{align*}
+
+$\{I_{\gauge}^{(1)}, I_{\gauge}^{(2)}\}(Q_1, Q_2, Q_3)$ is obtained by cyclically symmetrizing the above expression. By Theorem \ref{thm:3psi} the cyclic symmetrization of the term with $c^*$ is zero. The Clifford relation implies that
+\begin{align*}
+\frac{1}{2} (\Gamma(Q_2, Q_3), \Gamma(\rho(A^*) Q_1, \lambda^*)) &= -\frac{1}{2}(\Gamma(Q_2, Q_3), \Gamma(\rho(A^*)\lambda^*, Q_1)) + (\Gamma(Q_2, Q_3), A^*) (Q_1, \lambda^*) \\
+&= -\frac{1}{2}(\rho(\Gamma(Q_2, Q_3)) Q_1, \rho(A^*)\lambda^*) + (\Gamma(Q_2, Q_3), A^*) (Q_1, \lambda^*).
+\end{align*}
+Therefore, again using Theorem \ref{thm:3psi} we see that the cyclic symmetrization of the terms with $A^*$ vanishes.
+\end{proof}
+
+\begin{comment}
+\pavel{This might go in the coupling section.}
+We can deduce supersymmetry for other super Yang-Mills theories using dimensional reduction, specifically Proposition \ref{dim_red_SUSY_prop}.
+\begin{corollary}
+Let $n$ be one of the special dimensions $3,4,6$ or 10, and choose $m < n$.  Let $\Sigma'$ be the $\so(m)$ representation obtained by restriction of the $\so(n)$ representation $\Sigma$.  Then the super Poincar\'e algebra
+\[\mf A' = \mf{iso}(m) \oplus \Pi \Sigma',\]
+obtained by restricting the $n$-dimensional super Poincar\'e algebra associated to $\Sigma$, acts on the $m$-dimensional super Yang-Mills theory $\mf L'$ with matter representation $\Sigma'$.
+\end{corollary}
+
+\begin{proof}
+This follows immediately by applying Proposition \ref{dim_red_SUSY_prop} to the $\mf A$-supersymmetric theory $\mf L$ on $\RR^n$.
+\end{proof}
+
+\begin{remark}
+We can further include the action of at least a subalgebra of the algebra of R-symmetries in each example. \chris{quantify which}
+\end{remark}
+\end{comment}
+
+\subsection{Matter multiplet}
+\label{sect:mattermultipletSUSY}
+
+Fix an \emph{associative} algebra $A$ as in Section \ref{sect:divisionalgebras} and consider the associated vector space $V=A\oplus \CC^2$ and the spinorial representations $\Sigma$ and $\Sigma^*$. Note that $\Sigma$ and $\Sigma^*$ are naturally right $A$-modules; the Clifford multiplication $V\otimes \Sigma\rightarrow \Sigma^*$ and the spinorial pairing $\Sigma\otimes \Sigma^*\rightarrow A$ are maps of right $A$-modules. We will use the antiinvolution $\sigma\colon A\rightarrow A$ to turn left $A$-modules into right $A$-modules.
+
+Let $P$ be a left $A$-module equipped with a $\CC$-valued nondegenerate symmetric bilinear pairing such that
+\[(av, w) = (v, \sigma(a)w).\]
+Moreover, assume $P$ carries a $\fg$-action commuting with the $A$-module structure and preserving the bilinear pairing. Explicitly, for $A_\RR=\RR, \CC, \mathbb{H}$ we get the following data:
+\begin{itemize}
+\item $A_\RR=\RR$, so $A=\CC$. We are looking for a $\fg$-representation $P$ equipped with a nondegenerate symmetric bilinear pairing.
+
+\item $A_\RR=\CC$, so $A=\CC[x]/(x^2+1)$. A left $A$-module $P$ splits as $P=P_+\oplus P_-$, where $x$ acts as $\pm i$ on $P_{\pm}$. Note that with respect to the right $A$-action $x$ acts as $\mp i$ on $P_{\pm}$. So, the symmetric bilinear pairing identifies $P_+\cong P_-^*$. In other words, the data boils down to a $\fg$-representation $R$, so that $P = R\oplus R^*$.
+
+\item $A_\RR=\mathbb{H}$, so $A=\eend(W_+)$. A left $A$-module is necessarily of the form $P\cong W_+\otimes U$, where $A$ just acts on $W_+$. Compatibility of the orthogonal pairing on $P$ with the $A$-action implies that it is given by a product of the symplectic pairing on $W_+$ and a symplectic pairing on $U$. So, the data boils down a symplectic $\fg$-representation $U$.
+\end{itemize}
+
+We are going to construct a theory on $V_\RR$ describing a matter multiplet valued in $P$. The BRST fields are given as follows:
+\begin{itemize}
+\item a scalar $\phi\in\Gamma(V_\RR; P)$;
+\item a spinor $\psi\in\Gamma(V_\RR; \Pi \Sigma^*\otimes_A P)$.
+\end{itemize}
+As usual, we denote the antifields by $\phi^*\in\Gamma(V_\RR; \Pi P)$ and $\psi^*\in\Gamma(V_\RR; \Sigma\otimes_A P)$.
+
+We extend the pairings on $P$ and between $\Sigma$ and $\Sigma^*$ to a pairing between $\Sigma\otimes_A P$ and $\Sigma^*\otimes_A P$ in the following way. Given $\sum_i \tilde{s}_i\otimes v_i\in \Sigma^*\otimes_A P$ and $\sum_j s_j\otimes w_j\in\Sigma\otimes_A P$, their pairing is
+\begin{equation}
+\sum_{i, j} \Re((v_i, w_j)^A (s_j, \tilde{s}_i)^A),
+\label{eq:spinorialmatterpairing}
+\end{equation}
+where we extend both pairings to $A$-valued pairings using Lemma \ref{lm:extendpairing}. We may also extend the $\Gamma$-pairing to a map
+\[\Gamma\colon \Sym^2(\Sigma^*\otimes_A P)\rightarrow V\]
+defined by the property
+\[(v, \Gamma(\psi_1, \psi_2)) = (\psi_1, \rho(v) \psi_2),\qquad v\in V,\ \psi_i\in \Sigma^*\otimes_A P.\]
+
+The BV action for the matter multiplet is
+\[
+S_{\matter} = \int_{V_\RR} \dvol \left(\frac{1}{2}  (\d_A \phi, \d_A \phi) + (\psi , \sd \d_A \psi) + 2 (\lambda\phi, \psi) + (c\psi, \psi^*) - (c\phi, \phi^*)\right),
+\]
+where we use the pairing \eqref{eq:spinorialmatterpairing} in the second term.
+
+It is Poincar\'{e}-invariant with the corresponding Hamiltonian
+\begin{equation}
+I_{\matter}^{(1)}(v) = \int_{V_\RR}\dvol\left( (L_{v}A, \phi^*) - (v.\psi, \psi^*)\right),
+\label{eq:matterPoincareaction}
+\end{equation}
+for $v\in\mf{iso}(V)$.
+
+The action of supersymmetry is given by a linear and quadratic functional:
+\begin{align*}
+I_{\matter}^{(1)} (Q) & = \int_{V_\RR}\dvol\left( ((Q, \psi), \phi^*) + \frac{1}{2}(\rho(\d_A \phi) Q, \psi^*)\right) \\
+I_{\matter}^{(2)} (Q_1 , Q_2) & = \frac{1}{4}\int_{V_\RR} \dvol(\Gamma(Q_1, Q_2) , \Gamma(\psi^*, \psi^*))
+\end{align*}
+where $Q, Q_1,Q_2 \in \Sigma$.
+
+We consider the full action of the super Yang--Mills theory
+\[S_{\BV} = S_{\gauge} + S_{\matter}\]
+together with a supersymmetry action functionals
+\[I^{(1)} = I^{(1)}_{\gauge} + I^{(1)}_{\matter},\qquad I^{(2)} = I^{(2)}_{\gauge} + I^{(2)}_{\matter}.\]
+
+The following result states that these functionals encode an off-shell action of the supersymmetry algebra.
+
+\begin{thm}
+The functional $\fS = S_{\BV} + I_{\BV}^{(1)} + I_{\BV}^{(2)}$ satisfies the classical master equation
+\begin{equation}
+\label{CMEYM}
+\d_{CE} \fS + \frac{1}{2} \{\fS, \fS\} = 0 .
+\end{equation}
+\label{thm:YMSUSY}
+\end{thm}
+
+The rest of this section is devoted to the proof of Theorem \ref{thm:YMSUSY}. The classical master equation \eqref{CMEYM} decomposes into a sequence of equations
+\begin{equation}
+\label{CMEYM2}
+\begin{array}{rrrrrr}
+\{S_{\BV} , I^{(1)}\} & = & 0 \\ 
+\{S_{\matter}, I^{(2)}\} + \d_{CE} I_{\matter}^{(1)} + \{I_{\gauge}^{(1)}, I_{\matter}^{(1)}\} + \frac{1}{2} \{I_{\matter}^{(1)}, I_{\matter}^{(1)}\} & = & 0 \\
+\d_{CE} I_{\matter}^{(2)} + \{I_{\matter}^{(1)}, I_{\matter}^{(2)}\} & =& 0 \\
+\{I_{\matter}^{(2)}, I_{\matter}^{(2)}\} & =& 0
+\end{array}
+\end{equation}
+
+The last equation is automatically satisfied since $I^{(2)}$ is independent of the fields $\phi, \psi, A, \lambda$.
+
+The first equation in \eqref{CMEYM2} states that the classical action is supersymmetric.
+
+\begin{lemma} \label{lem:YM1}
+One has $\{S_{\BV}, I^{(1)}\} (Q) = 0$ for all $Q \in \Sigma$. 
+\end{lemma}
+\begin{proof}
+Let us decompose $S_{\matter}=\sum_{i=1}^5 S_{\matter}^i$ into individual summands.
+
+The first term gives
+\begin{align*}
+\{S_{\matter}^1, I^{(1)}(Q)\} &= -(\d_A\phi, \d_A(Q, \psi)) + (\Gamma(Q, \lambda)\phi, \d_A\phi) \\
+&= \d_A^* \d_A\phi (Q, \psi) + (\Gamma(Q, \lambda)\phi, \d_A\phi).
+\end{align*}
+
+The second term gives
+\begin{align*}
+\{S_{\matter}^2, I^{(1)}(Q)\} &= -(\psi, \sd \d_A \rho(\d_A \phi) Q) - (\psi, \rho(\Gamma(Q, \lambda))\psi) \\
+&= -(\psi, \rho(F_A) Q)\phi - \d_A^*\d_A \phi(\psi, Q) - (\psi, \rho(\Gamma(Q, \lambda))\psi),
+\end{align*}
+where we have used Proposition \ref{prop:cliffordactionproperty3} in the second line.
+
+The third term gives
+\begin{align*}
+\{S_{\matter}^3, I^{(1)}(Q)\} &= ((\rho(F_A)Q) \phi, \psi) + 2(\lambda(Q, \psi), \psi) - (\lambda\phi, \rho(\d_A \phi) Q) \\
+&= ((\rho(F_A)Q) \phi, \psi) + (\rho(\Gamma(Q, \lambda))\psi, \psi) - (\Gamma(\lambda\phi, Q), \d_A \phi),
+\end{align*}
+where we have used Theorem \ref{thm:matter3psi} in the middle term and \eqref{eq:Gammaspinorpairing} in the last term. It is then obvious that
+\[\{S_{\matter}^1 + S_{\matter}^2 + S_{\matter}^3, I^{(1)}(Q)\} = 0.\]
+
+Finally, the terms $\{S_{\matter}^4 + S_{\matter}^5 + S_{\gauge}^3, I^{(1)}(Q)\}$ are zero due to gauge-invariance of $I^{(1)}(Q)$ while the rest of the terms are zero by Lemma \ref{lm:gaugemultiplet1}.
+\end{proof}
+
+Next, we move on to the second equation in \eqref{CMEYM2}.
+
+\begin{lemma} 
+One has
+\begin{equation}\label{CMEYM3}
+\{S_{\matter}, I^{(2)}\} + \d_{CE} I_{\matter}^{(1)} + \{I_{\gauge}^{(1)}, I_{\matter}^{(1)}\} + \frac{1}{2} \{I_{\matter}^{(1)}, I_{\matter}^{(1)}\} = 0 .
+\end{equation}
+\end{lemma}
+\begin{proof}
+Evaluating expression \eqref{CMEYM3} on $v_1,v_2 \in \mf{iso}(V)$ reduces to the claim that \eqref{eq:matterPoincareaction} defines a strict Lie action. Evaluating on $v \in \mf{iso}(V)$ and $Q \in \Sigma$, the claim reduces to the fact that $I^{(1)}$ is Poincar\'{e}-invariant. So, the only nontrivial term to check is the evaluation on $Q_1,Q_2 \in \Sigma$. 
+
+The individual terms are:
+\begin{align*}
+\frac{1}{2}\{I_{\matter}^{(1)}, I_{\matter}^{(1)}\}(Q_1, Q_2) =& -\{I_{\matter}^{(1)}(Q_1), I_{\matter}^{(1)}(Q_2)\} \\
+=&-\frac{1}{2}(Q_1, \rho(\d_A \phi) Q_2)\phi^* - \frac{1}{2}(Q_2, \rho(\d_A \phi)Q_1)\phi^* \\ &  +\frac{1}{2}(\rho(\d(Q_1,\psi))Q_2, \psi^*) +\frac{1}{2} (\rho(\d(Q_2, \psi)) Q_1, \psi^*),
+\end{align*}
+
+\begin{align*}
+\{I_{\gauge}^{(1)}, I_{\matter}^{(1)}\}(Q_1, Q_2) = &-\{I_{\gauge}^{(1)}(Q_1), I_{\matter}^{(1)}(Q_2)\} - \{I_{\gauge}^{(1)}(Q_2), I_{\matter}^{(1)}(Q_1)\} \\
+=& -\frac{1}{2}(\rho(\Gamma(Q_1, \lambda))(\phi Q_2), \psi^*) - \frac{1}{2}(\rho(\Gamma(Q_2, \lambda))(\phi Q_1), \psi^*),
+\end{align*}
+
+\[
+(\d_{CE}I_{\matter}^{(1)})(Q_1,Q_2) = L_{\Gamma(Q_1,Q_2)} (\phi)\phi^* - (\Gamma(Q_1,Q_2).\psi, \psi^*),
+\]
+
+and
+\[
+\{S_{\matter}, I^{(2)}(Q_1,Q_2)\} =  \frac{1}{2} \Gamma(Q_1,Q_2) \Gamma(\psi^*, \sd \d_A \psi - 2 \lambda\phi + c\psi^*) - ((\iota_{\Gamma(Q_1, Q_2)} A)\psi, \psi^*) + ((\iota_{\Gamma(Q_1, Q_2)} A)\phi, \phi^*)
+\]
+
+We first collect all terms in equation \eqref{CMEYM3} proportional to $\phi^*$:
+\[
+-\frac{1}{2} (Q_1, \rho(\d_A\phi) Q_2) - \frac{1}{2} (Q_2, \rho(\d_A \phi) Q_1) + L_{\Gamma(Q_1,Q_2)} \phi + (\iota_{\Gamma(Q_1, Q_2)} A)\phi.
+\]
+
+By \eqref{eq:Gammaspinorpairing} we observe that the first two terms cancel with the last two terms.
+
+Next, we collect all terms in equation \eqref{CMEYM3} containing $\psi^*$ and $\psi$:
+\begin{equation}\label{psistar}
+\frac{1}{2} \sd \d_A Q_2(Q_1 \psi)^A + \frac{1}{2} \sd \d_A Q_1(Q_2, \partial_i\psi)^A - \Gamma(Q_1,Q_2) . \psi + \frac{1}{2} \rho(\Gamma(Q_1,Q_2)) \sd \d_A \psi - (\iota_{\Gamma(Q_1, Q_2)} A)\psi.
+\end{equation}
+Applying Theorem \ref{thm:matter3psi} to $Q_3 = \psi$, the first two terms become $\frac{1}{2} \sd \d_A \rho(\Gamma(Q_1,Q_2) \psi)$. 
+Finally, by the Clifford identity the sum of this term with the fourth term in \eqref{psistar} is precisely $\iota_{\Gamma(Q_1,Q_2)}\d_A \psi$ which cancels the remaining terms.
+\end{proof}
+
+\begin{lemma}
+\[\{I_{\matter}^{(1)}, I_{\matter}^{(2)}\}(Q_1, Q_2, Q_3) = 0\]
+for every $Q_1, Q_2, Q_3\in \Sigma$.
+\end{lemma}
+\begin{proof}
+We have
+\begin{align*}
+\{I_{\matter}^{(1)}(Q_1), I_{\matter}^{(2)}(Q_2, Q_3)\} & = \frac{1}{2} (\Gamma(Q_2, Q_3), \Gamma(\psi^*, \phi^* Q_1)) \\ & = (\psi^*, \phi^* \rho(\Gamma(Q_2,Q_3)) Q_1)  .
+\end{align*}
+The expression
+$\{I_{\matter}^{(1)}, I_{\matter}^{(2)}\}(Q_1,Q_2,Q_3)$ is obtained by cyclically symmetrizing the above expression. By Theorem \ref{thm:3psi} the cyclic symmetrization is identically zero.
+\end{proof}
+
+\part{A Catalogue of Twists}
+
+\section{Dimension 10}
+
+The 10-dimensional supersymmetry algebra has odd part $\Sigma\cong S_+\otimes W_+\oplus S_-\otimes W_-$, where $S_+, S_-$ are the 16-dimensional semi-spin representations of $\Spin(10)$, and where $W_+$ and $W_-$ are complex vector spaces equipped with a nondegenerate symmetric bilinear pairing. There are Yang--Mills theories with $\cN=(1, 0)$ or $\cN=(0, 1)$ supersymmetries. We concentrate on the first case, the second case being identical. So, we fix $W_+=\CC$ and $W_- = 0$.
+
+\subsection{$\cN=(1, 0)$ super Yang--Mills theory}
+
+Let $\fg$ be a complex Lie algebra equipped with a symmetric bilinear invariant nondegenerate pairing. We consider $\cN=(1, 0)$ super Yang--Mills theory on $\RR^{10}$, where $\fg$ is the complexified Lie algebra of the gauge group.
+
+The 10d $\cN=(1, 0)$ supersymmetry algebra admits a unique twist:
+\begin{itemize}
+\item A square-zero supercharge $Q\neq 0\in\Sigma$ has 5 invariant directions and does not admit a compatible homomorphism $\alpha$. So, it gives rise to a $\ZZ/2$-graded holomorphic theory. A way to construct such a supercharge is to choose a complex structure on $\RR^{10}$ together with complex half-density whose square is a holomorphic volume form $\Omega\in\Omega^{5, 0}(\CC^5)$. Such a supercharge is stabilized by $\SU(5)\subset \Spin(10)$.
+\end{itemize}
+
+We will now fix a nonzero square-zero supercharge $Q$ and rewrite the fields and the action in terms of the Calabi--Yau structure. Let $\omega\in\Omega^{1, 1}(\CC^5)$ be the K\"ahler form, $\Omega\in\Omega^{5, 0}(\CC^5)$ the holomorphic volume form and $\Lambda\colon \Omega^{p+1, q+1}(\CC^5)\rightarrow \Omega^{p, q}(\CC^5)$ the dual Lefschetz operator. The vector representation decomposes as
+\[\Omega^1(\CC^5)\cong \Omega^{1, 0}(\CC^5)\oplus \Omega^{0, 1}(\CC^5),\]
+the semi-spin representation $S_+$ decomposes as
+\[\Omega^0(\CC^5; S_+)\cong \Omega^{1, 0}(\CC^5)\oplus \Omega^{0, 2}(\CC^5)\oplus \Omega^0(\CC^5)\]
+and the semi-spin representation $S_-$ decomposes as
+\[\Omega^0(\CC^5; S_-)\cong \Omega^{0, 1}(\CC^5)\oplus \Omega^{2, 0}(\CC^5)\oplus \Omega^0(\CC^5).\]
+Under this decomposition the scalar pairing $S_+\otimes S_-\rightarrow \CC$ corresponds to the wedge product of individual components post-composed with $\Lambda$. Under the above decomposition the Clifford multiplication of a vector $A = A_{1, 0} + A_{0, 1}$ and a spinor $\lambda = \psi + B + \chi\in S_+$ is given by
+\[\rho(A)\lambda = (A_{0, 1}\chi + \Lambda(A_{1, 0}\wedge B), A_{1, 0}\wedge \psi + \ast(A_{0, 1}\wedge B\wedge\Omega), \Lambda(A_{0, 1}\wedge \psi))\in S_-.\]
+
+\vspace{-10pt}
+\paragraph{Fields:} The BRST fields are given by:
+\begin{itemize}
+\item Gauge fields $A_{1, 0}\in\Omega^{1, 0}(\CC^5; \gg)$, $A_{0, 1}\in\Omega^{0, 1}(\CC^5; \gg)$.
+\item Fermions $\psi\in\Omega^{1, 0}(\CC^5; \Pi\gg)$, $B\in\Omega^{0, 2}(\CC^5; \Pi\gg)$, $\chi\in\Omega^0(\CC^5; \Pi\gg)$.
+\item A ghost field $c\in\Omega^0(\CC^5; \Pi\gg)$.
+\end{itemize}
+We denote their antifields by $A_{1, 0}^*, A_{0, 1}^*, \psi^*, B^*, \chi^*, c^*$.
+
+The BV action of the theory is obtained from \eqref{eq:YMBVaction} by decomposing it in terms of the above fields. We will need an expression for the Hodge star operator on K\"{a}hler manifolds, see \cite[Proposition 1.2.31]{Huybrechts}.
+
+\begin{prop}
+Let $(M, \omega)$ be a K\"{a}hler $d$-fold and decompose
+\[\Omega^2(M) = \Omega^{2, 0}(M)\oplus \Omega^{0, 2}(M)\oplus (\CC\omega\oplus \Omega^{1, 1}_\perp(M)).\]
+Then
+\begin{enumerate}
+\item The spaces $\Omega^{2, 0}(M)\oplus \Omega^{0, 2}(M)$, $\CC\omega$ and $\Omega^{1, 1}_\perp(M)$ are mutually orthogonal.
+
+\item For a form $\alpha\in\Omega^{2, 0}(M)\oplus \Omega^{0, 2}(M)$ we have
+\[\ast \alpha = \frac{1}{(d-2)!} \alpha\wedge \omega^{d-2}.\]
+
+\item For $\alpha\in \Omega^{1, 1}_\perp(M)$ we have
+\[\ast\alpha = -\frac{1}{(d-2)!} \alpha\wedge \omega^{d-2}.\]
+
+\item For $\alpha\in\CC\omega$ we have
+\[\ast \alpha = \frac{1}{(d-1)!} \alpha\wedge \omega^{d-2}.\]
+\end{enumerate}
+\end{prop}
+
+\begin{corollary}
+Let $M$ be a K\"{a}hler $d$-fold and $F = F_{2, 0} + F_{1, 1} + F_{0, 2}$ a two-form. Then
+\[F\wedge \ast F + \frac{1}{(d-2)!} F\wedge F\wedge \omega^{d-2} = \left(4(F_{2, 0}, F_{0, 2}) + (\Lambda F_{1, 1})^2\right) \frac{\omega^d}{d!}.\]
+\end{corollary}
+
+Since we are working near the trivial connection, the topological term $\int F\wedge F\wedge \omega^3$ is exact, so we will drop it. The BV action of the twisted theory $S_{BV}$ is then the sum of the following terms:
+\begin{align*}
+S_{BRST} &= \int \frac{\omega^5}{5!} \left(-(F_{2, 0}, F_{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2 + \chi \Lambda(\ol\dd_{A_{0, 1}}\psi) + (B, \dd_{A_{1, 0}} \psi)\right)  + \frac{1}{2}B\wedge \ol\dd_{A_{0, 1}} B\wedge\Omega \\
+S_{anti} &= \int \dd_{A_{1, 0}} c\wedge A_{1, 0}^* + \ol\dd_{A_{0, 1}} c\wedge A_{0, 1}^* + [\psi, c]\wedge \psi^* + [\chi, c]\chi^* + [B, c]\wedge B^* + \frac{1}{2}[c, c]c^* \\
+I^{(1)} &= \int \psi\wedge A_{1, 0}^* + F_{0, 2}\wedge B^* + \frac{1}{2}\Lambda F_{1, 1} \chi^* \\
+I^{(2)} &= -\frac{1}{4}\int \frac{\chi^*}{\omega^5/5!} \chi^*.
+\end{align*}
+
+\begin{thm}
+The holomorphic twist of 10d $\mc N=(1, 0)$ super Yang--Mills is perturbatively equivalent to the holomorphic Chern--Simons theory on $\CC^5$ equipped with a Calabi--Yau structure $\Omega$ with the space of fields $\map(\CC^5, B\gg)$.
+\label{thm:10dholomorphictwist}
+\end{thm}
+\begin{proof}
+First, we may integrate out $\chi$ and $\chi^*$ using Proposition \ref{prop:integrateoutfield}. So, the above theory is perturbatively equivalent to the theory without $\chi$ and $\chi^*$ with the BV action
+\begin{align*}
+S_{\text{no }\chi} &= \int \frac{\omega^5}{5!} \left(-(F_{2, 0}, F_{0, 2}) + (B, \dd_{A_{1, 0}} \psi)\right)  + \frac{1}{2}B\wedge \ol\dd_{A_{0, 1}} B\wedge\Omega \\
+&+ \int \dd_{A_{1, 0}} c\wedge A_{1, 0}^* + \ol\dd_{A_{0, 1}} c\wedge A_{0, 1}^* + [\psi, c]\wedge \psi^* + [B, c]\wedge B^* + \frac{1}{2}[c, c]c^* \\
+&+ \int \psi\wedge A_{1, 0}^* + F_{0, 2}\wedge B^*
+\end{align*}
+
+Next, we have a term $\int \psi\wedge A_{1, 0}^*$ in the action, i.e. $(\psi, A_{1, 0})$ is a BRST doublet, so by Proposition \ref{prop:BRSTdoublet} we may remove it. The above theory then becomes perturbatively equivalent to the theory without fields $\psi,\psi^*,A_{1,0},A_{1,0}^*$ and with the BV action
+\[
+S_0 = \int \frac{1}{2}B\wedge \ol\dd_{A_{0, 1}} B\wedge\Omega + \ol\dd_{A_{0, 1}} c\wedge A_{0, 1}^* + [B, c]\wedge B^* + \frac{1}{2}[c, c]c^* + F_{0, 2}\wedge B^*
+\]
+Up to rescaling of the antifields, it coincides with the BV action for holomorphic Chern--Simons (see Section \ref{gen_CS_section}).
+\end{proof}
+
+\begin{remark}
+A similar claim was previously proved by Baulieu \cite{Baulieu} by adding an auxiliary field to 10d $\mc N=(1, 0)$ super Yang--Mills.
+\end{remark}
+
+\section{Dimension 9}
+
+The 9-dimensional supersymmetry algebra has odd part $\Sigma\cong S\otimes W$, where $S$ is the 16-dimensional spin representation of $\Spin(9)$ and $W$ is a complex vector space equipped with a nondegenerate symmetric bilinear pairing. There is a Yang--Mills theory with $\mc N=1$ supersymmetry. So, we fix $W = \CC$.
+
+\subsection{$\cN=1$ super Yang--Mills theory}
+
+Let $\fg$ be a complex Lie algebra equipped with a symmetric bilinear invariant nondegenerate pairing. We consider $\cN=1$ super Yang--Mills theory on $\RR^9$, where $\fg$ is the complexified Lie algebra of the gauge group.
+
+The 9d $\cN=1$ supersymmetry algebra admits a unique twist:
+\begin{itemize}
+\item A square-zero supercharge $Q\neq 0\in\Sigma$ has 5 invariant directions and does not admit a compatible homomorphism $\alpha$. So, it gives rise to a $\ZZ/2$-graded holomorphic theory. A way to construct such a supercharge is to choose a splitting $\RR^9\cong \RR^8\times \RR$ with a complex structure on $\RR^8$ together with complex half-density whose square is a holomorphic volume form $\Omega\in\Omega^{4, 0}(\CC^4)$. Such a supercharge is stabilized by $\SU(4)\subset \Spin(9)$.
+\end{itemize}
+
+We may identify the odd part of the 9d $\mc N=1$ supersymmetry algebra with the odd part of the 10d $\mc N=(1, 0)$ supersymmetry algebra. Under this identification a supercharge $Q$ squares to zero in 9d iff it squares to zero in 10d.
+
+Choose a splitting $\RR^9\cong\CC^4\times \RR$ together with a constant holomorphic volume form $\Omega\in\Omega^{4, 0}(\CC^4)$.
+
+\begin{thm}
+The holomorphic twist of 9d $\mc N=1$ super Yang--Mills is perturbatively equivalent to the generalized Chern--Simons theory on $\CC^4\times \RR$ with the space of fields $\map(\CC^4\times \RR_{\mr{dR}}, B\gg)$.
+\end{thm}
+\begin{proof}
+By definition 9d $\mc N=1$ super Yang--Mills is obtained by a dimensional reduction of 10d $\mc N=(1, 0)$ super Yang--Mills along the projection $\RR^{10}\rightarrow \RR^9$. In complex coordinates, it is a dimensional reduction along the projection $\CC^4\times \CC\rightarrow \CC^4\times \RR$.
+
+From Proposition \ref{prop:twistdimensionalreduction} we get that the holomorphic twist of 9d $\mc N=1$ super Yang--Mills is equivalent to a dimensional reduction of the holomorphic twist of 10d $\mc N=(1, 0)$ super Yang--Mills. By Theorem \ref{thm:10dholomorphictwist} the latter theory is equivalent to holomorphic Chern--Simons theory on $\CC^5$, so by Proposition \ref{CS_diml_red_prop} its dimensional reduction is equivalent to the generalized Chern--Simons theory on $\CC^4\times \RR$.
+\end{proof}
 
 %%\begin{landscape}
 %\begin{figure}
@@ -1069,144 +1218,144 @@ Fix a twisting datum $(Q, \alpha)$, where $\Gamma_V(Q, Q) = 0$. Then the dimensi
 %\end{figure}
 %%\end{landscape}
 
-\subsection{Standard Equivalences Between Classical Field Theories}
-In this section, we will collect some standard lemmas that we'll use to simplify the descriptions of twisted supersymmetric field theories below.
+% \subsection{Standard Equivalences Between Classical Field Theories}
+% In this section, we will collect some standard lemmas that we'll use to simplify the descriptions of twisted supersymmetric field theories below.
+% 
+% \begin{lemma} \label{symplectomorphism_lemma}
+% A linear symplectomorphism $F \colon \mc E^\bullet \to \mc E^\bullet$ induces an equivalence of theories between $(\mc E^\bullet, Q, \omega, I)$ and $(\mc E^\bullet, F^*Q, \omega, F^*I)$.
+% \end{lemma}
+% 
+% \brian{I may be optimistic, but shouldn't the lemmas below all follow from the fact that the category we are working with is a Grothendieck abelian category? In any case, I do like that we've stated them clearly.} \chris{I'm not sure what you have in mind (for instance I'm not sure why you would need the Grothendieck condition there), but I think the lemmas below should be formally immediate in this dg category of differentiable cochain complexes setting (like the first one follows in any context where you have an exact sequence $0 \to A \to B \to C \to 0$ and the fact that if $C$ is equivalent to 0 then $A \to B$ is an equivalence, or the same with $A$ and $B \to C$.)}
+% 
+% \begin{lemma} \label{inclusion_and_projection_lemma}
+% Let $(\mc E^\bullet, Q)$ be a cochain complex, and let $(\mc C^\bullet, Q')$ be a contractible cochain complex.
+% \begin{enumerate}
+%  \item Let $F \colon \mc C^\bullet \to \mc E^\bullet$ be a degree 1 map making $(\mc C^\bullet \overset F\to \mc E^\bullet)$ into a cochain complex.  Then the canonical inclusion $\mc E^\bullet \to (\mc C^\bullet \overset F\to \mc E^\bullet)$ is a quasi-isomorphism.
+%  \item Let $F' \colon \mc E^\bullet \to \mc C^\bullet$ be a degree 1 map making $(\mc E^\bullet \overset {F'}\to \mc C^\bullet)$ into a cochain complex.  Then the canonical projection $(\mc E^\bullet \overset {F'}\to \mc C^\bullet) \to \mc E^\bullet$ is a quasi-isomorphism.
+% \end{enumerate}
+% \end{lemma}
+% 
+% \begin{lemma} \label{symplectic_composite_lemma}
+% Let $(\mc E^\bullet,Q)$ be a cochain complex, let $(\mc C_1^\bullet, Q_1)$ and $(\mc C_2^\bullet, Q_2)$ be contractible cochain complexes, and let $\mc C_1^\bullet \overset{F_1}\to \mc E^\bullet \overset{F_2}\to \mc C_2^\bullet$ be a pair of degree 1 maps so that the differential $Q + Q_1 + Q_2 + F_1 + F_2$ on the total complex squares to 0.  Suppose the graded vector space $\mc E^\bullet \oplus \mc C_1^\bullet \oplus C_2^\bullet$ is equipped with a $-1$-shifted symplectic structure so that $\mc C_1^\bullet \oplus \mc C_2^\bullet$ is a symplectic subspace.  Then the cochain map 
+% \begin{equation}
+% \label{symp_composite_eqn}\mc E^\bullet \to (\mc C_1^\bullet \overset{F_1}\to \mc E^\bullet \overset{F_2}\to \mc C_2^\bullet)
+% \end{equation}
+% obtained as the composite of the projection from Lemma \ref{inclusion_and_projection_lemma} (2) with a quasi-inverse to the inclusion from Lemma \ref{inclusion_and_projection_lemma} (1) is a symplectomorphism.
+% \end{lemma}
+% 
+% \begin{lemma} \label{interaction_pullback_lemma}
+% In the set-up of Lemma \ref{symplectic_composite_lemma}, suppose we're given an interaction $I$ on the graded vector space $\mc E^\bullet \oplus \mc C_1^\bullet \oplus \mc C_2^\bullet$, which pulls back to $I'$ under the inclusion of $\mc E^\bullet$.  Suppose that all monomial summands of the interaction $I$ which depend on fields in $\mc C_2^\bullet$ also depend on fields in $\mc C_1^\bullet$. Then the map \ref{symp_composite_eqn} is compatible with the interactions $I$ and $I'$
+% \end{lemma}
+% 
+% \begin{proof}
+% We defined a quasi-isomorphism of cochain complexes in Lemma \ref{symplectic_composite_lemma} to be the composite $F$ of the inclusion $i$ of $\mc E^\bullet \oplus \mc C_2^\bullet$ with a quasi-inverse to the projection onto $\mc E^\bullet$: this composite map is a twisted inclusion $\mc E^\bullet \to \mc E^\bullet \oplus \mc C_1^\bullet \oplus \mc C_2^\bullet$ of the form $F \colon \phi \mapsto (\phi, 0, f(\phi))$ for some linear map $f$.  Because, by the hypothesis, all monomial summands of $I$ involving fields in $\mc C_2^\bullet$ also include fields in $\mc C_1^\bullet$, the pullback of $I$ under the map $F$ coincides with the pullback of $I$ under the inclusion map $\phi \mapsto (\phi, 0, 0)$ as required.
+% \end{proof}
+% 
+% \subsection{A-Type Twists} \label{A_twist_section}
+% \chris{...}
+% 
+% \subsection{Dimension 10}
+% We'll begin our discussing of twists of super Yang-Mills theory by studying the twist of 10-dimensional $\mc N=(1,0)$ super Yang-Mills theory, with the supersymmetry action we analyzed in Section \ref{sect:gaugemultipletSUSY}.  In the 10d $\mc N=(1,0)$ supersymmetry algebra there is a unique $\Spin(10)$ orbit of non-trivial square-zero supercharges given by the locus of pure spinors.  These square-zero supercharges are holomorphic.
+% 
+% Fix a non-trivial pure spinor $Q$, or equivalently, fix a Calabi-Yau structure on $\RR^{10}$.  The stabilizer of $Q$ in $\Spin(10)$ is isomorphic to $\SU(5)$.  Let us first, therefore, decompose the component fields of 10d super Yang-Mills theory into sections of the associated bundles to irreducible representations of $\SU(5)$.  The BRST fields split as follows:
+% \begin{align*}
+% c &\mapsto c \in \Omega^0(\CC^5; \gg) \\
+% A &\mapsto A_{0, 1} + A_{1, 0} \in \Omega^{0,1}(\CC^5; \gg) \oplus \Omega^{1,0}(\CC^5; \gg)\\
+% \lambda &\mapsto \chi + \psi + B \in \Omega^0(\CC^5; \gg) \oplus \Omega^{1,0}(\CC^5; \gg) \oplus \Omega^{0,2}(\CC^5; \gg). 
+% \end{align*}
+% 
+% In terms of these component fields, the BV action can be written in the following way.  We will split the BV action up into the BRST action and the antifield action.
+% \begin{align*}
+% S_{\mr{BRST}} &= \int \d^5z \left(\Lambda^2 \langle F_{0,2} \wedge F_{2,0}\rangle + \frac 12 |\Lambda F_{1,1}|^2 + \Lambda( \chi \wedge (\ol \dd_{A_{0,1}} \psi))  + \Lambda^2(B \wedge (\dd_{A_{1,0}} \psi))\right) \Omega + (B \wedge \ol \dd_{A_{0,1}} B) \\
+% S_{\mr{anti}} &= \int \d^5z \langle \dd_{A_{1,0}}c, A_{1,0}^\vee \rangle +  \langle \ol \dd_{A_{0,1}}c, A_{0,1}^\vee \rangle + \langle [c,c], c^\vee \rangle + \langle [\chi,c], \chi^\vee \rangle + \langle [\psi,c], \psi^\vee \rangle + \langle [B,c], B^\vee \rangle,
+% \end{align*}
+% where $F_{i,j}$ is the $(i,j)$-form component of the curvature of the gauge field $A_{0, 1} + A_{1, 0}$, and $\Omega$ is the Calabi-Yau $(0,5)$-form.  Similarly, we can write explicitly the $L_\infty$ interaction functional associated to the action of the square 0 supercharge $Q$.  It has a quadratic and a cubic component given by
+% \begin{align*}
+% I^{(1)} &= \int \langle A_{1,0}^\vee, \psi \rangle + \langle \chi^\vee \Lambda F_{1,1} \rangle + \langle B^\vee, F_{0,2} \rangle \\
+% I^{(2)} &= \frac 12 \int \d^5z \Omega |\chi^\vee|^2.
+% \end{align*}
+% The twisted action functional is obtained by adding these terms to the original BV action functional.
+% 
+% We can now calculate the 10d holomorphic twist.  This calculation is originally due to Baulieu \cite{Baulieu}.
+% 
+% \begin{theorem}\label{10d_twist_thm}
+% The holomorphic twist of 10d super Yang-Mills theory on a Calabi-Yau 5-fold $X_5$ is equivalent to holomorphic Chern-Simons theory on $X_5$.
+% \end{theorem}
+% 
+% \begin{remark}
+% From the point of view of supersymmetry, the twisted theory is only $\ZZ/2\ZZ$-graded, because the R-symmetry group is trivial, so there is no possible R-charge with which to regrade the twisted theory to make it $\ZZ$-graded.  
+% This is of course compatible with our conventions for holomorphic Chern-Simons: holomorphic Chern-Simons (with values in an ordinary Lie algebra) on an odd dimensional Calabi-Yau only defines a $\ZZ/2$-graded theory (unless $d=3$, where this can be lifted to a $\ZZ$-grading). 
+% As a consequence, the twisted BV-BRST complex only has an odd symplectic pairing, not a $(-1)$-symplectic pairing.
+% \end{remark}
+% 
+% \begin{proof}
+% We'll prove this equivalence by first describing an equivalence of the underlying classical theories, as the composite of several maps, then showing that this equivalence is compatible with the two interaction functionals, and therefore defines a morphism of classical field theories, and finally observing that by Lemma \ref{free_int_ss_lemma} this morphism is automatically an equivalence.
+% 
+% \begin{enumerate}
+%  \item The first part of our equivalence of classical field theories will be a simple change of variables.  Let $\chi'^\vee = \chi^\vee + \Lambda F_{1,1}$, and dually let $\chi' = \chi + \Lambda F_{1,1}^\vee$.  In terms of $\chi'$, the quadratic part of the twisted action functional becomes
+%  \begin{align*}
+%   S^Q &= \int \d^5z \left(\Lambda^2 \langle \ol \dd A_{0,1} \wedge \dd A_{1,0} \rangle + \frac 12 |\chi'^\vee|^2 + \Lambda( \chi' \wedge (\ol \dd \psi)) - \Lambda^2(\dd A_{0,1} \wedge \ol \dd \psi) + \Lambda^2(B \wedge (\dd \psi))\right) \Omega + (B \wedge \ol \dd B) \\
+%   &\quad + \langle \dd c, A_{1,0}^\vee \rangle +  \langle \ol \dd c, A_{0,1}^\vee \rangle + \langle A_{1,0}^\vee, \psi \rangle + \langle B^\vee, \ol \dd A_{0,1} \rangle.
+%  \end{align*}
+%  The classical BV complex associated to the theory after performing this change of variables is quasi-isomorphic to the classical BV complex of the original theory according to Lemma \ref{symplectomorphism_lemma}.  However, after performing the change of variables, the classical BV complex takes the form $(\Omega^0(\CC^5; \gg)_{\chi'^\vee} \overset \id \to \Pi\Omega^0(\CC^5; \gg)_{\chi'}) \to \mc E^\bullet$, where $\mc E^\bullet$ is the part of the BV complex generated by all fields other than $\chi'$ and $\chi'^\vee$, and where the map into $\mc E^\bullet$ is given by the map $\ol \dd$ from $\chi$ to $\psi^\vee$.  Therefore the inclusion of the complex $\mc E^\bullet$ is a quasi-isomorphism by Lemma \ref{inclusion_and_projection_lemma}.  We think of this as ``integrating out'' the field $\chi'$ and its antifield.
+%  
+%  \item We'll now use a similar trick to integrate out the fields $\psi, A_{1,0}$ and their antifields.  We've argued in step 1 that the free part of the $Q$-twisted theory is equivalent to the theory with action functional 
+%  \[  S^Q = \int \d^5z \left(\Lambda^2 \langle \ol \dd A_{0,1} \wedge \dd A_{1,0} \rangle + \Lambda^2(B \wedge (\dd \psi))\right) \Omega + (B \wedge \ol \dd B) + \langle \dd c, A_{1,0}^\vee \rangle +  \langle \ol \dd c, A_{0,1}^\vee \rangle + \langle A_{1,0}^\vee, \psi \rangle + \langle B^\vee, \ol \dd A_{0,1} \rangle.\]
+%  We'll begin, as in step 1, by performing a linear change of variables, setting $A'_{1,0} = A_{1,0} - \ol{A_{0,1}}$, and performing the dual change of variables on the antifields.  This change of variables has the effect of eliminating the term $\langle \dd c, A_{1,0}^\vee \rangle$ from the quadratic part of the action. \chris{This isn't quite right I think.  We need to kill that term, however, for the below argument to work.  Can we fix it?}
+%  
+%  Observe that the classical BV complex associated to this action functional can now be written in the following form:
+%  \[\xymatrix{
+%  &&\Omega^{1,0}(\CC^5;\gg)_\psi \ar[dl] \ar[dr] \ar[r] &\Omega^{1,0}(\CC^5;\gg)_{{A'}_{1,0}} \ar[dr]\\
+%  \Omega^0(\CC^5;\gg)_c \ar[r] &\Omega^{0,1}(\CC^5;\gg)_{A_{0,1}}  \ar[dl] \ar[r] &\Omega^{0,2}(\CC^5;\gg)_{B} \ar[dl]\ar[r] &\Omega^{0,3}(\CC^5;\gg)_{B^\vee} \ar[r] &\Omega^{0,4}(\CC^5;\gg)_{A_{0,1}^\vee} \ar[dlll] \ar[r] &\Omega^{0,5}(\CC^5;\gg)_{c^\vee} \\
+%  \Omega^{4,0}(\CC^5;\gg)_{{A'}_{1,0}^\vee} \ar[r]   &\Omega^{4,0}(\CC^5;\gg)_{\psi^\vee},
+%  }\]
+%  where the first and third rows are dual under the symplectic pairing.  This is exactly in the form required to apply Lemma \ref{symplectic_composite_lemma}, so applying that result tells us that the underlying free theory of the twisted 10d super Yang Mills theory is equivalent to the middle row alone, i.e. the Dolbeault complex, which is exactly the free part of holomorphic Chern-Simons theory on $\CC^5$.
+%  
+%  \item Now, let's understand how the interaction functional behaves under this equivalence of classical field theories.  The morphism from step 1 is just given by an inclusion, so the interaction on twisted 10d Yang-Mills theory is compatible with the interaction evaluated at $\chi'=\chi'^\vee=0$.  In order to make the same observation for the fields $\psi$ and $A_{1,0}$, we'll use Lemma \ref{interaction_pullback_lemma}, which we can apply using the observation that the antifields $A_{1,0}^\vee$ and $\psi^\vee$ only appear in the action together with the corresponding fields.  Take our original action functional after the change of variables from step 1, and set the fields $\chi, \psi, A_{1,0}$ and their antifields to zero (i.e, in the notation of Lemma \ref{interaction_pullback_lemma}, restrict the interaction to the complex $\mc E^\bullet$).  The resulting interaction is 
+%  \[
+%   I^Q = \int \d^5z (B \wedge [A_{0,1} \wedge B]) + \langle B^\vee, [A_{0,1} \wedge A_{0,1}] \rangle + \langle [c,c], c^\vee \rangle + \langle [A_{0,1}, c], A_{0,1}^\vee \rangle + \langle [B,c], B^\vee \rangle,
+%  \]
+%  which is, indeed, the interaction functional for holomorphic Chern-Simons theory.  The composite of the morphisms in steps 1 and 2 therefore defines a morphism of classical field theories from holomorphic Chern-Simons theory to twisted 10d super Yang-Mills theory.
+%  
+%  \item To conclude the proof, we only need to apply Lemma \ref{free_int_ss_lemma}.  The morphism of classical field theories that we've constructed induces an equivalence of the $E_1$ pages of the free-to-interacting spectral sequences associated to holomorphically twisted 10d super Yang-Mills theory and holomorphic Chern-Simons theory.  Because the spectral sequences are convergent, there is likewise an equivalence of the $E_\infty$ pages, i.e. an equivalence of classical field theories.
+% \end{enumerate}
+% \end{proof}
+% 
+% The above argument can be applied identically on a general Calabi-Yau 5-fold $X$.
+% \brian{How do we place 10d YM on an arbitrary 5-fold? 
+% Are you using something about sugra?
+% } \chris{Not an arbitrary 5-fold, but just Calabi-Yau.  I'm not thinking of using sugra.  Instead I want to say that a Calabi-Yau 5-fold has a principal $\SU(5)$ frame bundle.  Take the fields to be sections of the associated vector bundles under the appropriate representations, then use the same action functional: the Lagrangian density is $\SU(5)$ invariant and so will define a density on the 5-fold.}
+% 
+% 
+% \subsection{Dimension 9}
+% The 9-dimensional $\mc N=1$ super Yang-Mills theory is obtained by dimensional reduction of $\mc N=1$ super Yang-Mills from $\RR^{10}$ to $\RR^9$.  It has BRST fields given by a ghost, a 9d gauge field $A$, a $\gg$-valued scalar field $\phi$, and a Dirac spinor field $\lambda$.
+% 
+% There is a single non-zero equivalence class of square zero supercharges in 9 dimensions. Such supercharges are minimal (i.e. have 5d image).  They are stabilized by $\SU(4)$.  Like in 10 dimensions, the R-symmetry group is trivial, and so the twisted theory by such a supercharge is only $\ZZ/2\ZZ$-graded.
+% 
+% Let's describe the twist of 9-dimensional $\mc N=1$ theory with respect to such a supercharge.  The relevant fields for this calculation are those component fields which survived the 10d holomorphic twist of Theorem \ref{10d_twist_thm}.  These fields, in the BRST formalism, decompose, under the action of $\SU(4)$ into the following component fields:
+% \begin{align*}
+% B^{10} &= B + A \wedge \d \ol z^5 \in (\Omega^{0,2}(\CC^4; \gg) \oplus \Omega^{0,1}(\CC^4; \gg)) \otimes \Omega^0(\RR_{x^9}) \\
+% A^{10}_{0,1} &= A' + \phi \d \ol z^5 \in (\Omega^{0,1}(\CC^4; \gg) \oplus \Omega^0(\CC^4; \gg)) \otimes \Omega^0(\RR_{x^9})
+% \end{align*}
+% along with the ghost $c$.  We'll describe the twisted action functional using dimensional reduction.
+% 
+% \brian{Where is the one-form in the $\RR$-direction? Are we identifying that with $\phi$?}
+% 
+% \begin{theorem} \label{9d_twist_thm}
+% The minimal twist of 9d super Yang-Mills theory on the product of a Calabi-Yau 4-fold $X_4$ and an oriented 1-manifold $L = \RR$ or $S^1$ is equivalent to mixed Chern-Simons theory on $X_4 \times L_\mr{dR}$.
+% \end{theorem}
+% 
+% \begin{proof}
+% Let's apply Lemma \ref{commuting_twist_and_reduction_lemma} -- the fact that twisting commutes with dimensional reduction.  Choose a representative element $Q$ in the equivalence class of square-zero supercharges which also squares to zero in the 10d $\mc N=(1,0)$ supersymmetry algebra.  According to Lemma \ref{commuting_twist_and_reduction_lemma}, the twist of 9d $\mc N=1$ super Yang-Mills theory by the supercharge $Q$ is equivalent to the dimensional reduction of holomorphic Chern-Simons theory on $X_4 \times C$, where $C = L \times \RR$ is either the curve $\CC$ if $L = \RR$, or $\CC^\times$ if $L = S^1$. 
+% 
+% As such, it's sufficient to observe that mixed Chern-Simons theorem on $X_4 \times L_{\mr{dR}}$ is a dimensional reduction of holomorphic Chern-Simons theory on $X_4 \times C$, which follows by applying Lemma \ref{CS_diml_red_prop}.
+% \end{proof}
+% 
+% \begin{remark}
+% One can, alternatively, prove this theorem using exactly the same methods as Theorem \ref{10d_twist_thm}; the steps that one needs to follow are identical.
+% \end{remark}
 
-\begin{lemma} \label{symplectomorphism_lemma}
-A linear symplectomorphism $F \colon \mc E^\bullet \to \mc E^\bullet$ induces an equivalence of theories between $(\mc E^\bullet, Q, \omega, I)$ and $(\mc E^\bullet, F^*Q, \omega, F^*I)$.
-\end{lemma}
-
-\brian{I may be optimistic, but shouldn't the lemmas below all follow from the fact that the category we are working with is a Grothendieck abelian category? In any case, I do like that we've stated them clearly.} \chris{I'm not sure what you have in mind (for instance I'm not sure why you would need the Grothendieck condition there), but I think the lemmas below should be formally immediate in this dg category of differentiable cochain complexes setting (like the first one follows in any context where you have an exact sequence $0 \to A \to B \to C \to 0$ and the fact that if $C$ is equivalent to 0 then $A \to B$ is an equivalence, or the same with $A$ and $B \to C$.)}
-
-\begin{lemma} \label{inclusion_and_projection_lemma}
-Let $(\mc E^\bullet, Q)$ be a cochain complex, and let $(\mc C^\bullet, Q')$ be a contractible cochain complex.
-\begin{enumerate}
- \item Let $F \colon \mc C^\bullet \to \mc E^\bullet$ be a degree 1 map making $(\mc C^\bullet \overset F\to \mc E^\bullet)$ into a cochain complex.  Then the canonical inclusion $\mc E^\bullet \to (\mc C^\bullet \overset F\to \mc E^\bullet)$ is a quasi-isomorphism.
- \item Let $F' \colon \mc E^\bullet \to \mc C^\bullet$ be a degree 1 map making $(\mc E^\bullet \overset {F'}\to \mc C^\bullet)$ into a cochain complex.  Then the canonical projection $(\mc E^\bullet \overset {F'}\to \mc C^\bullet) \to \mc E^\bullet$ is a quasi-isomorphism.
-\end{enumerate}
-\end{lemma}
-
-\begin{lemma} \label{symplectic_composite_lemma}
-Let $(\mc E^\bullet,Q)$ be a cochain complex, let $(\mc C_1^\bullet, Q_1)$ and $(\mc C_2^\bullet, Q_2)$ be contractible cochain complexes, and let $\mc C_1^\bullet \overset{F_1}\to \mc E^\bullet \overset{F_2}\to \mc C_2^\bullet$ be a pair of degree 1 maps so that the differential $Q + Q_1 + Q_2 + F_1 + F_2$ on the total complex squares to 0.  Suppose the graded vector space $\mc E^\bullet \oplus \mc C_1^\bullet \oplus C_2^\bullet$ is equipped with a $-1$-shifted symplectic structure so that $\mc C_1^\bullet \oplus \mc C_2^\bullet$ is a symplectic subspace.  Then the cochain map 
-\begin{equation}
-\label{symp_composite_eqn}\mc E^\bullet \to (\mc C_1^\bullet \overset{F_1}\to \mc E^\bullet \overset{F_2}\to \mc C_2^\bullet)
-\end{equation}
-obtained as the composite of the projection from Lemma \ref{inclusion_and_projection_lemma} (2) with a quasi-inverse to the inclusion from Lemma \ref{inclusion_and_projection_lemma} (1) is a symplectomorphism.
-\end{lemma}
-
-\begin{lemma} \label{interaction_pullback_lemma}
-In the set-up of Lemma \ref{symplectic_composite_lemma}, suppose we're given an interaction $I$ on the graded vector space $\mc E^\bullet \oplus \mc C_1^\bullet \oplus \mc C_2^\bullet$, which pulls back to $I'$ under the inclusion of $\mc E^\bullet$.  Suppose that all monomial summands of the interaction $I$ which depend on fields in $\mc C_2^\bullet$ also depend on fields in $\mc C_1^\bullet$. Then the map \ref{symp_composite_eqn} is compatible with the interactions $I$ and $I'$
-\end{lemma}
-
-\begin{proof}
-We defined a quasi-isomorphism of cochain complexes in Lemma \ref{symplectic_composite_lemma} to be the composite $F$ of the inclusion $i$ of $\mc E^\bullet \oplus \mc C_2^\bullet$ with a quasi-inverse to the projection onto $\mc E^\bullet$: this composite map is a twisted inclusion $\mc E^\bullet \to \mc E^\bullet \oplus \mc C_1^\bullet \oplus \mc C_2^\bullet$ of the form $F \colon \phi \mapsto (\phi, 0, f(\phi))$ for some linear map $f$.  Because, by the hypothesis, all monomial summands of $I$ involving fields in $\mc C_2^\bullet$ also include fields in $\mc C_1^\bullet$, the pullback of $I$ under the map $F$ coincides with the pullback of $I$ under the inclusion map $\phi \mapsto (\phi, 0, 0)$ as required.
-\end{proof}
-
-\subsection{A-Type Twists} \label{A_twist_section}
-\chris{...}
-
-\subsection{Dimension 10}
-We'll begin our discussing of twists of super Yang-Mills theory by studying the twist of 10-dimensional $\mc N=(1,0)$ super Yang-Mills theory, with the supersymmetry action we analyzed in Section \ref{sect:vectormultipletSUSY}.  In the 10d $\mc N=(1,0)$ supersymmetry algebra there is a unique $\Spin(10)$ orbit of non-trivial square-zero supercharges given by the locus of pure spinors.  These square-zero supercharges are holomorphic.
-
-Fix a non-trivial pure spinor $Q$, or equivalently, fix a Calabi-Yau structure on $\RR^{10}$.  The stabilizer of $Q$ in $\Spin(10)$ is isomorphic to $\SU(5)$.  Let us first, therefore, decompose the component fields of 10d super Yang-Mills theory into sections of the associated bundles to irreducible representations of $\SU(5)$.  The BRST fields split as follows:
-\begin{align*}
-c &\mapsto c \in \Omega^0(\CC^5; \gg) \\
-A &\mapsto A_{0, 1} + A_{1, 0} \in \Omega^{0,1}(\CC^5; \gg) \oplus \Omega^{1,0}(\CC^5; \gg)\\
-\lambda &\mapsto \chi + \psi + B \in \Omega^0(\CC^5; \gg) \oplus \Omega^{1,0}(\CC^5; \gg) \oplus \Omega^{0,2}(\CC^5; \gg). 
-\end{align*}
-
-In terms of these component fields, the BV action functional can be written in the following way.  We'll split the action functional up into the BRST action and the antifield action.
-\begin{align*}
-S_{\mr{BRST}} &= \int \d^5z \left(\Lambda^2 \langle F_{0,2} \wedge F_{2,0}\rangle + \frac 12 |\Lambda F_{1,1}|^2 + \Lambda( \chi \wedge (\ol \dd_{A_{0,1}} \psi))  + \Lambda^2(B \wedge (\dd_{A_{1,0}} \psi))\right) \Omega + (B \wedge \ol \dd_{A_{0,1}} B) \\
-S_{\mr{anti}} &= \int \d^5z \langle \dd_{A_{1,0}}c, A_{1,0}^\vee \rangle +  \langle \ol \dd_{A_{0,1}}c, A_{0,1}^\vee \rangle + \langle [c,c], c^\vee \rangle + \langle [\chi,c], \chi^\vee \rangle + \langle [\psi,c], \psi^\vee \rangle + \langle [B,c], B^\vee \rangle,
-\end{align*}
-where $F_{i,j}$ is the $(i,j)$-form component of the curvature of the gauge field $A_{0, 1} + A_{1, 0}$, and $\Omega$ is the Calabi-Yau $(0,5)$-form.  Similarly, we can write explicitly the $L_\infty$ interaction functional associated to the action of the square 0 supercharge $Q$.  It has a quadratic and a cubic component given by
-\begin{align*}
-I^{(1)} &= \int \langle A_{1,0}^\vee, \psi \rangle + \langle \chi^\vee \Lambda F_{1,1} \rangle + \langle B^\vee, F_{0,2} \rangle \\
-I^{(2)} &= \frac 12 \int \d^5z \Omega |\chi^\vee|^2.
-\end{align*}
-The twisted action functional is obtained by adding these terms to the original BV action functional.
-
-We can now calculate the 10d holomorphic twist.  This calculation is originally due to Baulieu \cite{Baulieu}.
-
-\begin{theorem}\label{10d_twist_thm}
-The holomorphic twist of 10d super Yang-Mills theory on a Calabi-Yau 5-fold $X_5$ is equivalent to holomorphic Chern-Simons theory on $X_5$.
-\end{theorem}
-
-\begin{remark}
-From the point of view of supersymmetry, the twisted theory is only $\ZZ/2\ZZ$-graded, because the R-symmetry group is trivial, so there is no possible R-charge with which to regrade the twisted theory to make it $\ZZ$-graded.  
-This is of course compatible with our conventions for holomorphic Chern-Simons: holomorphic Chern-Simons (with values in an ordinary Lie algebra) on an odd dimensional Calabi-Yau only defines a $\ZZ/2$-graded theory (unless $d=3$, where this can be lifted to a $\ZZ$-grading). 
-As a consequence, the twisted BV-BRST complex only has an odd symplectic pairing, not a $(-1)$-symplectic pairing.
-\end{remark}
-
-\begin{proof}
-We'll prove this equivalence by first describing an equivalence of the underlying classical theories, as the composite of several maps, then showing that this equivalence is compatible with the two interaction functionals, and therefore defines a morphism of classical field theories, and finally observing that by Lemma \ref{free_int_ss_lemma} this morphism is automatically an equivalence.
-
-\begin{enumerate}
- \item The first part of our equivalence of classical field theories will be a simple change of variables.  Let $\chi'^\vee = \chi^\vee + \Lambda F_{1,1}$, and dually let $\chi' = \chi + \Lambda F_{1,1}^\vee$.  In terms of $\chi'$, the quadratic part of the twisted action functional becomes
- \begin{align*}
-  S^Q &= \int \d^5z \left(\Lambda^2 \langle \ol \dd A_{0,1} \wedge \dd A_{1,0} \rangle + \frac 12 |\chi'^\vee|^2 + \Lambda( \chi' \wedge (\ol \dd \psi)) - \Lambda^2(\dd A_{0,1} \wedge \ol \dd \psi) + \Lambda^2(B \wedge (\dd \psi))\right) \Omega + (B \wedge \ol \dd B) \\
-  &\quad + \langle \dd c, A_{1,0}^\vee \rangle +  \langle \ol \dd c, A_{0,1}^\vee \rangle + \langle A_{1,0}^\vee, \psi \rangle + \langle B^\vee, \ol \dd A_{0,1} \rangle.
- \end{align*}
- The classical BV complex associated to the theory after performing this change of variables is quasi-isomorphic to the classical BV complex of the original theory according to Lemma \ref{symplectomorphism_lemma}.  However, after performing the change of variables, the classical BV complex takes the form $(\Omega^0(\CC^5; \gg)_{\chi'^\vee} \overset \id \to \Pi\Omega^0(\CC^5; \gg)_{\chi'}) \to \mc E^\bullet$, where $\mc E^\bullet$ is the part of the BV complex generated by all fields other than $\chi'$ and $\chi'^\vee$, and where the map into $\mc E^\bullet$ is given by the map $\ol \dd$ from $\chi$ to $\psi^\vee$.  Therefore the inclusion of the complex $\mc E^\bullet$ is a quasi-isomorphism by Lemma \ref{inclusion_and_projection_lemma}.  We think of this as ``integrating out'' the field $\chi'$ and its antifield.
- 
- \item We'll now use a similar trick to integrate out the fields $\psi, A_{1,0}$ and their antifields.  We've argued in step 1 that the free part of the $Q$-twisted theory is equivalent to the theory with action functional 
- \[  S^Q = \int \d^5z \left(\Lambda^2 \langle \ol \dd A_{0,1} \wedge \dd A_{1,0} \rangle + \Lambda^2(B \wedge (\dd \psi))\right) \Omega + (B \wedge \ol \dd B) + \langle \dd c, A_{1,0}^\vee \rangle +  \langle \ol \dd c, A_{0,1}^\vee \rangle + \langle A_{1,0}^\vee, \psi \rangle + \langle B^\vee, \ol \dd A_{0,1} \rangle.\]
- We'll begin, as in step 1, by performing a linear change of variables, setting $A'_{1,0} = A_{1,0} - \ol{A_{0,1}}$, and performing the dual change of variables on the antifields.  This change of variables has the effect of eliminating the term $\langle \dd c, A_{1,0}^\vee \rangle$ from the quadratic part of the action. \chris{This isn't quite right I think.  We need to kill that term, however, for the below argument to work.  Can we fix it?}
- 
- Observe that the classical BV complex associated to this action functional can now be written in the following form:
- \[\xymatrix{
- &&\Omega^{1,0}(\CC^5;\gg)_\psi \ar[dl] \ar[dr] \ar[r] &\Omega^{1,0}(\CC^5;\gg)_{{A'}_{1,0}} \ar[dr]\\
- \Omega^0(\CC^5;\gg)_c \ar[r] &\Omega^{0,1}(\CC^5;\gg)_{A_{0,1}}  \ar[dl] \ar[r] &\Omega^{0,2}(\CC^5;\gg)_{B} \ar[dl]\ar[r] &\Omega^{0,3}(\CC^5;\gg)_{B^\vee} \ar[r] &\Omega^{0,4}(\CC^5;\gg)_{A_{0,1}^\vee} \ar[dlll] \ar[r] &\Omega^{0,5}(\CC^5;\gg)_{c^\vee} \\
- \Omega^{4,0}(\CC^5;\gg)_{{A'}_{1,0}^\vee} \ar[r]   &\Omega^{4,0}(\CC^5;\gg)_{\psi^\vee},
- }\]
- where the first and third rows are dual under the symplectic pairing.  This is exactly in the form required to apply Lemma \ref{symplectic_composite_lemma}, so applying that result tells us that the underlying free theory of the twisted 10d super Yang Mills theory is equivalent to the middle row alone, i.e. the Dolbeault complex, which is exactly the free part of holomorphic Chern-Simons theory on $\CC^5$.
- 
- \item Now, let's understand how the interaction functional behaves under this equivalence of classical field theories.  The morphism from step 1 is just given by an inclusion, so the interaction on twisted 10d Yang-Mills theory is compatible with the interaction evaluated at $\chi'=\chi'^\vee=0$.  In order to make the same observation for the fields $\psi$ and $A_{1,0}$, we'll use Lemma \ref{interaction_pullback_lemma}, which we can apply using the observation that the antifields $A_{1,0}^\vee$ and $\psi^\vee$ only appear in the action together with the corresponding fields.  Take our original action functional after the change of variables from step 1, and set the fields $\chi, \psi, A_{1,0}$ and their antifields to zero (i.e, in the notation of Lemma \ref{interaction_pullback_lemma}, restrict the interaction to the complex $\mc E^\bullet$).  The resulting interaction is 
- \[
-  I^Q = \int \d^5z (B \wedge [A_{0,1} \wedge B]) + \langle B^\vee, [A_{0,1} \wedge A_{0,1}] \rangle + \langle [c,c], c^\vee \rangle + \langle [A_{0,1}, c], A_{0,1}^\vee \rangle + \langle [B,c], B^\vee \rangle,
- \]
- which is, indeed, the interaction functional for holomorphic Chern-Simons theory.  The composite of the morphisms in steps 1 and 2 therefore defines a morphism of classical field theories from holomorphic Chern-Simons theory to twisted 10d super Yang-Mills theory.
- 
- \item To conclude the proof, we only need to apply Lemma \ref{free_int_ss_lemma}.  The morphism of classical field theories that we've constructed induces an equivalence of the $E_1$ pages of the free-to-interacting spectral sequences associated to holomorphically twisted 10d super Yang-Mills theory and holomorphic Chern-Simons theory.  Because the spectral sequences are convergent, there is likewise an equivalence of the $E_\infty$ pages, i.e. an equivalence of classical field theories.
-\end{enumerate}
-\end{proof}
-
-The above argument can be applied identically on a general Calabi-Yau 5-fold $X$.
-\brian{How do we place 10d YM on an arbitrary 5-fold? 
-Are you using something about sugra?
-} \chris{Not an arbitrary 5-fold, but just Calabi-Yau.  I'm not thinking of using sugra.  Instead I want to say that a Calabi-Yau 5-fold has a principal $\SU(5)$ frame bundle.  Take the fields to be sections of the associated vector bundles under the appropriate representations, then use the same action functional: the Lagrangian density is $\SU(5)$ invariant and so will define a density on the 5-fold.}
-
-
-\subsection{Dimension 9}
-The 9-dimensional $\mc N=1$ super Yang-Mills theory is obtained by dimensional reduction of $\mc N=1$ super Yang-Mills from $\RR^{10}$ to $\RR^9$.  It has BRST fields given by a ghost, a 9d gauge field $A$, a $\gg$-valued scalar field $\phi$, and a Dirac spinor field $\lambda$.
-
-There is a single non-zero equivalence class of square zero supercharges in 9 dimensions. Such supercharges are minimal (i.e. have 5d image).  They are stabilized by $\SU(4)$.  Like in 10 dimensions, the R-symmetry group is trivial, and so the twisted theory by such a supercharge is only $\ZZ/2\ZZ$-graded.
-
-Let's describe the twist of 9-dimensional $\mc N=1$ theory with respect to such a supercharge.  The relevant fields for this calculation are those component fields which survived the 10d holomorphic twist of Theorem \ref{10d_twist_thm}.  These fields, in the BRST formalism, decompose, under the action of $\SU(4)$ into the following component fields:
-\begin{align*}
-B^{10} &= B + A \wedge \d \ol z^5 \in (\Omega^{0,2}(\CC^4; \gg) \oplus \Omega^{0,1}(\CC^4; \gg)) \otimes \Omega^0(\RR_{x^9}) \\
-A^{10}_{0,1} &= A' + \phi \d \ol z^5 \in (\Omega^{0,1}(\CC^4; \gg) \oplus \Omega^0(\CC^4; \gg)) \otimes \Omega^0(\RR_{x^9})
-\end{align*}
-along with the ghost $c$.  We'll describe the twisted action functional using dimensional reduction.
-
-\brian{Where is the one-form in the $\RR$-direction? Are we identifying that with $\phi$?}
-
-\begin{theorem} \label{9d_twist_thm}
-The minimal twist of 9d super Yang-Mills theory on the product of a Calabi-Yau 4-fold $X_4$ and an oriented 1-manifold $L = \RR$ or $S^1$ is equivalent to mixed Chern-Simons theory on $X_4 \times L_\mr{dR}$.
-\end{theorem}
-
-\begin{proof}
-Let's apply Lemma \ref{commuting_twist_and_reduction_lemma} -- the fact that twisting commutes with dimensional reduction.  Choose a representative element $Q$ in the equivalence class of square-zero supercharges which also squares to zero in the 10d $\mc N=(1,0)$ supersymmetry algebra.  According to Lemma \ref{commuting_twist_and_reduction_lemma}, the twist of 9d $\mc N=1$ super Yang-Mills theory by the supercharge $Q$ is equivalent to the dimensional reduction of holomorphic Chern-Simons theory on $X_4 \times C$, where $C = L \times \RR$ is either the curve $\CC$ if $L = \RR$, or $\CC^\times$ if $L = S^1$. 
-
-As such, it's sufficient to observe that mixed Chern-Simons theorem on $X_4 \times L_{\mr{dR}}$ is a dimensional reduction of holomorphic Chern-Simons theory on $X_4 \times C$, which follows by applying Lemma \ref{CS_diml_red_prop}.
-\end{proof}
-
-\begin{remark}
-One can, alternatively, prove this theorem using exactly the same methods as Theorem \ref{10d_twist_thm}; the steps that one needs to follow are identical.
-\end{remark}
-
-\subsection{Dimension 8}
+\section{Dimension 8}
 \vspace{-10pt}
 \paragraph{Fields:} 
 The 8-dimensional $\mc N=1$ super Yang-Mills theory is obtained by dimensional reduction of $\mc N=1$ super Yang-Mills from $\RR^{10}$ to $\RR^8$.  It has BRST fields given by a ghost $c$ along with the following.
@@ -1336,7 +1485,7 @@ The proof here is identical to the proof of Theorem \ref{9d_twist_thm}, we just 
 \chris{we need to comment on the fact that the rank 2 supercharge is stabilized by $\SU(3)$, but I'm not sure whether this is the entire stabilizer.}
 
 
-\subsection{Dimension 7} \label{7d_section}
+\section{Dimension 7} \label{7d_section}
 The 7-dimensional $\mc N=1$ super Yang-Mills theory is obtained by dimensional reduction of $\mc N=1$ super Yang-Mills from $\RR^{10}$ to $\RR^7$.  It has BRST fields given by a ghost, a 7d gauge field $A$, three $\gg$-valued scalar fields $\phi_1$, $\phi_2$ and $\phi_3$, and a symplectic Dirac spinor field $\lambda$ in $S \otimes W$, where $W$ is a 2-dimensional symplectic vector space.
 
 In 7 dimensions, exactly like in 8-dimensions, there are 3 classes of inequivalent non-zero supercharges by which we can twist.
@@ -1364,13 +1513,13 @@ The twist by a rank 2 supercharge of 7d $\mc N=1$ super Yang-Mills theory on the
  
 \end{proof}
 
-\subsection{Dimension 6}
-
-In dimension 6 there are two possible supersymmetry groups by which we can act.  There is a minimal supersymmetric field theory with $\mc N=(1,0)$ supersymmetry, consisting of a pure gauge theory coupled to matter living in a symplectic representation $V$.  
+\section{Dimension 6}
+In dimension 6 there are two possible supersymmetry groups by which we can act.  
+There is a minimal supersymmetric field theory with $\mc N=(1,0)$ supersymmetry, consisting of a pure gauge theory coupled to matter living in a symplectic representation $V$.  
 If $V \iso T^*\gg$, then the $(1,0)$ supersymmetry can be enhanced to $\mc N=(1,1)$ supersymmetry.  
 This is the theory one obtains by compactifying 10d $\mc N=1$ super Yang-Mills down to $\RR^6$.
 
-\subsubsection{$\mc N = (1,0)$ Super Yang-Mills Theory with Matter} \label{6d_10_section}
+\subsection{$\mc N = (1,0)$ Super Yang-Mills Theory with Matter} \label{6d_10_section}
 
 The general theory of $\mc N = (1,0)$ coupled to matter has been exhibited in Section \ref{sec: couple}. 
 The fields are:
@@ -1447,7 +1596,7 @@ In the 6 dimensional $\mc N=(1,1)$ supersymmetry algebra, there are now 4 classe
  \item Rank $(2,2)$ square-zero spinors.  These supercharges have 5-dimensional image in $\CC^6$.  The corresponding twists are only $\ZZ/2\ZZ$-graded.
 \end{enumerate}
 
-We already considered the holomorphic twist in the previous subsection.  The remaining three classes are new: they all arise via appropriate dimensional reductions from twists of 7d $\mc N=1$ super Yang-Mills.
+We already considered the holomorphic twist in the previous section.  The remaining three classes are new: they all arise via appropriate dimensional reductions from twists of 7d $\mc N=1$ super Yang-Mills.
 
 \begin{theorem} \label{6d_rk11_twist_thm}
 The twist of 6d $\mc N=(1,1)$ super Yang-Mills theory by a rank $(1,1)$ supercharge with 4 invariant directions on the product of a Calabi-Yau surface $S$ and an oriented 2-manifold $\Sigma$ is equivalent to mixed BF theory on the product $S \times \Sigma_{\mr{dR}}$. This twist degenerates to a one-parameter family of topological twists of the form $\map(S \times \Sigma_{\mr{dR}}, B\gg)_{\mr{Hod}}$.
@@ -1465,10 +1614,10 @@ The twist by a rank $(2,2)$ supercharge of 6d $\mc N=(1,1)$ super Yang-Mills the
  
 \end{proof}
 
-\subsection{Dimension 5}
+\section{Dimension 5}
 The 5-dimensional $\mc N=k$ supersymmetry algebra has odd part $\Sigma \iso S \otimes W$, where $S$ is the 4-dimensional spinor representation of $\Spin(5) \iso \Sp(4)$, and where $W$ is a $2k$-dimensional symplectic vector space.  The maximal supersymmetric gauge theory has $\mc N=2$.  However, there are $\mc N=1$ super Yang-Mills theory for every choice $U$ of symplectic representation of the gauge group.
 
-\subsubsection{$\mc N = 1$ Super Yang-Mills Theory with Matter}
+\subsection{$\mc N = 1$ Super Yang-Mills Theory with Matter}
 We begin by treating $\mc N=1$ Super Yang-Mills theory with gauge group $G$, with a matter (half) hypermultiplet valued in a symplectic representation $U$.  This is the theory obtained from 6d $\mc N=(1,0)$ super Yang-Mills theory with matter, after dimensional reduction to 5 dimensions.
 
 \vspace{-10pt}
@@ -1505,7 +1654,7 @@ The minimal twist of 5d $\mc N=1$ super Yang-Mills theory with gauge group $G$ a
 This follows from the calculation of the minimal twist in 6-dimensional $\mc N=(1,0)$ theory in \chris{ref} above, by applying Proposition \ref{CS_diml_red_prop}.
 \end{proof}
 
-\subsubsection{$\mc N = 2$ Super Yang-Mills Theory} \label{5d_2_section}
+\subsection{$\mc N = 2$ Super Yang-Mills Theory} \label{5d_2_section}
 
 \paragraph{Fields:} We can describe the BRST fields of $\mc N=2$ super Yang-Mills by restricting the fields of maximal super Yang-Mills from 10d, or alternatively by restricting the 7d $\mc N=1$ fields from section \ref{7d_section}, to representations of the group $\mr O(5)$.  In addition to the ghost $c$, the fields we obtain are
 \begin{itemize}
@@ -1532,7 +1681,7 @@ This follows by restricting the 6d $\mc N=(1,1)$ supersymmetry action further to
 \paragraph{Twisting data:}
 Exactly as in the case of the 6d $\mc N=(1,1)$ supersymmetry algebra, there are 4 inequivalent classes of twists (see \cite[Section 4.5]{ElliottSafronov}).  These supercharges all occur as square zero supercharges in the 6-dimensional $\mc N=(1,1)$ supersymmetry algebra from the previous section.
 \begin{enumerate}
- \item Rank $1$ spinors, $Q \otimes w$.  These automatically square to zero, and admit three invariant directions.  Twists by such supercharges were already described in the previous subsection.
+ \item Rank $1$ spinors, $Q \otimes w$.  These automatically square to zero, and admit three invariant directions.  Twists by such supercharges were already described in the previous section.
  \item Rank $2$ square-zero spinors.  Like in dimension 6, these split into two inequivalent classes:
  \begin{enumerate}
  \item The open locus, consisting of topological supercharges.
@@ -1567,13 +1716,13 @@ The twist by a rank $4$ supercharge of 5d $\mc N=2$ super Yang-Mills theory on a
  
 \end{proof}
  
-\subsection{Dimension 4}
+\section{Dimension 4}
 
 % \cN=4 SYM
 % \cN=2 SYM with matter in a pseudo-real representation
 % \cN=1 SYM with matter in a complex representation
 
-\subsubsection{$\cN=1$ with chiral multiplet matter}
+\subsection{$\cN=1$ with chiral multiplet matter}
 There is a single non-zero equivalence class of square zero supercharges in $4$-dimensional $\mc N = 1$, which we fix from here on.
 For concreteness, we will fix a nonzero supercharge of negative chirality $$Q = Q_- \in S_-$$ to twist by. 
 Such supercharges are minimal (i.e. have two dimensional image).  
@@ -1676,11 +1825,11 @@ We now observe that the interacting parts of the twisted theory agree with the i
 %\end{prop}
 
 
-\subsubsection{$\cN=2$ SYM with hypermultiplet matter}
+\subsection{$\cN=2$ SYM with hypermultiplet matter}
 %quaternionic is hyperkahler
 %pseudo-real is quaternionic
 
-\subsubsection{$\cN=4$ SYM}
+\subsection{$\cN=4$ SYM}
 
 \vspace{-10pt}
 \paragraph{Fields:} We can describe the BRST fields of $\mc N=4$ super Yang-Mills by restricting the 5d $\mc N=2$ fields from section \ref{5d_2_section} to representations of the group $\mr O(4)$.  In addition to the ghost $c$, the fields we obtain are
@@ -1716,13 +1865,13 @@ where $\omega$ indicates the canonical isomorphism $\omega \colon \wedge^2(W^*) 
 %\[
 %\mathcal E_{\rm matter}^{\cN=1} = C^\infty (\RR^4) \otimes R^{\oplus 2} \oplus  \Pi C^\infty(\RR^4) \otimes (S_{+}  \otimes R \oplus S_- \otimes R) .
 %\]
-%\subsection{Dimension 3}
+%\section{Dimension 3}
 
 % \cN=8 SYM
 % \cN=4 SYM with matter in a pseudo-real representation
 % \cN=2 SYM with matter in a complex representation
 
-\subsection{Dimension 2}
+\section{Dimension 2}
 
 % \cN=(8, 8) SYM
 % \cN=(4, 4) SYM with matter in a pseudo-real representation
@@ -1909,6 +2058,64 @@ Thus, the $E_1$ page of the corresponding spectral sequence is the BV cohomology
 Any quasi-isomorphism of differentiable cochain complexes admits a quasi-inverse.
 \end{lemma}
 \brian{I think Pavel had something to say for this lemma.}
+
+\section{Spinors}
+\label{sect:spinors}
+
+In this paper we will extensively use the theory of spinors. Let $V$ be a complex vector space equipped with a nondegenerate symmetric bilinear pairing. Recall that the Clifford algebra $\Cl(V)$ is defined to be the quotient of the tensor algebra on $V$ by the relation
+\[v_1 v_2 + v_2 v_1 = 2(v_1, v_2).\]
+Consider a $\ZZ/2$-graded Clifford module $M=M^+\oplus M^-$. Denote the Clifford action by $\rho(v)\in\eend(M)$. We assume the Clifford module is equipped with a nondegenerate pairing $(-, -)\colon M^+\otimes M^-\rightarrow \CC$ such that
+\[(\rho(v) Q_1, Q_2) = (Q_1, \rho(v) Q_2)\]
+for any $Q_1, Q_2\in M$ and $v\in V$. From now on we denote $M^+=\Sigma$ and $M^-=\Sigma^*$. We define the $\Gamma$-pairings
+\[\Gamma\colon\Sym^2(\Sigma)\longrightarrow V,\qquad \Gamma\colon\Sym^2(\Sigma^*)\longrightarrow V\]
+by
+\begin{equation}
+(\rho(v) Q_1, Q_2) = (v, \Gamma(Q_1, Q_2))
+\label{eq:Gammaspinorpairing}
+\end{equation}
+
+We have a subset $\Spin(V)\subset \Cl(V)$, so $\Sigma$ and $\Sigma^*$ are representations of the spin group. Moreover, the Clifford action and the maps $\Gamma$ are $\Spin(V)$-equivariant.
+
+We may identify $\wedge^2(V)\rightarrow \so(V)$ via
+\[\omega\mapsto (w\mapsto -2\iota_{(w, -\rangle)} \omega).\]
+This gives rise to an action map
+\[\wedge^2(V)\otimes \Sigma\longrightarrow \Sigma\]
+of two-forms on spinors.
+
+Consider the map $q\colon \wedge^\bullet(V)\rightarrow \Cl(V)$ given by antisymmetrization, so that, for instance,
+\begin{equation}
+q(v_1\wedge v_2) = v_1v_2 - (v_1, v_2).
+\label{eq:quantizationtwoforms}
+\end{equation}
+
+The resulting action $\wedge^2(V)\otimes \Sigma\rightarrow \Sigma$ then coincides with the original action of $\so(V)$ on the spinorial representation $\Sigma$, so that $\so(V)$-equivariance of $\Gamma$ gives the following.
+
+\begin{prop}
+For $X\in\wedge^2(V)$ and $Q_1,Q_2\in\Sigma$ we have
+\[\Gamma(Q_1, \rho(X) Q_2) + \Gamma(Q_2, \rho(X) Q_1) = -2\iota_{\Gamma(Q_1, Q_2)} X.\]
+\label{prop:cliffordactionproperty1}
+\end{prop}
+
+We may extend the discussion to the case of Riemannian manifolds $M$, where we replace $V$ by the vector bundle $TM$. Given a bundle of Clifford modules $M=\Sigma\oplus \Sigma^*$ as before we have the associated Dirac operator
+\[\sd{\d}\colon \Gamma(M, \Sigma)\rightarrow \Gamma(M, \Sigma^*).\]
+
+From \eqref{eq:quantizationtwoforms} we get the following property.
+
+\begin{prop}
+Suppose $Q_1,Q_2\in\Sigma$ and $\lambda\in\Gamma(M, \Sigma)$. Then
+\[\sd{\d}\rho(\Gamma(Q_1, \lambda)) Q_2 = \rho(d \Gamma(Q_1, \lambda)) Q_2 + (Q_1, \sd{\d} \lambda) Q_2.\]
+\label{prop:cliffordactionproperty2}
+\end{prop}
+
+Finally, we have the following important compatibility between the Clifford action of differential forms and the Dirac operator proved in \cite[equation 7.6]{Snygg}.
+
+\begin{prop}
+Suppose $Q\in\Sigma$ and $X\in\Omega^p(M)$. Then
+\[\sd{\d}(\rho(X) Q) = \rho(\d X)Q + (-1)^{n(1+p)}\rho(\ast \d\ast X) Q.\]
+\label{prop:cliffordactionproperty3}
+\end{prop}
+
+Note that both Proposition \ref{prop:cliffordactionproperty2} and Proposition \ref{prop:cliffordactionproperty3} extend to the case when $\lambda$ and $X$ respectively are twisted by a vector bundle and $\sd{\d}$ is the corresponding twisted Dirac operator.
 
 \pagestyle{bib}
 \printbibliography
