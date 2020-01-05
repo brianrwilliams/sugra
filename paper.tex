@@ -8,6 +8,7 @@
 \newcommand{\gauge}{\mathrm{gauge}}
 \newcommand{\matter}{\mathrm{matter}}
 \renewcommand{\Re}{\mathrm{Re}}
+\newcommand{\U}{\mathrm{U}}
 
 \newcommand{\defterm}[1]{\textbf{\emph{#1}}}
 
@@ -105,6 +106,8 @@ A \defterm{morphism} $F\colon (E, Q, \omega, I) \rightsquigarrow (E', Q', \omega
 
 We will now describe two primitive examples of equivalences of classical field theories which will be useful in simplifying twisted theories. First, we consider the process of integrating out an auxiliary field.
 
+\pavel{Chris, I think your diagrams of BV complexes would fit well here, can you insert them?}
+
 \begin{prop}
 Fix a volume form $\dvol_M$ on $M$. Suppose $(E, Q, \omega, I)$ is a classical field theory, where $E\cong E_0\oplus (\cO_M\oplus \Dens_M[-1])$ with the symplectic pairing $\omega$ given by a sum of a symplectic pairing $\omega_0$ on $E_0$ and the standard symplectic pairing on the second summand. Denote by $\phi$ a section of $\cO_M$ and by $\phi^*$ a section of $\Dens_M[-1]$. Suppose the BV action is
 \[S_{BV} = S_0 + \frac{1}{2} \int \dvol_M (\phi^2 - 2\phi S_1),\]
@@ -190,26 +193,6 @@ These are required to satisfy the following conditions:
 \begin{remark}
 While we allow for $L_\infty$ actions of Lie algebras, we only consider strict actions of Lie groups.
 \end{remark}
-
-\subsection{The Classical Factorization Algebra}
-
-\pavel{Is this section needed?} \chris{something is needed if we want to connect to the story from our previous paper: we'd like to say that all of these twisted SUSY field theories (or rather, the topological ones) produce $\bb E_n$ algebras, no?  Certainly not all of them are interesting.  I don't know whether we need the section here, but we would like to say something somewhere.}
-
-Let $(E, Q, \omega, I)$ be a classical BV theory. We recall the formalism of \cite{Book1,Book2} which extracts a factorization algebra on spacetime.
-
-\begin{definition}
-Let $(E, Q, \omega, I)$ be a classical field theory on $M$. The \defterm{classical factorization algebra of observables} $\Obs$ assigns to an open set $U \subset M$ the commutative dg algebra (in differentiable pro-cochain complexes)
-\[
-\Obs(U) = \left(\cO(\cE(U)) , Q + \{I,-\}\right) .
-\]
-\end{definition}
-
-Notice that the BV complex we defined in the previous section, Equation (\ref{bvcplx}), is the global sections of the factorization algebra along $M$.
-The BV complex can be thought of as the complex of functions on the derived critical locus of the BRST action.
-It makes sense to restrict fields to any open set $U \subset M$. 
-Thus, likewise, the value of the factorization algebra on an open set $U \subset M$ can be interpreted as functions on the critical locus of the BRST action where we restrict the theory to $U$. 
-
-The fact that the assignment $U \mapsto \Obs(U)$ defines a factorization algebra can be found in \cite[Section 3]{Book2}. 
 
 \subsection{From BRST to BV}
 
@@ -494,7 +477,7 @@ Consider a spacetime manifold $M$ which is an affine space over $V_\RR$. Let $\I
 A classical field theory $(E, Q, \omega, I)$ is \defterm{supersymmetric} if $E\rightarrow M$ is an $\ISO(V_\RR)\times G_R$-equivariant vector bundle and the infinitesimal strict action of the translation Lie algebra $V$ on the classical theory is extended to a $\Spin(V_\RR)\times G_R$-equivariant $L_\infty$ action of the supertranslation Lie algebra $T$ on the classical theory.
 \end{definition}
 
-\subsection{Division algebras and supersymmetry}
+\subsection{Division algebras and minimal supersymmetry}
 \label{sect:divisionalgebras}
 
 We will now recall a relationship between certain ``minimal'' supersymmetry algebras and division algebras. Our treatment will essentially follow \cite{BaezHuerta}.
@@ -528,6 +511,8 @@ The following is proved in \cite[Proposition 6]{BaezHuerta}.
 The action maps $V\otimes \Sigma\rightarrow \Sigma^*$ and $V\otimes \Sigma^*\rightarrow \Sigma$ satisfy the Clifford relation
 \[\rho(M)\rho(M) = -\det(M)\cdot 1.\]
 \end{prop}
+
+So, $\Sigma\oplus \Sigma^*$ forms a $\ZZ/2$-graded Clifford module.
 
 We have a nondegenerate scalar spinorial pairing
 \[\Sigma\otimes \Sigma^*\longrightarrow \CC\]
@@ -564,16 +549,108 @@ which is the left-hand side.
 
 We will be interested in the following four examples:
 \begin{enumerate}
-\item $A_\RR = \RR$. We have $\dim(V) = 3$ and $\Sigma$ is the spin representation of $\Spin(3)$ (3d $\mc N=1$ supersymmetry).
+\item (\textbf{3d $\mc N=1$ supersymmetry}) $A_\RR = \RR$. We have $\dim(V) = 3$ and $\Sigma$ is the spin representation of $\Spin(3)$.
 
-\item $A_\RR = \CC$. We have $A = \CC[x]/(x^2+1)$ with $\sigma(x) = -x$. Moreover, $\dim(V) = 4$ and $\Sigma=S_+\oplus S_-$ is the sum of semi-spin representations (4d $\mc N=1$ supersymmetry).
+\item (\textbf{4d $\mc N=1$ supersymmetry}) $A_\RR = \CC$. We have $A = \CC[x]/(x^2+1)$ with $\sigma(x) = -x$. Moreover, $\dim(V) = 4$ and $\Sigma=S_+\oplus S_-$ is the sum of semi-spin representations.
 
-\item $A_\RR = \mathbb{H}$. We have $A=\eend(W_+)$, where $W_+$ is a two-dimensional symplectic vector space with $\sigma$ given by the dual operator. Moreover, $\dim(V) = 6$ and $\Sigma = S_+\oplus W_+$ (6d $\mc N=(1, 0)$ supersymmetry).
+\item (\textbf{6d $\mc N=(1, 0)$ supersymmetry}) $A_\RR = \mathbb{H}$. We have $A=\eend(W_+)$, where $W_+$ is a two-dimensional symplectic vector space with $\sigma$ given by the dual operator. Moreover, $\dim(V) = 6$ and $\Sigma = S_+\oplus W_+$.
 
-\item $A_\RR = \mathbb{O}$. We have $\dim(V) = 10$ and $\Sigma = S_+$ is a semi-spin representation (10d $\mc N=(1, 0)$ supersymmetry).
+\item (\textbf{10d $\mc N=(1, 0)$ supersymmetry}) $A_\RR = \mathbb{O}$. We have $\dim(V) = 10$ and $\Sigma = S_+$ is a semi-spin representation.
 \end{enumerate}
 
 All four examples are alternative, while the first three examples are moreover associative.
+
+\subsection{Two-dimensional chiral supersymmetry}
+
+In the previous section we have related division algebras to minimal supersymmetry algebras in dimensions 3, 4, 6 and 10. In this section we explain a different relationship between division algebras and supersymmetry algebras, this time in the case of 2d $\cN=(\cN_+, 0)$ supersymmetry.
+
+Recall that in the case $\dim(V) = 2$ we have two one-dimensional semi-spin representations $S_+, S_-$. Moreover, we have an isomorphism
+\[V\cong S_+^{\otimes 2}\oplus S_-^{\otimes 2}\]
+and a pairing $( -, -)\colon S_+\otimes S_-\rightarrow \CC$, both of which are $\so(V)$-equivariant. We denote the embeddings $S_{\pm}^{\otimes 2}\subset V$ by $\Gamma_{\pm}$, so that
+\begin{equation}
+(\Gamma_+(s, s), \Gamma_-(f, f)) = 2(s, f)^2.
+\label{eq:2dvectorpairing}
+\end{equation}
+
+Let $W$ be a complex vector space of dimension $\cN_+$ equipped with a nondegenerate symmetric bilinear pairing. We consider the spinorial representation
+\[\Sigma = S_+\otimes W\]
+and its dual
+\[\Sigma^* = S_-\otimes W.\]
+The Clifford action $V\otimes S_+\rightarrow S_-$ is defined so that
+\[\rho(\Gamma_-(f, f)) s = 2(s, f) f\]
+and similarly for $V\otimes S_-\rightarrow S_+$.
+
+\begin{prop}
+For $v,w\in V$ and $s\in S_+\oplus S_-$ we have
+\[\rho(v)\rho(w)s + \rho(w)\rho(v) s = 2(v, w) s.\]
+\end{prop}
+\begin{proof}
+It is enough to prove the claim for $s\in S_+$, $w\in S_+^{\otimes 2}$ and $v\in S_-^{\otimes 2}$. Assume $w=\Gamma_+(s, s)$ and $v = \Gamma_-(f, f)$ for $f\in S_-$. Then we have
+\begin{align*}
+\rho(\Gamma_+(s, s)) \rho(\Gamma_-(f, f)) s &= 2(s, f) \rho(\Gamma_+(s, s)) f \\
+&= 4(s, f)^2 s.
+\end{align*}
+But by \eqref{eq:2dvectorpairing} we have
+\[(\Gamma_+(s, s), \Gamma_-(f, f)) = 2(s, f)^2\]
+which proves the claim.
+\end{proof}
+
+The Clifford action $V\otimes S_{\pm}\rightarrow S_{\mp}$ extends in an obvious way to a Clifford action $V\otimes \Sigma\rightarrow \Sigma^*$ and $V\otimes \Sigma^*\rightarrow \Sigma$ given by the identity on the $W$ component. Thus, $\Sigma\oplus \Sigma^*$ is a $\ZZ/2$-graded Clifford module.
+
+The spaces $\Sigma, \Sigma^*$ are equipped with $\so(V)$-equivariant nondegenerate pairings $\Gamma\colon \Sym^2(\Sigma)\rightarrow V$ defined by
+\[\Gamma(s\otimes q_1, s\otimes q_2) = \Gamma_+(s, s) (q_1, q_2)\]
+and $\Gamma\colon \Sym^2(\Sigma^*)\rightarrow V$ defined similarly.
+
+\begin{prop}
+For any $v\in V$ and $Q_1, Q_2\in\Sigma$ or $Q_1, Q_2\in\Sigma^*$ we have
+\[(v, \Gamma(Q_1, Q_2)) = (\rho(v) Q_1, Q_2).\]
+\end{prop}
+\begin{proof}
+It is enough to prove the claim with $Q_1, Q_2\in\Sigma$. Assume $v = \Gamma_-(f, f)$ for some $f\in S_-$, $Q_1 = s\otimes q_1$ and $Q_2 = s\otimes q_2$. Then the left-hand side is
+\[(\Gamma_-(f, f), \Gamma_+(s, s)) (q_1, q_2) = 2(s, f)^2 (q_1, q_2).\]
+The right-hand side is
+\begin{align*}
+(\rho(\Gamma_-(f, f) s\otimes q_1, s\otimes q_2) &= (2(s, f) f\otimes q_1, s\otimes q_2) \\
+&= 2(s, f)^2 (q_1, q_2).
+\end{align*}
+\end{proof}
+
+An important property of two-dimensional chiral supersymmetry is the following analog of Theorem \ref{thm:3psi}.
+
+\begin{thm}
+For $Q_1, Q_2, Q_3\in\Sigma$ we have
+\[\rho(\Gamma(Q_1, Q_2))Q_3 = 0.\]
+\label{thm:2d3psi}
+\end{thm}
+\begin{proof}
+Indeed, $\Gamma(Q_1, Q_2)$ lies in $S_+^{\otimes 2}\subset V$, but the nonzero Clifford action is given by
+\[S_-^{\otimes 2}\otimes (S_+\otimes W)\longrightarrow S_-\otimes W.\]
+\end{proof}
+
+We will now fix an associative algebra $A$ with an antiinvolution $\sigma$ as in Section \ref{sect:divisionalgebras} and set $W = A$. The nondegenerate symmetric bilinear pairing $a_1, a_2\mapsto \Re(a_1\sigma(a_2))$ on $A$ endows $W$ with a pairing. Both $\Sigma$ and $\Sigma^*$ are right $A$-modules and the Clifford actions $V\otimes \Sigma\rightarrow \Sigma^*$ and $V\otimes \Sigma^*\rightarrow \Sigma$ are maps of right $A$-modules.
+
+Since $\Sigma$ and $\Sigma^*$ are right $A$-modules, by Lemma \ref{lm:extendpairing} we may extend the scalar spinorial pairing to an $A$-valued pairing $\Sigma\otimes \Sigma^*\rightarrow A$ by
+\[(s_1\otimes q_1, s_2\otimes q_2)^A = (s_1, s_2)\sigma(q_1) q_2.\]
+
+\begin{thm}
+For $Q_1, Q_2\in\Sigma$ and $Q_3\in\Sigma^*$ we have
+\[Q_1(Q_2, Q_3)^A + Q_2(Q_1, Q_3)^A = \rho(\Gamma(Q_1, Q_2))Q_3.\]
+\label{thm:2dmatter3psi}
+\end{thm}
+\begin{proof}
+Pick basis elements $s\in S_+$ and $f\in S_-$, so that
+\[Q_1 = s\otimes q_1,\qquad Q_2 = s\otimes q_2,\qquad Q_3 = f\otimes q_3.\]
+The right-hand side is
+\begin{align*}
+(q_1, q_2) \rho(\Gamma_+(s, s)) f\otimes q_3 &= 2(s, f) s\otimes (q_1, q_2) q_3 \\
+&= (s, f) s\otimes (q_1\sigma(q_2) + q_2\sigma(q_1)) q_3.
+\end{align*}
+We have
+\[Q_1(Q_2, Q_3)^A = s\otimes q_1 (s, f) (\sigma(q_2)q_3),\]
+so the left-hand side is
+\[s(s, f)\otimes (q_1(\sigma(q_2) q_3) + q_2(\sigma(q_1)q_3)).\]
+By associativity of $A$ the two expressions are equal.
+\end{proof}
 
 \subsection{Supersymmetric twisting}
 
@@ -658,9 +735,92 @@ Fix a twisting datum $(Q, \alpha)$, where $\Gamma_V(Q, Q) = 0$. Then the dimensi
 \subsection{A-Type Twists} \label{A_twist_section}
 \chris{...}
 
+\begin{landscape}
+\begin{figure}
+\begin{tikzpicture}[node distance=0.35cm and 0.35cm, text width=1.8cm]
+\node (101) [s16chiral] {Rank $(1, 0)$ $d=5$};
+\node (91) [s16, below=of 101] {Rank $1$ $d=5$};
+\node (82) [s16, below=of 91] {Rank $(1, 1)$ $d=5$};
+\node (81) [s16, left=of 82] {Rank $(1, 0)$ $d=4$};
+\node (825) [right=of 82] {};
+\node (83) [s16, right=of 825] {Rank $(1, 0)$ $d=8$};
+\node (71) [s16, below=of 81] {Rank $1$ $d=4$};
+\node (72) [s16, below=of 82] {Rank $2$ $d=5$};
+\node (73) [s16, below=of 83] {Rank $1$ $d=7$};
+\node (62) [s16, below=of 71] {Rank $(1, 1)$ $d=4$};
+\node (61) [s8, left=of 62] {Rank $(1, 0)$ $d=3$};
+\node (63) [s16, below=of 72] {Rank $(2, 2)$ $d=5$};
+\node (64) [s16chiral, right=of 63] {Rank $(2, 0)$ $d=5$};
+\node (65) [s16, below=of 73, right=of 64] {Rank $(1, 1)$ $d=6$};
+\node (51) [s8, below=of 61] {Rank $1$ $d=3$};
+\node (52) [s16, below=of 62] {Rank $2$ $d=4$};
+\node (53) [s16, below=of 63] {Rank $4$ $d=5$};
+\node (54) [s16, below=of 64] {Rank $2$ $d=5$};
+\node (42) [s8, below=of 51] {Rank $(1, 1)$ $d=3$};
+\node (41) [s4, left=of 42] {Rank $(1, 0)$ $d=2$};
+\node (43) [s16, right=of 42] {Rank $(2, 2)$ $d=4$};
+\node (44) [s16, right=of 43] {Rank $(2, 1)$ $d=4$};
+\node (45) [s8, right=of 44] {Rank $(2, 0)$ $d=4$};
+\node (31) [s4, below=of 41] {Rank $1$ $d=2$};
+\node (32) [s8, below=of 42] {Rank $2$ $d=3$};
+\node (22) [s4, below=of 31] {Rank $(1, 1)$ $d=2$};
+\node (21) [s2chiral, left=of 22] {Rank $(1, 0)$ $d=1$};
+
+\draw[arrow] (101) -- (91);
+\draw[arrow] (91) -- (81);
+\draw[arrow] (91) -- (82);
+\draw[arrow] (81) -- (71);
+\draw[arrow] (82) -- (71);
+\draw[arrow] (82) -- (72);
+\draw[arrow] (83) -- (73);
+\draw[arrow] (71) -- (61);
+\draw[arrow] (71) -- (62);
+\draw[arrow] (72) -- (62);
+\draw[arrow] (72) -- (63);
+\draw[arrow] (73) -- (65);
+\draw[arrow] (61) -- (51);
+\draw[arrow] (62) -- (51);
+\draw[arrow] (62) -- (52);
+\draw[arrow] (63) -- (53);
+\draw[arrow] (64) -- (52);
+\draw[arrow] (64) -- (54);
+\draw[arrow] (65) -- (54);
+\draw[arrow] (51) -- (41);
+\draw[arrow] (51) -- (42);
+\draw[arrow] (52) -- (42);
+\draw[arrow] (52) -- (43);
+\draw[arrow] (53) -- (43);
+\draw[arrow] (54) -- (43);
+\draw[arrow] (54) -- (44);
+\draw[arrow] (54) -- (45);
+\draw[arrow] (41) -- (31);
+\draw[arrow] (42) -- (31);
+\draw[arrow] (42) -- (32);
+\draw[arrow] (43) -- (32);
+\draw[arrow] (44) -- (32);
+\draw[arrow] (45) -- (32);
+\draw[arrow] (31) -- (21);
+\draw[arrow] (31) -- (22);
+\draw[arrow] (32) -- (22);
+
+\node (2d) [dimension, left=of 21] {2d};
+\node (3d) [dimension, above=of 2d] {3d};
+\node (4d) [dimension, above=of 3d] {4d};
+\node (5d) [dimension, above=of 4d] {5d};
+\node (6d) [dimension, above=of 5d] {6d};
+\node (7d) [dimension, above=of 6d] {7d};
+\node (8d) [dimension, above=of 7d] {8d};
+\node (9d) [dimension, above=of 8d] {9d};
+\node (10d) [dimension, above=of 9d] {10d};
+\end{tikzpicture}
+\caption{Orbits of square-zero supercharges.}
+\label{fig:superchargeorbits}
+\end{figure}
+\end{landscape}
+
 \section{Supersymmetric Yang--Mills theories}
 
-In this section we construct supersymmetry action on all super Yang--Mills theories. We have the following variants of the super Yang--Mills theory depending on $\dim(\Sigma)$:
+In this section we construct supersymmetry action on super Yang--Mills theories. We have the following variants of the super Yang--Mills theory depending on $\dim(\Sigma)$:
 \begin{itemize}
 \item (16 supercharges). This theory exists in dimensions 2 through 10 and it depends on a Lie algebra $\fg$.
 
@@ -669,6 +829,14 @@ In this section we construct supersymmetry action on all super Yang--Mills theor
 \item (4 supercharges). This theory exists in dimensions 2 through 4 and it depends on a Lie algebra $\fg$ together with a $\fg$-representation $R$.
 
 \item (2 supercharges). This theory exists in dimensions 2 through 3 and it depends on a Lie algebra $\fg$ together with an orthogonal $\fg$-representation $P$.
+
+\item ($\cN_+$ supercharges, chiral supersymmetry). This theory exists in dimension 2 and depends on a Lie algebra $\fg$.
+
+\item (4 supercharges, chiral supersymmetry). This theory exists in dimension 2 and depends on a Lie algebra $\fg$ together with a symplectic $\fg$-representation $U$.
+
+\item (2 supercharges, chiral supersymmetry). This theory exists in dimension 2 and depends on a Lie algebra $\fg$ together with a $\fg$-representation $R$.
+
+\item (1 supercharge, chiral supersymmetry). This theory exists in dimension 2 and depends on a Lie algebra $\fg$ together with an orthogonal $\fg$-representation $P$.
 \end{itemize}
 
 In each case the lower-dimensional theories are obtained by dimensional reduction from the theory in the highest dimension: for instance, 7d $\mc N=1$ super Yang--Mills (16 supercharges) is obtained by dimensional reduction from 10d $\mc N=(1, 0)$ super Yang--Mills. So, it will be enough to construct the supersymmetry action in these highest-dimensional theories.
@@ -676,9 +844,30 @@ In each case the lower-dimensional theories are obtained by dimensional reductio
 \subsection{Pure super Yang--Mills theory}
 \label{sect:gaugemultipletSUSY}
 
-We begin with a description of the pure minimally supersymmetric Yang--Mills theories in dimensions 3, 4, 6 and 10.
+We begin with a description of certain pure supersymmetric Yang--Mills theories. Let $V_\RR$ be a real vector space equipped with a nondegenerate symmetric bilinear pairing and $V$ its complexification. Fix a $\ZZ/2$-graded Clifford module $\Sigma\oplus \Sigma^*\rightarrow \CC$ with the associated $\Gamma$-pairings
+\[\Gamma\colon \Sym^2(\Sigma)\rightarrow V,\qquad \Gamma\colon \Sym^2(\Sigma^*)\rightarrow V\]
+defined as in Appendix \ref{sect:spinors}. We make the following assumption on this setup.
 
-Fix an \emph{alternative} algebra $A$ as in Section \ref{sect:divisionalgebras} and consider the associated vector space $V=A\oplus \CC^2$ and the spinorial representations $\Sigma$ and $\Sigma^*$. Let $\fg$ be a Lie algebra equipped with a nondegenerate symmetric bilinear pairing. The fields of the Yang--Mills theory are as follows:
+\begin{assumption}
+For $Q_1, Q_2, Q_3\in\Sigma$ we have
+\[\rho(\Gamma(Q_1, Q_2))Q_3 + \rho(\Gamma(Q_2, Q_3))Q_1 + \rho(\Gamma(Q_3, Q_1))Q_2 = 0.\]
+\label{assumption:3psi}
+\end{assumption}
+
+Explicitly, we consider the following cases:
+\begin{itemize}
+\item (\textbf{2d $\cN=(\cN_+, 0)$ supersymmetry}) We have $\dim(V) = 2$ and $\Sigma = S_+\otimes W$ for some complex vector space $W$ equipped with a nondegenerate symmetric bilinear pairing. Assumption \ref{assumption:3psi} is satisfied by Theorem \ref{thm:2d3psi}.
+
+\item (\textbf{3d $\cN=1$ supersymmetry}) We have $\dim(V) = 3$ and $\Sigma = S$. Assumption \ref{assumption:3psi} is satisfied by Theorem \ref{thm:3psi}.
+
+\item (\textbf{4d $\cN=1$ supersymmetry}) We have $\dim(V) = 4$ and $\Sigma = S_+\oplus S_-$. Assumption \ref{assumption:3psi} is satisfied by Theorem \ref{thm:3psi}.
+
+\item (\textbf{6d $\cN=(1, 0)$ supersymmetry}) We have $\dim(V) = 6$ and $\Sigma = S_+\otimes W_+$ for a two-dimensional complex symplectic vector space $W_+$. Assumption \ref{assumption:3psi} is satisfied by Theorem \ref{thm:3psi}.
+
+\item (\textbf{10d $\cN=(1, 0)$ supersymmetry}) We have $\dim(V) = 10$ and $\Sigma = S_+$. Assumption \ref{assumption:3psi} is satisfied by Theorem \ref{thm:3psi}.
+\end{itemize}
+
+Let $\fg$ be a Lie algebra equipped with a nondegenerate symmetric bilinear pairing. The fields of the Yang--Mills theory are as follows:
 \begin{itemize}
 \item A connection $A \in \Omega^1(V_\RR; \fg)$ on the trivial bundle.
 
@@ -688,13 +877,13 @@ Fix an \emph{alternative} algebra $A$ as in Section \ref{sect:divisionalgebras} 
 \end{itemize}
 We also introduce their antifields $A^*\in\Omega^1(V_\RR; \Pi\fg)$, $\lambda\in\Gamma(V_\RR; \Sigma^*\otimes \fg)$ and $c^*\in\Gamma(V_\RR; \fg)$.
 
-Denote by $F_A = \d A + \frac{1}{2}[A\wedge A]$ the curvature of $A$ and let $\sd\d_A$ be the twisted Dirac operator obtained from $\Gamma$ (see Section \ref{sect:spinors}).
+Denote by $F_A = \d A + \frac{1}{2}[A\wedge A]$ the curvature of $A$ and let $\sd\d_A$ be the twisted Dirac operator obtained from $\Gamma$ (see Appendix \ref{sect:spinors}).
 
 The BRST action is given by
-\[S(A, \lambda) = \int_{V_\RR}\dvol \left( -\frac{1}{4} (F_A, F_A) + \frac{1}{2}(\lambda, \sd \d_A \lambda)\right).\]
+\[S_{BRST}(A, \lambda) = \int_{V_\RR}\dvol \left( -\frac{1}{4} (F_A, F_A) + \frac{1}{2}(\lambda, \sd \d_A \lambda)\right).\]
 
-We introduce the gauge transformations
-\[\delta A = -\d_A c,\qquad \delta \lambda = [c, \lambda],\]
+We introduce gauge transformations
+\[\delta A = -\d_A c,\qquad \delta \lambda = [c, \lambda],\qquad \delta c = \frac{1}{2}[c, c],\]
 so that the BV action is given by
 \begin{equation}
 S_{\gauge} = \int_{V_\RR}\dvol \left( -\frac{1}{4} (F_A, F_A) + \frac{1}{2}(\lambda, \sd\d_A \lambda) + (\d_A c, A^*) + ([c, \lambda], \lambda^*) + \frac{1}{2}([c, c], c^*)\right).
@@ -753,7 +942,7 @@ The second term gives
 \end{align*}
 where we have used Proposition \ref{prop:cliffordactionproperty3} and the Bianchi identity in the last line.
 
-By \eqref{eq:Gammaspinorpairing} and Theorem \ref{thm:3psi} we have $(\Gamma(Q, \lambda), \Gamma(\lambda, \lambda)) = 0$, so $\{S_{\gauge}^1 + S_{\gauge}^2, I_{\gauge}^{(1)}(Q)\} = 0$.
+By \eqref{eq:Gammaspinorpairing} and Assumption \ref{assumption:3psi} we have $(\Gamma(Q, \lambda), \Gamma(\lambda, \lambda)) = 0$, so $\{S_{\gauge}^1 + S_{\gauge}^2, I_{\gauge}^{(1)}(Q)\} = 0$.
 
 Finally, $\{S_{\gauge}^3 + S_{\gauge}^4 + S_{\gauge}^5, I_{\gauge}^{(1)}(Q)\} = 0$ due to gauge-invariance of $I^{(1)}(Q)$.
 \end{proof}
@@ -802,7 +991,7 @@ The total coefficient in front of $\lambda^*$ is
 \end{align*}
 Using Proposition \ref{prop:cliffordactionproperty2} the first, second, fifth and sixth terms combine to
 \[-\frac{1}{2} \sd{\d}_A\rho(\Gamma(Q_1, \lambda))Q_2 - \frac{1}{2} \sd{\d}_A\rho(\Gamma(Q_2, \lambda)) Q_1\]
-which is equal to $\frac{1}{2} \sd{\d}_A \rho(\Gamma(Q_1, Q_2))\lambda$ by Theorem \ref{thm:3psi}. Using the Clifford relation this term cancels the rest of the terms.
+which is equal to $\frac{1}{2} \sd{\d}_A \rho(\Gamma(Q_1, Q_2))\lambda$ by Assumption \ref{assumption:3psi}. Using the Clifford relation this term cancels the rest of the terms.
 \end{proof}
 
 Evaluating the equation
@@ -821,12 +1010,12 @@ We have
 &+ \frac{1}{2}(Q_2, \rho(A^*)Q_1)(Q_3, \lambda^*) + \frac{1}{2}(Q_3, \rho(A^*) Q_1)(Q_2, \lambda^*).
 \end{align*}
 
-$\{I_{\gauge}^{(1)}, I_{\gauge}^{(2)}\}(Q_1, Q_2, Q_3)$ is obtained by cyclically symmetrizing the above expression. By Theorem \ref{thm:3psi} the cyclic symmetrization of the term with $c^*$ is zero. The Clifford relation implies that
+$\{I_{\gauge}^{(1)}, I_{\gauge}^{(2)}\}(Q_1, Q_2, Q_3)$ is obtained by cyclically symmetrizing the above expression. By Assumption \ref{assumption:3psi} the cyclic symmetrization of the term with $c^*$ is zero. The Clifford relation implies that
 \begin{align*}
 \frac{1}{2} (\Gamma(Q_2, Q_3), \Gamma(\rho(A^*) Q_1, \lambda^*)) &= -\frac{1}{2}(\Gamma(Q_2, Q_3), \Gamma(\rho(A^*)\lambda^*, Q_1)) + (\Gamma(Q_2, Q_3), A^*) (Q_1, \lambda^*) \\
 &= -\frac{1}{2}(\rho(\Gamma(Q_2, Q_3)) Q_1, \rho(A^*)\lambda^*) + (\Gamma(Q_2, Q_3), A^*) (Q_1, \lambda^*).
 \end{align*}
-Therefore, again using Theorem \ref{thm:3psi} we see that the cyclic symmetrization of the terms with $A^*$ vanishes.
+Therefore, again using Assumption \ref{assumption:3psi} we see that the cyclic symmetrization of the terms with $A^*$ vanishes.
 \end{proof}
 
 \begin{comment}
@@ -850,7 +1039,30 @@ We can further include the action of at least a subalgebra of the algebra of R-s
 \subsection{Matter multiplet}
 \label{sect:mattermultipletSUSY}
 
-Fix an \emph{associative} algebra $A$ as in Section \ref{sect:divisionalgebras} and consider the associated vector space $V=A\oplus \CC^2$ and the spinorial representations $\Sigma$ and $\Sigma^*$. Note that $\Sigma$ and $\Sigma^*$ are naturally right $A$-modules; the Clifford multiplication $V\otimes \Sigma\rightarrow \Sigma^*$ and the spinorial pairing $\Sigma\otimes \Sigma^*\rightarrow A$ are maps of right $A$-modules. We will use the antiinvolution $\sigma\colon A\rightarrow A$ to turn left $A$-modules into right $A$-modules.
+In this section we describe the coupling of super Yang--Mills theory to matter valued in a $\fg$-representation $P$, i.e. the supersymmetric gauged linear $\sigma$-models. Our description of the supersymmetry of the matter multiplet is inspired by the presentation of the supersymmetric nonlinear $\sigma$-models in \cite[Chapter 3]{DeligneFreed}.
+
+Consider as before $V_\RR$ and a Clifford module $\Sigma\oplus \Sigma^*$ satisfying Assumption \ref{assumption:3psi}. In addition, fix a real associative algebra $A_\RR$ equipped with an antiinvolution $\sigma$ as in Section \ref{sect:divisionalgebras} and denote its complexification by $A$. Suppose $\Sigma\oplus \Sigma^*$ carries a compatible right $A$-module structure. Let $(-, -)^A\colon \Sigma\otimes \Sigma^*\rightarrow A$ be the correspoding $A$-valued pairing given by Lemma \ref{lm:extendpairing}. We make the following additional assumption.
+
+\begin{assumption}
+For $Q_1, Q_2\in\Sigma$ and $Q_3\in\Sigma^*$ we have
+\[Q_1(Q_2, Q_3)^A + Q_2(Q_1, Q_3)^A = \rho(\Gamma(Q_1, Q_2))Q_3.\]
+\label{assumption:matter3psi}
+\end{assumption}
+
+Explicitly, we consider the following cases:
+\begin{itemize}
+\item (\textbf{2d $\cN=(1, 0)$ supersymmetry}) $A_\RR = \RR$. Assumption \ref{assumption:matter3psi} is satisfied by Theorem \ref{thm:2dmatter3psi}.
+
+\item (\textbf{2d $\cN=(2, 0)$ supersymmetry}) $A_\RR = \CC$. Assumption \ref{assumption:matter3psi} is satisfied by Theorem \ref{thm:2dmatter3psi}.
+
+\item (\textbf{2d $\cN=(4, 0)$ supersymmetry}) $A_\RR = \mathbb{H}$. Assumption \ref{assumption:matter3psi} is satisfied by Theorem \ref{thm:2dmatter3psi}.
+
+\item (\textbf{3d $\cN=1$ supersymmetry}) $A_\RR = \RR$. Assumption \ref{assumption:matter3psi} is satisfied by Theorem \ref{thm:matter3psi}.
+
+\item (\textbf{4d $\cN=1$ supersymmetry}) $A_\RR = \CC$. Assumption \ref{assumption:matter3psi} is satisfied by Theorem \ref{thm:matter3psi}.
+
+\item (\textbf{6d $\cN=(1, 0)$ supersymmetry}) $A_\RR = \mathbb{H}$. Assumption \ref{assumption:matter3psi} is satisfied by Theorem \ref{thm:matter3psi}.
+\end{itemize}
 
 Let $P$ be a left $A$-module equipped with a $\CC$-valued nondegenerate symmetric bilinear pairing such that
 \[(av, w) = (v, \sigma(a)w).\]
@@ -955,7 +1167,7 @@ The third term gives
 \{S_{\matter}^3, I^{(1)}(Q)\} &= ((\rho(F_A)Q) \phi, \psi) + 2(\lambda(Q, \psi), \psi) - (\lambda\phi, \rho(\d_A \phi) Q) \\
 &= ((\rho(F_A)Q) \phi, \psi) + (\rho(\Gamma(Q, \lambda))\psi, \psi) - (\Gamma(\lambda\phi, Q), \d_A \phi),
 \end{align*}
-where we have used Theorem \ref{thm:matter3psi} in the middle term and \eqref{eq:Gammaspinorpairing} in the last term. It is then obvious that
+where we have used Assumption \ref{assumption:matter3psi} in the middle term and \eqref{eq:Gammaspinorpairing} in the last term. It is then obvious that
 \[\{S_{\matter}^1 + S_{\matter}^2 + S_{\matter}^3, I^{(1)}(Q)\} = 0.\]
 
 Finally, the terms $\{S_{\matter}^4 + S_{\matter}^5 + S_{\gauge}^3, I^{(1)}(Q)\}$ are zero due to gauge-invariance of $I^{(1)}(Q)$ while the rest of the terms are zero by Lemma \ref{lm:gaugemultiplet1}.
@@ -1003,7 +1215,7 @@ Next, we collect all terms in equation \eqref{CMEYM3} containing $\psi^*$ and $\
 \begin{equation}\label{psistar}
 \frac{1}{2} \sd \d_A Q_2(Q_1 \psi)^A + \frac{1}{2} \sd \d_A Q_1(Q_2, \partial_i\psi)^A - \Gamma(Q_1,Q_2) . \psi + \frac{1}{2} \rho(\Gamma(Q_1,Q_2)) \sd \d_A \psi - (\iota_{\Gamma(Q_1, Q_2)} A)\psi.
 \end{equation}
-Applying Theorem \ref{thm:matter3psi} to $Q_3 = \psi$, the first two terms become $\frac{1}{2} \sd \d_A \rho(\Gamma(Q_1,Q_2) \psi)$. 
+Applying Assumption \ref{assumption:matter3psi} to $Q_3 = \psi$, the first two terms become $\frac{1}{2} \sd \d_A \rho(\Gamma(Q_1,Q_2) \psi)$. 
 Finally, by the Clifford identity the sum of this term with the fourth term in \eqref{psistar} is precisely $\iota_{\Gamma(Q_1,Q_2)}\d_A \psi$ which cancels the remaining terms.
 \end{proof}
 
@@ -1017,7 +1229,7 @@ We have
 \{I_{\matter}^{(1)}(Q_1), I_{\matter}^{(2)}(Q_2, Q_3)\} & = \frac{1}{2} (\Gamma(Q_2, Q_3), \Gamma(\psi^*, \phi^* Q_1)) \\ & = (\psi^*, \phi^* \rho(\Gamma(Q_2,Q_3)) Q_1)  .
 \end{align*}
 The expression
-$\{I_{\matter}^{(1)}, I_{\matter}^{(2)}\}(Q_1,Q_2,Q_3)$ is obtained by cyclically symmetrizing the above expression. By Theorem \ref{thm:3psi} the cyclic symmetrization is identically zero.
+$\{I_{\matter}^{(1)}, I_{\matter}^{(2)}\}(Q_1,Q_2,Q_3)$ is obtained by cyclically symmetrizing the above expression. By Assumption \ref{assumption:3psi} the cyclic symmetrization is identically zero.
 \end{proof}
 
 \part{A Catalogue of Twists}
@@ -1134,89 +1346,6 @@ By definition 9d $\mc N=1$ super Yang--Mills is obtained by a dimensional reduct
 
 From Proposition \ref{prop:twistdimensionalreduction} we get that the holomorphic twist of 9d $\mc N=1$ super Yang--Mills is equivalent to a dimensional reduction of the holomorphic twist of 10d $\mc N=(1, 0)$ super Yang--Mills. By Theorem \ref{thm:10dholomorphictwist} the latter theory is equivalent to holomorphic Chern--Simons theory on $\CC^5$, so by Proposition \ref{CS_diml_red_prop} its dimensional reduction is equivalent to the generalized Chern--Simons theory on $\CC^4\times \RR$.
 \end{proof}
-
-%%\begin{landscape}
-%\begin{figure}
-%\begin{tikzpicture}[node distance=0.35cm and 0.35cm, text width=1.8cm]
-%\node (101) [s16chiral] {Rank $(1, 0)$ $d=5$};
-%\node (91) [s16, below=of 101] {Rank $1$ $d=5$};
-%\node (82) [s16, below=of 91] {Rank $(1, 1)$ $d=5$};
-%\node (81) [s16, left=of 82] {Rank $(1, 0)$ $d=4$};
-%\node (825) [right=of 82] {};
-%\node (83) [s16, right=of 825] {Rank $(1, 0)$ $d=8$};
-%\node (71) [s16, below=of 81] {Rank $1$ $d=4$};
-%\node (72) [s16, below=of 82] {Rank $2$ $d=5$};
-%\node (73) [s16, below=of 83] {Rank $1$ $d=7$};
-%\node (62) [s16, below=of 71] {Rank $(1, 1)$ $d=4$};
-%\node (61) [s8, left=of 62] {Rank $(1, 0)$ $d=3$};
-%\node (63) [s16, below=of 72] {Rank $(2, 2)$ $d=5$};
-%\node (64) [s16chiral, right=of 63] {Rank $(2, 0)$ $d=5$};
-%\node (65) [s16, below=of 73, right=of 64] {Rank $(1, 1)$ $d=6$};
-%\node (51) [s8, below=of 61] {Rank $1$ $d=3$};
-%\node (52) [s16, below=of 62] {Rank $2$ $d=4$};
-%\node (53) [s16, below=of 63] {Rank $4$ $d=5$};
-%\node (54) [s16, below=of 64] {Rank $2$ $d=5$};
-%\node (42) [s8, below=of 51] {Rank $(1, 1)$ $d=3$};
-%\node (41) [s4, left=of 42] {Rank $(1, 0)$ $d=2$};
-%\node (43) [s16, right=of 42] {Rank $(2, 2)$ $d=4$};
-%\node (44) [s16, right=of 43] {Rank $(2, 1)$ $d=4$};
-%\node (45) [s8, right=of 44] {Rank $(2, 0)$ $d=4$};
-%\node (31) [s4, below=of 41] {Rank $1$ $d=2$};
-%\node (32) [s8, below=of 42] {Rank $2$ $d=3$};
-%\node (22) [s4, below=of 31] {Rank $(1, 1)$ $d=2$};
-%\node (21) [s2chiral, left=of 22] {Rank $(1, 0)$ $d=1$};
-%
-%\draw[arrow] (101) -- (91);
-%\draw[arrow] (91) -- (81);
-%\draw[arrow] (91) -- (82);
-%\draw[arrow] (81) -- (71);
-%\draw[arrow] (82) -- (71);
-%\draw[arrow] (82) -- (72);
-%\draw[arrow] (83) -- (73);
-%\draw[arrow] (71) -- (61);
-%\draw[arrow] (71) -- (62);
-%\draw[arrow] (72) -- (62);
-%\draw[arrow] (72) -- (63);
-%\draw[arrow] (73) -- (65);
-%\draw[arrow] (61) -- (51);
-%\draw[arrow] (62) -- (51);
-%\draw[arrow] (62) -- (52);
-%\draw[arrow] (63) -- (53);
-%\draw[arrow] (64) -- (52);
-%\draw[arrow] (64) -- (54);
-%\draw[arrow] (65) -- (54);
-%\draw[arrow] (51) -- (41);
-%\draw[arrow] (51) -- (42);
-%\draw[arrow] (52) -- (42);
-%\draw[arrow] (52) -- (43);
-%\draw[arrow] (53) -- (43);
-%\draw[arrow] (54) -- (43);
-%\draw[arrow] (54) -- (44);
-%\draw[arrow] (54) -- (45);
-%\draw[arrow] (41) -- (31);
-%\draw[arrow] (42) -- (31);
-%\draw[arrow] (42) -- (32);
-%\draw[arrow] (43) -- (32);
-%\draw[arrow] (44) -- (32);
-%\draw[arrow] (45) -- (32);
-%\draw[arrow] (31) -- (21);
-%\draw[arrow] (31) -- (22);
-%\draw[arrow] (32) -- (22);
-%
-%\node (2d) [dimension, left=of 21] {2d};
-%\node (3d) [dimension, above=of 2d] {3d};
-%\node (4d) [dimension, above=of 3d] {4d};
-%\node (5d) [dimension, above=of 4d] {5d};
-%\node (6d) [dimension, above=of 5d] {6d};
-%\node (7d) [dimension, above=of 6d] {7d};
-%\node (8d) [dimension, above=of 7d] {8d};
-%\node (9d) [dimension, above=of 8d] {9d};
-%\node (10d) [dimension, above=of 9d] {10d};
-%\end{tikzpicture}
-%\caption{Orbits of square-zero supercharges.}
-%\label{fig:superchargeorbits}
-%\end{figure}
-%%\end{landscape}
 
 % \subsection{Standard Equivalences Between Classical Field Theories}
 % In this section, we will collect some standard lemmas that we'll use to simplify the descriptions of twisted supersymmetric field theories below.
@@ -1865,7 +1994,8 @@ where $\omega$ indicates the canonical isomorphism $\omega \colon \wedge^2(W^*) 
 %\[
 %\mathcal E_{\rm matter}^{\cN=1} = C^\infty (\RR^4) \otimes R^{\oplus 2} \oplus  \Pi C^\infty(\RR^4) \otimes (S_{+}  \otimes R \oplus S_- \otimes R) .
 %\]
-%\section{Dimension 3}
+
+\section{Dimension 3}
 
 % \cN=8 SYM
 % \cN=4 SYM with matter in a pseudo-real representation
@@ -1883,181 +2013,6 @@ where $\omega$ indicates the canonical isomorphism $\omega \colon \wedge^2(W^*) 
 
 
 \appendix
-
-\section{Functional analysis} \label{appx: top}
-
-\def\CVS{{\rm CVS}}
-\def\DVS{{\rm DVS}}
-
-\brian{We can put all our conventions for topological vector spaces, largely borrowed from \cite{Book1}, here. }
-
-\subsection{Notations and conventions}
-
-\begin{definition}
-Let $M$ be a manifold and $E$ a (graded) vector bundle on $M$.  
-For any open set $U \subset M$, define the following notations:
-\begin{itemize}
-\item $\cE(U)$ denotes the graded vector space of smooth sections supported on $U$;
-\item $\cE_c(U)$ denotes the graded vector space of compactly supported smooth sections on $U$;
-\item $\Bar{\cE}(U)$ denotes the graded vector space of distributional smooth sections on $U$;
-\item $\Bar{\cE}_c(U)$ denotes the graded vector space of compactly supported distributional smooth sections on $U$.
-\end{itemize}
-\end{definition}
-
-If $E$ is a vector bundle, let $E^!$ denote the ``Verdier dual" vector bundle defined by $E^* \otimes {\rm Dens}_M$, where $E^*$ is the usual linear dual vector bundle. 
-For an open set $U \subset M$ let 
-\[
-\cE(U)^\vee = \Bar{\cE}^!_c(U)
-\]
-be the continuous, or distributional, dual to $\cE(U)$. 
-
-\brian{recall definition of CVS. all our familiar spaces above are in $\CVS$. talk about tensor products.}
-
-\begin{prop}
-Let $E,F$ be vector bundles on $M,N$ respectively.
-Then
-\[
-\cE(M) \Hat{\otimes}_\beta \cF(N) \cong \Gamma(M \times N, E \boxtimes F)
-\]
-\end{prop}
-
-\begin{definition}\label{dfn: fnl}
-Let $E$ be a vector bundle on $M$ and $U \subset M$.
-The \defterm{completed algebra of functions} on $\cE(U)$ is
-\[
-\cO(\cE(U)) = \prod_{n = 0}^\infty {\rm Hom}_{\rm CVS} \left(\cE(U)^{\Hat{\otimes}_\beta n}, \CC\right)_{S_n} .
-\]
-On global sections, we use the notation $\cO(\cE) = \cO(\cE(M))$. 
-\end{definition}
-
-\subsection{Differentiable vector spaces}
-\def\Mfld{{\rm Mfld}}
-
-Let $\Mfld$ denote the site of smooth manifolds (of arbitrary dimension) where the morphisms are smooth maps, and a cover $f : X \to Y$ is a surjective local diffeomorphism.  
-
-\begin{definition} 
-We use the following notations and naming conventions for sheaves on $\Mfld$:
-\begin{itemize}
-\item a \defterm{smooth vector space} is a sheaf of vector spaces on $\Mfld$.
-\item Let $C^\infty$ denote the smooth vector space which assigns the space of smooth functions $C^\infty(X)$ to a smooth manifold $X$.
-\item a \defterm{$C^\infty$-module} is a smooth vector space $V$ equipped with a structure of a module over $C^\infty$. 
-If $V$ is a $C^\infty$-module, we denote $C^\infty(X, V) := V(X)$, the valued of $V$ on the smooth manifold $X$.
-\item a \defterm{differentiable vector space} is a $C^\infty$-module $V$ equipped with a flat connection
-\[
-\nabla_{X,V} : C^\infty(X, V) \to \Omega^1(X, V)
-\]
-for every smooth manifold $X$, which is required to be natural under pullbacks:
-\[
-f^* \circ \nabla_{Y,V} = \nabla_{X,V} \circ f^*
-\]
-for every smooth map $f : X \to Y$. 
-A map of differentiable vector spaces is a map of $C^\infty$-modules which intertwines the flat connections. 
-\end{itemize}
-\end{definition}
-
-\subsection{Homological algebra}
-
-There is a functor
-\[
-dif_c : \CVS \to \DVS 
-\]
-from the category of convenient vector spaces to the category of differentiable vector spaces. 
-This functor does not preserve cokernels, so $dif_c$ does not preserve cohomology. 
-In particular, with a naive definition of quasi-isomorphism internal to $\CVS$, the functor $dif_c$ does not preserve quasi-isomorphisms. 
-To avoid this issue, we make the following definition. 
-
-\begin{definition}
-Suppose $V,W$ are cochain complexes in convenient vector spaces. 
-A cochain map $f\colon V \to W$ is a \defterm{quasi-isomorphism} if the map
-\[
-dif_c (f) : dif_c(V) \to dif_c(W)
-\]
-is a quasi-isomorphism of differentiable vector spaces.
-\end{definition}
-
-The cochain complexes arising in classical field theory are naturally convenient vector spaces. 
-The above definition is used in what we mean by quasi-isomorphism between classical field theories, as in Definition \brian{??}.
-
-Throughout the paper we make use of familiar manipulations with spectral sequences arising from filtrations of cochain complexes internal to differentiable vector spaces. 
-A main tool is the classical Eilenberg-Moore comparison theorem, which is stated as follows.
-
-\begin{thm}[Eilenberg-Moore Comparison]
-Let $f : V \to W$ be a map of filtered cochain complexes in an AB4 abelian category.
-Suppose, for each integer $n$ there exists an integer $p$ such that $F_p V^n = 0 = F_p W^n$.
-If there is an integer $r \geq 0$ such that the induced map on the $r$th page of the corresponding spectral sequences 
-\[
-f_r^{pq} :  E_r^{pq} V \to E_r^{pq} W
-\]
-is an isomorphism for all $p,q$, then $f : V \to W$ is a quasi-isomorphism. 
-\end{thm}
-
-The following is the natural definition of a filtered differentiable cochain complex. 
-
-\begin{definition}
-A \defterm{filtered differentiable cochain complex} is a sequence of differentiable cochain complexes
-\[
-\cdots \to F_{n-1} V \to F_{n} V \to F_{n+1}V \to \cdots
-\]
-where each map is a monomorphism in each cohomological degree. 
-A filtered differentiable cochain complex is \defterm{complete} if the canonical maps $V \to V / F_n V$ induce an isomorphism $V \cong \lim V / F_n V$. 
-\end{definition}
-
-The category of differentiable vector space is an AB4 category, in fact, it is actually a Grothendieck abelian category. 
-
-\begin{thm}[{\cite[Theorem 2.2.1]{Book1}}]
-The category $\DVS$ is a Grothendieck abelian category.
-\end{thm}
-
-In particular, we can freely apply the Eilenberg-Moore comparison result to the types of topological cochain complexes we come across in the BV formalism. 
-
-\begin{definition}\label{dfn: pro}
-A \defterm{differentiable pro-cochain complex} is a differentiable cochain complex $V$ with a filtration
-\[
-\cdots \to F_{n-1} V \to F_{n} V \to F_{n+1}V \to \cdots
-\]
-where each map is a monomorphism in each cohomological degree and such that the canonical maps $V \to V / F_n V$ induce a quasi-isomorphism $V \to \lim V / F_n V$. 
-\end{definition}
-
-\subsubsection{The classical BV complex}
-
-\begin{lem}
-If $(E, \omega, Q, I)$ is the data of a classical theory on $M$, then the BV complex
-\[
-\left(\cO(\cE) , Q + \{I,-\}\right)
-\]
-is a differentiable pro-cochain complex.
-More generally, the classical factorization algebra of observables $\Obs$ is a factorization algebra in differentiable pro-cochain complexes. 
-\end{lem}
-
-The above lemma used the natural filtration on the classical BV complex given by polynomial degree of observables. 
-Since the free part of the differential $Q$ always preserves this filtration, the first term of the resulting spectral sequence simply computes the cohomology of the underlying free theory. 
-The differential on the higher pages depend on the interacting part of of the action. 
-
-\begin{lemma}[Free to Interacting Spectral Sequence] \label{free_int_ss_lemma}
-Let $(E^\bullet, Q, \omega, I)$ be a classical field theory with polynomial interaction.  
-There is a convergent spectral sequence whose $E_1$ page is the complex of classical observables of the underlying free theory, and whose $E_\infty$ page is equivalent to the complex of classical observables of the interacting theory.
-\end{lemma}
-\begin{proof}
-The BV complex is of the form $\left(\cO(\cE), Q + \{I,-\}\right)$.
-We have already exhibited \brian{this is a general fact that should go in the functional analysis section} a differentiable pro-cochain complex structure on the BV complex via the 
-natural decreasing filtration 
-\[
-F^k \cO (\cE) = \Sym^{\geq k} (\cE^\vee)
-\]
-which is compatible with both $Q$ and $\{I,-\}$ separately.
-The associated graded of this filtration is the differentiable cochain complex given by
-\[
-\left(\prod_{n \geq 0} \Sym^n (\cE^\vee) , Q \right) .
-\]
-This is simply the BV complex associated to the free theory based on $(E, Q, \omega)$ obtained by forgetting $I$. 
-Thus, the $E_1$ page of the corresponding spectral sequence is the BV cohomology of the underlying free theory, as desired. 
-\brian{shall we say a word about convergence? This must follow from completeness of the filtration in addition to boundedness in some direction of the cohomology of $\cE$.} \chris{Does convergence require that the interaction is polynomial, or alternatively does this bound the number of differentials appearing in the spectral sequence?}
-\end{proof}
-
-\begin{lemma} \label{invert_quis_lemma}
-Any quasi-isomorphism of differentiable cochain complexes admits a quasi-inverse.
-\end{lemma}
-\brian{I think Pavel had something to say for this lemma.}
 
 \section{Spinors}
 \label{sect:spinors}
@@ -2096,13 +2051,13 @@ For $X\in\wedge^2(V)$ and $Q_1,Q_2\in\Sigma$ we have
 \label{prop:cliffordactionproperty1}
 \end{prop}
 
-We may extend the discussion to the case of Riemannian manifolds $M$, where we replace $V$ by the vector bundle $TM$. Given a bundle of Clifford modules $M=\Sigma\oplus \Sigma^*$ as before we have the associated Dirac operator
-\[\sd{\d}\colon \Gamma(M, \Sigma)\rightarrow \Gamma(M, \Sigma^*).\]
+We may extend the discussion to the case of Riemannian manifolds $N$, where we replace $V$ by the vector bundle $TN$. Given a bundle of Clifford modules $M=\Sigma\oplus \Sigma^*$ as before we have the associated Dirac operator
+\[\sd{\d}\colon \Gamma(N, \Sigma)\rightarrow \Gamma(N, \Sigma^*).\]
 
 From \eqref{eq:quantizationtwoforms} we get the following property.
 
 \begin{prop}
-Suppose $Q_1,Q_2\in\Sigma$ and $\lambda\in\Gamma(M, \Sigma)$. Then
+Suppose $Q_1,Q_2\in\Sigma$ and $\lambda\in\Gamma(N, \Sigma)$. Then
 \[\sd{\d}\rho(\Gamma(Q_1, \lambda)) Q_2 = \rho(d \Gamma(Q_1, \lambda)) Q_2 + (Q_1, \sd{\d} \lambda) Q_2.\]
 \label{prop:cliffordactionproperty2}
 \end{prop}
@@ -2110,7 +2065,7 @@ Suppose $Q_1,Q_2\in\Sigma$ and $\lambda\in\Gamma(M, \Sigma)$. Then
 Finally, we have the following important compatibility between the Clifford action of differential forms and the Dirac operator proved in \cite[equation 7.6]{Snygg}.
 
 \begin{prop}
-Suppose $Q\in\Sigma$ and $X\in\Omega^p(M)$. Then
+Suppose $Q\in\Sigma$ and $X\in\Omega^p(N)$. Then
 \[\sd{\d}(\rho(X) Q) = \rho(\d X)Q + (-1)^{n(1+p)}\rho(\ast \d\ast X) Q.\]
 \label{prop:cliffordactionproperty3}
 \end{prop}
