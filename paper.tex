@@ -92,7 +92,7 @@ Given a classical field theory $(E, Q, \omega, I)$ we denote by
 the BV action of the theory.
 
 \begin{remark}
-We will also consider \defterm{$\ZZ/2$-graded classical field theories} which are defined as before, but where $E$ has only a single $\ZZ/2$-grading and, correspondigly, $Q$ is simply an odd operator.
+We will also consider \defterm{$\ZZ/2$-graded classical field theories} which are defined as before, but where $E$ has only a single $\ZZ/2$-grading and, correspondingly, $Q$ is simply an odd operator.
 \end{remark}
 
 \begin{remark}
@@ -217,26 +217,26 @@ The fact that the assignment $U \mapsto \Obs(U)$ defines a factorization algebra
 A \defterm{classical BRST theory} on a manifold $M$ consists of the following data:
 \begin{itemize}
 \item a $\ZZ\times\ZZ/2$-graded vector bundle $F$ together with the structure of a local $L_\infty$ algebra on the shift $F[-1]$;
-\item A local functional $S_{BRST} \in \oloc(\cF)$ of polynomial degree $\geq 2$.
+\item A local functional $S_{\mr{BRST}} \in \oloc(\cF)$ of polynomial degree $\geq 2$.
 \end{itemize}
 Together, these data must satisfy the equation
-\[Q_{BRST} S_{BRST} = 0,\]
-where $Q_{BRST}$ is the Chevalley--Eilenberg differential defined by the $L_\infty$ structure on $F[-1]$. 
+\[Q_{\mr{BRST}} S_{\mr{BRST}} = 0,\]
+where $Q_{\mr{BRST}}$ is the Chevalley--Eilenberg differential defined by the $L_\infty$ structure on $F[-1]$. 
 \end{definition}
 
 We call $\cF$ the \defterm{space of BRST fields}.
 
-From a classical BRST theory $(\cF, S_{BRST})$, one can construct a classical BV theory as follows. Let $\{\ell_k\}_{k\geq 1}$ be the $L_\infty$ structure maps underlying the local Lie algebra $F[-1]$.
+From a classical BRST theory $(\cF, S_{\mr{BRST}})$, one can construct a classical BV theory as follows. Let $\{\ell_k\}_{k\geq 1}$ be the $L_\infty$ structure maps underlying the local Lie algebra $F[-1]$.
 
-First, we define the free BV theory. Split $S_{BRST} = S^{free}_{BRST} + I_{BRST}$, where $I_{BRST}\in\oloc^+(\cF)$ and $S^{free}_{BRST}$ is a quadratic local functional which we may view as defining a map
-\[S^{free}_{BRST}\colon F\rightarrow F^!.\]
+First, we define the free BV theory. Split $S_{\mr{BRST}} = S^{\mr{free}}_{\mr{BRST}} + I_{\mr{BRST}}$, where $I_{\mr{BRST}}\in\oloc^+(\cF)$ and $S^{\mr{free}}_{\mr{BRST}}$ is a quadratic local functional which we may view as defining a map
+\[S^{\mr{free}}_{\mr{BRST}}\colon F\rightarrow F^!.\]
 The underlying bundle of the BV theory is
 \[
 E = F \oplus F^! [-1].
 \]
 The differential of the free BV theory is
 \[
-Q = \ell_1 + S^{free}_{BRST}.
+Q = \ell_1 + S^{\mr{free}}_{\mr{BRST}}.
 \]
 The BV pairing $\omega$ on $E$ is defined in terms of the natural pairing between $F$ and $F^!$.
 
@@ -244,16 +244,16 @@ The interacting theory is constructed as follows. First, note that for $k \geq 2
 \[
 I_F (e) = \sum_{k \geq 2} \frac{1}{(k+1)!} \int_M \omega_F(e, (p^*\ell_k) (e, \ldots, e))
 \] 
-which is linear along $\cF^!$. Likewise, the BRST action $I_{BRST}$ pulls back to $\cE$, and we define the BV interaction as the sum
+which is linear along $\cF^!$. Likewise, the BRST action $I_{\mr{BRST}}$ pulls back to $\cE$, and we define the BV interaction as the sum
 \[
-I_{\mr{BV}} = I_{F} + p^* I_{BRST} \in \oloc^+(\cE) .
+I_{\mr{BV}} = I_{F} + p^* I_{\mr{BRST}} \in \oloc^+(\cE) .
 \]
 
 \begin{lemma}
-Suppose $(F, S_{BRST})$ is a classical BRST theory such that $(\cE, Q)$ defined above is an elliptic complex. Then $(E, Q, \omega, I)$ is a classical BV theory.
+Suppose $(F, S_{\mr{BRST}})$ is a classical BRST theory such that $(\cE, Q)$ defined above is an elliptic complex. Then $(E, Q, \omega, I)$ is a classical BV theory.
 \end{lemma}
 
-We refer to the classical BV theory $(E, Q, \omega, I)$ from the above statement as the \defterm{$(-1)$-shifted cotangent bundle} of $\cF$ and by abuse of notation we often denote it simply by $\cE = T^*[-1] \cF$. In the case $S_{BRST} = 0$ we refer to the theory $T^*[-1] \cF$ as a theory of \defterm{cotangent type}.
+We refer to the classical BV theory $(E, Q, \omega, I)$ from the above statement as the \defterm{$(-1)$-shifted cotangent bundle} of $\cF$ and by abuse of notation we often denote it simply by $\cE = T^*[-1] \cF$. In the case $S_{\mr{BRST}} = 0$ we refer to the theory $T^*[-1] \cF$ as a theory of \defterm{cotangent type}.
 
 If the fields of the classical BRST theory are denoted by $\phi$, we denote their antifields in the classical BV theory by $\phi^*$, so that
 \[\{\phi(x), \phi^*(y)\} = \{\phi^*(y), \phi(x)\} = \delta(x-y).\]
@@ -271,7 +271,7 @@ Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty
 
 \item The bundle of BRST fields is the $\ZZ$-graded bundle $F = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1]$. $F[-1]$ is equipped with a natural local $L_\infty$ algebra structure from $\fg$.
 
-\item The BRST action is $S_{BRST} = 0$.
+\item The BRST action is $S_{\mr{BRST}} = 0$.
 \end{itemize}
 We denote the space of BV fields by $\cE = \map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[d] B\fg)$, where $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1$.
 \label{def:generalizedBF}
@@ -302,7 +302,7 @@ Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix a complex ve
 
 \item The bundle of BRST fields is the $\ZZ$-graded bundle $F = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes V$. $F[-1]$ is equipped with an $L_\infty$ structure with $\ell_{k} = 0$ for $k \geq 2$. 
 
-\item The BRST action is $S_{BRST} = 0$.
+\item The BRST action is $S_{\mr{BRST}} = 0$.
 \end{itemize}
 \end{definition}
 
@@ -517,7 +517,7 @@ Suppose $M$ is a left $A$-module and $N$ a right $A$-module equipped with a nond
 \label{lm:extendpairing}
 \end{lemma}
 
-Let $\Sigma=A\oplus A$ and $\Sigma^* = A\oplus A$. We have action maps
+Let $\Sigma=A\oplus A$ and $\Sigma^* = A\oplus A$ \chris{it's a bit unclear here why they're notated differently}. We have action maps
 \[V\otimes \Sigma\rightarrow \Sigma^*,\qquad V\otimes \Sigma^*\rightarrow \Sigma\]
 given, respectively, by
 \[\rho(M)Q = M Q,\qquad \rho(M)Q = \widetilde{M} Q.\]
@@ -1080,7 +1080,7 @@ Let $M$ be a K\"{a}hler $d$-fold and $F = F_{2, 0} + F_{1, 1} + F_{0, 2}$ a two-
 
 Since we are working near the trivial connection, the topological term $\int F\wedge F\wedge \omega^3$ is exact, so we will drop it. The BV action of the twisted theory $S_{BV}$ is then the sum of the following terms:
 \begin{align*}
-S_{BRST} &= \int \frac{\omega^5}{5!} \left(-(F_{2, 0}, F_{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2 + \chi \Lambda(\ol\dd_{A_{0, 1}}\psi) + (B, \dd_{A_{1, 0}} \psi)\right)  + \frac{1}{2}B\wedge \ol\dd_{A_{0, 1}} B\wedge\Omega \\
+S_{\mr{BRST}} &= \int \frac{\omega^5}{5!} \left(-(F_{2, 0}, F_{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2 + \chi \Lambda(\ol\dd_{A_{0, 1}}\psi) + (B, \dd_{A_{1, 0}} \psi)\right)  + \frac{1}{2}B\wedge \ol\dd_{A_{0, 1}} B\wedge\Omega \\
 S_{anti} &= \int \dd_{A_{1, 0}} c\wedge A_{1, 0}^* + \ol\dd_{A_{0, 1}} c\wedge A_{0, 1}^* + [\psi, c]\wedge \psi^* + [\chi, c]\chi^* + [B, c]\wedge B^* + \frac{1}{2}[c, c]c^* \\
 I^{(1)} &= \int \psi\wedge A_{1, 0}^* + F_{0, 2}\wedge B^* + \frac{1}{2}\Lambda F_{1, 1} \chi^* \\
 I^{(2)} &= -\frac{1}{4}\int \frac{\chi^*}{\omega^5/5!} \chi^*.
@@ -1548,7 +1548,7 @@ I^{(1)}_{\rm couple} (Q) & = g (\psi^*, \rho([A, \phi]) Q)_U + \frac{1}{2} g (\l
 Choose a polarized basis $W_+ = {\rm span}_{\CC}\{w_1, w_2\}$.
 Without loss of generality we will twist with respect to a supercharge of the form $Q = q_+ \otimes w_1 \in S_+ \otimes W_+$. 
 
-We decompose the fields with respect to $\U(5) \hookrightarrow \SO(6)$:
+We decompose the fields with respect to $\mr U(5) \hookrightarrow \SO(6)$:
 \begin{align*}
 c & \mapsto A^0 \in \Omega^{0,0}(\CC^3 ; \fg) \\
 A & \mapsto A^{1,0} + A^{0,1} \in \Omega^{1,0}(\CC^3 ; \fg) \oplus \Omega^{0,1}(\CC^3) \\
