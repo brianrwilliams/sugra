@@ -1906,19 +1906,22 @@ I^{(2)}_{\mr{gauge}} &= -\frac{1}{4}\int \dvol (\chi^*)^2.
 Here, in terms of the K\"ahler form $\omega$, the volume form is identified as $\dvol = \frac{\omega^3}6$.
 
 \begin{thm}
-The holomorphic twist of 6d $\mc N=(1, 0)$ super Yang--Mills with gauge group $G$, and with a hypermultiplet valued in the symplectic representation $U$, is perturbatively equivalent to holomorphic BF theory on $\CC^3$ equipped with a Calabi--Yau structure $\Omega$, coupled to a holomorphic symplectic boson valued in $U$.  That is, the theory with the space of fields $\mr{Map}(\CC^3, U/\!/\gg)$, where $U/\!/\gg$ is the classifying space of the dg Lie algebra $\gg \oplus \gg[-1] \oplus U[-1]$ with 2-shifted symplectic structure induced from the symplectic pairing on $U$. 
+The holomorphic twist of 6d $\mc N=(1, 0)$ super Yang--Mills with gauge group $G$, and with a hypermultiplet valued in the symplectic representation $U$, is perturbatively equivalent to holomorphic BF theory on $\CC^3$ equipped with a Calabi--Yau structure $\Omega$, coupled to a holomorphic symplectic boson valued in $U$.  That is, the theory with the space of fields $\mr{Map}(\CC^3, U/\!/\gg)$, where $U/\!/\gg$ is the classifying space of the dg Lie algebra $\gg \oplus \gg[-1] \oplus U[-1]$ with even shifted symplectic structure induced from the symplectic pairing on $U$. 
 \label{thm:6dholomorphictwist}
 \end{thm}
 
 \begin{proof}
 The proof of this theorem is very similar to the proof of Theorem \ref{thm:10dholomorphictwist}.  First, we integrate out the fields $\chi$ and $\chi^*$ using Proposition \ref{prop:integrateoutfield}.  We then observe that the action includes the terms $\int \dvol  (B_{1,0}, A_{1,0}^*)$ and  $\int \dvol (\nu', \nu^*)$.  In other words, the pairs $(B_{1,0}, A_{1,0})$ and $(\nu, \nu')$ form BRST doublets, which can be integrated out using Proposition \ref{prop:BRSTdoublet}.  The twisted theory is therefore perturbatively equivalent to the theory with BV action 
 \begin{align*}
- S_{\mr{BV}} &= \int \dvol \bigg( \Omega(\lambda_0 \ol \dd_{A_{0,1}} \lambda_{0,2})  + \Omega(\psi_{0,1} \wedge \ol \dd_{A_{0,1}} \psi_{0,1}) + \frac 12 (F_{0,2},\lambda_{0,2}^*) + \frac 12( \ol \dd_{A_{0,1}} \psi_0, \psi_{0,1}^*) +  \ol\dd_{A_{0, 1}} A_0\wedge A_{0, 1}^* \\ 
+ S_{\mr{BV}} &= \int \Omega \bigg( (\lambda_0 \ol \dd_{A_{0,1}} \lambda_{0,2})  + (\psi_{0,1} \wedge \ol \dd_{A_{0,1}} \psi_{0,1}) + \frac 12 (F_{0,2} \wedge \lambda_{0,2}^*) + \frac 12( \ol \dd_{A_{0,1}} \psi_0 \wedge \psi_{0,1}^*) +  \ol\dd_{A_{0, 1}} A_0\wedge A_{0, 1}^* \\ 
   &\qquad  + [\lambda_{0,2}, A_0]\wedge \lambda_{0,2}^* + [\lambda_{0}, A_0]\wedge \lambda_{0}^* + \frac{1}{2}[A_0, A_0]A_0^* +  [\psi_{0}, A_0]\wedge \psi_{0}^* + [\psi_{0,1}, A_0]\wedge \psi_{0,1}^*  \bigg).
 \end{align*}
 This is indeed the action functional of the required theory, where $\lambda_{0,2}$ is identified as the antifield to $A_{0,1}$.
 \end{proof}
 
+\begin{remark}
+This theory is in general only $\ZZ/2\ZZ$-graded.  If the symplectic representation $U = T^*W$ is of cotangent type, then it is possible to promote to the $\ZZ$-graded generalized BF theory $T^*[-1]\mr{Map}(\CC^3, W/\gg)$ \chris{up to modifying by an even degree shift -- need to saythis more carefully}.
+\end{remark}
 
 
 \subsection{$\mc N = (1,1)$ Super Yang-Mills Theory}
