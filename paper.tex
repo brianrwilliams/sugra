@@ -1939,18 +1939,19 @@ The proof of this theorem is very similar to the proof of Theorem \ref{thm:10dho
 This is indeed the action functional of the required theory, where $\lambda_{0,2}$ is identified as the antifield to $A_{0,1}$.
 \end{proof}
 
-\begin{remark}
-This theory is in general only $\ZZ/2\ZZ$-graded.  If the symplectic representation $U = T^*W$ is of cotangent type, then it is possible to promote to the $\ZZ$-graded generalized BF theory $T^*[-1]\mr{Map}(\CC^3, W/\gg)$ \chris{up to modifying by an even degree shift -- need to saythis more carefully}.
+\begin{remark} \label{6d_BF_remark}
+This theory is in general only $\ZZ/2\ZZ$-graded.  If the symplectic representation $U = T^*W$ is of cotangent type, then it is possible to promote to the $\ZZ$-graded generalized BF theory $T^*[-1]\mr{Map}(\CC^3, W/\gg)$ \chris{up to modifying by an even degree shift -- need to complete this and say it more carefully}.
 \end{remark}
-
 
 \subsection{$\mc N = (1,1)$ Super Yang-Mills Theory}
 
-Let us write the BRST fields in $\mc N=(1,1)$ super Yang Mills on $\RR^6$ as $c$, the ghost, along with:
+There is a 6d gauge theory with $\mc N=(1,1)$ supersymmetry obtained by dimensionally reducing the maximal super Yang-Mills theory on $\RR^{10}$ down to $\RR^6$. This theory is alternatively obtained by considering the $\mc N=(1,0)$ theory above with representation $U = T^*\gg$: the $\mc N=(1,0)$ supersymmetry algebra action can be promoted to an $\mc N=(1,1)$ supersymmetry action.  Let us write the BRST fields in $\mc N=(1,1)$ super Yang Mills theory on $\RR^6$ as $c$, the ghost, along with:
 \begin{itemize}
  \item Bosons: a gauge field $A$, along with 4 scalars $\{\phi_i\}$.  These transform in the vector representation of the R-symmetry group $\Spin(4)_R$, i.e. the tensor product $W_+ \otimes W_-$ of the two fundamental representations of $\Sp(W_+) \times \Sp(W_-)$.  We'll write just $\phi$ for the scalars, viewed as a section of the trivial $W_+ \otimes W_-$-bundle on $\RR^6$.
  \item Fermions: spinor fields $\lambda^+ \otimes u^+$ and $\lambda^- \otimes u^-$ valued in $S_+ \otimes W_+$ and $S_- \otimes W_-$ respectively.
 \end{itemize}
+
+We can write the supersymmetry action here explicitly. \chris{though it isn't necessary: remove it?}
 
 \begin{prop} \label{O6_decomposition_of_susy_prop}
 After reduction to $\mr O(6)$, the interaction terms $I^{(1)}$ and $I^{(2)}$ become
@@ -1982,22 +1983,32 @@ In the 6 dimensional $\mc N=(1,1)$ supersymmetry algebra, there are now 4 classe
  \item Rank $(2,2)$ square-zero spinors.  These supercharges have 5-dimensional image in $\CC^6$.  The corresponding twists are only $\ZZ/2\ZZ$-graded.
 \end{enumerate}
 
-We already considered the holomorphic twist in the previous section.  The remaining three classes are new: they all arise via appropriate dimensional reductions from twists of 7d $\mc N=1$ super Yang-Mills.
+We already considered the holomorphic twist in the previous section: it admits the following description.
 
-\begin{theorem} \label{6d_rk11_twist_thm}
-The twist of 6d $\mc N=(1,1)$ super Yang-Mills theory by a rank $(1,1)$ supercharge with 4 invariant directions on the product of a Calabi-Yau surface $S$ and an oriented 2-manifold $\Sigma$ is equivalent to mixed BF theory on the product $S \times \Sigma_{\mr{dR}}$. This twist degenerates to a one-parameter family of topological twists of the form $\map(S \times \Sigma_{\mr{dR}}, B\gg)_{\mr{Hod}}$.
+\begin{theorem} \label{6d_holo_twist_thm}
+The holomorphic twist of 6d $\mc N=(1,1)$ super Yang-Mills theory is perturbatively equivalent to holomorphic BF theory on $\CC^3$ with target given by the adjoint quotient $\gg/\gg$, i.e. the theory with fields $T^*[-1]\mr{Map}(\CC^3, \gg/\gg)$.
 \end{theorem}
 
 \begin{proof}
- 
+Take the description of the holomorphically twisted theory from Theorem \ref{thm:6dholomorphictwist}, and let $U = T^*\gg$.  One identifies the resulting description as a $\ZZ$-graded theory with a cotangent theory as described in Remark \ref{6d_BF_remark}.
+\end{proof}
+
+The remaining three classes of twists are new: they all arise via appropriate dimensional reductions from twists of 7d $\mc N=1$ super Yang-Mills.
+
+\begin{theorem} \label{6d_rk11_twist_thm}
+The twist of 6d $\mc N=(1,1)$ super Yang-Mills theory by a rank $(1,1)$ supercharge with 4 invariant directions on the product of a Calabi-Yau surface $S$ and an oriented 2-manifold $\Sigma$ is perturbatively equivalent to mixed BF theory on the product $S \times \Sigma_{\mr{dR}}$. This twist degenerates to a one-parameter family of topological twists of the form $\map(S \times \Sigma_{\mr{dR}}, B\gg)_{\mr{Hod}}$.
+\end{theorem}
+
+\begin{proof}
+We obtain this description by starting with the 1-parameter family of twisted theories from Theorem \ref{7d_holo_twist_thm}, and dimensionally reducing along one of the Calabi-Yau directions.  That is, by applying Proposition \ref{CS_to_BF_diml_red_prop} to the family of twists in 7-dimensions.
 \end{proof}
 
 \begin{theorem} \label{6d_rk22_twist_thm}
-The twist by a rank $(2,2)$ supercharge of 6d $\mc N=(1,1)$ super Yang-Mills theory on the product of a Calabi-Yau curve $C$ with an oriented 4-manifold $M_4$ is equivalent to mixed Chern-Simons theory on $C \times (M_4)_{\mr{dR}}$.
+The twist by a rank $(2,2)$ supercharge of 6d $\mc N=(1,1)$ super Yang-Mills theory on the product of a Calabi-Yau curve $C$ with an oriented 4-manifold $M_4$ is perturbatively equivalent to mixed Chern-Simons theory on $C \times (M_4)_{\mr{dR}}$.
 \end{theorem}
 
 \begin{proof}
- 
+We now start with the twisted theory from Theorem \ref{7d_rank2_twist_thm}, with 5 invariant directions, and we dimensionally reduce in an de Rham direction.  That is, we apply Proposition \ref{CS_diml_red_prop}.
 \end{proof}
 
 \section{Dimension 5}
