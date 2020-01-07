@@ -8,7 +8,7 @@
 \newcommand{\gauge}{\mathrm{gauge}}
 \newcommand{\matter}{\mathrm{matter}}
 \renewcommand{\Re}{\mathrm{Re}}
-\newcommand{\U}{\mathrm{U}}
+%\newcommand{\U}{\mathrm{U}}
 
 \newcommand{\defterm}[1]{\textbf{\emph{#1}}}
 
@@ -157,7 +157,7 @@ the BV action of the theory.
 
 \begin{remark}
 The local functional $S$ satisfies the {\em classical master equation} \[\{S, S\} = 0.\] 
-In fact, given a degree $(-1)$ nondegenerate pairing $\omega$ on $E$, prescribing the data of a classical field theory (namely $Q, I$ satisfying the Maurer-Cartan equation) is equivalent to prescribing a local functional $S \in \oloc(\cE)$ satisfying the classical master equation.
+In fact, given a degree $(-1)$ nondegenerate pairing $\omega$ on $E$, prescribing the data of a classical field theory (namely $Q, I$ satisfying the Maurer-Cartan equation) is equivalent to prescribing a local functional $S \in \oloc(\cE)$, which is at least quadratic in the fields, satisfying the classical master equation.
 The operator $Q_{BV}$ is the BV bracket with the quadratic part of the BV action $S$, and the cubic and higher terms in $S$ coincide with $I$.
 Because of this, we will sometimes refer to $(E, S, \omega)$ as the data of a classical field theory.
 \end{remark}
@@ -169,6 +169,8 @@ We will also consider \defterm{$\ZZ/2$-graded classical field theories} which ar
 \begin{remark}
 The data of a classical BV theory can be equivalently encoded in an elliptic $L_\infty$ algebra $L=E[-1]$ equipped with a cyclic structure, i.e. a symplectic isomorphism $L\cong L^![-3]$.
 \end{remark}
+
+Next, we formulate the notion of an equivalence of classical BV theories. 
 
 \begin{definition}
 A \defterm{morphism} $F\colon (E, Q_{BV}, \omega, I) \rightsquigarrow (E', Q_{BV}', \omega', I')$ of classical field theories over the same manifold $M$ is a nonlinear map of vector bundles $E\rightsquigarrow E'$, i.e. a collection $F=\sum_{n\geq 1}^\infty F$ of poly-differential operators $F_n\colon \Sym^n(E)\rightarrow E'$, that intertwines the differentials $Q_{BV}, Q_{BV}'$, the pairings $\omega, \omega'$, and the interactions $I,I'$. A morphism is a \defterm{perturbative equivalence} if the map $F_1\colon (\cE, Q_{BV})\rightarrow (\cE', Q_{BV}')$ is a quasi-isomorphism. A classical field theory is \defterm{perturbatively trivial} if it is perturbatively equivalent to the zero theory ($E = 0$).
@@ -245,10 +247,10 @@ Via the BV bracket, the shift of this cochain complex $C^\bu(\fg, \oloc(\cE))[-1
 
 \begin{definition}
 \label{infinitesimal_action_def}
-Let $(E, Q_{BV},\omega, I)$ be a classical field theory. 
+Let $(E, Q_{BV},\omega, I)$ be a classical field theory and $\fg$ a super Lie algebra. 
 \begin{itemize}
 \item[(1)]
-An \defterm{action} of a super Lie algebra $\fg$ on $(E, Q_{BV}, \omega, I)$ is an element of cohomological degree zero 
+An $L_\infty$ \defterm{action} of a super Lie algebra $\fg$ on $(E, Q_{BV}, \omega, I)$ is an element of cohomological degree zero 
 \[I_\fg = \sum_{k\geq 0} I_{\fg}^{(k)} \in C^\bullet(\fg, \oloc(\cE)),\]
 where $I_\fg^{(k)} : \fg^{\otimes k} \to \oloc(\cE)$, that satisfies the following three conditions:
 \begin{itemize}
@@ -297,11 +299,11 @@ We may also define actions of supergroups on classical field theories.
 
 \begin{definition}
 \label{group_action_def}
-Let $(E, Q_{BV}, \omega, I)$ be a classical field theory and $G$ is a supergroup acting on spacetime $M$. An \defterm{action} of $G$ on $(E, Q_{BV}, \omega, I)$ is given by the following data:
+Let $(E, Q_{BV}, \omega, I)$ be a classical field theory and $G$ is a supergroup acting on spacetime $M$. An (elliptic) \defterm{action} of $G$ on $(E, Q_{BV}, \omega, I)$ is given by the following data:
 \begin{itemize}
 \item An action of $G$ on $\cE$ compatible with the $G$-action on $M$.
 
-\item An action $I_\fg$ of its super Lie algebra $\fg$ with $I^{(k)}_\fg = 0$ for $k\geq 2$.
+\item An (elliptic) action $I_\fg$ of its super Lie algebra $\fg$ with $I^{(k)}_\fg = 0$ for $k\geq 2$  \brian{this seems to fail for all our examples.}.
 \end{itemize}
 These are required to satisfy the following conditions:
 \begin{itemize}
@@ -338,11 +340,12 @@ The underlying bundle of the BV theory is
 \[
 E = F \oplus F^! [-1].
 \]
+The BV pairing $\omega$ on $E$ is defined in terms of the natural pairing between $F$ and $F^!$.
 The differential of the free BV theory is
 \[
-Q_{BV} = \ell_1 + S^{free}_{BRST}.
+Q_{BV} = \ell_1 + \{S^{free}_{BRST},-\} .
 \]
-The BV pairing $\omega$ on $E$ is defined in terms of the natural pairing between $F$ and $F^!$.
+
 
 The interacting theory is constructed as follows. First, note that for $k \geq 2$ the $L_\infty$ structure maps $\{\ell_k\}_{k \geq 2}$ on $\cF$ pull back to multilinear maps on $\cE$ via the obvious projection $p\colon \cE\rightarrow \cF$. These structure maps assemble into a local functional $I_F \in \oloc^+(\cE)$ defined by
 \[
@@ -361,7 +364,8 @@ We refer to the classical BV theory $(E, Q_{BV}, \omega, I)$ from the above stat
 
 If the fields of the classical BRST theory are denoted by $\phi$, we denote their antifields in the classical BV theory by $\phi^*$, so that
 \[\{\phi(x), \phi^*(y)\} = \{\phi^*(y), \phi(x)\} = \delta(x-y).\]
-
+\brian{Looks like you're using a bracket we haven't defined. 
+We've only defined brackets on local functionals, but I think when you write $\phi(x)$ you mean a point-like observable, which is far from local.}
 \subsection{Examples of Classical Field Theories}
 
 In this section we give some examples of classical field theories we will use. All theories we consider in this section are $\ZZ$-graded, i.e. all fields are considered even with respect to the $\ZZ/2$-grading.
@@ -415,7 +419,7 @@ This is a special case of generalized BF theory:
 the generalized $\beta\gamma$ system is generalized $BF$ theory in the case that the $L_\infty$ aglebra is $\fg = V[-1]$, with trivial $L_\infty$ structure. 
 \end{rmk}
 
-\brian{Symplectic, non-polarized version.}
+\brian{Symplectic, non-polarized version needed for 6d N=(1,0).}
 
 
 \subsubsection{Generalized Chern--Simons theory} \label{gen_CS_section}
@@ -567,7 +571,7 @@ A \defterm{spinorial representation} $\Sigma$ is a sum of spin or semi-spin repr
 So, in odd dimensions we have $\Sigma=S\otimes W$ and in even dimensions we have $\Sigma=S_+\otimes W_+\oplus S_-\otimes W_-$, where $W$ denotes a multiplicity space.
 
 \begin{definition}
-Fix a spinorial representation $\Sigma$ and a nondegenerate $\so(V)$-equivariant pairing $\Gamma\colon \sym^2(\Sigma)\rightarrow V$. The \defterm{supertranslation Lie algebra} is the $\so(V)$-equivariant super Lie algebra $T=\Pi\Sigma\oplus V$ whose only nontrivial bracket is given by $\Gamma$.
+Fix a spinorial representation $\Sigma$ and a nondegenerate $\so(V)$-equivariant pairing $\Gamma\colon \sym^2(\Sigma)\rightarrow V$. The \defterm{supertranslation Lie algebra} is the $\so(V)$-equivariant super Lie algebra $\fA = \Pi\Sigma\oplus V$ whose only nontrivial bracket is given by $\Gamma$.
 \end{definition}
 
 For a given spinorial representation, the pairing $\Gamma$ is unique up to a scale, so a supertranslation Lie algebra is specified by fixing a spinorial representation. In turn, a spinorial representation is determined by the dimension of the multiplicity space, so we will talk about $\mc{N}$ or $(\mc{N}_+, \mc{N}_-)$ supertranslation Lie algebras, where the numbers are specified as follows:
@@ -590,13 +594,13 @@ Fix the following data:
 \item A complex Lie group $G_R$, the \defterm{group of $R$-symmetries}, which is a subgroup of $\so(V)$-equivariant automorphisms of $(\Sigma, \Gamma)$.
 \end{itemize}
 
-Note that the supertranslation Lie algebra $T$ is a $\Spin(V_\RR)\times G_R$-equivariant super Lie algebra.
+Note that the supertranslation Lie algebra $\fA$ is a $\Spin(V_\RR)\times G_R$-equivariant super Lie algebra.
 
 Consider a spacetime manifold $M$ which is an affine space over $V_\RR$. Let $\ISO(V_\RR) = \Spin(V_\RR)\ltimes V_\RR$ be the \defterm{Poincar\'{e} group} which acts in the obvious way on $M$.
 
 \begin{definition}
 \label{dfn: super}
-A classical field theory $(E, Q, \omega, I)$ is \defterm{supersymmetric} if $E\rightarrow M$ is an $\ISO(V_\RR)\times G_R$-equivariant vector bundle and the infinitesimal strict action of the translation Lie algebra $V$ on the classical theory is extended to a $\Spin(V_\RR)\times G_R$-equivariant elliptic $L_\infty$ action of the supertranslation Lie algebra $T$ on the classical theory.
+A classical field theory $(E, Q, \omega, I)$ is \defterm{supersymmetric} if $E\rightarrow M$ is an $\ISO(V_\RR)\times G_R$-equivariant vector bundle and the infinitesimal strict action of the translation Lie algebra $V$ on the classical theory is extended to a $\Spin(V_\RR)\times G_R$-equivariant elliptic $L_\infty$ action of the supertranslation Lie algebra $\fA$ on the classical theory.
 \end{definition}
 
 \subsection{Division algebras and minimal supersymmetry}
@@ -776,8 +780,6 @@ By associativity of $A$ the two expressions are equal.
 
 \subsection{Supersymmetric twisting}
 
-\pavel{$Q$ denotes both the differential on fields and the supercharge.} 
-
 \begin{definition}
 A \defterm{square-zero supercharge} is a nonzero element $Q\in\Sigma$ such that $\Gamma(Q, Q)=0$.
 \end{definition}
@@ -805,15 +807,35 @@ A \defterm{twisting datum} is a pair $(Q, \alpha)$, where $Q\in\Sigma$ is a squa
 \end{definition}
 
 We will call $\alpha$ in a twisting datum a \defterm{twisting homomorphism}.
+\brian{Is this quite right? I think $\alpha$ is something different.
+Physics usually calls the twisting homomorphism the one from the Lorentz group to $G_R$. 
+Also, I think $Q$ is required to be a scalar under the twisting homomorphism.}
+
+Let $(E, Q_{BV}, \omega, I)$ be a supersymmetric classical field theory.
+Recall, this means we have a Maurer-Cartan element 
+\[
+I_{\fA} = \sum_{k \geq 0} I_{\fA}^{(k)} \in C^\bu(\fA, \oloc(\cE))
+\]
+where $I_{\fA}^{(k)} : \fA^{\otimes k} \to \oloc(\cE)$ as in Definition \ref{infinitesimal_action_def}. 
+For each $k \geq 1$, the functional $I_{\fA}^{(k)}$ further decomposes as a sum $I_{\fA}^{(k)} = \sum_{\ell \geq 0} I_\fA^{(k),\ell}$ where $I_\fA^{(k),\ell}$ is $\ell$-linear in the fields $\cE$. 
+Define
+\[
+I_{\fA}^2 (Q) = \sum_{k \geq 1} I^{(k),2} (Q, \ldots, Q) \;\;\; , \;\;\; I_{\fA}^{\geq 3} (Q) =  \sum_{k \geq 1, \ell \geq 3} I^{(k),\ell} (Q, \ldots, Q) .
+\]
+Note that $I_{\fA}^2 (Q)$ is quadratic as a function of the fields and $I_{\fA}^{\geq 3}(Q) \in \cO_{\rm loc}^+(\cE)$. 
 
 \begin{definition} \label{def:twisting}
-Suppose $(E, Q_{BV}, \omega, I)$ is a supersymmetric classical field theory and $(Q, \alpha)$ is a twisting datum. The \defterm{$Q$-twisted classical field theory} is the classical field theory $(E^Q, Q_{BV} + \{\rho_2(Q), -\}, \omega, I + \rho_3(Q) + \dots)$, where
+Suppose $(E, Q_{BV}, \omega, I)$ is a supersymmetric classical field theory and $(Q, \alpha)$ is a twisting datum. The \defterm{$Q$-twisted classical field theory} is the classical field theory 
+\[
+\left(E^Q, Q_{BV} + \{I^2_{\fA} (Q), -\}, \omega, I + I^{\geq 3}_\fA (Q)\right)
+\]
+where
 \[E^Q = \bigoplus_{n=-\infty}^\infty \Pi^n E(n)[-n]\]
 for $E(n)$ the component of $E$ which has $\alpha$-weight $n$.
 \end{definition}
 
 \begin{prop}
-The collection $(E^Q, \d + \{\rho_2(Q), -\}, \omega, I + \rho_3(Q) + \dots)$ is a classical field theory.
+The collection $\left(E^Q, Q_{BV} + \{I^2_{\fA} (Q), -\}, \omega, I + I^{\geq 3}_\fA (Q)\right)$ is a classical field theory.
 \end{prop}
 
 \begin{proof}
@@ -1042,7 +1064,7 @@ I_{\gauge}^{(2)}(Q_1, Q_2) &= \int_{V_\RR}\dvol\left( \frac{1}{4}(\Gamma(Q_1, Q_
 The following theorem summarizes the fact that super Yang-Mills theory is indeed supersymmetric in the sense of Definition \ref{dfn: super}. 
 
 \begin{thm}\label{thm:gaugemultipletSUSY}
-The functional $\fS_{\gauge} = S_{\gauge} + I_{\gauge}^{(1)} + I_{\gauge}^{(2)} \in C^\bu(\mf{A}, \oloc(\cE_{\rm SYM}))$ defines satisfies the classical master equation
+The functional $\fS_{\gauge} = S_{\gauge} + I_{\gauge}^{(1)} + I_{\gauge}^{(2)} \in C^\bu(\mf{A}, \oloc(\cE_{\rm SYM}))$ satisfies the classical master equation
 \[\d_{CE} \fS_{\gauge} + \frac{1}{2}\{\fS_{\gauge}, \fS_{\gauge}\} = 0.\]
 Thus, $\fS_{\gauge}$ defines an elliptic $L_\infty$ action of the super Lie algebra $\fA$ on super Yang-Mills theory and so super Yang-Mills theory is supersymmetric.  
 \end{thm}
