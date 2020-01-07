@@ -1892,6 +1892,9 @@ This is the theory one obtains by compactifying 10d $\mc N=1$ super Yang-Mills f
 \subsection{$\mc N = (1,0)$ Super Yang-Mills Theory with Matter} \label{6d_10_section}
 
 The general theory of $\mc N = (1,0)$ coupled to matter has been exhibited in Section \ref{sect:mattermultipletSUSY}. 
+
+\vspace{-10pt}
+\paragraph{Fields:}
 The untwisted fields are given by:
 \begin{itemize}
 \item $\fg$-valued bosons: a gauge field $A \in \Omega^1(\RR^6;\fg)$.
@@ -1900,6 +1903,8 @@ The untwisted fields are given by:
 \item $U$-valued fermions: $\psi \in C^\infty(\RR^6 ; S_- \otimes U)$ .
 \end{itemize}
 
+\vspace{-10pt}
+\paragraph{Twisting data:}
 Choose a polarized basis $W_+ = {\rm span}_{\CC}\{w_1, w_2\}$.
 The only square zero supercharges in the $\mc N=(1,0)$ supersymmetry algebra have rank one.  Without loss of generality we will twist with respect to a supercharge of the form $Q = q_+ \otimes w_1 \in S_+ \otimes W_+$. 
 
@@ -1915,7 +1920,7 @@ and similarly with the anti-fields, where the fields $A_{\bu, \bu}$, $\lambda_{\
 \begin{align*}
 S_{\mr{gauge}} &= \int \dvol \left(-(F^{2, 0}, F^{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2\right) + \\
 &\qquad + \frac 12 \left( \omega(\lambda_{0,2} \wedge \dd_{A_{1,0}} B_{1,0}) + \omega^2(\chi \ol \dd_{A_{0,1}} B_{1,0}) - \omega(B_{1,0} \wedge \dd_{A_{1,0}} \lambda_{0,2}) + \Omega(\lambda_0 \ol \dd_{A_{0,1}} \lambda_{0,2})   \right)  \\
-S_{\mr{matter}} &= \int \bigg( \dvol ((\dd_{A_{1,0}}\nu, \ol \dd_{A_{0,1}} \psi_0) + (\dd_{A_{1,0}}\psi_0, \ol \dd_{A_{0,1}} \nu)) + 2\omega^2(\nu \ol \dd_{A_{1,0}} \psi_{0,1}) + \Omega(\psi_{0,1} \wedge \ol \dd_{A_{0,1}} \psi_{0,1}) + \\
+S_{\mr{matter}} &= \int \bigg( \dvol ((\dd_{A_{1,0}}\nu, \ol \dd_{A_{0,1}} \psi_0) + (\dd_{A_{1,0}}\psi_0, \ol \dd_{A_{0,1}} \nu)) + 2\omega^2(\nu' \ol \dd_{A_{1,0}} \psi_{0,1}) + \Omega(\psi_{0,1} \wedge \ol \dd_{A_{0,1}} \psi_{0,1}) + \\
 &\qquad + 2\dvol(([\lambda_0,\nu],\nu') + ([\chi, \psi_0], \nu') )   \bigg) \\
 S_{\mr{anti}} &= \int \dd_{A_{1, 0}} A_0 \wedge A_{1, 0}^* + \ol\dd_{A_{0, 1}} A_0\wedge A_{0, 1}^* + [\lambda_{0,2}, A_0]\wedge \lambda_{0,2}^* +  [\lambda_{0}, A_0]\wedge \lambda_{0}^* + [\chi, A_0]\chi^* +A_0[B_{1,0}, A_0]\wedge B_{1,0}^* + \\
 &\qquad + \frac{1}{2}[A_0, A_0]A_0^* + [\nu, A_0]\wedge \nu^* + [\psi_{0}, A_0]\wedge \psi_{0}^* + [\psi_{0,1}, A_0]\wedge \psi_{0,1}^* + [\nu', A_0]\wedge \nu'^* \\
@@ -1945,7 +1950,10 @@ This theory is in general only $\ZZ/2\ZZ$-graded.  If the symplectic representat
 
 \subsection{$\mc N = (1,1)$ Super Yang-Mills Theory}
 
-There is a 6d gauge theory with $\mc N=(1,1)$ supersymmetry obtained by dimensionally reducing the maximal super Yang-Mills theory on $\RR^{10}$ down to $\RR^6$. This theory is alternatively obtained by considering the $\mc N=(1,0)$ theory above with representation $U = T^*\gg$: the $\mc N=(1,0)$ supersymmetry algebra action can be promoted to an $\mc N=(1,1)$ supersymmetry action.  Let us write the BRST fields in $\mc N=(1,1)$ super Yang Mills theory on $\RR^6$ as $c$, the ghost, along with:
+There is a 6d gauge theory with $\mc N=(1,1)$ supersymmetry obtained by dimensionally reducing the maximal super Yang-Mills theory on $\RR^{10}$ down to $\RR^6$. This theory is alternatively obtained by considering the $\mc N=(1,0)$ theory above with representation $U = T^*\gg$: the $\mc N=(1,0)$ supersymmetry algebra action can be promoted to an $\mc N=(1,1)$ supersymmetry action.  
+
+\vspace{-10pt}
+\paragraph{Fields:} Let us write the BRST fields in $\mc N=(1,1)$ super Yang Mills theory on $\RR^6$ as $c$, the ghost, along with:
 \begin{itemize}
  \item Bosons: a gauge field $A$, along with 4 scalars $\{\phi_i\}$.  These transform in the vector representation of the R-symmetry group $\Spin(4)_R$, i.e. the tensor product $W_+ \otimes W_-$ of the two fundamental representations of $\Sp(W_+) \times \Sp(W_-)$.  We'll write just $\phi$ for the scalars, viewed as a section of the trivial $W_+ \otimes W_-$-bundle on $\RR^6$.
  \item Fermions: spinor fields $\lambda^+ \otimes u^+$ and $\lambda^- \otimes u^-$ valued in $S_+ \otimes W_+$ and $S_- \otimes W_-$ respectively.
@@ -1972,6 +1980,8 @@ if $Q^- \otimes W_-$ is an element of $S_- \otimes W_-$.  In each of these expre
 If we set $\lambda^- \otimes u^-$ and $\phi$ to zero, and consider only the action of $Q^+ \otimes w^+$, then we recover the supersymmetry action for the $\mc N=(1,0)$ pure gauge theory.  If instead we set $\lambda^+ \otimes u^+$ and $A$ to zero, and consider only the action of $Q^- \otimes w^-$ then we recover the supersymmetry action for the $\mc N=(1,0)$ pure matter theory.
 \end{remark}
 
+\vspace{-10pt}
+\paragraph{Twisting data:}
 In the 6 dimensional $\mc N=(1,1)$ supersymmetry algebra, there are now 4 classes of inequivalent non-zero supercharges by which we can twist.
 \begin{enumerate}
  \item Rank $(1,0)$ spinors, $Q^+ \otimes w^+$.  These automatically square to zero, and are holomorphic.  Such supercharges factor through a copy of the $\mc N=(1,0)$ supersymmetry algebra.
@@ -2027,28 +2037,15 @@ We begin by treating $\mc N=1$ Super Yang-Mills theory with gauge group $G$, wit
 \end{itemize}
 
 \vspace{-10pt}
-\paragraph{Supersymmetry action:} Let $Q, Q_1$ and $Q_2$ be $\mc N=1$ supercharges.  We can describe the supersymmetry action as follows.
-\begin{prop}
-The supersymmetry action $I^{(1)} = I^{(1)}_{\mr{gauge}} + I^{(1)}_{\mr{matter}} + I^{(1)}_{\mr{couple}}$ and $I^{(2)} = I^{(2)}_{\mr{gauge}} + I^{(2)}_{\mr{matter}}$ from Section \ref{6d_10_section} restricts to 5-dimensional $\mc N=1$ fields as follows:
-\begin{align*}
-I^{(1)}_{\mr{gauge}}(Q) &= \int \\
-I^{(1)}_{\mr{matter}}(Q) &= \int \\
-I^{(2)}_{\mr{couple}}(Q_1,Q_2) &= \int  \\
-I^{(2)}_{\mr{gauge}}(Q_1,Q_2) &= \int \\
-I^{(2)}_{\mr{matter}}(Q_1,Q_2) &= \int 
-\end{align*}
-\end{prop}
-
-\vspace{-10pt}
 \paragraph{Twisting data:}
 There is a unique class of square-zero supercharges in the 5d $\mc N=1$ supersymmetry algebra.  Twists by such supercharges are minimal: they are invariant in three directions.  The stabilizer of a minimal supercharge is isomorphic to $\SU(2) \sub \Spin(5)$.
 
 \begin{theorem} \label{5d_holo_twist_theorem}
-The minimal twist of 5d $\mc N=1$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$, on the product of a Calabi-Yau surface $S$ and an oriented 1-manifold $L$ is equivalent to the generalized BF theory $\mr{Map}(S \times L_{\mr{dR}}, U//G)$.
+The minimal twist of 5d $\mc N=1$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$, on the product of a Calabi-Yau surface $S$ and an oriented 1-manifold $L$ is equivalent to the generalized BF theory coupled to a higher holomorphic symplectic $U$-valued boson, with space of fields $\mr{Map}(S \times L_{\mr{dR}}, U/\!/G)$.
 \end{theorem}
 
 \begin{proof}
-This follows from the calculation of the minimal twist in 6-dimensional $\mc N=(1,0)$ theory in \chris{ref} above, by applying Proposition \ref{CS_diml_red_prop}.
+This follows from the calculation of the minimal twist in 6-dimensional $\mc N=(1,0)$ theory in Theorem \ref{thm:6dholomorphictwist} above, by applying Proposition \ref{CS_diml_red_prop} to dimensionally reduce along one of the non-invariant Calabi-Yau directions.
 \end{proof}
 
 \subsection{$\mc N = 2$ Super Yang-Mills Theory} \label{5d_2_section}
@@ -2059,20 +2056,6 @@ This follows from the calculation of the minimal twist in 6-dimensional $\mc N=(
  \item Fermions: A pair of spinors $\lambda_1$ and $\lambda_2$ in $\Omega^0(\RR^5; S \otimes W \otimes \gg)$.
 \end{itemize}
 We could alternatively have obtained these fields by considering the $\mc N=1$ 5d super Yang-Mills theory, with matter valued in the symplectic representation $T^*\gg$.
-
-\vspace{-10pt}
-\paragraph{Supersymmetry action:} Let $Q, Q_1$ and $Q_2$ be $\mc N=2$ supercharges.  We can describe the supersymmetry action as follows.
-\begin{prop}
-The supersymmetry action $I^{(1)}$ and $I^{(2)}$ from \chris{ref} restricts to 5-dimensional $\mc N=1$ fields as
-\begin{align*}
-I^{(1)}(Q) &= \int \\
-I^{(2)}(Q_1,Q_2) &= \int 
-\end{align*}
-\end{prop}
-
-\begin{proof}
-This follows by restricting the 6d $\mc N=(1,1)$ supersymmetry action further to $\mr O(5)$.  Indeed \chris{...}
-\end{proof}
 
 \vspace{-10pt}
 \paragraph{Twisting data:}
@@ -2092,7 +2075,7 @@ The twist of 5d $\mc N=2$ super Yang-Mills theory by a rank $2$ supercharge with
 \end{theorem}
 
 \begin{proof}
- 
+As we have done in higher dimensions, we start with with the 1-parameter family of twisted theories from Theorem \ref{6d_holo_twist_thm}, and dimensionally reduce along one of the Calabi-Yau directions by applying Proposition \ref{CS_to_BF_diml_red_prop} to the family of twists in 6-dimensions.
 \end{proof}
 
 Let us describe the partition function of the A-type topological twist appearing at generic points of this family.  
@@ -2104,13 +2087,12 @@ Let us describe the partition function of the A-type topological twist appearing
  
 \end{proof}
 
-
 \begin{theorem} \label{5d_rk4_twist_thm}
-The twist by a rank $4$ supercharge of 5d $\mc N=2$ super Yang-Mills theory on ah an oriented 5-manifold $M_5$ is equivalent to 5d Chern-Simons theory on $M_5$.
+The twist by a rank $4$ supercharge of 5d $\mc N=2$ super Yang-Mills theory on an oriented 5-manifold $M_5$ is equivalent to 5d Chern-Simons theory on $M_5$: the $\ZZ/2\ZZ$-graded theory with space of fields $\mr{Map}(M_5, B\gg)$.
 \end{theorem}
 
 \begin{proof}
- 
+We now take the twist of 6d $\mc N=(1,1)$ super Yang-Mills with 5 invariant directions, as calculated in Theorem \ref{6d_rk22_twist_thm}, and dimensionally reduce in the unique non-invariant direction.  That is, we apply Proposition \ref{CS_to_BF_diml_red_prop} to the flat curve $C$ to obtain the required topological theory.
 \end{proof}
  
 \section{Dimension 4}
