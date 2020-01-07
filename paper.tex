@@ -1422,7 +1422,7 @@ Then
 \end{enumerate}
 \end{prop}
 
-\begin{corollary}
+\begin{corollary} \label{Kahler_YM_term_cor}
 Let $M$ be a K\"{a}hler $d$-fold and $F = F_{2, 0} + F_{1, 1} + F_{0, 2}$ a two-form. Then
 \[F\wedge \ast F + \frac{1}{(d-2)!} F\wedge F\wedge \omega^{d-2} = \left(4(F_{2, 0}, F_{0, 2}) + (\Lambda F_{1, 1})^2\right) \frac{\omega^d}{d!}.\]
 \end{corollary}
@@ -1865,14 +1865,14 @@ The twist by a rank 2 supercharge of 7d $\mc N=1$ super Yang-Mills theory on the
 
 \section{Dimension 6}
 In dimension 6 there are two possible supersymmetry groups by which we can act.  
-There is a minimal supersymmetric field theory with $\mc N=(1,0)$ supersymmetry, consisting of a pure gauge theory coupled to matter living in a symplectic representation $V$.  
-If $V \iso T^*\gg$, then the $(1,0)$ supersymmetry can be enhanced to $\mc N=(1,1)$ supersymmetry.  
-This is the theory one obtains by compactifying 10d $\mc N=1$ super Yang-Mills down to $\RR^6$.
+There is a minimal supersymmetric field theory with $\mc N=(1,0)$ supersymmetry, consisting of a pure gauge theory coupled to matter living in a symplectic representation $U$.  
+If $U \iso T^*\gg$, then the $(1,0)$ supersymmetry algebra action can be enhanced to an $\mc N=(1,1)$ supersymmetry algebra action.  
+This is the theory one obtains by compactifying 10d $\mc N=1$ super Yang-Mills from $\RR^{10}$ down to $\RR^6$.
 
 \subsection{$\mc N = (1,0)$ Super Yang-Mills Theory with Matter} \label{6d_10_section}
 
-The general theory of $\mc N = (1,0)$ coupled to matter has been exhibited in Section \ref{sec: couple}. 
-The fields are:
+The general theory of $\mc N = (1,0)$ coupled to matter has been exhibited in Section \ref{sect:mattermultipletSUSY}. 
+The untwisted fields are given by:
 \begin{itemize}
 \item $\fg$-valued bosons: a gauge field $A \in \Omega^1(\RR^6;\fg)$.
 \item $\fg$-valued fermions: a spinor $\lambda \in C^\infty(\RR^6 ; S_+ \otimes W_+ \otimes \fg)$. 
@@ -1880,35 +1880,48 @@ The fields are:
 \item $U$-valued fermions: $\psi \in C^\infty(\RR^6 ; S_- \otimes U)$ .
 \end{itemize}
 
-The interaction terms encoding $\mc N = (1,0)$ supersymmetry $I^{(1)}$ and $I^{(2)}$ are:
-\begin{align*}
-I^{(1)} & = I^{(1)}_{\rm gauge} + I^{(1)}_{\rm matter} + I^{(1)}_{\rm couple} \\
-I^{(2)} & = I^{(2)}_{\rm gauge} + I^{(2)}_{\rm matter} 
-\end{align*}
-where
-\begin{align*}
-I_{\rm gauge}^{(1)}(Q) &= (\Gamma(Q, \lambda), A^*)_\fg + \frac{1}{2}(\rho(F_A), \lambda^*)_\fg \\
-I_{\rm gauge}^{(2)}(Q_1, Q_2) &= \frac{1}{4}(\Gamma(Q_1, Q_2), \Gamma(\lambda^*, \lambda^*)_\fg) - \frac{1}{2}((Q_1, \lambda^*),(Q_2, \lambda^*))_\fg - \iota_{\Gamma(Q_1, Q_2)} A c^*\\
-I^{(1)}_{\rm matter} (Q) & = (\phi^*, (Q, \psi))_{W_+ \otimes U} + (\psi^*, \rho(\d \phi) Q)_U \\
-I^{(2)}_{\rm matter} (Q_1 , Q_2) & =  \frac{1}{4}(\Gamma(Q_1, Q_2)_{W_+} , \Gamma(\psi^*, \psi^*)_{U}) \\
-I^{(1)}_{\rm couple} (Q) & = g (\psi^*, \rho([A, \phi]) Q)_U + \frac{1}{2} g (\lambda^*, Q \mu(\phi,\phi))_\fg 
-%\textcolor{red}{-\frac{1}{2} (Q_1, \psi^*)_U(Q_2, \psi^*)_U  }.
-\end{align*}
-
 Choose a polarized basis $W_+ = {\rm span}_{\CC}\{w_1, w_2\}$.
-Without loss of generality we will twist with respect to a supercharge of the form $Q = q_+ \otimes w_1 \in S_+ \otimes W_+$. 
+The only square zero supercharges in the $\mc N=(1,0)$ supersymmetry algebra have rank one.  Without loss of generality we will twist with respect to a supercharge of the form $Q = q_+ \otimes w_1 \in S_+ \otimes W_+$. 
 
-We decompose the fields with respect to $\mr U(5) \hookrightarrow \SO(6)$:
+We decompose the fields with respect to the subgroup $\SU(3) \sub \SO(6)$.  We can identify the two fundamental representations of $\SU(3)$ with $\Omega^{0,1}(\CC^3)$ and $\Omega^{1,0}(\CC^3)$. 
 \begin{align*}
-c & \mapsto A^0 \in \Omega^{0,0}(\CC^3 ; \fg) \\
-A & \mapsto A^{1,0} + A^{0,1} \in \Omega^{1,0}(\CC^3 ; \fg) \oplus \Omega^{0,1}(\CC^3) \\
-\lambda & \mapsto \lambda^0_1 w_1 + \lambda_2^0 w_2 + A^{0,2} w_1 +  \Tilde{\lambda}^{0,2} w_2\in \Omega^{0}(\CC^3 ; W_+ \otimes \fg) \oplus \Omega^{0,2}(\CC^3 ; W_+ \otimes \fg) \\
-\phi & \mapsto A 
+c & \mapsto A_0 \in \Omega^{0,0}(\CC^3 ; \fg) \\
+A & \mapsto A_{0,1} + A_{1,0} \in \Omega^{0,1}(\CC^3 ; \fg) \oplus \Omega^{1,0}(\CC^3) \\
+\lambda & \mapsto \lambda_{0,2} w_1 + {B}_{1,0}w_2 + \chi w_1 + \lambda_0 w_2 \in \Omega^{0,2}(\CC^3 ; W_+ \otimes \fg) \oplus \Omega^{0}(\CC^3 ; W_+ \otimes \fg) \\
+\phi & \mapsto \nu w_1 + \psi_0 w_2 \in \Omega^0(\CC^3; W_+ \otimes U) \\
+\psi & \mapsto \psi_{0,1} + \nu' \in \Omega^{0,1}(\CC^3; U) \oplus \Omega^0(\CC^3; U),
 \end{align*} 
-where the $A^{\bu, \bu}, \lambda^{\bu,\bu}, \Tilde{\lambda}^{\bu,\bu}$ are all $\fg$-valued forms. 
+and similarly with the anti-fields, where the fields $A_{\bu, \bu}$, $\lambda_{\bu,\bu}$ are $\fg$-valued differential forms, and the fields $\psi_{\bu,\bu}$ are $U$-valued differential forms.  In terms of these fields, and using Corollary \ref{Kahler_YM_term_cor}, the BV action $S_{\mr{BV}}$ of the $Q$-twisted theory will consist of the sum of the following terms.
+\begin{align*}
+S_{\mr{gauge}} &= \int \dvol \left(-(F^{2, 0}, F^{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2\right) + \\
+&\qquad + \frac 12 \left( \omega(\lambda_{0,2} \wedge \dd_{A_{1,0}} B_{1,0}) + \omega^2(\chi \ol \dd_{A_{0,1}} B_{1,0}) - \omega(B_{1,0} \wedge \dd_{A_{1,0}} \lambda_{0,2}) + \Omega(\lambda_0 \ol \dd_{A_{0,1}} \lambda_{0,2})   \right)  \\
+S_{\mr{matter}} &= \int \bigg( \dvol ((\dd_{A_{1,0}}\nu, \ol \dd_{A_{0,1}} \psi_0) + (\dd_{A_{1,0}}\psi_0, \ol \dd_{A_{0,1}} \nu)) + 2\omega^2(\nu \ol \dd_{A_{1,0}} \psi_{0,1}) + \Omega(\psi_{0,1} \wedge \ol \dd_{A_{0,1}} \psi_{0,1}) + \\
+&\qquad + 2\dvol(([\lambda_0,\nu],\nu') + ([\chi, \psi_0], \nu') )   \bigg) \\
+S_{\mr{anti}} &= \int \dd_{A_{1, 0}} A_0 \wedge A_{1, 0}^* + \ol\dd_{A_{0, 1}} A_0\wedge A_{0, 1}^* + [\lambda_{0,2}, A_0]\wedge \lambda_{0,2}^* +  [\lambda_{0}, A_0]\wedge \lambda_{0}^* + [\chi, A_0]\chi^* +A_0[B_{1,0}, A_0]\wedge B_{1,0}^* + \\
+&\qquad + \frac{1}{2}[A_0, A_0]A_0^* + [\nu, A_0]\wedge \nu^* + [\psi_{0}, A_0]\wedge \psi_{0}^* + [\psi_{0,1}, A_0]\wedge \psi_{0,1}^* + [\nu', A_0]\wedge \nu'^* \\
+I^{(1)}_{\mr{gauge}} &=  \int \dvol \left( - (B_{1,0}, A_{1,0}^*) + \frac 12 (F_{0,2},\lambda_{0,2}^*) + \frac 12 (F_{1,1}, \chi^*)  \right)\\
+I^{(1)}_{\mr{matter}} &=  \int \dvol \left( (\nu', \nu^*) + \frac 12( \ol \dd_{A_{0,1}} \psi_0, \psi_{0,1}^*) \right)\\
+I^{(2)}_{\mr{gauge}} &= -\frac{1}{4}\int \dvol (\chi^*)^2.
+\end{align*}
+Here, in terms of the K\"ahler form $\omega$, the volume form is identified as $\dvol = \frac{\omega^3}6$.
+
+\begin{thm}
+The holomorphic twist of 6d $\mc N=(1, 0)$ super Yang--Mills with gauge group $G$, and with a hypermultiplet valued in the symplectic representation $U$, is perturbatively equivalent to holomorphic BF theory on $\CC^3$ equipped with a Calabi--Yau structure $\Omega$, coupled to a holomorphic symplectic boson valued in $U$.  That is, the theory with the space of fields $\mr{Map}(\CC^3, U/\!/\gg)$, where $U/\!/\gg$ is the classifying space of the dg Lie algebra $\gg \oplus \gg[-1] \oplus U[-1]$ with 2-shifted symplectic structure induced from the symplectic pairing on $U$. 
+\label{thm:6dholomorphictwist}
+\end{thm}
+
+\begin{proof}
+The proof of this theorem is very similar to the proof of Theorem \ref{thm:10dholomorphictwist}.  First, we integrate out the fields $\chi$ and $\chi^*$ using Proposition \ref{prop:integrateoutfield}.  We then observe that the action includes the terms $\int \dvol  (B_{1,0}, A_{1,0}^*)$ and  $\int \dvol (\nu', \nu^*)$.  In other words, the pairs $(B_{1,0}, A_{1,0})$ and $(\nu, \nu')$ form BRST doublets, which can be integrated out using Proposition \ref{prop:BRSTdoublet}.  The twisted theory is therefore perturbatively equivalent to the theory with BV action 
+\begin{align*}
+ S_{\mr{BV}} &= \int \dvol \bigg( \Omega(\lambda_0 \ol \dd_{A_{0,1}} \lambda_{0,2})  + \Omega(\psi_{0,1} \wedge \ol \dd_{A_{0,1}} \psi_{0,1}) + \frac 12 (F_{0,2},\lambda_{0,2}^*) + \frac 12( \ol \dd_{A_{0,1}} \psi_0, \psi_{0,1}^*) +  \ol\dd_{A_{0, 1}} A_0\wedge A_{0, 1}^* \\ 
+  &\qquad  + [\lambda_{0,2}, A_0]\wedge \lambda_{0,2}^* + [\lambda_{0}, A_0]\wedge \lambda_{0}^* + \frac{1}{2}[A_0, A_0]A_0^* +  [\psi_{0}, A_0]\wedge \psi_{0}^* + [\psi_{0,1}, A_0]\wedge \psi_{0,1}^*  \bigg).
+\end{align*}
+This is indeed the action functional of the required theory, where $\lambda_{0,2}$ is identified as the antifield to $A_{0,1}$.
+\end{proof}
 
 
-\subsubsection{$\mc N = (1,1)$ Super Yang-Mills Theory}
+
+\subsection{$\mc N = (1,1)$ Super Yang-Mills Theory}
 
 Let us write the BRST fields in $\mc N=(1,1)$ super Yang Mills on $\RR^6$ as $c$, the ghost, along with:
 \begin{itemize}
