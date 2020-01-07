@@ -73,9 +73,9 @@ A \defterm{free BV theory} on a manifold $M$ is the data:
 \begin{itemize}
 \item a finite rank $\ZZ\times\ZZ/2$-graded vector bundle $E \to M$ equipped with an even differential operator of cohomological degree $+1$
 \[
-Q_{BV} \colon \cE \to \cE [1] 
+Q_{\mr{BV}} \colon \cE \to \cE [1] 
 \]
-such that $(1)$: $Q_{BV}^2 = 0$ and $(2)$: the pair $(\cE , Q_{BV})$ is an elliptic complex;
+such that $(1)$: $Q_{\mr{BV}}^2 = 0$ and $(2)$: the pair $(\cE , Q_{\mr{BV}})$ is an elliptic complex;
 \item a map of bundles
 \[
 \omega\colon E \otimes E \to \Dens_M [-1]
@@ -84,7 +84,7 @@ that is
 \begin{enumerate}
 \item[$(1)$] fiberwise nondegenerate,
 \item[$(2)$] graded skew symmetric, and
-\item[$(3)$] satisfies $\int_M \omega(e_0, Q_{BV} e_1) = (-1)^{|e_0|} \int_M \omega(Q_{BV} e_0, e_1)$ where $e_i$ are compactly supported sections of $E$ .
+\item[$(3)$] satisfies $\int_M \omega(e_0, Q_{\mr{BV}} e_1) = (-1)^{|e_0|} \int_M \omega(Q_{\mr{BV}} e_0, e_1)$ where $e_i$ are compactly supported sections of $E$ .
 \end{enumerate}
 \end{itemize}
 \end{definition}
@@ -140,7 +140,7 @@ The BV bracket enjoys the graded skew symmetry property
 \{F, G\} = (-1)^{|F| |G|} \{G, F\}
 \]
 as well as the graded Jacobi identity.
-This bracket together wtih $Q_{BV}$ endows $\oloc(\cE)[-1]$ with the structure of a dg Lie algebra. 
+This bracket together wtih $Q_{\mr{BV}}$ endows $\oloc(\cE)[-1]$ with the structure of a dg Lie algebra. 
 Since the space of local functionals is not an algebra, the bracket does not satisfy any type of Leibniz rule. 
 
 
@@ -148,22 +148,22 @@ Since the space of local functionals is not an algebra, the bracket does not sat
 A \defterm{classical BV field theory} (or simply, classical field theory) is a free BV theory $(E, Q, \omega)$ equipped with an even functional
 \[I \in \oloc^+(\cE)\]
 of cohomological degree zero satisfying the Maurer-Cartan equation
-\[Q_{BV} I + \frac{1}{2} \{I,I\} = 0 .\]
+\[Q_{\mr{BV}} I + \frac{1}{2} \{I,I\} = 0 .\]
 \end{definition}
 
-Given a classical field theory $(E, Q_{BV}, \omega, I)$ we denote by
-\[S = \frac{1}{2} \int_M \omega(e, Q_{BV} e) + I\in \oloc(E)\]
+Given a classical field theory $(E, Q_{\mr{BV}}, \omega, I)$ we denote by
+\[S = \frac{1}{2} \int_M \omega(e, Q_{\mr{BV}} e) + I\in \oloc(E)\]
 the BV action of the theory.
 
-\begin{remark}
 The local functional $S$ satisfies the {\em classical master equation} \[\{S, S\} = 0.\] 
-In fact, given a degree $(-1)$ nondegenerate pairing $\omega$ on $E$, prescribing the data of a classical field theory (namely $Q, I$ satisfying the Maurer-Cartan equation) is equivalent to prescribing a local functional $S \in \oloc(\cE)$, which is at least quadratic in the fields, satisfying the classical master equation.
-The operator $Q_{BV}$ is the BV bracket with the quadratic part of the BV action $S$, and the cubic and higher terms in $S$ coincide with $I$.
+
+In fact, given a degree $(-1)$ nondegenerate pairing $\omega$ on $E$, prescribing the data of a classical field theory (namely $Q, I$ satisfying the Maurer-Cartan equation) is equivalent to prescribing a local functional $S \in \oloc(\cE)$ satisfying the classical master equation.
+The operator $Q_{\mr{BV}}$ is the BV bracket with the quadratic part of the BV action $S$, and the cubic and higher terms in $S$ coincide with $I$.
+
 Because of this, we will sometimes refer to $(E, S, \omega)$ as the data of a classical field theory.
-\end{remark}
 
 \begin{remark}
-We will also consider \defterm{$\ZZ/2$-graded classical field theories} which are defined as before, but where $E$ has only a single $\ZZ/2$-grading and, correspondigly, $Q$ is simply an odd operator.
+We will also consider \defterm{$\ZZ/2$-graded classical field theories} which are defined as before, but where $E$ has only a single $\ZZ/2$-grading and, correspondigly, $Q_{\mr{BV}}$ is simply an odd operator.
 \end{remark}
 
 \begin{remark}
@@ -173,12 +173,12 @@ The data of a classical BV theory can be equivalently encoded in an elliptic $L_
 Next, we formulate the notion of an equivalence of classical BV theories. 
 
 \begin{definition}
-A \defterm{morphism} $F\colon (E, Q_{BV}, \omega, I) \rightsquigarrow (E', Q_{BV}', \omega', I')$ of classical field theories over the same manifold $M$ is a nonlinear map of vector bundles $E\rightsquigarrow E'$, i.e. a collection $F=\sum_{n\geq 1}^\infty F$ of poly-differential operators $F_n\colon \Sym^n(E)\rightarrow E'$, that intertwines the differentials $Q_{BV}, Q_{BV}'$, the pairings $\omega, \omega'$, and the interactions $I,I'$. A morphism is a \defterm{perturbative equivalence} if the map $F_1\colon (\cE, Q_{BV})\rightarrow (\cE', Q_{BV}')$ is a quasi-isomorphism. A classical field theory is \defterm{perturbatively trivial} if it is perturbatively equivalent to the zero theory ($E = 0$).
+A \defterm{morphism} $F\colon (E, Q_{\mr{BV}}, \omega, I) \rightsquigarrow (E', Q_{\mr{BV}}', \omega', I')$ of classical field theories over the same manifold $M$ is a nonlinear map of vector bundles $E\rightsquigarrow E'$, i.e. a collection $F=\sum_{n\geq 1}^\infty F$ of poly-differential operators $F_n\colon \Sym^n(E)\rightarrow E'$, that intertwines the differentials $Q_{\mr{BV}}, Q_{\mr{BV}}'$, the pairings $\omega, \omega'$, and the interactions $I,I'$. A morphism is a \defterm{perturbative equivalence} if the map $F_1\colon (\cE, Q_{\mr{BV}})\rightarrow (\cE', Q_{\mr{BV}}')$ is a quasi-isomorphism. A classical field theory is \defterm{perturbatively trivial} if it is perturbatively equivalent to the zero theory ($E = 0$).
 \end{definition}
 
 We will now describe two primitive examples of equivalences of classical field theories which will be useful in simplifying twisted theories. First, we consider the process of integrating out an auxiliary field.
 
-\pavel{Chris, I think your diagrams of BV complexes would fit well here, can you insert them?}
+\pavel{Chris, I think your diagrams of BV complexes would fit well here, can you insert them?} \chris{I'm not sure exactly which diagrams you mean.  Can you clarify?}
 
 \begin{prop}
 Fix a volume form $\dvol_M$ on $M$. Suppose $(E, Q, \omega, I)$ is a classical field theory, where $E\cong E_0\oplus (\cO_M\oplus \Dens_M[-1])$ with the symplectic pairing $\omega$ given by a sum of a symplectic pairing $\omega_0$ on $E_0$ and the standard symplectic pairing on the second summand. Denote by $\phi$ a section of $\cO_M$ and by $\phi^*$ a section of $\Dens_M[-1]$. Suppose the BV action is
@@ -225,7 +225,7 @@ Again, $F_1$ is a quasi-isomorphism between the classical BV complexes with quas
 
 \subsection{Symmetries in the Classical BV Formalism} \label{symmetry_section}
 
-In this section we define what it means for a (super) Lie algebra to act on a classical field theory. Let $(E, Q_{BV},\omega, I)$ be a classical field theory and $\fg$ a super Lie algebra. Consider the graded vector space
+In this section we define what it means for a (super) Lie algebra to act on a classical field theory. Let $(E, Q_{\mr{BV}},\omega, I)$ be a classical field theory and $\fg$ a super Lie algebra. Consider the graded vector space
 \[C^\bullet(\fg, \oloc(\cE)) = \bigoplus_n \hom(\wedge^n \fg, \oloc(\cE))[-n]\]
 \brian{not crazy about the notation $C^\bu(\fg, \oloc(\cE))$ for just the graded vector space before knowing that $\oloc$ is a module.}
 parametrizing multilinear maps $f\colon \fg^{\otimes n}\rightarrow \oloc(\cE)$ which satisfy the antisymmetry property
@@ -237,33 +237,33 @@ and the degree $+1$ BV bracket by the formula
 \[\{f, g\}(x_1, \dots, x_{k+l}) = \sum_{\sigma\in S_{k, l}} \mathrm{sgn}(\sigma) (-1)^{\epsilon+\epsilon_1} \{f(x_{\sigma(1)}, \dots, x_{\sigma(k)}), g(x_{\sigma(k+1)}, \dots, x_{\sigma(k+l)})\},\]
 where $S_{k, l}$ is the set of $(k, l)$-shuffles, $\epsilon$ is the usual Koszul sign and
 \[\epsilon_1 = |g|k + \sum_{i=1}^k |x_{\sigma(i)}|(l+|g|).\]
-The operator $Q_{BV}$ on $\oloc(\cE)$ extends $C^\bu(\fg)$-linearly to an operator on $C^\bullet(\fg, \oloc(\cE))$ by the rule
+The operator $Q_{\mr{BV}}$ on $\oloc(\cE)$ extends $C^\bu(\fg)$-linearly to an operator on $C^\bullet(\fg, \oloc(\cE))$ by the rule
 \[
-(Q_{BV} f)(x_1,\ldots, x_n) = Q_{BV} f(x_1,\ldots, x_n) 
+(Q_{\mr{BV}} f)(x_1,\ldots, x_n) = Q_{\mr{BV}} f(x_1,\ldots, x_n) 
 \]
 where $f : \fg^{\otimes n} \to \oloc(\cE)$. 
-The differentials $\d_{CE}$ and $Q_{BV}$ are compatible in the sense that $(\d_{CE} + Q_{BV})^2 = 0$ making $C^\bu(\fg, \oloc(\cE))$ into a cochain complex with total differential $\d_{CE} + Q_{BV}$. 
+The differentials $\d_{CE}$ and $Q_{\mr{BV}}$ are compatible in the sense that $(\d_{CE} + Q_{\mr{BV}})^2 = 0$ making $C^\bu(\fg, \oloc(\cE))$ into a cochain complex with total differential $\d_{CE} + Q_{\mr{BV}}$. 
 Via the BV bracket, the shift of this cochain complex $C^\bu(\fg, \oloc(\cE))[-1]$ is a dg Lie algebra.
 
 \begin{definition}
 \label{infinitesimal_action_def}
-Let $(E, Q_{BV},\omega, I)$ be a classical field theory and $\fg$ a super Lie algebra. 
+Let $(E, Q_{\mr{BV}},\omega, I)$ be a classical field theory. 
 \begin{itemize}
 \item[(1)]
-An $L_\infty$ \defterm{action} of a super Lie algebra $\fg$ on $(E, Q_{BV}, \omega, I)$ is an element of cohomological degree zero 
+An \defterm{action} of a super Lie algebra $\fg$ on $(E, Q_{\mr{BV}}, \omega, I)$ is an element of cohomological degree zero 
 \[I_\fg = \sum_{k\geq 0} I_{\fg}^{(k)} \in C^\bullet(\fg, \oloc(\cE)),\]
 where $I_\fg^{(k)} : \fg^{\otimes k} \to \oloc(\cE)$, that satisfies the following three conditions:
 \begin{itemize}
 \item[(a)] $I_\fg^{(0)} = I$;
 \item[(b)] for each $k \geq 1$ and $x_1, \ldots, x_k \in \fg$ the local functional $I^{(k)}_\fg (x_1,\ldots, x_k)$ is at least quadratic in the fields;
 \item[(c)] $I_\fg$ satisfies the Maurer--Cartan equation:
-\[(\d_{CE} + Q_{BV}) I_\fg + \frac{1}{2} \{I_\fg, I_\fg\} = 0.\]
+\[(\d_{CE} + Q_{\mr{BV}}) I_\fg + \frac{1}{2} \{I_\fg, I_\fg\} = 0.\]
 \end{itemize}
 \item[(2)]
 For each $k \geq 1$ there is a decomposition $I_\fg^{(k)} = \sum_{\ell} I_\fg^{(k),\ell}$ where $ I_\fg^{(k),\ell}(x_1,\ldots,x_k) \in \oloc(\cE)$ is $\ell$-linear in the fields $\cE$ for all $x_1,\ldots,x_k \in \fg$.
 An action $I_\fg$ is \defterm{elliptic} if the induced linear differential operator
 \[
-Q_{BV} + \sum_{k \geq 1} \{I_\fg^{(k),2}, -\}
+Q_{\mr{BV}} + \sum_{k \geq 1} \{I_\fg^{(k),2}, -\}
 \]
 is elliptic as a $C^\bu(\fg)$-linear differential operator.
 \end{itemize}
@@ -286,7 +286,7 @@ is satisfied.
 \begin{rmk}
 We have defined an action of a Lie algebra on a classical field theory in terms of a Noether current $I_\fg$.
 Such data gives rise to an $L_\infty$ action of $\fg$ on the space of fields $\cE$ in the following way.
-By the Maurer-Cartan equation, the operator $\d_{CE} + Q_{BV} + \{I_\fg, -\}$ 
+By the Maurer-Cartan equation, the operator $\d_{CE} + Q_{\mr{BV}} + \{I_\fg, -\}$ 
 defines a differential on the graded vector space $\cO(\fg[1] \oplus \cE)$. 
 By assumption that the Noether current is at least quadratic in the fields, we see that this differential defines a family of maps
 \[
@@ -299,7 +299,7 @@ We may also define actions of supergroups on classical field theories.
 
 \begin{definition}
 \label{group_action_def}
-Let $(E, Q_{BV}, \omega, I)$ be a classical field theory and $G$ is a supergroup acting on spacetime $M$. An (elliptic) \defterm{action} of $G$ on $(E, Q_{BV}, \omega, I)$ is given by the following data:
+Let $(E, Q_{\mr{BV}}, \omega, I)$ be a classical field theory and $G$ is a supergroup acting on spacetime $M$. An \defterm{action} of $G$ on $(E, Q_{\mr{BV}}, \omega, I)$ is given by the following data:
 \begin{itemize}
 \item An action of $G$ on $\cE$ compatible with the $G$-action on $M$.
 
@@ -323,27 +323,26 @@ While we allow for $L_\infty$ actions of Lie algebras, we only consider strict a
 A \defterm{classical BRST theory} on a manifold $M$ consists of the following data:
 \begin{itemize}
 \item a $\ZZ\times\ZZ/2$-graded vector bundle $F$ together with the structure of a local $L_\infty$ algebra on the shift $F[-1]$;
-\item A local functional $S_{BRST} \in \oloc(\cF)$ of polynomial degree $\geq 2$.
+\item A local functional $S_{\mr{BRST}} \in \oloc(\cF)$ of polynomial degree $\geq 2$.
 \end{itemize}
 Together, these data must satisfy the equation
-\[Q_{BRST} S_{BRST} = 0,\]
-where $Q_{BRST}$ is the Chevalley--Eilenberg differential defined by the $L_\infty$ structure on $F[-1]$. 
+\[Q_{\mr{BRST}} S_{\mr{BRST}} = 0,\]
+where $Q_{\mr{BRST}}$ is the Chevalley--Eilenberg differential defined by the $L_\infty$ structure on $F[-1]$. 
 \end{definition}
 
 We call $\cF$ the \defterm{space of BRST fields}.
 
-From a classical BRST theory $(\cF, S_{BRST})$, one can construct a classical BV theory as follows. Let $\{\ell_k\}_{k\geq 1}$ be the $L_\infty$ structure maps underlying the local Lie algebra $F[-1]$.
+From a classical BRST theory $(\cF, S_{\mr{BRST}})$, one can construct a classical BV theory as follows. Let $\{\ell_k\}_{k\geq 1}$ be the $L_\infty$ structure maps underlying the local Lie algebra $F[-1]$.
 
-First, we define the free BV theory. Split $S_{BRST} = S^{free}_{BRST} + I_{BRST}$, where $I_{BRST}\in\oloc^+(\cF)$ and $S^{free}_{BRST}$ is a quadratic local functional which we may view as defining a map
-\[S^{free}_{BRST}\colon F\rightarrow F^!.\]
+First, we define the free BV theory. Split $S_{\mr{BRST}} = S^{\mr{free}}_{\mr{BRST}} + I_{\mr{BRST}}$, where $I_{\mr{BRST}}\in\oloc^+(\cF)$ and $S^{\mr{free}}_{\mr{BRST}}$ is a quadratic local functional which we may view as defining a map
+\[S^{\mr{free}}_{\mr{BRST}}\colon F\rightarrow F^!.\]
 The underlying bundle of the BV theory is
 \[
 E = F \oplus F^! [-1].
 \]
 The BV pairing $\omega$ on $E$ is defined in terms of the natural pairing between $F$ and $F^!$.
 The differential of the free BV theory is
-\[
-Q_{BV} = \ell_1 + \{S^{free}_{BRST},-\} .
+\[Q_{\mr{BV}} = \ell_1 + S^{free}_{BRST}.
 \]
 
 
@@ -351,16 +350,16 @@ The interacting theory is constructed as follows. First, note that for $k \geq 2
 \[
 I_F (e) = \sum_{k \geq 2} \frac{1}{(k+1)!} \int_M \omega_F(e, (p^*\ell_k) (e, \ldots, e))
 \] 
-which is linear along $\cF^!$. Likewise, the BRST action $I_{BRST}$ pulls back to $\cE$, and we define the BV interaction as the sum
+which is linear along $\cF^!$. Likewise, the BRST action $I_{\mr{BRST}}$ pulls back to $\cE$, and we define the BV interaction as the sum
 \[
-I = I_{F} + p^* I_{BRST} \in \oloc^+(\cE) .
+I_{\mr{BV}} = I_{F} + p^* I_{\mr{BRST}} \in \oloc^+(\cE) .
 \]
 
 \begin{lemma}
-Suppose $(F, S_{BRST})$ is a classical BRST theory such that $(\cE, Q)$ defined above is an elliptic complex. Then $(E, Q_{BV}, \omega, I)$ is a classical BV theory.
+Suppose $(F, S_{\mr{BRST}})$ is a classical BRST theory such that $(\cE, Q)$ defined above is an elliptic complex. Then $(E, Q_{\mr{BV}}, \omega, I)$ is a classical BV theory.
 \end{lemma}
 
-We refer to the classical BV theory $(E, Q_{BV}, \omega, I)$ from the above statement as the \defterm{$(-1)$-shifted cotangent bundle} of $\cF$ and by abuse of notation we often denote it simply by $\cE = T^*[-1] \cF$. In the case $S_{BRST} = 0$ we refer to the theory $T^*[-1] \cF$ as a theory of \defterm{cotangent type}.
+We refer to the classical BV theory $(E, Q_{\mr{BV}}, \omega, I)$ from the above statement as the \defterm{$(-1)$-shifted cotangent bundle} of $\cF$ and by abuse of notation we often denote it simply by $\cE = T^*[-1] \cF$. In the case $S_{BRST} = 0$ we refer to the theory $T^*[-1] \cF$ as a theory of \defterm{cotangent type}.
 
 If the fields of the classical BRST theory are denoted by $\phi$, we denote their antifields in the classical BV theory by $\phi^*$, so that
 \[\{\phi(x), \phi^*(y)\} = \{\phi^*(y), \phi(x)\} = \delta(x-y).\]
@@ -379,7 +378,7 @@ Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty
 
 \item The bundle of BRST fields is the $\ZZ$-graded bundle $F = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1]$. $F[-1]$ is equipped with a natural local $L_\infty$ algebra structure from $\fg$.
 
-\item The BRST action is $S_{BRST} = 0$.
+\item The BRST action is $S_{\mr{BRST}} = 0$.
 \end{itemize}
 We denote the space of BV fields by $\cE = \map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[d] B\fg)$, where $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1$.
 \label{def:generalizedBF}
@@ -410,7 +409,7 @@ Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix a complex ve
 
 \item The bundle of BRST fields is the $\ZZ$-graded bundle $F = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes V$. $F[-1]$ is equipped with an $L_\infty$ structure with $\ell_{k} = 0$ for $k \geq 2$. 
 
-\item The BRST action is $S_{BRST} = 0$.
+\item The BRST action is $S_{\mr{BRST}} = 0$.
 \end{itemize}
 \end{definition}
 
@@ -626,7 +625,7 @@ Suppose $M$ is a left $A$-module and $N$ a right $A$-module equipped with a nond
 \label{lm:extendpairing}
 \end{lemma}
 
-Let $\Sigma=A\oplus A$ and $\Sigma^* = A\oplus A$. We have action maps
+Let $\Sigma=A\oplus A$ and $\Sigma^* = A\oplus A$ \chris{it's a bit unclear here why they're notated differently}. We have action maps
 \[V\otimes \Sigma\rightarrow \Sigma^*,\qquad V\otimes \Sigma^*\rightarrow \Sigma\]
 given, respectively, by
 \[\rho(M)Q = M Q,\qquad \rho(M)Q = \widetilde{M} Q.\]
@@ -825,11 +824,7 @@ I_{\fA}^2 (Q) = \sum_{k \geq 1} I^{(k),2} (Q, \ldots, Q) \;\;\; , \;\;\; I_{\fA}
 Note that $I_{\fA}^2 (Q)$ is quadratic as a function of the fields and $I_{\fA}^{\geq 3}(Q) \in \cO_{\rm loc}^+(\cE)$. 
 
 \begin{definition} \label{def:twisting}
-Suppose $(E, Q_{BV}, \omega, I)$ is a supersymmetric classical field theory and $(Q, \alpha)$ is a twisting datum. The \defterm{$Q$-twisted classical field theory} is the classical field theory 
-\[
-\left(E^Q, Q_{BV} + \{I^2_{\fA} (Q), -\}, \omega, I + I^{\geq 3}_\fA (Q)\right)
-\]
-where
+Suppose $(E, Q_{\mr{BV}}, \omega, I)$ is a supersymmetric classical field theory and $(Q, \alpha)$ is a twisting datum. The \defterm{$Q$-twisted classical field theory} is the classical field theory $(E^Q, Q_{\mr{BV}} + \{\rho_2(Q), -\}, \omega, I + \rho_3(Q) + \dots)$, where
 \[E^Q = \bigoplus_{n=-\infty}^\infty \Pi^n E(n)[-n]\]
 for $E(n)$ the component of $E$ which has $\alpha$-weight $n$.
 \end{definition}
@@ -887,7 +882,7 @@ Fix a twisting datum $(Q, \alpha)$, where $\Gamma_V(Q, Q) = 0$. Then the dimensi
 \subsection{Twisting Homomorphisms and Curved Backgrounds}
 
 \subsection{A-Type Twists} \label{A_twist_section}
-\chris{...}
+\chris{I think we should discuss these Hodge families somewhere, maybe not here though.}
 
 \begin{landscape}
 \begin{figure}
@@ -983,7 +978,11 @@ In this section we construct supersymmetry action on super Yang--Mills theories.
 \item (4 supercharges). This theory exists in dimensions 2 through 4 and it depends on a Lie algebra $\fg$ together with a $\fg$-representation $R$.
 
 \item (2 supercharges). This theory exists in dimensions 2 through 3 and it depends on a Lie algebra $\fg$ together with an orthogonal $\fg$-representation $P$.
+\end{itemize}
 
+There are a few additional possibilities that occur in dimension 2.
+
+\begin{itemize}
 \item ($\cN_+$ supercharges, chiral supersymmetry). This theory exists in dimension 2 and depends on a Lie algebra $\fg$.
 
 \item (4 supercharges, chiral supersymmetry). This theory exists in dimension 2 and depends on a Lie algebra $\fg$ together with a symplectic $\fg$-representation $U$.
@@ -1443,15 +1442,15 @@ Then
 \end{enumerate}
 \end{prop}
 
-\begin{corollary}
+\begin{corollary} \label{Kahler_YM_term_cor}
 Let $M$ be a K\"{a}hler $d$-fold and $F = F_{2, 0} + F_{1, 1} + F_{0, 2}$ a two-form. Then
 \[F\wedge \ast F + \frac{1}{(d-2)!} F\wedge F\wedge \omega^{d-2} = \left(4(F_{2, 0}, F_{0, 2}) + (\Lambda F_{1, 1})^2\right) \frac{\omega^d}{d!}.\]
 \end{corollary}
 
-Since we are working near the trivial connection, the topological term $\int F\wedge F\wedge \omega^3$ is exact, so we will drop it. The BV action of the twisted theory $S_{BV}$ is then the sum of the following terms:
+Since we are working near the trivial connection, the topological term $\int F\wedge F\wedge \omega^3$ is exact, so we will drop it. The BV action of the twisted theory $S_{\mr{BV}}$ is then the sum of the following terms:
 \begin{align*}
-S_{BRST} &= \int \frac{\omega^5}{5!} \left(-(F_{2, 0}, F_{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2 + \chi \Lambda(\ol\dd_{A_{0, 1}}\psi) + (B, \dd_{A_{1, 0}} \psi)\right)  + \frac{1}{2}B\wedge \ol\dd_{A_{0, 1}} B\wedge\Omega \\
-S_{anti} &= \int \dd_{A_{1, 0}} c\wedge A_{1, 0}^* + \ol\dd_{A_{0, 1}} c\wedge A_{0, 1}^* + [\psi, c]\wedge \psi^* + [\chi, c]\chi^* + [B, c]\wedge B^* + \frac{1}{2}[c, c]c^* \\
+S_{\mr{BRST}} &= \int \frac{\omega^5}{5!} \left(-(F_{2, 0}, F_{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2 + \chi \Lambda(\ol\dd_{A_{0, 1}}\psi) + (B, \dd_{A_{1, 0}} \psi)\right)  + \frac{1}{2}B\wedge \ol\dd_{A_{0, 1}} B\wedge\Omega \\
+S_{\mr{anti}} &= \int \dd_{A_{1, 0}} c\wedge A_{1, 0}^* + \ol\dd_{A_{0, 1}} c\wedge A_{0, 1}^* + [\psi, c]\wedge \psi^* + [\chi, c]\chi^* + [B, c]\wedge B^* + \frac{1}{2}[c, c]c^* \\
 I^{(1)} &= \int \psi\wedge A_{1, 0}^* + F_{0, 2}\wedge B^* + \frac{1}{2}\Lambda F_{1, 1} \chi^* \\
 I^{(2)} &= -\frac{1}{4}\int \frac{\chi^*}{\omega^5/5!} \chi^*.
 \end{align*}
@@ -1460,6 +1459,7 @@ I^{(2)} &= -\frac{1}{4}\int \frac{\chi^*}{\omega^5/5!} \chi^*.
 The holomorphic twist of 10d $\mc N=(1, 0)$ super Yang--Mills is perturbatively equivalent to the holomorphic Chern--Simons theory on $\CC^5$ equipped with a Calabi--Yau structure $\Omega$ with the space of fields $\map(\CC^5, B\gg)$.
 \label{thm:10dholomorphictwist}
 \end{thm}
+
 \begin{proof}
 First, we may integrate out $\chi$ and $\chi^*$ using Proposition \ref{prop:integrateoutfield}. So, the above theory is perturbatively equivalent to the theory without $\chi$ and $\chi^*$ with the BV action
 \begin{align*}
@@ -1885,14 +1885,14 @@ The twist by a rank 2 supercharge of 7d $\mc N=1$ super Yang-Mills theory on the
 
 \section{Dimension 6}
 In dimension 6 there are two possible supersymmetry groups by which we can act.  
-There is a minimal supersymmetric field theory with $\mc N=(1,0)$ supersymmetry, consisting of a pure gauge theory coupled to matter living in a symplectic representation $V$.  
-If $V \iso T^*\gg$, then the $(1,0)$ supersymmetry can be enhanced to $\mc N=(1,1)$ supersymmetry.  
-This is the theory one obtains by compactifying 10d $\mc N=1$ super Yang-Mills down to $\RR^6$.
+There is a minimal supersymmetric field theory with $\mc N=(1,0)$ supersymmetry, consisting of a pure gauge theory coupled to matter living in a symplectic representation $U$.  
+If $U \iso T^*\gg$, then the $(1,0)$ supersymmetry algebra action can be enhanced to an $\mc N=(1,1)$ supersymmetry algebra action.  
+This is the theory one obtains by compactifying 10d $\mc N=1$ super Yang-Mills from $\RR^{10}$ down to $\RR^6$.
 
 \subsection{$\mc N = (1,0)$ Super Yang-Mills Theory with Matter} \label{6d_10_section}
 
-The general theory of $\mc N = (1,0)$ coupled to matter has been exhibited in Section \ref{sec: couple}. 
-The fields are:
+The general theory of $\mc N = (1,0)$ coupled to matter has been exhibited in Section \ref{sect:mattermultipletSUSY}. 
+The untwisted fields are given by:
 \begin{itemize}
 \item $\fg$-valued bosons: a gauge field $A \in \Omega^1(\RR^6;\fg)$.
 \item $\fg$-valued fermions: a spinor $\lambda \in C^\infty(\RR^6 ; S_+ \otimes W_+ \otimes \fg)$. 
@@ -1900,35 +1900,48 @@ The fields are:
 \item $U$-valued fermions: $\psi \in C^\infty(\RR^6 ; S_- \otimes U)$ .
 \end{itemize}
 
-The interaction terms encoding $\mc N = (1,0)$ supersymmetry $I^{(1)}$ and $I^{(2)}$ are:
-\begin{align*}
-I^{(1)} & = I^{(1)}_{\rm gauge} + I^{(1)}_{\rm matter} + I^{(1)}_{\rm couple} \\
-I^{(2)} & = I^{(2)}_{\rm gauge} + I^{(2)}_{\rm matter} 
-\end{align*}
-where
-\begin{align*}
-I_{\rm gauge}^{(1)}(Q) &= (\Gamma(Q, \lambda), A^*)_\fg + \frac{1}{2}(\rho(F_A), \lambda^*)_\fg \\
-I_{\rm gauge}^{(2)}(Q_1, Q_2) &= \frac{1}{4}(\Gamma(Q_1, Q_2), \Gamma(\lambda^*, \lambda^*)_\fg) - \frac{1}{2}((Q_1, \lambda^*),(Q_2, \lambda^*))_\fg - \iota_{\Gamma(Q_1, Q_2)} A c^*\\
-I^{(1)}_{\rm matter} (Q) & = (\phi^*, (Q, \psi))_{W_+ \otimes U} + (\psi^*, \rho(\d \phi) Q)_U \\
-I^{(2)}_{\rm matter} (Q_1 , Q_2) & =  \frac{1}{4}(\Gamma(Q_1, Q_2)_{W_+} , \Gamma(\psi^*, \psi^*)_{U}) \\
-I^{(1)}_{\rm couple} (Q) & = g (\psi^*, \rho([A, \phi]) Q)_U + \frac{1}{2} g (\lambda^*, Q \mu(\phi,\phi))_\fg 
-%\textcolor{red}{-\frac{1}{2} (Q_1, \psi^*)_U(Q_2, \psi^*)_U  }.
-\end{align*}
-
 Choose a polarized basis $W_+ = {\rm span}_{\CC}\{w_1, w_2\}$.
-Without loss of generality we will twist with respect to a supercharge of the form $Q = q_+ \otimes w_1 \in S_+ \otimes W_+$. 
+The only square zero supercharges in the $\mc N=(1,0)$ supersymmetry algebra have rank one.  Without loss of generality we will twist with respect to a supercharge of the form $Q = q_+ \otimes w_1 \in S_+ \otimes W_+$. 
 
-We decompose the fields with respect to $\U(5) \hookrightarrow \SO(6)$:
+We decompose the fields with respect to the subgroup $\SU(3) \sub \SO(6)$.  We can identify the two fundamental representations of $\SU(3)$ with $\Omega^{0,1}(\CC^3)$ and $\Omega^{1,0}(\CC^3)$. 
 \begin{align*}
-c & \mapsto A^0 \in \Omega^{0,0}(\CC^3 ; \fg) \\
-A & \mapsto A^{1,0} + A^{0,1} \in \Omega^{1,0}(\CC^3 ; \fg) \oplus \Omega^{0,1}(\CC^3) \\
-\lambda & \mapsto \lambda^0_1 w_1 + \lambda_2^0 w_2 + A^{0,2} w_1 +  \Tilde{\lambda}^{0,2} w_2\in \Omega^{0}(\CC^3 ; W_+ \otimes \fg) \oplus \Omega^{0,2}(\CC^3 ; W_+ \otimes \fg) \\
-\phi & \mapsto A 
+c & \mapsto A_0 \in \Omega^{0,0}(\CC^3 ; \fg) \\
+A & \mapsto A_{0,1} + A_{1,0} \in \Omega^{0,1}(\CC^3 ; \fg) \oplus \Omega^{1,0}(\CC^3) \\
+\lambda & \mapsto \lambda_{0,2} w_1 + {B}_{1,0}w_2 + \chi w_1 + \lambda_0 w_2 \in \Omega^{0,2}(\CC^3 ; W_+ \otimes \fg) \oplus \Omega^{0}(\CC^3 ; W_+ \otimes \fg) \\
+\phi & \mapsto \nu w_1 + \psi_0 w_2 \in \Omega^0(\CC^3; W_+ \otimes U) \\
+\psi & \mapsto \psi_{0,1} + \nu' \in \Omega^{0,1}(\CC^3; U) \oplus \Omega^0(\CC^3; U),
 \end{align*} 
-where the $A^{\bu, \bu}, \lambda^{\bu,\bu}, \Tilde{\lambda}^{\bu,\bu}$ are all $\fg$-valued forms. 
+and similarly with the anti-fields, where the fields $A_{\bu, \bu}$, $\lambda_{\bu,\bu}$ are $\fg$-valued differential forms, and the fields $\psi_{\bu,\bu}$ are $U$-valued differential forms.  In terms of these fields, and using Corollary \ref{Kahler_YM_term_cor}, the BV action $S_{\mr{BV}}$ of the $Q$-twisted theory will consist of the sum of the following terms.
+\begin{align*}
+S_{\mr{gauge}} &= \int \dvol \left(-(F^{2, 0}, F^{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2\right) + \\
+&\qquad + \frac 12 \left( \omega(\lambda_{0,2} \wedge \dd_{A_{1,0}} B_{1,0}) + \omega^2(\chi \ol \dd_{A_{0,1}} B_{1,0}) - \omega(B_{1,0} \wedge \dd_{A_{1,0}} \lambda_{0,2}) + \Omega(\lambda_0 \ol \dd_{A_{0,1}} \lambda_{0,2})   \right)  \\
+S_{\mr{matter}} &= \int \bigg( \dvol ((\dd_{A_{1,0}}\nu, \ol \dd_{A_{0,1}} \psi_0) + (\dd_{A_{1,0}}\psi_0, \ol \dd_{A_{0,1}} \nu)) + 2\omega^2(\nu \ol \dd_{A_{1,0}} \psi_{0,1}) + \Omega(\psi_{0,1} \wedge \ol \dd_{A_{0,1}} \psi_{0,1}) + \\
+&\qquad + 2\dvol(([\lambda_0,\nu],\nu') + ([\chi, \psi_0], \nu') )   \bigg) \\
+S_{\mr{anti}} &= \int \dd_{A_{1, 0}} A_0 \wedge A_{1, 0}^* + \ol\dd_{A_{0, 1}} A_0\wedge A_{0, 1}^* + [\lambda_{0,2}, A_0]\wedge \lambda_{0,2}^* +  [\lambda_{0}, A_0]\wedge \lambda_{0}^* + [\chi, A_0]\chi^* +A_0[B_{1,0}, A_0]\wedge B_{1,0}^* + \\
+&\qquad + \frac{1}{2}[A_0, A_0]A_0^* + [\nu, A_0]\wedge \nu^* + [\psi_{0}, A_0]\wedge \psi_{0}^* + [\psi_{0,1}, A_0]\wedge \psi_{0,1}^* + [\nu', A_0]\wedge \nu'^* \\
+I^{(1)}_{\mr{gauge}} &=  \int \dvol \left( - (B_{1,0}, A_{1,0}^*) + \frac 12 (F_{0,2},\lambda_{0,2}^*) + \frac 12 (F_{1,1}, \chi^*)  \right)\\
+I^{(1)}_{\mr{matter}} &=  \int \dvol \left( (\nu', \nu^*) + \frac 12( \ol \dd_{A_{0,1}} \psi_0, \psi_{0,1}^*) \right)\\
+I^{(2)}_{\mr{gauge}} &= -\frac{1}{4}\int \dvol (\chi^*)^2.
+\end{align*}
+Here, in terms of the K\"ahler form $\omega$, the volume form is identified as $\dvol = \frac{\omega^3}6$.
+
+\begin{thm}
+The holomorphic twist of 6d $\mc N=(1, 0)$ super Yang--Mills with gauge group $G$, and with a hypermultiplet valued in the symplectic representation $U$, is perturbatively equivalent to holomorphic BF theory on $\CC^3$ equipped with a Calabi--Yau structure $\Omega$, coupled to a holomorphic symplectic boson valued in $U$.  That is, the theory with the space of fields $\mr{Map}(\CC^3, U/\!/\gg)$, where $U/\!/\gg$ is the classifying space of the dg Lie algebra $\gg \oplus \gg[-1] \oplus U[-1]$ with 2-shifted symplectic structure induced from the symplectic pairing on $U$. 
+\label{thm:6dholomorphictwist}
+\end{thm}
+
+\begin{proof}
+The proof of this theorem is very similar to the proof of Theorem \ref{thm:10dholomorphictwist}.  First, we integrate out the fields $\chi$ and $\chi^*$ using Proposition \ref{prop:integrateoutfield}.  We then observe that the action includes the terms $\int \dvol  (B_{1,0}, A_{1,0}^*)$ and  $\int \dvol (\nu', \nu^*)$.  In other words, the pairs $(B_{1,0}, A_{1,0})$ and $(\nu, \nu')$ form BRST doublets, which can be integrated out using Proposition \ref{prop:BRSTdoublet}.  The twisted theory is therefore perturbatively equivalent to the theory with BV action 
+\begin{align*}
+ S_{\mr{BV}} &= \int \dvol \bigg( \Omega(\lambda_0 \ol \dd_{A_{0,1}} \lambda_{0,2})  + \Omega(\psi_{0,1} \wedge \ol \dd_{A_{0,1}} \psi_{0,1}) + \frac 12 (F_{0,2},\lambda_{0,2}^*) + \frac 12( \ol \dd_{A_{0,1}} \psi_0, \psi_{0,1}^*) +  \ol\dd_{A_{0, 1}} A_0\wedge A_{0, 1}^* \\ 
+  &\qquad  + [\lambda_{0,2}, A_0]\wedge \lambda_{0,2}^* + [\lambda_{0}, A_0]\wedge \lambda_{0}^* + \frac{1}{2}[A_0, A_0]A_0^* +  [\psi_{0}, A_0]\wedge \psi_{0}^* + [\psi_{0,1}, A_0]\wedge \psi_{0,1}^*  \bigg).
+\end{align*}
+This is indeed the action functional of the required theory, where $\lambda_{0,2}$ is identified as the antifield to $A_{0,1}$.
+\end{proof}
 
 
-\subsubsection{$\mc N = (1,1)$ Super Yang-Mills Theory}
+
+\subsection{$\mc N = (1,1)$ Super Yang-Mills Theory}
 
 Let us write the BRST fields in $\mc N=(1,1)$ super Yang Mills on $\RR^6$ as $c$, the ghost, along with:
 \begin{itemize}
