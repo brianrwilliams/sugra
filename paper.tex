@@ -2150,9 +2150,9 @@ I^{(1)}_{\mr{gauge}} &=  \int \dvol \left( - (\lambda_{1,0}, A_{1,0}^*) + \frac 
 I^{(1)}_{\mr{matter}} &=  \int \dvol \left( (\phi, \psi_0^*) + \frac 12( \ol \dd_{A_{0,1}} \gamma_{0}, \beta_{2,1}) \right)\\
 I^{(2)}_{\mr{gauge}} &= -\frac{1}{4}\int \dvol (\lambda_0^*)^2.
 \end{align*}
-Here, in terms of the K\"ahler form $\omega$, the volume form is identified as $\dvol = \frac{\omega^2}4$.
+Here, in terms of the K\"ahler form $\omega$, the volume form is identified as $\dvol = \frac{\omega^2}2$.
 
-\begin{thm}[See also \cite{SWchar}]
+\begin{thm}[See also \cite{SWchar}] \label{4d_minimal_twist_thm}
 The minimal twist of 4d $\cN=1$ super Yang-Mills with Lie algebra $\fg$ coupled to the $\cN=1$ chiral multiplet valued in a representation $R$ is equivalent to holomorphic $BF$ theory for the Lie algebra $\fg$ coupled to the holomorphic $\beta\gamma$ system with values in the representation $R$. 
 \end{thm}
 
@@ -2270,11 +2270,32 @@ We obtain $\mc N=2$ super Yang-Mills theory on $\RR^4$ by dimensionally reducing
 \vspace{-10pt}
 \paragraph{Fields:}  We can describe the BRST fields of $\mc N=2$ super Yang-Mills with matter valued in the symplectic representation $U$ by restricting the 5d $\mc N=2$ fields from Section \ref{5d_1_section} to representations of the group $\mr O(4)$.  In addition to the ghost $c$, the fields we obtain are
 \begin{itemize}
- \item $\gg$-valued Bosons: a gauge field $A \in \Omega^1(\RR^4; \gg)$, and a pair of scalar fields $(\phi_1,\phi_2) \in \Omega^1(\RR^4; \gg)^2$.
+ \item $\gg$-valued Bosons: a gauge field $A \in \Omega^1(\RR^4; \gg)$, and a pair of scalar fields $(\phi_1,\phi_2) \in \Omega^1(\RR^4; \gg \otimes \wedge^2(W))^2$.
  \item $U$-valued bosons: a $W$-valued scalar field $\phi \in \Omega^0(\RR^4; W \otimes U)$.
- \item $\gg$-valued fermions: a $W$-valued Dirac spinor $\lambda \in \Omega^0(\RR^4; (S_+ \otimes W \oplus S_- \otimes W^*) \otimes \gg)$.
- \item $U$-valued fermions: a Dirac spinor $\psi \in \Omega^0(\RR^4; (S_+\oplus S_-) \otimes U)$.
+ \item $\gg$-valued fermions: a $W$-valued Dirac spinor $\lambda = (\lambda_+ \otimes u_+, \lambda_-\otimes u_-) \in \Omega^0(\RR^4; (S_+ \otimes W \oplus S_- \otimes W^*) \otimes \gg)$.
+ \item $U$-valued fermions: a Dirac spinor $\psi = (\psi_+,\psi_-) \in \Omega^0(\RR^4; (S_+\oplus S_-) \otimes U)$.
 \end{itemize}
+
+\vspace{-10pt}
+\paragraph{Supersymmetry action:} 
+\begin{prop} \label{4d_2_susy_action_prop}
+After reduction to $\mr O(4)$, the 6d $\mc N=(1,0)$ interaction terms $I^{(1)}$ and $I^{(2)}$ become
+\begin{align*}
+I^{(1)}_{\mr{gauge}}(Q) &= \int \dvol \bigg(-( (\Gamma(Q_+,\lambda_-)(w_+,u_-), A^*) + \langle Q_+,\lambda_+\rangle w_+ \wedge u_+, \phi_1^* ) + \\
+&\qquad  + \frac 12 ((\rho(F_A)Q, \lambda_+^*)(u_+^*,  w_+) + \rho(\d_A \phi_2(w_+ \wedge u_-^*))Q, \lambda_-^*) \bigg)\\
+I^{(1)}_{\mr{matter}}(Q) &= \\
+I^{(2)}_{\mr{gauge}}(Q,Q) &= \\
+I^{(2)}_{\mr{matter}}(Q,Q) &= 
+\end{align*}
+if $Q=Q^+ \otimes w^+$ is an element of $S_+ \otimes W$, and
+\begin{align*}
+I^{(1)}_{\mr{gauge}}(Q) &= \\
+I^{(1)}_{\mr{matter}}(Q) &= \\
+I^{(2)}_{\mr{gauge}}(Q,Q) &= \\
+I^{(2)}_{\mr{matter}}(Q,Q) &= 
+\end{align*}
+if $Q=Q^- \otimes W_-$ is an element of $S_- \otimes W^*$.
+\end{prop}
 
 \vspace{-10pt}
 \paragraph{Twisting data:}
@@ -2293,6 +2314,28 @@ The minimal twist of 4d $\mc N=2$ super Yang-Mills theory with gauge group $G$ a
 
 \begin{proof}
 To show this, we start with the 5d $\mc N=1$ minimal twist from Theorem \ref{5d_holo_twist_theorem} and dimensionally reduce in the de Rham direction $L_{\mr{dR}}$.  That is, we apply Proposition \ref{CS_to_BF_diml_red_prop} to the theorem obtained in Theorem \ref{5d_holo_twist_theorem}.
+\end{proof}
+
+We'll first consider the deformation of the holomorphic twist to the topological twist corresponding to a rank $(2,0)$ supercharge.
+
+\begin{theorem} \label{4d_Donaldson_twist_thm}
+The deformation of the holomorphic twist to the Donaldson twist of 4d $\mc N=2$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$ is perturbatively equivalent, as a 1-parameter family of theories, to the Hodge family $\mr{Map}(S, (U/\!/\gg)_{\mr{Hod}})$.  
+\end{theorem}
+
+\begin{proof}
+Suppose the family of generically rank $(2,0)$ supercharge splits as a sum of two rank 1 supercharges as $Q_{\mr{hol}} + tQ$, where $t \in \CC$.  It is enough to understand the deformation of the holomorphically twisted action functional, which we wrote down in the proof of Theorem \ref{4d_minimal_twist_thm}, by $I^{(1)}(tQ) + I^{(2)}(tQ,tQ)$ using Proposition \ref{4d_2_susy_action_prop}.
+
+\chris{that term should correspond to an isomorphism between the two copies of $\gg \oplus \gg[-1] \oplus U[-1]$ in the BV complex.}
+\end{proof}
+
+We now address the rank $(1,1)$ twist.
+
+\begin{theorem} \label{4d_11_twist_thm}
+The rank $(1,1)$ twist of 4d $\mc N=2$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$ on a product $C_1 \times C_2$ of two Riemann surfaces, is perturbatively equivalent to the generalized BF theory coupled to a $U$-valued higher holomorphic boson with space of fields $\mr{Map}(C_1 \times {C_2}_{\mr{dR}}, U/\!/\gg)$.  This theory is generally only $\ZZ/2\ZZ$-graded.
+\end{theorem}
+
+\begin{proof}
+ 
 \end{proof}
 
 
