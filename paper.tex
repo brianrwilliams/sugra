@@ -2022,7 +2022,7 @@ We now start with the twisted theory from Theorem \ref{7d_rank2_twist_thm}, with
 \section{Dimension 5}
 The 5-dimensional $\mc N=k$ supersymmetry algebra has odd part $\Sigma \iso S \otimes W$, where $S$ is the 4-dimensional spinor representation of $\Spin(5) \iso \Sp(4)$, and where $W$ is a $2k$-dimensional symplectic vector space.  The maximal supersymmetric gauge theory has $\mc N=2$.  However, there are $\mc N=1$ super Yang-Mills theory for every choice $U$ of symplectic representation of the gauge group.
 
-\subsection{$\mc N = 1$ Super Yang-Mills Theory with Matter}
+\subsection{$\mc N = 1$ Super Yang-Mills Theory with Matter}  \label{5d_1_section}
 We begin by treating $\mc N=1$ Super Yang-Mills theory with gauge group $G$, with a matter (half) hypermultiplet valued in a symplectic representation $U$.  This is the theory obtained from 6d $\mc N=(1,0)$ super Yang-Mills theory with matter, after dimensional reduction to 5 dimensions.
 
 \vspace{-10pt}
@@ -2031,7 +2031,7 @@ We begin by treating $\mc N=1$ Super Yang-Mills theory with gauge group $G$, wit
  \item $\gg$-valued bosons: a gauge field $A \in \Omega^1(\RR^5; \gg)$, and a scalar $\phi' \in \Omega^1(\RR^5; \gg)$.
  \item $U$-valued bosons: a (symplectic) scalar field $\phi \in \Omega^0(\RR^5; W \otimes U)$.
  \item $\gg$-valued fermions: a spinor $\lambda \in \Omega^0(\RR^5; S \otimes W \otimes \gg)$.
- \item $U$-valued fermions: a spinor $\psi \in \Omega^0(\RR^5; S \otimes W \otimes U)$.
+ \item $U$-valued fermions: a spinor $\psi \in \Omega^0(\RR^5; S \otimes U)$.
 \end{itemize}
 
 \vspace{-10pt}
@@ -2048,7 +2048,7 @@ This follows from the calculation of the minimal twist in 6-dimensional $\mc N=(
 
 \subsection{$\mc N = 2$ Super Yang-Mills Theory} \label{5d_2_section}
 
-\paragraph{Fields:} We can describe the BRST fields of $\mc N=2$ super Yang-Mills by restricting the fields of maximal super Yang-Mills from 10d, or alternatively by restricting the 7d $\mc N=1$ fields from section \ref{7d_section}, to representations of the group $\mr O(5)$.  In addition to the ghost $c$, the fields we obtain are
+\paragraph{Fields:} We can describe the BRST fields of $\mc N=2$ super Yang-Mills by restricting the fields of maximal super Yang-Mills from 10d, or alternatively by restricting the 7d $\mc N=1$ fields from Section \ref{7d_section}, to representations of the group $\mr O(5)$.  In addition to the ghost $c$, the fields we obtain are
 \begin{itemize}
  \item Bosons: A gauge field $A \in \Omega^1(\RR^5; \gg)$, and five scalars $\phi_1 ,\ldots, \phi_5 \in \Omega^1(\RR^5; \gg)$.
  \item Fermions: A pair of spinors $\lambda_1$ and $\lambda_2$ in $\Omega^0(\RR^5; S \otimes W \otimes \gg)$.
@@ -2263,9 +2263,19 @@ We now observe that the interacting parts of the twisted theory agree with the i
 %\end{prop}
 
 
-\subsection{$\cN=2$ Super Yang-Mills with hypermultiplet matter}
-%quaternionic is hyperkahler
-%pseudo-real is quaternionic
+\subsection{$\cN=2$ Super Yang-Mills with Matter}
+
+We obtain $\mc N=2$ super Yang-Mills theory on $\RR^4$ by dimensionally reducing $\mc N=(1,0)$ super Yang-Mills from $\RR^6$, or $\mc N=1$ super Yang-Mills from $\RR^5$, with a hypermultiplet valued in a symplectic representation $U$.  In these terms we can describe the BRST fields.
+
+\vspace{-10pt}
+\paragraph{Fields:}  We can describe the BRST fields of $\mc N=2$ super Yang-Mills with matter valued in the symplectic representation $U$ by restricting the 5d $\mc N=2$ fields from Section \ref{5d_1_section} to representations of the group $\mr O(4)$.  In addition to the ghost $c$, the fields we obtain are
+\begin{itemize}
+ \item $\gg$-valued Bosons: a gauge field $A \in \Omega^1(\RR^4; \gg)$, and a pair of scalar fields $(\phi_1,\phi_2) \in \Omega^1(\RR^4; \gg)^2$.
+ \item $U$-valued bosons: a $W$-valued scalar field $\phi \in \Omega^0(\RR^4; W \otimes U)$.
+ \item $\gg$-valued fermions: a $W$-valued Dirac spinor $\lambda \in \Omega^0(\RR^4; (S_+ \otimes W \oplus S_- \otimes W^*) \otimes \gg)$.
+ \item $U$-valued fermions: a Dirac spinor $\psi \in \Omega^0(\RR^4; (S_+\oplus S_-) \otimes U)$.
+\end{itemize}
+
 
 \subsection{$\cN=4$ Super Yang-Mills}
 
