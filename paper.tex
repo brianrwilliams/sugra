@@ -418,7 +418,7 @@ This is a special case of generalized BF theory:
 the generalized $\beta\gamma$ system is generalized $BF$ theory in the case that the $L_\infty$ aglebra is $\fg = V[-1]$, with trivial $L_\infty$ structure. 
 \end{rmk}
 
-\brian{Symplectic, non-polarized version needed for 6d N=(1,0).}
+\brian{Symplectic, non-polarized version needed for 6d N=(1,0).} \chris{following Brian's suggestion I've used the term: holomorphic BF theory coupled to a higher holomorphic symplectic boson, valued in a representation $U$.  If we continue to use that term, we should explain it here.}
 
 
 \subsubsection{Generalized Chern--Simons theory} \label{gen_CS_section}
@@ -884,88 +884,90 @@ Fix a twisting datum $(Q, \alpha)$, where $\Gamma_V(Q, Q) = 0$. Then the dimensi
 \subsection{A-Type Twists} \label{A_twist_section}
 \chris{I think we should discuss these Hodge families somewhere, maybe not here though.}
 
-\begin{landscape}
-\begin{figure}
-\begin{tikzpicture}[node distance=0.35cm and 0.35cm, text width=1.8cm]
-\node (101) [s16chiral] {Rank $(1, 0)$ $d=5$};
-\node (91) [s16, below=of 101] {Rank $1$ $d=5$};
-\node (82) [s16, below=of 91] {Rank $(1, 1)$ $d=5$};
-\node (81) [s16, left=of 82] {Rank $(1, 0)$ $d=4$};
-\node (825) [right=of 82] {};
-\node (83) [s16, right=of 825] {Rank $(1, 0)$ $d=8$};
-\node (71) [s16, below=of 81] {Rank $1$ $d=4$};
-\node (72) [s16, below=of 82] {Rank $2$ $d=5$};
-\node (73) [s16, below=of 83] {Rank $1$ $d=7$};
-\node (62) [s16, below=of 71] {Rank $(1, 1)$ $d=4$};
-\node (61) [s8, left=of 62] {Rank $(1, 0)$ $d=3$};
-\node (63) [s16, below=of 72] {Rank $(2, 2)$ $d=5$};
-\node (64) [s16chiral, right=of 63] {Rank $(2, 0)$ $d=5$};
-\node (65) [s16, below=of 73, right=of 64] {Rank $(1, 1)$ $d=6$};
-\node (51) [s8, below=of 61] {Rank $1$ $d=3$};
-\node (52) [s16, below=of 62] {Rank $2$ $d=4$};
-\node (53) [s16, below=of 63] {Rank $4$ $d=5$};
-\node (54) [s16, below=of 64] {Rank $2$ $d=5$};
-\node (42) [s8, below=of 51] {Rank $(1, 1)$ $d=3$};
-\node (41) [s4, left=of 42] {Rank $(1, 0)$ $d=2$};
-\node (43) [s16, right=of 42] {Rank $(2, 2)$ $d=4$};
-\node (44) [s16, right=of 43] {Rank $(2, 1)$ $d=4$};
-\node (45) [s8, right=of 44] {Rank $(2, 0)$ $d=4$};
-\node (31) [s4, below=of 41] {Rank $1$ $d=2$};
-\node (32) [s8, below=of 42] {Rank $2$ $d=3$};
-\node (22) [s4, below=of 31] {Rank $(1, 1)$ $d=2$};
-\node (21) [s2chiral, left=of 22] {Rank $(1, 0)$ $d=1$};
+%  This figure was included twice: once in landscape and once in portait.  I'm commenting out the landscape version here - CE
 
-\draw[arrow] (101) -- (91);
-\draw[arrow] (91) -- (81);
-\draw[arrow] (91) -- (82);
-\draw[arrow] (81) -- (71);
-\draw[arrow] (82) -- (71);
-\draw[arrow] (82) -- (72);
-\draw[arrow] (83) -- (73);
-\draw[arrow] (71) -- (61);
-\draw[arrow] (71) -- (62);
-\draw[arrow] (72) -- (62);
-\draw[arrow] (72) -- (63);
-\draw[arrow] (73) -- (65);
-\draw[arrow] (61) -- (51);
-\draw[arrow] (62) -- (51);
-\draw[arrow] (62) -- (52);
-\draw[arrow] (63) -- (53);
-\draw[arrow] (64) -- (52);
-\draw[arrow] (64) -- (54);
-\draw[arrow] (65) -- (54);
-\draw[arrow] (51) -- (41);
-\draw[arrow] (51) -- (42);
-\draw[arrow] (52) -- (42);
-\draw[arrow] (52) -- (43);
-\draw[arrow] (53) -- (43);
-\draw[arrow] (54) -- (43);
-\draw[arrow] (54) -- (44);
-\draw[arrow] (54) -- (45);
-\draw[arrow] (41) -- (31);
-\draw[arrow] (42) -- (31);
-\draw[arrow] (42) -- (32);
-\draw[arrow] (43) -- (32);
-\draw[arrow] (44) -- (32);
-\draw[arrow] (45) -- (32);
-\draw[arrow] (31) -- (21);
-\draw[arrow] (31) -- (22);
-\draw[arrow] (32) -- (22);
-
-\node (2d) [dimension, left=of 21] {2d};
-\node (3d) [dimension, above=of 2d] {3d};
-\node (4d) [dimension, above=of 3d] {4d};
-\node (5d) [dimension, above=of 4d] {5d};
-\node (6d) [dimension, above=of 5d] {6d};
-\node (7d) [dimension, above=of 6d] {7d};
-\node (8d) [dimension, above=of 7d] {8d};
-\node (9d) [dimension, above=of 8d] {9d};
-\node (10d) [dimension, above=of 9d] {10d};
-\end{tikzpicture}
-\caption{Orbits of square-zero supercharges.}
-\label{fig:superchargeorbits}
-\end{figure}
-\end{landscape}
+% \begin{landscape}
+% \begin{figure}
+% \begin{tikzpicture}[node distance=0.35cm and 0.35cm, text width=1.8cm]
+% \node (101) [s16chiral] {Rank $(1, 0)$ $d=5$};
+% \node (91) [s16, below=of 101] {Rank $1$ $d=5$};
+% \node (82) [s16, below=of 91] {Rank $(1, 1)$ $d=5$};
+% \node (81) [s16, left=of 82] {Rank $(1, 0)$ $d=4$};
+% \node (825) [right=of 82] {};
+% \node (83) [s16, right=of 825] {Rank $(1, 0)$ $d=8$};
+% \node (71) [s16, below=of 81] {Rank $1$ $d=4$};
+% \node (72) [s16, below=of 82] {Rank $2$ $d=5$};
+% \node (73) [s16, below=of 83] {Rank $1$ $d=7$};
+% \node (62) [s16, below=of 71] {Rank $(1, 1)$ $d=4$};
+% \node (61) [s8, left=of 62] {Rank $(1, 0)$ $d=3$};
+% \node (63) [s16, below=of 72] {Rank $(2, 2)$ $d=5$};
+% \node (64) [s16chiral, right=of 63] {Rank $(2, 0)$ $d=5$};
+% \node (65) [s16, below=of 73, right=of 64] {Rank $(1, 1)$ $d=6$};
+% \node (51) [s8, below=of 61] {Rank $1$ $d=3$};
+% \node (52) [s16, below=of 62] {Rank $2$ $d=4$};
+% \node (53) [s16, below=of 63] {Rank $4$ $d=5$};
+% \node (54) [s16, below=of 64] {Rank $2$ $d=5$};
+% \node (42) [s8, below=of 51] {Rank $(1, 1)$ $d=3$};
+% \node (41) [s4, left=of 42] {Rank $(1, 0)$ $d=2$};
+% \node (43) [s16, right=of 42] {Rank $(2, 2)$ $d=4$};
+% \node (44) [s16, right=of 43] {Rank $(2, 1)$ $d=4$};
+% \node (45) [s8, right=of 44] {Rank $(2, 0)$ $d=4$};
+% \node (31) [s4, below=of 41] {Rank $1$ $d=2$};
+% \node (32) [s8, below=of 42] {Rank $2$ $d=3$};
+% \node (22) [s4, below=of 31] {Rank $(1, 1)$ $d=2$};
+% \node (21) [s2chiral, left=of 22] {Rank $(1, 0)$ $d=1$};
+% 
+% \draw[arrow] (101) -- (91);
+% \draw[arrow] (91) -- (81);
+% \draw[arrow] (91) -- (82);
+% \draw[arrow] (81) -- (71);
+% \draw[arrow] (82) -- (71);
+% \draw[arrow] (82) -- (72);
+% \draw[arrow] (83) -- (73);
+% \draw[arrow] (71) -- (61);
+% \draw[arrow] (71) -- (62);
+% \draw[arrow] (72) -- (62);
+% \draw[arrow] (72) -- (63);
+% \draw[arrow] (73) -- (65);
+% \draw[arrow] (61) -- (51);
+% \draw[arrow] (62) -- (51);
+% \draw[arrow] (62) -- (52);
+% \draw[arrow] (63) -- (53);
+% \draw[arrow] (64) -- (52);
+% \draw[arrow] (64) -- (54);
+% \draw[arrow] (65) -- (54);
+% \draw[arrow] (51) -- (41);
+% \draw[arrow] (51) -- (42);
+% \draw[arrow] (52) -- (42);
+% \draw[arrow] (52) -- (43);
+% \draw[arrow] (53) -- (43);
+% \draw[arrow] (54) -- (43);
+% \draw[arrow] (54) -- (44);
+% \draw[arrow] (54) -- (45);
+% \draw[arrow] (41) -- (31);
+% \draw[arrow] (42) -- (31);
+% \draw[arrow] (42) -- (32);
+% \draw[arrow] (43) -- (32);
+% \draw[arrow] (44) -- (32);
+% \draw[arrow] (45) -- (32);
+% \draw[arrow] (31) -- (21);
+% \draw[arrow] (31) -- (22);
+% \draw[arrow] (32) -- (22);
+% 
+% \node (2d) [dimension, left=of 21] {2d};
+% \node (3d) [dimension, above=of 2d] {3d};
+% \node (4d) [dimension, above=of 3d] {4d};
+% \node (5d) [dimension, above=of 4d] {5d};
+% \node (6d) [dimension, above=of 5d] {6d};
+% \node (7d) [dimension, above=of 6d] {7d};
+% \node (8d) [dimension, above=of 7d] {8d};
+% \node (9d) [dimension, above=of 8d] {9d};
+% \node (10d) [dimension, above=of 9d] {10d};
+% \end{tikzpicture}
+% \caption{Orbits of square-zero supercharges.}
+% \label{fig:superchargeorbits}
+% \end{figure}
+% \end{landscape}
 
 \section{Supersymmetric Yang--Mills theories}
 
