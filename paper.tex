@@ -46,7 +46,6 @@ Throughout the paper we will mostly work with a $\ZZ\times\ZZ/2$-grading. \emph{
 
 Given a vector bundle $E\rightarrow M$ we denote by $\cE$ the topological vector space of smooth sections of $E$ and $\cE_c$ the topological vector space of smooth compactly supported sections.
 We denote by $\cO(\cE)$ (respectively $\cO(\cE_c)$) the completed algebra of functions on $\cE$ (respectively $\cE_c)$. 
-For conventions on functions on topological vector spaces we refer to Appendix \ref{appx: top}. 
 We denote by $\oloc(\cE)$ the space of local functionals on $\cE$ (see \cite[Definition 4.5.1.1]{Book2}). An element of $\oloc(\cE)$ will be denoted by
 \[\int_M f (\phi, \phi', \dots),\]
 where $f$ is a density on $M$ depending on infinite jets of sections of $E$. Note, however, that the integral here is a formal symbol. 
@@ -1026,7 +1025,7 @@ Let $\fg$ be a Lie algebra equipped with a nondegenerate symmetric bilinear pair
 \item A ghost field $c\in\Gamma(V_\RR; \Pi\fg)$.
 \end{itemize}
 We also introduce their antifields $A^*\in\Omega^1(V_\RR; \Pi\fg)$, $\lambda\in\Gamma(V_\RR; \Sigma^*\otimes \fg)$ and $c^*\in\Gamma(V_\RR; \fg)$.
-Let $\cE_{\rm SYM}$ denote the space of BV fields. 
+Let $\cE_{\rm Super Yang-Mills}$ denote the space of BV fields. 
 
 Denote by $F_A = \d A + \frac{1}{2}[A\wedge A]$ the curvature of $A$ and let $\sd\d_A$ be the twisted Dirac operator obtained from $\Gamma$ (see Appendix \ref{sect:spinors}).
 
@@ -1060,7 +1059,7 @@ I_{\gauge}^{(2)}(Q_1, Q_2) &= \int_{V_\RR}\dvol\left( \frac{1}{4}(\Gamma(Q_1, Q_
 The following theorem summarizes the fact that super Yang-Mills theory is indeed supersymmetric in the sense of Definition \ref{dfn: super}. 
 
 \begin{thm}\label{thm:gaugemultipletSUSY}
-The functional $\fS_{\gauge} = S_{\gauge} + I_{\gauge}^{(1)} + I_{\gauge}^{(2)} \in C^\bu(\mf{A}, \oloc(\cE_{\rm SYM}))$ satisfies the classical master equation
+The functional $\fS_{\gauge} = S_{\gauge} + I_{\gauge}^{(1)} + I_{\gauge}^{(2)} \in C^\bu(\mf{A}, \oloc(\cE_{\rm Super Yang-Mills}))$ satisfies the classical master equation
 \[\d_{CE} \fS_{\gauge} + \frac{1}{2}\{\fS_{\gauge}, \fS_{\gauge}\} = 0.\]
 Thus, $\fS_{\gauge}$ defines an elliptic $L_\infty$ action of the super Lie algebra $\fA$ on super Yang-Mills theory and so super Yang-Mills theory is supersymmetric.  
 \end{thm}
@@ -1494,6 +1493,7 @@ We may identify the odd part of the 9d $\mc N=1$ supersymmetry algebra with the 
 Choose a splitting $\RR^9\cong\CC^4\times \RR$ together with a constant holomorphic volume form $\Omega\in\Omega^{4, 0}(\CC^4)$.
 
 \begin{thm}
+\label{9d_twist_thm}
 The holomorphic twist of 9d $\mc N=1$ super Yang--Mills is perturbatively equivalent to the generalized Chern--Simons theory on $\CC^4\times \RR$ with the space of fields $\map(\CC^4\times \RR_{\mr{dR}}, B\gg)$.
 \end{thm}
 \begin{proof}
@@ -1869,7 +1869,7 @@ The minimal twist of 7d $\mc N=1$ super Yang-Mills theory on the product of a Ca
 \end{theorem}
 
 \begin{proof}
- 
+This follows by dimensional reduction of the 8d holomorphic twist of Theorem \ref{8d_holo_twist_thm} and its one-parameter degeneration along one of the directions which is not invariant in the holomorphic theory.  That is, by applying Proposition \ref{CS_to_BF_diml_red_prop} to the family $\map(X_4, B\gg)_{\mr{Hod}}$.
 \end{proof}
 
 \begin{theorem} \label{7d_rank2_twist_thm}
@@ -1877,7 +1877,7 @@ The twist by a rank 2 supercharge of 7d $\mc N=1$ super Yang-Mills theory on the
 \end{theorem}
 
 \begin{proof}
- 
+Again, this follows by dimensional reduction from 8 dimensions, this time from the intermediate twist of Theorem \ref{8d_rank2_twist_thm}, again by an application of Proposition \ref{CS_to_BF_diml_red_prop}.
 \end{proof}
 
 \section{Dimension 6}
@@ -2086,7 +2086,7 @@ Let us describe the partition function of the A-type topological twist appearing
 \end{proof}
 
 \begin{theorem} \label{5d_rk4_twist_thm}
-The twist by a rank $4$ supercharge of 5d $\mc N=2$ super Yang-Mills theory on an oriented 5-manifold $M_5$ is equivalent to 5d Chern-Simons theory on $M_5$: the $\ZZ/2\ZZ$-graded theory with space of fields $\mr{Map}(M_5, B\gg)$.
+The twist by a rank $4$ supercharge of 5d $\mc N=2$ super Yang-Mills theory on an oriented 5-manifold $M_5$ is equivalent to 5d Chern-Simons theory on $M_5$: the $\ZZ/2\ZZ$-graded theory with space of fields $\mr{Map}((M_5)_{\mr{dR}}, B\gg)$.
 \end{theorem}
 
 \begin{proof}
@@ -2094,10 +2094,6 @@ We now take the twist of 6d $\mc N=(1,1)$ super Yang-Mills with 5 invariant dire
 \end{proof}
  
 \section{Dimension 4}
-
-% \cN=4 SYM
-% \cN=2 SYM with matter in a pseudo-real representation
-% \cN=1 SYM with matter in a complex representation
 
 \subsection{$\cN=1$ with chiral multiplet matter} 
 There is a minimal supersymmetric field theory with $\cN=1$ supersymmetry consisting of a pure gauge theory coupled to supersymmetric matter depending on a complex representation $R$. 
@@ -2267,11 +2263,11 @@ We now observe that the interacting parts of the twisted theory agree with the i
 %\end{prop}
 
 
-\subsection{$\cN=2$ SYM with hypermultiplet matter}
+\subsection{$\cN=2$ Super Yang-Mills with hypermultiplet matter}
 %quaternionic is hyperkahler
 %pseudo-real is quaternionic
 
-\subsection{$\cN=4$ SYM}
+\subsection{$\cN=4$ Super Yang-Mills}
 
 \vspace{-10pt}
 \paragraph{Fields:} We can describe the BRST fields of $\mc N=4$ super Yang-Mills by restricting the 5d $\mc N=2$ fields from section \ref{5d_2_section} to representations of the group $\mr O(4)$.  In addition to the ghost $c$, the fields we obtain are
@@ -2310,19 +2306,19 @@ where $\omega$ indicates the canonical isomorphism $\omega \colon \wedge^2(W^*) 
 
 \section{Dimension 3}
 
-% \cN=8 SYM
-% \cN=4 SYM with matter in a pseudo-real representation
-% \cN=2 SYM with matter in a complex representation
+% \cN=8 Super Yang-Mills
+% \cN=4 Super Yang-Mills with matter in a pseudo-real representation
+% \cN=2 Super Yang-Mills with matter in a complex representation
 
 \section{Dimension 2}
 
-% \cN=(8, 8) SYM
-% \cN=(4, 4) SYM with matter in a pseudo-real representation
-% \cN=(2, 2) SYM with matter in a complex representation
+% \cN=(8, 8) Super Yang-Mills
+% \cN=(4, 4) Super Yang-Mills with matter in a pseudo-real representation
+% \cN=(2, 2) Super Yang-Mills with matter in a complex representation
 %BRIAN FIND REFERENCE OF BELOW
-% \cN=(0,2) SYM with matter 
-% \cN=(0,4) SYM with matter
-% \cN=(0,8) SYM with matter
+% \cN=(0,2) Super Yang-Mills with matter 
+% \cN=(0,4) Super Yang-Mills with matter
+% \cN=(0,8) Super Yang-Mills with matter
 
 
 \appendix
