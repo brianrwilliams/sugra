@@ -2168,73 +2168,73 @@ The twisted theory is therefore perturbatively equivalent to the theory with BV 
  S_{\mr{BV}} &= \int \bigg( (B_{2,1} \ol \dd_{A_{0,1}} A_{0})  + B_{2,0} F_{0,2} + \beta_{2,0} \dbar_{A_{0,1}} \gamma_{0,1} + \beta_{2,1} \dbar_{A_{0,1}} \gamma_0 \\ 
   &\qquad  + [A_{0,2}, A_0]\wedge B_{2,0} + \frac{1}{2}[A_0, A_0]B_{2,2} +  [\gamma_0, A_0]\wedge \beta_{2,2} + [\gamma_{0,1}, A_0]\wedge \beta_{2,1}  \bigg).
 \end{align*}
-This is indeed the action functional of the required theory, where $\lambda_{0,2}$ is identified as the antifield to $A_{0,1}$.
- \end{proof}
+This is indeed the action functional of the required theory, where $A_{0,\bu}, B_{2,\bu}$ comprise the fields of holomorphic $BF$ theory and $\gamma_{0,\bu}, \beta_{2,\bu}$ comprise the fields of the $\beta\gamma$ system.
+\end{proof}
 
-\begin{itemize}
-\item[(1)] 
-We first decompose the fields of the 4-dimensional $\mc N=1$ theory with respect to the ${\rm U}(2)$ stabilizer.
-The fields of the pure Yang-Mills part decomposes as:
-\begin{align*}
-c & \mapsto A_{0} \in \Omega^0(\CC^2 ; \fg) \\
-A & \mapsto A_{0,1} + A_{1,0} \in \Omega^{0,1}(\CC^2 ; \fg) \oplus \Omega^{1,0}(\CC^2 ; \fg) \\
-\lambda_+ & \mapsto \lambda_{1,0} \in \Omega^{1,0}(\CC^2 ; \fg) \\
-\lambda_- & \mapsto \lambda_0 + A_{0,2} \in \Omega^{0}(\CC^2 ; \fg) \oplus \Omega^{0,2}(\CC^2 ; \fg) 
-\end{align*}
-and their antifields:
-\begin{align*}
-c^* & \mapsto B_{2,2} \in \Omega^{2,2}(\CC^2 ; \fg) \\
-A^* & \mapsto B_{2,1} + B_{1,2} \in \Omega^{2,1}(\CC^2;\fg) \oplus \Omega^{1,2}(\CC^2; \fg) \\
-\lambda^*_+ & \mapsto \lambda_{1,2} \in \Omega^{1,2}(\CC^2 ; \fg) \\
-\lambda^*_- & \mapsto \lambda_0^*+ B_{2,0} \in \Omega^{0}(\CC^2 ; \fg) \oplus \Omega^{2,0}(\CC^2 ; \fg) 
-\end{align*}
-
-The matter fields decompose as
-\begin{align*}
-\phi & \mapsto \gamma_0 \in \Omega^0 (\CC^2 ; R) \\
-\Bar{\phi} & \mapsto \Bar{\phi} \in \Omega^{2,2}(\CC^2 ; R^*) \\
-\psi_+ & \mapsto \gamma_{0,1} \in \Omega^{0,1}(\CC^2 ; R) \\
-\psi_- & \mapsto \beta_{2,0} + \Tilde{\beta}_{2,2} \in \Omega^{2,0}(\CC^2 ; R^*) \oplus \Omega^{2,2}(\CC^2 ; R^*) 
-\end{align*}
-and their antifields:
-\begin{align*}
-\phi^* & \mapsto \beta_{2,2} \in \Omega^{2,2} (\CC^2 ; R^*) \\
-\Bar{\phi}^* & \mapsto \Bar{\phi}^* \in \Omega^{0,0}(\CC^2 ; R) \\
-\psi^*_+ & \mapsto \beta_{2,1} \in \Omega^{2,1}(\CC^2 ; R^*) \\
-\psi^*_- & \mapsto \Tilde{\gamma}_0 + \gamma_{0,2} \in \Omega^{0,0}(\CC^2 ; R) \oplus \Omega^{0,2}(\CC^2 ; R) 
-\end{align*}
-
-\item[(2)] Next, we study the linear differential in the twisted theory. 
-At the linear level, the matter and gauge sectors completely decouple. 
-
-For the gauge sector, the linear differential on the twisted BV complex is the following:
-\[
-\xymatrix{
-\ul{-1} & \ul{0} & \ul{1} & \ul{2} \\
-\Omega^0(\CC^2; \fg)_{A_0} \ar[r]^-{\dbar} & \Omega^{0,1}(\CC^2; \fg)_{A_{0,1}} \ar@{.>}[r]^-{\dbar} & \Omega^{0,2}(\CC^2; R)_{A_{0,2} } &  \\
-& \Omega^{2,0}(\CC^2; \fg)_{B_{2,0}} \ar@{.>}[r]^-{\dbar} & \Omega^{2,1}(\CC^2; \fg)_{B_{2,1}} \ar[r] & \Omega^{2,2}(\CC^2 , \fg)_{B_{2,2}} \\
-\Omega^{1,0} (\CC^2; \fg)_{\lambda_{1,0}} \ar@{.>}[r]^-{=} & \Omega^{1,0}(\CC^2; \fg)_{A_{1,0}} & \Omega^{2,1}(\CC^2; \fg)_{B_{1,2}} \ar@{.>}[r]^-{=} & \Omega^{2,1}(\CC^2; \fg)_{\lambda_{1,2}} \\
-& \Omega^0(\CC^2 ; \fg)_{\lambda_0^*} \ar@{.>}[r]^-{=} & \Omega^0(\CC^2 ; \fg)_{\lambda_0} & 
-}
-\]
-The solid arrows represent the piece of the linear differential coming from the original linear BV differential of the untwisted theory.
-The dotted arrows represent the piece of the linear differential which depends on the supercharge $Q = Q_-$ we are twisting by. 
-This complex is equivalent to the linearized piece holomorphic BF theory on $\CC^2_{\dbar}$ with values in $\fg$. 
-
-For the matter sector, the linear differential is:
-\[
-\xymatrix{
-\ul{-1} & \ul{0} & \ul{1} & \ul{2} \\
-& \Omega^0(\CC^2; R)_{\gamma_0} \ar@{.>}[r]^-{\dbar} & \Omega^{0,1}(\CC^2; R)_{\gamma_{0,1}} \ar[r]^-{\dbar} & \Omega^{0,2}(\CC^2; R)_{\gamma_{0,2} } \\
-\Omega^0(\CC^2; R^*)_{\beta_{2,0}} \ar[r]^-{\dbar} & \Omega^{2,1}(\CC^2; R^*)_{\beta_{2,1}} \ar@{.>}[r]^-{\dbar} & \Omega^{2,2}(\CC^2 , R^*)_{\beta_{2,2}} \\
-\Omega^{2,2} (\CC^2; R^*)_{\Tilde{\beta}_{2,2}} \ar@{.>}[r]^-{=}& \Omega^{2,2}(\CC^2; R^*)_{\Bar{\phi}} & \Omega^{0,0}(\CC^2; R)_{\Bar{\phi}^*} \ar@{.>}[r]^-{=} & \Omega^{0,0}(\CC^2; R)_{\Tilde{\gamma}_0}
-}
-\]
-This complex is equivalent to the holomorphic $\beta\gamma$ system on $\CC^2_{\dbar}$ with values in $R$. 
-
-\item[(3)] 
-We now observe that the interacting parts of the twisted theory agree with the interactions of holomorphic BF theory coupled to the $\beta\gamma$ system. 
-\end{itemize}
+%\begin{itemize}
+%\item[(1)] 
+%We first decompose the fields of the 4-dimensional $\mc N=1$ theory with respect to the ${\rm U}(2)$ stabilizer.
+%The fields of the pure Yang-Mills part decomposes as:
+%\begin{align*}
+%c & \mapsto A_{0} \in \Omega^0(\CC^2 ; \fg) \\
+%A & \mapsto A_{0,1} + A_{1,0} \in \Omega^{0,1}(\CC^2 ; \fg) \oplus \Omega^{1,0}(\CC^2 ; \fg) \\
+%\lambda_+ & \mapsto \lambda_{1,0} \in \Omega^{1,0}(\CC^2 ; \fg) \\
+%\lambda_- & \mapsto \lambda_0 + A_{0,2} \in \Omega^{0}(\CC^2 ; \fg) \oplus \Omega^{0,2}(\CC^2 ; \fg) 
+%\end{align*}
+%and their antifields:
+%\begin{align*}
+%c^* & \mapsto B_{2,2} \in \Omega^{2,2}(\CC^2 ; \fg) \\
+%A^* & \mapsto B_{2,1} + B_{1,2} \in \Omega^{2,1}(\CC^2;\fg) \oplus \Omega^{1,2}(\CC^2; \fg) \\
+%\lambda^*_+ & \mapsto \lambda_{1,2} \in \Omega^{1,2}(\CC^2 ; \fg) \\
+%\lambda^*_- & \mapsto \lambda_0^*+ B_{2,0} \in \Omega^{0}(\CC^2 ; \fg) \oplus \Omega^{2,0}(\CC^2 ; \fg) 
+%\end{align*}
+%
+%The matter fields decompose as
+%\begin{align*}
+%\phi & \mapsto \gamma_0 \in \Omega^0 (\CC^2 ; R) \\
+%\Bar{\phi} & \mapsto \Bar{\phi} \in \Omega^{2,2}(\CC^2 ; R^*) \\
+%\psi_+ & \mapsto \gamma_{0,1} \in \Omega^{0,1}(\CC^2 ; R) \\
+%\psi_- & \mapsto \beta_{2,0} + \Tilde{\beta}_{2,2} \in \Omega^{2,0}(\CC^2 ; R^*) \oplus \Omega^{2,2}(\CC^2 ; R^*) 
+%\end{align*}
+%and their antifields:
+%\begin{align*}
+%\phi^* & \mapsto \beta_{2,2} \in \Omega^{2,2} (\CC^2 ; R^*) \\
+%\Bar{\phi}^* & \mapsto \Bar{\phi}^* \in \Omega^{0,0}(\CC^2 ; R) \\
+%\psi^*_+ & \mapsto \beta_{2,1} \in \Omega^{2,1}(\CC^2 ; R^*) \\
+%\psi^*_- & \mapsto \Tilde{\gamma}_0 + \gamma_{0,2} \in \Omega^{0,0}(\CC^2 ; R) \oplus \Omega^{0,2}(\CC^2 ; R) 
+%\end{align*}
+%
+%\item[(2)] Next, we study the linear differential in the twisted theory. 
+%At the linear level, the matter and gauge sectors completely decouple. 
+%
+%For the gauge sector, the linear differential on the twisted BV complex is the following:
+%\[
+%\xymatrix{
+%\ul{-1} & \ul{0} & \ul{1} & \ul{2} \\
+%\Omega^0(\CC^2; \fg)_{A_0} \ar[r]^-{\dbar} & \Omega^{0,1}(\CC^2; \fg)_{A_{0,1}} \ar@{.>}[r]^-{\dbar} & \Omega^{0,2}(\CC^2; R)_{A_{0,2} } &  \\
+%& \Omega^{2,0}(\CC^2; \fg)_{B_{2,0}} \ar@{.>}[r]^-{\dbar} & \Omega^{2,1}(\CC^2; \fg)_{B_{2,1}} \ar[r] & \Omega^{2,2}(\CC^2 , \fg)_{B_{2,2}} \\
+%\Omega^{1,0} (\CC^2; \fg)_{\lambda_{1,0}} \ar@{.>}[r]^-{=} & \Omega^{1,0}(\CC^2; \fg)_{A_{1,0}} & \Omega^{2,1}(\CC^2; \fg)_{B_{1,2}} \ar@{.>}[r]^-{=} & \Omega^{2,1}(\CC^2; \fg)_{\lambda_{1,2}} \\
+%& \Omega^0(\CC^2 ; \fg)_{\lambda_0^*} \ar@{.>}[r]^-{=} & \Omega^0(\CC^2 ; \fg)_{\lambda_0} & 
+%}
+%\]
+%The solid arrows represent the piece of the linear differential coming from the original linear BV differential of the untwisted theory.
+%The dotted arrows represent the piece of the linear differential which depends on the supercharge $Q = Q_-$ we are twisting by. 
+%This complex is equivalent to the linearized piece holomorphic BF theory on $\CC^2_{\dbar}$ with values in $\fg$. 
+%
+%For the matter sector, the linear differential is:
+%\[
+%\xymatrix{
+%\ul{-1} & \ul{0} & \ul{1} & \ul{2} \\
+%& \Omega^0(\CC^2; R)_{\gamma_0} \ar@{.>}[r]^-{\dbar} & \Omega^{0,1}(\CC^2; R)_{\gamma_{0,1}} \ar[r]^-{\dbar} & \Omega^{0,2}(\CC^2; R)_{\gamma_{0,2} } \\
+%\Omega^0(\CC^2; R^*)_{\beta_{2,0}} \ar[r]^-{\dbar} & \Omega^{2,1}(\CC^2; R^*)_{\beta_{2,1}} \ar@{.>}[r]^-{\dbar} & \Omega^{2,2}(\CC^2 , R^*)_{\beta_{2,2}} \\
+%\Omega^{2,2} (\CC^2; R^*)_{\Tilde{\beta}_{2,2}} \ar@{.>}[r]^-{=}& \Omega^{2,2}(\CC^2; R^*)_{\Bar{\phi}} & \Omega^{0,0}(\CC^2; R)_{\Bar{\phi}^*} \ar@{.>}[r]^-{=} & \Omega^{0,0}(\CC^2; R)_{\Tilde{\gamma}_0}
+%}
+%\]
+%This complex is equivalent to the holomorphic $\beta\gamma$ system on $\CC^2_{\dbar}$ with values in $R$. 
+%
+%\item[(3)] 
+%We now observe that the interacting parts of the twisted theory agree with the interactions of holomorphic BF theory coupled to the $\beta\gamma$ system. 
+%\end{itemize}
 
 %There are symmetries in the untwisted theory that will remain symmetries upon twisting. 
 %\begin{itemize}
