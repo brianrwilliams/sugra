@@ -805,11 +805,6 @@ In the intermediate case we refer to $Q$ as a \defterm{holomorphic-topological} 
 A \defterm{twisting datum} is a pair $(Q, \alpha)$, where $Q\in\Sigma$ is a square-zero supercharge and $\alpha\colon U(1)\rightarrow G_R$ is a homomorphism under which $Q$ has weight $1$.
 \end{definition}
 
-We will call $\alpha$ in a twisting datum a \defterm{twisting homomorphism}.
-\brian{Is this quite right? I think $\alpha$ is something different.
-Physics usually calls the twisting homomorphism the one from the Lorentz group to $G_R$. 
-Also, I think $Q$ is required to be a scalar under the twisting homomorphism.}
-
 Let $(E, Q_{BV}, \omega, I)$ be a supersymmetric classical field theory.
 Recall, this means we have a Maurer-Cartan element 
 \[
@@ -845,7 +840,7 @@ The operator
 \pavel{Need to explain that the degrees work out and check that you still have an elliptic complex.}
 
 \begin{remark}
-Without a twisting homomorphism $\alpha$, we obtain a $\ZZ/2$-graded classical field theory
+Without the homomorphism $\alpha : U(1) \to G_R$, we obtain a $\ZZ/2$-graded classical field theory
 \[(E, \d + \{\rho_2(Q), -\}, \omega, I + \rho_3(Q) + \dots),\]
 where the $\ZZ/2$-grading on $E$ is the total grading.
 \end{remark}
@@ -1911,6 +1906,7 @@ A & \mapsto A_{0,1} + A_{1,0} \in \Omega^{0,1}(\CC^3 ; \fg) \oplus \Omega^{1,0}(
 \phi & \mapsto \nu w_1 + \psi_0 w_2 \in \Omega^0(\CC^3; W_+ \otimes U) \\
 \psi & \mapsto \psi_{0,1} + \nu' \in \Omega^{0,1}(\CC^3; U) \oplus \Omega^0(\CC^3; U),
 \end{align*} 
+\brian{only complaint is the use of $\psi_0$. Maybe use a different letter since $\psi$ is used for the fermion.}
 and similarly with the anti-fields, where the fields $A_{\bu, \bu}$, $\lambda_{\bu,\bu}$ are $\fg$-valued differential forms, and the fields $\psi_{\bu,\bu}$ are $U$-valued differential forms.  In terms of these fields, and using Corollary \ref{Kahler_YM_term_cor}, the BV action $S_{\mr{BV}}$ of the $Q$-twisted theory will consist of the sum of the following terms.
 \begin{align*}
 S_{\mr{gauge}} &= \int \dvol \left(-(F^{2, 0}, F^{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2\right) + \\
@@ -2108,16 +2104,81 @@ The twist by a rank $4$ supercharge of 5d $\mc N=2$ super Yang-Mills theory on a
 % \cN=2 SYM with matter in a pseudo-real representation
 % \cN=1 SYM with matter in a complex representation
 
-\subsection{$\cN=1$ with chiral multiplet matter}
+\subsection{$\cN=1$ with chiral multiplet matter} 
+There is a minimal supersymmetric field theory with $\cN=1$ supersymmetry consisting of a pure gauge theory coupled to supersymmetric matter depending on a complex representation $R$. 
+
+%The spinorial pairing $(-,-) : S_\pm \otimes S_\pm \to \CC$ induces a pairing between $S_\pm \otimes R$ and $S_{\pm} \otimes R^*$ that we also denote by $(-,-)_R$. 
+
+The field content for the 4-dimensional $\cN=1$ super Yang-Mills theory coupled to chiral matter is given by:
+\begin{itemize}
+\item $\fg$-valued bosons: a gauge field $A \in \Omega^1(\RR^4 ; \fg)$.
+\item $\fg$-valued fermions: $(\lambda_+, \lambda_-) \in \Omega^1(\RR^4 ; S_+ \otimes \fg \oplus S_- \otimes \fg)$.
+\item scalars: $(\Bar{\phi}, \phi) \in C^\infty(\RR^4 ; R \oplus R^*)$.
+\item fermions: $(\psi_-,\psi_+) \in C^\infty(\RR^4 ; S_+ \otimes R \oplus \otimes S_- \otimes R^*)$.
+\end{itemize}
+
 There is a single non-zero equivalence class of square zero supercharges in $4$-dimensional $\mc N = 1$, which we fix from here on.
-For concreteness, we will fix a nonzero supercharge of negative chirality $$Q = Q_- \in S_-$$ to twist by. 
+Such supercharges are necessarily of rank $1$, and for concreteness we will fix a square-zero supercharge of negative chirality $$Q = Q_+ \in S_+$$ to twist by. 
 Such supercharges are minimal (i.e. have two dimensional image).  
 They are stabilized by ${\rm U}(2)$; indeed a minimal square zero spinor of positive (negative) helicity is stabilized by $\SU(2)_-$ ($\SU(2)_+$), but also by a torus in $\SU(2)_+$ ($\SU(2)_-$).  
 The R-symmetry group is $U(1)$, and the twisted theory by such a supercharge can always be made $\ZZ$-graded.
 
+We first decompose the fields of the 4-dimensional $\mc N=1$ theory with respect to the ${\rm U}(2)$ stabilizer.
+The fields of the pure Yang-Mills part decomposes as:
+\begin{align*}
+c & \mapsto A_{0} \in \Omega^0(\CC^2 ; \fg) \\
+A & \mapsto A_{0,1} + A_{1,0} \in \Omega^{0,1}(\CC^2 ; \fg) \oplus \Omega^{1,0}(\CC^2 ; \fg) \\
+\lambda_- & \mapsto \lambda_{1,0} \in \Omega^{1,0}(\CC^2 ; \fg) \\
+\lambda_+ & \mapsto \lambda_0 + A_{0,2} \in \Omega^{0}(\CC^2 ; \fg) \oplus \Omega^{0,2}(\CC^2 ; \fg) \\
+\phi & \mapsto \phi \in \Omega^0 (\CC^2 ; R^*) \\
+\Bar{\phi} & \mapsto \gamma_0 \in \Omega^{2,2}(\CC^2 ; R) \\
+\psi_+ & \mapsto \psi_0 + \beta_{2,0} \in \Omega^{0}(\CC^2 ; R^*) \oplus \Omega^{2,0}(\CC^2 ; R^*) \\
+\psi_- & \mapsto \gamma_{0,1} \in \Omega^{0,1}(\CC^2 ; R)
+\end{align*}
+and their antifields:
+\begin{align*}
+c^* & \mapsto B_{2,2} \in \Omega^{2,2}(\CC^2 ; \fg) \\
+A^* & \mapsto B_{2,1} + A^*_{1,0} \in \Omega^{2,1}(\CC^2;\fg) \oplus \Omega^{1,2}(\CC^2; \fg) \\
+\lambda^*_- & \mapsto \lambda_{1,0}^* \in \Omega^{1,2}(\CC^2 ; \fg) \\
+\lambda^*_+ & \mapsto \lambda_0^*+ B_{2,0} \in \Omega^{0}(\CC^2 ; \fg) \oplus \Omega^{2,0}(\CC^2 ; \fg) \\
+\phi^* & \mapsto \phi^* \in \Omega^{2,2}(\CC^2 ; R^*) \\
+\Bar{\phi}^* & \mapsto \beta_{2,2} \in \Omega^{2,2} (\CC^2 ; R) \\
+\psi^*_+ & \mapsto \psi_{2,2}^* + \gamma_{0,2} \in \Omega^{2,2}(\CC^2 ; R) \oplus \Omega^{0,2}(\CC^2 ; R) \\
+\psi^*_- & \mapsto \beta_{2,1} \in \Omega^{2,1}(\CC^2 ; R)
+\end{align*}
+
+The untwisted action functionals decompose as follows.
+
+\begin{align*}
+S_{\mr{gauge}} &= \int \dvol \left(-(F^{2, 0}, F^{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2\right) + \frac 12 \left(\lambda_{1,0} \wedge \dd_{A_{1,0}} A_{0,2}) + \omega (\lambda_{1,0} \wedge \dbar_{A_{0,1}} \lambda_0) \right)  \\
+S_{\mr{matter}} &= \int \bigg( \dvol ((\dd_{A_{1,0}}\phi , \ol \dd_{A_{0,1}} \gamma_0) + (\dd_{A_{1,0}}\gamma_0, \ol \dd_{A_{0,1}} \phi)) + \omega (\psi_0 \partial_{A_{1,0}} \gamma_{0,1}) + \beta_{2,0} \dbar_{A_{0,1}} \gamma_{0,1}  + \\
+&\qquad + 2\dvol(([\lambda_0,\nu],\nu') + ([\chi, \psi_0], \nu') )   \bigg) \\
+S_{\mr{anti}} &= \int \dd_{A_{1, 0}} A_0 \wedge A_{1,0}^* + \ol\dd_{A_{0, 1}} A_0\wedge B_{2,1} + [\lambda_{1,0}, A_0]\wedge \lambda_{1,0}^* +  [\lambda_{0}, A_0]\wedge \lambda_{0}^* +B_{2,1} \wedge [A_0, A_{0,1}] + A_{1,0}^* \wedge [A_{0}, A_{1,0}] \\
+&\qquad + \frac{1}{2}[A_0, A_0]A_0^* + [\phi, A_0] \phi^* + [\gamma_0, A_0] \beta_{2,2} + [\gamma_{0,1}, A_0]\wedge \beta_{2,1} + [\psi_0, A_0] \psi_0^* + [\beta_{2,0}, A_0] \wedge \gamma_{0,2} \\
+I^{(1)}_{\mr{gauge}} &=  \int \dvol \left( - (\lambda_{1,0}, A_{1,0}^*) + \frac 12 (F_{0,2},B_{2,0}) + \frac 12 (F_{1,1}, \lambda_0^*)  \right)\\
+I^{(1)}_{\mr{matter}} &=  \int \dvol \left( (\phi, \psi_0^*) + \frac 12( \ol \dd_{A_{0,1}} \gamma_{0}, \beta_{2,1}) \right)\\
+I^{(2)}_{\mr{gauge}} &= -\frac{1}{4}\int \dvol (\lambda_0^*)^2.
+\end{align*}
+Here, in terms of the K\"ahler form $\omega$, the volume form is identified as $\dvol = \frac{\omega^2}4$.
+
 \begin{prop}[See also \cite{SWchar}]
-The minimal twist of 4d $\cN=1$ super Yang-Mills with Lie algebra $\fg$ coupled to the $\cN=1$ chiral multiplet valued in a representation $R$ on \brian{a complex surface or $\CC^2$} is equivalent to holomorphic $BF$ theory for the Lie algebra $\fg$ coupled to the holomorphic $\beta\gamma$ system with values in the representation $R$. 
+The minimal twist of 4d $\cN=1$ super Yang-Mills with Lie algebra $\fg$ coupled to the $\cN=1$ chiral multiplet valued in a representation $R$ is equivalent to holomorphic $BF$ theory for the Lie algebra $\fg$ coupled to the holomorphic $\beta\gamma$ system with values in the representation $R$. 
 \end{prop}
+
+\begin{proof}
+The proof of this theorem is very similar to the proof of Theorem \ref{thm:10dholomorphictwist}.  
+First, we integrate out the fields $\lambda_0$ and $\lambda_0^*$ using Proposition \ref{prop:integrateoutfield}.  
+We then observe that the action includes the terms $\int \dvol  (\lambda_{1,0} , A_{1,0}^*)$ and  $\int \dvol (\phi, \psi_0^*)$.  
+Thus, the two pairs $(\lambda_{1,0}, A_{1,0})$ and $(\phi, \psi_0)$ form BRST doublets, 
+which can be integrated out using Proposition \ref{prop:BRSTdoublet}.  
+
+The twisted theory is therefore perturbatively equivalent to the theory with BV action 
+\begin{align*}
+ S_{\mr{BV}} &= \int \bigg( (B_{2,1} \ol \dd_{A_{0,1}} A_{0})  + B_{2,0} F_{0,2} + \beta_{2,0} \dbar_{A_{0,1}} \gamma_{0,1} + \beta_{2,1} \dbar_{A_{0,1}} \gamma_0 \\ 
+  &\qquad  + [A_{0,2}, A_0]\wedge B_{2,0} + \frac{1}{2}[A_0, A_0]B_{2,2} +  [\gamma_0, A_0]\wedge \beta_{2,2} + [\gamma_{0,1}, A_0]\wedge \beta_{2,1}  \bigg).
+\end{align*}
+This is indeed the action functional of the required theory, where $\lambda_{0,2}$ is identified as the antifield to $A_{0,1}$.
+ \end{proof}
 
 \begin{itemize}
 \item[(1)] 
