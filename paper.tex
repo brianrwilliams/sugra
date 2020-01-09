@@ -1809,7 +1809,7 @@ The holomorphic twist of 8d $\mc N=1$ super Yang-Mills theory on a Calabi-Yau 4-
 \end{theorem}
 
 \begin{proof}
-We begin by describing the twist by a holomorphic supercharge $Q_+$, on a Calabi-Yau 4-fold $X_4$.  We can do this by by applying Lemma \ref{CS_to_BF_diml_red_prop} to the minimal twist of 9d super Yang-Mills theory.  More explicitly, the minimal twist of 9d super Yang-Mills theory on $X_4 \times L$ is modelled by mixed Chern-Simons theory on $X_4 \times L_\mr{dR}$. Lemma \ref{CS_to_BF_diml_red_prop} says that if we reduce this mixed Chern-Simons theory in the $L$-direction, we obtain a holomorphic BF theory described by $\map(X_4, T[1]B\gg)$
+We begin by describing the twist by a holomorphic supercharge $Q_+$, on a Calabi-Yau 4-fold $X_4$.  We can do this by by applying Proposition \ref{CS_to_BF_diml_red_prop} to the minimal twist of 9d super Yang-Mills theory.  More explicitly, the minimal twist of 9d super Yang-Mills theory on $X_4 \times L$ is modelled by mixed Chern-Simons theory on $X_4 \times L_\mr{dR}$. Proposition \ref{CS_to_BF_diml_red_prop} says that if we reduce this mixed Chern-Simons theory in the $L$-direction, we obtain a holomorphic BF theory described by $\map(X_4, T[1]B\gg)$
 
 Note that, unlike in 9d, this theory can be made $\ZZ$-graded, rather than just $\ZZ/2\ZZ$-graded.  To do so, we consider the action of the 8d R-symmetry group $\CC^\times$, where $S_+$ has weight $+1$ and $S_-$ has weight $-1$, so in particular the holomorphic supercharge $Q_+$ has weight 1.  We've chosen notation for our component fields that makes it easy to read off the R-symmetry weight of each field: fermions with superscript $+$ have weight $+1$, fermions with superscript $-$ have weight $-1$, the bosonic scalars $\phi_1$ and $\wt \phi_1$ have weight -$2$, and the other bosons have weight 0.  With respect to this $\ZZ$-grading, the classical BV complex, as an $\SU(4)$-module, has the form
 \[\xymatrix{&\Omega^0(X_4; \gg)_c \ar[r] &\Omega^{0,1}(X_4; \gg)_{A_{0,1}} \ar[r] &\Omega^{0,2}(X_4; \gg)_{B^+_{0,2}} \ar[r] &\Omega^{0,3}(X_4; \gg)_{\psi_{0,1}^{-\vee}} \ar[r] &\Omega^{0,4}(X_4; \gg)_{\phi_1^\vee} \\
@@ -1869,7 +1869,7 @@ The minimal twist of 7d $\mc N=1$ super Yang-Mills theory on the product of a Ca
 \end{theorem}
 
 \begin{proof}
-This follows by dimensional reduction of the 8d holomorphic twist of Theorem \ref{8d_holo_twist_thm} and its one-parameter degeneration along one of the directions which is not invariant in the holomorphic theory.  That is, by applying Proposition \ref{CS_to_BF_diml_red_prop} to the family $\map(X_4, B\gg)_{\mr{Hod}}$.
+This follows by dimensional reduction of the 8d holomorphic twist of Theorem \ref{8d_holo_twist_thm} and its one-parameter degeneration along one of the directions which is not invariant in the holomorphic theory.  That is, by applying Proposition \ref{CS_diml_red_prop} to the family $\map(X_4, B\gg)_{\mr{Hod}}$.
 \end{proof}
 
 \begin{theorem} \label{7d_rank2_twist_thm}
@@ -1877,7 +1877,7 @@ The twist by a rank 2 supercharge of 7d $\mc N=1$ super Yang-Mills theory on the
 \end{theorem}
 
 \begin{proof}
-Again, this follows by dimensional reduction from 8 dimensions, this time from the intermediate twist of Theorem \ref{8d_rank2_twist_thm}, again by an application of Proposition \ref{CS_to_BF_diml_red_prop}.
+Again, this follows by dimensional reduction from 8 dimensions, this time from the intermediate twist of Theorem \ref{8d_rank2_twist_thm}, again by an application of Proposition \ref{CS_diml_red_prop}.
 \end{proof}
 
 \section{Dimension 6}
@@ -2008,7 +2008,7 @@ The twist of 6d $\mc N=(1,1)$ super Yang-Mills theory by a rank $(1,1)$ supercha
 \end{theorem}
 
 \begin{proof}
-We obtain this description by starting with the 1-parameter family of twisted theories from Theorem \ref{7d_holo_twist_thm}, and dimensionally reducing along one of the Calabi-Yau directions.  That is, by applying Proposition \ref{CS_to_BF_diml_red_prop} to the family of twists in 7-dimensions.
+We obtain this description by starting with the 1-parameter family of twisted theories from Theorem \ref{7d_holo_twist_thm}, and dimensionally reducing along one of the Calabi-Yau directions.  That is, by applying Proposition \ref{CS__diml_red_prop} to the family of twists in 7-dimensions.
 \end{proof}
 
 \begin{theorem} \label{6d_rk22_twist_thm}
@@ -2016,7 +2016,7 @@ The twist by a rank $(2,2)$ supercharge of 6d $\mc N=(1,1)$ super Yang-Mills the
 \end{theorem}
 
 \begin{proof}
-We now start with the twisted theory from Theorem \ref{7d_rank2_twist_thm}, with 5 invariant directions, and we dimensionally reduce in an de Rham direction.  That is, we apply Proposition \ref{CS_diml_red_prop}.
+We now start with the twisted theory from Theorem \ref{7d_rank2_twist_thm}, with 5 invariant directions, and we dimensionally reduce in an de Rham direction.  That is, we apply Proposition \ref{CS_to_BF_diml_red_prop}.
 \end{proof}
 
 \section{Dimension 5}
@@ -2073,7 +2073,7 @@ The twist of 5d $\mc N=2$ super Yang-Mills theory by a rank $2$ supercharge with
 \end{theorem}
 
 \begin{proof}
-As we have done in higher dimensions, we start with with the 1-parameter family of twisted theories from Theorem \ref{6d_holo_twist_thm}, and dimensionally reduce along one of the Calabi-Yau directions by applying Proposition \ref{CS_to_BF_diml_red_prop} to the family of twists in 6-dimensions.
+As we have done in higher dimensions, we start with with the 1-parameter family of twisted theories from Theorem \ref{6d_holo_twist_thm}, and dimensionally reduce along one of the Calabi-Yau directions by applying Proposition \ref{CS_diml_red_prop} to the family of twists in 6-dimensions.
 \end{proof}
 
 Let us describe the partition function of the A-type topological twist appearing at generic points of this family.  
@@ -2090,7 +2090,7 @@ The twist by a rank $4$ supercharge of 5d $\mc N=2$ super Yang-Mills theory on a
 \end{theorem}
 
 \begin{proof}
-We now take the twist of 6d $\mc N=(1,1)$ super Yang-Mills with 5 invariant directions, as calculated in Theorem \ref{6d_rk22_twist_thm}, and dimensionally reduce in the unique non-invariant direction.  That is, we apply Proposition \ref{CS_to_BF_diml_red_prop} to the flat curve $C$ to obtain the required topological theory.
+We now take the twist of 6d $\mc N=(1,1)$ super Yang-Mills with 5 invariant directions, as calculated in Theorem \ref{6d_rk22_twist_thm}, and dimensionally reduce in the unique non-invariant direction.  That is, we apply Proposition \ref{CS_diml_red_prop} to the flat curve $C$ to obtain the required topological theory.
 \end{proof}
  
 \section{Dimension 4}
@@ -2150,11 +2150,11 @@ I^{(1)}_{\mr{gauge}} &=  \int \dvol \left( - (\lambda_{1,0}, A_{1,0}^*) + \frac 
 I^{(1)}_{\mr{matter}} &=  \int \dvol \left( (\phi, \psi_0^*) + \frac 12( \ol \dd_{A_{0,1}} \gamma_{0}, \beta_{2,1}) \right)\\
 I^{(2)}_{\mr{gauge}} &= -\frac{1}{4}\int \dvol (\lambda_0^*)^2.
 \end{align*}
-Here, in terms of the K\"ahler form $\omega$, the volume form is identified as $\dvol = \frac{\omega^2}4$.
+Here, in terms of the K\"ahler form $\omega$, the volume form is identified as $\dvol = \frac{\omega^2}2$.
 
-\begin{prop}[See also \cite{SWchar}]
+\begin{thm}[See also \cite{SWchar}] \label{4d_minimal_twist_thm}
 The minimal twist of 4d $\cN=1$ super Yang-Mills with Lie algebra $\fg$ coupled to the $\cN=1$ chiral multiplet valued in a representation $R$ is equivalent to holomorphic $BF$ theory for the Lie algebra $\fg$ coupled to the holomorphic $\beta\gamma$ system with values in the representation $R$. 
-\end{prop}
+\end{thm}
 
 \begin{proof}
 The proof of this theorem is very similar to the proof of Theorem \ref{thm:10dholomorphictwist}.  
@@ -2270,11 +2270,74 @@ We obtain $\mc N=2$ super Yang-Mills theory on $\RR^4$ by dimensionally reducing
 \vspace{-10pt}
 \paragraph{Fields:}  We can describe the BRST fields of $\mc N=2$ super Yang-Mills with matter valued in the symplectic representation $U$ by restricting the 5d $\mc N=2$ fields from Section \ref{5d_1_section} to representations of the group $\mr O(4)$.  In addition to the ghost $c$, the fields we obtain are
 \begin{itemize}
- \item $\gg$-valued Bosons: a gauge field $A \in \Omega^1(\RR^4; \gg)$, and a pair of scalar fields $(\phi_1,\phi_2) \in \Omega^1(\RR^4; \gg)^2$.
+ \item $\gg$-valued Bosons: a gauge field $A \in \Omega^1(\RR^4; \gg)$, and a pair of scalar fields $(\phi_1,\phi_2) \in \Omega^1(\RR^4; \gg \otimes \wedge^2(W))^2$.
  \item $U$-valued bosons: a $W$-valued scalar field $\phi \in \Omega^0(\RR^4; W \otimes U)$.
- \item $\gg$-valued fermions: a $W$-valued Dirac spinor $\lambda \in \Omega^0(\RR^4; (S_+ \otimes W \oplus S_- \otimes W^*) \otimes \gg)$.
- \item $U$-valued fermions: a Dirac spinor $\psi \in \Omega^0(\RR^4; (S_+\oplus S_-) \otimes U)$.
+ \item $\gg$-valued fermions: a $W$-valued Dirac spinor $\lambda = (\lambda_+ \otimes u_+, \lambda_-\otimes u_-) \in \Omega^0(\RR^4; (S_+ \otimes W \oplus S_- \otimes W^*) \otimes \gg)$.
+ \item $U$-valued fermions: a Dirac spinor $\psi = (\psi_+,\psi_-) \in \Omega^0(\RR^4; (S_+\oplus S_-) \otimes U)$.
 \end{itemize}
+
+\vspace{-10pt}
+\paragraph{Supersymmetry action:} 
+\begin{prop} \label{4d_2_susy_action_prop}
+After reduction to $\mr O(4)$, the 6d $\mc N=(1,0)$ interaction terms $I^{(1)}$ and $I^{(2)}$ become
+\begin{align*}
+I^{(1)}_{\mr{gauge}}(Q) &= \int \dvol \bigg(-( (\Gamma(Q_+,\lambda_-)(w_+,u_-), A^*) + \langle Q_+,\lambda_+\rangle w_+ \wedge u_+, \phi_1^* ) + \\
+&\qquad  + \frac 12 ((\rho(F_A)Q, \lambda_+^*)(u_+^*,  w_+) + \rho(\d_A \phi_2(w_+ \wedge u_-^*))Q, \lambda_-^*) \bigg)\\
+I^{(1)}_{\mr{matter}}(Q) &= \\
+I^{(2)}_{\mr{gauge}}(Q,Q) &= \\
+I^{(2)}_{\mr{matter}}(Q,Q) &= 
+\end{align*}
+if $Q=Q^+ \otimes w^+$ is an element of $S_+ \otimes W$, and
+\begin{align*}
+I^{(1)}_{\mr{gauge}}(Q) &= \\
+I^{(1)}_{\mr{matter}}(Q) &= \\
+I^{(2)}_{\mr{gauge}}(Q,Q) &= \\
+I^{(2)}_{\mr{matter}}(Q,Q) &= 
+\end{align*}
+if $Q=Q^- \otimes W_-$ is an element of $S_- \otimes W^*$.
+\end{prop}
+
+\vspace{-10pt}
+\paragraph{Twisting data:}
+There are three classes of square-zero supercharge in the 3d $\mc N=2$ supersymmetry algebra, distinguished by the ranks of the two summands $(Q_+,Q_-) \in S_+ \otimes W \oplus S_- \otimes W^*$.
+\begin{itemize}
+ \item Rank $(1,0)$ and $(0,1)$ supercharges automatically square to zero.  The corresponding twists are holomorphic, and coincide with the 4d $\mc N=1$ twists discussed above.
+ \item Rank $(2,0)$ and $(0,2)$ supercharges also automatically square to zero. The corresponding twists are topological (the \emph{Donaldson twist}).
+ \item Rank $(1,1)$ square-zero supercharges have three invariant directions.
+\end{itemize}
+
+We will identify the latter two twists as further deformations of the minimal twist, which we can describe similarly to what we saw for $\mc N=1$.
+
+\begin{theorem} \label{4d_2_holo_twist_thm}
+The minimal twist of 4d $\mc N=2$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$ on a Calabi-Yau surface $S$ is perturbatively equivalent to the generalized BF theory coupled to a higher holomorphic symplectic $U$-valued boson, with space of fields $\mr{Map}(S, T^*[1](U/\!/\gg))$.
+\end{theorem}
+
+\begin{proof}
+To show this, we start with the 5d $\mc N=1$ minimal twist from Theorem \ref{5d_holo_twist_theorem} and dimensionally reduce in the de Rham direction $L_{\mr{dR}}$.  That is, we apply Proposition \ref{CS_to_BF_diml_red_prop} to the theorem obtained in Theorem \ref{5d_holo_twist_theorem}.
+\end{proof}
+
+We'll first consider the deformation of the holomorphic twist to the topological twist corresponding to a rank $(2,0)$ supercharge.
+
+\begin{theorem} \label{4d_Donaldson_twist_thm}
+The deformation of the holomorphic twist to the Donaldson twist of 4d $\mc N=2$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$ is perturbatively equivalent, as a 1-parameter family of theories, to the Hodge family $\mr{Map}(S, (U/\!/\gg)_{\mr{Hod}})$.  
+\end{theorem}
+
+\begin{proof}
+Suppose the family of generically rank $(2,0)$ supercharge splits as a sum of two rank 1 supercharges as $Q_{\mr{hol}} + tQ$, where $t \in \CC$.  It is enough to understand the deformation of the holomorphically twisted action functional, which we wrote down in the proof of Theorem \ref{4d_minimal_twist_thm}, by $I^{(1)}(tQ) + I^{(2)}(tQ,tQ)$ using Proposition \ref{4d_2_susy_action_prop}.
+
+\chris{that term should correspond to an isomorphism between the two copies of $\gg \oplus \gg[-1] \oplus U[-1]$ in the BV complex.}
+\end{proof}
+
+We now address the rank $(1,1)$ twist.  This is more straightforward: we can understand it by dimensional reduction from the 5d holomorphic twist, this time in a non-invariant direction.
+
+\begin{theorem} \label{4d_11_twist_thm}
+The rank $(1,1)$ twist of 4d $\mc N=2$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$ on a product $C_1 \times C_2$ of two Riemann surfaces, is perturbatively equivalent to the generalized BF theory coupled to a $U$-valued higher holomorphic boson with space of fields $\mr{Map}(C_1 \times {C_2}_{\mr{dR}}, U/\!/\gg)$.  This theory is generally only $\ZZ/2\ZZ$-graded.
+\end{theorem}
+
+\begin{proof}
+We start with the 5d $\mc N=1$ holomorphic twist, as in Theorem \ref{5d_holo_twist_theorem}, and dimensionally reduce in one of the two non-invariant directions.  That is, we apply Proposition \ref{CS_diml_red_prop}.
+\end{proof}
+
 
 
 \subsection{$\cN=4$ Super Yang-Mills}
