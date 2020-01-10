@@ -38,22 +38,106 @@
 
 \section*{Introduction}
 
+\begin{figure}
+\begin{tikzpicture}[node distance=0.35cm and 0.35cm, text width=1.8cm]
+\node (101) [s16chiral] {Rank $(1, 0)$ $d=5$};
+\node (91) [s16, below=of 101] {Rank $1$ $d=5$};
+\node (82) [s16, below=of 91] {Rank $(1, 1)$ $d=5$};
+\node (81) [s16, left=of 82] {Rank $(1, 0)$ $d=4$};
+\node (825) [right=of 82] {};
+\node (83) [s16, right=of 825] {Rank $(1, 0)$ $d=8$};
+\node (71) [s16, below=of 81] {Rank $1$ $d=4$};
+\node (72) [s16, below=of 82] {Rank $2$ $d=5$};
+\node (73) [s16, below=of 83] {Rank $1$ $d=7$};
+\node (62) [s16, below=of 71] {Rank $(1, 1)$ $d=4$};
+\node (61) [s8, left=of 62] {Rank $(1, 0)$ $d=3$};
+\node (63) [s16, below=of 72] {Rank $(2, 2)$ $d=5$};
+\node (64) [s16chiral, right=of 63] {Rank $(2, 0)$ $d=5$};
+\node (65) [s16, below=of 73, right=of 64] {Rank $(1, 1)$ $d=6$};
+\node (51) [s8, below=of 61] {Rank $1$ $d=3$};
+\node (52) [s16, below=of 62] {Rank $2$ $d=4$};
+\node (53) [s16, below=of 63] {Rank $4$ $d=5$};
+\node (54) [s16, below=of 64] {Rank $2$ $d=5$};
+\node (42) [s8, below=of 51] {Rank $(1, 1)$ $d=3$};
+\node (41) [s4, left=of 42] {Rank $(1, 0)$ $d=2$};
+\node (43) [s16, right=of 42] {Rank $(2, 2)$ $d=4$};
+\node (44) [s16, right=of 43] {Rank $(2, 1)$ $d=4$};
+\node (45) [s8, right=of 44] {Rank $(2, 0)$ $d=4$};
+\node (31) [s4, below=of 41] {Rank $1$ $d=2$};
+\node (32) [s8, below=of 42] {Rank $2$ $d=3$};
+\node (22) [s4, below=of 31] {Rank $(1, 1)$ $d=2$};
+\node (21) [s2chiral, left=of 22] {Rank $(1, 0)$ $d=1$};
+
+\draw[arrow] (101) -- (91);
+\draw[arrow] (91) -- (81);
+\draw[arrow] (91) -- (82);
+\draw[arrow] (81) -- (71);
+\draw[arrow] (82) -- (71);
+\draw[arrow] (82) -- (72);
+\draw[arrow] (83) -- (73);
+\draw[arrow] (71) -- (61);
+\draw[arrow] (71) -- (62);
+\draw[arrow] (72) -- (62);
+\draw[arrow] (72) -- (63);
+\draw[arrow] (73) -- (65);
+\draw[arrow] (61) -- (51);
+\draw[arrow] (62) -- (51);
+\draw[arrow] (62) -- (52);
+\draw[arrow] (63) -- (53);
+\draw[arrow] (64) -- (52);
+\draw[arrow] (64) -- (54);
+\draw[arrow] (65) -- (54);
+\draw[arrow] (51) -- (41);
+\draw[arrow] (51) -- (42);
+\draw[arrow] (52) -- (42);
+\draw[arrow] (52) -- (43);
+\draw[arrow] (53) -- (43);
+\draw[arrow] (54) -- (43);
+\draw[arrow] (54) -- (44);
+\draw[arrow] (54) -- (45);
+\draw[arrow] (41) -- (31);
+\draw[arrow] (42) -- (31);
+\draw[arrow] (42) -- (32);
+\draw[arrow] (43) -- (32);
+\draw[arrow] (44) -- (32);
+\draw[arrow] (45) -- (32);
+\draw[arrow] (31) -- (21);
+\draw[arrow] (31) -- (22);
+\draw[arrow] (32) -- (22);
+
+\node (2d) [dimension, left=of 21] {2d};
+\node (3d) [dimension, above=of 2d] {3d};
+\node (4d) [dimension, above=of 3d] {4d};
+\node (5d) [dimension, above=of 4d] {5d};
+\node (6d) [dimension, above=of 5d] {6d};
+\node (7d) [dimension, above=of 6d] {7d};
+\node (8d) [dimension, above=of 7d] {8d};
+\node (9d) [dimension, above=of 8d] {9d};
+\node (10d) [dimension, above=of 9d] {10d};
+\end{tikzpicture}
+\caption{Orbits of square-zero supercharges.}
+\label{fig:superchargeorbits}
+\end{figure}
+
 \part{Supersymmetric Gauge Theory}
 
 \section{The BV-BRST Formalism}
 
-Throughout the paper we will mostly work with a $\ZZ\times\ZZ/2$-grading. \emph{Degree} will refer to the first (cohomological) grading and \emph{odd} or \emph{even} to the second (fermionic) grading. For an element $x$ we denote by $|x|\in\ZZ/2$ the total degree.
+In this section we will set up the homological formalism in which we study classical field theory: the BV-BRST formalism.  Most of the material in this section is not original.  We refer the reader to \chris{refs} for more details.  We will conclude the section by describing a number of fundamental examples of classical field theories that are highly structured: partially holomorphic or topological theories.  We will also discuss the concept of \emph{dimensional reduction} of a classical field theory on $M$ along a fibration $M \to N$.  We will use the idea of dimensional reduction to construct many of the supersymmetric field theories which we will consider in the next section.  
+
+\subsection{Conventions}
+Throughout the paper we will frequently study obects, for instance vector bundles, equipped with a $\ZZ\times\ZZ/2$-grading. \emph{Degree} will refer to the first (cohomological) grading and \emph{odd} or \emph{even} to the second (fermionic) grading.  For an element $x$ we denote by $|x|\in\ZZ/2$ the total degree.
 
 Given a vector bundle $E\rightarrow M$ we denote by $\cE$ the topological vector space of smooth sections of $E$ and $\cE_c$ the topological vector space of smooth compactly supported sections.
-We denote by $\cO(\cE)$ (respectively $\cO(\cE_c)$) the completed algebra of functions on $\cE$ (respectively $\cE_c)$. 
-We denote by $\oloc(\cE)$ the space of local functionals on $\cE$ (see \cite[Definition 4.5.1.1]{Book2}). An element of $\oloc(\cE)$ will be denoted by
+We denote by $\cO(\cE)$ (respectively $\cO(\cE_c)$) the completed algebra of symmetric functions on $\cE$ (respectively $\cE_c)$. 
+We denote by $\oloc(\cE)$ the space of local functionals on $\cE$ (see \cite[Definition 4.5.1.1]{Book2}). An element of $\oloc(\cE)$ will be denoted symbolically by an expression of the form
 \[\int_M f (\phi, \phi', \dots),\]
 where $f$ is a density on $M$ depending on infinite jets of sections of $E$. Note, however, that the integral here is a formal symbol. 
 The space of local functionals can be viewed as a subspace
 \[
 \oloc(\cE) \subset \cO(\cE_c)
 \]
-where we the integral symbol makes sense in earnest on sections which are compactly supported.
+where the integral symbol makes sense in earnest when applied to sections which are compactly supported.
 We denote by $\oloc^+(\cE)\subset \oloc(\cE)$ the subspace of local functionals which are at least cubic.
 
 Given two vector bundles $E, F$ on $M$ we can also make sense of the space of local functionals from $E$ to $F$.
@@ -67,8 +151,10 @@ There is a natural Lie bracket on ${\rm Fun}_{\rm loc}(\cE, \cE)$ and a canonica
 
 \subsection{Classical BV Theories}
 
+The classical BV (Batalin-Vilkovisky) formalism \cite{BatalinVilkovisky} is a model for classical field theory from the Lagrangian perspective.  In brief \chris{...}
+
 \begin{definition}
-A \defterm{free BV theory} on a manifold $M$ is the data:
+A \defterm{free BV theory} on a manifold $M$ is the data of:
 \begin{itemize}
 \item a finite rank $\ZZ\times\ZZ/2$-graded vector bundle $E \to M$ equipped with an even differential operator of cohomological degree $+1$
 \[
@@ -93,9 +179,9 @@ We call $\cE$ the \defterm{space of BV fields}. The pairing $\omega$ equips the 
 \{-,-\}\colon \oloc(\cE) \times \oloc(\cE) \to \oloc(\cE) .
 \]
 This bracket is of cohomological degree $+1$. 
-To define the bracket, first note that there is a linear map
+We will now explain how to define the BV bracket.  First note that there is a linear map
 \[
-\d_{dR} : \oloc(\cE) \to {\rm Fun}_{\rm loc}(\cE, \cE^!) 
+\d_{\mr{dR}} : \oloc(\cE) \to {\rm Fun}_{\rm loc}(\cE, \cE^!) 
 \]
 defined as follows. 
 A local functional $F \in  \oloc(\cE)$ can be written as an equivalence class of a sum of densities of the form
@@ -119,7 +205,7 @@ Define the symmetric multilinear map
 Integrating by parts, we see that for any $(n-1)$-tuple $\phi_1, \ldots, \phi_{n-1} \in \cE_c$ that the linear functional $(\d_{dR} F) (\phi_1,\ldots, \phi_{n-1})$ is an element of $\cE^!$. 
 This implies that $\d_{dR} F \in {\rm Fun}_{\rm loc}(\cE, \cE^!)$.
 
-The non-degenerate pairing $\omega$ determines a bundle isomorphism $\omega : E \cong E^! [-1]$ and hence an isomorphism of local functions
+The non-degenerate pairing $\omega$ determines a bundle isomorphism $\omega \colon E \cong E^! [-1]$ and hence an isomorphism of local functions
 \[
 \omega : {\rm Fun}_{\rm loc}(\cE, \cE^!) \cong {\rm Fun}_{\rm loc}(\cE, \cE[1]) .
 \]
@@ -142,6 +228,7 @@ as well as the graded Jacobi identity.
 This bracket together wtih $Q_{\mr{BV}}$ endows $\oloc(\cE)[-1]$ with the structure of a dg Lie algebra. 
 Since the space of local functionals is not an algebra, the bracket does not satisfy any type of Leibniz rule. 
 
+Now, we will include interactions in the BV picture. 
 
 \begin{definition}
 A \defterm{classical BV field theory} (or simply, classical field theory) is a free BV theory $(E, Q, \omega)$ equipped with an even functional
@@ -156,17 +243,17 @@ the BV action of the theory.
 
 The local functional $S$ satisfies the {\em classical master equation} \[\{S, S\} = 0.\] 
 
-In fact, given a degree $(-1)$ nondegenerate pairing $\omega$ on $E$, prescribing the data of a classical field theory (namely $Q, I$ satisfying the Maurer-Cartan equation) is equivalent to prescribing a local functional $S \in \oloc(\cE)$ satisfying the classical master equation.
+In fact, given a degree $(-1)$ nondegenerate pairing $\omega$ on $E$, prescribing the data of a classical field theory (namely a pair $Q_{\mr{BV}}, I$ satisfying the Maurer-Cartan equation) is equivalent to prescribing a local functional $S \in \oloc(\cE)$ that is at least quadratic and satisfies the classical master equation.
 The operator $Q_{\mr{BV}}$ is the BV bracket with the quadratic part of the BV action $S$, and the cubic and higher terms in $S$ coincide with $I$.
 
-Because of this, we will sometimes refer to $(E, S, \omega)$ as the data of a classical field theory.
+Because of this, we will sometimes refer to the triple $(E, S, \omega)$ instead $(E, Q_{\mr{BV}, I, \omega)$ as the data of a classical field theory.
 
 \begin{remark}
 We will also consider \defterm{$\ZZ/2$-graded classical field theories} which are defined as before, but where $E$ has only a single $\ZZ/2$-grading and, correspondigly, $Q_{\mr{BV}}$ is simply an odd operator.
 \end{remark}
 
 \begin{remark}
-The data of a classical BV theory can be equivalently encoded in an elliptic $L_\infty$ algebra $L=E[-1]$ equipped with a cyclic structure, i.e. a symplectic isomorphism $L\cong L^![-3]$.
+The data of a classical BV theory can be equivalently encoded in an elliptic $L_\infty$ algebra $L=E[-1]$ equipped with a cyclic structure, i.e. a symplectic isomorphism $L\cong L^![-3]$. \chris{todo: add references}
 \end{remark}
 
 Next, we formulate the notion of an equivalence of classical BV theories. 
@@ -1503,86 +1590,7 @@ From Proposition \ref{prop:twistdimensionalreduction} we get that the holomorphi
 \end{proof}
 
 %\begin{landscape}
-\begin{figure}
-\begin{tikzpicture}[node distance=0.35cm and 0.35cm, text width=1.8cm]
-\node (101) [s16chiral] {Rank $(1, 0)$ $d=5$};
-\node (91) [s16, below=of 101] {Rank $1$ $d=5$};
-\node (82) [s16, below=of 91] {Rank $(1, 1)$ $d=5$};
-\node (81) [s16, left=of 82] {Rank $(1, 0)$ $d=4$};
-\node (825) [right=of 82] {};
-\node (83) [s16, right=of 825] {Rank $(1, 0)$ $d=8$};
-\node (71) [s16, below=of 81] {Rank $1$ $d=4$};
-\node (72) [s16, below=of 82] {Rank $2$ $d=5$};
-\node (73) [s16, below=of 83] {Rank $1$ $d=7$};
-\node (62) [s16, below=of 71] {Rank $(1, 1)$ $d=4$};
-\node (61) [s8, left=of 62] {Rank $(1, 0)$ $d=3$};
-\node (63) [s16, below=of 72] {Rank $(2, 2)$ $d=5$};
-\node (64) [s16chiral, right=of 63] {Rank $(2, 0)$ $d=5$};
-\node (65) [s16, below=of 73, right=of 64] {Rank $(1, 1)$ $d=6$};
-\node (51) [s8, below=of 61] {Rank $1$ $d=3$};
-\node (52) [s16, below=of 62] {Rank $2$ $d=4$};
-\node (53) [s16, below=of 63] {Rank $4$ $d=5$};
-\node (54) [s16, below=of 64] {Rank $2$ $d=5$};
-\node (42) [s8, below=of 51] {Rank $(1, 1)$ $d=3$};
-\node (41) [s4, left=of 42] {Rank $(1, 0)$ $d=2$};
-\node (43) [s16, right=of 42] {Rank $(2, 2)$ $d=4$};
-\node (44) [s16, right=of 43] {Rank $(2, 1)$ $d=4$};
-\node (45) [s8, right=of 44] {Rank $(2, 0)$ $d=4$};
-\node (31) [s4, below=of 41] {Rank $1$ $d=2$};
-\node (32) [s8, below=of 42] {Rank $2$ $d=3$};
-\node (22) [s4, below=of 31] {Rank $(1, 1)$ $d=2$};
-\node (21) [s2chiral, left=of 22] {Rank $(1, 0)$ $d=1$};
 
-\draw[arrow] (101) -- (91);
-\draw[arrow] (91) -- (81);
-\draw[arrow] (91) -- (82);
-\draw[arrow] (81) -- (71);
-\draw[arrow] (82) -- (71);
-\draw[arrow] (82) -- (72);
-\draw[arrow] (83) -- (73);
-\draw[arrow] (71) -- (61);
-\draw[arrow] (71) -- (62);
-\draw[arrow] (72) -- (62);
-\draw[arrow] (72) -- (63);
-\draw[arrow] (73) -- (65);
-\draw[arrow] (61) -- (51);
-\draw[arrow] (62) -- (51);
-\draw[arrow] (62) -- (52);
-\draw[arrow] (63) -- (53);
-\draw[arrow] (64) -- (52);
-\draw[arrow] (64) -- (54);
-\draw[arrow] (65) -- (54);
-\draw[arrow] (51) -- (41);
-\draw[arrow] (51) -- (42);
-\draw[arrow] (52) -- (42);
-\draw[arrow] (52) -- (43);
-\draw[arrow] (53) -- (43);
-\draw[arrow] (54) -- (43);
-\draw[arrow] (54) -- (44);
-\draw[arrow] (54) -- (45);
-\draw[arrow] (41) -- (31);
-\draw[arrow] (42) -- (31);
-\draw[arrow] (42) -- (32);
-\draw[arrow] (43) -- (32);
-\draw[arrow] (44) -- (32);
-\draw[arrow] (45) -- (32);
-\draw[arrow] (31) -- (21);
-\draw[arrow] (31) -- (22);
-\draw[arrow] (32) -- (22);
-
-\node (2d) [dimension, left=of 21] {2d};
-\node (3d) [dimension, above=of 2d] {3d};
-\node (4d) [dimension, above=of 3d] {4d};
-\node (5d) [dimension, above=of 4d] {5d};
-\node (6d) [dimension, above=of 5d] {6d};
-\node (7d) [dimension, above=of 6d] {7d};
-\node (8d) [dimension, above=of 7d] {8d};
-\node (9d) [dimension, above=of 8d] {9d};
-\node (10d) [dimension, above=of 9d] {10d};
-\end{tikzpicture}
-\caption{Orbits of square-zero supercharges.}
-\label{fig:superchargeorbits}
-\end{figure}
 %\end{landscape}
 
 % \subsection{Standard Equivalences Between Classical Field Theories}
