@@ -9,7 +9,8 @@
 \newcommand{\matter}{\mathrm{matter}}
 \newcommand{\MU}{\mathrm{MU}}
 \renewcommand{\Re}{\mathrm{Re}}
-\newcommand{\U}{\mathrm{U}}
+%\newcommand{\U}{\mathrm{U}}
+\def\U{\mathrm{U}}
 
 \newcommand{\ham}{/\!\!/}
 
@@ -2633,37 +2634,37 @@ The untwisted fields are given by:
 \item $\fg$-valued bosons: a gauge field $A \in \Omega^1(\RR^2;\fg)$.
 \item $\fg$-valued fermions: a spinor $\lambda \in C^\infty(\RR^2 ; S_- \otimes W_- \otimes \fg)$. 
 \item $R \oplus R^*$-valued scalars: $\phi \in C^\infty(\RR^2 ; R)$ and $\Bar{\phi} \in C^\infty(\RR^2 ; R^*)$;
-\item a pair of $R \oplus R^*$-valued fermions: $\psi \in C^\infty(\RR^2 ; S_+ \otimes R^*)$  and $\Bar{\psi} \in C^\infty(\RR^2 ; S_+ \otimes R^*)$.
+\item a pair of $R \oplus R^*$-valued fermions: $\psi \in C^\infty(\RR^2 ; S_+ \otimes R^*)$  and $\Bar{\psi} \in C^\infty(\RR^2 ; S_+ \otimes R)$.
 \end{itemize}
 Here, $W$ is a complex two-dimensional vector space equipped with a symmetric pairing. 
 Choose the basis $\{u,v\}$ for $W_-$ with pairing given by $\<u, v\> = 1$. 
 
-We will twist by an element $Q = q \otimes w_1 \in S_- \otimes W_-$. 
+We will twist by an element $Q = q \otimes u \in S_- \otimes W_-$. 
 
 The fields decompose as
 \[
 \begin{array} {lllcccccc}
-& &  & {\rm Untwisted} &  {\rm Fermion} & R & {\rm Twisted}  \\
-c & \mapsto & A_{0} \in \Omega^0(\CC ; \fg) & -1 & 0 & 0 & -1 \\
-A & \mapsto & A_{0,1} + A_{1,0} \in \Omega^{0,1}(\CC ; \fg) \oplus \Omega^{1,0}(\CC ; \fg)  & (0,0) & (0,0) & (0,0) & (0,0) \\
-\lambda & \mapsto & \lambda_{0} u + \lambda_{1,0} v \in \Omega^{0}(\CC ; \fg) \oplus \Omega^{1,0}(\CC ; \fg) & (0,0) & (1,1) & (1,-1) & (1,-1) \\
-\phi & \mapsto &  \gamma_0 \in \Omega^0 (\CC ; R) & 0 & 0 & 0 & 0 \\
-\Bar{\phi} & \mapsto & \Bar{\phi} \in \Omega^{0}(\CC ; R^*) & 0 & 0 & 0 & 0 \\
-\psi & \mapsto &  \psi_0 \in \Omega^{0}(\CC ; R^*) & 0 & 1 & -1 & -1 \\
-\Bar{\psi} & \mapsto & \gamma_{0,1} \in \Omega^{0,1}(\CC ; R)  & 0 & 1 & 1 & 1 
+& &  & {\rm Untwisted} & R & {\rm Twisted}  \\
+c & \mapsto & A_{0} \in \Omega^0(\CC ; \fg) & -1 & 0 & -1 \\
+A & \mapsto & A_{0,1} + A_{1,0} \in \Omega^{0,1}(\CC ; \fg) \oplus \Omega^{1,0}(\CC ; \fg)  & (0,0) & (0,0) & (0,0) \\
+\lambda & \mapsto & \lambda_{0} u + \lambda_{1,0} v \in \Omega^{0}(\CC ; \fg) \oplus \Omega^{1,0}(\CC ; \fg) & (0,0) & (1,-1) & (1,-1) \\
+\phi & \mapsto &  \gamma_0 \in \Omega^0 (\CC ; R) & 0 & 0 & 0 \\
+\Bar{\phi} & \mapsto & \Bar{\phi} \in \Omega^{0}(\CC ; R^*) & 0 & 0 & 0 \\
+\psi & \mapsto &  \psi_0 \in \Omega^{0}(\CC ; R^*) & 0 & -1 & -1 \\
+\Bar{\psi} & \mapsto & \gamma_{0,1} \in \Omega^{0,1}(\CC ; R)  & 0 & 1 & 1 
 \end{array}
 \]
 The anti-fields decompose as
 \[
 \begin{array} {lllcccccc}
-& &  & {\rm Untwisted} &  {\rm Fermion} & R & {\rm Twisted}  \\
-c^* & \mapsto & B_{1,1} \in \Omega^{1,1} (\CC ; \fg) & 2 & 0 & 0 & 2 \\
-A^* & \mapsto &  A^*_{0,1} + B_{1,0} \in \Omega^{0,1}(\CC ; \fg) \oplus \Omega^{1,0}(\CC ; \fg)  & (1,1) & (0,0) & (0,0) & (1,1) \\
-\lambda^* & \mapsto &  \lambda^*_{1,1} v + \lambda^*_{0,1} u \in \Omega^{0}(\CC ; \fg) \oplus \Omega^{0,1}(\CC ; \fg)  & (1,1) & (1,1) & (-1,1) & (0,2) \\
-\phi^* & \mapsto &   \beta_{1,1} \in \Omega^{1,1} (\CC ; R^*) & 1 & 0 & 0 & 1 \\
-\Bar{\phi}^* & \mapsto &\Bar{\phi}^* \in \Omega^{1,1}(\CC ; R)  & 1 & 0 & 0 & 1 \\
-\psi & \mapsto &   \psi^*_{1,1} \in \Omega^{1,1}(\CC ; R) & 1 & 1 & 1 & 2 \\
-\Bar{\psi} & \mapsto &  \beta_{1,0} \in \Omega^{1,0}(\CC ; R^*)   & 1 & 1 & -1 & 0 
+& &  & {\rm Untwisted} & R & {\rm Twisted}  \\
+c^* & \mapsto & B_{1,1} \in \Omega^{1,1} (\CC ; \fg) & 2 & 0 & 2 \\
+A^* & \mapsto &  A^*_{0,1} + B_{1,0} \in \Omega^{0,1}(\CC ; \fg) \oplus \Omega^{1,0}(\CC ; \fg)  & (1,1) & (0,0) & (1,1) \\
+\lambda^* & \mapsto &  \lambda^*_{1,1} v + \lambda^*_{0,1} u \in \Omega^{0}(\CC ; \fg) \oplus \Omega^{0,1}(\CC ; \fg)  & (1,1) & (-1,1) & (0,2) \\
+\phi^* & \mapsto &   \beta_{1,1} \in \Omega^{1,1} (\CC ; R^*) & 1 & 0 & 1 \\
+\Bar{\phi}^* & \mapsto &\Bar{\phi}^* \in \Omega^{1,1}(\CC ; R)  & 1 & 0 & 1 \\
+\psi & \mapsto &   \psi^*_{1,1} \in \Omega^{1,1}(\CC ; R) & 1 & 1 & 2 \\
+\Bar{\psi} & \mapsto &  \beta_{1,0} \in \Omega^{1,0}(\CC ; R^*)   & 1 & -1 & 0 
 \end{array}
 \]
 
@@ -2718,9 +2719,42 @@ The untwisted fields are given by:
 \item a pair of $R \oplus R^*$-valued fermions: $\psi \in C^\infty(\RR^2 ; S_+ \otimes R^*)$  and $\Bar{\psi} \in C^\infty(\RR^2 ; S_+ \otimes R^*)$.
 \end{itemize}
 Here, $W_-$ is a complex four-dimensional vector space equipped with a symmetric pairing. 
-Choose the basis $\{w_1,w_2,w_3,w_4\}$ for $W_-$ with pairing given by $\<w_1, w_2\> = 1$. 
+Choose the basis $\{u_1,u_2,v_1,v_2\}$ for $W_-$ with pairing given by $\<u_i, v_j\> = \delta_{ij}$. 
 
 % \cN=(0,8) Super Yang-Mills with matter
+
+\subsection{$\cN=(0,\cN_-)$ Super Yang-Mills with matter}
+\begin{itemize}
+\item $\fg$-valued bosons: a gauge field $A \in \Omega^1(\RR^2;\fg)$.
+\item $\fg$-valued fermions: a spinor $\lambda \in C^\infty(\RR^2 ; S_- \otimes W_- \otimes \fg)$. 
+\end{itemize}
+Choose a splitting $W_- = \CC\{u, v\} \oplus W_-'$ where $\dim(W_-') = \cN_- - 2$.
+
+\[
+\begin{array} {lllcccccc}
+& &  & {\rm Untwisted} & R & {\rm Twisted}  \\
+c & \mapsto & A_{0} \in \Omega^0(\CC ; \fg) & -1 & 0 & -1 \\
+A & \mapsto & A_{0,1} + A_{1,0} \in \Omega^{0,1}(\CC ; \fg) \oplus \Omega^{1,0}(\CC ; \fg)  & (0,0) & (0,0) & (0,0) \\
+\lambda & \mapsto & \lambda_{0} u + \lambda_{1,0} v + \chi \in \Omega^{0}(\CC ; \fg) \oplus \Omega^{1,0}(\CC ; \fg) \oplus C^\infty(\RR^2 ; S_- \otimes W_-' \otimes \fg) & (0,0,0) & (1,-1,0) & (1,-1, 0) \\
+\end{array}
+\]
+
+\[
+\begin{array} {lllcccccc}
+& &  & {\rm Untwisted} & R & {\rm Twisted}  \\
+c^* & \mapsto & B_{1,1} \in \Omega^{1,1}(\CC ; \fg) & -1 & 0 & -1 \\
+A^* & \mapsto & A^*_{0,1} + A^*_{1,0} \in \Omega^{0,1}(\CC ; \fg) \oplus \Omega^{1,0}(\CC ; \fg)  & (0,0) & (0,0) & (0,0) \\
+\lambda^* & \mapsto & \lambda^*_{1,1} v + \lambda^*_{0,1} u + \chi^* \in \Omega^{1,1}(\CC ; \fg) \oplus \Omega^{0,1}(\CC ; \fg) \oplus C^\infty(\RR^2 ; S_+ \otimes W_-' \otimes \fg) & (0,0,0) & (1,-1,0) & (1,-1, 0) \\
+\end{array}
+\]
+
+\begin{align*}
+S_{\mr{gauge}} &= \int \left(-(F^{2, 0}, F^{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2\right) + \frac 12 \left((\lambda_0 , \dbar_{A_{0,1}} \lambda_{1,0}) +(\lambda_{1,0} \wedge \dbar_{A_{0,1}} \lambda_{0}) + (\chi, \sd \dd_{A_{0,1}} \chi) \right)  \\
+S_{\mr{anti}} &= \int \dd_{A_{1, 0}} A_0 \wedge A_{1,0}^* + \ol\dd_{A_{0, 1}} A_0\wedge B_{1,0} + [\lambda_{1,0}, A_0]\wedge \lambda_{0,1}^* +  [\lambda_{0}, A_0]\wedge \lambda_{1,1}^* +B_{1,0} \wedge [A_0, A_{0,1}] + A_{0,1}^* \wedge [A_{0}, A_{1,0}] \\
+&\qquad + \frac{1}{2}[A_0, A_0]A_0^* \\
+I^{(1)}_{\mr{gauge}} &=  \int \left( - (\lambda_{1,0}, A_{0,1}^*) \right)\\
+I^{(2)}_{\mr{gauge}} &= -\frac{1}{4}\int (\lambda_{1,1}^*)^2.
+\end{align*}
 
 \appendix
 
