@@ -34,9 +34,77 @@
 
 \maketitle
 
+\begin{abstract}
+ 
+\end{abstract}
+
 \tableofcontents
 
 \section*{Introduction}
+\begin{table}[!h]
+ \centering
+ \begin{tabular}{c|c|c|c|c}
+ $d$ & $\mc N$ & Twist & Description & Invariant Directions \\
+ \hline
+ \multirow{2}*{10} & \multirow{2}*{$(1,0)$} & \multirow{2}*{Rank $(1,0)$} & Holomorphic Chern-Simons Theory & \multirow{2}*{5 (holomorphic)} \\
+ &&&$\bun_G(\CC^5)$ &\\ \hline
+ \multirow{2}*{9} & \multirow{2}*{1} & \multirow{2}*{Rank 1} & Mixed Chern-Simons Theory & \multirow{2}*{5 (minimal)} \\
+ &&&$\bun_G(\CC^4 \times \RR_{\mr{dR}})$ &\\ \hline
+ \multirow{6}*{8} & \multirow{6}*{1} & \multirow{2}*{Rank $(1,0)$ Pure} & Holomorphic BF Theory & \multirow{2}*{4 (holomorphic)} \\
+ &&& $T^*_{\mr{odd}}\bun_G(\CC^4, BG)$ & \\ \cline{3-5}
+ && \multirow{2}*{Rank $(1,1)$} & Mixed Chern-Simons Theory& \multirow{2}*{5} \\
+ &&& $\bun_G(\CC^3 \times \RR^2_{\mr{dR}})$ & \\ \cline{3-5}
+  && \multirow{2}*{Rank $(1,0)$ Impure} & Perturbatively trivial ($\Spin(7)$ Instanton)& \multirow{2}*{8 (topological)} \\
+ &&& $\bun_G(\CC^4, BG)_\mr{dR}$ & \\ \hline
+  \multirow{6}*{7} & \multirow{6}*{1} & \multirow{2}*{Rank $1$ Pure} & Mixed BF Theory & \multirow{2}*{4 (minimal)} \\
+ &&& $T^*[-1]\bun_G(\CC^3 \times \RR_{\mr{dR}}, BG)$ & \\ \cline{3-5}
+ && \multirow{2}*{Rank $2$} & Mixed Chern-Simons Theory& \multirow{2}*{5} \\
+ &&& $\bun_G(\CC^2 \times \RR^3_{\mr{dR}})$ & \\ \cline{3-5}
+  && \multirow{2}*{Rank $1$ Impure} & Perturbatively trivial ($G_2$ Monopole)& \multirow{2}*{7 (topological)} \\
+ &&& $\bun_G(\CC^3 \times \RR_{\mr{dR}}, BG)_\mr{dR}$ & \\ \hline
+ \multirow{8}*{6} & \multirow{8}*{$(1,1)$} & \multirow{2}*{Rank $(1,0)$} & {Holomorphic BF Theory} & \multirow{2}*{3 (holomorphic)} \\
+ &&& $T^*[-1]\mr{Map}(\CC^3, \gg/\gg)$ & \\ \cline{3-5}
+ && \multirow{2}*{Rank $(1,1)$ special} & {Mixed BF Theory} & \multirow{2}*{4} \\
+ &&& $T^*[-1]\bun_G(\CC^2 \times \RR^2_{\mr{dR}})$ & \\ \cline{3-5}
+ && \multirow{2}*{Rank $(2,2)$} & {Mixed Chern-Simons Theory} & \multirow{2}*{5} \\
+ &&& $\bun_G(\CC \times \RR^2_{\mr{dR}})$ & \\ \cline{3-5}
+ && \multirow{2}*{Rank $(1,1)$ generic} & {Perturbatively trivial (6d Hitchin system)} & \multirow{2}*{6 (topological)} \\
+ &&& $\bun_G(\CC^2 \times \RR^2_{\mr{dR}})_{\mr{dR}}$ & \\ \hline
+ \multirow{8}*{5} & \multirow{8}*{$2$} & \multirow{2}*{Rank $1$} & {Mixed BF Theory} & \multirow{2}*{3 (minimal)} \\
+ &&& $T^*[-1]\mr{Map}(\CC^2 \times \RR_{\mr{dR}}, \gg/\gg)$ & \\ \cline{3-5}
+ && \multirow{2}*{Rank $2$ special} & {Mixed BF Theory} & \multirow{2}*{4} \\
+ &&& $T^*[-1]\bun_G(\CC \times \RR^3_{\mr{dR}})$ & \\ \cline{3-5}
+ && \multirow{2}*{Rank $4$} & {5d Chern-Simons Theory} & \multirow{2}*{5 (topological)} \\
+ &&& $\bun_G(\RR^5_{\mr{dR}})$ & \\ \cline{3-5}
+ && \multirow{2}*{Rank $2$ generic} & {Perturbatively trivial (Haydys-Witten)} & \multirow{2}*{5 (topological)} \\
+ &&& $\bun_G(\CC \times \RR^3_{\mr{dR}})_{\mr{dR}}$ & \\ \hline
+ \multirow{10}*{4} & \multirow{10}*{$4$} & \multirow{2}*{Rank $(1,0)$} & {Holomorphic BF Theory} & \multirow{2}*{2 (holomorphic)} \\
+ &&& $T^*[-1]\higgs_G(\CC^2)$ & \\ \cline{3-5}
+ && \multirow{2}*{Rank $(1,1)$} & Mixed BF Theory & \multirow{2}*{3} \\
+ &&& $T^*[-1]\bun_G(\CC_{\mr{Dol}} \times \RR^2_{\mr{dR}})$ & \\ \cline{3-5}
+ && \multirow{2}*{Rank $(2,2)$ special} & BF Theory (Kapustin-Witten B-model) & \multirow{2}*{4 (topological)} \\
+ &&& $T^*[-1]\flat_G(\RR^4)$ & \\ \cline{3-5}
+ && \multirow{2}*{Rank $(2,1)$} & {Perturbatively trivial} & \multirow{2}*{4 (topological)} \\
+ &&& $\bun_G(\CC_{\mr{Dol}} \times \RR^2_{\mr{dR}})_{\mr{dR}}$ & \\ \cline{3-5}
+ && \multirow{2}*{Rank $(2,0)$} & {Perturbatively trivial (Kapustin-Witten A-Model)} & \multirow{2}*{4 (topological)} \\
+ &&& $\higgs_G(\CC^2)_{\mr{dR}}$ & \\ \hline
+  \multirow{6}*{3} & \multirow{6}*{$8$} & \multirow{2}*{Rank $1$} & {Mixed BF Theory} & \multirow{2}*{2 (minimal)} \\
+ &&& $T^*[-1]\mr{Map}(\CC_{\mr{Dol}} \times \RR_{\mr{dR}}, T^*[2](\gg/\gg))$  & \\ \cline{3-5}
+ && \multirow{2}*{Rank $2$ (B)} & {BF Theory (Rozansky-Witten)} & \multirow{2}*{3 (topological)} \\
+ &&& $T^*[-1]\mr{Map}(\RR^3_{\mr{dR}}, T^*[2](\gg/\gg))$ & \\ \cline{3-5}
+ && \multirow{2}*{Rank $2$ (A)} & {Perturbatively trivial (dual Rozansky-Witten)} & \multirow{2}*{3 (topological)} \\
+ &&& $T^*[-1]\mr{Map}(\CC_{\mr{Dol}} \times \RR_{\mr{dR}}, \gg/\gg)_{\mr{dR}}$ & \\ \hline
+ %\multirow{6}*{2} & \multirow{6}*{$(8,8)$} & \multirow{2}*{Rank $(1,0)$} & {} & \multirow{2}*{1 (holomorphic)} \\
+ %&&& {} & \\ \cline{3-5}
+ %&& \multirow{2}*{Rank $(1,1)$ (B)} & {} & \multirow{2}*{2 (topological)} \\
+ %&&& {} & \\ \cline{3-5}
+ %&& \multirow{2}*{Rank $(1,1)$ (A)} & {} & \multirow{2}*{2 (topological)} \\
+ %&&& {} & \\ \hline
+ \end{tabular}
+ \caption{Twists of Maximally Supersymmetric Pure Yang-Mills Theories with gauge group $G$ (16 supercharges).}
+ \label{table_of_twists_16}
+\end{table}
+
 
 \begin{figure}
 \begin{tikzpicture}[node distance=0.35cm and 0.35cm, text width=1.8cm]
@@ -246,7 +314,7 @@ The local functional $S$ satisfies the {\em classical master equation} \[\{S, S\
 In fact, given a degree $(-1)$ nondegenerate pairing $\omega$ on $E$, prescribing the data of a classical field theory (namely a pair $Q_{\mr{BV}}, I$ satisfying the Maurer-Cartan equation) is equivalent to prescribing a local functional $S \in \oloc(\cE)$ that is at least quadratic and satisfies the classical master equation.
 The operator $Q_{\mr{BV}}$ is the BV bracket with the quadratic part of the BV action $S$, and the cubic and higher terms in $S$ coincide with $I$.
 
-Because of this, we will sometimes refer to the triple $(E, S, \omega)$ instead $(E, Q_{\mr{BV}, I, \omega)$ as the data of a classical field theory.
+Because of this, we will sometimes refer to the triple $(E, S, \omega)$ instead $(E, Q_{\mr{BV}}, I, \omega)$ as the data of a classical field theory.
 
 \begin{remark}
 We will also consider \defterm{$\ZZ/2$-graded classical field theories} which are defined as before, but where $E$ has only a single $\ZZ/2$-grading and, correspondigly, $Q_{\mr{BV}}$ is simply an odd operator.
