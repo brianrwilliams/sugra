@@ -7,8 +7,11 @@
 \newcommand{\Dens}{\mathrm{Dens}}
 \newcommand{\gauge}{\mathrm{gauge}}
 \newcommand{\matter}{\mathrm{matter}}
+\newcommand{\MU}{\mathrm{MU}}
 \renewcommand{\Re}{\mathrm{Re}}
-%\newcommand{\U}{\mathrm{U}}
+\newcommand{\U}{\mathrm{U}}
+
+\newcommand{\ham}{/\!\!/}
 
 \newcommand{\defterm}[1]{\textbf{\emph{#1}}}
 
@@ -246,7 +249,7 @@ The local functional $S$ satisfies the {\em classical master equation} \[\{S, S\
 In fact, given a degree $(-1)$ nondegenerate pairing $\omega$ on $E$, prescribing the data of a classical field theory (namely a pair $Q_{\mr{BV}}, I$ satisfying the Maurer-Cartan equation) is equivalent to prescribing a local functional $S \in \oloc(\cE)$ that is at least quadratic and satisfies the classical master equation.
 The operator $Q_{\mr{BV}}$ is the BV bracket with the quadratic part of the BV action $S$, and the cubic and higher terms in $S$ coincide with $I$.
 
-Because of this, we will sometimes refer to the triple $(E, S, \omega)$ instead $(E, Q_{\mr{BV}, I, \omega)$ as the data of a classical field theory.
+Because of this, we will sometimes refer to the triple $(E, S, \omega)$ instead $(E, Q_{\mr{BV}}, I, \omega)$ as the data of a classical field theory.
 
 \begin{remark}
 We will also consider \defterm{$\ZZ/2$-graded classical field theories} which are defined as before, but where $E$ has only a single $\ZZ/2$-grading and, correspondigly, $Q_{\mr{BV}}$ is simply an odd operator.
@@ -458,7 +461,7 @@ In this section we give some examples of classical field theories we will use. A
 \subsubsection{Generalized BF theory} \label{gen_BF_section}
 
 \begin{definition}
-Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$. The \defterm{generalized $BF$ theory} is the $(-1)$-shifted cotangent bundle of the following classical BRST theory:
+Let $X$ and $Y$ be complex manifolds and $M$ a smooth oriented manifold. Fix an $L_\infty$ algebra $\fg$. The \defterm{generalized $BF$ theory} is the $(-1)$-shifted cotangent bundle of the following classical BRST theory:
 \begin{itemize}
 \item The spacetime is the smooth manifold $X\times Y\times M$.
 
@@ -500,19 +503,38 @@ Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix a complex ve
 \end{definition}
 
 \begin{rmk}
-This is a special case of generalized BF theory:
-the generalized $\beta\gamma$ system is generalized $BF$ theory in the case that the $L_\infty$ aglebra is $\fg = V[-1]$, with trivial $L_\infty$ structure. 
+This is a special case of generalized BF theory: the generalized $\beta\gamma$ system is generalized $BF$ theory in the case that the $L_\infty$ aglebra is $\fg = V[-1]$, with trivial $L_\infty$ structure. 
 \end{rmk}
 
-\brian{Symplectic, non-polarized version needed for 6d N=(1,0).} \chris{following Brian's suggestion I've used the term: holomorphic BF theory coupled to a higher holomorphic symplectic boson, valued in a representation $U$.  If we continue to use that term, we should explain it here.}
+We may also couple a $\beta\gamma$ system to a generalized $BF$ theory as follows.
 
+\begin{example}
+Let $X,Y,M$ be as before. Suppose $\fg$ is a dg Lie algebra and $V$ a dg representation of $\fg$. Consider the dg Lie algebra
+\[\cL = \fg\oplus V[-1]\]
+with the only nontrivial brackets $\fg\otimes \fg\rightarrow \fg$ given by the Lie bracket on $\fg$ and $\fg\otimes V\rightarrow V$ given by the $\fg$-action on $V$. The space of fields in the corresponding generalized BF theory will be denoted by
+\[\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[d] (V / \fg)):=\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[d] \cL),\]
+where $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1$.
+\end{example}
+
+The following is obvious from the definition.
+
+\begin{prop}
+Consider the generalized BF theory on $\RR^{2n_1+2n_2+n_3}$ with the space of BV fields
+\[\cE = \map(\CC^{n_1}\times (\CC^{n_2})_{\mr{Dol}}\times (\RR^{n_3})_{\mr{dR}}, T^*[d] B\fg).\]
+Then it carries an action of $\U(n_1)\times \U(n_2)\times \SO(n_3)$ given by the pullback action on differential forms on $\CC^{n_1}\times \CC^{n_2}\times \RR^{n_3}$.
+\label{prop:BFrotationaction}
+\end{prop}
+
+\begin{remark}
+In fact, the $\SO(n_3)$-action given by the previous proposition extends to a homotopically trivial action in the sense of \cite[Section 2.4]{ElliottSafronov}.
+\end{remark}
 
 \subsubsection{Generalized Chern--Simons theory} \label{gen_CS_section}
 
 The next class of examples of classical BV theories we give are generalizations of Chern-Simons theory. Unlike the example of the generalized BF theory, these theories are not of cotangent type.
 
 \begin{definition}
-Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$. We assume $X$ is equipped with a holomorphic volume form $\Omega_X \in\Omega^{\dim(X), 0}(X)$ and $\fg$ is equipped with a nondegenerate invariant symmetric pairing $\langle-, -\rangle\colon \fg\otimes\fg\rightarrow \CC[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 3]$. The \defterm{generalized Chern--Simons theory} is the following classical BV theory:
+Let $X$ and $Y$ be complex manifolds and $M$ a smooth oriented manifold. Fix an $L_\infty$ algebra $\fg$. We assume $X$ is equipped with a holomorphic volume form $\Omega_X \in\Omega^{\dim(X), 0}(X)$ and $\fg$ is equipped with a nondegenerate invariant symmetric pairing $\langle-, -\rangle\colon \fg\otimes\fg\rightarrow \CC[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 3]$. The \defterm{generalized Chern--Simons theory} is the following classical BV theory:
 \begin{itemize}
 \item The spacetime is the smooth manifold $X\times Y\times M$.
 
@@ -544,6 +566,40 @@ For $Y=M=\pt$, $X$ a Calabi-Yau 3-fold and $\fg$ an ordinary Lie algebra we reco
 \begin{example}
 If $\fh$ is an $L_\infty$ algebra, $\fg = \fh \oplus \fh^*[d-3]$ carries a natural $L_\infty$ structure given by combining the original $L_\infty$ structure on the first term and the coadjoint action of the first term on the second term. The $L_\infty$ algebra $\fg$ carries a natural symmetric pairing of degree $d-3$ given by the obvious pairing between $\fh$ and $\fh^*$. Generalized Chern--Simons theory for $\fg$ in this case recovers the generalized BF theory from Definition \ref{def:generalizedBF}.
 \end{example}
+
+\begin{example}
+Let $X,Y,M$ be as before and denote $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M)$. Suppose $\fg$ is a dg Lie algebra and $V$ is a $\fg$-representation equipped with a $(d-1)$-shifted symplectic structure $V\otimes V\rightarrow  \CC[d- 1]$. Consider the dg Lie algebra
+\[\cL = \fg\oplus V[-1]\oplus \fg^*[d-3]\]
+with the brackets $\fg\otimes \fg\rightarrow \fg$ given by the Lie bracket on $\fg$, $\fg\otimes V\rightarrow V$ given by the $\fg$-action on $V$, $\fg\otimes \fg^*\rightarrow \fg^*$ given by the coadjoint action and $\mu\colon V\otimes V\rightarrow \fg^*[d-1]$ defined by $(\mu(v, w), x)_\fg = ([x, v], w)_V$. The dg Lie algebra $\cL$ carries nondegenerate invariant symmetric pairing of cohomological degree $d-3$ given by pairing $\fg$ and $\fg^*$ and pairing $V$ with itself. The space of fields in the corresponding Chern--Simons theory will be denoted by
+\[\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, V \ham \fg):= \map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B \cL).\]
+
+Note that if $X$ is merely a complex manifold equipped with a square root $K_X^{1/2}$ of the canonical bundle, we may still define the Chern--Simons theory with the bundle of BV fields
+\begin{align*}
+E = &\Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1] \\
+\oplus &\Omega^{0,\bu}_X\otimes K_X^{1/2} \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes V \\
+\oplus &\Omega^{\dim_\CC X,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg^*[d-2]
+\end{align*}
+and the action functional as before.
+\label{ex:CSHamiltonianreduction}
+\end{example}
+
+As for BF theories, the Chern--Simons theory on $\RR^n$ carries a natural rotation action.
+
+\begin{prop}
+Suppose $\fg$ is an $L_\infty$ algebra equipped with a nondegenerate invariant symmetric pairing of degree $n_1+2n_2+n_3-3$. Consider the generalized Chern--Simons theory on $\RR^{2n_1+2n_2+n_3}$ with the space of BV fields
+\[\cE = \map(\CC^{n_1}\times (\CC^{n_2})_{\mr{Dol}}\times (\RR^{n_3})_{\mr{dR}}, B\fg).\]
+Then it carries an action of $\SU(n_1)\times \U(n_2)\times \SO(n_3)$ given by the pullback action on differential forms on $\CC^{n_1}\times \CC^{n_2}\times \RR^{n_3}$.
+\end{prop}
+
+We may slightly enhance the previous proposition if we are in the setting of Example \ref{ex:CSHamiltonianreduction} and we choose a square root of the canonical bundle. Consider the determinant map $\det\colon \U(n)\rightarrow \U(1)$. We define the unitary metalinear group to be
+\[\MU(n) = \U(n)\times_{\U(1)} \U(1),\]
+where $\U(1)\rightarrow \U(1)$ is the map $z\mapsto z^2$. The natural $\U(n)$-action on $\CC^n$ lifts to an $\MU(n)$-action on the bundle of half-densities $K_{\CC^n}^{1/2}\rightarrow \CC^n$.
+
+\begin{prop}
+Suppose $\fg$ is a dg Lie algebra and $V$ a $\fg$-representation equipped with a $(n_1+2n_2+n_3-1)$-shifted symplectic structure. Consider the generalized Chern--Simons theory on $\RR^{2n_1+2n_2+n_3}$ with the space of BV fields
+\[\cE = \map(\CC^{n_1}\times (\CC^{n_2})_{\mr{Dol}}\times (\RR^{n_3})_{\mr{dR}}, V\ham\fg).\]
+Then it carries an action of $\MU(n_1)\times \U(n_2)\times \SO(n_3)$ given by the pullback action on differential forms on $\CC^{n_1}\times \CC^{n_2}\times \RR^{n_3}$.
+\end{prop}
 
 \subsection{Dimensional Reduction} \label{dim_red_section}
 
@@ -688,17 +744,19 @@ Consider a spacetime manifold $M$ which is an affine space over $V_\RR$. Let $\I
 A classical field theory $(E, Q, \omega, I)$ is \defterm{supersymmetric} if $E\rightarrow M$ is an $\ISO(V_\RR)\times G_R$-equivariant vector bundle and the infinitesimal strict action of the translation Lie algebra $V$ on the classical theory is extended to a $\Spin(V_\RR)\times G_R$-equivariant elliptic $L_\infty$ action of the supertranslation Lie algebra $\fA$ on the classical theory.
 \end{definition}
 
-\subsection{Division algebras and minimal supersymmetry}
-\label{sect:divisionalgebras}
+\subsection{Composition algebras and minimal supersymmetry}
+\label{sect:compositionalgebras}
 
-We will now recall a relationship between certain ``minimal'' supersymmetry algebras and division algebras. Our treatment will essentially follow \cite{BaezHuerta}.
+We will now recall a relationship between certain ``minimal'' supersymmetry algebras and composition algebras. Our treatment will essentially follow \cite{BaezHuerta}.
 
-Let $A_\RR$ be a (possibly non-associative) real algebra equipped with an antiinvolution $\sigma\colon A_\RR\rightarrow A_\RR$. We make the following assumptions:
+Let $A_\RR$ be a unital (possibly non-associative) real algebra equipped with an antiinvolution $\sigma\colon A_\RR\rightarrow A_\RR$. We make the following assumptions:
 \begin{enumerate}
 \item The map $\Re(x)=x\mapsto (x + \sigma(x))/2$ defines a projector onto the subspace of $A_\RR$ spanned by the unit.
 
 \item By the previous assumption we have a quadratic form $x\sigma(x)\colon A_\RR\rightarrow \RR$. We assume that it is nondegenerate.
 \end{enumerate}
+
+It is known \cite[Chapter 1.3]{SpringerVeldkamp} that the data of the antiinvolution $\sigma$ may equivalently be encoded in the data of a non-degenerate multiplicative norm $x\mapsto x\sigma(x)$, i.e. $A_\RR$ is a real composition algebra.
 
 For a $2\times 2$-matrix $M$ with entries in $A_\RR$ we define its hermitian adjoint $M^\dagger$ by transposing the matrix and applying $\sigma$ to the entries. We define $V_\RR$ to be the space of $2\times 2$ Hermitian matrices with values in $A_\RR$, so that $\dim(V_\RR) = \dim(A_\RR) + 2$. $V_\RR$ carries a nondegenerate quadratic form given by $M\mapsto -\det(M)$. Moreover, it carries an orthogonal involution $\widetilde{M} = M - \tr(M)\cdot 1$.
 
@@ -711,7 +769,7 @@ Suppose $M$ is a left $A$-module and $N$ a right $A$-module equipped with a nond
 \label{lm:extendpairing}
 \end{lemma}
 
-Let $\Sigma=A\oplus A$ and $\Sigma^* = A\oplus A$ \chris{it's a bit unclear here why they're notated differently}. We have action maps
+Consider two spinorial representations $\Sigma=A\oplus A$ and $\Sigma^* = A\oplus A$. We have action maps
 \[V\otimes \Sigma\rightarrow \Sigma^*,\qquad V\otimes \Sigma^*\rightarrow \Sigma\]
 given, respectively, by
 \[\rho(M)Q = M Q,\qquad \rho(M)Q = \widetilde{M} Q.\]
@@ -758,22 +816,22 @@ which by associativity can be rewritten as
 which is the left-hand side.
 \end{proof}
 
-We will be interested in the following four examples:
+We will be interested in the following examples:
 \begin{enumerate}
 \item (\textbf{3d $\mc N=1$ supersymmetry}) $A_\RR = \RR$. We have $\dim(V) = 3$ and $\Sigma$ is the spin representation of $\Spin(3)$.
 
-\item (\textbf{4d $\mc N=1$ supersymmetry}) $A_\RR = \CC$. We have $A = \CC[x]/(x^2+1)$ with $\sigma(x) = -x$. Moreover, $\dim(V) = 4$ and $\Sigma=S_+\oplus S_-$ is the sum of semi-spin representations.
+\item (\textbf{4d $\mc N=1$ supersymmetry}) We have $A = \CC[x]/(x^2+1)$ with $\sigma(x) = -x$. Moreover, $\dim(V) = 4$ and $\Sigma=S_+\oplus S_-$ is the sum of semi-spin representations. We have two choices: $A_\RR=\CC$ (which equips $V_\RR$ with a metric of Minkowski signature) and $A_\RR=\RR[x]/(x^2-1)$ is the algebra of split-complex numbers (which equips $V_\RR$ with a metric of split signature (2, 2)).
 
-\item (\textbf{6d $\mc N=(1, 0)$ supersymmetry}) $A_\RR = \mathbb{H}$. We have $A=\eend(W_+)$, where $W_+$ is a two-dimensional symplectic vector space with $\sigma$ given by the dual operator. Moreover, $\dim(V) = 6$ and $\Sigma = S_+\oplus W_+$.
+\item (\textbf{6d $\mc N=(1, 0)$ supersymmetry}) We have $A=\eend(W_+)$, where $W_+$ is a two-dimensional symplectic vector space with $\sigma$ given by the dual operator. Moreover, $\dim(V) = 6$ and $\Sigma = S_+\oplus W_+$. We have two choices: $A_\RR = \mathbb{H}$ (which equips $V_\RR$ with a metric of Minkowski signature) and $A_\RR$ is the algebra of split-quaternions (which equips $V_\RR$ with a metric of split signature $(3, 3)$).
 
-\item (\textbf{10d $\mc N=(1, 0)$ supersymmetry}) $A_\RR = \mathbb{O}$. We have $\dim(V) = 10$ and $\Sigma = S_+$ is a semi-spin representation.
+\item (\textbf{10d $\mc N=(1, 0)$ supersymmetry}) We have $\dim(V) = 10$ and $\Sigma = S_+$ is a semi-spin representation. We have two choices: $A_|RR$ is the algebra of octonions (which equips $V_\RR$ with a metric of Minkowski signature) and $A_\RR$ is the algebra of split-octonions (which equips $V_\RR$ with a metric of split signature $(5, 5)$).
 \end{enumerate}
 
 All four examples are alternative, while the first three examples are moreover associative.
 
 \subsection{Two-dimensional chiral supersymmetry}
 
-In the previous section we have related division algebras to minimal supersymmetry algebras in dimensions 3, 4, 6 and 10. In this section we explain a different relationship between division algebras and supersymmetry algebras, this time in the case of 2d $\cN=(\cN_+, 0)$ supersymmetry.
+In the previous section we have related composition algebras to minimal supersymmetry algebras in dimensions 3, 4, 6 and 10. In this section we explain a different relationship between composition algebras and supersymmetry algebras, this time in the case of 2d $\cN=(\cN_+, 0)$ supersymmetry.
 
 Recall that in the case $\dim(V) = 2$ we have two one-dimensional semi-spin representations $S_+, S_-$. Moreover, we have an isomorphism
 \[V\cong S_+^{\otimes 2}\oplus S_-^{\otimes 2}\]
@@ -838,7 +896,7 @@ Indeed, $\Gamma(Q_1, Q_2)$ lies in $S_+^{\otimes 2}\subset V$, but the nonzero C
 \[S_-^{\otimes 2}\otimes (S_+\otimes W)\longrightarrow S_-\otimes W.\]
 \end{proof}
 
-We will now fix an associative algebra $A$ with an antiinvolution $\sigma$ as in Section \ref{sect:divisionalgebras} and set $W = A$. The nondegenerate symmetric bilinear pairing $a_1, a_2\mapsto \Re(a_1\sigma(a_2))$ on $A$ endows $W$ with a pairing. Both $\Sigma$ and $\Sigma^*$ are right $A$-modules and the Clifford actions $V\otimes \Sigma\rightarrow \Sigma^*$ and $V\otimes \Sigma^*\rightarrow \Sigma$ are maps of right $A$-modules.
+We will now fix a composition algebra $A$ with an antiinvolution $\sigma$ as in Section \ref{sect:compositionalgebras} and set $W = A$. The nondegenerate symmetric bilinear pairing $a_1, a_2\mapsto \Re(a_1\sigma(a_2))$ on $A$ endows $W$ with a pairing. Both $\Sigma$ and $\Sigma^*$ are right $A$-modules and the Clifford actions $V\otimes \Sigma\rightarrow \Sigma^*$ and $V\otimes \Sigma^*\rightarrow \Sigma$ are maps of right $A$-modules.
 
 Since $\Sigma$ and $\Sigma^*$ are right $A$-modules, by Lemma \ref{lm:extendpairing} we may extend the scalar spinorial pairing to an $A$-valued pairing $\Sigma\otimes \Sigma^*\rightarrow A$ by
 \[(s_1\otimes q_1, s_2\otimes q_2)^A = (s_1, s_2)\sigma(q_1) q_2.\]
@@ -1281,7 +1339,7 @@ We can further include the action of at least a subalgebra of the algebra of R-s
 
 In this section we describe the coupling of super Yang--Mills theory to matter valued in a $\fg$-representation $P$, i.e. the supersymmetric gauged linear $\sigma$-models. Our description of the supersymmetry of the matter multiplet is inspired by the presentation of the supersymmetric nonlinear $\sigma$-models in \cite[Chapter 3]{DeligneFreed}.
 
-Consider as before $V_\RR$ and a Clifford module $\Sigma\oplus \Sigma^*$ satisfying Assumption \ref{assumption:3psi}. In addition, fix a real associative algebra $A_\RR$ equipped with an antiinvolution $\sigma$ as in Section \ref{sect:divisionalgebras} and denote its complexification by $A$. Suppose $\Sigma\oplus \Sigma^*$ carries a compatible right $A$-module structure. Let $(-, -)^A\colon \Sigma\otimes \Sigma^*\rightarrow A$ be the correspoding $A$-valued pairing given by Lemma \ref{lm:extendpairing}. We make the following additional assumption.
+Consider as before $V_\RR$ and a Clifford module $\Sigma\oplus \Sigma^*$ satisfying Assumption \ref{assumption:3psi}. In addition, fix a real associative composition algebra $A_\RR$ equipped with an antiinvolution $\sigma$ as in Section \ref{sect:compositionalgebras} and denote its complexification by $A$. Suppose $\Sigma\oplus \Sigma^*$ carries a compatible right $A$-module structure. Let $(-, -)^A\colon \Sigma\otimes \Sigma^*\rightarrow A$ be the correspoding $A$-valued pairing given by Lemma \ref{lm:extendpairing}. We make the following additional assumption.
 
 \begin{assumption}
 For $Q_1, Q_2\in\Sigma$ and $Q_3\in\Sigma^*$ we have
