@@ -18,13 +18,13 @@
 \addbibresource{Twist.bib}
 
 \usepackage{pdflscape}
-\usetikzlibrary{shapes.geometric, arrows, positioning}
+\usetikzlibrary{shapes.geometric, arrows, positioning, matrix}
 
-\tikzstyle{s16} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=red!30]
+\tikzstyle{s16} = [rectangle, rounded corners, text centered, innersep=0pt, draw=black,fill=red!30]
 \tikzstyle{s16chiral} = [s16, dashed]
-\tikzstyle{s8} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=orange!30]
-\tikzstyle{s4} = [rectangle, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=yellow!30]
-\tikzstyle{s2chiral} = [rectangle, dashed, rounded corners, minimum width=1.8cm, minimum height=1cm,text centered, draw=black,fill=green!30]
+\tikzstyle{s8} = [rectangle, rounded corners, text centered, draw=black,fill=orange!30]
+\tikzstyle{s4} = [rectangle, rounded corners, text centered, draw=black,fill=yellow!30]
+\tikzstyle{s2chiral} = [rectangle, dashed, rounded corners, text centered, draw=black,fill=green!30]
 \tikzstyle{dimension} = [circle, text centered, text width=0.7cm, minimum height=0.7cm, draw=black]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
@@ -43,9 +43,8 @@
 
 \tableofcontents
 
-\section*{Introduction}
-\clearpage
-\begin{table}[!h]
+\section*{Introduction} 
+\begin{table}[htbp]
  \centering
  \begin{tabular}{c|c|c|c|c}
  $d$ & $\mc N$ & Twist & Description & Invariant Directions \\
@@ -92,14 +91,16 @@
  &&& $\bun_G(\CC_{\mr{Dol}} \times \RR^2_{\mr{dR}})_{\mr{dR}}$ & \\ \cline{3-5}
  && \multirow{2}*{Rank $(2,0)$} & {Perturbatively trivial (Kapustin-Witten A-Model)} & \multirow{2}*{4 (topological)} \\
  &&& $\higgs_G(\CC^2)_{\mr{dR}}$ & \\ \cline{3-5}
-  && \multirow{2}*{Rank $(2,0)$} & {Perturbatively trivial (Generic Kapustin-Witten)} & \multirow{2}*{4 (topological)} \\
- &&& $\flat_G(\CC^2)_{\mr{dR}}$ & \\ \hline
-  \multirow{6}*{3} & \multirow{6}*{$8$} & \multirow{2}*{Rank $1$} & {Mixed BF Theory} & \multirow{2}*{2 (minimal)} \\
+  && \multirow{2}*{Rank $(2,2)$ generic} & {Perturbatively trivial (Generic Kapustin-Witten)} & \multirow{2}*{4 (topological)} \\
+ &&& $\flat_G(\RR^4)_{\mr{dR}}$ & \\ \hline
+  \multirow{8}*{3} & \multirow{8}*{$8$} & \multirow{2}*{Rank $1$} & {Mixed BF Theory} & \multirow{2}*{2 (minimal)} \\
  &&& $T^*[-1]\mr{Map}(\CC_{\mr{Dol}} \times \RR_{\mr{dR}}, T^*[2](\gg/\gg))$  & \\ \cline{3-5}
  && \multirow{2}*{Rank $2$ (B)} & {BF Theory (Rozansky-Witten)} & \multirow{2}*{3 (topological)} \\
  &&& $T^*[-1]\mr{Map}(\RR^3_{\mr{dR}}, T^*[2](\gg/\gg))$ & \\ \cline{3-5}
  && \multirow{2}*{Rank $2$ (A)} & {Perturbatively trivial (dual Rozansky-Witten)} & \multirow{2}*{3 (topological)} \\
- &&& $T^*[-1]\mr{Map}(\CC_{\mr{Dol}} \times \RR_{\mr{dR}}, \gg/\gg)_{\mr{dR}}$ & \\ \hline
+ &&& $T^*[-1]\mr{Map}(\CC_{\mr{Dol}} \times \RR_{\mr{dR}}, \gg/\gg)_{\mr{dR}}$ & \\ \cline{3-5}
+  && \multirow{2}*{Rank $2$ (generic)} & {Perturbatively trivial (generic)} & \multirow{2}*{3 (topological)} \\
+ &&& $T^*[-1]\mr{Map}(\RR^3_{\mr{dR}}, \gg/\gg)_{\mr{dR}}$ & \\ \hline
  %\multirow{6}*{2} & \multirow{6}*{$(8,8)$} & \multirow{2}*{Rank $(1,0)$} & {} & \multirow{2}*{1 (holomorphic)} \\
  %&&& {} & \\ \cline{3-5}
  %&& \multirow{2}*{Rank $(1,1)$ (B)} & {} & \multirow{2}*{2 (topological)} \\
@@ -122,9 +123,9 @@
  &&& $\mr{Map}(\CC^2 \times \RR_{\mr{dR}}, U /\!/G)$ & \\ \hline
  \multirow{6}*{4} & \multirow{6}*{$2$} & \multirow{2}*{Rank $(1,0)$} & {Holomorphic BF Theory} & \multirow{2}*{2 (holomorphic)} \\
  &&& $T^*[-1]\mr{Map}(\CC^2, U /\!/G)$ & \\ \cline{3-5}
- && \multirow{2}*{Rank $(1,1)$} & {Mixed BF Theory coupled to a mixed symplectic boson} & \multirow{2}*{2 (holomorphic)} \\
+ && \multirow{2}*{Rank $(1,1)$} & {Mixed BF Theory coupled to a mixed symplectic boson} & \multirow{2}*{3} \\
  &&& $\mr{Map}(\CC \times \RR^2_{\mr{dR}}, U /\!/G)$ & \\ \cline{3-5}
- && \multirow{2}*{Rank $(2,0)$} & {Perturbatively trivial (Donaldson theory)} & \multirow{2}*{2 (holomorphic)} \\
+ && \multirow{2}*{Rank $(2,0)$} & {Perturbatively trivial (Donaldson theory)} & \multirow{2}*{4 (topological)} \\
  &&& $\mr{Map}(\CC^2, U /\!/G)_{\mr{dR}}$ & \\ \hline
  \multirow{6}*{3} & \multirow{6}*{$4$} & \multirow{2}*{Rank $1$} & {Mixed BF Theory coupled to a mixed symplectic boson} & \multirow{2}*{2 (minimal)} \\
  &&& $T^*[-1]\mr{Map}(\CC \times \RR_{\mr{dR}}, U /\!/G)$  & \\ \cline{3-5}
@@ -137,7 +138,7 @@
  \label{table_of_twists_16}
 \end{table}
 
-\begin{table}[!h]
+\begin{table}[htbp]
  \centering
  \begin{tabular}{c|>{\centering}m{5ex}|c|>{\centering}m{65ex}|c}
  $d$ & $\mc N$ & Twist & Description & Invariant Directions \\
@@ -151,87 +152,148 @@
  \label{table_of_twists_16}
 \end{table}
 
-
-\begin{figure}
-\begin{tikzpicture}[node distance=0.35cm and 0.35cm, text width=1.8cm]
-\node (101) [s16chiral] {Rank $(1, 0)$ $d=5$};
-\node (91) [s16, below=of 101] {Rank $1$ $d=5$};
-\node (82) [s16, below=of 91] {Rank $(1, 1)$ $d=5$};
-\node (81) [s16, left=of 82] {Rank $(1, 0)$ $d=4$};
-\node (825) [right=of 82] {};
-\node (83) [s16, right=of 825] {Rank $(1, 0)$ $d=8$};
-\node (71) [s16, below=of 81] {Rank $1$ $d=4$};
-\node (72) [s16, below=of 82] {Rank $2$ $d=5$};
-\node (73) [s16, below=of 83] {Rank $1$ $d=7$};
-\node (62) [s16, below=of 71] {Rank $(1, 1)$ $d=4$};
-\node (61) [s8, left=of 62] {Rank $(1, 0)$ $d=3$};
-\node (63) [s16, below=of 72] {Rank $(2, 2)$ $d=5$};
-\node (64) [s16chiral, right=of 63] {Rank $(2, 0)$ $d=5$};
-\node (65) [s16, below=of 73, right=of 64] {Rank $(1, 1)$ $d=6$};
-\node (51) [s8, below=of 61] {Rank $1$ $d=3$};
-\node (52) [s16, below=of 62] {Rank $2$ $d=4$};
-\node (53) [s16, below=of 63] {Rank $4$ $d=5$};
-\node (54) [s16, below=of 64] {Rank $2$ $d=5$};
-\node (42) [s8, below=of 51] {Rank $(1, 1)$ $d=3$};
-\node (41) [s4, left=of 42] {Rank $(1, 0)$ $d=2$};
-\node (43) [s16, right=of 42] {Rank $(2, 2)$ $d=4$};
-\node (44) [s16, right=of 43] {Rank $(2, 1)$ $d=4$};
-\node (45) [s8, right=of 44] {Rank $(2, 0)$ $d=4$};
-\node (31) [s4, below=of 41] {Rank $1$ $d=2$};
-\node (32) [s8, below=of 42] {Rank $2$ $d=3$};
-\node (22) [s4, below=of 31] {Rank $(1, 1)$ $d=2$};
-\node (21) [s2chiral, left=of 22] {Rank $(1, 0)$ $d=1$};
-
-\draw[arrow] (101) -- (91);
-\draw[arrow] (91) -- (81);
-\draw[arrow] (91) -- (82);
-\draw[arrow] (81) -- (71);
-\draw[arrow] (82) -- (71);
-\draw[arrow] (82) -- (72);
-\draw[arrow] (83) -- (73);
-\draw[arrow] (71) -- (61);
-\draw[arrow] (71) -- (62);
-\draw[arrow] (72) -- (62);
-\draw[arrow] (72) -- (63);
-\draw[arrow] (73) -- (65);
-\draw[arrow] (61) -- (51);
-\draw[arrow] (62) -- (51);
-\draw[arrow] (62) -- (52);
-\draw[arrow] (63) -- (53);
-\draw[arrow] (64) -- (52);
-\draw[arrow] (64) -- (54);
-\draw[arrow] (65) -- (54);
-\draw[arrow] (51) -- (41);
-\draw[arrow] (51) -- (42);
-\draw[arrow] (52) -- (42);
-\draw[arrow] (52) -- (43);
-\draw[arrow] (53) -- (43);
-\draw[arrow] (54) -- (43);
-\draw[arrow] (54) -- (44);
-\draw[arrow] (54) -- (45);
-\draw[arrow] (41) -- (31);
-\draw[arrow] (42) -- (31);
-\draw[arrow] (42) -- (32);
-\draw[arrow] (43) -- (32);
-\draw[arrow] (44) -- (32);
-\draw[arrow] (45) -- (32);
-\draw[arrow] (31) -- (21);
-\draw[arrow] (31) -- (22);
-\draw[arrow] (32) -- (22);
-
-\node (2d) [dimension, left=of 21] {2d};
-\node (3d) [dimension, above=of 2d] {3d};
-\node (4d) [dimension, above=of 3d] {4d};
-\node (5d) [dimension, above=of 4d] {5d};
-\node (6d) [dimension, above=of 5d] {6d};
-\node (7d) [dimension, above=of 6d] {7d};
-\node (8d) [dimension, above=of 7d] {8d};
-\node (9d) [dimension, above=of 8d] {9d};
-\node (10d) [dimension, above=of 9d] {10d};
+\begin{figure}[hbp]
+\begin{tikzpicture}
+  \matrix (mat) [nodes in empty cells, minimum width=3.5ex, minimum height=3.5ex, column sep=1.8ex,row sep=6ex]{
+   \node (corner) {}; & \node (d10) {10}; & \node (d9) {9}; & \node (d8) {8}; & \node (d7) {7}; & \node (d6) {6}; & \node {$\qquad \quad \ 5$}; && \node (d5) {};& \node {$\qquad \ 4$}; && \node (d4) {}; & &\node (d3) {3}; & \node (d2) {}; &  \\
+  \node {8}; &    &   & \node[s16] (88) {$(1,0)_i$};  &   &   &   &&   &&&&   &&&   \\
+  \node {7}; &    &   &   & \node[s16] (77) {$1_i$};  &   &   &&   &&&&   &&&   \\
+  \node {6}; &    &   &   &   & \node[s16] (66) {$(1,1)_g$};  &   &&   &&&&   &&&   \\
+  \node {5}; & \node[s16] (105) {$(1,0)$};  & \node[s16] (95) {$1$};  & \node[s16] (85) {$(1,1)$};  & \node[s16] (75) {$2$}; & \node[s16]  (65){$(2,2)$};  & \node[s16] (55B) {$4$}; & \node[s16] (55A) {$2_g$};  &   &&&&   &&&   \\
+  \node {4}; &    &   & \node[s16] (84) {$(1,0)_p$};  & \node[s16] (74) {$1_p$};  & \node[s16] (64) {$(1,1)_s$};  & \node[s16] (54) {$2_s$};  && \node[s16] (44B) {$(2,2)_s$}; & \node[s16] (44K) {$(2,1)$}; & \node[s8] (44A) {$(2,0)$}; & \node[s16] (44g) {$(2,2)_g$};  &   &&&   \\
+  \node {3}; &    &   &   &   & \node[s8] (63) {$(1,0)$};  & \node[s8] (53) {$1$};  && \node[s8] (43) {$(1,1)$};  &&&& \node[s8] (33B) {$2_B$}; & \node[s8] (33A) {$2_A$}; &\node[s16] (33g) {$2_g$};  &   \\
+  \node {2}; &    &   &   &   &   &   && \node[s4](42) {$(1,0)$};  &&&& \node[s4] (32) {$1$};  &&   \\
+  \node (i1) {1}; &   &  &  &  &  &   & &   &&& &   && &   \\};
+  
+  \draw[thick] (corner.south west) -- (d2.south west);
+  \draw[thick] (corner.north east) -- (i1.south east);
+  
+  \draw[dotted] (0.4,-7) -- (0.4,7);
+  \draw[dotted] (6.35,-7) -- (6.35,7);
+  \draw[dotted] (-2,-7) -- (-2,7);
+  \draw[dotted] (-3.8,-7) -- (-3.8,7);
+  \draw[dotted] (-4.75,-7) -- (-4.75,7);
+  \draw[dotted] (-6.25,-7) -- (-6.25,7);
+  \draw[dotted] (-7.1,-7) -- (-7.1,7);
+  
+  \draw[arrow] (105) -- (95);
+  \draw[arrow] (95) -- (85);
+  \draw[arrow] (88) -- (77);
+  \draw[arrow] (95) -- (84);
+  \draw[arrow] (85) -- (75);
+  \draw[arrow] (85) -- (74);
+  \draw[arrow] (84) -- (74);
+  \draw[arrow] (77) -- (66);
+  \draw[arrow] (75) -- (65);
+  \draw[arrow] (75) -- (64);
+  \draw[arrow] (74) -- (64);
+  \draw[arrow] (74) -- (63);
+  \draw[arrow] (66) -- (55A);
+  \draw[arrow] (65) -- (55B);
+  \draw[arrow] (65) -- (54);
+  \draw[arrow] (64) -- (54);
+  \draw[arrow] (64) -- (53);
+  \draw[arrow] (63) -- (53);
+  \draw[arrow] (55A) -- (44g);
+  \draw[arrow] (55B) -- (44B);
+  \draw[arrow] (54) -- (44B);
+  \draw[arrow] (54) -- (43);
+  \draw[arrow] (53) -- (43);
+  \draw[arrow] (53) -- (42);
+  \draw[arrow] (44B) -- (33B);
+  \draw[arrow] (44A) -- (33A);
+  \draw[arrow] (44K) -- (33A);
+  \draw[arrow] (44g) -- (33g);
+  \draw[arrow] (43) -- (33B);
+  \draw[arrow] (43) -- (32);
+  \draw[arrow] (42) -- (32);
+  
 \end{tikzpicture}
 \caption{Orbits of square-zero supercharges.}
 \label{fig:superchargeorbits}
 \end{figure}
+
+
+% \begin{figure}
+% \begin{tikzpicture}[node distance=0.35cm and 0.35cm, text width=1.8cm]
+% \node (101) [s16chiral] {Rank $(1, 0)$ $d=5$};
+% \node (91) [s16, below=of 101] {Rank $1$ $d=5$};
+% \node (82) [s16, below=of 91] {Rank $(1, 1)$ $d=5$};
+% \node (81) [s16, left=of 82] {Rank $(1, 0)$ $d=4$};
+% \node (825) [right=of 82] {};
+% \node (83) [s16, right=of 825] {Rank $(1, 0)$ $d=8$};
+% \node (71) [s16, below=of 81] {Rank $1$ $d=4$};
+% \node (72) [s16, below=of 82] {Rank $2$ $d=5$};
+% \node (73) [s16, below=of 83] {Rank $1$ $d=7$};
+% \node (62) [s16, below=of 71] {Rank $(1, 1)$ $d=4$};
+% \node (61) [s8, left=of 62] {Rank $(1, 0)$ $d=3$};
+% \node (63) [s16, below=of 72] {Rank $(2, 2)$ $d=5$};
+% \node (64) [s16chiral, right=of 63] {Rank $(2, 0)$ $d=5$};
+% \node (65) [s16, below=of 73, right=of 64] {Rank $(1, 1)$ $d=6$};
+% \node (51) [s8, below=of 61] {Rank $1$ $d=3$};
+% \node (52) [s16, below=of 62] {Rank $2$ $d=4$};
+% \node (53) [s16, below=of 63] {Rank $4$ $d=5$};
+% \node (54) [s16, below=of 64] {Rank $2$ $d=5$};
+% \node (42) [s8, below=of 51] {Rank $(1, 1)$ $d=3$};
+% \node (41) [s4, left=of 42] {Rank $(1, 0)$ $d=2$};
+% \node (43) [s16, right=of 42] {Rank $(2, 2)$ $d=4$};
+% \node (44) [s16, right=of 43] {Rank $(2, 1)$ $d=4$};
+% \node (45) [s8, right=of 44] {Rank $(2, 0)$ $d=4$};
+% \node (31) [s4, below=of 41] {Rank $1$ $d=2$};
+% \node (32) [s8, below=of 42] {Rank $2$ $d=3$};
+% \node (22) [s4, below=of 31] {Rank $(1, 1)$ $d=2$};
+% \node (21) [s2chiral, left=of 22] {Rank $(1, 0)$ $d=1$};
+% 
+% \draw[arrow] (101) -- (91);
+% \draw[arrow] (91) -- (81);
+% \draw[arrow] (91) -- (82);
+% \draw[arrow] (81) -- (71);
+% \draw[arrow] (82) -- (71);
+% \draw[arrow] (82) -- (72);
+% \draw[arrow] (83) -- (73);
+% \draw[arrow] (71) -- (61);
+% \draw[arrow] (71) -- (62);
+% \draw[arrow] (72) -- (62);
+% \draw[arrow] (72) -- (63);
+% \draw[arrow] (73) -- (65);
+% \draw[arrow] (61) -- (51);
+% \draw[arrow] (62) -- (51);
+% \draw[arrow] (62) -- (52);
+% \draw[arrow] (63) -- (53);
+% \draw[arrow] (64) -- (52);
+% \draw[arrow] (64) -- (54);
+% \draw[arrow] (65) -- (54);
+% \draw[arrow] (51) -- (41);
+% \draw[arrow] (51) -- (42);
+% \draw[arrow] (52) -- (42);
+% \draw[arrow] (52) -- (43);
+% \draw[arrow] (53) -- (43);
+% \draw[arrow] (54) -- (43);
+% \draw[arrow] (54) -- (44);
+% \draw[arrow] (54) -- (45);
+% \draw[arrow] (41) -- (31);
+% \draw[arrow] (42) -- (31);
+% \draw[arrow] (42) -- (32);
+% \draw[arrow] (43) -- (32);
+% \draw[arrow] (44) -- (32);
+% \draw[arrow] (45) -- (32);
+% \draw[arrow] (31) -- (21);
+% \draw[arrow] (31) -- (22);
+% \draw[arrow] (32) -- (22);
+% 
+% \node (2d) [dimension, left=of 21] {2d};
+% \node (3d) [dimension, above=of 2d] {3d};
+% \node (4d) [dimension, above=of 3d] {4d};
+% \node (5d) [dimension, above=of 4d] {5d};
+% \node (6d) [dimension, above=of 5d] {6d};
+% \node (7d) [dimension, above=of 6d] {7d};
+% \node (8d) [dimension, above=of 7d] {8d};
+% \node (9d) [dimension, above=of 8d] {9d};
+% \node (10d) [dimension, above=of 9d] {10d};
+% \end{tikzpicture}
+% \caption{Orbits of square-zero supercharges.}
+% \label{fig:superchargeorbits}
+% \end{figure}
 
 \part{Supersymmetric Gauge Theory}
 
