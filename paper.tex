@@ -865,7 +865,7 @@ and
 \[\Omega^\bullet_{\RR}\cong \underline{\CC}\oplus \underline{\CC} \d x[-1].\]
 Under the pullback map
 \[\Omega^\bullet(\RR; \CC)\rightarrow \Omega^\bullet(\CC)\rightarrow \Omega^{0, \bullet}(\CC)\]
-the integration map $\int_\CC \d z\wedge (-)\colon \Omega^{0, \bullet}(\CC)\rightarrow \CC$ reduces to the integration map $\int_\RR (-)\colon \Omega^{\bullet}(\RR;\CC)\rightarrow \CC$.
+the integration map $\int_\CC \d z\wedge (-)\colon \Omega^{0, \bullet}(\CC)\rightarrow \CC$ reduces to the integration map $\int_\RR (-)\colon \Omega^{\bullet}(\RR;\CC)\rightarrow \CC$. \brian{This is not defined}
 \end{proof}
 
 \section{Supersymmetry} \label{sec: susy}
@@ -2715,20 +2715,20 @@ The untwisted fields are given by:
 \begin{itemize}
 \item $\fg$-valued bosons: a gauge field $A \in \Omega^1(\RR^2;\fg)$.
 \item $\fg$-valued fermions: a spinor $\lambda \in C^\infty(\RR^2 ; S_- \otimes W_- \otimes \fg)$. 
-\item $R \oplus R^*$-valued scalars: $\phi \in C^\infty(\RR^2 ; R)$ and $\Bar{\phi} \in C^\infty(\RR^2 ; R^*)$;
-\item a pair of $R \oplus R^*$-valued fermions: $\psi \in C^\infty(\RR^2 ; S_+ \otimes R^*)$  and $\Bar{\psi} \in C^\infty(\RR^2 ; S_+ \otimes R^*)$.
+\item $W_- \otimes U$-valued scalars: $\phi \in C^\infty(\RR^2 ; W_- \otimes U)$;
+\item $U$-valued fermions: $\psi \in C^\infty(\RR^2 ; S_+ \otimes U)$ .
 \end{itemize}
 Here, $W_-$ is a complex four-dimensional vector space equipped with a symmetric pairing. 
 Choose the basis $\{u_1,u_2,v_1,v_2\}$ for $W_-$ with pairing given by $\<u_i, v_j\> = \delta_{ij}$. 
 
 % \cN=(0,8) Super Yang-Mills with matter
 
-\subsection{$\cN=(0,\cN_-)$ Super Yang-Mills with matter}
+\subsection{$\cN=(0,\cN_-)$ Super Yang-Mills}
 \begin{itemize}
 \item $\fg$-valued bosons: a gauge field $A \in \Omega^1(\RR^2;\fg)$.
 \item $\fg$-valued fermions: a spinor $\lambda \in C^\infty(\RR^2 ; S_- \otimes W_- \otimes \fg)$. 
 \end{itemize}
-Choose a splitting $W_- = \CC\{u, v\} \oplus W_-'$ where $\dim(W_-') = \cN_- - 2$.
+Choose a splitting $W_- = {\rm span}_{\CC} \{u, v\} \oplus W_-'$ where $\dim(W_-') = \cN_- - 2$.
 
 \[
 \begin{array} {lllcccccc}
