@@ -2629,6 +2629,9 @@ where $\omega$ indicates the canonical isomorphism $\omega \colon \wedge^2(W^*) 
 
 \subsection{$\cN=(0,2)$ Super Yang-Mills with matter}
 
+We consider $\cN=(0,2)$ super Yang-Mills coupled to the $\cN=(0,2)$ chiral multiplet with values in a representation $R$. 
+\brian{Should we also compute what happens to the $(0,2)$ Fermi multiplet?}
+
 The untwisted fields are given by:
 \begin{itemize}
 \item $\fg$-valued bosons: a gauge field $A \in \Omega^1(\RR^2;\fg)$.
@@ -2724,6 +2727,7 @@ Choose the basis $\{u_1,u_2,v_1,v_2\}$ for $W_-$ with pairing given by $\<u_i, v
 % \cN=(0,8) Super Yang-Mills with matter
 
 \subsection{$\cN=(0,\cN_-)$ Super Yang-Mills}
+
 \begin{itemize}
 \item $\fg$-valued bosons: a gauge field $A \in \Omega^1(\RR^2;\fg)$.
 \item $\fg$-valued fermions: a spinor $\lambda \in C^\infty(\RR^2 ; S_- \otimes W_- \otimes \fg)$. 
@@ -2751,10 +2755,28 @@ A^* & \mapsto & A^*_{0,1} + A^*_{1,0} \in \Omega^{0,1}(\CC ; \fg) \oplus \Omega^
 \begin{align*}
 S_{\mr{gauge}} &= \int \left(-(F^{2, 0}, F^{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2\right) + \frac 12 \left((\lambda_0 , \dbar_{A_{0,1}} \lambda_{1,0}) +(\lambda_{1,0} \wedge \dbar_{A_{0,1}} \lambda_{0}) + (\chi, \sd \dd_{A_{0,1}} \chi) \right)  \\
 S_{\mr{anti}} &= \int \dd_{A_{1, 0}} A_0 \wedge A_{1,0}^* + \ol\dd_{A_{0, 1}} A_0\wedge B_{1,0} + [\lambda_{1,0}, A_0]\wedge \lambda_{0,1}^* +  [\lambda_{0}, A_0]\wedge \lambda_{1,1}^* +B_{1,0} \wedge [A_0, A_{0,1}] + A_{0,1}^* \wedge [A_{0}, A_{1,0}] \\
-&\qquad + \frac{1}{2}[A_0, A_0]A_0^* \\
+&\qquad + \frac{1}{2}[A_0, A_0]B_{1,1} + [A_0, \chi] \chi^* \\
 I^{(1)}_{\mr{gauge}} &=  \int \left( - (\lambda_{1,0}, A_{0,1}^*) \right)\\
 I^{(2)}_{\mr{gauge}} &= -\frac{1}{4}\int (\lambda_{1,1}^*)^2.
 \end{align*}
+
+
+\begin{thm}[See also \cite{SWchar}] \label{4d_minimal_twist_thm}
+The minimal twist of 2d $\cN=(0,\cN_-)$ super Yang-Mills with Lie algebra $\fg$ is $U(1)$-equivariantly equivalent to holomorphic $BF$ theory on $\CC$ for the Lie algebra $\fg$ coupled to a free fermion system on $\CC$ with values in the representation $\fg \otimes W_-' \cong \fg \otimes \fg \otimes \CC^{\cN_- - 2}$ where $\fg$ acts on the left by the adjoint action. 
+\end{thm}
+\begin{proof}
+First, we integrate out the fields $\lambda_{0}$ and $\lambda_{1,1}^*$ using Proposition \ref{prop:integrateoutfield}.  
+We then observe that the action includes the terms $\int  (\lambda_{1,0} , A_{1,0}^*)$ and  $\int (\phi, \psi_0^*)$.  
+Thus, the two pairs $(\lambda_{1,0}, A_{1,0})$ and $(\phi, \psi_0)$ form BRST doublets, 
+which can be integrated out using Proposition \ref{prop:BRSTdoublet}.  
+
+The twisted theory is therefore perturbatively equivalent to the theory with BV action 
+\begin{align*}
+ S_{\mr{BV}} &= \int \bigg( (B_{1,0} \ol \dd_{A_{0,1}} A_{0})  + (\chi, \sd \dd_{A_{0,1}} \chi) \\ 
+  &\qquad  + [A_{0,1}, A_0]\wedge B_{1,0} + \frac{1}{2}[A_0, A_0]B_{1,1} +  [A_0, \chi] \chi^*  \bigg).
+\end{align*}
+This is indeed the action functional of the required theory, where $A_{0,\bu}, B_{1,\bu}$ comprise the fields of holomorphic $BF$ theory and $\chi$ is the fundamental field for the free fermion system. 
+\end{proof}
 
 \appendix
 
