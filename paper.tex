@@ -568,7 +568,7 @@ Let $(E, Q_{\mr{BV}}, \omega, I)$ be a classical field theory and $G$ is a super
 \begin{itemize}
 \item An action of $G$ on $\cE$ compatible with the $G$-action on $M$.
 
-\item An (elliptic) action $I_\fg$ of its super Lie algebra $\fg$ with $I^{(k)}_\fg = 0$ for $k\geq 2$  \brian{this seems to fail for all our examples.}.
+\item An (elliptic) action $I_\fg$ of its super Lie algebra $\fg$ with $I^{(k)}_\fg = 0$ for $k\geq 2$ 
 \end{itemize}
 These are required to satisfy the following conditions:
 \begin{itemize}
@@ -1513,6 +1513,13 @@ We can further include the action of at least a subalgebra of the algebra of R-s
 \subsection{Matter multiplet}
 \label{sect:mattermultipletSUSY}
 
+\brian{How do we see the various flavors of matter multiplets? For instance, in $2d (0,2)$ there is the Fermi multiplet and the chiral multiplet. 
+Your description only sees the chiral.
+In $2d (0,4)$ there are even more: the hypermultiplet (two $(0,2)$ chirals), the twisted hypermultiplet (the same as the hyper, different $R$-symmetry), the fermi multiplet (two $(0,2)$ fermi multiplets). 
+I'm not sure which your description sees, but I have a hunch it's the $(0,4)$ hypermultiplet. 
+What is the reason for only seeing certain multiplets via this general setup?
+}
+
 In this section we describe the coupling of super Yang--Mills theory to matter valued in a $\fg$-representation $P$, i.e. the supersymmetric gauged linear $\sigma$-models. Our description of the supersymmetry of the matter multiplet is inspired by the presentation of the supersymmetric nonlinear $\sigma$-models in \cite[Chapter 3]{DeligneFreed}.
 
 Consider as before $V_\RR$ and a Clifford module $\Sigma\oplus \Sigma^*$ satisfying Assumption \ref{assumption:3psi}. In addition, fix a real associative composition algebra $A_\RR$ equipped with an antiinvolution $\sigma$ as in Section \ref{sect:compositionalgebras} and denote its complexification by $A$. Suppose $\Sigma\oplus \Sigma^*$ carries a compatible right $A$-module structure. Let $(-, -)^A\colon \Sigma\otimes \Sigma^*\rightarrow A$ be the correspoding $A$-valued pairing given by Lemma \ref{lm:extendpairing}. We make the following additional assumption.
@@ -2338,7 +2345,8 @@ We now take the twist of 6d $\mc N=(1,1)$ super Yang-Mills with 5 invariant dire
 \section{Dimension 4}
 
 \subsection{$\cN=1$ with chiral multiplet matter} 
-There is a minimal supersymmetric field theory with $\cN=1$ supersymmetry consisting of a pure gauge theory coupled to supersymmetric matter depending on a complex representation $R$. 
+We consider $\cN=1$ supersymmetric Yang-Mills for a Lie algebra $\fg$ coupled to supersymmetric matter.
+The matter consists of the $\cN=1$ chiral multiplet valued in a complex representation $R$. 
 
 %The spinorial pairing $(-,-) : S_\pm \otimes S_\pm \to \CC$ induces a pairing between $S_\pm \otimes R$ and $S_{\pm} \otimes R^*$ that we also denote by $(-,-)_R$. 
 
@@ -2629,7 +2637,9 @@ where $\omega$ indicates the canonical isomorphism $\omega \colon \wedge^2(W^*) 
 
 \subsection{$\cN=(0,2)$ Super Yang-Mills with matter}
 
-We consider $\cN=(0,2)$ super Yang-Mills coupled to the $\cN=(0,2)$ chiral multiplet with values in a representation $R$. 
+We consider $\cN=(0,2)$ super Yang-Mills for a Lie algebra $\fg$ coupled to $\cN=(0,2)$ supersymmetric matter. 
+The supersymmetric matter consists of the $\cN = (0,2)$ chiral multiplet with values in a representation $R$. 
+
 \brian{Should we also compute what happens to the $(0,2)$ Fermi multiplet?}
 
 The untwisted fields are given by:
@@ -2713,6 +2723,8 @@ This is indeed the action functional of the required theory, where $A_{0,\bu}, B
 \end{proof}
 
 \subsection{$\cN=(0,4)$ Super Yang-Mills with matter}
+
+\brian{Confused.}
 
 The untwisted fields are given by:
 \begin{itemize}
