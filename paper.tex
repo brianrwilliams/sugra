@@ -9,8 +9,7 @@
 \newcommand{\matter}{\mathrm{matter}}
 \newcommand{\MU}{\mathrm{MU}}
 \renewcommand{\Re}{\mathrm{Re}}
-%\newcommand{\U}{\mathrm{U}}
-\def\U{\mathrm{U}}
+\renewcommand{\U}{\mathrm{U}}
 
 \newcommand{\ham}{/\!\!/}
 
@@ -155,6 +154,7 @@
  \label{table_of_twists_16}
 \end{table}
 
+\clearpage
 \begin{figure}[hbp]
 \begin{tikzpicture}
   \matrix (mat) [nodes in empty cells, minimum width=3.5ex, minimum height=3.5ex, column sep=1.8ex,row sep=6ex]{
@@ -428,7 +428,7 @@ The operator $Q_{\mr{BV}}$ is the BV bracket with the quadratic part of the BV a
 Because of this, we will sometimes refer to the triple $(E, S, \omega)$ instead $(E, Q_{\mr{BV}}, I, \omega)$ as the data of a classical field theory.
 
 \begin{remark}
-We will also consider \defterm{$\ZZ/2$-graded classical field theories} which are defined as before, but where $E$ has only a single $\ZZ/2$-grading and, correspondigly, $Q_{\mr{BV}}$ is simply an odd operator.
+We will also consider \defterm{$\ZZ/2$-graded classical field theories} which are defined as before, but where $E$ has only a single $\ZZ/2$-grading and, correspondingly, $Q_{\mr{BV}}$ is simply an odd operator.
 \end{remark}
 
 \begin{remark}
@@ -442,8 +442,6 @@ A \defterm{morphism} $F\colon (E, Q_{\mr{BV}}, \omega, I) \rightsquigarrow (E', 
 \end{definition}
 
 We will now describe two primitive examples of equivalences of classical field theories which will be useful in simplifying twisted theories. First, we consider the process of integrating out an auxiliary field.
-
-\pavel{Chris, I think your diagrams of BV complexes would fit well here, can you insert them?} \chris{I'm not sure exactly which diagrams you mean.  Can you clarify?}
 
 \begin{prop}
 Fix a volume form $\dvol_M$ on $M$. Suppose $(E, Q, \omega, I)$ is a classical field theory, where $E\cong E_0\oplus (\cO_M\oplus \Dens_M[-1])$ with the symplectic pairing $\omega$ given by a sum of a symplectic pairing $\omega_0$ on $E_0$ and the standard symplectic pairing on the second summand. Denote by $\phi$ a section of $\cO_M$ and by $\phi^*$ a section of $\Dens_M[-1]$. Suppose the BV action is
@@ -468,12 +466,21 @@ S(F(e)) &= S(e, S_1(e), 0) \\
 Finally, $F_1$ is a quasi-isomorphism with quasi-inverse given by the projection $(E,Q) \to (E_0,Q_0)$, therefore our specified morphism is an equivalence.
 \end{proof}
 
+\begin{remark}
+In terms of the classical BV complex, this proposition tells us that given a classical BV complex of the form
+\[\xymatrix{
+\cdots \ar[r] &\mc E_0^0 \ar[r]^{Q_0} \ar[dr] &\mc E_0^1 \ar[r] &\cdots \\
+&\cO_M \ar^{i}[r] \ar[ur] &\dens_M &
+}\]
+where $i$ is the canonical inclusion, we can replace it with a quasi-isomorphic complex consisting of only the first line, as long as we suitably modify the differential $Q_0$ and the Lie structure.
+\end{remark}
+
 We may also remove a trivial BRST doublet.
 
 \begin{prop}
-Suppose $(E, Q, \omega, I)$ is a classical field theory, $F\rightarrow M$ is a graded vector bundle, such that $E\cong E_0\oplus E_1\oplus E_1^![-1]\oplus E_1^!\oplus E_1[-1]$. Denote by $\phi, \phi^*$ sections of $E_1,E_1^![-1]$ and by $\psi, \psi^*$ sections of $E_1^!, E_1[-1]$. Suppose
-\[Q\phi + \{I, \phi\} = \phi - f_\psi \in E_1[-1] ,\qquad Q\psi + \{I, \psi\} = \psi - f_{\phi} \in E_1^![-1],\]
-where $f_\phi$ is independent of $\psi$ and $f_{\psi}$ is independent of $\phi$. Then the theory $(E, Q, \omega, I)$ is perturbatively equivalent to the theory $(E_0, Q_0, \omega_0, I_0)$ with the BV action obtained by setting $\phi = f_\psi, \phi^* = 0,  \psi = f_\phi, \psi^* = 0$ in the original BV action.
+Suppose $(E, Q_{\mr{BV}}, \omega, I)$ is a classical field theory, $F\rightarrow M$ is a graded vector bundle, such that $E\cong E_0\oplus E_1\oplus E_1^![-1]\oplus E_1^!\oplus E_1[-1]$. Denote by $\phi, \phi^*$ sections of $E_1,E_1^![-1]$ and by $\psi, \psi^*$ sections of $E_1^!, E_1[-1]$. Suppose
+\[Q_{\mr{BV}}\phi + \{I, \phi\} = \phi - f_\psi \in E_1[-1] ,\qquad Q\psi + \{I, \psi\} = \psi - f_{\phi} \in E_1^![-1],\]
+where $f_\phi$ is independent of $\psi$ and $f_{\psi}$ is independent of $\phi$. Then the theory $(E, Q_{\mr{BV}}, \omega, I)$ is perturbatively equivalent to the theory $(E_0, Q_0, \omega_0, I_0)$ with the BV action obtained by setting $\phi = f_\psi, \phi^* = 0,  \psi = f_\phi, \psi^* = 0$ in the original BV action.
 \label{prop:BRSTdoublet}
 \end{prop}
 
@@ -488,27 +495,41 @@ S(F(e)) &= S_0(e) + \frac{1}{2} \int_M \omega(f_\psi(e), f_\phi(e) - f_\phi(e)) 
 Again, $F_1$ is a quasi-isomorphism between the classical BV complexes with quasi-inverse given by the projection onto the summand $E_0$.
 \end{proof}
 
+\begin{remark}
+Again, in terms of the classical BV complex, this proposition tells us that given a classical BV complex of the form
+\[\xymatrix{
+\cdots \ar[r] & E_0^{-1}\ar[r] \ar[dr] \ar[ddr] &E_0^0 \ar[r]  &E_0^1 \ar[r] &E_0^2 \ar[r] &\cdots \\
+&&E_1 \ar^{~}[dr] &E_1^! \ar[ur] && \\
+&&E_1^! \ar^{~}[ur] &E_1 \ar[uur] && \\
+}\]
+with the differentials $E_1 \to E_1$ and $E_1^! \to E_1^!$ given by the identity, we can replace it with a quasi-isomorphic complex consisting of only the first line, as long as we suitably modify its differential and Lie structure. \chris{Pavel, is this, and the other remark above, what you wanted me to add?}
+\end{remark}
+
 \subsection{Symmetries in the Classical BV Formalism} \label{symmetry_section}
 
-In this section we define what it means for a (super) Lie algebra to act on a classical field theory. Let $(E, Q_{\mr{BV}},\omega, I)$ be a classical field theory and $\fg$ a super Lie algebra. Consider the graded vector space
+In this section we define what it means for a (super) Lie algebra to act on a classical field theory. Let $(E, Q_{\mr{BV}},\omega, I)$ be a classical field theory and $\fg$ a super Lie algebra.  We will define $\gg$-equivariant local observables in the classical field theory by introducing $\gg$-valued background fields into our classical field theory, and extending the action functional to a functional that involves these background fields, but still satisfies the classical master equation.  We begin by defining an appropriate version of the Chevalley-Eilenberg cochain complex.
+
+\begin{definition}
+The \emph{Chevalley-Eilenberg complex} for the Lie algebra $\gg$, with coefficients in $\oloc(\cE)$, will be defined as follows.  Consider the graded vector space
 \[C^\bullet(\fg, \oloc(\cE)) = \bigoplus_n \hom(\wedge^n \fg, \oloc(\cE))[-n]\]
 \brian{not crazy about the notation $C^\bu(\fg, \oloc(\cE))$ for just the graded vector space before knowing that $\oloc$ is a module.}
 parametrizing multilinear maps $f\colon \fg^{\otimes n}\rightarrow \oloc(\cE)$ which satisfy the antisymmetry property
-\[f(x_1, \dots, x_i, x_{i+1}, \dots, x_n) = -(-1)^{|x_1||x_2|} f(x_1, \dots, x_{i+1}, x_i, \dots, x_n)\]
-where $x_j \in \fg$. 
-We follow the sign conventions of \cite{SafronovCoisoInt}, so the Chevalley--Eilenberg differential on $C^\bullet(\fg, \oloc(\cE))$ is given by the formula
-\[(\d_{CE} f)(x_1, \dots, x_n) = \sum_{i < j}(-1)^{|x_i| \sum_{p=1}^{i-1} |x_p| + |x_j| \sum_{p=1,p\neq i}^{j-1} |x_p| +i+j+|f|} f([x_i, x_j], x_1, \dots, \widehat{x}_i, \dots, \widehat{x}_j, \dots, x_n)\]
-and the degree $+1$ BV bracket by the formula
+\[f(x_1, \dots, x_i, x_{i+1}, \dots, x_n) = (-1)^{|x_1||x_2|+1} f(x_1, \dots, x_{i+1}, x_i, \dots, x_n)\]
+where $x_j \in \fg$.  The Chevalley-Eilenberg differential is given, following the sign conventions of \cite{SafronovCoisoInt}, by the formula
+\[(\d_{CE} f)(x_1, \dots, x_n) = \sum_{i < j}(-1)^{|x_i| \sum_{p=1}^{i-1} |x_p| + |x_j| \sum_{p=1,p\neq i}^{j-1} |x_p| +i+j+|f|} f([x_i, x_j], x_1, \dots, \widehat{x}_i, \dots, \widehat{x}_j, \dots, x_n).\]
+The complex is additionally equipped with a degree $+1$ BV bracket via the formula
 \[\{f, g\}(x_1, \dots, x_{k+l}) = \sum_{\sigma\in S_{k, l}} \mathrm{sgn}(\sigma) (-1)^{\epsilon+\epsilon_1} \{f(x_{\sigma(1)}, \dots, x_{\sigma(k)}), g(x_{\sigma(k+1)}, \dots, x_{\sigma(k+l)})\},\]
 where $S_{k, l}$ is the set of $(k, l)$-shuffles, $\epsilon$ is the usual Koszul sign and
 \[\epsilon_1 = |g|k + \sum_{i=1}^k |x_{\sigma(i)}|(l+|g|).\]
+\end{definition}
+
 The operator $Q_{\mr{BV}}$ on $\oloc(\cE)$ extends $C^\bu(\fg)$-linearly to an operator on $C^\bullet(\fg, \oloc(\cE))$ by the rule
 \[
 (Q_{\mr{BV}} f)(x_1,\ldots, x_n) = Q_{\mr{BV}} f(x_1,\ldots, x_n) 
 \]
-where $f : \fg^{\otimes n} \to \oloc(\cE)$. 
+where $f \colon \fg^{\otimes n} \to \oloc(\cE)$. 
 The differentials $\d_{CE}$ and $Q_{\mr{BV}}$ are compatible in the sense that $(\d_{CE} + Q_{\mr{BV}})^2 = 0$ making $C^\bu(\fg, \oloc(\cE))$ into a cochain complex with total differential $\d_{CE} + Q_{\mr{BV}}$. 
-Via the BV bracket, the shift of this cochain complex $C^\bu(\fg, \oloc(\cE))[-1]$ is a dg Lie algebra.
+Via the BV bracket, the shift of this cochain complex $C^\bu(\fg, \oloc(\cE))[-1]$ is a dg Lie algebra.  This shifted cotangent complex will model equivariant local observables in our classical field theory, but to finish defining the $\gg$ action we must define the equivariant version of the classical interaction.  This is defined as follows.
 
 \begin{definition}
 \label{infinitesimal_action_def}
@@ -516,17 +537,17 @@ Let $(E, Q_{\mr{BV}},\omega, I)$ be a classical field theory.
 \begin{itemize}
 \item[(1)]
 An \defterm{action} of a super Lie algebra $\fg$ on $(E, Q_{\mr{BV}}, \omega, I)$ is an element of cohomological degree zero 
-\[I_\fg = \sum_{k\geq 0} I_{\fg}^{(k)} \in C^\bullet(\fg, \oloc(\cE)),\]
-where $I_\fg^{(k)} : \fg^{\otimes k} \to \oloc(\cE)$, that satisfies the following three conditions:
+\[I_\fg = \sum_{k\geq 0} I_{\fg}^{(k)} \text{ in } C^\bullet(\fg, \oloc(\cE)),\]
+where $I_\fg^{(k)}$ is a multilinear map $\fg^{\otimes k} \to \oloc(\cE)$, that satisfies the following three conditions:
 \begin{itemize}
-\item[(a)] $I_\fg^{(0)} = I$;
-\item[(b)] for each $k \geq 1$ and $x_1, \ldots, x_k \in \fg$ the local functional $I^{(k)}_\fg (x_1,\ldots, x_k)$ is at least quadratic in the fields;
+\item[(a)] $I_\fg^{(0)} = I$.
+\item[(b)] For each $k \geq 1$ and $x_1, \ldots, x_k \in \fg$ the local functional $I^{(k)}_\fg (x_1,\ldots, x_k)$ is at least quadratic in the fields.
 \item[(c)] $I_\fg$ satisfies the Maurer--Cartan equation:
 \[(\d_{CE} + Q_{\mr{BV}}) I_\fg + \frac{1}{2} \{I_\fg, I_\fg\} = 0.\]
 \end{itemize}
 \item[(2)]
 For each $k \geq 1$ there is a decomposition $I_\fg^{(k)} = \sum_{\ell} I_\fg^{(k),\ell}$ where $ I_\fg^{(k),\ell}(x_1,\ldots,x_k) \in \oloc(\cE)$ is $\ell$-linear in the fields $\cE$ for all $x_1,\ldots,x_k \in \fg$.
-An action $I_\fg$ is \defterm{elliptic} if the induced linear differential operator
+An action $I_\fg$ is called \defterm{elliptic} if the induced linear differential operator
 \[
 Q_{\mr{BV}} + \sum_{k \geq 1} \{I_\fg^{(k),2}, -\}
 \]
@@ -560,11 +581,11 @@ By assumption that the Noether current is at least quadratic in the fields, we s
 combining to give $\cE$ the structure of an $L_\infty$-module for $\fg$.
 \end{rmk}
 
-We may also define actions of supergroups on classical field theories.
+We may also define actions of supergroups on classical field theories.  The action of a supergroup $G$ is more data than the action of a super Lie algebra $\gg$: it includes the infinitesimal action of the Lie algebra $\gg$, along with an action of $G$ on the fields exponentiating this infinitesimal action.  That is, we make the following definition (see also \cite[]{Book1} \chris{section}).
 
 \begin{definition}
 \label{group_action_def}
-Let $(E, Q_{\mr{BV}}, \omega, I)$ be a classical field theory and $G$ is a supergroup acting on spacetime $M$. An \defterm{action} of $G$ on $(E, Q_{\mr{BV}}, \omega, I)$ is given by the following data:
+Let $(E, Q_{\mr{BV}}, \omega, I)$ be a classical field theory, and let $G$ be a supergroup acting on spacetime $M$. An \defterm{action} of $G$ on $(E, Q_{\mr{BV}}, \omega, I)$ is given by the following data:
 \begin{itemize}
 \item An action of $G$ on $\cE$ compatible with the $G$-action on $M$.
 
@@ -572,17 +593,18 @@ Let $(E, Q_{\mr{BV}}, \omega, I)$ be a classical field theory and $G$ is a super
 \end{itemize}
 These are required to satisfy the following conditions:
 \begin{itemize}
-\item The $G$-action on $\cE$ preserves the symplectic pairing $\omega$, differential $Q$ and the interaction term $I$.
+\item The $G$-action on $\cE$ preserves the symplectic pairing $\omega$, the differential $Q$ and the interaction term $I$.
 
-\item For every $x\in\fg$, the vector field $X_{{I^{(1)}_\fg}(x)}$ on $\cE$ coincides with the infinitesimal action on $\cE$.
+\item For every $x\in\fg$, the vector field $X_{{I^{(1)}_\fg}(x)}$ on $\cE$ coincides with the infinitesimal action of $\gg$ on $\cE$.
 \end{itemize}
 \end{definition}
 
 \begin{remark}
-While we allow for $L_\infty$ actions of Lie algebras, we only consider strict actions of Lie groups.
+While we allow for $L_\infty$ actions of Lie algebras, we will only consider strict actions of Lie groups in the present work.
 \end{remark}
 
 \subsection{From BRST to BV}
+We will now explain how to build classical BV theories from more traditional data: that of the \emph{usual} fields of a classical field theory, together with the usual action functional and the action of gauge transformations.  These data can be packaged into what's known as a BRST theory, where fermionic fields (ghosts) are introduced to generate the infinitesimal gauge transformations, in the following way.
 
 \begin{definition}
 A \defterm{classical BRST theory} on a manifold $M$ consists of the following data:
@@ -596,6 +618,10 @@ where $Q_{\mr{BRST}}$ is the Chevalley--Eilenberg differential defined by the $L
 \end{definition}
 
 We call $\cF$ the \defterm{space of BRST fields}.
+
+\begin{remark}
+In the most typical examples, the bundle $F$ is concentrated in $\ZZ$-degrees $-1$ and 0.  In this case, sections in degree 0 are thought of as physical fields, and ghosts -- sections in degree $-1$ -- are thought of as generators of the infinitesimal gauge symmetry.  The action of gauge transformations on fields is then encoded by the Lie structure.
+\end{remark}
 
 From a classical BRST theory $(\cF, S_{\mr{BRST}})$, one can construct a classical BV theory as follows. Let $\{\ell_k\}_{k\geq 1}$ be the $L_\infty$ structure maps underlying the local Lie algebra $F[-1]$.
 
@@ -626,15 +652,22 @@ Suppose $(F, S_{\mr{BRST}})$ is a classical BRST theory such that $(\cE, Q)$ def
 
 We refer to the classical BV theory $(E, Q_{\mr{BV}}, \omega, I)$ from the above statement as the \defterm{$(-1)$-shifted cotangent bundle} of $\cF$ and by abuse of notation we often denote it simply by $\cE = T^*[-1] \cF$. In the case $S_{BRST} = 0$ we refer to the theory $T^*[-1] \cF$ as a theory of \defterm{cotangent type}.
 
+\begin{remark}
+In general, multiple BRST theories can give rise to the same BV theory.  A BV theory $(E, Q_{\mr{BV}}, \omega, I)$ is of cotangent type as long as there is \emph{some} $F$ with $S_{\mr{BRST}} = 0$ producing the given theory using the construction above.  Theories of cotangent type can still have interesting, non-trivial action functionals, encoded by the $L_\infty$ structure on $F$.
+\end{remark}
+
 If the fields of the classical BRST theory are denoted by $\phi$, we denote their antifields in the classical BV theory by $\phi^*$, so that
 \[\{\phi(x), \phi^*(y)\} = \{\phi^*(y), \phi(x)\} = \delta(x-y).\]
 \brian{Looks like you're using a bracket we haven't defined. 
-We've only defined brackets on local functionals, but I think when you write $\phi(x)$ you mean a point-like observable, which is far from local.}
+We've only defined brackets on local functionals, but I think when you write $\phi(x)$ you mean a point-like observable, which is far from local.} \chris{I don't think we need to say this so precisely.  I think it's enough to say that a homogeneous splitting $F = \bigoplus_i \Phi_i$ induces a splitting $F^! = \bigoplus_i \Phi_i^!$, and if we denote a general element of the summand $\Phi_i$ by $\phi$ then we will denote a general element of the summand $\Phi_i^!$ by $\phi^*$.}
+
 \subsection{Examples of Classical Field Theories}
 
-In this section we give some examples of classical field theories we will use. All theories we consider in this section are $\ZZ$-graded, i.e. all fields are considered even with respect to the $\ZZ/2$-grading.
+In this section we give some examples of classical field theories we will use in our classification of twisted supersymmetric field theories. All theories we consider in this section are $\ZZ$-graded, i.e. the space $E$ of fields will be completely even with respect to the $\ZZ/2$-grading.
 
 \subsubsection{Generalized BF theory} \label{gen_BF_section}
+
+Our first example will generalize the fundamental example of \emph{BF} theory to a not entirely topological context.  Ordinarily, BF theory describes the classical BRST theory with fields \chris{... todo, include references.}
 
 \begin{definition}
 Let $X$ and $Y$ be complex manifolds and $M$ a smooth oriented manifold. Fix an $L_\infty$ algebra $\fg$. The \defterm{generalized $BF$ theory} is the $(-1)$-shifted cotangent bundle of the following classical BRST theory:
@@ -865,7 +898,7 @@ and
 \[\Omega^\bullet_{\RR}\cong \underline{\CC}\oplus \underline{\CC} \d x[-1].\]
 Under the pullback map
 \[\Omega^\bullet(\RR; \CC)\rightarrow \Omega^\bullet(\CC)\rightarrow \Omega^{0, \bullet}(\CC)\]
-the integration map $\int_\CC \d z\wedge (-)\colon \Omega^{0, \bullet}(\CC)\rightarrow \CC$ reduces to the integration map $\int_\RR (-)\colon \Omega^{\bullet}(\RR;\CC)\rightarrow \CC$. \brian{This is not defined}
+the integration map $\int_\CC \d z\wedge (-)\colon \Omega^{0, \bullet}(\CC)\rightarrow \CC$ reduces to the integration map $\int_\RR (-)\colon \Omega^{\bullet}(\RR;\CC)\rightarrow \CC$. \brian{This is not defined} \chris{is compactly supported enough?  We want to compare pairings.}
 \end{proof}
 
 \section{Supersymmetry} \label{sec: susy}
@@ -920,7 +953,7 @@ Consider a spacetime manifold $M$ which is an affine space over $V_\RR$. Let $\I
 A classical field theory $(E, Q, \omega, I)$ is \defterm{supersymmetric} if $E\rightarrow M$ is an $\ISO(V_\RR)\times G_R$-equivariant vector bundle and the infinitesimal strict action of the translation Lie algebra $V$ on the classical theory is extended to a $\Spin(V_\RR)\times G_R$-equivariant elliptic $L_\infty$ action of the supertranslation Lie algebra $\fA$ on the classical theory.
 \end{definition}
 
-\subsection{Composition algebras and minimal supersymmetry}
+\subsection{Composition algebras and Minimal Supersymmetry}
 \label{sect:compositionalgebras}
 
 We will now recall a relationship between certain ``minimal'' supersymmetry algebras and composition algebras. Our treatment will essentially follow \cite{BaezHuerta}.
@@ -1518,7 +1551,7 @@ Your description only sees the chiral.
 In $2d (0,4)$ there are even more: the hypermultiplet (two $(0,2)$ chirals), the twisted hypermultiplet (the same as the hyper, different $R$-symmetry), the fermi multiplet (two $(0,2)$ fermi multiplets). 
 I'm not sure which your description sees, but I have a hunch it's the $(0,4)$ hypermultiplet. 
 What is the reason for only seeing certain multiplets via this general setup?
-}
+} \chris{Presumably pure $\mc N = (0,N)$ means a $(0,2)$ vector coupled to $N-2$ Fermi multiplets, so some of these are already covered by the classification?  Perhaps your concern is that you want a formalism that allows Fermis that are not adjoint valued?  I don't think the difference between this hyper and twisted hyper is germane here: the proof of supersymmetry is that there is an action of super Poincar\'e, it doesn't involve the action of R-symmetry.}
 
 In this section we describe the coupling of super Yang--Mills theory to matter valued in a $\fg$-representation $P$, i.e. the supersymmetric gauged linear $\sigma$-models. Our description of the supersymmetry of the matter multiplet is inspired by the presentation of the supersymmetric nonlinear $\sigma$-models in \cite[Chapter 3]{DeligneFreed}.
 
@@ -1830,10 +1863,7 @@ By definition 9d $\mc N=1$ super Yang--Mills is obtained by a dimensional reduct
 From Proposition \ref{prop:twistdimensionalreduction} we get that the holomorphic twist of 9d $\mc N=1$ super Yang--Mills is equivalent to a dimensional reduction of the holomorphic twist of 10d $\mc N=(1, 0)$ super Yang--Mills. By Theorem \ref{thm:10dholomorphictwist} the latter theory is equivalent to holomorphic Chern--Simons theory on $\CC^5$, so by Proposition \ref{CS_diml_red_prop} its dimensional reduction is equivalent to the generalized Chern--Simons theory on $\CC^4\times \RR$.
 \end{proof}
 
-%\begin{landscape}
-
-%\end{landscape}
-
+%%%%%%%%%%%%%%%%%%
 % \subsection{Standard Equivalences Between Classical Field Theories}
 % In this section, we will collect some standard lemmas that we'll use to simplify the descriptions of twisted supersymmetric field theories below.
 % 
@@ -1841,7 +1871,6 @@ From Proposition \ref{prop:twistdimensionalreduction} we get that the holomorphi
 % A linear symplectomorphism $F \colon \mc E^\bullet \to \mc E^\bullet$ induces an equivalence of theories between $(\mc E^\bullet, Q, \omega, I)$ and $(\mc E^\bullet, F^*Q, \omega, F^*I)$.
 % \end{lemma}
 % 
-% \brian{I may be optimistic, but shouldn't the lemmas below all follow from the fact that the category we are working with is a Grothendieck abelian category? In any case, I do like that we've stated them clearly.} \chris{I'm not sure what you have in mind (for instance I'm not sure why you would need the Grothendieck condition there), but I think the lemmas below should be formally immediate in this dg category of differentiable cochain complexes setting (like the first one follows in any context where you have an exact sequence $0 \to A \to B \to C \to 0$ and the fact that if $C$ is equivalent to 0 then $A \to B$ is an equivalence, or the same with $A$ and $B \to C$.)}
 % 
 % \begin{lemma} \label{inclusion_and_projection_lemma}
 % Let $(\mc E^\bullet, Q)$ be a cochain complex, and let $(\mc C^\bullet, Q')$ be a contractible cochain complex.
@@ -1936,40 +1965,9 @@ From Proposition \ref{prop:twistdimensionalreduction} we get that the holomorphi
 %  \item To conclude the proof, we only need to apply Lemma \ref{free_int_ss_lemma}.  The morphism of classical field theories that we've constructed induces an equivalence of the $E_1$ pages of the free-to-interacting spectral sequences associated to holomorphically twisted 10d super Yang-Mills theory and holomorphic Chern-Simons theory.  Because the spectral sequences are convergent, there is likewise an equivalence of the $E_\infty$ pages, i.e. an equivalence of classical field theories.
 % \end{enumerate}
 % \end{proof}
-% 
-% The above argument can be applied identically on a general Calabi-Yau 5-fold $X$.
-% \brian{How do we place 10d YM on an arbitrary 5-fold? 
-% Are you using something about sugra?
-% } \chris{Not an arbitrary 5-fold, but just Calabi-Yau.  I'm not thinking of using sugra.  Instead I want to say that a Calabi-Yau 5-fold has a principal $\SU(5)$ frame bundle.  Take the fields to be sections of the associated vector bundles under the appropriate representations, then use the same action functional: the Lagrangian density is $\SU(5)$ invariant and so will define a density on the 5-fold.}
-% 
-% 
-% \subsection{Dimension 9}
-% The 9-dimensional $\mc N=1$ super Yang-Mills theory is obtained by dimensional reduction of $\mc N=1$ super Yang-Mills from $\RR^{10}$ to $\RR^9$.  It has BRST fields given by a ghost, a 9d gauge field $A$, a $\gg$-valued scalar field $\phi$, and a Dirac spinor field $\lambda$.
-% 
-% There is a single non-zero equivalence class of square zero supercharges in 9 dimensions. Such supercharges are minimal (i.e. have 5d image).  They are stabilized by $\SU(4)$.  Like in 10 dimensions, the R-symmetry group is trivial, and so the twisted theory by such a supercharge is only $\ZZ/2\ZZ$-graded.
-% 
-% Let's describe the twist of 9-dimensional $\mc N=1$ theory with respect to such a supercharge.  The relevant fields for this calculation are those component fields which survived the 10d holomorphic twist of Theorem \ref{10d_twist_thm}.  These fields, in the BRST formalism, decompose, under the action of $\SU(4)$ into the following component fields:
-% \begin{align*}
-% B^{10} &= B + A \wedge \d \ol z^5 \in (\Omega^{0,2}(\CC^4; \gg) \oplus \Omega^{0,1}(\CC^4; \gg)) \otimes \Omega^0(\RR_{x^9}) \\
-% A^{10}_{0,1} &= A' + \phi \d \ol z^5 \in (\Omega^{0,1}(\CC^4; \gg) \oplus \Omega^0(\CC^4; \gg)) \otimes \Omega^0(\RR_{x^9})
-% \end{align*}
-% along with the ghost $c$.  We'll describe the twisted action functional using dimensional reduction.
-% 
-% \brian{Where is the one-form in the $\RR$-direction? Are we identifying that with $\phi$?}
-% 
-% \begin{theorem} \label{9d_twist_thm}
-% The minimal twist of 9d super Yang-Mills theory on the product of a Calabi-Yau 4-fold $X_4$ and an oriented 1-manifold $L = \RR$ or $S^1$ is equivalent to mixed Chern-Simons theory on $X_4 \times L_\mr{dR}$.
-% \end{theorem}
-% 
-% \begin{proof}
-% Let's apply Lemma \ref{commuting_twist_and_reduction_lemma} -- the fact that twisting commutes with dimensional reduction.  Choose a representative element $Q$ in the equivalence class of square-zero supercharges which also squares to zero in the 10d $\mc N=(1,0)$ supersymmetry algebra.  According to Lemma \ref{commuting_twist_and_reduction_lemma}, the twist of 9d $\mc N=1$ super Yang-Mills theory by the supercharge $Q$ is equivalent to the dimensional reduction of holomorphic Chern-Simons theory on $X_4 \times C$, where $C = L \times \RR$ is either the curve $\CC$ if $L = \RR$, or $\CC^\times$ if $L = S^1$. 
-% 
-% As such, it's sufficient to observe that mixed Chern-Simons theorem on $X_4 \times L_{\mr{dR}}$ is a dimensional reduction of holomorphic Chern-Simons theory on $X_4 \times C$, which follows by applying Lemma \ref{CS_diml_red_prop}.
-% \end{proof}
-% 
-% \begin{remark}
-% One can, alternatively, prove this theorem using exactly the same methods as Theorem \ref{10d_twist_thm}; the steps that one needs to follow are identical.
-% \end{remark}
+
+
+%%%%%%%%%%%%%%%%%
 
 \section{Dimension 8}
 \vspace{-10pt}
