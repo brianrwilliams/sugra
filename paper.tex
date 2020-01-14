@@ -2267,7 +2267,7 @@ We now start with the twisted theory from Theorem \ref{7d_rank2_twist_thm}, with
 \end{proof}
 
 \section{Dimension 5}
-The 5-dimensional $\mc N=k$ supersymmetry algebra has odd part $\Sigma \iso S \otimes W$, where $S$ is the 4-dimensional spinor representation of $\Spin(5) \iso \Sp(4)$, and where $W$ is a $2k$-dimensional symplectic vector space.  The maximal supersymmetric gauge theory has $\mc N=2$.  However, there are $\mc N=1$ super Yang-Mills theory for every choice $U$ of symplectic representation of the gauge group.
+The 5-dimensional $\mc N=k$ supersymmetry algebra has odd part $\Sigma \iso S \otimes W$, where $S$ is the 4-dimensional spinor representation of $\Spin(5) \iso \Sp(4)$, and where $W$ is a $2k$-dimensional symplectic vector space.  The maximal supersymmetric gauge theory has $\mc N=2$.  However, there are $\mc N=1$ super Yang-Mills theories for every choice $U$ of symplectic representation of the gauge group.
 
 \subsection{$\mc N = 1$ Super Yang-Mills Theory with Matter}  \label{5d_1_section}
 We begin by treating $\mc N=1$ Super Yang-Mills theory with gauge group $G$, with a matter (half) hypermultiplet valued in a symplectic representation $U$.  This is the theory obtained from 6d $\mc N=(1,0)$ super Yang-Mills theory with matter, after dimensional reduction to 5 dimensions.
@@ -2275,7 +2275,7 @@ We begin by treating $\mc N=1$ Super Yang-Mills theory with gauge group $G$, wit
 \vspace{-10pt}
 \paragraph{Fields:} We can describe the BRST fields of $\mc N=1$ super Yang-Mills by restricting the 6d fields from section \ref{6d_10_section} to representations of the group $\mr O(5)$.  In addition to the ghost $c$, the fields we obtain are
 \begin{itemize}
- \item $\gg$-valued bosons: a gauge field $A \in \Omega^1(\RR^5; \gg)$, and a scalar $\phi' \in \Omega^1(\RR^5; \gg)$.
+ \item $\gg$-valued bosons: a gauge field $A \in \Omega^1(\RR^5; \gg)$, and a scalar $\phi' \in \Omega^0(\RR^5; \gg)$.
  \item $U$-valued bosons: a (symplectic) scalar field $\phi \in \Omega^0(\RR^5; W \otimes U)$.
  \item $\gg$-valued fermions: a spinor $\lambda \in \Omega^0(\RR^5; S \otimes W \otimes \gg)$.
  \item $U$-valued fermions: a spinor $\psi \in \Omega^0(\RR^5; S \otimes U)$.
@@ -2342,7 +2342,7 @@ We now take the twist of 6d $\mc N=(1,1)$ super Yang-Mills with 5 invariant dire
  
 \section{Dimension 4}
 
-\subsection{$\cN=1$ with chiral multiplet matter} 
+\subsection{$\cN=1$ with chiral multiplet matter} \label{4d_1_section}
 We consider $\cN=1$ supersymmetric Yang-Mills for a Lie algebra $\fg$ coupled to supersymmetric matter.
 The matter consists of the $\cN=1$ chiral multiplet valued in a complex representation $R$. 
 
@@ -2351,9 +2351,9 @@ The matter consists of the $\cN=1$ chiral multiplet valued in a complex represen
 The field content for the 4-dimensional $\cN=1$ super Yang-Mills theory coupled to chiral matter is given by:
 \begin{itemize}
 \item $\fg$-valued bosons: a gauge field $A \in \Omega^1(\RR^4 ; \fg)$.
-\item $\fg$-valued fermions: $(\lambda_+, \lambda_-) \in \Omega^1(\RR^4 ; S_+ \otimes \fg \oplus S_- \otimes \fg)$.
-\item scalars: $(\Bar{\phi}, \phi) \in C^\infty(\RR^4 ; R \oplus R^*)$.
-\item fermions: $(\psi_-,\psi_+) \in C^\infty(\RR^4 ; S_+ \otimes R \oplus \otimes S_- \otimes R^*)$.
+\item $R$-valued bosons: $(\Bar{\phi}, \phi) \in C^\infty(\RR^4 ; R \oplus R^*)$.
+\item $\fg$-valued fermions: $(\lambda_+, \lambda_-) \in \Omega^0(\RR^4 ; S_+ \otimes \fg \oplus S_- \otimes \fg)$.
+\item $R$-valued fermions: $(\psi_-,\psi_+) \in C^\infty(\RR^4 ; S_+ \otimes R \oplus \otimes S_- \otimes R^*)$.
 \end{itemize}
 
 There is a single non-zero equivalence class of square zero supercharges in $4$-dimensional $\mc N = 1$, which we fix from here on.
@@ -2620,10 +2620,27 @@ where $\omega$ indicates the canonical isomorphism $\omega \colon \wedge^2(W^*) 
 %\]
 
 \section{Dimension 3}
+The 3-dimensional $\mc N=k$ supersymmetry algebra has odd part $\Sigma \iso S \otimes W$, where $S$ is the 2-dimensional spinor representation of $\Spin(3) \iso \SU(2)$, and where $W$ is a $k$-dimensional vector space equipped with a bilinear pairing.  The maximal supersymmetric gauge theory has $\mc N=8$.  However, there are $\mc N=4$ super Yang-Mills theories for every choice $U$ of symplectic representation of the gauge group, and $\mc N=2$ super Yang-Mills theories for every choice $R$ of arbitrary representation of the gauge group.
 
-% \cN=8 Super Yang-Mills
-% \cN=4 Super Yang-Mills with matter in a pseudo-real representation
-% \cN=2 Super Yang-Mills with matter in a complex representation
+\subsection{$\cN = 2$ Super Yang-Mills with Chiral Matter}
+We'll begin with the minimal super Yang-Mills theory that admits non-trivial twists (if $\mc N=1$ there are no square-zero supercharges).  So, fix a gauge group $G$, and a representation $R$.  The 3d $\mc N=2$ super Yang-Mills theory arises by dimensional reduction from $\mc N=1$ super Yang-Mills theory on $\RR^4$ with an $R$-valued chiral multiplet.
+
+\vspace{-10pt}
+\paragraph{Fields:} We can describe the BRST fields of $\mc N=2$ super Yang-Mills by restricting the 4d fields from section \ref{4d_1_section} to representations of the group $\mr O(3)$.  In addition to the ghost $c$, the fields we obtain are
+\begin{itemize}
+ \item $\gg$-valued bosons: $A \in \Omega^1(\RR^3; \gg)$, and a scalar $\phi \in \Omega^0(\RR^3; \gg)$.
+ \item $R$-valued bosons: $(\Bar{\phi}, \phi) \in \Omega^0(\RR^3 ; R \oplus R^*)$.
+ \item $\gg$-valued fermions: $\lambda \otimes u \in \Omega^0(\RR^3 ; S \otimes \gg \otimes W)$.
+ \item $R$-valued fermions: $(\psi_-,\psi_+) \in \Omega^0(\RR^3 ; S \otimes R \oplus \otimes S \otimes R^*)$.
+\end{itemize}
+
+\vspace{-10pt}
+\paragraph{Twisting data:}
+In the $\mc N=2$ supersymmetry algebra there is a unique non-trivial orbit of square zero supercharges, with rank one.  
+
+\subsection{$\cN = 4$ Super Yang-Mills with Hypermultiplet Matter}
+
+\subsection{$\cN = 8$ Super Yang-Mills Theory}
 
 \section{Dimension 2}
 
