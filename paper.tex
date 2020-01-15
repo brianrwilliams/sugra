@@ -135,7 +135,7 @@
  &&& $\mr{Map}(\CC \times \RR_{\mr{dR}}, U \ham G)_{\mr{dR}}$ & \\ \hline
   \end{tabular}
  \caption{Twists of Supersymmetric Yang-Mills Theories with gauge group $G$ with a hypermultiplet valued in symplectic representation $U$ (8 supercharges).}
- \label{table_of_twists_16}
+ \label{table_of_twists_8}
 \end{table}
 
 \begin{table}[htbp]
@@ -149,7 +149,7 @@
  &&&  $T^*[-1]\mr{Map}(\CC \times \RR_{\mr{dR}}, R/G)$ & \\ \hline
   \end{tabular}
  \caption{Twists of Supersymmetric Yang-Mills Theories with gauge group $G$ with a chiral multiplet valued in representation $R$ (4 supercharges).}
- \label{table_of_twists_16}
+ \label{table_of_twists_4}
 \end{table}
 
 \clearpage
@@ -663,7 +663,7 @@ We've only defined brackets on local functionals, but I think when you write $\p
 
 In this section we give some examples of classical field theories we will use in our classification of twisted supersymmetric field theories. All theories we consider in this section are $\ZZ$-graded, i.e. the space $E$ of fields will be completely even with respect to the $\ZZ/2\ZZ$-grading.
 
-\subsubsection{Generalized BF theory} \label{gen_BF_section}
+\subsubsection{Generalized BF Theory} \label{gen_BF_section}
 
 Our first example will generalize the fundamental example of \emph{BF} theory to a not entirely topological context.  Ordinarily, BF theory describes the classical BRST theory with fields \chris{... todo, include references.}
 
@@ -685,8 +685,8 @@ The mapping stack above has a precise meaning in the language of derived algebra
 \end{remark}
 
 Let us unpack the definition. Let $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M)$. Then the bundle of BV fields is
-\[E = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1]\oplus \Omega^{\dim(X),\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M\otimes \fg^*[d-2],\]
-where we denote the two fields by $A$ and $B$. The BV action is
+\[E = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1]\oplus \Omega^{\dim(X),\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M\otimes \fg^*,\]
+\chris{I changed a shift here which I don't think was correct, but someone should double check.} where we denote the two fields by $A$ and $B$. The BV action is
 \[S = \int_{X\times Y\times M} \langle B\wedge (\dbar_X + \dbar_Y + \d_{\dR, M}) A\rangle + \sum_{k\geq 1}\frac{1}{k!} \int_{X\times Y\times M} \langle B\wedge \ell_k(A, \dots, A)\rangle,\]
 where $\langle -, -\rangle$ is the natural pairing between $\fg^*$ and $\fg$ and $\ell_k$ denote the components of the $L_\infty$ structure on $\fg$.
 
@@ -736,7 +736,23 @@ Then it carries an action of $\U(n_1)\times \U(n_2)\times \SO(n_3)$ given by the
 In fact, the $\SO(n_3)$-action given by the previous proposition extends to a homotopically trivial action in the sense of \cite[Section 2.4]{ElliottSafronov}.
 \end{remark}
 
-\subsubsection{Generalized Chern--Simons theory} \label{gen_CS_section}
+Generalized BF theories can be naturally deformed to theories which are perturbatively trivial, but which arise as shadows of non-trivial non-perturbative theories.  These will often appear as topological twists of supersymmetric field theories, the most famous example being the 2d A-model \chris{refer also to the introduction}.  In order to remain within the world of perturbation theory, we will study these theories as deformations families parameterized by a complex parameter $t$.  So at $t=0$ we will recover generalized BF theory.
+
+We will refer to these families as Hodge deformations of generalized BF theory.  The terminology here comes from Simpson's Hodge stack \chris{ref}: if $X$ is a smooth scheme, or more generally a derived Artin stack, one can define a derived stack $X_{\mr{Hod}}$ over $\bb A^1$, where the fiber at $0 \in \bb A^1$ is the Dolbeault stack $X_{\mr{Dol}}$ of $X$, essentially the 1-shifted tangent bundle, and the fiber at a non-zero point is equivalent to the de Rham stack $X_{\mr{dR}}$ of $X$, which has contractible tangent complex.
+
+\begin{definition} \label{Hodge_family_def}
+Consider the generalized BF theory on $X \times Y \times M$ associated to the $L_\infty$ algebra $\fg$, and supposed $\fg$ is equipped with a non-degenerate pairing.  The \emph{Hodge deformation} of this generalized BF theory is the $\CC[t]$ family of classical BV theories on $X \times Y \times M$, with $(E_t, \omega_t, I_t) = (E_{\mr{BF}}, \omega_{\mr{BF}}, I_{\mr{BF}})$ the same data as for generalized BF theory, so 
+\[E_t = \left(\Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1] \right)\oplus \left(\Omega^{\dim(X),\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M\otimes \fg^*\right),\]
+but $Q_{\mr{BV},t} = Q_{\text{BV,BF}} + tQ'$, where $Q'$ is the isomorphism
+\[Q' \colon \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1] \to 
+\Omega^{\dim(X),\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M\otimes \fg^*\]
+induced by the Calabi-Yau structure on $X$ and the non-degenerate pairing on $\fg$. 
+\end{definition}
+
+Using our mapping stack terminology, we will refer to the Hodge deformation of generalized BF theory as
+\[\mr{Map}(X \times Y_{\mr{Dol}} \times M_{\mr{dR}}, B\gg_{\mr{Hod}}).\]
+
+\subsubsection{Generalized Chern--Simons Theory} \label{gen_CS_section}
 The next class of examples of classical BV theories we give are generalizations of Chern-Simons theory. Unlike the example of the generalized BF theory, these theories are not of cotangent type.
 
 \begin{definition}
@@ -901,20 +917,20 @@ the integration map $\int_\CC \d z\wedge (-)\colon \Omega^{0, \bullet}(\CC)\righ
 \end{proof}
 
 \section{Supersymmetry} \label{sec: susy}
+Having set up the formalism behind classical field theories in the BV and BRST formalisms, we will introduce the other main formal ingredient of this paper: the supersymmetry action.  So, we will discuss the classification of supersymmetry algebras, the notion of a supersymmetric field theory, and the idea of a \emph{twist} of a supersymmetric field theory, extending work of the first two authors in \cite{ElliottSafronov}.  We will introduce the classification of supersymmetry algebras using the division algebra perspective of Baez and Huerta \cite{BaezHuerta}, which will be useful for the classification of super Yang-Mills theories in Section \ref{sec:SYM} below.
 
-In this section we recall the framework for supersymmetry following \cite{ElliottSafronov} and \cite{DeligneSpinors}, we refer there for more details.
+\subsection{Supersymmetry Algebras} \label{sec:susyalgebras}
+In this section we will recall the framework for supersymmetry algebras and their classification following Deligne \cite{DeligneSpinors} and our previous work \cite{ElliottSafronov}, we refer there for more details.
 
-\subsection{Supersymmetry algebras}
-
-Let $V_\RR = \RR^n$ endowed with a nondegenerate symmetric bilinear form and $V=V_\RR\otimes_\RR\CC$ its complexification. Consider the Lie algebra $\so(V)$. Let us recall the following facts:
+Let $V_\RR = \RR^n$ endowed with a nondegenerate symmetric bilinear form and let $V=V_\RR\otimes_\RR\CC$ be its complexification. Consider the Lie algebra $\so(V)$. Let us recall the following facts:
 \begin{itemize}
 \item If $n$ is odd, $\so(V)$ has a distinguished fundamental representation called the \defterm{spin} representation $S$.
 
-\item If $n$ is even, $\so(V)$ has a pair of distinguished fundamental representations called the \defterm{semi-spin} representations $S_+, S_-$.
+\item If $n$ is even, $\so(V)$ has a pair of distinguished fundamental representations called the \defterm{semi-spin} representations $S_+$ and $S_-$.
 \end{itemize}
 
 \begin{definition}
-A \defterm{spinorial representation} $\Sigma$ is a sum of spin or semi-spin representations of $\so(V)$.
+A \defterm{spinorial representation} $\Sigma$ is a finite sum of spin or semi-spin representations of $\so(V)$.
 \end{definition}
 
 So, in odd dimensions we have $\Sigma=S\otimes W$ and in even dimensions we have $\Sigma=S_+\otimes W_+\oplus S_-\otimes W_-$, where $W$ denotes a multiplicity space.
@@ -923,7 +939,7 @@ So, in odd dimensions we have $\Sigma=S\otimes W$ and in even dimensions we have
 Fix a spinorial representation $\Sigma$ and a nondegenerate $\so(V)$-equivariant pairing $\Gamma\colon \sym^2(\Sigma)\rightarrow V$. The \defterm{supertranslation Lie algebra} is the $\so(V)$-equivariant super Lie algebra $\fA = \Pi\Sigma\oplus V$ whose only nontrivial bracket is given by $\Gamma$.
 \end{definition}
 
-For a given spinorial representation, the pairing $\Gamma$ is unique up to a scale, so a supertranslation Lie algebra is specified by fixing a spinorial representation. In turn, a spinorial representation is determined by the dimension of the multiplicity space, so we will talk about $\mc{N}$ or $(\mc{N}_+, \mc{N}_-)$ supertranslation Lie algebras, where the numbers are specified as follows:
+For a given spinorial representation, the pairing $\Gamma$ is typically unique up to a scale, so a supertranslation Lie algebra is specified by fixing a spinorial representation. In turn, a spinorial representation is determined by the dimension of the multiplicity space, so we will talk about $\mc{N}$ or $(\mc{N}_+, \mc{N}_-)$ supertranslation Lie algebras, where the numbers are specified as follows.
 \begin{itemize}
 \item If $n\equiv 0, 1, 3, 4\pmod 8$, we let $\mc{N} = \dim(W)$.
 
@@ -945,17 +961,17 @@ Fix the following data:
 
 Note that the supertranslation Lie algebra $\fA$ is a $\Spin(V_\RR)\times G_R$-equivariant super Lie algebra.
 
-Consider a spacetime manifold $M$ which is an affine space over $V_\RR$. Let $\ISO(V_\RR) = \Spin(V_\RR)\ltimes V_\RR$ be the \defterm{Poincar\'{e} group} which acts in the obvious way on $M$.
+We will now define the fundamental notion of a supersymmetric field theory.  Consider a spacetime manifold $M$ which is an affine space over $V_\RR$. Let $\ISO(V_\RR) = \Spin(V_\RR)\ltimes V_\RR$ be the \defterm{Poincar\'{e} group} which acts in the obvious way on $M$.
 
 \begin{definition}
 \label{dfn: super}
 A classical field theory $(E, Q, \omega, I)$ is \defterm{supersymmetric} if $E\rightarrow M$ is an $\ISO(V_\RR)\times G_R$-equivariant vector bundle and the infinitesimal strict action of the translation Lie algebra $V$ on the classical theory is extended to a $\Spin(V_\RR)\times G_R$-equivariant elliptic $L_\infty$ action of the supertranslation Lie algebra $\fA$ on the classical theory.
 \end{definition}
 
-\subsection{Composition algebras and Minimal Supersymmetry}
+\subsection{Composition Algebras and Minimal Supersymmetry}
 \label{sect:compositionalgebras}
 
-We will now recall a relationship between certain ``minimal'' supersymmetry algebras and composition algebras. Our treatment will essentially follow \cite{BaezHuerta}.
+We will now recall a relationship between certain ``minimal'' supersymmetry algebras and composition algebras. Our treatment will essentially follow that of Baez and Huerta \cite{BaezHuerta}.
 
 Let $A_\RR$ be a unital (possibly non-associative) real algebra equipped with an antiinvolution $\sigma\colon A_\RR\rightarrow A_\RR$. We make the following assumptions:
 \begin{enumerate}
@@ -964,7 +980,7 @@ Let $A_\RR$ be a unital (possibly non-associative) real algebra equipped with an
 \item By the previous assumption we have a quadratic form $x\sigma(x)\colon A_\RR\rightarrow \RR$. We assume that it is nondegenerate.
 \end{enumerate}
 
-It is known \cite[Chapter 1.3]{SpringerVeldkamp} that the data of the antiinvolution $\sigma$ may equivalently be encoded in the data of a non-degenerate multiplicative norm $x\mapsto x\sigma(x)$, i.e. $A_\RR$ is a real composition algebra.
+In fact, the data of the antiinvolution $\sigma$ may equivalently be encoded in the data of a non-degenerate multiplicative norm $x\mapsto x\sigma(x)$, i.e. $A_\RR$ is a real composition algebra \cite[Chapter 1.3]{SpringerVeldkamp}.
 
 For a $2\times 2$-matrix $M$ with entries in $A_\RR$ we define its hermitian adjoint $M^\dagger$ by transposing the matrix and applying $\sigma$ to the entries. We define $V_\RR$ to be the space of $2\times 2$ Hermitian matrices with values in $A_\RR$, so that $\dim(V_\RR) = \dim(A_\RR) + 2$. $V_\RR$ carries a nondegenerate quadratic form given by $M\mapsto -\det(M)$. Moreover, it carries an orthogonal involution $\widetilde{M} = M - \tr(M)\cdot 1$.
 
@@ -977,8 +993,8 @@ Suppose $M$ is a left $A$-module and $N$ a right $A$-module equipped with a nond
 \label{lm:extendpairing}
 \end{lemma}
 
-Consider two spinorial representations $\Sigma=A\oplus A$ and $\Sigma^* = A\oplus A$. We have action maps
-\[V\otimes \Sigma\rightarrow \Sigma^*,\qquad V\otimes \Sigma^*\rightarrow \Sigma\]
+Consider two isomorphic spinorial representations $\Sigma=A\oplus A$ and $\Sigma^* = A\oplus A$; we will equip the sum of these representations with an action of the Clifford algebra.  The action on the two summands $\Sigma$ and $\Sigma^*$ will be different, hence the different notation.  We define action maps
+\[\rho \colon V \otimes \Sigma\rightarrow \Sigma^*,\qquad \rho \colon V\otimes \Sigma^*\rightarrow \Sigma\]
 given, respectively, by
 \[\rho(M)Q = M Q,\qquad \rho(M)Q = \widetilde{M} Q.\]
 
@@ -1037,7 +1053,7 @@ We will be interested in the following examples:
 
 All four examples are alternative, while the first three examples are moreover associative.
 
-\subsection{Two-dimensional chiral supersymmetry}
+\subsection{Two-dimensional Chiral Supersymmetry}
 
 In the previous section we have related composition algebras to minimal supersymmetry algebras in dimensions 3, 4, 6 and 10. In this section we explain a different relationship between composition algebras and supersymmetry algebras, this time in the case of 2d $\cN=(\cN_+, 0)$ supersymmetry.
 
@@ -1129,7 +1145,8 @@ so the left-hand side is
 By associativity of $A$ the two expressions are equal.
 \end{proof}
 
-\subsection{Supersymmetric twisting}
+\subsection{Supersymmetric Twisting}
+The idea of twisting, originally developed by Witten \chris{refs}, is \chris{todo: brief contextual remarks, not much detail, as we'll say more in the intro.}
 
 \begin{definition}
 A \defterm{square-zero supercharge} is a nonzero element $Q\in\Sigma$ such that $\Gamma(Q, Q)=0$.
@@ -1140,29 +1157,24 @@ It is shown in \cite[Proposition 3.25]{ElliottSafronov} that the image of $\Gamm
 \item A supercharge $Q$ is \defterm{topological} if $d = n$.
 
 \item A supercharge $Q$ is \defterm{holomorphic} if $n$ is even and $d=n/2$.
+
+\item A supercharge $Q$ is \defterm{minimal} if $n$ is odd and $d=(n+1)/2$.
 \end{itemize}
 
-In the intermediate case we refer to $Q$ as a \defterm{holomorphic-topological} (alternatively, partially topological) supercharge. The collection of all square-zero supercharges in dimensions 2 through 10 (where one restricts to supersymmetries with at most 16 supercharges) was studied in \cite{ElliottSafronov} and \cite{EagerSaberiWalcher}. In particular, orbits of square-zero supercharges under the $R$-symmetry group, $\Spin(V)$ and the obvious scaling action of $\CC^\times$ are shown in Figure \ref{fig:superchargeorbits}:
-\begin{itemize}
-\item The color denotes the amount of supersymmetries: red denotes 16 supercharges, orange 8 supercharges, yellow 4 supercharges and green 2 supercharges. Dashed border denotes chiral supersymmetry (i.e. $(\cN_+, 0)$ in even dimensions).
+In the intermediate case we refer to $Q$ as a \defterm{holomorphic-topological} (alternatively, partially topological) supercharge. The collection of all square-zero supercharges in dimensions 2 through 10 (where one restricts to supersymmetries with at most 16 supercharges) was studied in \cite{ElliottSafronov} and \cite{EagerSaberiWalcher}. In particular, the orbits of square-zero supercharges under the $R$-symmetry group, $\Spin(V)$ and the obvious scaling action of $\CC^\times$ are shown in Figure \ref{fig:superchargeorbits}.
 
-\item $d$ denotes the dimension of the image of $\Gamma(Q, -)$.
-
-\item Rank denotes the rank of the tensor $Q\in S\otimes W$ in odd dimensions or $Q\in S_+\otimes W_+\oplus S_-\otimes W_-$ in even dimensions.
-
-\item Arrows denote compactifications from higher to lower dimensions.
-\end{itemize}
+We will now define the twist of a supersymmetric field theory by a square-zero supercharge.  In order to obtain a $\ZZ$-graded theory, we will need to also include an additional piece of data as follows.
 
 \begin{definition}
 A \defterm{twisting datum} is a pair $(Q, \alpha)$, where $Q\in\Sigma$ is a square-zero supercharge and $\alpha\colon U(1)\rightarrow G_R$ is a homomorphism under which $Q$ has weight $1$.
 \end{definition}
 
 Let $(E, Q_{BV}, \omega, I)$ be a supersymmetric classical field theory.
-Recall, this means we have a Maurer-Cartan element 
+Recall from Section \ref{symmetry_section} that this means we have a Maurer-Cartan element 
 \[
 I_{\fA} = \sum_{k \geq 0} I_{\fA}^{(k)} \in C^\bu(\fA, \oloc(\cE))
 \]
-where $I_{\fA}^{(k)} : \fA^{\otimes k} \to \oloc(\cE)$ as in Definition \ref{infinitesimal_action_def}. 
+where $I_{\fA}^{(k)} \colon \fA^{\otimes k} \to \oloc(\cE)$ as in Definition \ref{infinitesimal_action_def}. 
 For each $k \geq 1$, the functional $I_{\fA}^{(k)}$ further decomposes as a sum $I_{\fA}^{(k)} = \sum_{\ell \geq 0} I_\fA^{(k),\ell}$ where $I_\fA^{(k),\ell}$ is $\ell$-linear in the fields $\cE$. 
 Define
 \[
@@ -1171,13 +1183,13 @@ I_{\fA}^2 (Q) = \sum_{k \geq 1} I^{(k),2} (Q, \ldots, Q) \;\;\; , \;\;\; I_{\fA}
 Note that $I_{\fA}^2 (Q)$ is quadratic as a function of the fields and $I_{\fA}^{\geq 3}(Q) \in \cO_{\rm loc}^+(\cE)$. 
 
 \begin{definition} \label{def:twisting}
-Suppose $(E, Q_{\mr{BV}}, \omega, I)$ is a supersymmetric classical field theory and $(Q, \alpha)$ is a twisting datum. The \defterm{$Q$-twisted classical field theory} is the classical field theory $(E^Q, Q_{\mr{BV}} + \{\rho_2(Q), -\}, \omega, I + \rho_3(Q) + \dots)$, where
+Suppose $(E, Q_{\mr{BV}}, \omega, I)$ is a supersymmetric classical field theory and $(Q, \alpha)$ is a twisting datum. The {$Q$-twisted classical field theory} is the classical field theory $(E^Q, Q_{\mr{BV}} + \{I_{\fA}^2(Q), -\}, \omega, I + I_{\fA}^{\ge 3}(Q))$, where
 \[E^Q = \bigoplus_{n=-\infty}^\infty \Pi^n E(n)[-n]\]
 for $E(n)$ the component of $E$ which has $\alpha$-weight $n$.
 \end{definition}
 
 \begin{prop}
-The collection $\left(E^Q, Q_{BV} + \{I^2_{\fA} (Q), -\}, \omega, I + I^{\geq 3}_\fA (Q)\right)$ is a classical field theory.
+The collection $\left(E^Q, Q_{\mr{BV}} + \{I^2_{\fA} (Q), -\}, \omega, I + I^{\geq 3}_\fA (Q)\right)$ is a classical field theory.
 \end{prop}
 
 \begin{proof}
@@ -1185,7 +1197,7 @@ The original BV differential $\d$ has $\alpha$-weight zero, and hence descends t
 Now, $Q$ has $\alpha$-weight $+1$ and the BV bracket has $\alpha$-weight zero. 
 Hence, $\{\rho_{2}(Q), -\}$ also defines an operator of cohomological degree $+1$ on $E^Q$. 
 
-Ellipticity of $(E^Q, \d + \{\rho_2 (Q), -\})$ follows from ellipticity of the original complex $(E, \d)$.
+Ellipticity of $(E^Q, \d + \{I_\fA^2 (Q), -\})$ follows from ellipticity of the original complex $(E, \d)$.
 The operator 
 \end{proof}
 
@@ -1207,7 +1219,7 @@ so $\Sigma$ restricts to a spinorial $\so(W)$ representation. We define the dime
 \[\Gamma_W\colon \sym^2(\Sigma)\xrightarrow{\Gamma_V} V\rightarrow W,\]
 where the last map is the orthogonal projection onto $W$. Finally, we have a new $R$-symmetry group
 \[G_W = G_V\times \Spin(W^\perp_\RR).\]
-This datum generates a supersymmetry algebra $\mf A'$ in dimension $\mr{dim}(W_\RR)$.
+This datum generates a supersymmetry algebra $\mf A'$ in dimension $\mr{dim}(W_\RR)$ \chris{we never actually defined supersymmetry algebras or R-symmetry: need to go back and add this to Section \ref{sec:susyalgebras}.}.
 
 Recall from Proposition \ref{prop:dimensionalreductionunique} that the dimensional reduction of a classical field theory along the projection $p\colon V_\RR\rightarrow W_\RR$ exists and is unique. We have the following generalization of this statement to supersymmetric theories.
 
@@ -1228,95 +1240,8 @@ Fix a twisting datum $(Q, \alpha)$, where $\Gamma_V(Q, Q) = 0$. Then the dimensi
 
 \subsection{Twisting Homomorphisms and Curved Backgrounds}
 
-\subsection{A-Type Twists} \label{A_twist_section}
-\chris{I think we should discuss these Hodge families somewhere, maybe not here though.}
 
-%  This figure was included twice: once in landscape and once in portait.  I'm commenting out the landscape version here - CE
-
-% \begin{landscape}
-% \begin{figure}
-% \begin{tikzpicture}[node distance=0.35cm and 0.35cm, text width=1.8cm]
-% \node (101) [s16chiral] {Rank $(1, 0)$ $d=5$};
-% \node (91) [s16, below=of 101] {Rank $1$ $d=5$};
-% \node (82) [s16, below=of 91] {Rank $(1, 1)$ $d=5$};
-% \node (81) [s16, left=of 82] {Rank $(1, 0)$ $d=4$};
-% \node (825) [right=of 82] {};
-% \node (83) [s16, right=of 825] {Rank $(1, 0)$ $d=8$};
-% \node (71) [s16, below=of 81] {Rank $1$ $d=4$};
-% \node (72) [s16, below=of 82] {Rank $2$ $d=5$};
-% \node (73) [s16, below=of 83] {Rank $1$ $d=7$};
-% \node (62) [s16, below=of 71] {Rank $(1, 1)$ $d=4$};
-% \node (61) [s8, left=of 62] {Rank $(1, 0)$ $d=3$};
-% \node (63) [s16, below=of 72] {Rank $(2, 2)$ $d=5$};
-% \node (64) [s16chiral, right=of 63] {Rank $(2, 0)$ $d=5$};
-% \node (65) [s16, below=of 73, right=of 64] {Rank $(1, 1)$ $d=6$};
-% \node (51) [s8, below=of 61] {Rank $1$ $d=3$};
-% \node (52) [s16, below=of 62] {Rank $2$ $d=4$};
-% \node (53) [s16, below=of 63] {Rank $4$ $d=5$};
-% \node (54) [s16, below=of 64] {Rank $2$ $d=5$};
-% \node (42) [s8, below=of 51] {Rank $(1, 1)$ $d=3$};
-% \node (41) [s4, left=of 42] {Rank $(1, 0)$ $d=2$};
-% \node (43) [s16, right=of 42] {Rank $(2, 2)$ $d=4$};
-% \node (44) [s16, right=of 43] {Rank $(2, 1)$ $d=4$};
-% \node (45) [s8, right=of 44] {Rank $(2, 0)$ $d=4$};
-% \node (31) [s4, below=of 41] {Rank $1$ $d=2$};
-% \node (32) [s8, below=of 42] {Rank $2$ $d=3$};
-% \node (22) [s4, below=of 31] {Rank $(1, 1)$ $d=2$};
-% \node (21) [s2chiral, left=of 22] {Rank $(1, 0)$ $d=1$};
-% 
-% \draw[arrow] (101) -- (91);
-% \draw[arrow] (91) -- (81);
-% \draw[arrow] (91) -- (82);
-% \draw[arrow] (81) -- (71);
-% \draw[arrow] (82) -- (71);
-% \draw[arrow] (82) -- (72);
-% \draw[arrow] (83) -- (73);
-% \draw[arrow] (71) -- (61);
-% \draw[arrow] (71) -- (62);
-% \draw[arrow] (72) -- (62);
-% \draw[arrow] (72) -- (63);
-% \draw[arrow] (73) -- (65);
-% \draw[arrow] (61) -- (51);
-% \draw[arrow] (62) -- (51);
-% \draw[arrow] (62) -- (52);
-% \draw[arrow] (63) -- (53);
-% \draw[arrow] (64) -- (52);
-% \draw[arrow] (64) -- (54);
-% \draw[arrow] (65) -- (54);
-% \draw[arrow] (51) -- (41);
-% \draw[arrow] (51) -- (42);
-% \draw[arrow] (52) -- (42);
-% \draw[arrow] (52) -- (43);
-% \draw[arrow] (53) -- (43);
-% \draw[arrow] (54) -- (43);
-% \draw[arrow] (54) -- (44);
-% \draw[arrow] (54) -- (45);
-% \draw[arrow] (41) -- (31);
-% \draw[arrow] (42) -- (31);
-% \draw[arrow] (42) -- (32);
-% \draw[arrow] (43) -- (32);
-% \draw[arrow] (44) -- (32);
-% \draw[arrow] (45) -- (32);
-% \draw[arrow] (31) -- (21);
-% \draw[arrow] (31) -- (22);
-% \draw[arrow] (32) -- (22);
-% 
-% \node (2d) [dimension, left=of 21] {2d};
-% \node (3d) [dimension, above=of 2d] {3d};
-% \node (4d) [dimension, above=of 3d] {4d};
-% \node (5d) [dimension, above=of 4d] {5d};
-% \node (6d) [dimension, above=of 5d] {6d};
-% \node (7d) [dimension, above=of 6d] {7d};
-% \node (8d) [dimension, above=of 7d] {8d};
-% \node (9d) [dimension, above=of 8d] {9d};
-% \node (10d) [dimension, above=of 9d] {10d};
-% \end{tikzpicture}
-% \caption{Orbits of square-zero supercharges.}
-% \label{fig:superchargeorbits}
-% \end{figure}
-% \end{landscape}
-
-\section{Supersymmetric Yang--Mills theories}
+\section{Supersymmetric Yang--Mills theories} \label{sec:SYM}
 
 In this section we construct supersymmetry action on super Yang--Mills theories. We have the following variants of the super Yang--Mills theory depending on $\dim(\Sigma)$:
 \begin{itemize}
@@ -1343,7 +1268,7 @@ There are a few additional possibilities that occur in dimension 2.
 
 In each case the lower-dimensional theories are obtained by dimensional reduction from the theory in the highest dimension: for instance, 7d $\mc N=1$ super Yang--Mills (16 supercharges) is obtained by dimensional reduction from 10d $\mc N=(1, 0)$ super Yang--Mills. So, it will be enough to construct the supersymmetry action in these highest-dimensional theories.
 
-\subsection{Pure super Yang--Mills theory}
+\subsection{Pure Super Yang--Mills Theory}
 \label{sect:gaugemultipletSUSY}
 
 We begin with a description of certain pure supersymmetric Yang--Mills theories. Let $V_\RR$ be a real vector space equipped with a nondegenerate symmetric bilinear pairing and $V$ its complexification. Fix a $\ZZ/2\ZZ$-graded Clifford module $\Sigma\oplus \Sigma^*\rightarrow \CC$ with the associated $\Gamma$-pairings
@@ -1542,7 +1467,7 @@ We can further include the action of at least a subalgebra of the algebra of R-s
 \end{remark}
 \end{comment}
 
-\subsection{Matter multiplet}
+\subsection{Coupling to Matter Multiplets}
 \label{sect:mattermultipletSUSY}
 
 \brian{How do we see the various flavors of matter multiplets? For instance, in $2d (0,2)$ there is the Fermi multiplet and the chiral multiplet. 
@@ -2030,7 +1955,7 @@ There are two ingredients in this calculation: we have to decompose our fields a
 \end{proof}
 
 \begin{remark}
-A Weyl spinor $Q_\pm$ corresponds to a holomorphic twist (i.e. comes from a 10d square zero supercharge) exactly when $(Q_\pm,Q_\pm)=0$ -- in that case many of the terms in the interaction above will vanish.
+A Weyl spinor $Q_\pm$ corresponds to a holomorphic twist (i.e. comes from a 10d square-zero supercharge) exactly when $(Q_\pm,Q_\pm)=0$ -- in that case many of the terms in the interaction above will vanish.
 \end{remark}
 
 \vspace{-10pt}
@@ -2046,7 +1971,7 @@ When we dimensionally reduce the minimally twisted 10- or 9-dimensional super Ya
 
 Square-zero supercharges in the 10d $\mc N=(1,0)$ supersymmetry algebra correspond to holomorphic supercharges in the 8d $\mc N=1$ supersymmetry algebra.  As such, we can calculate the holomorphic twist of 8d $\mc N=1$ super Yang-Mills by dimensionally reducing the holomorphic twist of 10d $\mc N=(1,0)$ super Yang-Mills along a copy of $\CC$.  This theory can, unlike its 10- and 9-dimensional analogues, be made canonically $\ZZ$-graded.
 
-On the other hand, the topological twist -- the twist by an impure Weyl spinor -- of 8d $\mc N=1$ super Yang-Mills theory does not arise by dimensionally reducing a twisted theory in 9 dimensions.  This will be our first example of an A-type twist, as we discussed in Section \ref{A_twist_section} \chris{to add}: we will understand it as a one parameter family of supercharges, degenerating at zero to the holomorphic twist -- the twist by a pure Weyl spinor.
+On the other hand, the topological twist -- the twist by an impure Weyl spinor -- of 8d $\mc N=1$ super Yang-Mills theory does not arise by dimensionally reducing a twisted theory in 9 dimensions.  This will be our first example of an twist which is perturbatively trivial on its own, but non-trivial as a one-parameter family, as we discussed at the end of Section \ref{gen_BF_section}.  That is, we will understand it as a one parameter family of supercharges, degenerating at zero to the holomorphic twist -- the twist by a pure Weyl spinor.
 
 Let us now consider the further reductions to $\SU(4)$, to $\spin(7)$, and to their intersection $\SU(3)$.  We will use the form of the supersymmetric interaction term above to prove the following.
 
@@ -2149,7 +2074,7 @@ The untwisted fields are given by:
 \vspace{-10pt}
 \paragraph{Twisting data:}
 Choose a polarized basis $W_+ = {\rm span}_{\CC}\{w_1, w_2\}$.
-The only square zero supercharges in the $\mc N=(1,0)$ supersymmetry algebra have rank one.  Without loss of generality we will twist with respect to a supercharge of the form $Q = q_+ \otimes w_1 \in S_+ \otimes W_+$. 
+The only square-zero supercharges in the $\mc N=(1,0)$ supersymmetry algebra have rank one.  Without loss of generality we will twist with respect to a supercharge of the form $Q = q_+ \otimes w_1 \in S_+ \otimes W_+$. 
 
 We decompose the fields with respect to the subgroup $\SU(3) \sub \SO(6)$.  We can identify the two fundamental representations of $\SU(3)$ with $\Omega^{0,1}(\CC^3)$ and $\Omega^{1,0}(\CC^3)$. 
 \begin{align*}
@@ -2303,7 +2228,7 @@ We could alternatively have obtained these fields by considering the $\mc N=1$ 5
 
 \vspace{-10pt}
 \paragraph{Twisting data:}
-Exactly as in the case of the 6d $\mc N=(1,1)$ supersymmetry algebra, there are 4 inequivalent classes of twists (see \cite[Section 4.5]{ElliottSafronov}).  These supercharges all occur as square zero supercharges in the 6-dimensional $\mc N=(1,1)$ supersymmetry algebra from the previous section.
+Exactly as in the case of the 6d $\mc N=(1,1)$ supersymmetry algebra, there are 4 inequivalent classes of twists (see \cite[Section 4.5]{ElliottSafronov}).  These supercharges all occur as square-zero supercharges in the 6-dimensional $\mc N=(1,1)$ supersymmetry algebra from the previous section.
 \begin{enumerate}
  \item Rank $1$ spinors, $Q \otimes w$.  These automatically square to zero, and admit three invariant directions.  Twists by such supercharges were already described in the previous section.
  \item Rank $2$ square-zero spinors.  Like in dimension 6, these split into two inequivalent classes:
@@ -2355,10 +2280,10 @@ The field content for the 4-dimensional $\cN=1$ super Yang-Mills theory coupled 
 \item $R$-valued fermions: $(\psi_-,\psi_+) \in C^\infty(\RR^4 ; S_+ \otimes R \oplus \otimes S_- \otimes R^*)$.
 \end{itemize}
 
-There is a single non-zero equivalence class of square zero supercharges in $4$-dimensional $\mc N = 1$, which we fix from here on.
+There is a single non-zero equivalence class of square-zero supercharges in $4$-dimensional $\mc N = 1$, which we fix from here on.
 Such supercharges are necessarily of rank $1$, and for concreteness we will fix a square-zero supercharge of negative chirality $$Q = Q_+ \in S_+$$ to twist by. 
 Such supercharges are minimal (i.e. have two dimensional image).  
-They are stabilized by ${\rm U}(2)$; indeed a minimal square zero spinor of positive (negative) helicity is stabilized by $\SU(2)_-$ ($\SU(2)_+$), but also by a torus in $\SU(2)_+$ ($\SU(2)_-$).  
+They are stabilized by ${\rm U}(2)$; indeed a minimal square-zero spinor of positive (negative) helicity is stabilized by $\SU(2)_-$ ($\SU(2)_+$), but also by a torus in $\SU(2)_+$ ($\SU(2)_-$).  
 The R-symmetry group is $U(1)$, and the twisted theory by such a supercharge can always be made $\ZZ$-graded.
 
 We first decompose the fields of the 4-dimensional $\mc N=1$ theory with respect to the ${\rm U}(2)$ stabilizer.
@@ -2635,7 +2560,7 @@ We'll begin with the minimal super Yang-Mills theory that admits non-trivial twi
 
 \vspace{-10pt}
 \paragraph{Twisting data:}
-In the $\mc N=2$ supersymmetry algebra there is a unique non-trivial orbit of square zero supercharges, with rank one. \chris{todo, say something about $\ZZ$-gradings and twisting homomorphisms.}
+In the $\mc N=2$ supersymmetry algebra there is a unique non-trivial orbit of square-zero supercharges, with rank one. \chris{todo, say something about $\ZZ$-gradings and twisting homomorphisms.}
 
 \begin{thm} \label{3d_minimal_twist_thm}
 The minimal twist of 3d $\cN=2$ super Yang-Mills with Lie algebra $\fg$ coupled to the $\cN=2$ chiral multiplet valued in a representation $R$ is perturbatively equivalent to mixed $BF$ theory for the Lie algebra $\fg$ coupled to the mixed $\beta\gamma$ system with values in the representation $R$, with moduli space $T^*[-1]\mr{Map}(\CC \times \RR_{\mr{dR}}, R/\gg)$. 
@@ -2877,9 +2802,10 @@ We twist by the nilpotent supercharge $Q = q \otimes u_1$ where $q \in S_-$ is a
 %\end{align*}
 
 
-\begin{thm}[See also \cite{SWchar}] \label{4d_minimal_twist_thm}
+\begin{thm}[See also \cite{SWchar}] \label{4d_2_minimal_twist_thm}
 The minimal twist of 2d $\cN=(0,\cN_-)$ super Yang-Mills with Lie algebra $\fg$ is $U(1)$-equivariantly equivalent to holomorphic $BF$ theory on $\CC$ for the Lie algebra $\fg$ coupled to a free fermion system on $\CC$ with values in the representation $\fg \otimes W_-' \cong \fg \otimes \CC^{\cN_- - 2}$ where $\fg$ acts by the adjoint action. 
 \end{thm}
+
 \begin{proof}
 The proof is similar to the proof of Theorem \ref{2d(0,4)}.
 The supercharge $Q$ lies in a $\cN = (0,2)$ subalgebra of the full $\cN = (0,\cN_-)$ algebra.
