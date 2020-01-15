@@ -112,7 +112,7 @@
 
 \chris{Todo: would be more correct to remove the generic rank 2 twist in 3d, same as the 3d A twist (dual RW).  I should do this in the tables and the diagrams.  Also todo: change the labels of orbits to A and B.}
 
-\begin{table}[!h]
+\begin{table}[!ht]
  \centering
  \begin{tabular}{c|c|c|c|c}
  $d$ & $\mc N$ & Twist & Description & Invariant Directions \\
@@ -138,7 +138,7 @@
  \label{table_of_twists_8}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[hbp]
  \centering
  \begin{tabular}{c|>{\centering}m{5ex}|c|>{\centering}m{65ex}|c}
  $d$ & $\mc N$ & Twist & Description & Invariant Directions \\
@@ -514,7 +514,7 @@ The \emph{Chevalley-Eilenberg complex} for the Lie algebra $\gg$, with coefficie
 parametrizing multilinear maps $f\colon \fg^{\otimes n}\rightarrow \oloc(\cE)$ which satisfy the antisymmetry property
 \[f(x_1, \dots, x_i, x_{i+1}, \dots, x_n) = (-1)^{|x_1||x_2|+1} f(x_1, \dots, x_{i+1}, x_i, \dots, x_n)\]
 where $x_j \in \fg$.  The Chevalley-Eilenberg differential is given, following the sign conventions of \cite{SafronovCoisoInt}, by the formula
-\[(\d_{CE} f)(x_1, \dots, x_n) = \sum_{i < j}(-1)^{|x_i| \sum_{p=1}^{i-1} |x_p| + |x_j| \sum_{p=1,p\neq i}^{j-1} |x_p| +i+j+|f|} f([x_i, x_j], x_1, \dots, \widehat{x}_i, \dots, \widehat{x}_j, \dots, x_n).\]
+\[(\d_{\mr{CE}} f)(x_1, \dots, x_n) = \sum_{i < j}(-1)^{|x_i| \sum_{p=1}^{i-1} |x_p| + |x_j| \sum_{p=1,p\neq i}^{j-1} |x_p| +i+j+|f|} f([x_i, x_j], x_1, \dots, \widehat{x}_i, \dots, \widehat{x}_j, \dots, x_n).\]
 The complex is additionally equipped with a degree $+1$ BV bracket via the formula
 \[\{f, g\}(x_1, \dots, x_{k+l}) = \sum_{\sigma\in S_{k, l}} \mathrm{sgn}(\sigma) (-1)^{\epsilon+\epsilon_1} \{f(x_{\sigma(1)}, \dots, x_{\sigma(k)}), g(x_{\sigma(k+1)}, \dots, x_{\sigma(k+l)})\},\]
 where $S_{k, l}$ is the set of $(k, l)$-shuffles, $\epsilon$ is the usual Koszul sign and
@@ -526,7 +526,7 @@ The operator $Q_{\mr{BV}}$ on $\oloc(\cE)$ extends $C^\bu(\fg)$-linearly to an o
 (Q_{\mr{BV}} f)(x_1,\ldots, x_n) = Q_{\mr{BV}} f(x_1,\ldots, x_n) 
 \]
 where $f \colon \fg^{\otimes n} \to \oloc(\cE)$. 
-The differentials $\d_{CE}$ and $Q_{\mr{BV}}$ are compatible in the sense that $(\d_{CE} + Q_{\mr{BV}})^2 = 0$ making $C^\bu(\fg, \oloc(\cE))$ into a cochain complex with total differential $\d_{CE} + Q_{\mr{BV}}$. 
+The differentials $\d_{\mr{CE}}$ and $Q_{\mr{BV}}$ are compatible in the sense that $(\d_{\mr{CE}} + Q_{\mr{BV}})^2 = 0$ making $C^\bu(\fg, \oloc(\cE))$ into a cochain complex with total differential $\d_{\mr{CE}} + Q_{\mr{BV}}$. 
 Via the BV bracket, the shift of this cochain complex $C^\bu(\fg, \oloc(\cE))[-1]$ is a dg Lie algebra.  This shifted cotangent complex will model equivariant local observables in our classical field theory, but to finish defining the $\gg$ action we must define the equivariant version of the classical interaction.  This is defined as follows.
 
 \begin{definition}
@@ -541,7 +541,7 @@ where $I_\fg^{(k)}$ is a multilinear map $\fg^{\otimes k} \to \oloc(\cE)$, that 
 \item[(a)] $I_\fg^{(0)} = I$.
 \item[(b)] For each $k \geq 1$ and $x_1, \ldots, x_k \in \fg$ the local functional $I^{(k)}_\fg (x_1,\ldots, x_k)$ is at least quadratic in the fields.
 \item[(c)] $I_\fg$ satisfies the Maurer--Cartan equation:
-\[(\d_{CE} + Q_{\mr{BV}}) I_\fg + \frac{1}{2} \{I_\fg, I_\fg\} = 0.\]
+\[(\d_{\mr{CE}} + Q_{\mr{BV}}) I_\fg + \frac{1}{2} \{I_\fg, I_\fg\} = 0.\]
 \end{itemize}
 \item[(2)]
 For each $k \geq 1$ there is a decomposition $I_\fg^{(k)} = \sum_{\ell} I_\fg^{(k),\ell}$ where $ I_\fg^{(k),\ell}(x_1,\ldots,x_k) \in \oloc(\cE)$ is $\ell$-linear in the fields $\cE$ for all $x_1,\ldots,x_k \in \fg$.
@@ -562,7 +562,7 @@ We have seen that a classical BV theory can also be presented in terms of a BV a
 One can also formulate actions of a Lie algebra on a classical theory in these terms. 
 The data of an action of a Lie algebra $\fg$ on a classical field theory $(E, \omega, S)$ is equivalent to the choice of a local functional $\fS_\fg = \sum_k \fS_\fg^{(k)}\in C^\bu(\fg, \oloc(\cE))$, at least quadratic in the fields, such that $\fS^{(0)}_\fg = S$ and such that the classical master equation
 \[
-\d_{CE} \fS_\fg + \frac{1}{2} \{\fS_\fg, \fS_\fg\} = 0 
+\d_{\mr{CE}} \fS_\fg + \frac{1}{2} \{\fS_\fg, \fS_\fg\} = 0 
 \]
 is satisfied.
 \end{rmk}
@@ -570,7 +570,7 @@ is satisfied.
 \begin{rmk}
 We have defined an action of a Lie algebra on a classical field theory in terms of a Noether current $I_\fg$.
 Such data gives rise to an $L_\infty$ action of $\fg$ on the space of fields $\cE$ in the following way.
-By the Maurer-Cartan equation, the operator $\d_{CE} + Q_{\mr{BV}} + \{I_\fg, -\}$ 
+By the Maurer-Cartan equation, the operator $\d_{\mr{CE}} + Q_{\mr{BV}} + \{I_\fg, -\}$ 
 defines a differential on the graded vector space $\cO(\fg[1] \oplus \cE)$. 
 By assumption that the Noether current is at least quadratic in the fields, we see that this differential defines a family of maps
 \[
@@ -631,7 +631,7 @@ E = F \oplus F^! [-1].
 \]
 The BV pairing $\omega$ on $E$ is defined in terms of the natural pairing between $F$ and $F^!$.
 The differential of the free BV theory is
-\[Q_{\mr{BV}} = \ell_1 + S^{free}_{BRST}.
+\[Q_{\mr{BV}} = \ell_1 + S^{free}_{\mr{BRST}}.
 \]
 
 
@@ -648,7 +648,7 @@ I_{\mr{BV}} = I_{F} + p^* I_{\mr{BRST}} \in \oloc^+(\cE) .
 Suppose $(F, S_{\mr{BRST}})$ is a classical BRST theory such that $(\cE, Q)$ defined above is an elliptic complex. Then $(E, Q_{\mr{BV}}, \omega, I)$ is a classical BV theory.
 \end{lemma}
 
-We refer to the classical BV theory $(E, Q_{\mr{BV}}, \omega, I)$ from the above statement as the \defterm{$(-1)$-shifted cotangent bundle} of $\cF$ and by abuse of notation we often denote it simply by $\cE = T^*[-1] \cF$. In the case $S_{BRST} = 0$ we refer to the theory $T^*[-1] \cF$ as a theory of \defterm{cotangent type}.
+We refer to the classical BV theory $(E, Q_{\mr{BV}}, \omega, I)$ from the above statement as the \defterm{$(-1)$-shifted cotangent bundle} of $\cF$ and by abuse of notation we often denote it simply by $\cE = T^*[-1] \cF$. In the case $S_{\mr{BRST}} = 0$ we refer to the theory $T^*[-1] \cF$ as a theory of \defterm{cotangent type}.
 
 \begin{remark}
 In general, multiple BRST theories can give rise to the same BV theory.  A BV theory $(E, Q_{\mr{BV}}, \omega, I)$ is of cotangent type as long as there is \emph{some} $F$ with $S_{\mr{BRST}} = 0$ producing the given theory using the construction above.  Theories of cotangent type can still have interesting, non-trivial action functionals, encoded by the $L_\infty$ structure on $F$.
@@ -1300,15 +1300,15 @@ Let $\fg$ be a Lie algebra equipped with a nondegenerate symmetric bilinear pair
 
 \item A spinor $\lambda \in \Gamma(V_\RR; \Pi \Sigma \otimes \fg)$.
 
-\item A ghost field $c\in\Gamma(V_\RR; \Pi\fg)$.
+\item A ghost field $c\in\Gamma(V_\RR; \fg[1])$.
 \end{itemize}
-We also introduce their antifields $A^*\in\Omega^1(V_\RR; \Pi\fg)$, $\lambda\in\Gamma(V_\RR; \Sigma^*\otimes \fg)$ and $c^*\in\Gamma(V_\RR; \fg)$.
+We also introduce their antifields $A^*\in\Omega^1(V_\RR; \fg[-1])$, $\lambda\in\Gamma(V_\RR; \Pi\Sigma^*\otimes \fg[-1])$ and $c^*\in\Gamma(V_\RR; \fg[-2])$.
 Let $\cE_{\rm Super Yang-Mills}$ denote the space of BV fields. 
 
 Denote by $F_A = \d A + \frac{1}{2}[A\wedge A]$ the curvature of $A$ and let $\sd\d_A$ be the twisted Dirac operator obtained from $\Gamma$ (see Appendix \ref{sect:spinors}).
 
 The BRST action is given by
-\[S_{BRST}(A, \lambda) = \int_{V_\RR}\dvol \left( -\frac{1}{4} (F_A, F_A) + \frac{1}{2}(\lambda, \sd \d_A \lambda)\right).\]
+\[S_{\mr{BRST}}(A, \lambda) = \int_{V_\RR}\dvol \left( -\frac{1}{4} (F_A, F_A) + \frac{1}{2}(\lambda, \sd \d_A \lambda)\right).\]
 
 We introduce gauge transformations
 \[\delta A = -\d_A c,\qquad \delta \lambda = [c, \lambda],\qquad \delta c = \frac{1}{2}[c, c],\]
@@ -1328,7 +1328,7 @@ I_{\gauge}^{(1)}(v) = \int_{V_\RR}\dvol\left( (L_{v}A, A^*) - (v.\lambda, \lambd
 for $v\in\mf{iso}(V)$, where $v.\lambda$ contains both a derivative and the $\so(V)$ action on $\Sigma$.
 
 We will now construct an elliptic $L_\infty$ action of the super Lie algebra $\mf{A}$ on the theory. 
-Following Definition \ref{infinitesimal_action_def}, we have to prescribe a collection of functionals $I_{\gauge}^{(1)}, I_{\gauge}^{(2)}, \dots$, where $I_{\gauge}^{(k)}\colon \mf{A}^{\otimes k}\rightarrow \oloc(\cE)$, satisfying the classical master equation. The supersymmetry action we construct will extend the Poincar\'{e} action from \eqref{eq:YMPoincareaction}, so we just have to specify the values of $I_{\gauge}^{(k)}$ on the supersymmetry generators in $\Sigma$. The action of supersymmetry is given by a linear and quadratic functionals
+Following Definition \ref{infinitesimal_action_def}, we have to prescribe a collection of functionals $I_{\gauge}^{(1)}, I_{\gauge}^{(2)}, \dots$, with $I_{\gauge}^{(k)}\colon \mf{A}^{\otimes k}\rightarrow \oloc(\cE)$, together satisfying the classical master equation. The supersymmetry action we construct will extend the Poincar\'{e} action from \eqref{eq:YMPoincareaction}, so we just have to specify the values of $I_{\gauge}^{(k)}$ on the supersymmetry generators in $\Sigma$. The action of supersymmetry is given by a linear and a quadratic functional
 \begin{align*}
 I_{\gauge}^{(1)}(Q) &= \int_{V_\RR}\dvol\left( -(\Gamma(Q, \lambda), A^*) + \frac{1}{2}(\rho(F_A)Q, \lambda^*)\right) \\
 I_{\gauge}^{(2)}(Q_1, Q_2) &= \int_{V_\RR}\dvol\left( \frac{1}{4}(\Gamma(Q_1, Q_2), \Gamma(\lambda^*, \lambda^*)) - \frac{1}{2}(Q_1, \lambda^*)(Q_2, \lambda^*) - \iota_{\Gamma(Q_1, Q_2)} A c^*\right).
@@ -1338,15 +1338,15 @@ The following theorem summarizes the fact that super Yang-Mills theory is indeed
 
 \begin{thm}\label{thm:gaugemultipletSUSY}
 The functional $\fS_{\gauge} = S_{\gauge} + I_{\gauge}^{(1)} + I_{\gauge}^{(2)} \in C^\bu(\mf{A}, \oloc(\cE_{\rm Super Yang-Mills}))$ satisfies the classical master equation
-\[\d_{CE} \fS_{\gauge} + \frac{1}{2}\{\fS_{\gauge}, \fS_{\gauge}\} = 0.\]
+\[\d_{\mr{CE}} \fS_{\gauge} + \frac{1}{2}\{\fS_{\gauge}, \fS_{\gauge}\} = 0.\]
 Thus, $\fS_{\gauge}$ defines an elliptic $L_\infty$ action of the super Lie algebra $\fA$ on super Yang-Mills theory and so super Yang-Mills theory is supersymmetric.  
 \end{thm}
 
 The rest of the section will be devoted to the proof of the above theorem. The classical master equation decomposes into the following equations:
 \begin{align*}
 \{S_{\gauge}, I_{\gauge}^{(1)}\} &= 0 \\
-\{S_{\gauge}, I_{\gauge}^{(2)}\} + \d_{CE} I_{\gauge}^{(1)} + \frac{1}{2}\{I_{\gauge}^{(1)}, I_{\gauge}^{(1)}\} &= 0 \\
-\d_{CE} I_{\gauge}^{(2)} + \{I_{\gauge}^{(1)}, I_{\gauge}^{(2)}\} &= 0 \\
+\{S_{\gauge}, I_{\gauge}^{(2)}\} + \d_{\mr{CE}} I_{\gauge}^{(1)} + \frac{1}{2}\{I_{\gauge}^{(1)}, I_{\gauge}^{(1)}\} &= 0 \\
+\d_{\mr{CE}} I_{\gauge}^{(2)} + \{I_{\gauge}^{(1)}, I_{\gauge}^{(2)}\} &= 0 \\
 \{I_{\gauge}^{(2)}, I_{\gauge}^{(2)}\} &= 0.
 \end{align*}
 
@@ -1379,17 +1379,17 @@ Finally, $\{S_{\gauge}^3 + S_{\gauge}^4 + S_{\gauge}^5, I_{\gauge}^{(1)}(Q)\} = 
 \end{proof}
 
 \begin{remark}
-The previous Lemma expresses the fact that the pure super Yang--Mills action is supersymmetric; our proof essentially follows \cite{BaezHuerta}.
+The previous Lemma expresses the fact that the pure super Yang--Mills action is supersymmetric; this was proven by Baez and Huerta in \cite{BaezHuerta}, and our proof essentially follows the proof in loc. cit.
 \end{remark}
 
 \begin{lemma}
 One has
-\[\{S_{\gauge}, I_{\gauge}^{(2)}\} + \d_{CE} I_{\gauge}^{(1)} + \frac{1}{2}\{I_{\gauge}^{(1)}, I_{\gauge}^{(1)}\} = 0.\]
+\[\{S_{\gauge}, I_{\gauge}^{(2)}\} + \d_{\mr{CE}} I_{\gauge}^{(1)} + \frac{1}{2}\{I_{\gauge}^{(1)}, I_{\gauge}^{(1)}\} = 0.\]
 \label{lm:gaugemultiplet2}
 \end{lemma}
 \begin{proof}
 Evaluating the equation
-\[\{S_{\gauge}, I_{\gauge}^{(2)}\} + \d_{CE} I_{\gauge}^{(1)} + \frac{1}{2}\{I_{\gauge}^{(1)}, I_{\gauge}^{(1)}\} = 0\]
+\[\{S_{\gauge}, I_{\gauge}^{(2)}\} + \d_{\mr{CE}} I_{\gauge}^{(1)} + \frac{1}{2}\{I_{\gauge}^{(1)}, I_{\gauge}^{(1)}\} = 0\]
 on $v_1, v_2\in \mf{iso}(V)$, the claim reduces to the fact that \eqref{eq:YMPoincareaction} defines a strict Lie action. Evaluating it on $v\in\mf{iso}(V)$ and $Q\in\Sigma$, the claim reduces to the fact that $I_{\gauge}^{(1)}$ is Poincar\'{e}-invariant. So, the only nontrivial check is for $Q_1,Q_2\in\Sigma$.
 
 The individual terms are
@@ -1399,7 +1399,7 @@ The individual terms are
 &-\frac{1}{2}(\rho(\d_A \Gamma(Q_2, \lambda)) Q_1, \lambda^*) + \frac{1}{2}(\Gamma(Q_1, \rho(F_A)Q_2), A^*),
 \end{align*}
 \begin{align*}
-(\d_{CE} I_{\gauge}^{(1)})(Q_1, Q_2) &= I_{\gauge}^{(1)}(\Gamma(Q_1, Q_2)) \\
+(\d_{\mr{CE}} I_{\gauge}^{(1)})(Q_1, Q_2) &= I_{\gauge}^{(1)}(\Gamma(Q_1, Q_2)) \\
 &= (L_{\Gamma(Q_1, Q_2)}(A), A^*) -(\Gamma(Q_1, Q_2).\lambda, \lambda^*) - (\Gamma(Q_1, Q_2).c) c^*
 \end{align*}
 and
@@ -1426,7 +1426,7 @@ which is equal to $\frac{1}{2} \sd{\d}_A \rho(\Gamma(Q_1, Q_2))\lambda$ by Assum
 \end{proof}
 
 Evaluating the equation
-\[\d_{CE} I_{\gauge}^{(2)} + \{I_{\gauge}^{(1)}, I_{\gauge}^{(2)}\} = 0\]
+\[\d_{\mr{CE}} I_{\gauge}^{(2)} + \{I_{\gauge}^{(1)}, I_{\gauge}^{(2)}\} = 0\]
 on $v_1, v_2, v_3\in\mf{iso}(V)$ or on $v_1, v_2\in\mf{iso}(V)$ and $Q\in\Sigma$ we automatically get zero. Evaluating it on $v\in\mf{iso}(V)$ and $Q_1, Q_2\in\Sigma$ we get Poincar\'{e}-invariance of $I_{\gauge}^{(2)}$.
 
 \begin{lemma}
@@ -1477,7 +1477,7 @@ I'm not sure which your description sees, but I have a hunch it's the $(0,4)$ hy
 What is the reason for only seeing certain multiplets via this general setup?
 } \chris{Presumably pure $\mc N = (0,N)$ means a $(0,2)$ vector coupled to $N-2$ Fermi multiplets, so some of these are already covered by the classification?  Perhaps your concern is that you want a formalism that allows Fermis that are not adjoint valued?  I don't think the difference between this hyper and twisted hyper is germane here: the proof of supersymmetry is that there is an action of super Poincar\'e, it doesn't involve the action of R-symmetry.}
 
-In this section we describe the coupling of super Yang--Mills theory to matter valued in a $\fg$-representation $P$, i.e. the supersymmetric gauged linear $\sigma$-models. Our description of the supersymmetry of the matter multiplet is inspired by the presentation of the supersymmetric nonlinear $\sigma$-models in \cite[Chapter 3]{DeligneFreed}.
+In this section we describe the coupling of super Yang--Mills theory to matter valued in a $\fg$-representation $P$, i.e. the supersymmetric gauged linear $\sigma$-models. Our description of the supersymmetry of the matter multiplet is inspired by the presentation of the supersymmetric nonlinear $\sigma$-models by Deligne and Freed in \cite[Chapter 3]{DeligneFreed}.
 
 Consider as before $V_\RR$ and a Clifford module $\Sigma\oplus \Sigma^*$ satisfying Assumption \ref{assumption:3psi}. In addition, fix a real associative composition algebra $A_\RR$ equipped with an antiinvolution $\sigma$ as in Section \ref{sect:compositionalgebras} and denote its complexification by $A$. Suppose $\Sigma\oplus \Sigma^*$ carries a compatible right $A$-module structure. Let $(-, -)^A\colon \Sigma\otimes \Sigma^*\rightarrow A$ be the correspoding $A$-valued pairing given by Lemma \ref{lm:extendpairing}. We make the following additional assumption.
 
@@ -1561,7 +1561,7 @@ The following result states that these functionals encode an off-shell action of
 The functional $\fS = S_{\BV} + I_{\BV}^{(1)} + I_{\BV}^{(2)}$ satisfies the classical master equation
 \begin{equation}
 \label{CMEYM}
-\d_{CE} \fS + \frac{1}{2} \{\fS, \fS\} = 0 .
+\d_{\mr{CE}} \fS + \frac{1}{2} \{\fS, \fS\} = 0 .
 \end{equation}
 \label{thm:YMSUSY}
 \end{thm}
@@ -1571,8 +1571,8 @@ The rest of this section is devoted to the proof of Theorem \ref{thm:YMSUSY}. Th
 \label{CMEYM2}
 \begin{array}{rrrrrr}
 \{S_{\BV} , I^{(1)}\} & = & 0 \\ 
-\{S_{\matter}, I^{(2)}\} + \d_{CE} I_{\matter}^{(1)} + \{I_{\gauge}^{(1)}, I_{\matter}^{(1)}\} + \frac{1}{2} \{I_{\matter}^{(1)}, I_{\matter}^{(1)}\} & = & 0 \\
-\d_{CE} I_{\matter}^{(2)} + \{I_{\matter}^{(1)}, I_{\matter}^{(2)}\} & =& 0 \\
+\{S_{\matter}, I^{(2)}\} + \d_{\mr{CE}} I_{\matter}^{(1)} + \{I_{\gauge}^{(1)}, I_{\matter}^{(1)}\} + \frac{1}{2} \{I_{\matter}^{(1)}, I_{\matter}^{(1)}\} & = & 0 \\
+\d_{\mr{CE}} I_{\matter}^{(2)} + \{I_{\matter}^{(1)}, I_{\matter}^{(2)}\} & =& 0 \\
 \{I_{\matter}^{(2)}, I_{\matter}^{(2)}\} & =& 0
 \end{array}
 \end{equation}
@@ -1616,7 +1616,7 @@ Next, we move on to the second equation in \eqref{CMEYM2}.
 \begin{lemma} 
 One has
 \begin{equation}\label{CMEYM3}
-\{S_{\matter}, I^{(2)}\} + \d_{CE} I_{\matter}^{(1)} + \{I_{\gauge}^{(1)}, I_{\matter}^{(1)}\} + \frac{1}{2} \{I_{\matter}^{(1)}, I_{\matter}^{(1)}\} = 0 .
+\{S_{\matter}, I^{(2)}\} + \d_{\mr{CE}} I_{\matter}^{(1)} + \{I_{\gauge}^{(1)}, I_{\matter}^{(1)}\} + \frac{1}{2} \{I_{\matter}^{(1)}, I_{\matter}^{(1)}\} = 0 .
 \end{equation}
 \end{lemma}
 \begin{proof}
@@ -1634,7 +1634,7 @@ The individual terms are:
 \end{align*}
 
 \[
-(\d_{CE}I_{\matter}^{(1)})(Q_1,Q_2) = L_{\Gamma(Q_1,Q_2)} (\phi)\phi^* - (\Gamma(Q_1,Q_2).\psi, \psi^*),
+(\d_{\mr{CE}}I_{\matter}^{(1)})(Q_1,Q_2) = L_{\Gamma(Q_1,Q_2)} (\phi)\phi^* - (\Gamma(Q_1,Q_2).\psi, \psi^*),
 \]
 
 and
@@ -1676,7 +1676,7 @@ $\{I_{\matter}^{(1)}, I_{\matter}^{(2)}\}(Q_1,Q_2,Q_3)$ is obtained by cyclicall
 
 The 10-dimensional supersymmetry algebra has odd part $\Sigma\cong S_+\otimes W_+\oplus S_-\otimes W_-$, where $S_+, S_-$ are the 16-dimensional semi-spin representations of $\Spin(10)$, and where $W_+$ and $W_-$ are complex vector spaces equipped with a nondegenerate symmetric bilinear pairing. There are Yang--Mills theories with $\cN=(1, 0)$ or $\cN=(0, 1)$ supersymmetries. We concentrate on the first case, the second case being identical. So, we fix $W_+=\CC$ and $W_- = 0$.
 
-\subsection{$\cN=(1, 0)$ super Yang--Mills theory}
+\subsection{\texorpdfstring{$\cN=(1, 0)$}{N=(1,0)} Super Yang--Mills theory}
 
 Let $\fg$ be a complex Lie algebra equipped with a symmetric bilinear invariant nondegenerate pairing. We consider $\cN=(1, 0)$ super Yang--Mills theory on $\RR^{10}$, where $\fg$ is the complexified Lie algebra of the gauge group.
 
@@ -1764,7 +1764,7 @@ A similar claim was previously proved by Baulieu \cite{Baulieu} by adding an aux
 
 The 9-dimensional supersymmetry algebra has odd part $\Sigma\cong S\otimes W$, where $S$ is the 16-dimensional spin representation of $\Spin(9)$ and $W$ is a complex vector space equipped with a nondegenerate symmetric bilinear pairing. There is a Yang--Mills theory with $\mc N=1$ supersymmetry. So, we fix $W = \CC$.
 
-\subsection{$\cN=1$ super Yang--Mills theory}
+\subsection{\texorpdfstring{$\cN=1$}{N=1} super Yang--Mills theory}
 
 Let $\fg$ be a complex Lie algebra equipped with a symmetric bilinear invariant nondegenerate pairing. We consider $\cN=1$ super Yang--Mills theory on $\RR^9$, where $\fg$ is the complexified Lie algebra of the gauge group.
 
@@ -1905,7 +1905,7 @@ The 8-dimensional $\mc N=1$ super Yang-Mills theory is obtained by dimensional r
 We will see shortly that in the 8d $\mc N=1$ supersymmetry algebra there are holomorphic square-zero supercharges stabilized by the group $\SU(4)$, and topological square-zero supercharges stabilized by $\spin(7)$.  If we want to stabilize the full one-parameter family describing the degeneration, we have to decompose our fields according to the action of the intersection $\SU(4) \cap \spin(7) \iso \SU(3)$ \chris{check this claim: can we see it in terms of the Dynkin diagrams?}.  So, let's begin by establishing notation for the BRST fields of maximal super Yang-Mills after reduction to representations of various subgroups of $\SO(10)$.  We can write this schematically in the following way.
 
 First, let us consider the reduction of the 10d spinor $\lambda$.  We have already described the decomposition of the spinor representation into irreducible summands for the group $\SU(5)$: it decomposes into a sum $B_{0,2} + \psi_{1,0} + \chi$ of a $(0,2)$-form, a $(1,0)$-form, and a scalar (all valued in the Lie algebra $\gg$).  We have also already described its decomposition into irreducible summands for the group $\mr O(8)$: it splits into a positive and a negative Weyl spinor, $\lambda^+ + \lambda^-$.  Let us continue to decompose these fields into smaller subgroups.  We indicate this schematically as follows (Figure \ref{fig:8dfermiondecomp}).
-\begin{figure}[!h]
+\begin{figure}[!htb]
 \[
 \xymatrix{
 &\lambda \ar[dl]_{\to\,  \mr{O}(8)} \ar[dr]^{\to\,  \SU(5)} &\\
@@ -2057,7 +2057,7 @@ There is a minimal supersymmetric field theory with $\mc N=(1,0)$ supersymmetry,
 If $U \iso T^*\gg$, then the $(1,0)$ supersymmetry algebra action can be enhanced to an $\mc N=(1,1)$ supersymmetry algebra action.  
 This is the theory one obtains by compactifying 10d $\mc N=1$ super Yang-Mills from $\RR^{10}$ down to $\RR^6$.
 
-\subsection{$\mc N = (1,0)$ Super Yang-Mills Theory with Matter} \label{6d_10_section}
+\subsection{\texorpdfstring{$\mc N = (1,0)$}{N=(1,0)} Super Yang-Mills Theory with Matter} \label{6d_10_section}
 
 The general theory of $\mc N = (1,0)$ coupled to matter has been exhibited in Section \ref{sect:mattermultipletSUSY}. 
 
@@ -2117,7 +2117,7 @@ This is indeed the action functional of the required theory, where $\lambda_{0,2
 This theory is in general only $\ZZ/2\ZZ$-graded.  If the symplectic representation $U = T^*W$ is of cotangent type, then it is possible to promote to the $\ZZ$-graded generalized BF theory $T^*[-1]\mr{Map}(\CC^3, W/\gg)$ \chris{up to modifying by an even degree shift -- need to complete this and say it more carefully}.
 \end{remark}
 
-\subsection{$\mc N = (1,1)$ Super Yang-Mills Theory}
+\subsection{\texorpdfstring{$\mc N = (1,1)$}{N=(1,1)} Super Yang-Mills Theory}
 
 There is a 6d gauge theory with $\mc N=(1,1)$ supersymmetry obtained by dimensionally reducing the maximal super Yang-Mills theory on $\RR^{10}$ down to $\RR^6$. This theory is alternatively obtained by considering the $\mc N=(1,0)$ theory above with representation $U = T^*\gg$: the $\mc N=(1,0)$ supersymmetry algebra action can be promoted to an $\mc N=(1,1)$ supersymmetry action.  
 
@@ -2193,7 +2193,7 @@ We now start with the twisted theory from Theorem \ref{7d_rank2_twist_thm}, with
 \section{Dimension 5}
 The 5-dimensional $\mc N=k$ supersymmetry algebra has odd part $\Sigma \iso S \otimes W$, where $S$ is the 4-dimensional spinor representation of $\Spin(5) \iso \Sp(4)$, and where $W$ is a $2k$-dimensional symplectic vector space.  The maximal supersymmetric gauge theory has $\mc N=2$.  However, there are $\mc N=1$ super Yang-Mills theories for every choice $U$ of symplectic representation of the gauge group.
 
-\subsection{$\mc N = 1$ Super Yang-Mills Theory with Matter}  \label{5d_1_section}
+\subsection{\texorpdfstring{$\mc N = 1$}{N=1} Super Yang-Mills Theory with Matter}  \label{5d_1_section}
 We begin by treating $\mc N=1$ Super Yang-Mills theory with gauge group $G$, with a matter (half) hypermultiplet valued in a symplectic representation $U$.  This is the theory obtained from 6d $\mc N=(1,0)$ super Yang-Mills theory with matter, after dimensional reduction to 5 dimensions.
 
 \vspace{-10pt}
@@ -2217,7 +2217,7 @@ The minimal twist of 5d $\mc N=1$ super Yang-Mills theory with gauge group $G$ a
 This follows from the calculation of the minimal twist in 6-dimensional $\mc N=(1,0)$ theory in Theorem \ref{thm:6dholomorphictwist} above, by applying Proposition \ref{CS_diml_red_prop} to dimensionally reduce along one of the non-invariant Calabi-Yau directions.
 \end{proof}
 
-\subsection{$\mc N = 2$ Super Yang-Mills Theory} \label{5d_2_section}
+\subsection{\texorpdfstring{$\mc N = 2$}{N=2} Super Yang-Mills Theory} \label{5d_2_section}
 
 \paragraph{Fields:} We can describe the BRST fields of $\mc N=2$ super Yang-Mills by restricting the fields of maximal super Yang-Mills from 10d, or alternatively by restricting the 7d $\mc N=1$ fields from Section \ref{7d_section}, to representations of the group $\mr O(5)$.  In addition to the ghost $c$, the fields we obtain are
 \begin{itemize}
@@ -2266,7 +2266,7 @@ We now take the twist of 6d $\mc N=(1,1)$ super Yang-Mills with 5 invariant dire
  
 \section{Dimension 4}
 
-\subsection{$\cN=1$ with chiral multiplet matter} \label{4d_1_section}
+\subsection{\texorpdfstring{$\cN=1$}{N=1} with chiral multiplet matter} \label{4d_1_section}
 We consider $\cN=1$ supersymmetric Yang-Mills for a Lie algebra $\fg$ coupled to supersymmetric matter.
 The matter consists of the $\cN=1$ chiral multiplet valued in a complex representation $R$. 
 
@@ -2435,7 +2435,7 @@ This is indeed the action functional of the required theory, where $A_{0,\bu}, B
 %\end{prop}
 
 
-\subsection{$\cN=2$ Super Yang-Mills with Matter} \label{4d_2_section}
+\subsection{\texorpdfstring{$\cN=2$}{N=2} Super Yang-Mills with Matter} \label{4d_2_section}
 
 We obtain $\mc N=2$ super Yang-Mills theory on $\RR^4$ by dimensionally reducing $\mc N=(1,0)$ super Yang-Mills from $\RR^6$, or $\mc N=1$ super Yang-Mills from $\RR^5$, with a hypermultiplet valued in a symplectic representation $U$.  In these terms we can describe the BRST fields.
 
@@ -2506,7 +2506,7 @@ We start with the 5d $\mc N=1$ holomorphic twist, as in Theorem \ref{5d_holo_twi
 
 
 
-\subsection{$\cN=4$ Super Yang-Mills} \label{4d_4_section}
+\subsection{\texorpdfstring{$\cN=4$}{N=4} Super Yang-Mills} \label{4d_4_section}
 
 \vspace{-10pt}
 \paragraph{Fields:} We can describe the BRST fields of $\mc N=4$ super Yang-Mills by restricting the 5d $\mc N=2$ fields from Section \ref{5d_2_section} to representations of the group $\mr O(4)$.  In addition to the ghost $c$, the fields we obtain are
@@ -2546,7 +2546,7 @@ where $\omega$ indicates the canonical isomorphism $\omega \colon \wedge^2(W^*) 
 \section{Dimension 3}
 The 3-dimensional $\mc N=k$ supersymmetry algebra has odd part $\Sigma \iso S \otimes W$, where $S$ is the 2-dimensional spinor representation of $\Spin(3) \iso \SU(2)$, and where $W$ is a $k$-dimensional vector space equipped with a bilinear pairing.  The maximal supersymmetric gauge theory has $\mc N=8$.  However, there are $\mc N=4$ super Yang-Mills theories for every choice $U$ of symplectic representation of the gauge group, and $\mc N=2$ super Yang-Mills theories for every choice $R$ of arbitrary representation of the gauge group.  In dimension 3, much like we saw in dimensions 5 and 7, all twisted theories can be obtained by dimensional reduction from theories one dimension higher.
 
-\subsection{$\cN = 2$ Super Yang-Mills with Chiral Matter}
+\subsection{\texorpdfstring{$\cN = 2$}{N=2} Super Yang-Mills with Chiral Matter}
 We'll begin with the minimal super Yang-Mills theory that admits non-trivial twists (if $\mc N=1$ there are no square-zero supercharges).  So, fix a gauge group $G$, and a representation $R$.  The 3d $\mc N=2$ super Yang-Mills theory arises by dimensional reduction from $\mc N=1$ super Yang-Mills theory on $\RR^4$ with an $R$-valued chiral multiplet.
 
 \vspace{-10pt}
@@ -2570,7 +2570,7 @@ The minimal twist of 3d $\cN=2$ super Yang-Mills with Lie algebra $\fg$ coupled 
 This follows by dimensionally reducing the holomorphic twist of 4d $\mc N=1$ super Yang-Mills.  That is, we start with the result from Theorem \ref{4d_minimal_twist_thm}, then apply Proposition \ref{CS_diml_red_prop} to turn one of the complex directions into a real de Rham direction.
 \end{proof}
 
-\subsection{$\cN = 4$ Super Yang-Mills with Hypermultiplet Matter}
+\subsection{\texorpdfstring{$\cN = 4$}{N=4} Super Yang-Mills with Hypermultiplet Matter}
 We will now consider 3d $\mc N=4$ theories, which arise by dimensional reduction from 4d $\mc N=2$ super Yang-Mills with gauge group $G$, coupled to a hypermultiplet valued in a symplectic representation $U$, or equivalently by dimensional reduction from 6d $\mc N=(1,0)$ super Yang-Mills coupled to a hypermultiplet.
 
 \vspace{-10pt}
@@ -2602,7 +2602,7 @@ The rank $2$ B-twist of 3d $\mc N=4$ super Yang-Mills theory with gauge group $G
 Again, we prove this by dimensional reduction from a 4d $\mc N=2$ twisted theory, in this case the rank $(1,1)$ twist from Theorem \ref{4d_11_twist_thm}, by applying Proposition \ref{CS_diml_red_prop}.
 \end{proof}
 
-\subsection{$\cN = 8$ Super Yang-Mills Theory}
+\subsection{\texorpdfstring{$\cN = 8$}{N=8} Super Yang-Mills Theory}
 Finally, let's consider maximal super Yang-Mills theory with gauge group $G$ in dimension 3, with $\mc N=8$ supersymmetry.  This is the theory obtained by compactifying $\mc N=(1,0)$ super Yang-Mills on $\RR^{10}$ down to $\RR^3$.
 
 \vspace{-10pt}
@@ -2632,7 +2632,7 @@ The rank $2$ B-twist of 3d $\mc N=8$ super Yang-Mills theory with gauge group $G
 %BRIAN FIND REFERENCE OF BELOW
 % \cN=(0,2) Super Yang-Mills with matter 
 
-\subsection{$\cN=(0,2)$ Super Yang-Mills with matter} \label{sec:2d(0,2)}
+\subsection{\texorpdfstring{$\cN=(0,2)$}{N=(0,2)} Super Yang-Mills with matter} \label{sec:2d(0,2)}
 
 We consider $\cN=(0,2)$ super Yang-Mills for a Lie algebra $\fg$ coupled to $\cN=(0,2)$ supersymmetric matter. 
 The supersymmetric matter consists of the $\cN = (0,2)$ chiral multiplet with values in a representation $R$. 
@@ -2719,7 +2719,7 @@ The twisted theory is therefore perturbatively equivalent to the theory with BV 
 This is indeed the action functional of the required theory, where $A_{0,\bu}, B_{1,\bu}$ comprise the fields of holomorphic $BF$ theory and $\gamma_{0,\bu}, \beta_{1,\bu}$ comprise the fields of the $\beta\gamma$ system.
 \end{proof}
 
-\subsection{$\cN=(0,4)$ Super Yang-Mills with matter}
+\subsection{\texorpdfstring{$\cN=(0,4)$}{N=(0,4)} Super Yang-Mills with matter}
 
 We consider $\cN=(0,4)$ super Yang-Mills for a Lie algebra $\fg$ coupled to $\cN=(0,4)$ supersymmetric matter. 
 The supersymmetric matter consists of the $\cN = (0,4)$ hypermultiplet with values in a complex symplectic representation $U$. 
@@ -2761,7 +2761,7 @@ The matter sector in the twisted theory only depends on $U$ as a complex $\fg$-r
 
 % \cN=(0,8) Super Yang-Mills with matter
 
-\subsection{$\cN=(0,\cN_-)$ Super Yang-Mills}
+\subsection{\texorpdfstring{$\cN=(0,\cN_-)$}{N=(0,N-)} Super Yang-Mills}
 
 We consider pure $\cN=(0,\cN_-)$ super Yang-Mills for a Lie algebra $\fg$, where $\cN_- \geq 2$.
 The spinorial representation is $\Sigma = S_- \otimes W_-$ where $W_-$ is the $\cN_-$-dimensional auxiliary equipped with a nondegenerate symmetric bilinear pairing.
