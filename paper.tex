@@ -118,21 +118,21 @@
  $d$ & $\mc N$ & Twist & Description & Invariant Directions \\
  \hline
  \multirow{2}*{6} & \multirow{2}*{$(1,0)$} & \multirow{2}*{Rank $(1,0)$} & {Holomorphic BF Theory coupled to a holomorphic symplectic boson} & \multirow{2}*{3 (holomorphic)} \\
- &&& $\mr{Map}(\CC^3, U /\!/G)$ & \\ \hline
+ &&& $\mr{Map}(\CC^3, U \ham G)$ & \\ \hline
  \multirow{2}*{5} & \multirow{2}*{$1$} & \multirow{2}*{Rank $1$} & {Mixed BF Theory coupled to a mixed symplectic boson} & \multirow{2}*{3 (minimal)} \\
- &&& $\mr{Map}(\CC^2 \times \RR_{\mr{dR}}, U /\!/G)$ & \\ \hline
+ &&& $\mr{Map}(\CC^2 \times \RR_{\mr{dR}}, U \ham G)$ & \\ \hline
  \multirow{6}*{4} & \multirow{6}*{$2$} & \multirow{2}*{Rank $(1,0)$} & {Holomorphic BF Theory} & \multirow{2}*{2 (holomorphic)} \\
- &&& $T^*[-1]\mr{Map}(\CC^2, U /\!/G)$ & \\ \cline{3-5}
+ &&& $T^*[-1]\mr{Map}(\CC^2, U \ham G)$ & \\ \cline{3-5}
  && \multirow{2}*{Rank $(1,1)$} & {Mixed BF Theory coupled to a mixed symplectic boson} & \multirow{2}*{3} \\
- &&& $\mr{Map}(\CC \times \RR^2_{\mr{dR}}, U /\!/G)$ & \\ \cline{3-5}
+ &&& $\mr{Map}(\CC \times \RR^2_{\mr{dR}}, U \ham G)$ & \\ \cline{3-5}
  && \multirow{2}*{Rank $(2,0)$} & {Perturbatively trivial (Donaldson theory)} & \multirow{2}*{4 (topological)} \\
- &&& $\mr{Map}(\CC^2, U /\!/G)_{\mr{dR}}$ & \\ \hline
+ &&& $\mr{Map}(\CC^2, U \ham G)_{\mr{dR}}$ & \\ \hline
  \multirow{6}*{3} & \multirow{6}*{$4$} & \multirow{2}*{Rank $1$} & {Mixed BF Theory coupled to a mixed symplectic boson} & \multirow{2}*{2 (minimal)} \\
- &&& $T^*[-1]\mr{Map}(\CC \times \RR_{\mr{dR}}, U /\!/G)$  & \\ \cline{3-5}
+ &&& $T^*[-1]\mr{Map}(\CC \times \RR_{\mr{dR}}, U \ham G)$  & \\ \cline{3-5}
  && \multirow{2}*{Rank $2$ (B)} & {BF Theory coupled to a symplectic boson (Rozansky-Witten)} & \multirow{2}*{3 (topological)} \\
- &&& $\mr{Map}(\RR^3_{\mr{dR}}, U /\!/G)$ & \\ \cline{3-5}
+ &&& $\mr{Map}(\RR^3_{\mr{dR}}, U \ham G)$ & \\ \cline{3-5}
  && \multirow{2}*{Rank $2$ (A)} & {Perturbatively trivial (dual Rozansky-Witten)} & \multirow{2}*{3 (topological)} \\
- &&& $\mr{Map}(\CC \times \RR_{\mr{dR}}, U /\!/G)_{\mr{dR}}$ & \\ \hline
+ &&& $\mr{Map}(\CC \times \RR_{\mr{dR}}, U \ham G)_{\mr{dR}}$ & \\ \hline
   \end{tabular}
  \caption{Twists of Supersymmetric Yang-Mills Theories with gauge group $G$ with a hypermultiplet valued in symplectic representation $U$ (8 supercharges).}
  \label{table_of_twists_16}
@@ -303,7 +303,7 @@
 In this section we will set up the homological formalism in which we study classical field theory: the BV-BRST formalism.  Most of the material in this section is not original.  We refer the reader to \chris{refs} for more details.  We will conclude the section by describing a number of fundamental examples of classical field theories that are highly structured: partially holomorphic or topological theories.  We will also discuss the concept of \emph{dimensional reduction} of a classical field theory on $M$ along a fibration $M \to N$.  We will use the idea of dimensional reduction to construct many of the supersymmetric field theories which we will consider in the next section.  
 
 \subsection{Conventions}
-Throughout the paper we will frequently study obects, for instance vector bundles, equipped with a $\ZZ\times\ZZ/2$-grading. \emph{Degree} will refer to the first (cohomological) grading and \emph{odd} or \emph{even} to the second (fermionic) grading.  For an element $x$ we denote by $|x|\in\ZZ/2$ the total degree.
+Throughout the paper we will frequently study obects, for instance vector bundles, equipped with a $\ZZ\times\ZZ/2\ZZ$-grading. \emph{Degree} will refer to the first (cohomological) grading and \emph{odd} or \emph{even} to the second (fermionic) grading.  For an element $x$ we denote by $|x|\in\ZZ/2\ZZ$ the total degree.
 
 Given a vector bundle $E\rightarrow M$ we denote by $\cE$ the topological vector space of smooth sections of $E$ and $\cE_c$ the topological vector space of smooth compactly supported sections.
 We denote by $\cO(\cE)$ (respectively $\cO(\cE_c)$) the completed algebra of symmetric functions on $\cE$ (respectively $\cE_c)$. 
@@ -333,7 +333,7 @@ The classical BV (Batalin-Vilkovisky) formalism \cite{BatalinVilkovisky} is a mo
 \begin{definition}
 A \defterm{free BV theory} on a manifold $M$ is the data of:
 \begin{itemize}
-\item a finite rank $\ZZ\times\ZZ/2$-graded vector bundle $E \to M$ equipped with an even differential operator of cohomological degree $+1$
+\item a finite rank $\ZZ\times\ZZ/2\ZZ$-graded vector bundle $E \to M$ equipped with an even differential operator of cohomological degree $+1$
 \[
 Q_{\mr{BV}} \colon \cE \to \cE [1] 
 \]
@@ -426,7 +426,7 @@ The operator $Q_{\mr{BV}}$ is the BV bracket with the quadratic part of the BV a
 Because of this, we will sometimes refer to the triple $(E, S, \omega)$ instead $(E, Q_{\mr{BV}}, I, \omega)$ as the data of a classical field theory.
 
 \begin{remark}
-We will also consider \defterm{$\ZZ/2$-graded classical field theories} which are defined as before, but where $E$ has only a single $\ZZ/2$-grading and, correspondingly, $Q_{\mr{BV}}$ is simply an odd operator.
+We will also consider \defterm{$\ZZ/2\ZZ$-graded classical field theories} which are defined as before, but where $E$ has only a single $\ZZ/2\ZZ$-grading and, correspondingly, $Q_{\mr{BV}}$ is simply an odd operator.
 \end{remark}
 
 \begin{remark}
@@ -607,7 +607,7 @@ We will now explain how to build classical BV theories from more traditional dat
 \begin{definition}
 A \defterm{classical BRST theory} on a manifold $M$ consists of the following data:
 \begin{itemize}
-\item a $\ZZ\times\ZZ/2$-graded vector bundle $F$ together with the structure of a local $L_\infty$ algebra on the shift $F[-1]$;
+\item a $\ZZ\times\ZZ/2\ZZ$-graded vector bundle $F$ together with the structure of a local $L_\infty$ algebra on the shift $F[-1]$;
 \item A local functional $S_{\mr{BRST}} \in \oloc(\cF)$ of polynomial degree $\geq 2$.
 \end{itemize}
 Together, these data must satisfy the equation
@@ -661,7 +661,7 @@ We've only defined brackets on local functionals, but I think when you write $\p
 
 \subsection{Examples of Classical Field Theories}
 
-In this section we give some examples of classical field theories we will use in our classification of twisted supersymmetric field theories. All theories we consider in this section are $\ZZ$-graded, i.e. the space $E$ of fields will be completely even with respect to the $\ZZ/2$-grading.
+In this section we give some examples of classical field theories we will use in our classification of twisted supersymmetric field theories. All theories we consider in this section are $\ZZ$-graded, i.e. the space $E$ of fields will be completely even with respect to the $\ZZ/2\ZZ$-grading.
 
 \subsubsection{Generalized BF theory} \label{gen_BF_section}
 
@@ -680,8 +680,8 @@ We denote the space of BV fields by $\cE = \map(X\times Y_{\mr{Dol}}\times M_{\m
 \label{def:generalizedBF}
 \end{definition}
 
-\begin{remark}
-We do not provide any interpretation for the above mapping space and simply view it as a compact way of referring to the theory above.
+\begin{remark} \label{mapping_stack_remark}
+The mapping stack above has a precise meaning in the language of derived algebraic geometry \chris{Let's say a few words about where the terminology comes from at least, even if for us it's just shorthand.  I can add this later.  I should also remark on the fact that we can pull the $T^*[d]$ out to a $T^*[k]$, with $k=-1$ if $X,Y,M$ are vector spaces.}  For the purposes of this paper, while we think of the derived stack as the global moduli space of solutions to the equations of motion in generalized BF theory, we will only use the perturbative datum of the classical BV complex.  The language of the mapping stack will simply be used as a compact way of referring to the theory above. 
 \end{remark}
 
 Let us unpack the definition. Let $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M)$. Then the bundle of BV fields is
@@ -695,8 +695,8 @@ For $X=Y=\pt$ and $\fg$ an ordinary Lie algebra we recover the usual topological
 \[S = \int_M \left\langle B\wedge \left(\d_\dR A+ \frac{1}{2}[A\wedge A]\right)\right\rangle.\]
 \end{example}
 
-Generally speaking, $BF$ theories will be the output of twisting a supersymmetric gauge theory. 
-In fact, a special case also applies to twisting theories of matter, which we will refer to as a $\beta\gamma$ system. 
+We will see many $BF$ theories as the output when we twists a supersymmetric gauge theories.
+In fact, a special case of the definition above also arises when twisting theories of matter.  We will refer to as a generalized $\beta\gamma$ system, extending the usual 2d $\beta \gamma$ system. 
 
 \begin{definition}
 Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix a complex vector space $V$. The \defterm{generalized $\beta\gamma$ system} is the BV theory given by the $(-1)$-shifted cotangent bundle of the following classical BRST theory:
@@ -710,15 +710,15 @@ Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix a complex ve
 \end{definition}
 
 \begin{rmk}
-This is a special case of generalized BF theory: the generalized $\beta\gamma$ system is generalized $BF$ theory in the case that the $L_\infty$ aglebra is $\fg = V[-1]$, with trivial $L_\infty$ structure. 
+This is indeed a special case of generalized BF theory: the generalized $\beta\gamma$ system appears as generalized $BF$ theory with the $L_\infty$ algebra given by $\fg = V[-1]$, with trivial $L_\infty$ structure. 
 \end{rmk}
 
-We may also couple a $\beta\gamma$ system to a generalized $BF$ theory as follows.
+We may also couple a $\beta\gamma$ system to a more general generalized $BF$ theory as follows.
 
 \begin{example}
-Let $X,Y,M$ be as before. Suppose $\fg$ is a dg Lie algebra and $V$ a dg representation of $\fg$. Consider the dg Lie algebra
+Let $X,Y,M$ be as before. Suppose $\fg$ is a dg Lie algebra and $V$ is a dg representation of $\fg$. Consider the dg Lie algebra
 \[\cL = \fg\oplus V[-1]\]
-with the only nontrivial brackets $\fg\otimes \fg\rightarrow \fg$ given by the Lie bracket on $\fg$ and $\fg\otimes V\rightarrow V$ given by the $\fg$-action on $V$. The space of fields in the corresponding generalized BF theory will be denoted by
+with the only nontrivial brackets $\fg\otimes \fg\rightarrow \fg$ given by the Lie bracket on $\fg$ and $\fg\otimes V\rightarrow V$ given by the $\fg$-action on $V$. The space of fields in the corresponding generalized BF theory will be denoted using the mapping stack notation (as in Remark \ref{mapping_stack_remark}) as
 \[\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[d] (V / \fg)):=\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[d] \cL),\]
 where $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1$.
 \end{example}
@@ -737,7 +737,6 @@ In fact, the $\SO(n_3)$-action given by the previous proposition extends to a ho
 \end{remark}
 
 \subsubsection{Generalized Chern--Simons theory} \label{gen_CS_section}
-
 The next class of examples of classical BV theories we give are generalizations of Chern-Simons theory. Unlike the example of the generalized BF theory, these theories are not of cotangent type.
 
 \begin{definition}
@@ -758,16 +757,18 @@ We denote the space of BV fields by $\cE = \map(X\times Y_{\mr{Dol}}\times M_{\m
 \label{def:generalizedCS}
 \end{definition}
 
-We may also consider a $\ZZ/2$-graded version of the above theory where $\fg$ is merely $\ZZ/2$-graded.
+We may also consider a $\ZZ/2\ZZ$-graded version of the above theory where $\fg$ is merely $\ZZ/2\ZZ$-graded.
 
 \begin{example}
-For $X=Y=\pt$, $M$ a 3-manifold and $\fg$ an ordinary Lie algebra we recover the usual 3-dimensional Chern--Simons theory with the BV action
+For $X=Y=\pt$, $M$ a 3-manifold and $\fg$ an ordinary Lie algebra we recover the usual 3-dimensional Chern-Simons theory with the BV action
 \[S = \int_M \left(\frac{1}{2}\langle A\wedge \d_{\dR} A\rangle + \frac{1}{6}\langle A\wedge [A\wedge A]\rangle\right).\]
+More generally, if $X=Y=\pt$ and $M$ is any $d$-dimensional manifold where $d$ is odd, we recover $d$-dimensional Chern-Simons theory.  This has the same BV action, where now $A$ is a (not necessarily homogeneous) differential form on $M$.  If $d$ is not 3 this theory is only $\ZZ/2\ZZ$-graded.
 \end{example}
 
 \begin{example}
 For $Y=M=\pt$, $X$ a Calabi-Yau 3-fold and $\fg$ an ordinary Lie algebra we recover the holomorphic Chern--Simons theory with the BV action
 \[S = \int_X \Omega_X\wedge \left(\frac{1}{2}\langle A\wedge \dbar A\rangle + \frac{1}{6}\langle A\wedge [A\wedge A]\rangle\right).\]
+As in the previous example, this still makes sense if $X$ is a Calabi-Yau $d$-fold with $d$ odd, as a $\ZZ/2\ZZ$-graded theory.
 \end{example}
 
 \begin{example}
@@ -877,7 +878,7 @@ To simplify the proof, we assume $X=Y=M=\pt$. Then $\fg$ carries a $(-2)$-shifte
 \[\map(\pt, T^*[-1] B \fg)\]
 has the bundle of BV fields $\fg[1] \oplus \fg^*[-2]$. We may identify it with $\fg[1]\oplus \fg$, where the pairing $\omega_N$ pairs the two factors using $\langle-,-\rangle$.
 
-We may identify $p^*(\fg[1]\oplus \fg)\cong \Omega^\bullet_{\RR}\otimes \fg[1]$. Under this identification the integration pairing $\omega_M$ on differential forms reduces to the pairing $\omega_N$. The de Rham differential vanishes on translation-invariant forms which shows a compatibility of dimensional reduction with the differentials $Q$. Finally, in both cases the interaction term comes from the $L_\infty$ structure on $\fg$.
+We may identify $p^*(\fg[1]\oplus \fg)\cong \Omega^\bullet_{\RR}\otimes \fg[1]$. Under this identification the integration pairing $\omega_M$ on differential forms reduces to the pairing $\omega_N$. The de Rham differential vanishes on translation-invariant forms which shows a compatibility of dimensional reduction with the differentials $Q_{\mr{BV}}$. Finally, in both cases the interaction term comes from the $L_\infty$ structure on $\fg$.
 \end{proof}
 
 \begin{prop} \label{CS_diml_red_prop}
@@ -988,7 +989,7 @@ The action maps $V\otimes \Sigma\rightarrow \Sigma^*$ and $V\otimes \Sigma^*\rig
 \[\rho(M)\rho(M) = -\det(M)\cdot 1.\]
 \end{prop}
 
-So, $\Sigma\oplus \Sigma^*$ forms a $\ZZ/2$-graded Clifford module.
+So, $\Sigma\oplus \Sigma^*$ forms a $\ZZ/2\ZZ$-graded Clifford module.
 
 We have a nondegenerate scalar spinorial pairing
 \[\Sigma\otimes \Sigma^*\longrightarrow \CC\]
@@ -1071,7 +1072,7 @@ But by \eqref{eq:2dvectorpairing} we have
 which proves the claim.
 \end{proof}
 
-The Clifford action $V\otimes S_{\pm}\rightarrow S_{\mp}$ extends in an obvious way to a Clifford action $V\otimes \Sigma\rightarrow \Sigma^*$ and $V\otimes \Sigma^*\rightarrow \Sigma$ given by the identity on the $W$ component. Thus, $\Sigma\oplus \Sigma^*$ is a $\ZZ/2$-graded Clifford module.
+The Clifford action $V\otimes S_{\pm}\rightarrow S_{\mp}$ extends in an obvious way to a Clifford action $V\otimes \Sigma\rightarrow \Sigma^*$ and $V\otimes \Sigma^*\rightarrow \Sigma$ given by the identity on the $W$ component. Thus, $\Sigma\oplus \Sigma^*$ is a $\ZZ/2\ZZ$-graded Clifford module.
 
 The spaces $\Sigma, \Sigma^*$ are equipped with $\so(V)$-equivariant nondegenerate pairings $\Gamma\colon \Sym^2(\Sigma)\rightarrow V$ defined by
 \[\Gamma(s\otimes q_1, s\otimes q_2) = \Gamma_+(s, s) (q_1, q_2)\]
@@ -1191,9 +1192,9 @@ The operator
 \pavel{Need to explain that the degrees work out and check that you still have an elliptic complex.}
 
 \begin{remark}
-Without the homomorphism $\alpha : U(1) \to G_R$, we obtain a $\ZZ/2$-graded classical field theory
+Without the homomorphism $\alpha : U(1) \to G_R$, we obtain a $\ZZ/2\ZZ$-graded classical field theory
 \[(E, \d + \{\rho_2(Q), -\}, \omega, I + \rho_3(Q) + \dots),\]
-where the $\ZZ/2$-grading on $E$ is the total grading.
+where the $\ZZ/2\ZZ$-grading on $E$ is the total grading.
 \end{remark}
 
 \subsection{Dimensional Reduction of Supersymmetric Theories}
@@ -1345,7 +1346,7 @@ In each case the lower-dimensional theories are obtained by dimensional reductio
 \subsection{Pure super Yang--Mills theory}
 \label{sect:gaugemultipletSUSY}
 
-We begin with a description of certain pure supersymmetric Yang--Mills theories. Let $V_\RR$ be a real vector space equipped with a nondegenerate symmetric bilinear pairing and $V$ its complexification. Fix a $\ZZ/2$-graded Clifford module $\Sigma\oplus \Sigma^*\rightarrow \CC$ with the associated $\Gamma$-pairings
+We begin with a description of certain pure supersymmetric Yang--Mills theories. Let $V_\RR$ be a real vector space equipped with a nondegenerate symmetric bilinear pairing and $V$ its complexification. Fix a $\ZZ/2\ZZ$-graded Clifford module $\Sigma\oplus \Sigma^*\rightarrow \CC$ with the associated $\Gamma$-pairings
 \[\Gamma\colon \Sym^2(\Sigma)\rightarrow V,\qquad \Gamma\colon \Sym^2(\Sigma^*)\rightarrow V\]
 defined as in Appendix \ref{sect:spinors}. We make the following assumption on this setup.
 
@@ -1756,7 +1757,7 @@ Let $\fg$ be a complex Lie algebra equipped with a symmetric bilinear invariant 
 
 The 10d $\cN=(1, 0)$ supersymmetry algebra admits a unique twist:
 \begin{itemize}
-\item A square-zero supercharge $Q\neq 0\in\Sigma$ has 5 invariant directions and does not admit a compatible homomorphism $\alpha$. So, it gives rise to a $\ZZ/2$-graded holomorphic theory. A way to construct such a supercharge is to choose a complex structure on $\RR^{10}$ together with complex half-density whose square is a holomorphic volume form $\Omega\in\Omega^{5, 0}(\CC^5)$. Such a supercharge is stabilized by $\SU(5)\subset \Spin(10)$.
+\item A square-zero supercharge $Q\neq 0\in\Sigma$ has 5 invariant directions and does not admit a compatible homomorphism $\alpha$. So, it gives rise to a $\ZZ/2\ZZ$-graded holomorphic theory. A way to construct such a supercharge is to choose a complex structure on $\RR^{10}$ together with complex half-density whose square is a holomorphic volume form $\Omega\in\Omega^{5, 0}(\CC^5)$. Such a supercharge is stabilized by $\SU(5)\subset \Spin(10)$.
 \end{itemize}
 
 We will now fix a nonzero square-zero supercharge $Q$ and rewrite the fields and the action in terms of the Calabi--Yau structure. Let $\omega\in\Omega^{1, 1}(\CC^5)$ be the K\"ahler form, $\Omega\in\Omega^{5, 0}(\CC^5)$ the holomorphic volume form and $\Lambda\colon \Omega^{p+1, q+1}(\CC^5)\rightarrow \Omega^{p, q}(\CC^5)$ the dual Lefschetz operator. The vector representation decomposes as
@@ -1844,7 +1845,7 @@ Let $\fg$ be a complex Lie algebra equipped with a symmetric bilinear invariant 
 
 The 9d $\cN=1$ supersymmetry algebra admits a unique twist:
 \begin{itemize}
-\item A square-zero supercharge $Q\neq 0\in\Sigma$ has 5 invariant directions and does not admit a compatible homomorphism $\alpha$. So, it gives rise to a $\ZZ/2$-graded holomorphic theory. A way to construct such a supercharge is to choose a splitting $\RR^9\cong \RR^8\times \RR$ with a complex structure on $\RR^8$ together with complex half-density whose square is a holomorphic volume form $\Omega\in\Omega^{4, 0}(\CC^4)$. Such a supercharge is stabilized by $\SU(4)\subset \Spin(9)$.
+\item A square-zero supercharge $Q\neq 0\in\Sigma$ has 5 invariant directions and does not admit a compatible homomorphism $\alpha$. So, it gives rise to a $\ZZ/2\ZZ$-graded holomorphic theory. A way to construct such a supercharge is to choose a splitting $\RR^9\cong \RR^8\times \RR$ with a complex structure on $\RR^8$ together with complex half-density whose square is a holomorphic volume form $\Omega\in\Omega^{4, 0}(\CC^4)$. Such a supercharge is stabilized by $\SU(4)\subset \Spin(9)$.
 \end{itemize}
 
 We may identify the odd part of the 9d $\mc N=1$ supersymmetry algebra with the odd part of the 10d $\mc N=(1, 0)$ supersymmetry algebra. Under this identification a supercharge $Q$ squares to zero in 9d iff it squares to zero in 10d.
@@ -1927,7 +1928,7 @@ From Proposition \ref{prop:twistdimensionalreduction} we get that the holomorphi
 % 
 % \begin{remark}
 % From the point of view of supersymmetry, the twisted theory is only $\ZZ/2\ZZ$-graded, because the R-symmetry group is trivial, so there is no possible R-charge with which to regrade the twisted theory to make it $\ZZ$-graded.  
-% This is of course compatible with our conventions for holomorphic Chern-Simons: holomorphic Chern-Simons (with values in an ordinary Lie algebra) on an odd dimensional Calabi-Yau only defines a $\ZZ/2$-graded theory (unless $d=3$, where this can be lifted to a $\ZZ$-grading). 
+% This is of course compatible with our conventions for holomorphic Chern-Simons: holomorphic Chern-Simons (with values in an ordinary Lie algebra) on an odd dimensional Calabi-Yau only defines a $\ZZ/2\ZZ$-graded theory (unless $d=3$, where this can be lifted to a $\ZZ$-grading). 
 % As a consequence, the twisted BV-BRST complex only has an odd symplectic pairing, not a $(-1)$-symplectic pairing.
 % \end{remark}
 % 
@@ -2174,7 +2175,7 @@ I^{(2)}_{\mr{gauge}} &= -\frac{1}{4}\int \dvol (\chi^*)^2.
 Here, in terms of the K\"ahler form $\omega$, the volume form is identified as $\dvol = \frac{\omega^3}6$.
 
 \begin{thm}
-The holomorphic twist of 6d $\mc N=(1, 0)$ super Yang--Mills with gauge group $G$, and with a hypermultiplet valued in the symplectic representation $U$, is perturbatively equivalent to holomorphic BF theory on $\CC^3$ equipped with a Calabi--Yau structure $\Omega$, coupled to a holomorphic symplectic boson valued in $U$.  That is, the theory with the space of fields $\mr{Map}(\CC^3, U/\!/\gg)$, where $U/\!/\gg$ is the classifying space of the dg Lie algebra $\gg \oplus \gg[-1] \oplus U[-1]$ with even shifted symplectic structure induced from the symplectic pairing on $U$. 
+The holomorphic twist of 6d $\mc N=(1, 0)$ super Yang--Mills with gauge group $G$, and with a hypermultiplet valued in the symplectic representation $U$, is perturbatively equivalent to holomorphic BF theory on $\CC^3$ equipped with a Calabi--Yau structure $\Omega$, coupled to a holomorphic symplectic boson valued in $U$.  That is, the theory with the space of fields $\mr{Map}(\CC^3, U\ham \gg)$, where $U\ham \gg$ is the classifying space of the dg Lie algebra $\gg \oplus \gg[-1] \oplus U[-1]$ with even shifted symplectic structure induced from the symplectic pairing on $U$. 
 \label{thm:6dholomorphictwist}
 \end{thm}
 
@@ -2253,7 +2254,7 @@ The twist of 6d $\mc N=(1,1)$ super Yang-Mills theory by a rank $(1,1)$ supercha
 \end{theorem}
 
 \begin{proof}
-We obtain this description by starting with the 1-parameter family of twisted theories from Theorem \ref{7d_holo_twist_thm}, and dimensionally reducing along one of the Calabi-Yau directions.  That is, by applying Proposition \ref{CS__diml_red_prop} to the family of twists in 7-dimensions.
+We obtain this description by starting with the 1-parameter family of twisted theories from Theorem \ref{7d_holo_twist_thm}, and dimensionally reducing along one of the Calabi-Yau directions.  That is, by applying Proposition \ref{CS_diml_red_prop} to the family of twists in 7-dimensions.
 \end{proof}
 
 \begin{theorem} \label{6d_rk22_twist_thm}
@@ -2284,7 +2285,7 @@ We begin by treating $\mc N=1$ Super Yang-Mills theory with gauge group $G$, wit
 There is a unique class of square-zero supercharges in the 5d $\mc N=1$ supersymmetry algebra.  Twists by such supercharges are minimal: they are invariant in three directions.  The stabilizer of a minimal supercharge is isomorphic to $\SU(2) \sub \Spin(5)$.
 
 \begin{theorem} \label{5d_holo_twist_theorem}
-The minimal twist of 5d $\mc N=1$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$, on the product of a Calabi-Yau surface $S$ and an oriented 1-manifold $L$ is equivalent to the generalized BF theory coupled to a higher holomorphic symplectic $U$-valued boson, with space of fields $\mr{Map}(S \times L_{\mr{dR}}, U/\!/G)$.
+The minimal twist of 5d $\mc N=1$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$, on the product of a Calabi-Yau surface $S$ and an oriented 1-manifold $L$ is equivalent to the generalized BF theory coupled to a higher holomorphic symplectic $U$-valued boson, with space of fields $\mr{Map}(S \times L_{\mr{dR}}, U\ham G)$.
 \end{theorem}
 
 \begin{proof}
@@ -2549,7 +2550,7 @@ There are three classes of square-zero supercharge in the 3d $\mc N=2$ supersymm
 We will identify the latter two twists as further deformations of the minimal twist, which we can describe similarly to what we saw for $\mc N=1$.
 
 \begin{theorem} \label{4d_2_holo_twist_thm}
-The minimal twist of 4d $\mc N=2$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$ on a Calabi-Yau surface $S$ is perturbatively equivalent to the generalized BF theory coupled to a higher holomorphic symplectic $U$-valued boson, with space of fields $\mr{Map}(S, T^*[1](U/\!/\gg))$.
+The minimal twist of 4d $\mc N=2$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$ on a Calabi-Yau surface $S$ is perturbatively equivalent to the generalized BF theory coupled to a higher holomorphic symplectic $U$-valued boson, with space of fields $\mr{Map}(S, T^*[1](U\ham \gg))$.
 \end{theorem}
 
 \begin{proof}
@@ -2559,7 +2560,7 @@ To show this, we start with the 5d $\mc N=1$ minimal twist from Theorem \ref{5d_
 We'll first consider the deformation of the holomorphic twist to the topological twist corresponding to a rank $(2,0)$ supercharge.
 
 \begin{theorem} \label{4d_Donaldson_twist_thm}
-The deformation of the holomorphic twist to the Donaldson twist of 4d $\mc N=2$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$ is perturbatively equivalent, as a 1-parameter family of theories, to the Hodge family $\mr{Map}(S, (U/\!/\gg)_{\mr{Hod}})$.  
+The deformation of the holomorphic twist to the Donaldson twist of 4d $\mc N=2$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$ is perturbatively equivalent, as a 1-parameter family of theories, to the Hodge family $\mr{Map}(S, (U\ham \gg)_{\mr{Hod}})$.  
 \end{theorem}
 
 \begin{proof}
@@ -2571,7 +2572,7 @@ Suppose the family of generically rank $(2,0)$ supercharge splits as a sum of tw
 We now address the rank $(1,1)$ twist.  This is more straightforward: we can understand it by dimensional reduction from the 5d holomorphic twist, this time in a non-invariant direction.
 
 \begin{theorem} \label{4d_11_twist_thm}
-The rank $(1,1)$ twist of 4d $\mc N=2$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$ on a product $C_1 \times C_2$ of two Riemann surfaces, is perturbatively equivalent to the generalized BF theory coupled to a $U$-valued higher holomorphic boson with space of fields $\mr{Map}(C_1 \times {C_2}_{\mr{dR}}, U/\!/\gg)$.  This theory is generally only $\ZZ/2\ZZ$-graded.
+The rank $(1,1)$ twist of 4d $\mc N=2$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$ on a product $C_1 \times C_2$ of two Riemann surfaces, is perturbatively equivalent to the generalized BF theory coupled to a $U$-valued higher holomorphic boson with space of fields $\mr{Map}(C_1 \times {C_2}_{\mr{dR}}, U\ham \gg)$.  This theory is generally only $\ZZ/2\ZZ$-graded.
 \end{theorem}
 
 \begin{proof}
@@ -2661,7 +2662,7 @@ We will now consider 3d $\mc N=4$ theories, which arise by dimensional reduction
 In the $\mc N=4$ supersymmetry algebra there are now three non-trivial orbits of square-zero supercharges.  In addition to rank one square-zero supercharges, which sit inside an $\mc N=2$ subalgebra, there are two possible classes of rank two square-zero supercharges.  The corresponding twisted theories are obtained by dimensionally reducing the 4d $\mc N=2$ theory twisted by a rank $(1,1)$, or a rank $(2,0)$ square-zero supercharge.  Let's first discuss the rank 1 twist, and its deformation to a perturbatively trivial rank 2 twist.
 
 \begin{theorem} \label{3d_4_holo_A_twist_thm}
-The minimal twist of 3d $\mc N=4$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$ is perturbatively equivalent to the generalized BF theory coupled to a higher holomorphic symplectic $U$-valued boson, with space of fields $\mr{Map}(\CC \times \RR_{\mr{dR}}, T^*[1](U/\!/\gg))$. The deformation of this theory to the rank 2 A-twist corresponds to deforming this theory to the 1-parameter family $\mr{Map}(\CC \times \RR_{\mr{dR}}, (U/\!/\gg)_{\mr{Hod}})$.
+The minimal twist of 3d $\mc N=4$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$ is perturbatively equivalent to the generalized BF theory coupled to a higher holomorphic symplectic $U$-valued boson, with space of fields $\mr{Map}(\CC \times \RR_{\mr{dR}}, T^*[1](U\ham \gg))$. The deformation of this theory to the rank 2 A-twist corresponds to deforming this theory to the 1-parameter family $\mr{Map}(\CC \times \RR_{\mr{dR}}, (U\ham \gg)_{\mr{Hod}})$.
 \end{theorem}
 
 \begin{proof}
@@ -2669,7 +2670,7 @@ To prove this, we start with the one-parameter family of 4d twisted theories whi
 \end{proof}
 
 \begin{theorem} \label{3d_2_B_twist_thm}
-The rank $2$ B-twist of 3d $\mc N=4$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$ is perturbatively equivalent to the generalized BF theory coupled to a $U$-valued higher holomorphic boson with space of fields $\mr{Map}(\RR^3_{\mr{dR}}, U/\!/\gg)$.  This theory is generally only $\ZZ/2\ZZ$-graded.
+The rank $2$ B-twist of 3d $\mc N=4$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$ is perturbatively equivalent to the generalized BF theory coupled to a $U$-valued higher holomorphic boson with space of fields $\mr{Map}(\RR^3_{\mr{dR}}, U\ham \gg)$.  This theory is generally only $\ZZ/2\ZZ$-graded.
 \end{theorem}
 
 \begin{proof}
@@ -2912,7 +2913,7 @@ The claim now follows from a special case of Theorem \ref{2d(0,2)} where we take
 
 In this paper we will extensively use the theory of spinors. Let $V$ be a complex vector space equipped with a nondegenerate symmetric bilinear pairing. Recall that the Clifford algebra $\Cl(V)$ is defined to be the quotient of the tensor algebra on $V$ by the relation
 \[v_1 v_2 + v_2 v_1 = 2(v_1, v_2).\]
-Consider a $\ZZ/2$-graded Clifford module $M=M^+\oplus M^-$. Denote the Clifford action by $\rho(v)\in\eend(M)$. We assume the Clifford module is equipped with a nondegenerate pairing $(-, -)\colon M^+\otimes M^-\rightarrow \CC$ such that
+Consider a $\ZZ/2\ZZ$-graded Clifford module $M=M^+\oplus M^-$. Denote the Clifford action by $\rho(v)\in\eend(M)$. We assume the Clifford module is equipped with a nondegenerate pairing $(-, -)\colon M^+\otimes M^-\rightarrow \CC$ such that
 \[(\rho(v) Q_1, Q_2) = (Q_1, \rho(v) Q_2)\]
 for any $Q_1, Q_2\in M$ and $v\in V$. From now on we denote $M^+=\Sigma$ and $M^-=\Sigma^*$. We define the $\Gamma$-pairings
 \[\Gamma\colon\Sym^2(\Sigma)\longrightarrow V,\qquad \Gamma\colon\Sym^2(\Sigma^*)\longrightarrow V\]
