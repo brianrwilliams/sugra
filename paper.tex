@@ -28,7 +28,7 @@
 \tikzstyle{dimension} = [circle, text centered, text width=0.7cm, minimum height=0.7cm, draw=black]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
-\title{Twists of supersymmetric gauge theories}
+\title{Twists of Supersymmetric Gauge Theories}
 \author{Chris Elliott\and Pavel Safronov \and Brian Williams}
 
 \date{\today}
@@ -96,7 +96,7 @@
   \multirow{8}*{3} & \multirow{8}*{$8$} & \multirow{2}*{Rank $1$} & {Mixed BF Theory} & \multirow{2}*{2 (minimal)} \\
  &&& $T^*[-1]\mr{Map}(\CC_{\mr{Dol}} \times \RR_{\mr{dR}}, T^*[2](\gg/\gg))$  & \\ \cline{3-5}
  && \multirow{2}*{Rank $2$ (B)} & {BF Theory (Rozansky-Witten)} & \multirow{2}*{3 (topological)} \\
- &&& $T^*[-1]\mr{Map}(\RR^3_{\mr{dR}}, T^*[2](\gg/\gg))$ & \\ \cline{3-5}
+ &&& $T^*[-1]\mr{Map}(\RR^3_{\mr{dR}}, \gg/\gg)$ & \\ \cline{3-5}
  && \multirow{2}*{Rank $2$ (A)} & {Perturbatively trivial (dual Rozansky-Witten)} & \multirow{2}*{3 (topological)} \\
  &&& $T^*[-1]\mr{Map}(\CC_{\mr{Dol}} \times \RR_{\mr{dR}}, \gg/\gg)_{\mr{dR}}$ & \\ \hline
  %\multirow{6}*{2} & \multirow{6}*{$(8,8)$} & \multirow{2}*{Rank $(1,0)$} & {} & \multirow{2}*{1 (holomorphic)} \\
@@ -110,7 +110,6 @@
  \label{table_of_twists_16}
 \end{table}
 
-\chris{Todo: would be more correct to remove the generic rank 2 twist in 3d, same as the 3d A twist (dual RW).  I should do this in the tables and the diagrams.  Also todo: change the labels of orbits to A and B.}
 
 \begin{table}[!ht]
  \centering
@@ -157,25 +156,25 @@
 \begin{tikzpicture}
   \matrix (mat) [nodes in empty cells, minimum width=3.5ex, minimum height=3.5ex, column sep=1.8ex,row sep=6ex]{
    \node (corner) {}; & \node (d10) {10}; & \node (d9) {9}; & \node (d8) {8}; & \node (d7) {7}; & \node (d6) {6}; & \node {$\qquad \quad \ 5$}; && \node (d5) {};& \node {$\qquad \ 4$}; && \node (d4) {}; & &\node (d3) {3}; & \node (d2) {}; &  \\
-  \node {8}; &    &   & \node[s16] (88) {$(1,0)_i$};  &   &   &   &&   &&&&   &&&   \\
-  \node {7}; &    &   &   & \node[s16] (77) {$1_i$};  &   &   &&   &&&&   &&&   \\
-  \node {6}; &    &   &   &   & \node[s16] (66) {$(1,1)_g$};  &   &&   &&&&   &&&   \\
-  \node {5}; & \node[s16] (105) {$(1,0)$};  & \node[s16] (95) {$1$};  & \node[s16] (85) {$(1,1)$};  & \node[s16] (75) {$2$}; & \node[s16]  (65){$(2,2)$};  & \node[s16] (55B) {$4$}; & \node[s16] (55A) {$2_g$};  &   &&&&   &&&   \\
-  \node {4}; &    &   & \node[s16] (84) {$(1,0)_p$};  & \node[s16] (74) {$1_p$};  & \node[s16] (64) {$(1,1)_s$};  & \node[s16] (54) {$2_s$};  && \node[s16] (44B) {$(2,2)_s$}; & \node[s16] (44K) {$(2,1)$}; & \node[s8] (44A) {$(2,0)$}; & \node[s16] (44g) {$(2,2)_g$};  &   &&&   \\
-  \node {3}; &    &   &   &   & \node[s8] (63) {$(1,0)$};  & \node[s8] (53) {$1$};  && \node[s8] (43) {$(1,1)$};  &&&& \node[s8] (33B) {$2_B$}; & \node[s8] (33A) {$2_A$}; &\node[s16] (33g) {$2_g$};  &   \\
+  \node {8}; &    &   & \node[s16] (88) {$(1,0)_A$};  &   &   &   &&   &&&&   &&&   \\
+  \node {7}; &    &   &   & \node[s16] (77) {$1_A$};  &   &   &&   &&&&   &&&   \\
+  \node {6}; &    &   &   &   & \node[s16] (66) {$(1,1)_A$};  &   &&   &&&&   &&&   \\
+  \node {5}; & \node[s16] (105) {$(1,0)$};  & \node[s16] (95) {$1$};  & \node[s16] (85) {$(1,1)$};  & \node[s16] (75) {$2$}; & \node[s16]  (65){$(2,2)$};  & \node[s16] (55B) {$4$}; & \node[s16] (55A) {$2_A$};  &   &&&&   &&&   \\
+  \node {4}; &    &   & \node[s16] (84) {$(1,0)_B$};  & \node[s16] (74) {$1_B$};  & \node[s16] (64) {$(1,1)_B$};  & \node[s16] (54) {$2_B$};  && \node[s16] (44B) {$(2,2)_B$}; & \node[s16] (44K) {$(2,1)$}; & \node[s8] (44A) {$(2,0)$}; & \node[s16] (44g) {$(2,2)_A$};  &   &&&   \\
+  \node {3}; &    &   &   &   & \node[s8] (63) {$(1,0)$};  & \node[s8] (53) {$1$};  && \node[s8] (43) {$(1,1)$};  &&&& \node[s8] (33B) {$2_B$}; & \node[s8] (33A) {$2_A$}; &  &   \\
   \node {2}; &    &   &   &   &   &   && \node[s4](42) {$(1,0)$};  &&&& \node[s4] (32) {$1$};  &&   \\
   \node (i1) {1}; &   &  &  &  &  &   & &   &&& &   && &   \\};
   
   \draw[thick] (corner.south west) -- (d2.south west);
   \draw[thick] (corner.north east) -- (i1.south east);
   
-  \draw[dotted] (0.4,-7) -- (0.4,7);
-  \draw[dotted] (6.35,-7) -- (6.35,7);
+  \draw[dotted] (0.5,-7) -- (0.5,7);
+  \draw[dotted] (6.4,-7) -- (6.4,7);
   \draw[dotted] (-2,-7) -- (-2,7);
   \draw[dotted] (-3.8,-7) -- (-3.8,7);
-  \draw[dotted] (-4.75,-7) -- (-4.75,7);
-  \draw[dotted] (-6.25,-7) -- (-6.25,7);
-  \draw[dotted] (-7.1,-7) -- (-7.1,7);
+  \draw[dotted] (-4.8,-7) -- (-4.8,7);
+  \draw[dotted] (-6.3,-7) -- (-6.3,7);
+  \draw[dotted] (-7.3,-7) -- (-7.3,7);
   
   \draw[arrow] (105) -- (95);
   \draw[arrow] (95) -- (85);
@@ -204,10 +203,10 @@
   \draw[arrow] (44B) -- (33B);
   \draw[arrow] (44A) -- (33A);
   \draw[arrow] (44K) -- (33A);
-  \draw[arrow] (44g) -- (33g);
   \draw[arrow] (43) -- (33B);
   \draw[arrow] (43) -- (32);
   \draw[arrow] (42) -- (32);
+  \draw[arrow] (44g) -- (33A);
   
 \end{tikzpicture}
 \caption{This figure shows the orbits of square-zero supercharges in each dimension.  The labels indicate each orbit: the number refers to the rank, and the subscript indicates the situations where the supercharges of a given rank split into multiplet orbits.  Each column is labelled by a dimension, and each row by the number of invariant directions of the supercharge.  Colours indicate the maximal supersymmetry algebra where the given supercharges live, so red indicates supercharges defined in algebras with 16 supercharges, orange those with 8 supercharges, and yellow those with 4 supercharges.}
@@ -300,7 +299,7 @@
 
 \section{The BV-BRST Formalism}
 
-In this section we will set up the homological formalism in which we study classical field theory: the BV-BRST formalism.  Most of the material in this section is not original.  We refer the reader to \chris{refs} for more details.  We will conclude the section by describing a number of fundamental examples of classical field theories that are highly structured: partially holomorphic or topological theories.  We will also discuss the concept of \emph{dimensional reduction} of a classical field theory on $M$ along a fibration $M \to N$.  We will use the idea of dimensional reduction to construct many of the supersymmetric field theories which we will consider in the next section.  
+In this section we will set up the homological formalism in which we study classical field theory: the BV-BRST formalism.  Most of the material in this section is not original.  We refer the reader to \cite{CostelloBook, Book2} for more details on this perspective.  We will conclude the section by describing a number of fundamental examples of classical field theories that are highly structured: partially holomorphic or topological theories.  We will also discuss the concept of \emph{dimensional reduction} of a classical field theory on $M$ along a fibration $M \to N$.  We will use the idea of dimensional reduction to construct many of the supersymmetric field theories which we will consider in the next section.  
 
 \subsection{Conventions}
 Throughout the paper we will frequently study obects, for instance vector bundles, equipped with a $\ZZ\times\ZZ/2\ZZ$-grading. \emph{Degree} will refer to the first (cohomological) grading and \emph{odd} or \emph{even} to the second (fermionic) grading.  For an element $x$ we denote by $|x|\in\ZZ/2\ZZ$ the total degree.
@@ -328,7 +327,7 @@ There is a natural Lie bracket on ${\rm Fun}_{\rm loc}(\cE, \cE)$ and a canonica
 
 \subsection{Classical BV Theories}
 
-The classical BV (Batalin-Vilkovisky) formalism \cite{BatalinVilkovisky} is a model for classical field theory from the Lagrangian perspective.  In brief \chris{...}
+The classical BV (Batalin-Vilkovisky) formalism \cite{BatalinVilkovisky} is a model for classical field theory from the Lagrangian perspective.  In brief the classical BV formalism produces a local model for the critical locus of an action functional, but considered in the derived sense.  That is, given a space $\Phi$ of fields and an action functional with derivative $\d S$, one considers not just the usual locus in $\Phi$ of fields with $\d S(\phi) = 0$, but the derived intersection $\mr{dCrit}(S) = \Phi \cap^h_{T^*\Phi} \Gamma_{\d S}$ of the zero section in $T^*\Phi$ with the graph of $\d S$.  The formalism we describe below can be interpreted as an abstract formalism for modelling the tangent complex at a point to a derived critical locus $\mr{dCrit}(S)$.
 
 \begin{definition}
 A \defterm{free BV theory} on a manifold $M$ is the data of:
@@ -430,7 +429,7 @@ We will also consider \defterm{$\ZZ/2\ZZ$-graded classical field theories} which
 \end{remark}
 
 \begin{remark}
-The data of a classical BV theory can be equivalently encoded in an elliptic $L_\infty$ algebra $L=E[-1]$ equipped with a cyclic structure, i.e. a symplectic isomorphism $L\cong L^![-3]$. \chris{todo: add references}
+The data of a classical BV theory can be equivalently encoded in an elliptic $L_\infty$ algebra $L=E[-1]$ equipped with a cyclic structure, i.e. a symplectic isomorphism $L\cong L^![-3]$ \cite[Chapter 5.4]{Book2}. 
 \end{remark}
 
 Next, we formulate the notion of an equivalence of classical BV theories. 
@@ -504,8 +503,7 @@ with the differentials $E_1 \to E_1$ and $E_1^! \to E_1^!$ given by the identity
 \end{remark}
 
 \subsection{Symmetries in the Classical BV Formalism} \label{symmetry_section}
-
-In this section we define what it means for a (super) Lie algebra to act on a classical field theory. Let $(E, Q_{\mr{BV}},\omega, I)$ be a classical field theory and $\fg$ a super Lie algebra.  We will define $\gg$-equivariant local observables in the classical field theory by introducing $\gg$-valued background fields into our classical field theory, and extending the action functional to a functional that involves these background fields, but still satisfies the classical master equation.  We begin by defining an appropriate version of the Chevalley-Eilenberg cochain complex.
+In this section we define what it means for a (super) Lie algebra to act on a classical field theory  (see also \cite[Chapter 11]{Book2} for a related discussion). Let $(E, Q_{\mr{BV}},\omega, I)$ be a classical field theory and $\fg$ a super Lie algebra.  We will define $\gg$-equivariant local observables in the classical field theory by introducing $\gg$-valued background fields into our classical field theory, and extending the action functional to a functional that involves these background fields, but still satisfies the classical master equation.  We begin by defining an appropriate version of the Chevalley-Eilenberg cochain complex.
 
 \begin{definition}
 The \emph{Chevalley-Eilenberg complex} for the Lie algebra $\gg$, with coefficients in $\oloc(\cE)$, will be defined as follows.  Consider the graded vector space
@@ -579,7 +577,7 @@ By assumption that the Noether current is at least quadratic in the fields, we s
 combining to give $\cE$ the structure of an $L_\infty$-module for $\fg$.
 \end{rmk}
 
-We may also define actions of supergroups on classical field theories.  The action of a supergroup $G$ is more data than the action of a super Lie algebra $\gg$: it includes the infinitesimal action of the Lie algebra $\gg$, along with an action of $G$ on the fields exponentiating this infinitesimal action.  That is, we make the following definition (see also \cite[]{Book1} \chris{section}).
+We may also define actions of supergroups on classical field theories.  The action of a supergroup $G$ is more data than the action of a super Lie algebra $\gg$: it includes the infinitesimal action of the Lie algebra $\gg$, along with an action of $G$ on the fields exponentiating this infinitesimal action.  That is, we make the following definition.
 
 \begin{definition}
 \label{group_action_def}
@@ -665,7 +663,9 @@ In this section we give some examples of classical field theories we will use in
 
 \subsubsection{Generalized BF Theory} \label{gen_BF_section}
 
-Our first example will generalize the fundamental example of \emph{BF} theory to a not entirely topological context.  Ordinarily, BF theory describes the classical BRST theory with fields \chris{... todo, include references.}
+Our first example will generalize the fundamental example of \emph{BF theory} to a not entirely topological context.  Ordinarily, BF theory describes the classical BRST theory on a $d$-manifold $M$ with fields given by a $G$-gauge field $A$ and a $\gg$-valued $(d-2)$-form $B$, with action functional
+\[S(A,B) = \int_M \langle F_A \wedge B \rangle.\]
+This theory is, in fact, of cotangent type, where the base of the cotangent includes $A$ and its antifield, and the fiber includes $B$ and its antifield.  This basic setup can be generalized to a setting where $M$ need not be entirely topological, and where $\gg$ may be a more general $L_\infty$ algebra, in the following way.
 
 \begin{definition}
 Let $X$ and $Y$ be complex manifolds and $M$ a smooth oriented manifold. Fix an $L_\infty$ algebra $\fg$. The \defterm{generalized $BF$ theory} is the $(-1)$-shifted cotangent bundle of the following classical BRST theory:
@@ -738,7 +738,7 @@ In fact, the $\SO(n_3)$-action given by the previous proposition extends to a ho
 
 Generalized BF theories can be naturally deformed to theories which are perturbatively trivial, but which arise as shadows of non-trivial non-perturbative theories.  These will often appear as topological twists of supersymmetric field theories, the most famous example being the 2d A-model \chris{refer also to the introduction}.  In order to remain within the world of perturbation theory, we will study these theories as deformations families parameterized by a complex parameter $t$.  So at $t=0$ we will recover generalized BF theory.
 
-We will refer to these families as Hodge deformations of generalized BF theory.  The terminology here comes from Simpson's Hodge stack \chris{ref}: if $X$ is a smooth scheme, or more generally a derived Artin stack, one can define a derived stack $X_{\mr{Hod}}$ over $\bb A^1$, where the fiber at $0 \in \bb A^1$ is the Dolbeault stack $X_{\mr{Dol}}$ of $X$, essentially the 1-shifted tangent bundle, and the fiber at a non-zero point is equivalent to the de Rham stack $X_{\mr{dR}}$ of $X$, which has contractible tangent complex.
+We will refer to these families as Hodge deformations of generalized BF theory.  The terminology here comes from Simpson's Hodge stack \cite{Simpson}: if $X$ is a smooth scheme, or more generally a derived Artin stack, one can define a derived stack $X_{\mr{Hod}}$ over $\bb A^1$, where the fiber at $0 \in \bb A^1$ is the Dolbeault stack $X_{\mr{Dol}}$ of $X$, essentially the 1-shifted tangent bundle, and the fiber at a non-zero point is equivalent to the de Rham stack $X_{\mr{dR}}$ of $X$, which has contractible tangent complex.
 
 \begin{definition} \label{Hodge_family_def}
 Consider the generalized BF theory on $X \times Y \times M$ associated to the $L_\infty$ algebra $\fg$, and supposed $\fg$ is equipped with a non-degenerate pairing.  The \emph{Hodge deformation} of this generalized BF theory is the $\CC[t]$ family of classical BV theories on $X \times Y \times M$, with $(E_t, \omega_t, I_t) = (E_{\mr{BF}}, \omega_{\mr{BF}}, I_{\mr{BF}})$ the same data as for generalized BF theory, so 
@@ -1053,7 +1053,7 @@ We will be interested in the following examples:
 
 All four examples are alternative, while the first three examples are moreover associative.
 
-\subsection{Two-dimensional Chiral Supersymmetry}
+\subsection{Two-dimensional Chiral Supersymmetry} \label{sec:2dchiral}
 
 In the previous section we have related composition algebras to minimal supersymmetry algebras in dimensions 3, 4, 6 and 10. In this section we explain a different relationship between composition algebras and supersymmetry algebras, this time in the case of 2d $\cN=(\cN_+, 0)$ supersymmetry.
 
@@ -1671,6 +1671,7 @@ $\{I_{\matter}^{(1)}, I_{\matter}^{(2)}\}(Q_1,Q_2,Q_3)$ is obtained by cyclicall
 \end{proof}
 
 \part{A Catalogue of Twists}
+\chris{We actually used this heading in our previous paper, so maybe a different name?}
 
 \section{Dimension 10}
 
@@ -2443,7 +2444,7 @@ We obtain $\mc N=2$ super Yang-Mills theory on $\RR^4$ by dimensionally reducing
 \paragraph{Fields:}  We can describe the BRST fields of $\mc N=2$ super Yang-Mills with matter valued in the symplectic representation $U$ by restricting the 5d $\mc N=2$ fields from Section \ref{5d_1_section} to representations of the group $\mr O(4)$.  In addition to the ghost $c$, the fields we obtain are
 \begin{itemize}
  \item $\gg$-valued Bosons: a gauge field $A \in \Omega^1(\RR^4; \gg)$, and a pair of scalar fields $(\phi_1,\phi_2) \in \Omega^1(\RR^4; \gg \otimes \wedge^2(W))^2$.
- \item $U$-valued bosons: a $W \oplus W^*$-valued scalar field $(\phi \otimes v,\phi' \otimes v') \in \Omega^0(\RR^4; (W \oplus W^*) \otimes U)$.
+ \item $U$-valued bosons: a $W$-valued scalar field $\phi \otimes v \in \Omega^0(\RR^4; W \otimes U)$.
  \item $\gg$-valued fermions: a $W$-valued Dirac spinor $\lambda = (\lambda_+ \otimes u_+, \lambda_-\otimes u_-) \in \Omega^0(\RR^4; (S_+ \otimes W \oplus S_- \otimes W^*) \otimes \gg)$.
  \item $U$-valued fermions: a Dirac spinor $\psi = (\psi_+,\psi_-) \in \Omega^0(\RR^4; (S_+\oplus S_-) \otimes U)$.
 \end{itemize}
@@ -2456,7 +2457,7 @@ After reduction to $\mr O(4)$, the 6d $\mc N=(1,0)$ interaction terms $I^{(1)}$ 
 \begin{align*}
 I^{(1)}_{\mr{gauge}}(Q) &= \int \dvol \bigg(-( (\Gamma(Q_+,\lambda_-)(w_+,u_-), A^*) + \langle Q_+,\lambda_+\rangle w_+ \wedge u_+, \phi_1^* ) + \\
 &\qquad  + \frac 12 ((\rho(F_A)Q_+, \lambda_+^*)(u_+^*,  w_+) + (\rho(\d_A \phi_2(w_+ \wedge u_-^*))Q_+, \lambda_-^*) \bigg)\\
-I^{(1)}_{\mr{matter}}(Q) &= \int \dvol (((Q_+,\psi_+), \phi^*)(v^*,w_+) + \frac 12 (\rho(\d_A \phi')Q_+, \psi_+^*)(v',w_+)) \\
+I^{(1)}_{\mr{matter}}(Q) &= \int \dvol (((Q_+,\psi_+), \phi^*)(v^*,w_+) + \frac 12 (\rho(\d_A \phi)Q_+, \psi_+^*)(v,w_+)) \\
 I^{(2)}_{\mr{gauge}}(Q,Q) &= \int \dvol \big(\frac 14 (Q_+,Q_+)(\lambda_-,\lambda_-)(u_-,w_+)^2 - \frac 12  (Q_+, \lambda_-^*)^2(w_+ \wedge u_-^*)^2 - (Q_+,Q_+)\phi_1(w_+ \wedge w_+)c^* \big) \\
 I^{(2)}_{\mr{matter}}(Q,Q) &= 0 %\frac 14 \dvol (Q_+,Q_+)(\psi_+,\psi_+)(w_+ \wedge w_+)
 \end{align*}
@@ -2546,7 +2547,7 @@ where $\omega$ indicates the canonical isomorphism $\omega \colon \wedge^2(W^*) 
 \section{Dimension 3}
 The 3-dimensional $\mc N=k$ supersymmetry algebra has odd part $\Sigma \iso S \otimes W$, where $S$ is the 2-dimensional spinor representation of $\Spin(3) \iso \SU(2)$, and where $W$ is a $k$-dimensional vector space equipped with a bilinear pairing.  The maximal supersymmetric gauge theory has $\mc N=8$.  However, there are $\mc N=4$ super Yang-Mills theories for every choice $U$ of symplectic representation of the gauge group, and $\mc N=2$ super Yang-Mills theories for every choice $R$ of arbitrary representation of the gauge group.  In dimension 3, much like we saw in dimensions 5 and 7, all twisted theories can be obtained by dimensional reduction from theories one dimension higher.
 
-\subsection{\texorpdfstring{$\cN = 2$}{N=2} Super Yang-Mills with Chiral Matter}
+\subsection{\texorpdfstring{$\cN = 2$}{N=2} Super Yang-Mills with Chiral Matter} \label{3d_2_section}
 We'll begin with the minimal super Yang-Mills theory that admits non-trivial twists (if $\mc N=1$ there are no square-zero supercharges).  So, fix a gauge group $G$, and a representation $R$.  The 3d $\mc N=2$ super Yang-Mills theory arises by dimensional reduction from $\mc N=1$ super Yang-Mills theory on $\RR^4$ with an $R$-valued chiral multiplet.
 
 \vspace{-10pt}
@@ -2570,14 +2571,14 @@ The minimal twist of 3d $\cN=2$ super Yang-Mills with Lie algebra $\fg$ coupled 
 This follows by dimensionally reducing the holomorphic twist of 4d $\mc N=1$ super Yang-Mills.  That is, we start with the result from Theorem \ref{4d_minimal_twist_thm}, then apply Proposition \ref{CS_diml_red_prop} to turn one of the complex directions into a real de Rham direction.
 \end{proof}
 
-\subsection{\texorpdfstring{$\cN = 4$}{N=4} Super Yang-Mills with Hypermultiplet Matter}
+\subsection{\texorpdfstring{$\cN = 4$}{N=4} Super Yang-Mills with Hypermultiplet Matter} \label{3d_4_section}
 We will now consider 3d $\mc N=4$ theories, which arise by dimensional reduction from 4d $\mc N=2$ super Yang-Mills with gauge group $G$, coupled to a hypermultiplet valued in a symplectic representation $U$, or equivalently by dimensional reduction from 6d $\mc N=(1,0)$ super Yang-Mills coupled to a hypermultiplet.
 
 \vspace{-10pt}
 \paragraph{Fields:} We can describe the BRST fields of $\mc N=4$ super Yang-Mills by restricting the 4d fields from Section \ref{4d_2_section} to representations of the group $\mr O(3)$.  In addition to the ghost $c$, the fields we obtain are
 \begin{itemize}
  \item $\gg$-valued bosons: $A \in \Omega^1(\RR^3; \gg)$, and three scalar fields $(\phi_1,\phi_2,\phi_3) \in \Omega^0(\RR^3; \gg \oplus \gg \oplus \gg)$.
- \item $U$-valued bosons: a pair of $W$-valued scalar fields $(\phi \otimes v,\phi' \otimes v') \in \Omega^0(\RR^3; (W \oplus W) \otimes U)$.
+ \item $U$-valued bosons: a $W$-valued scalar field $(\phi \otimes v) \in \Omega^0(\RR^3; W \otimes U)$.
  \item $\gg$-valued fermions: a pair of $W$-valued spinors $(\lambda_1 \otimes u_1, \lambda_2 \otimes u_2) \in \Omega^0(\RR^3 ; S \otimes \gg \otimes (W \oplus W))$.
  \item $U$-valued fermions:  a pair of spinors $(\psi_1,\psi_2) \in \Omega^0(\RR^3; (S\oplus S) \otimes U)$.
 \end{itemize}
@@ -2602,7 +2603,7 @@ The rank $2$ B-twist of 3d $\mc N=4$ super Yang-Mills theory with gauge group $G
 Again, we prove this by dimensional reduction from a 4d $\mc N=2$ twisted theory, in this case the rank $(1,1)$ twist from Theorem \ref{4d_11_twist_thm}, by applying Proposition \ref{CS_diml_red_prop}.
 \end{proof}
 
-\subsection{\texorpdfstring{$\cN = 8$}{N=8} Super Yang-Mills Theory}
+\subsection{\texorpdfstring{$\cN = 8$}{N=8} Super Yang-Mills Theory} \label{3d_8_section}
 Finally, let's consider maximal super Yang-Mills theory with gauge group $G$ in dimension 3, with $\mc N=8$ supersymmetry.  This is the theory obtained by compactifying $\mc N=(1,0)$ super Yang-Mills on $\RR^{10}$ down to $\RR^3$.
 
 \vspace{-10pt}
@@ -2626,11 +2627,74 @@ The rank $2$ B-twist of 3d $\mc N=8$ super Yang-Mills theory with gauge group $G
 
 \section{Dimension 2}
 
-% \cN=(8, 8) Super Yang-Mills
-% \cN=(4, 4) Super Yang-Mills with matter in a pseudo-real representation
-% \cN=(2, 2) Super Yang-Mills with matter in a complex representation
-%BRIAN FIND REFERENCE OF BELOW
-% \cN=(0,2) Super Yang-Mills with matter 
+There are two classes of twisted supersymmetric gauge theory that we will consider in 2d.  First we have theories with $(\mc N, \mc N)$ supersymmetry; these arise via dimensional reduction from supersymmetric gauge theories in higher dimensions.  We additionally have gauge theories with chiral, i.e. $(0,\mc N)$ supersymmetry, which we saw using the observations in Section \ref{sec:2dchiral}.  We'll address twists for these two classes of theory in turn.
+
+\subsection{\texorpdfstring{$\cN=(2,2)$}{N=(2,2)} Super Yang-Mills with matter} \label{sec:2d(2,2)}
+First, let's consider the $\mc N=(2,2)$ super Yang-Mills theory, which arises via dimensional reduction from 3d $\mc N=2$ super Yang-Mills.  This theory includes a gauge multiplet with gauge group $G$ and a chiral multiplet valued in a representation $R$ of $G$.
+
+\vspace{-10pt}
+\paragraph{Fields:} We can describe the BRST fields of $\mc N=(2,2)$ super Yang-Mills by restricting the fields in dimension 3 from Section \ref{3d_2_section}, or equivalently the 3d fields from Section \ref{4d_1_section} to representations of the group $\mr O(2)$.  In addition to the ghost $c$, the fields we obtain are
+\begin{itemize}
+ \item $\gg$-valued bosons: $A \in \Omega^1(\RR^2; \gg)$, and a pair of scalars $(\phi_1,\phi_2) \in \Omega^0(\RR^2; \gg \oplus \gg)$.
+ \item $R$-valued bosons: $(\Bar{\phi}, \phi) \in \Omega^0(\RR^2 ; R \oplus R^*)$.
+ \item $\gg$-valued fermions: $(\lambda_+ \otimes u_+,\lambda_- \otimes u_-) \in \Omega^0(\RR^2 ; S \otimes (W_+ \oplus S_- \otimes W_-) \otimes \gg)$.
+ \item $R$-valued fermions: $(\psi^+_+,\psi^+_-, \psi^-_+, \psi^-_-) \in \Omega^0(\RR^2 ; (S_+ \oplus S_-) \otimes R \oplus \otimes (S_+ \oplus S_-) \otimes R^*)$.
+\end{itemize}
+
+\vspace{-10pt}
+\paragraph{Supersymmetry action:} 
+\chris{todo}
+
+\vspace{-10pt}
+\paragraph{Twisting data:}
+In the $\mc N=(2,2)$ supersymmetry algebra there is are three classes of non-trivial orbits of square-zero supercharges.  
+\begin{itemize}
+ \item Square-zero supercharges of rank $(1,0)$ or $(0,1)$, which are holomorphic
+ \item Square-zero supecharges of rank $(1,1)$ are topological, and split into two classes: the B-supercharge arises by dimensional reduction from 3 dimensions, and the A-supercharge does not.
+\end{itemize}
+\chris{todo, say something about $\ZZ$-gradings and twisting homomorphisms.}
+
+The calculation of the twists here is similar to what we saw in 4d $\mc N=2$.  The holomorphic twist and the B-twist arise by dimensional reduction from 3d, but the A-twist as a deformation of the holomorphic twist is not, and must be calculated directly.
+
+\begin{theorem} \label{2d_minimal_twist_thm}
+The minimal twist of 2d $\cN=(2,2)$ super Yang-Mills theory with gauge group $G$ coupled to the $\cN=(2,2)$ chiral multiplet valued in a representation $R$ is perturbatively equivalent to holomorphic $BF$ theory for the Lie algebra $\fg$ coupled to the mixed $\beta\gamma$ system with values in the representation $R$, with moduli space $T^*[-1]\mr{Map}(\CC, (R/\gg)_{\mr{Dol}})$. 
+\end{theorem}
+
+\begin{proof}
+This follows, as in 3d, by dimensionally reducing the holomorphic twist of 3d $\mc N=2$ super Yang-Mills.  That is, we start with the result from Theorem \ref{3d_minimal_twist_thm}, then apply Proposition \ref{CS_to_BF_diml_red_prop} to dimensionally reduce in the real de Rham direction.
+\end{proof}
+
+\begin{theorem} \label{2d_2_A_twist_thm}
+The topological A-twist of 2d $\mc N=(2,2)$ super Yang-Mills theory with gauge group $G$ coupled to the $\mc N=(2,2)$ chiral multiplet valued in a representation $R$ is perturbatively equivalent, as a one-parameter deformation of the holomorphic twist, to the Hodge family with moduli space $T^*[-1]\mr{Map}(\CC, (R/\gg)_{\mr{Hod}})$.
+\end{theorem}
+
+\begin{proof}
+ 
+\end{proof}
+
+Finally, there is the 2d B-twist.  This is much easier, since it arises directly from 3d via dimensional reduction in a non-invariant direction.
+\begin{theorem} \label{2d_2_B_twist_thm}
+The topological B-twist of 2d $\mc N=(2,2)$ super Yang-Mills theory with gauge group $G$ coupled to the $\mc N=(2,2)$ chiral multiplet valued in a representation $R$ is perturbatively equivalent to the topological BF theory with moduli space $T^*[-1]\mr{Map}(\RR^2, (R/\gg))$.
+\end{theorem}
+
+\begin{proof}
+We again dimensionally reduce the holomorphic twist of 3d $\mc N=2$ super Yang-Mills, but this time in one of the non-invariant directions.  That is, we start with the result from Theorem \ref{3d_minimal_twist_thm}, then apply Proposition \ref{CS_diml_red_prop} to turn the complex direction into a second real de Rham direction.
+\end{proof}
+
+\subsection{\texorpdfstring{$\cN=(4,4)$}{N=(4,4)} and \texorpdfstring{$\cN=(8,8)$}{N=(8,8)} Super Yang-Mills with matter} \label{sec:2d(4,4)}
+We can likewise consider $\mc N=(4,4)$ super Yang-Mills theory with gauge group $G$, with a hypermultiplet valued in a symplectic representation $U$, by dimensionally reducing 3d $\mc N=4$ super Yang-Mills, or we can consider $\mc N=(8,8)$ super Yang-Mills with gauge group $G$, by dimensionally reducing 3d $\mc N=8$ super Yang-Mills.  We will address these two theories together, since in neither case are there any new classes of twist which were not visible already in the $\mc N=(2,2)$ section above.  
+
+The following equivalences follow from the results in the previous section by substituting $R = $ \chris{what is it exactly?}.
+
+\begin{theorem}
+The holomorphic twist of 2d $\mc N=(4,4)$ super Yang-Mills with gauge group $G$ and symplectic matter representation $U$ admits a one-parameter deformation to the A-twist.  Together they are perturbatively equivalent to a holomorphic BF theory and its Hodge deformation, with moduli space given by $T^*[-1]\mr{Map}(\CC, (U \ham \gg)_{\mr{Hod}})$.
+
+If $U = T^*\gg$ then the $\mc N=(4,4)$ supersymmetry is promoted to $\mc N=(8,8)$, and the twisted moduli space can be identified with  $T^*[-1]\mr{Map}(\CC, (T^*[2](\gg / \gg))_{\mr{Hod}})$.
+\end{theorem}
+
+\begin{theorem}
+The B-twist of 2d $\mc N=(4,4)$ super Yang-Mills with gauge group $G$ and symplectic matter representation $U$ is perturbatively equivalent to the topological BF theory with moduli space $T^*[-1]\mr{Map}(\RR^2_{\mr{dR}}, U \ham \gg)$.  If $U = T^*\gg$ then the $\mc N=(4,4)$ supersymmetry is promoted to $\mc N=(8,8)$, and the twisted moduli space can be identified with $T^*[-1]\mr{Map}(\RR^2_{\mr{dR}}, T^*[2](\gg/\gg))$.
+\end{theorem}
 
 \subsection{\texorpdfstring{$\cN=(0,2)$}{N=(0,2)} Super Yang-Mills with matter} \label{sec:2d(0,2)}
 
