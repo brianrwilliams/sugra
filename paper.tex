@@ -110,7 +110,6 @@
  \label{table_of_twists_16}
 \end{table}
 
-\chris{Todo: would be more correct to remove the generic rank 2 twist in 3d, same as the 3d A twist (dual RW).  I should do this in the tables and the diagrams.  Also todo: change the labels of orbits to A and B.}
 
 \begin{table}[!ht]
  \centering
@@ -157,25 +156,25 @@
 \begin{tikzpicture}
   \matrix (mat) [nodes in empty cells, minimum width=3.5ex, minimum height=3.5ex, column sep=1.8ex,row sep=6ex]{
    \node (corner) {}; & \node (d10) {10}; & \node (d9) {9}; & \node (d8) {8}; & \node (d7) {7}; & \node (d6) {6}; & \node {$\qquad \quad \ 5$}; && \node (d5) {};& \node {$\qquad \ 4$}; && \node (d4) {}; & &\node (d3) {3}; & \node (d2) {}; &  \\
-  \node {8}; &    &   & \node[s16] (88) {$(1,0)_i$};  &   &   &   &&   &&&&   &&&   \\
-  \node {7}; &    &   &   & \node[s16] (77) {$1_i$};  &   &   &&   &&&&   &&&   \\
-  \node {6}; &    &   &   &   & \node[s16] (66) {$(1,1)_g$};  &   &&   &&&&   &&&   \\
-  \node {5}; & \node[s16] (105) {$(1,0)$};  & \node[s16] (95) {$1$};  & \node[s16] (85) {$(1,1)$};  & \node[s16] (75) {$2$}; & \node[s16]  (65){$(2,2)$};  & \node[s16] (55B) {$4$}; & \node[s16] (55A) {$2_g$};  &   &&&&   &&&   \\
-  \node {4}; &    &   & \node[s16] (84) {$(1,0)_p$};  & \node[s16] (74) {$1_p$};  & \node[s16] (64) {$(1,1)_s$};  & \node[s16] (54) {$2_s$};  && \node[s16] (44B) {$(2,2)_s$}; & \node[s16] (44K) {$(2,1)$}; & \node[s8] (44A) {$(2,0)$}; & \node[s16] (44g) {$(2,2)_g$};  &   &&&   \\
-  \node {3}; &    &   &   &   & \node[s8] (63) {$(1,0)$};  & \node[s8] (53) {$1$};  && \node[s8] (43) {$(1,1)$};  &&&& \node[s8] (33B) {$2_B$}; & \node[s8] (33A) {$2_A$}; &\node[s16] (33g) {$2_g$};  &   \\
+  \node {8}; &    &   & \node[s16] (88) {$(1,0)_A$};  &   &   &   &&   &&&&   &&&   \\
+  \node {7}; &    &   &   & \node[s16] (77) {$1_A$};  &   &   &&   &&&&   &&&   \\
+  \node {6}; &    &   &   &   & \node[s16] (66) {$(1,1)_A$};  &   &&   &&&&   &&&   \\
+  \node {5}; & \node[s16] (105) {$(1,0)$};  & \node[s16] (95) {$1$};  & \node[s16] (85) {$(1,1)$};  & \node[s16] (75) {$2$}; & \node[s16]  (65){$(2,2)$};  & \node[s16] (55B) {$4$}; & \node[s16] (55A) {$2_A$};  &   &&&&   &&&   \\
+  \node {4}; &    &   & \node[s16] (84) {$(1,0)_B$};  & \node[s16] (74) {$1_B$};  & \node[s16] (64) {$(1,1)_B$};  & \node[s16] (54) {$2_B$};  && \node[s16] (44B) {$(2,2)_B$}; & \node[s16] (44K) {$(2,1)$}; & \node[s8] (44A) {$(2,0)$}; & \node[s16] (44g) {$(2,2)_A$};  &   &&&   \\
+  \node {3}; &    &   &   &   & \node[s8] (63) {$(1,0)$};  & \node[s8] (53) {$1$};  && \node[s8] (43) {$(1,1)$};  &&&& \node[s8] (33B) {$2_B$}; & \node[s8] (33A) {$2_A$}; &  &   \\
   \node {2}; &    &   &   &   &   &   && \node[s4](42) {$(1,0)$};  &&&& \node[s4] (32) {$1$};  &&   \\
   \node (i1) {1}; &   &  &  &  &  &   & &   &&& &   && &   \\};
   
   \draw[thick] (corner.south west) -- (d2.south west);
   \draw[thick] (corner.north east) -- (i1.south east);
   
-  \draw[dotted] (0.4,-7) -- (0.4,7);
-  \draw[dotted] (6.35,-7) -- (6.35,7);
+  \draw[dotted] (0.5,-7) -- (0.5,7);
+  \draw[dotted] (6.4,-7) -- (6.4,7);
   \draw[dotted] (-2,-7) -- (-2,7);
   \draw[dotted] (-3.8,-7) -- (-3.8,7);
-  \draw[dotted] (-4.75,-7) -- (-4.75,7);
-  \draw[dotted] (-6.25,-7) -- (-6.25,7);
-  \draw[dotted] (-7.1,-7) -- (-7.1,7);
+  \draw[dotted] (-4.8,-7) -- (-4.8,7);
+  \draw[dotted] (-6.3,-7) -- (-6.3,7);
+  \draw[dotted] (-7.3,-7) -- (-7.3,7);
   
   \draw[arrow] (105) -- (95);
   \draw[arrow] (95) -- (85);
@@ -204,10 +203,10 @@
   \draw[arrow] (44B) -- (33B);
   \draw[arrow] (44A) -- (33A);
   \draw[arrow] (44K) -- (33A);
-  \draw[arrow] (44g) -- (33g);
   \draw[arrow] (43) -- (33B);
   \draw[arrow] (43) -- (32);
   \draw[arrow] (42) -- (32);
+  \draw[arrow] (44g) -- (33A);
   
 \end{tikzpicture}
 \caption{This figure shows the orbits of square-zero supercharges in each dimension.  The labels indicate each orbit: the number refers to the rank, and the subscript indicates the situations where the supercharges of a given rank split into multiplet orbits.  Each column is labelled by a dimension, and each row by the number of invariant directions of the supercharge.  Colours indicate the maximal supersymmetry algebra where the given supercharges live, so red indicates supercharges defined in algebras with 16 supercharges, orange those with 8 supercharges, and yellow those with 4 supercharges.}
@@ -300,7 +299,7 @@
 
 \section{The BV-BRST Formalism}
 
-In this section we will set up the homological formalism in which we study classical field theory: the BV-BRST formalism.  Most of the material in this section is not original.  We refer the reader to \chris{refs} for more details.  We will conclude the section by describing a number of fundamental examples of classical field theories that are highly structured: partially holomorphic or topological theories.  We will also discuss the concept of \emph{dimensional reduction} of a classical field theory on $M$ along a fibration $M \to N$.  We will use the idea of dimensional reduction to construct many of the supersymmetric field theories which we will consider in the next section.  
+In this section we will set up the homological formalism in which we study classical field theory: the BV-BRST formalism.  Most of the material in this section is not original.  We refer the reader to \cite{CostelloBook, Book2} for more details on this perspective.  We will conclude the section by describing a number of fundamental examples of classical field theories that are highly structured: partially holomorphic or topological theories.  We will also discuss the concept of \emph{dimensional reduction} of a classical field theory on $M$ along a fibration $M \to N$.  We will use the idea of dimensional reduction to construct many of the supersymmetric field theories which we will consider in the next section.  
 
 \subsection{Conventions}
 Throughout the paper we will frequently study obects, for instance vector bundles, equipped with a $\ZZ\times\ZZ/2\ZZ$-grading. \emph{Degree} will refer to the first (cohomological) grading and \emph{odd} or \emph{even} to the second (fermionic) grading.  For an element $x$ we denote by $|x|\in\ZZ/2\ZZ$ the total degree.
@@ -328,7 +327,7 @@ There is a natural Lie bracket on ${\rm Fun}_{\rm loc}(\cE, \cE)$ and a canonica
 
 \subsection{Classical BV Theories}
 
-The classical BV (Batalin-Vilkovisky) formalism \cite{BatalinVilkovisky} is a model for classical field theory from the Lagrangian perspective.  In brief \chris{...}
+The classical BV (Batalin-Vilkovisky) formalism \cite{BatalinVilkovisky} is a model for classical field theory from the Lagrangian perspective.  In brief the classical BV formalism produces a local model for the critical locus of an action functional, but considered in the derived sense.  That is, given a space $\Phi$ of fields and an action functional with derivative $\d S$, one considers not just the usual locus in $\Phi$ of fields with $\d S(\phi) = 0$, but the derived intersection $\mr{dCrit}(S) = \Phi \cap^h_{T^*\Phi} \Gamma_{\d S}$ of the zero section in $T^*\Phi$ with the graph of $\d S$.  The formalism we describe below can be interpreted as an abstract formalism for modelling the tangent complex at a point to a derived critical locus $\mr{dCrit}(S)$.
 
 \begin{definition}
 A \defterm{free BV theory} on a manifold $M$ is the data of:
@@ -430,7 +429,7 @@ We will also consider \defterm{$\ZZ/2\ZZ$-graded classical field theories} which
 \end{remark}
 
 \begin{remark}
-The data of a classical BV theory can be equivalently encoded in an elliptic $L_\infty$ algebra $L=E[-1]$ equipped with a cyclic structure, i.e. a symplectic isomorphism $L\cong L^![-3]$. \chris{todo: add references}
+The data of a classical BV theory can be equivalently encoded in an elliptic $L_\infty$ algebra $L=E[-1]$ equipped with a cyclic structure, i.e. a symplectic isomorphism $L\cong L^![-3]$ \cite[Chapter 5.4]{Book2}. 
 \end{remark}
 
 Next, we formulate the notion of an equivalence of classical BV theories. 
@@ -504,8 +503,7 @@ with the differentials $E_1 \to E_1$ and $E_1^! \to E_1^!$ given by the identity
 \end{remark}
 
 \subsection{Symmetries in the Classical BV Formalism} \label{symmetry_section}
-
-In this section we define what it means for a (super) Lie algebra to act on a classical field theory. Let $(E, Q_{\mr{BV}},\omega, I)$ be a classical field theory and $\fg$ a super Lie algebra.  We will define $\gg$-equivariant local observables in the classical field theory by introducing $\gg$-valued background fields into our classical field theory, and extending the action functional to a functional that involves these background fields, but still satisfies the classical master equation.  We begin by defining an appropriate version of the Chevalley-Eilenberg cochain complex.
+In this section we define what it means for a (super) Lie algebra to act on a classical field theory  (see also \cite[Chapter 11]{Book2} for a related discussion). Let $(E, Q_{\mr{BV}},\omega, I)$ be a classical field theory and $\fg$ a super Lie algebra.  We will define $\gg$-equivariant local observables in the classical field theory by introducing $\gg$-valued background fields into our classical field theory, and extending the action functional to a functional that involves these background fields, but still satisfies the classical master equation.  We begin by defining an appropriate version of the Chevalley-Eilenberg cochain complex.
 
 \begin{definition}
 The \emph{Chevalley-Eilenberg complex} for the Lie algebra $\gg$, with coefficients in $\oloc(\cE)$, will be defined as follows.  Consider the graded vector space
@@ -579,7 +577,7 @@ By assumption that the Noether current is at least quadratic in the fields, we s
 combining to give $\cE$ the structure of an $L_\infty$-module for $\fg$.
 \end{rmk}
 
-We may also define actions of supergroups on classical field theories.  The action of a supergroup $G$ is more data than the action of a super Lie algebra $\gg$: it includes the infinitesimal action of the Lie algebra $\gg$, along with an action of $G$ on the fields exponentiating this infinitesimal action.  That is, we make the following definition (see also \cite[]{Book1} \chris{section}).
+We may also define actions of supergroups on classical field theories.  The action of a supergroup $G$ is more data than the action of a super Lie algebra $\gg$: it includes the infinitesimal action of the Lie algebra $\gg$, along with an action of $G$ on the fields exponentiating this infinitesimal action.  That is, we make the following definition.
 
 \begin{definition}
 \label{group_action_def}
@@ -665,7 +663,9 @@ In this section we give some examples of classical field theories we will use in
 
 \subsubsection{Generalized BF Theory} \label{gen_BF_section}
 
-Our first example will generalize the fundamental example of \emph{BF} theory to a not entirely topological context.  Ordinarily, BF theory describes the classical BRST theory with fields \chris{... todo, include references.}
+Our first example will generalize the fundamental example of \emph{BF theory} to a not entirely topological context.  Ordinarily, BF theory describes the classical BRST theory on a $d$-manifold $M$ with fields given by a $G$-gauge field $A$ and a $\gg$-valued $(d-2)$-form $B$, with action functional
+\[S(A,B) = \int_M \langle F_A \wedge B \rangle.\]
+This theory is, in fact, of cotangent type, where the base of the cotangent includes $A$ and its antifield, and the fiber includes $B$ and its antifield.  This basic setup can be generalized to a setting where $M$ need not be entirely topological, and where $\gg$ may be a more general $L_\infty$ algebra, in the following way.
 
 \begin{definition}
 Let $X$ and $Y$ be complex manifolds and $M$ a smooth oriented manifold. Fix an $L_\infty$ algebra $\fg$. The \defterm{generalized $BF$ theory} is the $(-1)$-shifted cotangent bundle of the following classical BRST theory:
@@ -738,7 +738,7 @@ In fact, the $\SO(n_3)$-action given by the previous proposition extends to a ho
 
 Generalized BF theories can be naturally deformed to theories which are perturbatively trivial, but which arise as shadows of non-trivial non-perturbative theories.  These will often appear as topological twists of supersymmetric field theories, the most famous example being the 2d A-model \chris{refer also to the introduction}.  In order to remain within the world of perturbation theory, we will study these theories as deformations families parameterized by a complex parameter $t$.  So at $t=0$ we will recover generalized BF theory.
 
-We will refer to these families as Hodge deformations of generalized BF theory.  The terminology here comes from Simpson's Hodge stack \chris{ref}: if $X$ is a smooth scheme, or more generally a derived Artin stack, one can define a derived stack $X_{\mr{Hod}}$ over $\bb A^1$, where the fiber at $0 \in \bb A^1$ is the Dolbeault stack $X_{\mr{Dol}}$ of $X$, essentially the 1-shifted tangent bundle, and the fiber at a non-zero point is equivalent to the de Rham stack $X_{\mr{dR}}$ of $X$, which has contractible tangent complex.
+We will refer to these families as Hodge deformations of generalized BF theory.  The terminology here comes from Simpson's Hodge stack \cite{Simpson}: if $X$ is a smooth scheme, or more generally a derived Artin stack, one can define a derived stack $X_{\mr{Hod}}$ over $\bb A^1$, where the fiber at $0 \in \bb A^1$ is the Dolbeault stack $X_{\mr{Dol}}$ of $X$, essentially the 1-shifted tangent bundle, and the fiber at a non-zero point is equivalent to the de Rham stack $X_{\mr{dR}}$ of $X$, which has contractible tangent complex.
 
 \begin{definition} \label{Hodge_family_def}
 Consider the generalized BF theory on $X \times Y \times M$ associated to the $L_\infty$ algebra $\fg$, and supposed $\fg$ is equipped with a non-degenerate pairing.  The \emph{Hodge deformation} of this generalized BF theory is the $\CC[t]$ family of classical BV theories on $X \times Y \times M$, with $(E_t, \omega_t, I_t) = (E_{\mr{BF}}, \omega_{\mr{BF}}, I_{\mr{BF}})$ the same data as for generalized BF theory, so 
@@ -2695,9 +2695,6 @@ If $U = T^*\gg$ then the $\mc N=(4,4)$ supersymmetry is promoted to $\mc N=(8,8)
 \begin{theorem}
 The B-twist of 2d $\mc N=(4,4)$ super Yang-Mills with gauge group $G$ and symplectic matter representation $U$ is perturbatively equivalent to the topological BF theory with moduli space $T^*[-1]\mr{Map}(\RR^2_{\mr{dR}}, U \ham \gg)$.  If $U = T^*\gg$ then the $\mc N=(4,4)$ supersymmetry is promoted to $\mc N=(8,8)$, and the twisted moduli space can be identified with $T^*[-1]\mr{Map}(\RR^2_{\mr{dR}}, T^*[2](\gg/\gg))$.
 \end{theorem}
-
-
-
 
 \subsection{\texorpdfstring{$\cN=(0,2)$}{N=(0,2)} Super Yang-Mills with matter} \label{sec:2d(0,2)}
 
