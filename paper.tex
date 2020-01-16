@@ -96,7 +96,7 @@
   \multirow{8}*{3} & \multirow{8}*{$8$} & \multirow{2}*{Rank $1$} & {Mixed BF Theory} & \multirow{2}*{2 (minimal)} \\
  &&& $T^*[-1]\mr{Map}(\CC_{\mr{Dol}} \times \RR_{\mr{dR}}, T^*[2](\gg/\gg))$  & \\ \cline{3-5}
  && \multirow{2}*{Rank $2$ (B)} & {BF Theory (Rozansky-Witten)} & \multirow{2}*{3 (topological)} \\
- &&& $T^*[-1]\mr{Map}(\RR^3_{\mr{dR}}, T^*[2](\gg/\gg))$ & \\ \cline{3-5}
+ &&& $T^*[-1]\mr{Map}(\RR^3_{\mr{dR}}, \gg/\gg)$ & \\ \cline{3-5}
  && \multirow{2}*{Rank $2$ (A)} & {Perturbatively trivial (dual Rozansky-Witten)} & \multirow{2}*{3 (topological)} \\
  &&& $T^*[-1]\mr{Map}(\CC_{\mr{Dol}} \times \RR_{\mr{dR}}, \gg/\gg)_{\mr{dR}}$ & \\ \hline
  %\multirow{6}*{2} & \multirow{6}*{$(8,8)$} & \multirow{2}*{Rank $(1,0)$} & {} & \multirow{2}*{1 (holomorphic)} \\
@@ -2627,7 +2627,7 @@ The rank $2$ B-twist of 3d $\mc N=8$ super Yang-Mills theory with gauge group $G
 
 \section{Dimension 2}
 
-There are two classes of twisted supersymmetric gauge theory that we will consider in 2d.  First we have theories with $\(\mc N, \mc N)$ supersymmetry; these arise via dimensional reduction from supersymmetric gauge theories in higher dimensions.  We additionally have gauge theories with chiral, i.e. $(0,\mc N)$ supersymmetry, which we saw using the observations in Section \ref{sec:2dchiral}.  We'll address twists for these two classes of theory in turn.
+There are two classes of twisted supersymmetric gauge theory that we will consider in 2d.  First we have theories with $(\mc N, \mc N)$ supersymmetry; these arise via dimensional reduction from supersymmetric gauge theories in higher dimensions.  We additionally have gauge theories with chiral, i.e. $(0,\mc N)$ supersymmetry, which we saw using the observations in Section \ref{sec:2dchiral}.  We'll address twists for these two classes of theory in turn.
 
 \subsection{\texorpdfstring{$\cN=(2,2)$}{N=(2,2)} Super Yang-Mills with matter} \label{sec:2d(2,2)}
 First, let's consider the $\mc N=(2,2)$ super Yang-Mills theory, which arises via dimensional reduction from 3d $\mc N=2$ super Yang-Mills.  This theory includes a gauge multiplet with gauge group $G$ and a chiral multiplet valued in a representation $R$ of $G$.
@@ -2642,21 +2642,62 @@ First, let's consider the $\mc N=(2,2)$ super Yang-Mills theory, which arises vi
 \end{itemize}
 
 \vspace{-10pt}
-\paragraph{Twisting data:}
-In the $\mc N=(2,2)$ supersymmetry algebra there is are two classes of non-trivial orbits of square-zero supercharges.  We have both square-zero supercharges of rank $(1,0)$ or $(0,1)$, which are holomorphic, and square-zero supercharges of rank $(1,1)$, which are topological. \chris{todo, say something about $\ZZ$-gradings and twisting homomorphisms.}
+\paragraph{Supersymmetry action:} 
+\chris{todo}
 
-\begin{thm} \label{2d_minimal_twist_thm}
-The minimal twist of 2d $\cN=(2,2)$ super Yang-Mills with Lie algebra $\fg$ coupled to the $\cN=(2,2)$ chiral multiplet valued in a representation $R$ is perturbatively equivalent to topological $BF$ theory for the Lie algebra $\fg$ coupled to the mixed $\beta\gamma$ system with values in the representation $R$, with moduli space $T^*[-1]\mr{Map}(\RR^2_{\mr{dR}}, R/\gg)$. 
-\end{thm}
+\vspace{-10pt}
+\paragraph{Twisting data:}
+In the $\mc N=(2,2)$ supersymmetry algebra there is are three classes of non-trivial orbits of square-zero supercharges.  
+\begin{itemize}
+ \item Square-zero supercharges of rank $(1,0)$ or $(0,1)$, which are holomorphic
+ \item Square-zero supecharges of rank $(1,1)$ are topological, and split into two classes: the B-supercharge arises by dimensional reduction from 3 dimensions, and the A-supercharge does not.
+\end{itemize}
+\chris{todo, say something about $\ZZ$-gradings and twisting homomorphisms.}
+
+The calculation of the twists here is similar to what we saw in 4d $\mc N=2$.  The holomorphic twist and the B-twist arise by dimensional reduction from 3d, but the A-twist as a deformation of the holomorphic twist is not, and must be calculated directly.
+
+\begin{theorem} \label{2d_minimal_twist_thm}
+The minimal twist of 2d $\cN=(2,2)$ super Yang-Mills theory with gauge group $G$ coupled to the $\cN=(2,2)$ chiral multiplet valued in a representation $R$ is perturbatively equivalent to holomorphic $BF$ theory for the Lie algebra $\fg$ coupled to the mixed $\beta\gamma$ system with values in the representation $R$, with moduli space $T^*[-1]\mr{Map}(\CC, (R/\gg)_{\mr{Dol}})$. 
+\end{theorem}
 
 \begin{proof}
-This follows, as in 3d, by dimensionally reducing the holomorphic twist of 3d $\mc N=2$ super Yang-Mills.  That is, we start with the result from Theorem \ref{3d_minimal_twist_thm}, then apply Proposition \ref{CS_diml_red_prop} to turn the complex directions into a real de Rham direction.
+This follows, as in 3d, by dimensionally reducing the holomorphic twist of 3d $\mc N=2$ super Yang-Mills.  That is, we start with the result from Theorem \ref{3d_minimal_twist_thm}, then apply Proposition \ref{CS_to_BF_diml_red_prop} to dimensionally reduce in the real de Rham direction.
 \end{proof}
 
-\subsection{\texorpdfstring{$\cN=(4,4)$}{N=(4,4)} Super Yang-Mills with matter} \label{sec:2d(4,4)}
-We can likewise consider $\mc N=(4,4)$ super Yang-Mills theory with gauge group $G$, with a hypermultiplet valued in a symplectic representation $U$, by dimensionally reducing 3d $\mc N=4$ super Yang-Mills.
+\begin{theorem} \label{2d_2_A_twist_thm}
+The topological A-twist of 2d $\mc N=(2,2)$ super Yang-Mills theory with gauge group $G$ coupled to the $\mc N=(2,2)$ chiral multiplet valued in a representation $R$ is perturbatively equivalent, as a one-parameter deformation of the holomorphic twist, to the Hodge family with moduli space $T^*[-1]\mr{Map}(\CC, (R/\gg)_{\mr{Hod}})$.
+\end{theorem}
 
-\subsection{\texorpdfstring{$\cN=(8,8)$}{N=(8,8)} Super Yang-Mills with matter} \label{sec:2d(8,8)}
+\begin{proof}
+ 
+\end{proof}
+
+Finally, there is the 2d B-twist.  This is much easier, since it arises directly from 3d via dimensional reduction in a non-invariant direction.
+\begin{theorem} \label{2d_2_B_twist_thm}
+The topological B-twist of 2d $\mc N=(2,2)$ super Yang-Mills theory with gauge group $G$ coupled to the $\mc N=(2,2)$ chiral multiplet valued in a representation $R$ is perturbatively equivalent to the topological BF theory with moduli space $T^*[-1]\mr{Map}(\RR^2, (R/\gg))$.
+\end{theorem}
+
+\begin{proof}
+We again dimensionally reduce the holomorphic twist of 3d $\mc N=2$ super Yang-Mills, but this time in one of the non-invariant directions.  That is, we start with the result from Theorem \ref{3d_minimal_twist_thm}, then apply Proposition \ref{CS_diml_red_prop} to turn the complex direction into a second real de Rham direction.
+\end{proof}
+
+\subsection{\texorpdfstring{$\cN=(4,4)$}{N=(4,4)} and \texorpdfstring{$\cN=(8,8)$}{N=(8,8)} Super Yang-Mills with matter} \label{sec:2d(4,4)}
+We can likewise consider $\mc N=(4,4)$ super Yang-Mills theory with gauge group $G$, with a hypermultiplet valued in a symplectic representation $U$, by dimensionally reducing 3d $\mc N=4$ super Yang-Mills, or we can consider $\mc N=(8,8)$ super Yang-Mills with gauge group $G$, by dimensionally reducing 3d $\mc N=8$ super Yang-Mills.  We will address these two theories together, since in neither case are there any new classes of twist which were not visible already in the $\mc N=(2,2)$ section above.  
+
+The following equivalences follow from the results in the previous section by substituting $R = $ \chris{what is it exactly?}.
+
+\begin{theorem}
+The holomorphic twist of 2d $\mc N=(4,4)$ super Yang-Mills with gauge group $G$ and symplectic matter representation $U$ admits a one-parameter deformation to the A-twist.  Together they are perturbatively equivalent to a holomorphic BF theory and its Hodge deformation, with moduli space given by $T^*[-1]\mr{Map}(\CC, (U \ham \gg)_{\mr{Hod}})$.
+
+If $U = T^*\gg$ then the $\mc N=(4,4)$ supersymmetry is promoted to $\mc N=(8,8)$, and the twisted moduli space can be identified with  $T^*[-1]\mr{Map}(\CC, (T^*[2](\gg / \gg))_{\mr{Hod}})$.
+\end{theorem}
+
+\begin{theorem}
+The B-twist of 2d $\mc N=(4,4)$ super Yang-Mills with gauge group $G$ and symplectic matter representation $U$ is perturbatively equivalent to the topological BF theory with moduli space $T^*[-1]\mr{Map}(\RR^2_{\mr{dR}}, U \ham \gg)$.  If $U = T^*\gg$ then the $\mc N=(4,4)$ supersymmetry is promoted to $\mc N=(8,8)$, and the twisted moduli space can be identified with $T^*[-1]\mr{Map}(\RR^2_{\mr{dR}}, T^*[2](\gg/\gg))$.
+\end{theorem}
+
+
+
 
 \subsection{\texorpdfstring{$\cN=(0,2)$}{N=(0,2)} Super Yang-Mills with matter} \label{sec:2d(0,2)}
 
