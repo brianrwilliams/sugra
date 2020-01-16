@@ -28,7 +28,7 @@
 \tikzstyle{dimension} = [circle, text centered, text width=0.7cm, minimum height=0.7cm, draw=black]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
-\title{Twists of Supersymmetric Gauge Theories}
+\title{A Catalogue of Twists of Supersymmetric Gauge Theories}
 \author{Chris Elliott\and Pavel Safronov \and Brian Williams}
 
 \date{\today}
@@ -38,7 +38,7 @@
 \maketitle
 
 \begin{abstract}
- 
+We give a complete classification of supersymmetric twists of super Yang-Mills theories with matter in all dimensions.  Super Yang-Mills theories can be modelled classically using the BV formalism; we construct the supersymmetry algebra action using the language of $L_\infty$ algebras, then for each class of square-zero supercharge we give a description of the corresponding twisted theory in terms of partially holomorphic versions of Chern-Simons and BF theory. 
 \end{abstract}
 
 \tableofcontents
@@ -959,7 +959,10 @@ Fix the following data:
 \item A complex Lie group $G_R$, the \defterm{group of $R$-symmetries}, which is a subgroup of $\so(V)$-equivariant automorphisms of $(\Sigma, \Gamma)$.
 \end{itemize}
 
-Note that the supertranslation Lie algebra $\fA$ is a $\Spin(V_\RR)\times G_R$-equivariant super Lie algebra.
+Note that the supertranslation Lie algebra $\fA$ is a $\Spin(V_\RR)\times G_R$-equivariant super Lie algebra.  We will sometimes want to refer to the infinitesimal version of this action.
+\begin{definition}
+Let $\fA$ be a supertranslation algebra.  The corresponding \emph{supersymmetry algebra} is the Lie algebra $(\so(V) \oplus \gg_R) \ltimes \fA$.
+\end{definition}
 
 We will now define the fundamental notion of a supersymmetric field theory.  Consider a spacetime manifold $M$ which is an affine space over $V_\RR$. Let $\ISO(V_\RR) = \Spin(V_\RR)\ltimes V_\RR$ be the \defterm{Poincar\'{e} group} which acts in the obvious way on $M$.
 
@@ -1146,7 +1149,7 @@ By associativity of $A$ the two expressions are equal.
 \end{proof}
 
 \subsection{Supersymmetric Twisting}
-The idea of twisting, originally developed by Witten \chris{refs}, is \chris{todo: brief contextual remarks, not much detail, as we'll say more in the intro.}
+The idea of twisting, originally developed by Witten \cite{WittenTQFT}, is to modify a classical BV theory by deforming the differential $Q_{\mr{BV}}$ by the action of a square-zero fermionic symmetry. 
 
 \begin{definition}
 A \defterm{square-zero supercharge} is a nonzero element $Q\in\Sigma$ such that $\Gamma(Q, Q)=0$.
@@ -1219,7 +1222,7 @@ so $\Sigma$ restricts to a spinorial $\so(W)$ representation. We define the dime
 \[\Gamma_W\colon \sym^2(\Sigma)\xrightarrow{\Gamma_V} V\rightarrow W,\]
 where the last map is the orthogonal projection onto $W$. Finally, we have a new $R$-symmetry group
 \[G_W = G_V\times \Spin(W^\perp_\RR).\]
-This datum generates a supersymmetry algebra $\mf A'$ in dimension $\mr{dim}(W_\RR)$ \chris{we never actually defined supersymmetry algebras or R-symmetry: need to go back and add this to Section \ref{sec:susyalgebras}.}.
+This datum generates a supersymmetry algebra $\mf A'$ in dimension $\mr{dim}(W_\RR)$ as defined in Section \ref{sec:susyalgebras}.
 
 Recall from Proposition \ref{prop:dimensionalreductionunique} that the dimensional reduction of a classical field theory along the projection $p\colon V_\RR\rightarrow W_\RR$ exists and is unique. We have the following generalization of this statement to supersymmetric theories.
 
@@ -1448,24 +1451,6 @@ $\{I_{\gauge}^{(1)}, I_{\gauge}^{(2)}\}(Q_1, Q_2, Q_3)$ is obtained by cyclicall
 \end{align*}
 Therefore, again using Assumption \ref{assumption:3psi} we see that the cyclic symmetrization of the terms with $A^*$ vanishes.
 \end{proof}
-
-\begin{comment}
-\pavel{This might go in the coupling section.}
-We can deduce supersymmetry for other super Yang-Mills theories using dimensional reduction, specifically Proposition \ref{dim_red_SUSY_prop}.
-\begin{corollary}
-Let $n$ be one of the special dimensions $3,4,6$ or 10, and choose $m < n$.  Let $\Sigma'$ be the $\so(m)$ representation obtained by restriction of the $\so(n)$ representation $\Sigma$.  Then the super Poincar\'e algebra
-\[\mf A' = \mf{iso}(m) \oplus \Pi \Sigma',\]
-obtained by restricting the $n$-dimensional super Poincar\'e algebra associated to $\Sigma$, acts on the $m$-dimensional super Yang-Mills theory $\mf L'$ with matter representation $\Sigma'$.
-\end{corollary}
-
-\begin{proof}
-This follows immediately by applying Proposition \ref{dim_red_SUSY_prop} to the $\mf A$-supersymmetric theory $\mf L$ on $\RR^n$.
-\end{proof}
-
-\begin{remark}
-We can further include the action of at least a subalgebra of the algebra of R-symmetries in each example. \chris{quantify which}
-\end{remark}
-\end{comment}
 
 \subsection{Coupling to Matter Multiplets}
 \label{sect:mattermultipletSUSY}
@@ -1895,6 +1880,9 @@ From Proposition \ref{prop:twistdimensionalreduction} we get that the holomorphi
 %%%%%%%%%%%%%%%%%
 
 \section{Dimension 8}
+
+\subsection{\texorpdfstring{$\cN=1$}{N=1} super Yang--Mills theory}
+
 \vspace{-10pt}
 \paragraph{Fields:} 
 The 8-dimensional $\mc N=1$ super Yang-Mills theory is obtained by dimensional reduction of $\mc N=1$ super Yang-Mills from $\RR^{10}$ to $\RR^8$.  It has BRST fields given by a ghost $c$ along with the following.
@@ -2025,6 +2013,8 @@ The proof here is identical to the proof of Theorem \ref{9d_twist_thm}, we just 
 
 
 \section{Dimension 7} \label{7d_section}
+
+\subsection{\texorpdfstring{$\cN=1$}{N=1} super Yang--Mills theory}
 The 7-dimensional $\mc N=1$ super Yang-Mills theory is obtained by dimensional reduction of $\mc N=1$ super Yang-Mills from $\RR^{10}$ to $\RR^7$.  It has BRST fields given by a ghost, a 7d gauge field $A$, three $\gg$-valued scalar fields $\phi_1$, $\phi_2$ and $\phi_3$, and a symplectic Dirac spinor field $\lambda$ in $S \otimes W$, where $W$ is a 2-dimensional symplectic vector space.
 
 In 7 dimensions, exactly like in 8-dimensions, there are 3 classes of inequivalent non-zero supercharges by which we can twist.
@@ -2684,7 +2674,7 @@ We again dimensionally reduce the holomorphic twist of 3d $\mc N=2$ super Yang-M
 \subsection{\texorpdfstring{$\cN=(4,4)$}{N=(4,4)} and \texorpdfstring{$\cN=(8,8)$}{N=(8,8)} Super Yang-Mills with matter} \label{sec:2d(4,4)}
 We can likewise consider $\mc N=(4,4)$ super Yang-Mills theory with gauge group $G$, with a hypermultiplet valued in a symplectic representation $U$, by dimensionally reducing 3d $\mc N=4$ super Yang-Mills, or we can consider $\mc N=(8,8)$ super Yang-Mills with gauge group $G$, by dimensionally reducing 3d $\mc N=8$ super Yang-Mills.  We will address these two theories together, since in neither case are there any new classes of twist which were not visible already in the $\mc N=(2,2)$ section above.  
 
-The following equivalences follow from the results in the previous section by substituting $R = $ \chris{what is it exactly?}.
+The following equivalences follow from the results in the previous section by substituting $R = U \oplus \gg$.
 
 \begin{theorem}
 The holomorphic twist of 2d $\mc N=(4,4)$ super Yang-Mills with gauge group $G$ and symplectic matter representation $U$ admits a one-parameter deformation to the A-twist.  Together they are perturbatively equivalent to a holomorphic BF theory and its Hodge deformation, with moduli space given by $T^*[-1]\mr{Map}(\CC, (U \ham \gg)_{\mr{Hod}})$.
