@@ -377,21 +377,21 @@ where $\phi$ denotes a compactly supported section.
 Define the symmetric multilinear map
 \[
 \begin{array}{ccccl}
-\d_{dR} F & : & \cE_c^{\times (n-1)} & \to & \cE^\vee \\
+\d_{\mr{dR}} F & \colon & \cE_c^{\times (n-1)} & \to & \cE^\vee \\
 & & (\phi_1, \ldots, \phi_{n-1}) & \mapsto & D_1(\phi_1) \cdots D_{n-1}(\phi_{n-1}) D_{n} (-) + \{{\rm symmetric\;terms}\} .
 \end{array}
 \]
-Integrating by parts, we see that for any $(n-1)$-tuple $\phi_1, \ldots, \phi_{n-1} \in \cE_c$ that the linear functional $(\d_{dR} F) (\phi_1,\ldots, \phi_{n-1})$ is an element of $\cE^!$. 
-This implies that $\d_{dR} F \in {\rm Fun}_{\rm loc}(\cE, \cE^!)$.
+Integrating by parts, we see that for any $(n-1)$-tuple $\phi_1, \ldots, \phi_{n-1} \in \cE_c$ that the linear functional $(\d_{\mr{dR}} F) (\phi_1,\ldots, \phi_{n-1})$ is an element of $\cE^!$. 
+This implies that $\d_{\mr{dR}} F \in {\rm Fun}_{\rm loc}(\cE, \cE^!)$.
 
 The non-degenerate pairing $\omega$ determines a bundle isomorphism $\omega \colon E \cong E^! [-1]$ and hence an isomorphism of local functions
 \[
 \omega : {\rm Fun}_{\rm loc}(\cE, \cE^!) \cong {\rm Fun}_{\rm loc}(\cE, \cE[1]) .
 \]
 We recognize the right hand side as the space of local vector fields placed in a shifted cohomological degree.
-In total, we see that a local functional $F$ determines a local vector field by applying this isomorphism to $\d_{dR}F$:
+In total, we see that a local functional $F$ determines a local vector field by applying this isomorphism to $\d_{\mr{dR}}F$:
 \[
-X_F := \omega \circ \d_{dR} (F) \in  {\rm Fun}_{\rm loc}(\cE, \cE[1])  .
+X_F := \omega \circ \d_{\mr{dR}} (F) \in  {\rm Fun}_{\rm loc}(\cE, \cE[1])  .
 \]
 This is the Hamiltonian vector field corresponding to $F$. 
 Finally, the BV bracket between local functionals $F, G$ is defined by
@@ -2411,7 +2411,9 @@ The deformation of the holomorphic twist to the Donaldson twist of 4d $\mc N=2$ 
 \begin{proof}
 Suppose the family of generically rank $(2,0)$ supercharge splits as a sum of two rank 1 supercharges as $Q_{\mr{hol}} + tQ$, where $t \in \CC$.  It is enough to understand the deformation of the holomorphically twisted action functional, which we wrote down in the proof of Theorem \ref{4d_minimal_twist_thm}, by $I^{(1)}(tQ) + I^{(2)}(tQ,tQ)$ using Proposition \ref{4d_2_susy_action_prop}.
 
-\chris{that term should correspond to an isomorphism between the two copies of $\gg \oplus \gg[-1] \oplus U[-1]$ in the BV complex.  Fields that survive will be $c, A_{0,1}, \phi_1,\phi_2, \psi_+$, then a single scalar from $\phi$, a single $(0,1)$-form from $\lambda_-$ and a single scalar from $\lambda_+$, along with anti-fields.  The terms that will contribute to the deformation of the differential will be an $A^*\lambda_-$ and a $\phi_2^* \lambda_+$ term from $I^{(1)}_{\mr{gauge}}$, a $\phi^*\psi_+$ term from $I^{(1)}_{\mr{matter}}$, a $c^*\phi_1$ term from $I^{(2)}_{\mr{gauge}}$, and a $\psi_-^*\psi_-^*$ term from $I^{(2)}_{\mr{matter}}$.}
+\chris{that term should correspond to an isomorphism between the two copies of $\gg \oplus \gg[-1] \oplus U[-1]$ in the BV complex.  Fields that survive will be $c, A_{0,1}, \phi_1,\phi_2, \psi_+$, then a single scalar from $\phi$, a single $(0,1)$-form from $\lambda_-$ and a single scalar from $\lambda_+$, along with anti-fields.  The terms that will contribute to the deformation of the differential will be an $A^*\lambda_-$ and a $\phi_2^* \lambda_+$ term from $I^{(1)}_{\mr{gauge}}$, a $\phi^*\psi_+$ term from $I^{(1)}_{\mr{matter}}$, a $c^*\phi_1$ term from $I^{(2)}_{\mr{gauge}}$, and a $\psi_-^*\psi_-^*$ term from $I^{(2)}_{\mr{matter}}$.
+
+I'll try to write this as Pavel did in 8d, so write as a proposition the action of $Q_{\mr{hol}} + tQ'$, and observe that it induces this deformation.}
 \end{proof}
 
 We now address the rank $(1,1)$ twist.  This is more straightforward: we can understand it by dimensional reduction from the 5d holomorphic twist, this time in a non-invariant direction.
@@ -2452,16 +2454,8 @@ I^{(2)}(Q_1, Q_2) &= \int \frac 12 \left( g(\Gamma(Q_+, Q_-), \Gamma(\lambda^*_+
 \end{align*}
 where $\omega$ indicates the canonical isomorphism $\omega \colon \wedge^2(W^*) \to \wedge^2(W)$ (the Killing form for $\so(W^*)$).
 \end{prop}
-%
-%The matter sector of the theory is labeled by the BRST fields:
-%\begin{itemize}
-%\item Two scalars $\varphi_{\pm} \in C^\infty (\RR^4) \otimes R$;
-%\item Weyl fermions $\psi_{\pm} \in \Pi C^\infty(\RR^4) \otimes S_{\pm} \otimes R$ 
-%\end{itemize} 
-%which together define the (abelian) local Lie algebra
-%\[
-%\mathcal E_{\rm matter}^{\cN=1} = C^\infty (\RR^4) \otimes R^{\oplus 2} \oplus  \Pi C^\infty(\RR^4) \otimes (S_{+}  \otimes R \oplus S_- \otimes R) .
-%\]
+
+\chris{todo: $(1,0)$, $(2,0)$, $(1,1)$ as above, with $U = T^*\gg$.  Then $(2,1)$ and generic $(2,2)$ arise as deformations of $(1,1)$ by dimensional reduction from 5d.  Finally the special $(2,2)$ arises by dimensional reduction from the 5d B-twist.}
 
 \section{Dimension 3}
 The 3-dimensional $\mc N=k$ supersymmetry algebra has odd part $\Sigma \iso S \otimes W$, where $S$ is the 2-dimensional spinor representation of $\Spin(3) \iso \SU(2)$, and where $W$ is a $k$-dimensional vector space equipped with a bilinear pairing.  The maximal supersymmetric gauge theory has $\mc N=8$.  However, there are $\mc N=4$ super Yang-Mills theories for every choice $U$ of symplectic representation of the gauge group, and $\mc N=2$ super Yang-Mills theories for every choice $R$ of arbitrary representation of the gauge group.  In dimension 3, much like we saw in dimensions 5 and 7, all twisted theories can be obtained by dimensional reduction from theories one dimension higher.
