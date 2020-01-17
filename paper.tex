@@ -407,6 +407,10 @@ as well as the graded Jacobi identity.
 This bracket together wtih $Q_{\mr{BV}}$ endows $\oloc(\cE)[-1]$ with the structure of a dg Lie algebra. 
 Since the space of local functionals is not an algebra, the bracket does not satisfy any type of Leibniz rule. 
 
+%\[
+%\{F(A, B), G(A, B)\} = \frac{\partial}{\partial A} F(A, B) \frac{\partial}{\partial B}  G(A,B) + \frac{\partial}{\partial B} F(A, B) \frac{\partial}{\partial A}  G(A,B)
+%\]
+
 Now, we will include interactions in the BV picture. 
 
 \begin{definition}
@@ -1496,13 +1500,13 @@ Explicitly, we consider the following cases:
 
 \item (\textbf{2d $\cN=(2, 0)$ supersymmetry}) $A = \CC[x]/(x^2+1)$. Assumption \ref{assumption:matter3psi} is satisfied by Theorem \ref{thm:2dmatter3psi}.
 
-\item (\textbf{2d $\cN=(4, 0)$ supersymmetry}) $A = \eend(W_+)$. Assumption \ref{assumption:matter3psi} is satisfied by Theorem \ref{thm:2dmatter3psi}.
+\item (\textbf{2d $\cN=(4, 0)$ supersymmetry}) $A = \eend(Z)$. Assumption \ref{assumption:matter3psi} is satisfied by Theorem \ref{thm:2dmatter3psi}.
 
 \item (\textbf{3d $\cN=1$ supersymmetry}) $A = \CC$. Assumption \ref{assumption:matter3psi} is satisfied by Theorem \ref{thm:matter3psi}.
 
 \item (\textbf{4d $\cN=1$ supersymmetry}) $A = \CC[x]/(x^2+1)$. Assumption \ref{assumption:matter3psi} is satisfied by Theorem \ref{thm:matter3psi}.
 
-\item (\textbf{6d $\cN=(1, 0)$ supersymmetry}) $A = \eend(W_+)$. Assumption \ref{assumption:matter3psi} is satisfied by Theorem \ref{thm:matter3psi}.
+\item (\textbf{6d $\cN=(1, 0)$ supersymmetry}) $A = \eend(Z)$. Assumption \ref{assumption:matter3psi} is satisfied by Theorem \ref{thm:matter3psi}.
 \end{itemize}
 
 Let $P$ be a left $A$-module equipped with a $\CC$-valued nondegenerate symmetric bilinear pairing such that
@@ -2196,14 +2200,22 @@ The field content for the 4-dimensional $\cN=1$ super Yang-Mills theory coupled 
 \item $R$-valued fermions: $(\psi_-,\psi_+) \in C^\infty(\RR^4 ; S_+ \otimes R \oplus \otimes S_- \otimes R^*)$.
 \end{itemize}
 
+The R-symmetry group is $U(1)$ which acts by $\pm 1$ on $\lambda_{\pm}$ and $\mp 1$ on $\psi_{\pm}$. 
+
+\subsubsection{Holomorphic twist}
+
 There is a single non-zero equivalence class of square-zero supercharges in $4$-dimensional $\mc N = 1$, which we fix from here on.
 Such supercharges are necessarily of rank $1$, and for concreteness we will fix a square-zero supercharge of negative chirality $$Q = Q_+ \in S_+$$ to twist by. 
 Such supercharges are minimal (i.e. have two dimensional image).  
-They are stabilized by ${\rm U}(2)$; indeed a minimal square-zero spinor of positive (negative) helicity is stabilized by $\SU(2)_-$ ($\SU(2)_+$), but also by a torus in $\SU(2)_+$ ($\SU(2)_-$).  
-The R-symmetry group is $U(1)$, and the twisted theory by such a supercharge can always be made $\ZZ$-graded.
+The twisted theory by such a supercharge can always be made $\ZZ$-graded where the twisting datum is given by the identity map $\alpha = {\rm id} : U(1) \to U(1)$. 
+Such a $Q$ is preserved under a twisting homomorphism
+\[
+\MU(2) \to {\rm Spin}(4) \times U(1) 
+\]
+where on the first component is the map $\MU(2) \to {\rm Spin}(4)$ lifting $\U(2) \to \SO(4)$ and on the second component $\MU(2) \to U(1)$ is the square root of determinant. 
 
-We first decompose the fields of the 4-dimensional $\mc N=1$ theory with respect to the ${\rm U}(2)$ stabilizer.
-The fields of the pure Yang-Mills part decomposes as:
+We first decompose the fields of the 4-dimensional $\mc N=1$ theory with respect to $\MU(2)$.
+The fields decompose as:
 \[
 \begin{array} {lllcccccc}
 & &  & {\rm Untwisted} & R & {\rm Twisted}  \\
@@ -2235,7 +2247,7 @@ The untwisted action functionals decompose as follows.
 \begin{align*}
 S_{\mr{gauge}} &= \int \left(-(F^{2, 0}, F^{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2\right) + \frac 12 \left(\lambda_{1,0} \wedge \dd_{A_{1,0}} A_{0,2}) + \omega (\lambda_{1,0} \wedge \dbar_{A_{0,1}} \lambda_0) \right)  \\
 S_{\mr{matter}} &= \int \bigg( ((\dd_{A_{1,0}}\phi , \ol \dd_{A_{0,1}} \gamma_0) + (\dd_{A_{1,0}}\gamma_0, \ol \dd_{A_{0,1}} \phi)) + \omega (\psi_0 \partial_{A_{1,0}} \gamma_{0,1}) + \beta_{2,0} \dbar_{A_{0,1}} \gamma_{0,1}  + \\
-&\qquad + 2 (([\lambda_0,\nu],\nu') + ([\chi, \psi_0], \nu') )   \bigg) \\
+&\qquad + 2 (\omega \wedge ([\lambda_{1,0}, \gamma_{0,1}] ,\gamma_{0}) + ([A_{0,2}, \beta_{2,0}], \phi) )   \bigg) \\
 S_{\mr{anti}} &= \int \dd_{A_{1, 0}} A_0 \wedge A_{1,0}^* + \ol\dd_{A_{0, 1}} A_0\wedge B_{2,1} + [\lambda_{1,0}, A_0]\wedge \lambda_{1,0}^* +  [\lambda_{0}, A_0]\wedge \lambda_{0}^* +B_{2,1} \wedge [A_0, A_{0,1}] + A_{1,0}^* \wedge [A_{0}, A_{1,0}] \\
 &\qquad + \frac{1}{2}[A_0, A_0]A_0^* + [\phi, A_0] \phi^* + [\gamma_0, A_0] \beta_{2,2} + [\gamma_{0,1}, A_0]\wedge \beta_{2,1} + [\psi_0, A_0] \psi_0^* + [\beta_{2,0}, A_0] \wedge \gamma_{0,2} \\
 I^{(1)}_{\mr{gauge}} &=  \int  \left( - (\lambda_{1,0}, A_{0,1}^*) + \frac 12 (F_{0,2},B_{2,0}) + \frac 12 (F_{1,1}, \lambda_0^*)  \right)\\
@@ -2245,7 +2257,7 @@ I^{(2)}_{\mr{gauge}} &= -\frac{1}{4}\int  (\lambda_0^*)^2.
 Here, in terms of the K\"ahler form $\omega$, the volume form is identified as $\dvol = \frac{\omega^2}2$.
 
 \begin{thm}[See also \cite{SWchar}] \label{4d_minimal_twist_thm}
-The minimal twist of 4d $\cN=1$ super Yang-Mills with Lie algebra $\fg$ coupled to the $\cN=1$ chiral multiplet valued in a representation $R$ is perturbatively equivalent to holomorphic $BF$ theory for the Lie algebra $\fg$ coupled to the holomorphic $\beta\gamma$ system with values in the representation $R$, with classical moduli space $T^*[-1]\mr{Map}(\CC^2, R/\gg)$. 
+The minimal twist of 4d $\cN=1$ super Yang-Mills with Lie algebra $\fg$ coupled to the $\cN=1$ chiral multiplet valued in a representation $R$ is $\MU(2)$-equivariantly equivalent to holomorphic $BF$ theory for the Lie algebra $\fg$ coupled to the holomorphic $\beta\gamma$ system with values in the representation $R$, with classical moduli space $T^*[-1]\mr{Map}(\CC^2, R/\gg)$. 
 \end{thm}
 
 \begin{proof}
