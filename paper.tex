@@ -2411,9 +2411,7 @@ The deformation of the holomorphic twist to the Donaldson twist of 4d $\mc N=2$ 
 \begin{proof}
 Suppose the family of generically rank $(2,0)$ supercharge splits as a sum of two rank 1 supercharges as $Q_{\mr{hol}} + tQ$, where $t \in \CC$.  It is enough to understand the deformation of the holomorphically twisted action functional, which we wrote down in the proof of Theorem \ref{4d_minimal_twist_thm}, by $I^{(1)}(tQ) + I^{(2)}(tQ,tQ)$ using Proposition \ref{4d_2_susy_action_prop}.
 
-\chris{that term should correspond to an isomorphism between the two copies of $\gg \oplus \gg[-1] \oplus U[-1]$ in the BV complex.  Fields that survive will be $c, A_{0,1}, \phi_1,\phi_2, \psi_+$, then a single scalar from $\phi$, a single $(0,1)$-form from $\lambda_-$ and a single scalar from $\lambda_+$, along with anti-fields.  The terms that will contribute to the deformation of the differential will be an $A^*\lambda_-$ and a $\phi_2^* \lambda_+$ term from $I^{(1)}_{\mr{gauge}}$, a $\phi^*\psi_+$ term from $I^{(1)}_{\mr{matter}}$, a $c^*\phi_1$ term from $I^{(2)}_{\mr{gauge}}$, and a $\psi_-^*\psi_-^*$ term from $I^{(2)}_{\mr{matter}}$.
-
-I'll try to write this as Pavel did in 8d, so write as a proposition the action of $Q_{\mr{hol}} + tQ'$, and observe that it induces this deformation.}
+\chris{that term should correspond to an isomorphism between the two copies of $\gg \oplus \gg[-1] \oplus U[-1]$ in the BV complex.  Fields that survive will be $c, A_{0,1}, \phi_1,\phi_2, \psi_+$, then a single scalar from $\phi$, a single $(0,1)$-form from $\lambda_-$ and a single scalar from $\lambda_+$, along with anti-fields.  The terms that will contribute to the deformation of the differential will be an $A^*\lambda_-$ and a $\phi_2^* \lambda_+$ term from $I^{(1)}_{\mr{gauge}}$, a $\phi^*\psi_+$ term from $I^{(1)}_{\mr{matter}}$, a $c^*\phi_1$ term from $I^{(2)}_{\mr{gauge}}$, and a $\psi_-^*\psi_-^*$ term from $I^{(2)}_{\mr{matter}}$.}
 \end{proof}
 
 We now address the rank $(1,1)$ twist.  This is more straightforward: we can understand it by dimensional reduction from the 5d holomorphic twist, this time in a non-invariant direction.
@@ -2438,22 +2436,54 @@ We start with the 5d $\mc N=1$ holomorphic twist, as in Theorem \ref{5d_holo_twi
 \end{itemize}
 
 \vspace{-10pt}
-\paragraph{Supersymmetry action:} 
-\begin{prop}
-Consider a square-zero supercharge $Q = Q_+ \otimes w_+ + Q_- \otimes w_-$.  After reduction to $\mr O(4)$, the interaction terms $I^{(1)}$ and $I^{(2)}$ become
-\begin{align*}
-I^{(1)}(Q) &= \int (\Gamma(Q_+, \lambda_-)(w_+,u_-), A^*) + (\Gamma(Q_-, \lambda_+)(w_-,u_+), A^*) + \langle Q_+, \lambda_+ \rangle (w_+ \wedge u_+, \phi^*) + \langle Q_-, \lambda_- \rangle (\omega(w_- \wedge u_-), \phi^*) + \\
-&\quad + \frac12 \bigg( \langle \rho(F_A)Q_+, \lambda_+^*\rangle(w_+,u_+^*) + \langle \rho(F_A)Q_-, \lambda_-^*\rangle(w_-,u_-^*) +\\
-&\qquad \qquad \qquad \qquad \langle\rho(\d_A (w_+ \wedge u_-^*,\phi))Q_+, \lambda_-^*\rangle + \langle\rho(\d_A (\omega(w_- \wedge u_+^*)),\phi)Q_-, \lambda_+^*\rangle \bigg),
-\end{align*}
-and
-\begin{align*}
-I^{(2)}(Q_1, Q_2) &= \int \frac 12 \left( g(\Gamma(Q_+, Q_-), \Gamma(\lambda^*_+, \lambda^*_-)) (w_+, w_-) (u_+^*,u_-^*) \right) + \\
-&\quad - \frac 12 \big( \langle Q_+,\lambda_+^*\rangle^2(w_+,u_+^*)^2 + \langle Q_-,\lambda_-^*\rangle^2(w_-,u_-^*)^2 \big) - \langle Q_+,\lambda_+^*\rangle \langle Q_-, \lambda_-^*\rangle (w_+,u_+^*)(w_-,u_-^*) +\\
-&\quad - (\langle Q_+, Q_+ \rangle (\omega^{-1}(w_+ \wedge w_+),\phi) + \langle Q_-, Q_- \rangle (w_- \wedge w_-,\phi)  ) c^*,
-\end{align*}
-where $\omega$ indicates the canonical isomorphism $\omega \colon \wedge^2(W^*) \to \wedge^2(W)$ (the Killing form for $\so(W^*)$).
-\end{prop}
+\paragraph{Twisting data:}
+The classification of orbits of square-zero supercharges in the 4d $\mc N=4$ supersymmetry algebra is the most interesting among the examples we consider in this paper.  We have the following classes. \chris{some comments claiming we'll discuss things above, to be added.  Also this is to revisit after writing the below.}
+\begin{itemize}
+ \item Rank $(1,0)$ (and $(0,1)$) supercharges.  Such supercharges automatically square to zero, and are holomorphic: indeed they sit inside an $\mc N=1$ subalgebra.  They are compatible with $\SU(2)_- \sub \Spin(4;\RR)$, which can be promoted to a twisting homomorphism from the group $\mr U(2)$ as we say in the 4d $\mc N=1$ section above.
+ \item Rank $(2,0)$ (and $(0,2)$) supercharges.  Such supercharges automatically square to zero, and are topological: indeed they sit inside an $\mc N=2$ subalgebra.  They are compatible with any of three possible twisting homomorphisms:
+ \begin{enumerate}
+  \item The half twisting homomorphism $\phi_{\mr{1/2}} \colon \SU(2)_+ \oplus \SU(2)_- \to \SL(4;\CC)$ given by $(A,B) \mapsto \mr{diag}(A, 1, 1)$.
+  \item The Kapustin-Witten twisting homomorphism $\phi_{\mr{KW}} \colon \SU(2)_+ \oplus \SU(2)_- \to \SL(4;\CC)$ given by $(A,B) \mapsto \mr{diag}(A, B)$.
+  \item The Vafa-Witten twisting homomorphism $\phi_{\mr{VW}} \colon \SU(2)_+ \oplus \SU(2)_- \to \SL(4;\CC)$ given by $(A,B) \mapsto \mr{diag}(A, A)$.
+ \end{enumerate}
+ \item Rank $(1,1)$ supercharges.  Such supercharges have three invariant directions, and also sit inside an $\mc N=2$ subalgebra.  Twists by such supercharges are compatible with a twisting homomorphism from $\Spin(2;\RR) \times \Spin(2;\RR)$, but are only $\ZZ/2\ZZ$-graded, as we discussed in the $\mc N=2$ section above.
+ \item Rank $(2,1)$ (and $(1,2)$) supercharges.  Such supercharges are topological, and compatible with a twisting homomorphism from $\Spin(2;\RR) \times \Spin(2;\RR)$.
+ \item Rank $(2,2)$ square-zero supercharges are topological, and split into two classes.  Generically, such supercharges correspond to perturbatively trivial twisted theories, and are only compatible with $\Spin(2;\RR) \times \Spin(2;\RR)$.  There is a special point of this type which is compatible with Kapustin-Witten twisting homomorphism.
+ \item There is also a special rank $(2,2)$ point (the \emph{B-twisting supercharge}) arising by dimensional reduction from the 5d $\mc N=2$ rank 4 supercharge, which is also compatible with the Kapustin-Witten twisting homomorphism.
+\end{itemize}
+
+We can study all the possible twists using what we say in the $\mc N=2$ subsection, as well as by dimensional reduction from 5d $\mc N=2$ super Yang-Mills theory.
+
+\begin{theorem}
+\chris{holomorphic deforming to rank $(2,0)$, proven above} $\mr{Map}(\CC^2_{\mr{Dol}}, B\gg_{\mr{Hod}})$.
+\end{theorem}
+
+\begin{theorem}
+\chris{Rank $(1,1)$ deforming to rank $(2,1)$, the former is done above, the deformation maybe doesn't come from dimensional reduction?} $\mr{Map}(\CC_{\mr{Dol}} \times \RR^2_{\mr{dR}}, B\gg_{\mr{Hod}})$.
+\end{theorem}
+
+\begin{theorem}
+\chris{Special rank $(2,2)$ deforming to generic rank $(2,2)$, by dimensional reduction from 5d $2_A$ deforming to $2_B$} $\mr{Map}(\RR^4_{\mr{dR}}, B\gg_{\mr{Hod}})$.
+\end{theorem}
+
+
+% \vspace{-10pt}
+% \paragraph{Supersymmetry action:} 
+% \begin{prop}
+% Consider a square-zero supercharge $Q = Q_+ \otimes w_+ + Q_- \otimes w_-$.  After reduction to $\mr O(4)$, the interaction terms $I^{(1)}$ and $I^{(2)}$ become
+% \begin{align*}
+% I^{(1)}(Q) &= \int (\Gamma(Q_+, \lambda_-)(w_+,u_-), A^*) + (\Gamma(Q_-, \lambda_+)(w_-,u_+), A^*) + \langle Q_+, \lambda_+ \rangle (w_+ \wedge u_+, \phi^*) + \langle Q_-, \lambda_- \rangle (\omega(w_- \wedge u_-), \phi^*) + \\
+% &\quad + \frac12 \bigg( \langle \rho(F_A)Q_+, \lambda_+^*\rangle(w_+,u_+^*) + \langle \rho(F_A)Q_-, \lambda_-^*\rangle(w_-,u_-^*) +\\
+% &\qquad \qquad \qquad \qquad \langle\rho(\d_A (w_+ \wedge u_-^*,\phi))Q_+, \lambda_-^*\rangle + \langle\rho(\d_A (\omega(w_- \wedge u_+^*)),\phi)Q_-, \lambda_+^*\rangle \bigg),
+% \end{align*}
+% and
+% \begin{align*}
+% I^{(2)}(Q_1, Q_2) &= \int \frac 12 \left( g(\Gamma(Q_+, Q_-), \Gamma(\lambda^*_+, \lambda^*_-)) (w_+, w_-) (u_+^*,u_-^*) \right) + \\
+% &\quad - \frac 12 \big( \langle Q_+,\lambda_+^*\rangle^2(w_+,u_+^*)^2 + \langle Q_-,\lambda_-^*\rangle^2(w_-,u_-^*)^2 \big) - \langle Q_+,\lambda_+^*\rangle \langle Q_-, \lambda_-^*\rangle (w_+,u_+^*)(w_-,u_-^*) +\\
+% &\quad - (\langle Q_+, Q_+ \rangle (\omega^{-1}(w_+ \wedge w_+),\phi) + \langle Q_-, Q_- \rangle (w_- \wedge w_-,\phi)  ) c^*,
+% \end{align*}
+% where $\omega$ indicates the canonical isomorphism $\omega \colon \wedge^2(W^*) \to \wedge^2(W)$ (the Killing form for $\so(W^*)$).
+% \end{prop}
 
 \chris{todo: $(1,0)$, $(2,0)$, $(1,1)$ as above, with $U = T^*\gg$.  Then $(2,1)$ and generic $(2,2)$ arise as deformations of $(1,1)$ by dimensional reduction from 5d.  Finally the special $(2,2)$ arises by dimensional reduction from the 5d B-twist.}
 
