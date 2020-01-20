@@ -693,8 +693,8 @@ The mapping stack above has a precise meaning in the language of derived algebra
 \end{remark}
 
 Let us unpack the definition. Let $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M)$. Then the bundle of BV fields is
-\[E = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1]\oplus \Omega^{\dim(X),\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M\otimes \fg^*,\]
-\chris{I changed a shift here which I don't think was correct, but someone should double check.} where we denote the two fields by $A$ and $B$. The BV action is
+\[E = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1]\oplus \Omega^{\dim(X),\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M\otimes \fg^*[d-2],\]
+where we denote the two fields by $A$ and $B$. The BV action is
 \[S = \int_{X\times Y\times M} \langle B\wedge (\dbar_X + \dbar_Y + \d_{\dR, M}) A\rangle + \sum_{k\geq 1}\frac{1}{k!} \int_{X\times Y\times M} \langle B\wedge \ell_k(A, \dots, A)\rangle,\]
 where $\langle -, -\rangle$ is the natural pairing between $\fg^*$ and $\fg$ and $\ell_k$ denote the components of the $L_\infty$ structure on $\fg$.
 
@@ -743,22 +743,6 @@ Then it carries an action of $\U(n_1)\times \U(n_2)\times \SO(n_3)$ given by the
 \begin{remark}
 In fact, the $\SO(n_3)$-action given by the previous proposition extends to a homotopically trivial action in the sense of \cite[Section 2.4]{ElliottSafronov}.
 \end{remark}
-
-Generalized BF theories can be naturally deformed to theories which are perturbatively trivial, but which arise as shadows of non-trivial non-perturbative theories.  These will often appear as topological twists of supersymmetric field theories, the most famous example being the 2d A-model \chris{refer also to the introduction}.  In order to remain within the world of perturbation theory, we will study these theories as deformations families parameterized by a complex parameter $t$.  So at $t=0$ we will recover generalized BF theory.
-
-We will refer to these families as Hodge deformations of generalized BF theory.  The terminology here comes from Simpson's Hodge stack \cite{Simpson}: if $X$ is a smooth scheme, or more generally a derived Artin stack, one can define a derived stack $X_{\mr{Hod}}$ over $\bb A^1$, where the fiber at $0 \in \bb A^1$ is the Dolbeault stack $X_{\mr{Dol}}$ of $X$, essentially the 1-shifted tangent bundle, and the fiber at a non-zero point is equivalent to the de Rham stack $X_{\mr{dR}}$ of $X$, which has contractible tangent complex.
-
-\begin{definition} \label{Hodge_family_def}
-Consider the generalized BF theory on $X \times Y \times M$ associated to the $L_\infty$ algebra $\fg$, and supposed $\fg$ is equipped with a non-degenerate pairing.  The \emph{Hodge deformation} of this generalized BF theory is the $\CC[t]$ family of classical BV theories on $X \times Y \times M$, with $(E_t, \omega_t, I_t) = (E_{\mr{BF}}, \omega_{\mr{BF}}, I_{\mr{BF}})$ the same data as for generalized BF theory, so 
-\[E_t = \left(\Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1] \right)\oplus \left(\Omega^{\dim(X),\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M\otimes \fg^*\right),\]
-but $Q_{\mr{BV},t} = Q_{\text{BV,BF}} + tQ'$, where $Q'$ is the isomorphism
-\[Q' \colon \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1] \to 
-\Omega^{\dim(X),\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M\otimes \fg^*\]
-induced by the Calabi-Yau structure on $X$ and the non-degenerate pairing on $\fg$. 
-\end{definition}
-
-Using our mapping stack terminology, we will refer to the Hodge deformation of generalized BF theory as
-\[\mr{Map}(X \times Y_{\mr{Dol}} \times M_{\mr{dR}}, B\gg_{\mr{Hod}}).\]
 
 \subsubsection{Generalized Chern--Simons Theory} \label{gen_CS_section}
 The next class of examples of classical BV theories we give are generalizations of Chern-Simons theory. Unlike the example of the generalized BF theory, these theories are not of cotangent type.
@@ -835,16 +819,15 @@ Then it carries an action of $\MU(n_1)\times \U(n_2)\times \SO(n_3)$ given by th
 \end{prop}
 
 \subsubsection{Generalized Hodge theory}
-
-We will also consider deformations of the generalized BF theory to a perturbatively trivial theory. By a deformation we will mean a $\CC[t]$-family of classical BV theories which reduce to the given theory at $t=0$.
+Generalized BF theories can be naturally deformed to theories which are perturbatively trivial, but which arise as shadows of non-trivial non-perturbative theories.  These will often appear as topological twists of supersymmetric field theories, the most famous example being the 2d A-model \chris{refer also to the introduction}. By a deformation we will mean a $\CC[t]$-family of classical BV theories which reduce to the given theory at $t=0$.
 
 Given an $L_\infty$ algebra $\fg$ we denote by $\fg_{\Hod}$ the $\CC[t]$-linear $L_\infty$ algebra
 \[\fg_{\Hod} = \CC[t]\otimes (\fg\oplus \fg[1])\]
-with the $L_\infty$ brackets coming from the $L_\infty$ brackets on $\fg$ in the first term, where we consider $\fg[1]$ as the adjoint representation of $\fg$. The differential is given by the original differential on $\fg$ plus the term $t\id$ from the second summand to the first summand.
+with the $L_\infty$ brackets coming from the $L_\infty$ brackets on $\fg$ in the first term, where we consider $\fg[1]$ as the adjoint representation of $\fg$. The differential is given by the original differential on $\fg$ plus the term $t\id$ from the second summand to the first summand.  The terminology here comes from Simpson's Hodge stack \cite{Simpson}: if $X$ is a smooth scheme, or more generally a derived Artin stack, one can define a derived stack $X_{\mr{Hod}}$ over $\bb A^1$, where the fiber at $0 \in \bb A^1$ is the Dolbeault stack $X_{\mr{Dol}}$ of $X$, essentially the 1-shifted tangent bundle, and the fiber at a non-zero point is equivalent to the de Rham stack $X_{\mr{dR}}$ of $X$, which has contractible tangent complex.
 
 If $\fg$ carries a nondegenerate invariant symmetric paiirng of degree $d$, so does $\fg_{\Hod}$.
 
-\begin{definition}
+\begin{definition} \label{Hodge_family_def}
 Let $X$ and $Y$ be complex manifolds and $M$ a smooth oriented manifold. Fix an $L_\infty$ algebra $\fg$. We assume $X$ is equipped with a holomorphic volume form $\Omega_X \in\Omega^{\dim(X), 0}(X)$ and $\fg$ is equipped with a nondegenerate invariant symmetric pairing $\langle-, -\rangle\colon \fg\otimes\fg\rightarrow \CC[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 3]$. The \defterm{generalized Hodge theory} is the $\CC[t]$-linear classical BV theory given by the generalized Chern--Simons theory with the space of fields $\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B \fg_\Hod)$.
 \end{definition}
 
@@ -854,6 +837,7 @@ The $t=0$ specialization of the generalized Hodge theory with the space of field
 The specialization of the generalized Hodge theory at $t\neq 0$ is perturbatively trivial.
 \label{prop:Hodgetheoryspecialization}
 \end{prop}
+
 \begin{proof}
 At $t=0$ we get
 \[\left.\fg_\Hod\right|_{t=0}\cong \fg\oplus \fg[1]\cong \fg\oplus \fg^*[d-1],\]
