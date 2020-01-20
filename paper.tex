@@ -46,6 +46,21 @@ We give a complete classification of supersymmetric twists of super Yang-Mills t
 \tableofcontents
 
 \section*{Introduction} 
+
+\chris{Possible topics for the introduction
+\begin{enumerate}
+ \item  Context and literature on twists, including in the BV formalism.  There's a perspective there in terms of derived algebraic geometry (our mapping stacks we like to talk about).  Also at least a remark on the perspective in terms of coupling to twisted sugra.
+ \item  perspective in terms of twisting homomorphisms, and putting twisted theories on curved backgrounds.
+ \item  Mathematical literature on SUSY Yang-Mills, including Baez-Huerta and references therein.
+ \item  Strategy for computations: coupling to background fields, homotopical SUSY action (reference Baulieu et al), proving the CME is satisfied including the background symmetry fields, then computing the twist in terms of the EOM in a few examples, and computing many other examples via dimensional reduction.
+ \item  Table of the twists, and commentary on where each has appeared before in the literature.
+ \item  EOM of A-twists, and connection to various PDEs of interest in QFT.
+ \item  Connection between twisted BV theories and twisted factorization algebras, and therefore to our earlier paper on $\bb E_n$ algebras.
+ \item  Quantization: for cotangent theories and their deformations there's a 1-loop exact prequantization, just need to calculate the 1-loop anomaly to the QME.  In many cases this is worked out.
+ \item  Summary of the sections of the paper.
+\end{enumerate}}
+
+
 \begin{table}[htbp]
  \centering
  \begin{tabular}{c|c|c|c|c}
@@ -215,6 +230,7 @@ We give a complete classification of supersymmetric twists of super Yang-Mills t
 \label{fig:superchargeorbits}
 \end{figure}
 
+\subsection*{Acknowledgements}
 
 % \begin{figure}
 % \begin{tikzpicture}[node distance=0.35cm and 0.35cm, text width=1.8cm]
@@ -825,7 +841,7 @@ Given an $L_\infty$ algebra $\fg$ we denote by $\fg_{\Hod}$ the $\CC[t]$-linear 
 \[\fg_{\Hod} = \CC[t]\otimes (\fg\oplus \fg[1])\]
 with the $L_\infty$ brackets coming from the $L_\infty$ brackets on $\fg$ in the first term, where we consider $\fg[1]$ as the adjoint representation of $\fg$. The differential is given by the original differential on $\fg$ plus the term $t\id$ from the second summand to the first summand.  The terminology here comes from Simpson's Hodge stack \cite{Simpson}: if $X$ is a smooth scheme, or more generally a derived Artin stack, one can define a derived stack $X_{\mr{Hod}}$ over $\bb A^1$, where the fiber at $0 \in \bb A^1$ is the Dolbeault stack $X_{\mr{Dol}}$ of $X$, essentially the 1-shifted tangent bundle, and the fiber at a non-zero point is equivalent to the de Rham stack $X_{\mr{dR}}$ of $X$, which has contractible tangent complex.
 
-If $\fg$ carries a nondegenerate invariant symmetric paiirng of degree $d$, so does $\fg_{\Hod}$.
+If $\fg$ carries a nondegenerate invariant symmetric pairing of degree $d$, so does $\fg_{\Hod}$.
 
 \begin{definition} \label{Hodge_family_def}
 Let $X$ and $Y$ be complex manifolds and $M$ a smooth oriented manifold. Fix an $L_\infty$ algebra $\fg$. We assume $X$ is equipped with a holomorphic volume form $\Omega_X \in\Omega^{\dim(X), 0}(X)$ and $\fg$ is equipped with a nondegenerate invariant symmetric pairing $\langle-, -\rangle\colon \fg\otimes\fg\rightarrow \CC[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 3]$. The \defterm{generalized Hodge theory} is the $\CC[t]$-linear classical BV theory given by the generalized Chern--Simons theory with the space of fields $\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B \fg_\Hod)$.
@@ -2586,7 +2602,7 @@ We can study all the possible twists using what we say in the $\mc N=2$ subsecti
 \end{theorem}
 
 \begin{theorem}
-\chris{Rank $(1,1)$ deforming to rank $(2,1)$, the former is done above, the deformation maybe doesn't come from dimensional reduction?} $\mr{Map}(\CC_{\mr{Dol}} \times \RR^2_{\mr{dR}}, B\gg_{\mr{Hod}})$.
+\chris{Rank $(1,1)$ deforming to rank $(2,1)$, the former is done above, the deformation doesn't come from dimensional reduction.  However, we know how $(1,0)$ deforms to $(2,0)$ (further supercharge acts by the differential operator $\dd_2$), so apply the same deformation to $(1,1)$.} $\mr{Map}(\CC_{\mr{Dol}} \times \RR^2_{\mr{dR}}, B\gg_{\mr{Hod}})$.
 \end{theorem}
 
 \begin{theorem}
