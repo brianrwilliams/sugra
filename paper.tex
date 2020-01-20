@@ -728,7 +728,7 @@ Let $X,Y,M$ be as before. Suppose $\fg$ is a dg Lie algebra and $V$ is a dg repr
 with the only nontrivial brackets $\fg\otimes \fg\rightarrow \fg$ given by the Lie bracket on $\fg$ and $\fg\otimes V\rightarrow V$ given by the $\fg$-action on $V$. The space of fields in the corresponding generalized BF theory will be denoted using the mapping stack notation (as in Remark \ref{mapping_stack_remark}) as
 \[\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[d] (V / \fg)):=\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[d] \cL),\]
 where $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1$.
-\end{example}
+\end{example}=
 
 The following is obvious from the definition.
 
@@ -833,6 +833,10 @@ Suppose $\fg$ is a dg Lie algebra and $V$ a $\fg$-representation equipped with a
 Then it carries an action of $\MU(n_1)\times \U(n_2)\times \SO(n_3)$ given by the pullback action on differential forms on $\CC^{n_1}\times \CC^{n_2}\times \RR^{n_3}$.
 \end{prop}
 
+\begin{eg}
+There is a special case of this  of the ``holomorphic symplectic boson". 
+\brian{include this?}
+\end{eg}
 \subsubsection{Generalized Hodge theory}
 
 We will also consider deformations of the generalized BF theory to a perturbatively trivial theory. By a deformation we will mean a $\CC[t]$-family of classical BV theories which reduce to the given theory at $t=0$.
@@ -1972,18 +1976,22 @@ Again, this follows by dimensional reduction from 8 dimensions, this time from t
 \end{proof}
 
 \section{Dimension 6}
-In dimension 6 there are two possible supersymmetry groups by which we can act.  
-There is a minimal supersymmetric field theory with $\mc N=(1,0)$ supersymmetry, consisting of a pure gauge theory coupled to matter living in a symplectic representation $U$.  
-If $U \iso T^*\gg$, then the $(1,0)$ supersymmetry algebra action can be enhanced to an $\mc N=(1,1)$ supersymmetry algebra action.  
-This is the theory one obtains by compactifying 10d $\mc N=1$ super Yang-Mills from $\RR^{10}$ down to $\RR^6$.
+In dimension 6 the odd part of the supersymmetry algebra is $\Sigma = S_+ \otimes W_+$.
+There is a minimal supersymmetric field theory with $\mc N=(1,0)$ supersymmetry. 
+Here, $W_+$ is a two-dimensional complex vector space equipped with a symplectic form. 
+%This is the theory one obtains by compactifying 10d $\mc N=1$ super Yang-Mills from $\RR^{10}$ down to $\RR^6$.
 
 \subsection{\texorpdfstring{$\mc N = (1,0)$}{N=(1,0)} Super Yang-Mills Theory with Matter} \label{6d_10_section}
 
-The general theory of $\mc N = (1,0)$ coupled to matter has been exhibited in Section \ref{sect:mattermultipletSUSY}. 
+Let $\fg$ be a complex Lie algebra equipped with a symmetric bilinear invariant nondegenerate pairing. 
+The general theory with $\mc N = (1,0)$ supersymmetry consists of pure super Yang-Mills with Lie algebra $\fg$ coupled to $(1,0)$ matter valued in a symplectic vector space $U$, as in Section \ref{sect:mattermultipletSUSY}. 
+In physics terminology, the matter here is referred to as the $6d$ $\mc N = (1,0)$ hypermultiplet.
+
+The $R$-symmetry group is $G_R = \SU(2)$. \brian{Or do we want it's noncompact form ${\rm Sp}(W_+) = {\rm Sp}(2, \CC)$. }
 
 \vspace{-10pt}
 \paragraph{Fields:}
-The untwisted fields are given by:
+The fields of the theory are given by:
 \begin{itemize}
 \item $\fg$-valued bosons: a gauge field $A \in \Omega^1(\RR^6;\fg)$.
 \item $\fg$-valued fermions: a spinor $\lambda \in C^\infty(\RR^6 ; S_+ \otimes W_+ \otimes \fg)$. 
@@ -1991,19 +1999,43 @@ The untwisted fields are given by:
 \item $U$-valued fermions: $\psi \in C^\infty(\RR^6 ; S_- \otimes U)$ .
 \end{itemize}
 
-\vspace{-10pt}
-\paragraph{Twisting data:}
-Choose a polarized basis $W_+ = {\rm span}_{\CC}\{w_1, w_2\}$.
-The only square-zero supercharges in the $\mc N=(1,0)$ supersymmetry algebra have rank one.  Without loss of generality we will twist with respect to a supercharge of the form $Q = q_+ \otimes w_1 \in S_+ \otimes W_+$. 
+Under the $R$-symmetry $\lambda, \phi$ transform as the fundamental representations. \brian{Does this sound right?}
 
-We decompose the fields with respect to the subgroup $\SU(3) \sub \SO(6)$.  We can identify the two fundamental representations of $\SU(3)$ with $\Omega^{0,1}(\CC^3)$ and $\Omega^{1,0}(\CC^3)$. 
+\subsubsection{Holomorphic twist}
+
+Choose a polarized basis $W_+ = {\rm span}_{\CC}\{w_1, w_2\}$.
+The only square-zero supercharges in the $\mc N=(1,0)$ supersymmetry algebra have rank one.  
+Without loss of generality we will twist with respect to a supercharge of the form 
+\[
+Q = q_+ \otimes w_1 \in S_+ \otimes W_+ .
+\]
+Such a $Q$ is preserved under the twisting homomorphism
+\[
+\MU(3) \to {\rm Spin}(6) \times \SU(2) .
+\]
+In the first component this is the homomorphism $\MU(3) \to {\rm Spin}(6)$ lifting $\U(3) \to {\rm SO}(6)$. 
+In the second component, this is the composition $\MU(3) \to \U(1) \to \SU(2)$ where the first map is $\det^{-1/2}$ and the second map is $z \mapsto \begin{pmatrix} z & 0 \\ 0 & \Bar{z} \end{pmatrix}$. 
+
+There is no twisting datum homomorphism $\alpha : U(1) \to \SU(2)$ compatible with this twisting homomorphism.
+Thus, the resulting twisted theory is only $\ZZ/2$-graded.
+
+Under the action of $\MU(3)$, the fields decompose as:
 \begin{align*}
 c & \mapsto A_0 \in \Omega^{0,0}(\CC^3 ; \fg) \\
-A & \mapsto A_{0,1} + A_{1,0} \in \Omega^{0,1}(\CC^3 ; \fg) \oplus \Omega^{1,0}(\CC^3) \\
-\lambda & \mapsto \lambda_{0,2} w_1 + {B}_{1,0}w_2 + \chi w_1 + \lambda_0 w_2 \in \Omega^{0,2}(\CC^3 ; W_+ \otimes \fg) \oplus \Omega^{0}(\CC^3 ; W_+ \otimes \fg) \\
-\phi & \mapsto \nu w_1 + \psi_0 w_2 \in \Omega^0(\CC^3; W_+ \otimes U) \\
-\psi & \mapsto \psi_{0,1} + \nu' \in \Omega^{0,1}(\CC^3; U) \oplus \Omega^0(\CC^3; U),
+A & \mapsto A_{0,1} + A_{1,0} \in \Omega^{0,1}(\CC^3 ; \fg) \oplus \Omega^{1,0}(\CC^3 ; \fg) \\
+\lambda & \mapsto \lambda_{0} + {B}_{1,0} + \chi + \lambda_0 \in \Omega^0(\CC^3 ; \fg) \oplus \Omega^{0,2}(\CC^3 ; \fg) \oplus \Omega^{3,0}(\CC^3 ; \fg) \oplus \Omega^{3,2}(\CC^3 ; \fg) \\
+\phi & \mapsto \nu + \psi_0 \in \Omega^0(\CC^3; K^{-1/2} \otimes U) \oplus \Omega^0(\CC^3 ; K^{1/2} \otimes U) \\
+\psi & \mapsto \psi_{0,1} + \nu' \in \Omega^{0,1}(\CC^3; K^{1/2} \otimes U) \oplus \Omega^{0,3} (\CC^3; K^{1/2} \otimes U ),
 \end{align*} 
+
+%\begin{align*}
+%c & \mapsto A_0 \in \Omega^{0,0}(\CC^3 ; \fg) \\
+%A & \mapsto A_{0,1} + A_{1,0} \in \Omega^{0,1}(\CC^3 ; \fg) \oplus \Omega^{1,0}(\CC^3) \\
+%\lambda & \mapsto \lambda_{0,2} w_1 + {B}_{1,0}w_2 + \chi w_1 + \lambda_0 w_2 \in \Omega^{0,2}(\CC^3 ; W_+ \otimes \fg) \oplus \Omega^{0}(\CC^3 ; W_+ \otimes \fg) \\
+%\phi & \mapsto \nu w_1 + \psi_0 w_2 \in \Omega^0(\CC^3; W_+ \otimes U) \\
+%\psi & \mapsto \psi_{0,1} + \nu' \in \Omega^{0,1}(\CC^3; U) \oplus \Omega^0(\CC^3; U),
+%\end{align*} 
+
 \brian{only complaint is the use of $\psi_0$. Maybe use a different letter since $\psi$ is used for the fermion.}
 and similarly with the anti-fields, where the fields $A_{\bu, \bu}$, $\lambda_{\bu,\bu}$ are $\fg$-valued differential forms, and the fields $\psi_{\bu,\bu}$ are $U$-valued differential forms.  In terms of these fields, and using Corollary \ref{Kahler_YM_term_cor}, the BV action $S_{\mr{BV}}$ of the $Q$-twisted theory will consist of the sum of the following terms.
 \begin{align*}
@@ -2019,10 +2051,18 @@ I^{(2)}_{\mr{gauge}} &= -\frac{1}{4}\int \dvol (\chi^*)^2.
 \end{align*}
 Here, in terms of the K\"ahler form $\omega$, the volume form is identified as $\dvol = \frac{\omega^3}6$.
 
+
+
 \begin{thm}
-The holomorphic twist of 6d $\mc N=(1, 0)$ super Yang--Mills with gauge group $G$, and with a hypermultiplet valued in the symplectic representation $U$, is perturbatively equivalent to holomorphic BF theory on $\CC^3$ equipped with a Calabi--Yau structure $\Omega$, coupled to a holomorphic symplectic boson valued in $U$.  That is, the theory with the space of fields $\mr{Map}(\CC^3, U\ham \gg)$, where $U\ham \gg$ is the classifying space of the dg Lie algebra $\gg \oplus \gg[-1] \oplus U[-1]$ with even shifted symplectic structure induced from the symplectic pairing on $U$. 
+The holomorphic twist of 6d $\mc N=(1, 0)$ super Yang--Mills with Lie algebra $\fg$ and matter valued in the symplectic representation $U$ is $\MU(3)$-equivariantly equivalent to holomorphic Chern-Simons on $\CC^3$ with values in $U \ham g$, with classical moduli space $\mr{Map}(\CC^3, U\ham \gg)$.
 \label{thm:6dholomorphictwist}
 \end{thm}
+
+%\begin{thm}
+%The holomorphic twist of 6d $\mc N=(1, 0)$ super Yang--Mills with gauge group $G$, and with a hypermultiplet valued in the symplectic representation $U$, is perturbatively equivalent to holomorphic BF theory on $\CC^3$ equipped with a Calabi--Yau structure $\Omega$, coupled to a holomorphic symplectic boson valued in $U$.  That is, the theory with the space of fields $\mr{Map}(\CC^3, U\ham \gg)$, where $U\ham \gg$ is the classifying space of the dg Lie algebra $\gg \oplus \gg[-1] \oplus U[-1]$ with even shifted symplectic structure induced from the symplectic pairing on $U$. 
+%\label{thm:6dholomorphictwist}
+%\end{thm}
+
 
 \begin{proof}
 The proof of this theorem is very similar to the proof of Theorem \ref{thm:10dholomorphictwist}.  First, we integrate out the fields $\chi$ and $\chi^*$ using Proposition \ref{prop:integrateoutfield}.  We then observe that the action includes the terms $\int \dvol  (B_{1,0}, A_{1,0}^*)$ and  $\int \dvol (\nu', \nu^*)$.  In other words, the pairs $(B_{1,0}, A_{1,0})$ and $(\nu, \nu')$ form BRST doublets, which can be integrated out using Proposition \ref{prop:BRSTdoublet}.  The twisted theory is therefore perturbatively equivalent to the theory with BV action 
