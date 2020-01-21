@@ -935,6 +935,14 @@ has the bundle of BV fields $\fg[1] \oplus \fg^*[-2]$. We may identify it with $
 We may identify $p^*(\fg[1]\oplus \fg)\cong \Omega^\bullet_{\RR}\otimes \fg[1]$. Under this identification the integration pairing $\omega_M$ on differential forms reduces to the pairing $\omega_N$. The de Rham differential vanishes on translation-invariant forms which shows a compatibility of dimensional reduction with the differentials $Q_{\mr{BV}}$. Finally, in both cases the interaction term comes from the $L_\infty$ structure on $\fg$.
 \end{proof}
 
+\begin{cor}
+Let $X, Y, M, \fg$ be as before. Consider the generalized Hodge theory
+\[\map(X\times Y_{\mr{Dol}}\times (M\times\RR)_{\mr{dR}}, B\fg_\Hod).\]
+Its dimensional reduction along the projection $p\colon X\times Y\times (M\times \RR)\rightarrow X\times Y\times M$ is isomorphic to the generalized Hodge theory
+\[\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1] B\fg_\Hod).\]
+\label{cor:Hodgetopologicalreduction}
+\end{cor}
+
 Let $V_\RR$ be a real vector space equipped with a nondegenerate symmetric bilinear pairing and an orientation. Recall that the symmetric bilinear pairing trivializes $\det(V_\RR)^{\otimes 2}$ and the orientation allows us to obtain a trivialization of $\det(V_\RR)$, i.e. a real volume form. We denote by $V=V_\RR\otimes_{\RR}\CC$ its complexification. $V$ inherits a nondegenerate Hermitian form from the symmetric bilinear pairing on $V_\RR$. Moreover, $V$ carries a complex volume form $\Omega_V$:
 \[\det(V)\cong \det(V_\RR)\otimes_{\RR}\CC\]
 and we use the real volume form on $V_\RR$.
@@ -1120,7 +1128,7 @@ We will be interested in the following examples:
 
 \item (\textbf{4d $\mc N=1$ supersymmetry}) $A = \CC\otimes_{\RR}\CC\cong \CC[x]/(x^2+1)$ with $\sigma(x) = -x$. Moreover, $\dim(V) = 4$ and $\Sigma=S_+\oplus S_-$ is the sum of semi-spin representations.
 
-\item (\textbf{6d $\mc N=(1, 0)$ supersymmetry}) $A=\mathbb{H}\otimes_{\RR}\CC\cong \eend(W_+)$, where $W_+$ is a two-dimensional symplectic vector space with $\sigma$ given by the dual operator. Moreover, $\dim(V) = 6$ and $\Sigma = S_+\oplus W_+$.
+\item (\textbf{6d $\mc N=(1, 0)$ supersymmetry}) $A=\mathbb{H}\otimes_{\RR}\CC\cong \eend(W_+)$, where $W_+$ is a two-dimensional symplectic vector space with $\sigma$ given by the dual operator. Moreover, $\dim(V) = 6$ and $\Sigma = S_+\otimes W_+$.
 
 \item (\textbf{10d $\mc N=(1, 0)$ supersymmetry}) $A=\mathbb{O}\otimes_{\RR}\CC$. We have $\dim(V) = 10$ and $\Sigma = S_+$ is a semi-spin representation.
 \end{enumerate}
@@ -1930,7 +1938,7 @@ Let $V_\RR = \RR^8$ and $V=V_\RR\otimes_\RR\CC$. Fix a K\"ahler structure on $\R
 \[S_+\cong \CC \alpha\oplus \wedge^2 L\oplus \CC \beta.\]
 The scalar spinorial pairing $S_+\otimes S_+\rightarrow \CC$ is given by pairing the outer terms with each other and $\wedge^2L$ with itself using the complex volume form on $L$. Consider a family of square-zero supercharges
 \begin{equation}
-Q_t = \alpha + t\beta\in\Sigma_+
+Q_t = \alpha + t\beta\in S_+
 \label{eq:8dHodgefamily}
 \end{equation}
 for $t\in\CC$. We have
@@ -2007,7 +2015,7 @@ This theory admits three twists:
 
 \item Rank 1 supercharges $Q = \alpha \otimes w \in S \otimes W$, where $(\alpha, \alpha)_S\neq 0$. These are topological and stabilized by $G_2\subset \Spin(7, \CC)$. We have a homomorphism $\alpha\colon \U(1)\rightarrow G_R=\Spin(3, \RR)$ under which they have weight $1$.
 
-\item Square-zero supercharges $Q$ of rank 2. These have 5 invariant directions and do not admit a compatible homomorphism $\alpha$, so they give rise to a $\ZZ/2\ZZ$-graded theory.
+\item Square-zero supercharges $Q$ of rank 2. These have 5 invariant directions and do not admit a compatible homomorphism $\alpha$, so they give rise to a $\ZZ/2\ZZ$-graded theory. We have a twisting homomorphism $\phi\colon \SU(2)\times \Spin(3, \RR)\rightarrow G_R=\Spin(3, \RR)$ given by projection on the second factor, so tht theory carries an action of $\SU(2)\times\Spin(3, \RR)$.
 \end{itemize}
 
 \subsubsection{Minimal twist}
@@ -2041,6 +2049,7 @@ for some nonzero $w\in W$. We have $(\alpha + t\beta, \alpha + t\beta)=t$, so at
 
 \begin{thm}
 The twist of 7d $\cN=1$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges is perturbatively equivalent to the generalized Hodge theory $\map(\CC^3\times \RR_{\mr{dR}}, B\fg_{\Hod})$. Moreover, this equivalence is $\SU(3)$-equivariant.
+\label{thm:7dHodgetwist}
 \end{thm}
 \begin{proof}
 The family of square-zero supercharges given by equation \eqref{eq:7dHodgefamily} may be obtained by dimensional reduction of the corresponding family $Q_t^8$ (see equation \eqref{eq:8dHodgefamily}) in 8 dimensions. The twist of 7d $\cN=1$ super Yang--Mills with respect to $Q_t$ is obtained by dimensional reduction of the twist of 8d $\cN=1$ super Yang--Mills with respect to $Q_t^8$. The claim then follows from Theorem \ref{thm:8dHodgetwist} and Corollary \ref{cor:Hodgeholomorphicreduction}.
@@ -2118,8 +2127,8 @@ We will now rewrite the fields using the twisting homomorphism $\phi$ from $\MU(
 \item A ghost field $c\in \Omega^0(M; \gg)[1]$.
 \end{itemize}
 
-Let $\omega\in\Omega^{1, 1}(M)$ be the K\"ahler form, $\Omega\in\Omega^{3, 0}(M)$ the holomorphic volume form and $\ol{\Omega}\in\Omega^{0, 3}(M)$ the antiholomorphic volume form.  We denote the real volume form on $M$ by
-\[\dvol = \frac{\omega^3}{6} = \Omega\wedge \ol{\Omega}.\]
+Let $\omega\in\Omega^{1, 1}(M)$ be the K\"ahler form. We denote the real volume form on $M$ by
+\[\dvol = \frac{\omega^3}{6}.\]
 
 Using Corollary \ref{Kahler_YM_term_cor}, the BV action $S_{\mr{BV}}$ of the $Q$-twisted theory consists of the sum of the following terms:
 \begin{align*}
@@ -2147,7 +2156,7 @@ The proof of this theorem is very similar to the proof of Theorem \ref{thm:10dho
 Up to rescaling of the antifields, this is the action functional of the required theory.
 \end{proof}
 
-If $U=T^*R=R\oplus R^*$, the R-symmetry group is enhanced to $G_R=\SU(2)\times \U(1)$. We have a homomorphism $\alpha\colon \U(1)\hookrightarrow G_R=\SU(2)\times \U(1)$ given by the diagonal embedding which is compatible with the holomorphic supercharge. We may also use a different twisting homomorphism
+If $U=T^*R=R\oplus R^*$, the R-symmetry group is enhanced to $G_R=\SU(2)\times \U(1)$. We have a homomorphism $\alpha\colon \U(1)\hookrightarrow G_R=\SU(2)\times \U(1)$ given by the diagonal embedding which is compatible with the holomorphic supercharge. We may also use a new twisting homomorphism
 \[\phi\colon\MU(3)\xrightarrow{\det^{1/2}}\U(1)\xrightarrow{\alpha} G_R.\]
 
 With these modifications the BRST fields are given by:
@@ -2168,77 +2177,91 @@ The holomorphic twist of 6d $\cN=(1, 0)$ super Yang--Mills on $M=\RR^6$ with mat
 
 \subsection{\texorpdfstring{$\cN=(1, 1)$}{N=(1, 1)} Super Yang--Mills}
 
-\subsection{\texorpdfstring{$\mc N = (1,1)$}{N=(1,1)} Super Yang-Mills Theory}
+The 6d $\cN=(1, 1)$ super Yang--Mills theory is obtained by dimensional reduction from the 10d $\cN=(1, 0)$ super Yang--Mills. It admits $R$-symmetry group $G_R=\Spin(4, \RR)$ under which $W_+, W_-$ are the two semi-spin representations.
 
-There is a 6d gauge theory with $\mc N=(1,1)$ supersymmetry obtained by dimensionally reducing the maximal super Yang-Mills theory on $\RR^{10}$ down to $\RR^6$. This theory is alternatively obtained by considering the $\mc N=(1,0)$ theory above with representation $U = T^*\gg$: the $\mc N=(1,0)$ supersymmetry algebra action can be promoted to an $\mc N=(1,1)$ supersymmetry action.  
-
-\vspace{-10pt}
-\paragraph{Fields:} Let us write the BRST fields in $\mc N=(1,1)$ super Yang Mills theory on $\RR^6$ as $c$, the ghost, along with:
+Given an element $Q\in S_+\otimes W_+\oplus S_-\otimes W_-$ we denote by $W^*_{Q_\pm}\subset S_\pm$ the images of $Q$. We classify square-zero supercharges according to the ranks of these spaces:
 \begin{itemize}
- \item Bosons: a gauge field $A$, along with 4 scalars $\{\phi_i\}$.  These transform in the vector representation of the R-symmetry group $\Spin(4)_R$, i.e. the tensor product $W_+ \otimes W_-$ of the two fundamental representations of $\Sp(W_+) \times \Sp(W_-)$.  We'll write just $\phi$ for the scalars, viewed as a section of the trivial $W_+ \otimes W_-$-bundle on $\RR^6$.
- \item Fermions: spinor fields $\lambda^+ \otimes u^+$ and $\lambda^- \otimes u^-$ valued in $S_+ \otimes W_+$ and $S_- \otimes W_-$ respectively.
+\item Rank $(1, 0)$ and $(0, 1)$. These automatically square to zero and are holomorphic.  Such supercharges factor through a copy of the $\mc N=(1,0)$ (respectively, $\cN=(0, 1)$) supersymmetry algebra. They admit a twisting homomorphism from $\MU(3)$ and a $\ZZ$-grading $\alpha\colon \U(1)\rightarrow G_R$.
+
+\item Rank $(1, 1)$ and $\langle W^*_{Q_+}, W^*_{Q_-}\rangle = 0$. These automatically square to zero and have 4 invariant directions. There is a $\ZZ$-grading $\alpha\colon \U(1)\hookrightarrow G_R=\SU(2)\times \SU(2)$ given by the diagonal embedding and these admit a twisting homomorphism $\phi\colon \MU(2)\times \Spin(2, \RR)\xrightarrow{\det^{1/2}\times \id}\U(1)\xrightarrow{\alpha} G_R$.
+
+\item Rank $(1, 1)$ and $\langle W^*_{Q_+}, W^*_{Q_-}\rangle \neq 0$. These automatically square to zero and are topological. Such supercharges are stabilized by $\SU(3)\subset \Spin(6, \CC)$ and have a $\ZZ$-grading $\alpha\colon \U(1)\rightarrow G_R=\SU(2)\times \SU(2)$ given by the diagonal embedding.
+
+\item Rank $(2, 2)$. The square-zero supercharges have 5 invariant directions and give rise to a $\ZZ/2$-graded theory. There is the identity twisting homomorphism $\phi\colon \Spin(4, \RR)\rightarrow G_R=\Spin(4, \RR)$, so the twisted theory carries a $\Spin(4, \RR)$-action.
 \end{itemize}
 
-We can write the supersymmetry action here explicitly. \chris{though it isn't necessary: remove it?}
+\subsubsection{Holomorphic twist}
 
-\begin{prop} \label{O6_decomposition_of_susy_prop}
-After reduction to $\mr O(6)$, the interaction terms $I^{(1)}$ and $I^{(2)}$ become
-\begin{align*}
-I^{(1)}(Q^+) &= \langle A^\vee, \Gamma(Q^+, \lambda^+)\rangle\omega(w^+,u^+) + \langle \phi^\vee, (Q^+,\lambda^-)\rangle w^+ \otimes u^- + \\&\qquad + \langle (\lambda^{+} \otimes u^+)^\vee, \sd F_A (Q^+ \otimes w^+) \rangle + \langle (\lambda^{-} \otimes u^-)^\vee, \rho(\dd \phi)(Q^+ \otimes w^+) \rangle\\
-I^{(2)}(Q^+, Q^+) &= \left(\langle\lambda^{+\vee},Q^+\rangle\langle u^{+\vee}, w^+ \rangle\right)^2
-\end{align*}
-if $Q^+ \otimes w^+$ is an element of $S_+ \otimes W_+$, and
-\begin{align*}
-I^{(1)}(Q^-) &= \langle A^\vee, \Gamma(Q^-, \lambda^-)\rangle\omega(w^-,u^-) + \langle \phi^\vee, (Q^-,\lambda^+)\rangle w^- \otimes u^+ + \\&\qquad + \langle (\lambda^{-} \otimes u^-)^\vee, \sd F_A (Q^- \otimes w^-) \rangle + \langle (\lambda^{+} \otimes u^+)^\vee, \rho(\dd \phi)(Q^- \otimes w^-) \rangle\\
-I^{(2)}(Q^-, Q^-) &= \left(\langle\lambda^{-\vee},Q^-\rangle\langle u^{-\vee}, w^- \rangle\right)^2
-\end{align*}
-if $Q^- \otimes W_-$ is an element of $S_- \otimes W_-$.  In each of these expressions, we have suppressed in the notation some contractions of tensors between $W_+ \otimes W_-$ and its dual.  There is an additional term in $I^{(2)}$ associated to the action of a rank $(1,1)$ supercharge $Q^+ + Q^-$, which takes the form
-\[I^{(2)}(Q^+, Q^-) = (\lambda^{+\vee}, \lambda^{-\vee})(Q^+,Q^-) \langle u^{+\vee} \otimes u^{-\vee}, w^+ \otimes w^-\rangle + \langle c^\vee, \phi \rangle(Q^+,Q^-) w^+ \otimes w^-. \]
-\end{prop}
+The 6d $\cN=(1, 1)$ super Yang--Mills theory viewed as a $\cN=(1, 0)$ supersymmetric theory coincides with the 6d $\cN=(1, 0)$ super Yang--Mills with matter in the representation $U=T^*\fg=\fg\oplus \fg^*$. Under this isomorphism the R-symmetry group $\SU(2)\times \U(1)$ of 6d $\cN=(1, 0)$ super Yang--Mills is a subgroup of the R-symmetry group $\SU(2)\times \SU(2)$ of 6d $\cN=(1, 1)$ super Yang--Mills. In particular, from Theorem \ref{thm:6dholomorphictwistgraded} we obtain the following statement.
 
-\begin{remark}
-If we set $\lambda^- \otimes u^-$ and $\phi$ to zero, and consider only the action of $Q^+ \otimes w^+$, then we recover the supersymmetry action for the $\mc N=(1,0)$ pure gauge theory.  If instead we set $\lambda^+ \otimes u^+$ and $A$ to zero, and consider only the action of $Q^- \otimes w^-$ then we recover the supersymmetry action for the $\mc N=(1,0)$ pure matter theory.
-\end{remark}
+\begin{thm}
+The holomorphic twist of 6d $\cN=(1, 1)$ super Yang--Mills on $M=\RR^6$ is perturbatively equivalent to the holomorphic BF theory on $M\cong \CC^3$ with the space of fields $\map(M, T^*[2] (\fg/\fg))$. Moreover, the equivalence is $\U(3)$-equivariant.
+\label{thm:6d11holomorphictwist}
+\end{thm}
 
-\vspace{-10pt}
-\paragraph{Twisting data:}
-In the 6 dimensional $\mc N=(1,1)$ supersymmetry algebra, there are now 4 classes of inequivalent non-zero supercharges by which we can twist.
-\begin{enumerate}
- \item Rank $(1,0)$ spinors, $Q^+ \otimes w^+$.  These automatically square to zero, and are holomorphic.  Such supercharges factor through a copy of the $\mc N=(1,0)$ supersymmetry algebra.
- \item Rank $(1,1)$ spinors, $Q = Q^+ \otimes w^+ + Q^- \otimes w^-$.  These automatically square to zero, and split into two inequivalent classes:
- \begin{enumerate}
- \item Generically, $Q$ is topological.
- \item There is a degenerate locus where $Q$ has 4 invariant directions.  The former class can be realised as a degeneration of this case.
- \end{enumerate}
- \item Rank $(2,2)$ square-zero spinors.  These supercharges have 5-dimensional image in $\CC^6$.  The corresponding twists are only $\ZZ/2\ZZ$-graded.
-\end{enumerate}
+\subsubsection{Rank $(1, 1)$ partially topological twist}
 
-We already considered the holomorphic twist in the previous section: it admits the following description.
+We define $\alpha$ to be the diagonal embedding $\U(1)\hookrightarrow G_R=\SU(2)\times \SU(2)$ and the twisting homomorphism $\phi$ to be given by the composite
+\[\phi\colon \MU(2)\times \Spin(2)\xrightarrow{\det^{1/2}\times \id} \U(1)\xrightarrow{\alpha}G_R.\]
 
-\begin{theorem} \label{6d_holo_twist_thm}
-The holomorphic twist of 6d $\mc N=(1,1)$ super Yang-Mills theory is perturbatively equivalent to holomorphic BF theory on $\CC^3$ with target given by the adjoint quotient $\gg/\gg$, i.e. the theory with fields $T^*[-1]\mr{Map}(\CC^3, \gg/\gg)$.
-\end{theorem}
+Let $L=\CC^2$ equipped with a Hermitian structure and consider the 7-dimensional spacetime $V^7_\RR = L\times \RR^3$ and the 6-dimensional spacetime $V^6_\RR=L\times \RR^2$. Under the projection $V^7_\RR\rightarrow V^6_\RR$ a rank 2 square-zero supercharge $Q$ in 7 dimensions dimensionally reduces to a rank $(1, 1)$ partially topological square-zero supercharge in 6 dimensions.
 
+\begin{thm}
+The rank $(1, 1)$ partially topological twist of 6d $\cN=(1, 1)$ super Yang--Mills is perturbatively equivalent to the generalized BF theory with the space of fields $\map(\CC^2\times \RR^2_{\mathrm{dR}}, T^*[4] B\fg)$. Moreover, the equivalence is $\MU(2)\times\Spin(2, \RR)$-equivariant.
+\end{thm}
 \begin{proof}
-Take the description of the holomorphically twisted theory from Theorem \ref{thm:6dholomorphictwist}, and let $U = T^*\gg$.  One identifies the resulting description as a $\ZZ$-graded theory with a cotangent theory as described in Remark \ref{6d_BF_remark}.
+The claim about the underlying $\ZZ/2$-graded theories follows by dimensional reduction (Proposition \ref{CS_diml_red_prop}) along $V^7_\RR\rightarrow V^6_\RR$ from the corresponding statement for the 7-dimensional super Yang--Mills given by Theorem \ref{thm:7dpartiallytopologicaltwist}.
+
+To check that the $\ZZ$-gradings are compatible, we observe that $\alpha$ defined above coincides with $\alpha$ defined for 6d $\cN=(1, 0)$ super Yang--Mills with matter valued in a $\fg$-representation $U=T^*\fg$. In particular, the $\ZZ$-grading of fields in this twist coincides with the $\ZZ$-grading of fields in the holomorphic twist given in Theorem \ref{thm:6dholomorphictwistgraded}. The claim then follows from a direct comparison.
 \end{proof}
 
-The remaining three classes of twists are new: they all arise via appropriate dimensional reductions from twists of 7d $\mc N=1$ super Yang-Mills.
+\subsubsection{Topological twist}
 
-\begin{theorem} \label{6d_rk11_twist_thm}
-The twist of 6d $\mc N=(1,1)$ super Yang-Mills theory by a rank $(1,1)$ supercharge with 4 invariant directions on the product of a Calabi-Yau surface $S$ and an oriented 2-manifold $\Sigma$ is perturbatively equivalent to mixed BF theory on the product $S \times \Sigma_{\mr{dR}}$. This twist degenerates to a one-parameter family of topological twists of the form $\map(S \times \Sigma_{\mr{dR}}, B\gg)_{\mr{Hod}}$.
-\end{theorem}
+Next we study the rank $(1, 1)$ topological twist. Let $L=\CC^3$ equipped with a Hermitian structure and consider the spacetime $V_\RR=L$. Under $\SU(L)\subset \Spin(V_\RR)$ the semi-spin representations decompose as
+\[
+S_+\cong \CC\alpha\oplus L,\qquad S_-\cong \CC\beta\oplus L^*.
+\]
+Consider a family of square-zero supercharges
+\begin{equation}
+Q_t = \alpha + t\beta\in \Sigma.
+\label{eq:6dHodgefamily}
+\end{equation}
+At $t=0$ we obtain a rank $(1, 0)$ holomorphic supercharge and at $t\neq 0$ we obtain a rank $(1, 1)$ topological supercharge.
 
+\begin{thm}
+The twist of 6d $\cN=(1, 1)$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges is perturbatively equivalent to the generalized Hodge theory $\map(\CC^3, T^*[2] B\fg_{\Hod})$. Moreover, this equivalence is $\SU(3)$-equivariant.
+\label{thm:6dHodgetwist}
+\end{thm}
 \begin{proof}
-We obtain this description by starting with the 1-parameter family of twisted theories from Theorem \ref{7d_holo_twist_thm}, and dimensionally reducing along one of the Calabi-Yau directions.  That is, by applying Proposition \ref{CS_diml_red_prop} to the family of twists in 7-dimensions.
+The family of square-zero supercharges given by equation \eqref{eq:6dHodgefamily} lifts to the family of square-zero supercharges in 7 dimensions given by equation \eqref{eq:7dHodgefamily}. So, the twist of 6d $\cN=(1, 1)$ super Yang--Mills is obtained by a dimensional reduction of the twist of 7d $\cN=1$ super Yang--Mills. Therefore, the claim follows from Theorem \ref{thm:7dHodgetwist} and Corollary \ref{cor:Hodgetopologicalreduction}.
 \end{proof}
 
-\begin{theorem} \label{6d_rk22_twist_thm}
-The twist by a rank $(2,2)$ supercharge of 6d $\mc N=(1,1)$ super Yang-Mills theory on the product of a Calabi-Yau curve $C$ with an oriented 4-manifold $M_4$ is perturbatively equivalent to mixed Chern-Simons theory on $C \times (M_4)_{\mr{dR}}$.
-\end{theorem}
+\begin{cor}
+The topological twist of 6d $\cN=(1, 1)$ super Yang--Mills is perturbatively trivial.
+\end{cor}
 
+\subsubsection{Rank $(2, 2)$ twist}
+
+We finally consider twist by a rank $(2, 2)$ square-zero supercharge $Q\in\Sigma$.
+
+\begin{thm}
+The rank $(2, 2)$ twist of 6d $\cN=(1, 1)$ super Yang--Mills is perturbatively equivalent to the generalized Chern--Simons theory with the space of fields $\map(\CC\times \RR^4_{\mr{dR}}, B\fg)$. Moreover, the equivalence is $\Spin(4, \RR)$-equivariant.
+\label{thm:6drank22}
+\end{thm}
 \begin{proof}
-We now start with the twisted theory from Theorem \ref{7d_rank2_twist_thm}, with 5 invariant directions, and we dimensionally reduce in an de Rham direction.  That is, we apply Proposition \ref{CS_to_BF_diml_red_prop}.
+Consider the $\Spin(8, \CC)$ semi-spin representations $S^8_\pm$. Under the embedding $\Spin(6, \CC)\times \Spin(2, \CC)\subset \Spin(8, \CC)$, these decompose as
+\[S^8_+ = S^6_+\otimes S^2_+\oplus S^6_-\otimes S^2_-,\qquad S^8_- = S^6_+\otimes S^2_-\oplus S^6_-\otimes S^2_+,\]
+where $S^6_{\pm}$ are the semi-spin representations of $\Spin(6, \CC)$ and $S^2_{\pm}$ are the semi-spin representations of $\Spin(2, \CC)$. The odd part of the supersymmetry algebra is
+\[\Sigma = S^8_+\oplus S^8_-\cong S^6_+\otimes W_+\oplus S^6_-\otimes W_-,\]
+where $W_{\pm}\cong S^2_+\oplus S^2_-$. Let $\alpha_\pm$ be basis vectors of $S^2_{\pm}$ and consider an arbitrary supercharge
+\[Q = s_+^+\otimes \alpha_+ + s_+^-\otimes \alpha_- + s_-^+\otimes \alpha_- + s_-^-\otimes \alpha_+\in\Sigma,\]
+where the lower index on $s$ refers to $S^8_\pm$ and the upper index on $s$ refers to $S^6_\pm$.
+
+Let us assume that $Q$ is a rank $(2, 2)$ supercharge, i.e. $s_+^\pm, s_-^\pm$ are all nonzero. The supercharge $Q$ squares to zero in 6d iff $s_+^+\wedge s_-^+$ under the isomorphism $\wedge^2 S^6_+\cong V$ is equal to $s_+^-\wedge s_-^-$ under the isomorphism $\wedge^2 S^6_-\cong V$.
+
+$Q$ squares to zero in 8d iff it squares to zero in 6d and $(s_+^+, s_-^-) = (s_-^+, s_+^-) = 0$, where $(-, -)$ denotes the natural pairing between $S^6_+$ and $S^6_-\cong (S^6_+)^*$. But by \cite[Lemma 4.42]{ElliottSafronov} the condition that $Q$ squares to zero in 6d already implies the vanishing of these pairings.
+
+So, any square-zero rank $(2, 2)$ supercharge in 6d lifts to a square-zero rank $(1, 1)$ supercharge in 8d and hence by Theorem \ref{thm:8dpartiallytopologicaltwist} they are obtained by a dimensional reduction of a square-zero supercharge in 10d along $(\id\times \Re)\colon \RR^2\times \CC^4\rightarrow \RR^2\times \RR^4$. The statement therefore follows from Theorem \ref{thm:10dCSreduction}.
 \end{proof}
 
 \section{Dimension 5}
