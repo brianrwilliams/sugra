@@ -345,8 +345,6 @@ There is a natural Lie bracket on ${\rm Fun}_{\rm loc}(\cE, \cE)$ and a canonica
 
 \subsection{Classical BV Theories}
 
-\pavel{We need to introduce classical field theories linear over a commutative ring (used to talk about symmetries and the Hodge family).}
-
 The classical BV (Batalin-Vilkovisky) formalism \cite{BatalinVilkovisky} is a model for classical field theory from the Lagrangian perspective.  In brief the classical BV formalism produces a local model for the critical locus of an action functional, but considered in the derived sense.  That is, given a space $\Phi$ of fields and an action functional with derivative $\d S$, one considers not just the usual locus in $\Phi$ of fields with $\d S(\phi) = 0$, but the derived intersection $\mr{dCrit}(S) = \Phi \cap^h_{T^*\Phi} \Gamma_{\d S}$ of the zero section in $T^*\Phi$ with the graph of $\d S$.  The formalism we describe below can be interpreted as an abstract formalism for modelling the tangent complex at a point to a derived critical locus $\mr{dCrit}(S)$.
 
 \begin{definition}
@@ -456,6 +454,15 @@ We will also consider \defterm{$\ZZ/2\ZZ$-graded classical field theories} which
 The data of a classical BV theory can be equivalently encoded in an elliptic $L_\infty$ algebra $L=E[-1]$ equipped with a cyclic structure, i.e. a symplectic isomorphism $L\cong L^![-3]$ \cite[Chapter 5.4]{Book2}. 
 \end{remark}
 
+We will also sometimes consider $\CC[t]$-families of classical field theories.  These will be defined as follows.
+\begin{definition} \label{family_of_BV_theories_def}
+A $\CC[t]$-family of classical BV theories is a quadruple $(E,Q_{\mr{BV}}, \omega, I)$ as before, but where now the classical BV differential is $t$-dependent.  In other words, it is given as a map
+\[Q_{\mr{BV}} \colon \cE \to \cE  \otimes \CC[t] [1],\]
+where, for each $t_0 \in \CC$, the quadruple $(E,Q^{t_0}_{\mr{BV}}, \omega, I)$
+\[Q^{t_0}_{\mr{BV}} = \mr{ev}_{t_0} \circ Q_{\mr{BV}} \colon \cE \to \cE  \otimes \CC[t] [1] \to \cE[1]\]
+defines a classical field theory.
+\end{definition}
+
 Next, we formulate the notion of an equivalence of classical BV theories. 
 
 \begin{definition}
@@ -523,7 +530,7 @@ Again, in terms of the classical BV complex, this proposition tells us that give
 &&E_1 \ar^{~}[dr] &E_1^! \ar[ur] && \\
 &&E_1^! \ar^{~}[ur] &E_1 \ar[uur] && \\
 }\]
-with the differentials $E_1 \to E_1$ and $E_1^! \to E_1^!$ given by the identity, we can replace it with a quasi-isomorphic complex consisting of only the first line, as long as we suitably modify its differential and Lie structure. \chris{Pavel, is this, and the other remark above, what you wanted me to add?}
+with the differentials $E_1 \to E_1$ and $E_1^! \to E_1^!$ given by the identity, we can replace it with a quasi-isomorphic complex consisting of only the first line, as long as we suitably modify its differential and Lie structure.
 \end{remark}
 
 \subsection{Symmetries in the Classical BV Formalism} \label{symmetry_section}
@@ -705,7 +712,7 @@ We denote the space of BV fields by $\cE = \map(X\times Y_{\mr{Dol}}\times M_{\m
 \end{definition}
 
 \begin{remark} \label{mapping_stack_remark}
-The mapping stack above has a precise meaning in the language of derived algebraic geometry \chris{Let's say a few words about where the terminology comes from at least, even if for us it's just shorthand.  I can add this later.  I should also remark on the fact that we can pull the $T^*[d]$ out to a $T^*[k]$, with $k=-1$ if $X,Y,M$ are vector spaces.}  For the purposes of this paper, while we think of the derived stack as the global moduli space of solutions to the equations of motion in generalized BF theory, we will only use the perturbative datum of the classical BV complex.  The language of the mapping stack will simply be used as a compact way of referring to the theory above. 
+The mapping stack above has a precise meaning in the language of derived algebraic geometry -- see for instance \cite{PTVV}, where, if $X, Y$ and $M$ are compact, such a mapping stack is shown to carry a $-1$-shifted symplectic structure.  For the purposes of this paper, while we think of the derived stack as the global moduli space of solutions to the equations of motion in generalized BF theory, we will only use the perturbative datum of the classical BV complex.  The language of the mapping stack will simply be used as a compact way of referring to the theory above. 
 \end{remark}
 
 Let us unpack the definition. Let $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M)$. Then the bundle of BV fields is
@@ -835,9 +842,9 @@ Then it carries an action of $\MU(n_1)\times \U(n_2)\times \SO(n_3)$ given by th
 \end{prop}
 
 \begin{eg}
-There is a special case of this  of the ``holomorphic symplectic boson". 
-\brian{include this?}
+There is a special case of this, which one might label the ``holomorphic symplectic boson'' \cite[Definition 4.8]{SWchar}.  This is the case when $n_1 = 1$, $n_2 = n_3 = 0$, so $V$ is a $\fg$ representation with an ordinary symplectic structure.  If $V = T^*R$, we are considering the classical cotangent field theory whose classical solutions to the equations of motion model the cotangent bundle to $G$-bundles on a Riemann surface with a section of the associated bundle to $R$.
 \end{eg}
+
 \subsubsection{Generalized Hodge theory}
 Generalized BF theories can be naturally deformed to theories which are perturbatively trivial, but which arise as shadows of non-trivial non-perturbative theories.  These will often appear as topological twists of supersymmetric field theories, the most famous example being the 2d A-model \chris{refer also to the introduction}. By a deformation we will mean a $\CC[t]$-family of classical BV theories which reduce to the given theory at $t=0$.
 
@@ -848,7 +855,7 @@ with the $L_\infty$ brackets coming from the $L_\infty$ brackets on $\fg$ in the
 If $\fg$ carries a nondegenerate invariant symmetric pairing of degree $d$, so does $\fg_{\Hod}$.
 
 \begin{definition} \label{Hodge_family_def}
-Let $X$ and $Y$ be complex manifolds and $M$ a smooth oriented manifold. Fix an $L_\infty$ algebra $\fg$. We assume $X$ is equipped with a holomorphic volume form $\Omega_X \in\Omega^{\dim(X), 0}(X)$ and $\fg$ is equipped with a nondegenerate invariant symmetric pairing $\langle-, -\rangle\colon \fg\otimes\fg\rightarrow \CC[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 3]$. The \defterm{generalized Hodge theory} is the $\CC[t]$-linear classical BV theory given by the generalized Chern--Simons theory with the space of fields $\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B \fg_\Hod)$.
+Let $X$ and $Y$ be complex manifolds and $M$ a smooth oriented manifold. Fix an $L_\infty$ algebra $\fg$. We assume $X$ is equipped with a holomorphic volume form $\Omega_X \in\Omega^{\dim(X), 0}(X)$ and $\fg$ is equipped with a nondegenerate invariant symmetric pairing $\langle-, -\rangle\colon \fg\otimes\fg\rightarrow \CC[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 3]$. The \defterm{generalized Hodge theory} is the $\CC[t]$-family of classical BV theories, as in Definition \ref{family_of_BV_theories_def}, given by the generalized Chern--Simons theory with the space of fields $\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B \fg_\Hod)$.
 \end{definition}
 
 \begin{prop}
