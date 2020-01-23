@@ -579,11 +579,11 @@ is elliptic as a $C^\bu(\fg)$-linear differential operator.
 \end{itemize}
 \end{definition}
 
-\begin{rmk}
+\begin{remark}
 \brian{Explain $C^\bu(\fg)$-linear elliptic}
-\end{rmk}
+\end{remark}
 
-\begin{rmk}
+\begin{remark}
 We have seen that a classical BV theory can also be presented in terms of a BV action $S \in \oloc(\cE)$ satisfying the classical master equation $\{S, S\} = 0$. 
 One can also formulate actions of a Lie algebra on a classical theory in these terms. 
 The data of an action of a Lie algebra $\fg$ on a classical field theory $(E, \omega, S)$ is equivalent to the choice of a local functional $\fS_\fg = \sum_k \fS_\fg^{(k)}\in C^\bu(\fg, \oloc(\cE))$, at least quadratic in the fields, such that $\fS^{(0)}_\fg = S$ and such that the classical master equation
@@ -591,9 +591,9 @@ The data of an action of a Lie algebra $\fg$ on a classical field theory $(E, \o
 \d_{\mr{CE}} \fS_\fg + \frac{1}{2} \{\fS_\fg, \fS_\fg\} = 0 
 \]
 is satisfied.
-\end{rmk}
+\end{remark}
 
-\begin{rmk}
+\begin{remark}
 We have defined an action of a Lie algebra on a classical field theory in terms of a Noether current $I_\fg$.
 Such data gives rise to an $L_\infty$ action of $\fg$ on the space of fields $\cE$ in the following way.
 By the Maurer-Cartan equation, the operator $\d_{\mr{CE}} + Q_{\mr{BV}} + \{I_\fg, -\}$ 
@@ -603,7 +603,7 @@ By assumption that the Noether current is at least quadratic in the fields, we s
 \fg^{\otimes k} \otimes \cE^{\otimes \ell} \to \cE
 \]
 combining to give $\cE$ the structure of an $L_\infty$-module for $\fg$.
-\end{rmk}
+\end{remark}
 
 We may also define actions of supergroups on classical field theories.  The action of a supergroup $G$ is more data than the action of a super Lie algebra $\gg$: it includes the infinitesimal action of the Lie algebra $\gg$, along with an action of $G$ on the fields exponentiating this infinitesimal action.  That is, we make the following definition.
 
@@ -737,9 +737,9 @@ Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix a complex ve
 \end{itemize}
 \end{definition}
 
-\begin{rmk}
+\begin{remark}
 This is indeed a special case of generalized BF theory: the generalized $\beta\gamma$ system appears as generalized $BF$ theory with the $L_\infty$ algebra given by $\fg = V[-1]$, with trivial $L_\infty$ structure. 
-\end{rmk}
+\end{remark}
 
 We may also couple a $\beta\gamma$ system to a more general generalized $BF$ theory as follows.
 
@@ -838,9 +838,9 @@ Suppose $\fg$ is a dg Lie algebra and $V$ a $\fg$-representation equipped with a
 Then it carries an action of $\MU(n_1)\times \U(n_2)\times \SO(n_3)$ given by the pullback action on differential forms on $\CC^{n_1}\times \CC^{n_2}\times \RR^{n_3}$.
 \end{prop}
 
-\begin{eg}
+\begin{example}
 There is a special case of this, which one might label the ``holomorphic symplectic boson'' \cite[Definition 4.8]{SWchar}.  This is the case when $n_1 = 1$, $n_2 = n_3 = 0$, so $V$ is a $\fg$ representation with an ordinary symplectic structure.  If $V = T^*R$, we are considering the classical cotangent field theory whose classical solutions to the equations of motion model the cotangent bundle to $G$-bundles on a Riemann surface with a section of the associated bundle to $R$.
-\end{eg}
+\end{example}
 
 \subsubsection{Generalized Hodge theory}
 Generalized BF theories can be naturally deformed to theories which are perturbatively trivial, but which arise as shadows of non-trivial non-perturbative theories.  These will often appear as topological twists of supersymmetric field theories, the most famous example being the 2d A-model \chris{refer also to the introduction}. By a deformation we will mean a $\CC[t]$-family of classical BV theories which reduce to the given theory at $t=0$.
@@ -943,13 +943,13 @@ has the bundle of BV fields $\fg[1] \oplus \fg^*[-2]$. We may identify it with $
 We may identify $p^*(\fg[1]\oplus \fg)\cong \Omega^\bullet_{\RR}\otimes \fg[1]$. Under this identification the integration pairing $\omega_M$ on differential forms reduces to the pairing $\omega_N$. The de Rham differential vanishes on translation-invariant forms which shows a compatibility of dimensional reduction with the differentials $Q_{\mr{BV}}$. Finally, in both cases the interaction term comes from the $L_\infty$ structure on $\fg$.
 \end{proof}
 
-\begin{cor}
+\begin{corollary}
 Let $X, Y, M, \fg$ be as before. Consider the generalized Hodge theory
 \[\map(X\times Y_{\mr{Dol}}\times (M\times\RR)_{\mr{dR}}, B\fg_\Hod).\]
 Its dimensional reduction along the projection $p\colon X\times Y\times (M\times \RR)\rightarrow X\times Y\times M$ is isomorphic to the generalized Hodge theory
 \[\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1] B\fg_\Hod).\]
 \label{cor:Hodgetopologicalreduction}
-\end{cor}
+\end{corollary}
 
 Let $V_\RR$ be a real vector space equipped with a nondegenerate symmetric bilinear pairing and an orientation. Recall that the symmetric bilinear pairing trivializes $\det(V_\RR)^{\otimes 2}$ and the orientation allows us to obtain a trivialization of $\det(V_\RR)$, i.e. a real volume form. We denote by $V=V_\RR\otimes_{\RR}\CC$ its complexification. $V$ inherits a nondegenerate Hermitian form from the symmetric bilinear pairing on $V_\RR$. Moreover, $V$ carries a complex volume form $\Omega_V$:
 \[\det(V)\cong \det(V_\RR)\otimes_{\RR}\CC\]
@@ -982,7 +982,7 @@ Under the pullback map
 the integration map $\int_V \Omega_V\wedge (-)\colon \Omega^{0, \bullet}(V)\rightarrow \CC$ reduces to the integration map $\int_{V_\RR} (-)\colon \Omega^{\bullet}(V_\RR;\CC)\rightarrow \CC$. \brian{This is not defined} \chris{is compactly supported enough?  We want to compare pairings.}
 \end{proof}
 
-\begin{cor}
+\begin{corollary}
 Let $X, Y, M, V_\RR, V$ be as before. Consider the generalized BF theory
 \[\map((X\times V)\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[d] B\fg).\]
 
@@ -990,9 +990,9 @@ Its dimensional reduction along the projection $p\colon (X\times V)\times Y\time
 \[\map(X\times Y_{\mr{Dol}}\times (M\times V_\RR)_{\mr{dR}}, T^*[d] B\fg).\]
 The isomorphism is moreover $\SO(V_\RR)$-equivariant.
 \label{cor:BFholomorphicreduction}
-\end{cor}
+\end{corollary}
 
-\begin{cor}
+\begin{corollary}
 Let $X, Y, M, V_\RR, V$ be as before. Consider the generalized Hodge theory
 \[\map((X\times V)\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B\fg_\Hod).\]
 
@@ -1000,7 +1000,7 @@ Its dimensional reduction along the projection $p\colon (X\times V)\times Y\time
 \[\map(X\times Y_{\mr{Dol}}\times (M\times V_\RR)_{\mr{dR}}, B\fg_\Hod).\]
 The isomorphism is moreover $\SO(V_\RR)$-equivariant.
 \label{cor:Hodgeholomorphicreduction}
-\end{cor}
+\end{corollary}
 
 \section{Supersymmetry} \label{sec:susy}
 Having set up the formalism behind classical field theories in the BV and BRST formalisms, we will introduce the other main formal ingredient of this paper: the supersymmetry action.  So, we will discuss the classification of supersymmetry algebras, the notion of a supersymmetric field theory, and the idea of a \emph{twist} of a supersymmetric field theory, extending work of the first two authors in \cite{ElliottSafronov}.  We will introduce the classification of supersymmetry algebras using the division algebra perspective of Baez and Huerta \cite{BaezHuerta}, which will be useful for the classification of super Yang-Mills theories in Section \ref{sec:SYM} below.
@@ -1109,19 +1109,19 @@ By duality we obtain maps $\Gamma\colon\Sym^2(\Sigma)\rightarrow V$ and $\Gamma\
 
 We will now state two important properties of $\Gamma$ and the spinorial pairing. The following statement was proved in \cite[Theorem 11]{BaezHuerta} (see also \cite{Schray} for the case $\dim(V)=10$).
 
-\begin{thm}
+\begin{theorem}
 Suppose $A$ is alternative, i.e. $a\otimes b\otimes c\mapsto (ab)c - a(bc)$ is completely antisymmetric. For $Q_1, Q_2, Q_3\in\Sigma$ we have
 \[\rho(\Gamma(Q_1, Q_2))Q_3 + \rho(\Gamma(Q_2, Q_3))Q_1 + \rho(\Gamma(Q_2, Q_3))Q_1 = 0.\]
 \label{thm:3psi}
-\end{thm}
+\end{theorem}
 
 If we moreover assume $A$ is associative, there is a relationship between the scalar spinorial pairing and $\Gamma$.
 
-\begin{thm}
+\begin{theorem}
 Suppose $A$ is associative. For $Q_1, Q_2\in\Sigma$ and $Q_3\in\Sigma^*$ we have
 \[Q_1(Q_2, Q_3)^A + Q_2(Q_1, Q_3)^A = \rho(\Gamma(Q_1, Q_2)) Q_3.\]
 \label{thm:matter3psi}
-\end{thm}
+\end{theorem}
 \begin{proof}
 The right-hand side is
 \[(Q_1Q_2^\dagger + Q_2Q_1^\dagger)Q_3\]
@@ -1200,11 +1200,11 @@ The right-hand side is
 
 An important property of two-dimensional chiral supersymmetry is the following analog of Theorem \ref{thm:3psi}.
 
-\begin{thm}
+\begin{theorem}
 For $Q_1, Q_2, Q_3\in\Sigma$ we have
 \[\rho(\Gamma(Q_1, Q_2))Q_3 = 0.\]
 \label{thm:2d3psi}
-\end{thm}
+\end{theorem}
 \begin{proof}
 Indeed, $\Gamma(Q_1, Q_2)$ lies in $S_+^{\otimes 2}\subset V$, but the nonzero Clifford action is given by
 \[S_-^{\otimes 2}\otimes (S_+\otimes W)\longrightarrow S_-\otimes W.\]
@@ -1215,11 +1215,11 @@ We will now fix a composition algebra $A$ with an antiinvolution $\sigma$ as in 
 Since $\Sigma$ and $\Sigma^*$ are right $A$-modules, by Lemma \ref{lm:extendpairing} we may extend the scalar spinorial pairing to an $A$-valued pairing $\Sigma\otimes \Sigma^*\rightarrow A$ by
 \[(s_1\otimes q_1, s_2\otimes q_2)^A = (s_1, s_2)\sigma(q_1) q_2.\]
 
-\begin{thm}
+\begin{theorem}
 For $Q_1, Q_2\in\Sigma$ and $Q_3\in\Sigma^*$ we have
 \[Q_1(Q_2, Q_3)^A + Q_2(Q_1, Q_3)^A = \rho(\Gamma(Q_1, Q_2))Q_3.\]
 \label{thm:2dmatter3psi}
-\end{thm}
+\end{theorem}
 \begin{proof}
 Pick basis elements $s\in S_+$ and $f\in S_-$, so that
 \[Q_1 = s\otimes q_1,\qquad Q_2 = s\otimes q_2,\qquad Q_3 = f\otimes q_3.\]
@@ -1401,11 +1401,11 @@ I_{\gauge}^{(2)}(Q_1, Q_2) &= \int_{V_\RR}\dvol\left( \frac{1}{4}(\Gamma(Q_1, Q_
 
 The following theorem summarizes the fact that super Yang--Mills theory is indeed supersymmetric in the sense of Definition \ref{dfn: super}. 
 
-\begin{thm}\label{thm:gaugemultipletSUSY}
+\begin{theorem}\label{thm:gaugemultipletSUSY}
 The functional $\fS_{\gauge} = S_{\gauge} + I_{\gauge}^{(1)} + I_{\gauge}^{(2)} \in C^\bu(\mf{A}, \oloc(\cE_{\gauge}))$ satisfies the classical master equation
 \[\d_{\mr{CE}} \fS_{\gauge} + \frac{1}{2}\{\fS_{\gauge}, \fS_{\gauge}\} = 0.\]
 Thus, $\fS_{\gauge}$ defines an elliptic $L_\infty$ action of the super Lie algebra $\fA$ on super Yang--Mills theory and so super Yang--Mills theory is supersymmetric.  
-\end{thm}
+\end{theorem}
 
 The rest of the section will be devoted to the proof of the above theorem. The classical master equation decomposes into the following equations:
 \begin{align*}
@@ -1604,14 +1604,14 @@ together with a supersymmetry action functionals
 
 The following result states that these functionals encode an off-shell action of the supersymmetry algebra.
 
-\begin{thm}
+\begin{theorem}
 The functional $\fS = S_{\BV} + I_{\BV}^{(1)} + I_{\BV}^{(2)}$ satisfies the classical master equation
 \begin{equation}
 \label{CMEYM}
 \d_{\mr{CE}} \fS + \frac{1}{2} \{\fS, \fS\} = 0 .
 \end{equation}
 \label{thm:YMSUSY}
-\end{thm}
+\end{theorem}
 
 The rest of this section is devoted to the proof of Theorem \ref{thm:YMSUSY}. The classical master equation \eqref{CMEYM} decomposes into a sequence of equations
 \begin{equation}
@@ -1797,10 +1797,10 @@ I^{(1)} &= \int \dvol\left(-(\rho, A_{1, 0}^*) + (F_{0, 2}, B^*) + \frac{1}{2}\L
 I^{(2)} &= -\frac{1}{4}\int \dvol (\chi^*)^2.
 \end{align}
 
-\begin{thm}
+\begin{theorem}
 The holomorphic twist of 10d $\mc N=(1, 0)$ super Yang--Mills on $M=\RR^{10}$ is perturbatively equivalent to the holomorphic Chern--Simons theory on $M\cong\CC^5$ with the space of fields $\map(M, B\gg)$. Moreover, the equivalence is $\SU(5)$-equivariant.
 \label{thm:10dholomorphictwist}
-\end{thm}
+\end{theorem}
 \begin{proof}
 First, we may eliminate $\chi$ and $\chi^*$ using Proposition \ref{prop:integrateoutfield}. So, the above theory is perturbatively equivalent to the theory without $\chi$ and $\chi^*$ with the BV action
 \begin{align*}
@@ -1852,10 +1852,10 @@ Suppose $L$ is a complex vector space equipped with a Hermitian structure and a 
 
 The dimensional reduction of 10d super Yang--Mills on $L\times N$ along $\Re\colon N\rightarrow N_\RR$ is by definition the $(5+\dim(L))$-dimensional super Yang--Mills on $L\times N_\RR$. Since $N\cong N_\RR\oplus iN_\RR$, this theory carries an action of the $R$-symmetry group $G_R=\Spin(N_\RR)$. We consider a twisting homomorphism $\phi\colon \SU(L)\times \Spin(N_\RR)\rightarrow G_R=\Spin(N_\RR)$ given by the projection onto the second factor under which $Q$ is preserved.
 
-\begin{thm}
+\begin{theorem}
 The twist of $(5+\dim(L))$-dimensional super Yang--Mills on $L\times N_\RR$ by $Q$ is perturbatively equivalent to the generalized Chern--Simons theory with the space of fields $\map(L\times (N_\RR)_{\mr{dR}}, B\fg)$. Moreover, the equivalence is $\SU(L)\times \Spin(N_\RR)$-equivariant.
 \label{thm:10dCSreduction}
-\end{thm}
+\end{theorem}
 \begin{proof}
 By Theorem \ref{thm:10dholomorphictwist} the twist of 10d $\cN=1$ super Yang--Mills on $L\times N$ by $Q$ is perturbatively equivalent to the holomorphic Chern--Simons theory. Moreover, the equivalence is $\SU(L)\times \SU(N)$-equivariant. By Proposition \ref{CS_diml_red_prop} we get that the dimensional reduction of holomorphic Chern--Simons on $L\times N$ along $\Re\colon N\rightarrow N_\RR$ is isomorphic to the generalized Chern--Simons theory with the space of fields $\map(L\times N_\RR, B\fg)$ and this isomorphism is $\SU(L)\times \SO(N_\RR)$-equivariant, where $\SO(N_\RR)$ acts on $N$ via the homomorphism \eqref{eq:SOtoSU}.
 
@@ -1875,10 +1875,10 @@ The claim then follows from the commutativity of the diagram
 
 We will now concentrate on the 9-dimensional case.
 
-\begin{thm}
+\begin{theorem}
 The minimal twist of 9d $\mc N=1$ super Yang--Mills on $M=\CC^4\times \RR$ is perturbatively equivalent to the generalized Chern--Simons theory with the space of fields $\map(\CC^4\times \RR_{\mr{dR}}, B\gg)$. Moreover, the equivalence is $\SU(4)$-equivariant.
 \label{thm:9dminimaltwist}
-\end{thm}
+\end{theorem}
 \begin{proof}
 Any square-zero supercharge in the 9-dimensional supersymmetry algebra is square-zero in the 10-dimensional supersymmetry algebra. The claim follows from Theorem \ref{thm:10dCSreduction} applied to $L=\CC^4$.
 \end{proof}
@@ -1916,10 +1916,10 @@ We consider the twisting homomorphism $\det^{1/2}\colon \MU(4)\rightarrow \Spin(
 \item A ghost field $c\in \Omega^0(M; \gg)[1]$.
 \end{itemize}
 
-\begin{thm}
+\begin{theorem}
 The holomorphic twist of 8d $\cN=1$ super Yang--Mills on $M=\RR^8$ is perturbatively equivalent to the holomorphic BF theory on $M\cong\CC^4$ with the space of fields $\map(M, T^*[3] B\fg)$. Moreover, the equivalence is $\U(4)$-equivariant.
 \label{thm:8dholomorphictwist}
-\end{thm}
+\end{theorem}
 \begin{proof}
 8d $\cN=1$ super Yang--Mills theory is obtained by dimensionally reducing 10d $\cN=1$ super Yang--Mills theory. Under dimensional reduction the 10d fields from Section \ref{sect:10dholomorphictwist} decompose as follows:
 \begin{align*}
@@ -1973,10 +1973,10 @@ where $S_{\mathrm{BRST}}$ and $S_{\mathrm{anti}}$ are given by \eqref{eq:10dBRST
 
 We have a homomorphism $\alpha\colon \U(1)\rightarrow G_R=\Spin(2, \RR)$ with respect to which $Q_t$ has weight $1$, so the $Q_t$-twisted theory will have a $\ZZ$-grading.
 
-\begin{thm}
+\begin{theorem}
 The twist of 8d $\cN=1$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges is perturbatively equivalent to the holomorphic Hodge theory $\map(\CC^4, B\fg_{\mr{Hod}})$. Moreover, this equivalence is $\SU(4)$-equivariant.
 \label{thm:8dHodgetwist}
-\end{thm}
+\end{theorem}
 \begin{proof}
 The proof proceeds as in the proof of Theorem \ref{thm:10dholomorphictwist} with slight modifications.
 
@@ -1992,10 +1992,10 @@ where $S_{BF}$ is the action functional of the holomorphic twist at $t=0$. Since
 which is exactly the local $L_\infty$ algebra of the holomorphic Hodge theory.
 \end{proof}
 
-\begin{cor}
+\begin{corollary}
 The topological twist of 8d $\cN=1$ super Yang--Mills is perturbatively trivial.
 \label{cor:8dtopologicaltwist}
-\end{cor}
+\end{corollary}
 \begin{proof}
 The topological twist of 8d $\cN=1$ super Yang--Mills is the twist by $Q_t$ with $t\neq 0$. By Theorem \ref{thm:8dHodgetwist} it is equivalent to the $t\neq 0$ specialization of the holomorphic Hodge theory which by Proposition \ref{prop:Hodgetheoryspecialization} is perturbatively trivial.
 \end{proof}
@@ -2004,10 +2004,10 @@ The topological twist of 8d $\cN=1$ super Yang--Mills is the twist by $Q_t$ with
 
 Finally we discuss the case of the partially topological supercharge $(Q_+, Q_-)\in\Sigma$. We consider the twisting homomorphism $\phi\colon \SU(3)\times \Spin(2, \RR)\rightarrow G_R=\Spin(2, \RR)$ given by projection on the second factor.
 
-\begin{thm}
+\begin{theorem}
 The partially topological twist of 8d $\cN=1$ super Yang--Mills is perturbatively equivalent to the generalized Chern--Simons theory with the space of fields $\map(\CC^3\times \RR^2_{\mr{dR}}, B\fg)$. Moreover, the equivalence is $\SU(3)\times \Spin(2, \RR)$-equivariant.
 \label{thm:8dpartiallytopologicaltwist}
-\end{thm}
+\end{theorem}
 \begin{proof}
 Since $Q_+$ and $Q_-$ satisfy $(Q_\pm, Q_\pm)_{S_\pm} = 0$, they lift to a square-zero supercharge in the 10-dimensional supersymmetry algebra. The claim follows from Theorem \ref{thm:10dCSreduction} applied to $L=\CC^3$.
 \end{proof}
@@ -2040,20 +2040,20 @@ Suppose $L$ is a complex vector space equipped with a Hermitian structure. Suppo
 The dimensional reduction of 8d $\cN=1$ super Yang--Mills on $L\times N$ along $\Re\colon N\rightarrow N_\RR$ is by definition the $(4+\dim(L))$-dimensional super Yang--Mills on $L\times N_\RR$ with 16 supercharges. Since $N\cong N_\RR\oplus iN_\RR$, this theory carries an action of the $R$-symmetry group $G_R=\U(1)\times \Spin(N_\RR)$. We consider the grading $\alpha\colon \U(1)\rightarrow G_\RR$ given by the embedding into the first copy of $\U(1)$ and a twisting homomorphism
 \[\phi\colon \MU(L)\times \Spin(N_\RR)\xrightarrow{\det^{1/2}\times \id} G_R=\U(1)\times \Spin(N_\RR).\]
 
-\begin{thm}
+\begin{theorem}
 The twist of $(4+\dim(L))$-dimensional super Yang--Mills on $L\times N_\RR$ by $Q$ is perturbatively equivalent to the generalized BF theory with the space of fields $\map(L\times (N_\RR)_{\mr{dR}}, T^*[3] B\fg)$. Moreover, the equivalence is $\MU(L)\times \Spin(N_\RR)$-equivariant.
 \label{thm:8dBFreduction}
-\end{thm}
+\end{theorem}
 \begin{proof}
 By Theorem \ref{thm:8dholomorphictwist} the twist of 8d $\cN=1$ super Yang--Mills on $L\times N$ by $Q$ is perturbatively equivalent to the holomorphic BF theory. Moreover, the equivalence is $\MU(L)\times \SU(N)$-equivariant. By Corollary \ref{cor:BFholomorphicreduction} we get that the dimensional reduction of holomorphic BF theory on $L\times N$ along $\Re\colon N\rightarrow N_\RR$ is isomorphic to the generalized BF theory with the space of fields $\map(L\times N_\RR, T^*[3] B\fg)$ and this isomorphism is $\MU(L)\times \SO(N_\RR)$-equivariant, where $\SO(N_\RR)$ acts on $N$ via the homomorphism \eqref{eq:SOtoSU}.
 \end{proof}
 
 We will now concentrate on the 7-dimensional case.
 
-\begin{thm}
+\begin{theorem}
 The minimal twist of 7d $\cN=1$ super Yang--Mills on $M=\CC^3\times \RR$ is perturbatively equivalent to the generalized BF theory with the space of fields $\map(\CC^3\times \RR_{\mr{dR}}, T^*[3] B\fg)$. Moreover, the equivalence is $\U(3)$-equivariant.
 \label{thm:7dminimaltwist}
-\end{thm}
+\end{theorem}
 
 \subsubsection{Topological twist}
 
@@ -2063,33 +2063,33 @@ Let $L$ be a complex vector space equipped with a Hermitian structure and a comp
 
 The dimensional reduction of 8d $\cN=1$ super Yang--Mills on $L\times N$ along $\Re\colon N\rightarrow N_\RR$ gives $(4+\dim(L))$-dimensional super Yang--Mills on $L\times N_\RR$ with 16 supercharges. The $R$-symmetry group is $G_R=\Spin(N_\RR\oplus \RR^2)$ and we consider the grading given by the homomorphism $\alpha\colon\U(1)\hookrightarrow \Spin(2, \RR)\times \Spin(N_\RR)\subset G_R$ given by embedding into the first factor. We consider the twisting homomorphism given by $\Spin(N_\RR)\hookrightarrow \Spin(2, \RR)\times \Spin(N_\RR)\subset G_R$ given by embedding into the second factor.
 
-\begin{thm}
+\begin{theorem}
 The twist of $(4+\dim(L))$-dimensional super Yang--Mills on $L\times N_\RR$ by $Q_t$ is perturbatively equivalent to the generalized Hodge theory with the space of fields $\map(L\times (N_\RR)_{\mr{dR}}, B\fg_\Hod)$. Moreover, the equivalence is $\SU(L)\times \Spin(N_\RR)$-equivariant.
 \label{thm:8dHodgereduction}
-\end{thm}
+\end{theorem}
 \begin{proof}
 By Theorem \ref{thm:8dHodgetwist} the twist of 8d $\cN=1$ super Yang--Mills on $L\times N$ by $Q_t$ is perturbatively equivalent to the holomorphic Hodge theory. Moreover, the equivalence is $\SU(L)\times \SU(N)$-equivariant. The claim then follows from Corollary \ref{cor:Hodgeholomorphicreduction}.
 \end{proof}
 
 Now let $L=\CC^3$ and $N_\RR=\RR$. Dimensionally reducing the family $Q_t$ along $L\times N\rightarrow L\times N_\RR$ we obtain a family of supercharges which are topological for $t\neq 0$ and has 4 invariant directions for $t=0$. In other words, at $t=0$ we get the minimal twist and at $t\neq 0$ the topological twist.
 
-\begin{thm}
+\begin{theorem}
 The twist of 7d $\cN=1$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges is perturbatively equivalent to the generalized Hodge theory $\map(\CC^3\times \RR_{\mr{dR}}, B\fg_{\Hod})$. Moreover, this equivalence is $\SU(3)$-equivariant.
 \label{thm:7dHodgetwist}
-\end{thm}
+\end{theorem}
 
-\begin{cor}
+\begin{corollary}
 The topological twist of 7d $\cN=1$ super Yang--Mills is perturbatively trivial.
-\end{cor}
+\end{corollary}
 
 \subsubsection{Partially topological twist}
 
 Finally, we discuss the case of a partially topological twist. We consider the twisting homomorphism $\phi\colon \SU(3)\times \Spin(3, \RR)\rightarrow G_R=\Spin(3, \RR)$ given by projection on the second factor.
 
-\begin{thm}
+\begin{theorem}
 The partially topological twist of 7d $\cN=1$ super Yang--Mills is perturbatively equivalent to the generalized Chern--Simons theory with the space of fields $\map(\CC^2\times \RR^3_{\mr{dR}}, B\fg)$. Moreover, the equivalence is $\SU(2)\times \Spin(3, \RR)$-equivariant.
 \label{thm:7dpartiallytopologicaltwist}
-\end{thm}
+\end{theorem}
 \begin{proof}
 Any partially topological supercharge in the 7-dimensional supersymmetry algebra lifts to a square-zero supercharge in the 10-dimensional supersymmetry algebra. The claim follows from Theorem \ref{thm:10dCSreduction} applied to $L=\CC^2$.
 \end{proof}
@@ -2158,10 +2158,10 @@ I^{(1)}_{\matter} &=  \int \dvol \left( (\wt\nu, \nu^*) + \frac 12( \ol \dd_{A_{
 I^{(2)}_{\gauge} &= -\frac{1}{4}\int \dvol (\chi^*)^2.
 \end{align*}
 
-\begin{thm}
+\begin{theorem}
 The holomorphic twist of 6d $\cN=(1, 0)$ super Yang--Mills on $M=\RR^6$ with matter valued in a symplectic $\fg$-representation $U$ is perturbatively equivalent to the holomorphic Chern--Simons theory on $M\cong \CC^3$ with the space of fields $\map(M, U\ham \fg)$. Moreover, the equivalence is $\MU(3)$-equivariant.
 \label{thm:6dholomorphictwist}
-\end{thm}
+\end{theorem}
 \begin{proof}
 The proof of this theorem is very similar to the proof of Theorem \ref{thm:10dholomorphictwist}. First, we eliminate the fields $\chi$ and $\chi^*$ using Proposition \ref{prop:integrateoutfield}.  We then observe that the action includes the terms $\int \dvol  (\rho, A_{1,0}^*)$ and $\int \dvol (\wt\nu, \nu^*)$.  In other words, the pairs $(\rho, A_{1,0})$ and $(\nu, \wt\nu)$ form trivial BRST doublets, which can be eliminated using Proposition \ref{prop:BRSTdoublet}. The twisted theory is therefore perturbatively equivalent to the theory with the BV action 
 \begin{align*}
@@ -2186,10 +2186,10 @@ With these modifications the BRST fields are given by:
 
 Note that the $\MU(3)$-action on the fields factors through $\U(3)$ since the square roots of $K$ have canceled out. By comparing the degrees and the transformation rules of the fields in Theorem \ref{thm:6dholomorphictwist} we obtain the following statement.
 
-\begin{thm}
+\begin{theorem}
 The holomorphic twist of 6d $\cN=(1, 0)$ super Yang--Mills on $M=\RR^6$ with matter valued in a $\fg$-representation $U=T^*R=R\oplus R^*$ is perturbatively equivalent to the holomorphic BF theory on $M\cong \CC^3$ with the space of fields $\map(M, T^*[2] (R/\fg))$. Moreover, the equivalence is $\U(3)$-equivariant.
 \label{thm:6dholomorphictwistgraded}
-\end{thm}
+\end{theorem}
 
 \subsection{\texorpdfstring{$\cN=(1, 1)$}{N=(1, 1)} Super Yang--Mills}
 
@@ -2210,40 +2210,40 @@ Given an element $Q\in S_+\otimes W_+\oplus S_-\otimes W_-$ we denote by $W^*_{Q
 
 The 6d $\cN=(1, 1)$ super Yang--Mills theory viewed as a $\cN=(1, 0)$ supersymmetric theory coincides with the 6d $\cN=(1, 0)$ super Yang--Mills with matter in the representation $U=T^*\fg=\fg\oplus \fg^*$. Under this isomorphism the R-symmetry group $\SU(2)\times \U(1)$ of 6d $\cN=(1, 0)$ super Yang--Mills is a subgroup of the R-symmetry group $\SU(2)\times \SU(2)$ of 6d $\cN=(1, 1)$ super Yang--Mills. In particular, from Theorem \ref{thm:6dholomorphictwistgraded} we obtain the following statement.
 
-\begin{thm}
+\begin{theorem}
 The holomorphic twist of 6d $\cN=(1, 1)$ super Yang--Mills on $M=\RR^6$ is perturbatively equivalent to the holomorphic BF theory on $M\cong \CC^3$ with the space of fields $\map(M, T^*[2] (\fg/\fg))$. Moreover, the equivalence is $\U(3)$-equivariant.
 \label{thm:6d11holomorphictwist}
-\end{thm}
+\end{theorem}
 
 \subsubsection{Rank \texorpdfstring{$(1, 1)$}{(1,1)} partially topological twist}
 
 Let $L=\CC^2$ equipped with a Hermitian structure, $N_\RR=\RR^2$ equipped with a Euclidean structure and $N=N_\RR\otimes_\RR\CC$ its complexification. Consider the 8-dimensional spacetime $V^8_\RR=L\times N$ and the 6-dimensional spacetime $V^6_\RR=L\times N_\RR$. Under the projection $V^8_\RR\rightarrow V^6_\RR$ a holomorphic square-zero supercharge $Q$ in 8 dimensions dimensionally reduces to a rank $(1, 1)$ partially topological square-zero supercharge in 6 dimensions. Therefore, from Theorem \ref{thm:8dBFreduction} we obtain the following statement.
 
-\begin{thm}
+\begin{theorem}
 The rank $(1, 1)$ partially topological twist of 6d $\cN=(1, 1)$ super Yang--Mills is perturbatively equivalent to the generalized BF theory with the space of fields $\map(\CC^2\times \RR^2_{\mathrm{dR}}, T^*[4] B\fg)$. Moreover, the equivalence is $\MU(2)\times\Spin(2, \RR)$-equivariant.
-\end{thm}
+\end{theorem}
 
 \subsubsection{Topological twist}
 
 Let $L=\CC^2$ equipped with a Hermitian structure and a complex half-density, $N_\RR=\RR^2$ equipped with a Euclidean structure and $N=N_\RR\otimes_\RR\CC$ its complexification. Consider the 8-dimensional spacetime $V^8_\RR=L\times N$ and the 6-dimensional spacetime $V^6_\RR=L\times N_\RR$. Under the projection $V^8_\RR\rightarrow V^6_\RR$ the family $Q_t$ of 8-dimensional square-zero supercharges given by equation \eqref{eq:8dHodgefamily} dimensionally reduces to a family of square-zero supercharges which are topological for $t\neq 0$ and have 4 invariant directions at $t=0$. So, we get a rank $(1, 1)$ partially topological twist at $t=0$ and a rank $(1, 1)$ topological twist at $t\neq 0$. Therefore, from Theorem \ref{thm:8dHodgereduction} we obtain the following statement.
 
-\begin{thm}
+\begin{theorem}
 The twist of 6d $\cN=(1, 1)$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges is perturbatively equivalent to the generalized Hodge theory $\map(\CC^2\times \RR^2_{\mathrm{dR}}, B\fg_{\Hod})$. Moreover, this equivalence is $\SU(2)\times \Spin(2, \RR)$-equivariant.
 \label{thm:6dHodgetwist}
-\end{thm}
+\end{theorem}
 
-\begin{cor}
+\begin{corollary}
 The topological twist of 6d $\cN=(1, 1)$ super Yang--Mills is perturbatively trivial.
-\end{cor}
+\end{corollary}
 
 \subsubsection{Rank \texorpdfstring{$(2, 2)$}{(2,2)} Twist}
 
 We consider $L=\CC$ equipped with a Hermitian structure and a complex half-density. From Theorem \ref{thm:10dCSreduction} we obtain the following statement.
 
-\begin{thm}
+\begin{theorem}
 The rank $(2, 2)$ twist of 6d $\cN=(1, 1)$ super Yang--Mills is perturbatively equivalent to the generalized Chern--Simons theory with the space of fields $\map(\CC\times \RR^4_{\mr{dR}}, B\fg)$. Moreover, the equivalence is $\Spin(4, \RR)$-equivariant.
 \label{thm:6drank22}
-\end{thm}
+\end{theorem}
 
 \section{Dimension 5}
 
@@ -2284,28 +2284,28 @@ The dimensional reduction of 6d super Yang--Mills on $L\times N$ along $\Re\colo
 \[\phi\colon \MU(L)\times \Spin(N_\RR)\rightarrow G_R=\SU(2)\times \Spin(N_\RR)\]
 whose first component is $\MU(L)\rightarrow \SU(2)$ as before and the second component is the identity.
 
-\begin{thm}
+\begin{theorem}
 The twist by $Q$ of $(3+\dim(L))$-dimensional super Yang--Mills on $L\times N_\RR$ with 8 supercharges and matter valued in a symplectic $\fg$-representation $U$ is perturbatively equivalent to the generalized Chern--Simons theory with the space of fields $\map(L\times (N_\RR)_{\mr{dR}}, U\ham \fg)$. Moreover, the equivalence is $\MU(L)\times \Spin(N_\RR)$-equivariant.
 \label{thm:6dCSreduction}
-\end{thm}
+\end{theorem}
 \begin{proof}
 By Theorem \ref{thm:6dholomorphictwist} the twist of 6d $\cN=(1, 0)$ super Yang--Mills on $L\times N$ by $Q$ is perturbatively equivalent to the holomorphic Chern--Simons theory with the space of fields $\map(L\times N, U\ham \fg)$. By Proposition \ref{CS_diml_red_prop} we get that the dimensional reduction of holomorphic Chern--Simons on $L\times N$ along $\Re\colon N\rightarrow N_\RR$ is isomorphic to the generalized Chern--Simons theory with the space of fields $\map(L\times N_\RR, U\ham\fg)$ and this isomorphism is $\MU(L)\times \SO(N_\RR)$-equivariant, where $\SO(N_\RR)$ acts on $N$ via the homomorphism \eqref{eq:SOtoSU}.
 \end{proof}
 
 We will now concentrate on the 5-dimensional case.
 
-\begin{thm}
+\begin{theorem}
 The minimal twist of 5d $\cN=1$ super Yang--Mills on $M=\CC^2\times \RR$ with matter valued in a symplectic $\fg$-representation $U$ is perturbatively equivalent to the generalized Chern--Simons theory with the space of fields $\map(\CC^2\times \RR_{\mathrm{dR}}, U\ham \fg)$. Moreover, the equivalence is $\MU(2)$-equivariant.
 \label{thm:5dminimaltwist}
-\end{thm}
+\end{theorem}
 
 If $U$ is of cotangent type, we may enhance the $R$-symmetry group to $G_R=\SU(2)\times \U(1)\times \Spin(N_\RR)$. We have a homomorphism $\alpha\colon \U(1)\rightarrow \SU(2)\times \U(1)\times \Spin(N_\RR)$ given by the diagonal embedding into the first two components. We also use a new twisting homomorphism
 \[\wt\phi\colon \MU(L)\times \Spin(N_\RR)\xrightarrow{\det^{1/2}\times \id}\U(1)\times \Spin(N_\RR)\xrightarrow{\alpha\times\id}G_R.\]
 
-\begin{thm}
+\begin{theorem}
 The minimal twist of 5d $\cN=1$ super Yang--Mills on $M=\CC^2\times \RR$ with matter valued in the $\fg$-representation $U=T^* R=R\oplus R^*$ is perturbatively equivalent to the generalized BF theory with the space of fields $\map(\CC^2\times \RR_{\mathrm{dR}}, T^*[2] (R/\fg))$. Moreover, the equivalence is $\U(2)$-equivariant.
 \label{thm:5dminimaltwistgraded}
-\end{thm}
+\end{theorem}
 
 \subsection{\texorpdfstring{$\mc N = 2$}{N=2} Super Yang--Mills} \label{5d_2_section}
 
@@ -2328,39 +2328,39 @@ This theory admits four twists:
 
 The 5d $\cN=2$ super Yang--Mills viewed as a $\cN=1$ supersymmetry theory coincides with the 5d $\cN=1$ super Yang--Mills with matter valued in the representation $U=T^*\fg=\fg\oplus \fg^*$. From Theorem \ref{thm:5dminimaltwistgraded} we obtain the following statement.
 
-\begin{thm}
+\begin{theorem}
 The minimal twist of 5d $\cN=2$ super Yang--Mills on $M=\CC^2\times \RR$ is perturbatively equivalent to the generalized BF theory with the space of fields $\map(\CC^2\times \RR_{\mathrm{dR}}, T^*[2](\fg/\fg))$. Moreover, the equivalence is $\U(2)$-equivariant.
-\end{thm}
+\end{theorem}
 
 \subsubsection{Rank 2 partially topological twist}
 
 Let $L = \CC$ equipped with a Hermitian structure, $N_\RR=\RR^3$ equipped with a Euclidean structure and $N=N_\RR\otimes_\RR\CC$ its complexification. Consider the 8-dimensional spacetime $V^8_\RR=L\times N$ and the 5-dimensional spacetime $V^5_\RR=L\times N_\RR$. Under the projection $V^8_\RR\rightarrow V^5_\RR$ a holomorphic square-zero supercharge $Q$ in 8 dimensions dimensionally reduces to a rank $2$ partially topological square-zero supercharge in 5 dimensions. Therefore, from Theorem \ref{thm:8dBFreduction} we obtain the following statement.
 
-\begin{thm}
+\begin{theorem}
 The rank $2$ partially topological twist of 5d $\cN=2$ super Yang--Mills is perturbatively equivalent to the generalized BF theory with the space of fields $\map(\CC\times \RR^3_{\mathrm{dR}}, T^*[4] B\fg)$. Moreover, the equivalence is $\Spin(2, \RR)\times\Spin(3, \RR)$-equivariant.
-\end{thm}
+\end{theorem}
 
 \subsubsection{Rank 2 topological twist}
 
 Let $L=\CC$ equipped with a Hermitian structure and a complex half density, $N_\RR=\RR^3$ equipped with a Euclidean structure and $N=N_\RR\otimes_\RR\CC$ its complexification. Consider the 8-dimensional spacetime $V_\RR=L\times N$. Under the projection $\Re\colon N\rightarrow N_\RR$ the family $Q_t$ of 8-dimensional square-zero supercharges given by \eqref{eq:8dHodgefamily} dimensionally reduces to a family of 5-dimensional square-zero supercharges which at $t\neq 0$ are topological at and $t=0$ have 4 invariant directions. Since they admit a compatible $\ZZ$-grading, at $t=0$ we obtain the rank 2 partially topological twist and at $t\neq 0$ we obtain the rank 2 topological twist. Therefore, from Theorem \ref{thm:8dHodgereduction} we obtain the following statement.
 
-\begin{thm}
+\begin{theorem}
 The twist of 5d $\cN=2$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges is perturbatively equivalent to the generalized Hodge theory $\map(\CC\times \RR^3_{\mathrm{dR}}, B\fg_{\Hod})$. Moreover, this equivalence is $\Spin(3)$-equivariant.
 \label{thm:5dHodgetwist}
-\end{thm}
+\end{theorem}
 
-\begin{cor}
+\begin{corollary}
 The rank 2 topological twist of 5d $\cN=2$ super Yang--Mills is perturbatively trivial.
 \label{cor:5drank2topologicaltwist}
-\end{cor}
+\end{corollary}
 
 \subsubsection{Rank 4 twist}
 
 We consider $V_\RR=\RR^5$ equipped with a Euclidean structure and as before let $V=V_\RR\otimes_\RR\CC$ be its complexification. $V$ carries a Hermitian structure and a half-density, so by the results of Section \ref{sect:10dholomorphictwist} we obtain a square-zero supercharge $Q$. Under the projection $\Re\colon V\rightarrow V_\RR$ the supercharge $Q$ dimensionally reduces to a rank 4 supercharge in 5 dimensions. Therefore, from Theorem \ref{thm:10dCSreduction} we obtain the following statement.
 
-\begin{thm}
+\begin{theorem}
 The rank $4$ twist of 5d $\cN=2$ super Yang--Mills is perturbatively equivalent to the topological Chern--Simons theory with the space of fields $\map(\RR^5_{\mr{dR}}, B\fg)$. Moreover, the equivalence is $\Spin(5, \RR)$-equivariant.
-\end{thm}
+\end{theorem}
  
 \section{Dimension 4}
 
@@ -2436,9 +2436,9 @@ I^{(2)}_{\mr{gauge}} &= -\frac{1}{4}\int \dvol(\lambda_0^*)^2.
 
 Notice that a priori the theory is only $\MU(2)$-equivariant, but manifestly descends to a $\U(2)$-equivariant theory. 
 
-\begin{thm}[See also \cite{SWchar}] \label{4d_minimal_twist_thm}
+\begin{theorem}[See also \cite{SWchar}] \label{4d_minimal_twist_thm}
 The holomorphic twist of 4d $\cN=1$ super Yang--Mills with matter valued in a $\fg$representation-representation $R$ is perturbatively equivalent to holomorphic $BF$ theory with the space of fields $T^*[-1]\map(\CC^2, R/\fg)$. Moreover, the equivalence is $\U(2)$-equivariant.
-\end{thm}
+\end{theorem}
 
 \begin{proof}
 The proof of this theorem is very similar to the proof of Theorem \ref{thm:10dholomorphictwist}.  
@@ -2516,11 +2516,11 @@ under which we have an $\MU(2)$-identification $W=\det(L)^{-1/2}w_1 \oplus \det(
 \item A ghost field $c\in \Omega^0(M; \gg)[1]$.
 \end{itemize}
 
-\begin{thm}
+\begin{theorem}
 The holomorphic twist of 4d $\cN=2$ super Yang--Mills on $M=\RR^4$ is perturbatively (with respect to the choice of twisting data $\alpha = \alpha_n$) is equivalent to the holomorphic BF theory on $M\cong\CC^2$ with the space of fields $T^*[-1] \map(M, (U\oplus \fg)/\fg)$. 
 Moreover, the equivalence is $\U(2)$-equivariant.
 \label{thm:4dholomorphictwist}
-\end{thm}
+\end{theorem}
 \begin{proof}
 4d $\cN=2$ super Yang--Mills theory is obtained by dimensionally reducing 6d $\cN=(1,0)$ super Yang--Mills theory. Under dimensional reduction the 6d fields from Section \ref{sec:6dholomorphictwist} decompose as follows:
 \begin{align*}
@@ -2550,10 +2550,10 @@ concentrated in cohomological degrees $0, \dots, 3$. These fields have the same 
 Finally, we observe that the twisted theory manifestly descends to a $\U(2)$-equivariant theory along the natural homomorphism $\MU(2) \to \U(2)$, and all identifications are $\U(2)$-equivariant. 
 \end{proof}
 
-\begin{rmk}
+\begin{remark}
 The matter sector in the untwisted theory depends on $U$ as a complex symplectic $\fg$-representation. 
 The matter sector in the twisted theory only depends on $U$ as a complex $\fg$-representation, the dependence on the symplectic form disappears when we twist.
-\end{rmk} 
+\end{remark} 
 
 \subsubsection{Rank \texorpdfstring{$(2,0)$}{(2,0)} topological twist}
 \label{sect:4d_2_donaldson}
@@ -2631,11 +2631,11 @@ I^{(2)}_{\mr{matter}}(Q_+ \otimes \alpha_+) &= \int \frac 14 \dvol (Q_+,Q_+)(\ps
 The result follows from further decomposing the fields under the action of $\MU(2)$. 
 \end{proof}
 
-\begin{thm}
+\begin{theorem}
 The twist of 4d $\cN=2$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges is perturbatively equivalent to the holomorphic Hodge theory $\map(\CC^2, (U\ham g)_{\mr{Hod}})$. 
 Moreover, this equivalence is $\U(2)$-equivariant.
 \label{thm:4dDonaldsontwist}
-\end{thm}
+\end{theorem}
 \begin{proof}
 The proof proceeds as in the proof of Theorem \ref{thm:10dholomorphictwist} with slight modifications.
 
@@ -2657,10 +2657,10 @@ Since the extra terms are quadratic in the fields, the claim is reduced to a com
 which is exactly the local $L_\infty$ algebra of the holomorphic Hodge theory.
 \end{proof}
 
-\begin{cor}
+\begin{corollary}
 The rank $(2,0)$ topological twist of 4d $\cN=2$ super Yang--Mills is perturbatively trivial.
 \label{cor:4dDonaldsontwist}
-\end{cor}
+\end{corollary}
 \begin{proof}
 The topological twist of 4d $\cN=2$ super Yang--Mills is the twist by $Q_t$ with $t\neq 0$. By Theorem \ref{thm:4dDonaldsontwist} it is equivalent to the $t\neq 0$ specialization of the holomorphic Hodge theory which by Proposition \ref{prop:Hodgetheoryspecialization} is perturbatively trivial.
 \end{proof}
@@ -2692,9 +2692,9 @@ We have a homomorphism $\alpha\colon \U(1)\rightarrow  \U(2) \times \U(1)$ given
 We also use a new twisting homomorphism
 \[\wt\phi\colon \U(1)\times \U(1) \xrightarrow{\alpha\times\id} \U(2) \times \U(1) = G_R.\]
 
-\begin{thm}\label{thm:4d_11_twistgraded}
+\begin{theorem}\label{thm:4d_11_twistgraded}
 The minimal twist of 4d $\cN=2$ super Yang--Mills on $M=\CC \times \RR^2$ with matter valued in the $\fg$-representation $U=T^* R=R\oplus R^*$ is perturbatively equivalent to the generalized BF theory with the space of fields $\map(\CC \times \RR^2_{\mathrm{dR}}, T^*[2] (R/\fg))$. Moreover, the equivalence is $\U(1)\times \U(1)$-equivariant.
-\end{thm}
+\end{theorem}
 
 
 \subsection{\texorpdfstring{$\cN=4$}{N=4} Super Yang-Mills} \label{4d_4_section}
@@ -2783,9 +2783,9 @@ A square-zero supercharge $Q$ has rank 1, i.e. $Q = q \otimes w$ for some $w \in
 
 As in Section \ref{sect:9dminimaltwist}, the data of $q_+$ is equivalent to the choice of a one-dimensional subspace $N_\RR\subset V_\RR$ and a complex structure on $V_\RR/N_\RR$ together with a complex half-density.  Note that in one dimension the choice of a complex half-density is equivalent to a choice of spin structure.
 
-\begin{thm} \label{3d_minimal_twist_thm}
+\begin{theorem} \label{3d_minimal_twist_thm}
 The minimal twist of 3d $\cN=2$ super Yang-Mills with Lie algebra $\fg$ coupled to the $\cN=2$ chiral multiplet valued in a representation $R$ is perturbatively equivalent to mixed $BF$ theory for the Lie algebra $\fg$ coupled to the mixed $\beta\gamma$ system with values in the representation $R$, with moduli space $T^*[-1]\mr{Map}(\CC \times \RR_{\mr{dR}}, R/\gg)$. Moreover this equivalence is $\mr U(1)$-equivariant.
-\end{thm}
+\end{theorem}
 
 \begin{proof}
 By Theorem \ref{4d_minimal_twist_thm} the twist of 4d $\cN=1$ super Yang--Mills on $L\times N$ by $Q$ is perturbatively equivalent to the holomorphic Chern--Simons theory with the space of fields $T^*[-1]\map(L\times N, R / \fg)$. By Proposition \ref{CS_diml_red_prop} we get that the dimensional reduction of holomorphic Chern--Simons on $L\times N$ along $\Re\colon N\rightarrow N_\RR$ is isomorphic to the generalized Chern--Simons theory with the space of fields $T^*[-1]\map(L\times N_\RR, R/\fg)$ and this isomorphism is $\MU(1) = \mr U(1)$-equivariant.
@@ -2819,14 +2819,14 @@ The minimal twist of 3d $\cN=4$ super Yang--Mills on $M=\CC\times \RR$ is pertur
 \subsubsection{Topological A Twist}
 Let $L=\CC$ equipped with a Hermitian structure and a complex half density, $N_\RR=\RR$ equipped with a Euclidean structure and $N=N_\RR\otimes_\RR\CC$ its complexification. Consider the 4-dimensional spacetime $V_\RR=L\times N$. Under the projection $\Re\colon N\rightarrow N_\RR$ the family $Q_t$ of 4-dimensional square-zero supercharges given by \eqref{eq:4dHodgefamily} dimensionally reduces to a family of 3-dimensional square-zero supercharges which at $t\neq 0$ are topological at and $t=0$ have 2 invariant directions. Since they admit a compatible $\ZZ$-grading, at $t=0$ we obtain the holomorphic twist and at $t\neq 0$ we obtain the topological B twist. Therefore, from Theorem \ref{thm:4dDonaldsontwist} we obtain the following statement.
 
-\begin{thm}
+\begin{theorem}
 The twist of 3d $\cN=4$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges is perturbatively equivalent to the generalized Hodge theory $\mr{Map}(\CC \times \RR_{\mr{dR}}, (U\ham \gg)_{\mr{Hod}})$. Moreover, this equivalence is $\U(1)$-equivariant.
 \label{3d_4_A_twist_thm}
-\end{thm}
+\end{theorem}
 
-\begin{cor}
+\begin{corollary}
 The topological $A$ twist of 3d $\cN=4$ super Yang--Mills is perturbatively trivial.
-\end{cor}
+\end{corollary}
 
 \subsubsection{Topological B Twist}
 We consider $V_\RR=\RR^3$ equipped with a Euclidean structure and as before let $V=V_\RR\otimes_\RR\CC$ be its complexification. $V$ carries a Hermitian structure and a half-density, so by the results of Section \ref{sec:6dholomorphictwist} we obtain a square-zero supercharge $Q$. Under the projection $\Re\colon V\rightarrow V_\RR$ the supercharge $Q$ dimensionally reduces to the topological $B$ supercharge in 3 dimensions. Therefore, from Theorem \ref{thm:6dCSreduction} we obtain the following statement.
@@ -3013,9 +3013,9 @@ I^{(2)}_{\mr{gauge}} &= -\frac{1}{4}\int (\lambda_{1,1}^*)^2.
 \end{align*}
 %Here, in terms of the K\"ahler form $\omega$, the volume form is identified as $\dvol = \frac{\omega^2}2$.
 
-\begin{thm}[See also \cite{SWchar}] \label{2d(0,2)}
+\begin{theorem}[See also \cite{SWchar}] \label{2d(0,2)}
 The minimal twist of 2d $\cN=(0,2)$ super Yang-Mills with Lie algebra $\fg$ coupled to the $\cN=(0,2)$ chiral multiplet valued in a representation $R$ is $U(1)$-equivariantly equivalent to holomorphic $BF$ theory on $\CC$ for the Lie algebra $\fg$ coupled to the holomorphic $\beta\gamma$ system on $\CC$ with values in the representation $R$. 
-\end{thm}
+\end{theorem}
 \begin{proof}
 The proof of this theorem is very similar to the proof of Theorem \ref{thm:10dholomorphictwist}.  
 First, we integrate out the fields $\lambda_{0}$ and $\lambda_{1,1}^*$ using Proposition \ref{prop:integrateoutfield}.  
@@ -3048,9 +3048,9 @@ The field content is:
 
 We twist by the nilpotent supercharge $Q = q \otimes u_1$ where $q \in S_-$ is any nonzero vector. 
 
-\begin{thm}\label{2d(0,4)}
+\begin{theorem}\label{2d(0,4)}
 The minimal twist of 2d $\cN=(0,4)$ super Yang-Mills with Lie algebra $\fg$ coupled to the $\cN=(0,4)$ hypermultiplet is $U(1)$-equivariantly equivalent to holomorphic $BF$ theory on $\CC$ for the Lie algebra $\fg$ coupled to the free fermion system on $\CC$ with values in the representation $\fg \otimes W_-' \cong \fg \oplus \fg$ where $\fg$ acts by the adjoint action plus the free $\beta\gamma$ system on $\CC$ valued in the $\fg$-representation $U$. 
-\end{thm}
+\end{theorem}
 
 \begin{proof}
 The supercharge $Q$ lies in a $\cN = (0,2)$ subalgebra of the full $\cN = (0,4)$ algebra.
@@ -3066,10 +3066,10 @@ The $(0,4)$ hypermultiplet becomes a $(0,2)$ chiral multiplet valued in the repr
 The claim now follows from Theorem \ref{2d(0,2)}. 
 \end{proof}
 
-\begin{rmk}
+\begin{remark}
 The matter sector in the untwisted theory depends on $U$ as a complex symplectic $\fg$-representation. 
 The matter sector in the twisted theory only depends on $U$ as a complex $\fg$-representation, the dependence on the symplectic form disappears when we twist.
-\end{rmk} 
+\end{remark} 
 
 % \cN=(0,8) Super Yang-Mills with matter
 
@@ -3114,9 +3114,9 @@ We twist by the nilpotent supercharge $Q = q \otimes u_1$ where $q \in S_-$ is a
 %\end{align*}
 
 
-\begin{thm}[See also \cite{SWchar}] \label{4d_2_minimal_twist_thm}
+\begin{theorem}[See also \cite{SWchar}] \label{4d_2_minimal_twist_thm}
 The minimal twist of 2d $\cN=(0,\cN_-)$ super Yang-Mills with Lie algebra $\fg$ is $U(1)$-equivariantly equivalent to holomorphic $BF$ theory on $\CC$ for the Lie algebra $\fg$ coupled to a free fermion system on $\CC$ with values in the representation $\fg \otimes W_-' \cong \fg \otimes \CC^{\cN_- - 2}$ where $\fg$ acts by the adjoint action. 
-\end{thm}
+\end{theorem}
 
 \begin{proof}
 The proof is similar to the proof of Theorem \ref{2d(0,4)}.
