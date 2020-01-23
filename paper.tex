@@ -2470,14 +2470,15 @@ The 4d $\cN=2$ super Yang--Mills theory is obtained by a dimensional reduction f
 
 $\U(1)\subset G_R$ has the following action: weight $2$ on $a$, weight $-2$ on $\wt a$ and weight $\pm 1$ on $\lambda_\pm,\psi_\pm$.
 
+If the representation $U$ is $T^*R = R\oplus R^*$, the $R$-symmetry group is enhanced to $G_R=\SU(W)\times \U(1)\times \U(1)$, where the last $\U(1)$ acts with weight $1$ on $R$ and weight $-1$ on $R^*$.
+
 There are three classes of square-zero supercharge in the 4d $\mc N=2$ supersymmetry algebra, distinguished by the ranks of the two summands $(Q_+,Q_-) \in S_+ \otimes W \oplus S_- \otimes W^*$:
 \begin{itemize}
  \item Rank $(1,0)$ and $(0,1)$ supercharges automatically square to zero.  
  The corresponding twists are holomorphic.
  Such twists factor through a copy of the $\cN = 1$ supersymmetry algebra. As before, they admit a $\ZZ$-grading and a twisting homomorphism from $\MU(2)$.
- \item Rank $(2,0)$ and $(0,2)$ supercharges also automatically square to zero. 
- The corresponding twists are topological (the \emph{Donaldson twist}). 
- \item Rank $(1,1)$ square-zero supercharges have three invariant directions.
+ \item Rank $(2,0)$ and $(0,2)$ supercharges also automatically square to zero. The corresponding twists are topological (the \emph{Donaldson twist}). There is a twisting homomorphism from $\MU(2$ and a compatible homomorphism $\alpha\colon \U(1)\rightarrow G_R$.
+ \item Rank $(1,1)$ square-zero supercharges have three invariant directions. There is a twisting homomorphism $\U(1)\times \U(1)\rightarrow \Spin(4, \RR)$. For a general $U$ there is no compatible homomorphism $\alpha\colon \U(1)\rightarrow G_R$.
 \end{itemize}
 
 \subsubsection{Holomorphic twist}
@@ -2515,6 +2516,8 @@ under which we have an $\MU(2)$-identification $W=\det(L)^{-1/2}w_1 \oplus \det(
 \item Matter fermions $\psi \in \Omega^{0,1} (M ;  U)[2n-1]$, $\varphi \in \Omega^{2,0} (M ; U)[-2n+1]$, $\Tilde{\nu} \in \Omega^{0,2}(M ; U)[-2n+1]$.
 \item A ghost field $c\in \Omega^0(M; \gg)[1]$.
 \end{itemize}
+
+Note that the $\MU(2)$-action on the fields factors through a $\U(2)$-action since the square roots $\det(L)^{1/2}$ have canceled out.
 
 \begin{theorem}
 The holomorphic twist of 4d $\cN=2$ super Yang--Mills on $M=\RR^4$ is perturbatively (with respect to the choice of twisting data $\alpha = \alpha_n$) is equivalent to the holomorphic BF theory on $M\cong\CC^2$ with the space of fields $T^*[-1] \map(M, (U[2n] \oplus \fg[-4n+2])/\fg)$. 
@@ -2559,54 +2562,33 @@ Indeed, the equivalence given by Theorem \ref{thm:5dminimaltwist} eliminates fie
 }
 \]
 These fields have the same degrees as in the holomorphic BF theory and the $L_\infty$ structure is obtained by the natural square zero extension of the dg Lie algebra in the first line by the remaining part of the diagram.
-Finally, we observe that the twisted theory manifestly descends to a $\U(2)$-equivariant theory along the natural homomorphism $\MU(2) \to \U(2)$, and all identifications are $\U(2)$-equivariant. 
 \end{proof}
 
 \begin{remark}
 The matter sector in the untwisted theory depends on $U$ as a complex symplectic $\fg$-representation. 
 The matter sector in the twisted theory only depends on $U$ as a complex $\fg$-representation, the dependence on the symplectic form disappears when we twist.
-\end{remark} 
+\end{remark}
 
 \subsubsection{Rank \texorpdfstring{$(2,0)$}{(2,0)} topological twist}
 \label{sect:4d_2_donaldson}
 
 Next we discuss the case of the topological twist. As in Section \ref{sect:8dtopologicaltwist} it will be useful to consider a family of topological supercharges degenerating to a rank $(1, 0)$ holomorphic supercharge.
 
-Let $S^{2n}_\pm$ be the semi-spin representations of $\Spin(2n , \CC)$.
-The decomposition of $S^{6}_+$ under the subgroup $\Spin(4 , \CC) \times \Spin(2, \CC) \subset \Spin(6,\CC)$ is
-\[
-S_+^6 = S_+^4 \otimes S_+^2 \oplus S_-^4 \otimes S_-^2 .
-\]
-The odd part of the $\cN=2$ supersymmetry algebra is 
-\[
-\Sigma = S_+^6 \otimes W_+ \cong S_+^4 \otimes W \oplus S_-^4 \otimes W^* .
-\]
-where $W_+$ is a complex two-dimensional symplectic vector space. 
-From this, we have identifications $W = W_+ \otimes S_+^2$ and $W^* = W_+ \otimes S_-^2$. 
-Let $\{u \otimes \alpha_+, v \otimes \alpha_+\}$ be a basis for $W = W_+ \otimes S_+^2$ where $\{u,v\}$ is a symplectic basis for $W_+$ and $\alpha_+$ is a basis element for $S_+^2$. 
-%A general supercharge $Q \in S_+^4 \otimes W$ is of the form
-%\[
-%Q = s_+ \otimes u \otimes \alpha_+ + s_+' \otimes v \otimes \alpha_+ 
-%\]
-%where $s_+, s_+' \in S_+^{4}$. 
+Consider the same twisting homomorphism $\phi\colon \MU(2)\rightarrow G_R$ as in Section \ref{sect:4d_2_holomorphictwist} and $\alpha=\alpha_0\colon \U(1)\rightarrow G_R$. With respect to the $\MU(2)$-action we have a decomposition
+\[S_+\otimes W\cong \CC Q_0 \oplus \det(L)^{-1}\oplus \CC \Bar{Q}_0\oplus \det(L).\]
 
-Let $\{s^1_+, s_+^2\}$ be a basis for $S_+^4$. 
-We twist by a supercharge of the form
+Consider a family of supercharges
 \begin{equation} 
 \label{eq:4dHodgefamily}
-Q_t = s_+^1 \otimes u \otimes \alpha_+ + t s_+^2 \otimes v \otimes \alpha_+
+Q_t = Q_0 + t \Bar{Q}_0
 \end{equation}
-where $t \in \CC$. 
-When $t \ne 0$, this supercharge is of rank $(2,0)$. 
-At $t = 0$ it reduces to the holomorphic supercharge from the previous section.
+where $t \in \CC$. When $t \ne 0$, this supercharge is of rank $(2,0)$, while at $t = 0$ it reduces to the holomorphic supercharge from the previous section.
 
-Let $V_\RR = \RR^4$ and $V=V_\RR\otimes_\RR\CC$. 
-Denote by $L\subset V$ the $i$-eigenspace of the complex structure determined by the holomorphic supercharge $Q_0$. 
-We utilize the same notation for the fields of super Yang-Mills theory as in the previous section. 
-\brian{discuss twisting homomorphism}
+\begin{remark}
+With respect to $\alpha_n\colon \U(1)\rightarrow G_R$ the supercharge $Q_0$ has weight $1$, while $\Bar{Q}_0$ has weight $-4n+1$. So, requiring $Q_t$ to have weight $1$ forces us to choose $n=0$.
+\end{remark}
 
-We will use the notation for fields from Section \ref{sect:4d_2_holomorphictwist}. 
-First, we are going to write the functionals \eqref{eq:gaugeI1}, \eqref{eq:gaugeI2}, \eqref{eq:matterI1}, \eqref{eq:matterI2} in terms of these fields.
+We will use the notation for fields from Section \ref{sect:4d_2_holomorphictwist}. First, we are going to write the functionals \eqref{eq:gaugeI1}, \eqref{eq:gaugeI2}, \eqref{eq:matterI1}, \eqref{eq:matterI2} in terms of these fields.
 
 \begin{prop}
 Suppose $Q_t$ is the rank $(2,0)$ supercharge of \ref{eq:4dHodgefamily}.
@@ -2619,33 +2601,9 @@ I_{\rm matter}^{(1)}(Q_t) &= \int \dvol \left((\Tilde{\nu}, \nu^*) + t (\varphi,
 I_{\rm matter}^{(2)}(Q_t) &= \int \dvol \frac 14 t (\psi^*, \psi^*)
 \end{align*}
 \end{prop}
-\begin{proof}
-We first write down the fields and the functionals in $\Spin(4)$-notation.
-The fields of $4d \cN=2$ decompose as:
-\begin{itemize}
- \item $\gg$-valued bosons: a gauge field $A \in \Omega^1(\RR^4; \gg)$, and a pair of scalar fields $(a \otimes \alpha_-^{\otimes 2} ,\Tilde{a} \otimes \alpha_+^{\otimes 2}) \in \Omega^0(\RR^4; (S^2_-)^{\otimes 2} \otimes \gg \oplus  (S^2_-)^{\otimes 2} \otimes \gg)$.
-  \item $\gg$-valued fermions: a $W = W_+ \otimes S_+^2$-valued Dirac spinor $\lambda = (\lambda_+ \otimes \alpha_+, \lambda_-\otimes \alpha_-) \in \Omega^0(\RR^4; (S^4_+ \otimes W \oplus S^4_- \otimes W^*) \otimes \gg)$.
- \item $U$-valued bosons: a $W = W_+ \otimes S_+^2$-valued scalar field $\phi \otimes v \in \Omega^0(\RR^4; W_+ \otimes S_+^2 \otimes U)$.
- \item $U$-valued fermions: a Dirac spinor $\psi = (\psi_+ \otimes \alpha_- ,\psi_- \otimes \alpha_+) \in \Omega^0(\RR^4; (S^4_+ \otimes S_-^2 \oplus S^4_- \otimes S_+^2) \otimes U)$.
- \item a ghost $c \in \Omega^0(\RR^4 ; \gg)$.
-\end{itemize}
-The anti-fields decompose in an analogous way.
-
-For a general supercharge $Q_+ \otimes \alpha_+ \in S_+^4 \otimes W = S^4_+ \otimes W_+ \otimes S_+^2$, the functionals $I_{\rm gauge}^{(1)}, I^{(1)}_{\rm matter}, I^{(2)}_{\rm gauge}, I^{(2)}_{\rm matter}$ decompose as:
-\begin{align*}
-I^{(1)}_{\mr{gauge}}(Q_+ \otimes \alpha_+) &= \int \dvol \bigg(-( \Gamma(Q_+,\lambda_-), A^*) + (\langle Q_+,\lambda_+\rangle , \Tilde{a}^* ) + \\
-&\qquad  + \frac 12 ((\rho(F_A)Q_+, \lambda_+^*) + (\rho(\d_A a)Q_+, \lambda_-^*) \bigg)\\
-I^{(1)}_{\mr{matter}}(Q_+ \otimes \alpha_+) &= \int \dvol (((Q_+,\psi_+), \phi^*) + \frac 12 (\rho(\d_A \phi)Q_+, \psi_+^*)) \\
-I^{(2)}_{\mr{gauge}}(Q_+ \otimes \alpha_+) &= \int \dvol \big(\frac 14 (Q_+,Q_+)(\lambda_+^*,\lambda_+^*) - \frac 12  (Q_+, \lambda_+^*)^2 - (Q_+,Q_+) a c^* \big) \\
-I^{(2)}_{\mr{matter}}(Q_+ \otimes \alpha_+) &= \int \frac 14 \dvol (Q_+,Q_+)(\psi_-^*,\psi_-^*) .
-\end{align*}
-
-The result follows from further decomposing the fields under the action of $\MU(2)$. 
-\end{proof}
 
 \begin{theorem}
-The twist of 4d $\cN=2$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges is perturbatively equivalent to the holomorphic Hodge theory $\map(\CC^2, (U\ham g)_{\mr{Hod}})$. 
-Moreover, this equivalence is $\U(2)$-equivariant.
+The twist of 4d $\cN=2$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges is perturbatively equivalent to the holomorphic Hodge theory $\map(\CC^2, ((U\oplus \fg[2]) / \fg)_{\mr{Hod}})$. Moreover, this equivalence is $\U(2)$-equivariant.
 \label{thm:4dDonaldsontwist}
 \end{theorem}
 \begin{proof}
@@ -2680,34 +2638,33 @@ The topological twist of 4d $\cN=2$ super Yang--Mills is the twist by $Q_t$ with
 \subsubsection{Rank \texorpdfstring{$(1,1)$}{(1,1)} twist}
 \label{sect:4d_2_11}
 
-We finally consider the twist with respect to a rank $(1,1)$ supercharge. 
-We have a twisting homomorphism
+We finally consider the twist with respect to a rank $(1,1)$ supercharge. We have a twisting homomorphism
 \[
-\phi = (1,1) : \U(1) \times \U(1) \to \U(2) .
+\phi \colon \Spin(2, \RR) \times \Spin(2, \RR) \to G_R=\SU(2)\times \U(1),
 \]
-\brian{Just like holomorphic, I may want $(1,-1)$.}
+where on the first factor $\Spin(2, \RR)\cong \U(1)\hookrightarrow \SU(2)$ is given by the diagonal embedding and on the second factor $\Spin(2, \RR)\cong\U(1)$ is the obvious isomorphism. If we denote by $S_\pm^1, S_\pm^2$ the semi-spin representations of the two $\Spin(2, \RR)$, we have
+\[W \cong S_+^2\otimes (S_+^1\oplus S_-^1).\]
+The semi-spin representations of $\Spin(4, \RR)$ decompose with respect to $\Spin(2, \RR)\times \Spin(2, \RR)\subset \Spin(4, \RR)$ as
+\[S_+\cong S_+^1\otimes S_+^2\oplus S_-^1\otimes S_-^2,\qquad S_-\cong S_+^1\otimes S_-^2\oplus S_-^1\otimes S_+^2.\]
+
+So, both $S_+\otimes W$ and $S_-\otimes W^*$ contain a trivial one-dimensional subspace and hence we obtain a rank $(1, 1)$ square-zero supercharge.
 
 \begin{theorem} \label{thm:4d_11_twist}
 The rank $(1,1)$ partially topological twist of 4d $\mc N=2$ super Yang-Mills theory is perturbatively equivalent to the generalized Chern-Simons theory with space of fields $\mr{Map}(\CC \times \RR^2_{\mr{dR}}, U\ham \gg)$.  
-Moreover, this identification is $\U(1) \times \U(1)$-equivariant.
-This theory is generally only $\ZZ/2\ZZ$-graded.
+Moreover, this equivalence is $\U(1) \times \Spin(2, \RR)$-equivariant.
 \end{theorem}
-
 \begin{proof}
-A supercharge of rank $(1,1)$ automatically lifts to a rank $1$ supercharge in the $5d$ $\cN=1$ supersymmetry algebra.
+Any square-zero supercharge of rank $(1, 1)$ lifts to a rank $1$ supercharge in the 5d $\cN=1$ supersymmetry algebra.
 The result then follows from Theorem \ref{thm:6dCSreduction} applied to $L = \CC$. 
 \end{proof}
 
-If $U = T^* R$ is of cotangent type, we may enhance the $R$-symmetry group to $G_R=\U(2)\times \U(1)$. 
-The extra $\U(1)$ acts trivially on $W$, by weight $+1$ on $R$ and weight $-1$ on $R^*$. 
-We have a homomorphism $\alpha\colon \U(1)\rightarrow  \U(2) \times \U(1)$ given by the diagonal embedding into the first two components \brian{Again like holomorphic, I may want the skew-diagonal $(1,-1)$ into $\U(2)$ and identity on $\U(1)$.}. 
-We also use a new twisting homomorphism
-\[\wt\phi\colon \U(1)\times \U(1) \xrightarrow{\alpha\times\id} \U(2) \times \U(1) = G_R.\]
+If $U = T^* R$ is of cotangent type, we may enhance the $R$-symmetry group to $G_R=\SU(2)\times \U(1)\times \U(1)$. The extra $\U(1)$ acts trivially on $W$, by weight $+1$ on $R$ and weight $-1$ on $R^*$.
+
+We have a homomorphism $\alpha\colon \U(1)\rightarrow  \SU(2)\times \U(1) \times \U(1)$ given by the diagonal embedding into the first and the third components. We also use a new twisting homomorphism $\wt\phi\colon \Spin(2, \RR)\times \Spin(2, \RR)\rightarrow G_R$ given by multiplying $\phi$ with the identity homomorphism from the first $\Spin(2, \RR)$ factor to the last $\U(1)$ factor in $G_R$ (cf. the definition of $\alpha$ and $\wt\phi$ in Section \ref{sec:6dholomorphictwist}).
 
 \begin{theorem}\label{thm:4d_11_twistgraded}
-The minimal twist of 4d $\cN=2$ super Yang--Mills on $M=\CC \times \RR^2$ with matter valued in the $\fg$-representation $U=T^* R=R\oplus R^*$ is perturbatively equivalent to the generalized BF theory with the space of fields $\map(\CC \times \RR^2_{\mathrm{dR}}, T^*[2] (R/\fg))$. Moreover, the equivalence is $\U(1)\times \U(1)$-equivariant.
+The minimal twist of 4d $\cN=2$ super Yang--Mills on $M=\CC \times \RR^2$ with matter valued in the $\fg$-representation $U=T^* R=R\oplus R^*$ is perturbatively equivalent to the generalized BF theory with the space of fields $T^*[-1]\map(\CC \times \RR^2_{\mathrm{dR}}, R/\fg)$. Moreover, the equivalence is $\U(1)\times \Spin(2, \RR)$-equivariant.
 \end{theorem}
-
 
 \subsection{\texorpdfstring{$\cN=4$}{N=4} Super Yang-Mills} \label{4d_4_section}
 
