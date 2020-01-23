@@ -2488,7 +2488,15 @@ Choose a basis for $W$ given by $\{w_1, w_2\}$ and for concreteness we take $Q=q
 S_+ = \det(L)^{-1/2} \oplus \det(L)^{1/2},\qquad S_- = L \otimes \det(L)^{-1/2} .
 \]
 
-For an integer $n\in\ZZ$ consider the homomorphism $\alpha_n\colon \U(1)\rightarrow G_R=\SU(2)\times \U(1)$ under which $w_1$ has weight $1$ and $w_2$ has weight $-1$ and the projection on the second factor is given by $z\mapsto z^n$.
+Recall, the $R$-symmetry group is $G_R = \SU(2) \times \U(1)$.
+For any integer $n\in\ZZ$ consider the homomorphism 
+\[
+\begin{array}{cccccc}
+\alpha_n & \colon & \U(1) & \rightarrow & \SU(2)\times \U(1)\\
+& & z & \mapsto & \left({\rm diag}(z^{2n}, z^{-2n}) , z^{-2n+1} \right)
+\end{array}
+\]
+under which $w_1$ has weight $1$ and $w_2$ has weight $-4n+1$.
 
 We consider the twisting homomorphism 
 \[
@@ -2509,7 +2517,7 @@ under which we have an $\MU(2)$-identification $W=\det(L)^{-1/2}w_1 \oplus \det(
 \end{itemize}
 
 \begin{thm}
-The holomorphic twist of 4d $\cN=2$ super Yang--Mills on $M=\RR^4$ is perturbatively equivalent to the holomorphic BF theory on $M\cong\CC^2$ with the space of fields $T^*[-1] \map(M, (U\oplus \fg)/\fg)$. 
+The holomorphic twist of 4d $\cN=2$ super Yang--Mills on $M=\RR^4$ is perturbatively (with respect to the choice of twisting data $\alpha = \alpha_n$) is equivalent to the holomorphic BF theory on $M\cong\CC^2$ with the space of fields $T^*[-1] \map(M, (U\oplus \fg)/\fg)$. 
 Moreover, the equivalence is $\U(2)$-equivariant.
 \label{thm:4dholomorphictwist}
 \end{thm}
