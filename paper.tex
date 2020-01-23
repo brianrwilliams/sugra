@@ -2667,10 +2667,10 @@ Indeed, the equivalence given by Theorem \ref{thm:5dminimaltwist} eliminates fie
 \ul{0} & \ul{1} & \ul{2} & \ul{3} & \\ 
 \Omega^0(\CC^2; \gg)_c \ar[r] &\Omega^{0,1}(\CC^2; \gg)_{A_{0,1}} \ar[r] &\Omega^{0,2}(\CC^2; \gg)_{B} \\
  & \Omega^0(\CC^2; \gg)_a \ar[r] &\Omega^{0,1}(\CC^2; \gg)_{b} \ar[r] &\Omega^{0,2}(\CC^2; \gg)_{\xi^*} \\
+  & \Omega^{2,0}(\CC^2 ; \gg)_{B^*} \ar[r] & \Omega^{2,1}(\CC^2 ; \gg)_{A_{0,1}^*} \ar[r] & \Omega^{2,2}(\CC^2 ; \gg)_{c^*} \\
+ \Omega^{2,0}(\CC^2; \gg)_\xi \ar[r] &\Omega^{2,1}(\CC^2; \gg)_{b^*} \ar[r] &\Omega^{2,2}(\CC^2; \gg)_{a^*}  \\
 & \Omega^0(\CC^2 ; U)_\phi \ar[r] & \Omega^{0,1}(\CC^2 ; U)_\psi \ar[r] & \Omega^{0,2}(\CC^2 ; U)_{\varphi^*} \\
-\Omega^{2,0}(\CC^2 ; U)_{\varphi} \ar[r] & \Omega^{2,1}(\CC^2 ; U)_{\psi^*} \ar[r] & \Omega^{2,2}(\CC^2 ; U)_{\phi^*} \\
- & \Omega^{2,0}(\CC^2 ; \gg)_{B^*} \ar[r] & \Omega^{2,1}(\CC^2 ; \gg)_{A_{0,1}^*} \ar[r] & \Omega^{2,2}(\CC^2 ; \gg)_{c^*} \\
- \Omega^{2,0}(\CC^2; \gg)_\xi \ar[r] &\Omega^{2,1}(\CC^2; \gg)_{b^*} \ar[r] &\Omega^{2,2}(\CC^2; \gg)_{a^*} 
+\Omega^{2,0}(\CC^2 ; U)_{\varphi} \ar[r] & \Omega^{2,1}(\CC^2 ; U)_{\psi^*} \ar[r] & \Omega^{2,2}(\CC^2 ; U)_{\phi^*}
 }
 \]
 concentrated in cohomological degrees $0, \dots, 3$. These fields have the same degrees as in the holomorphic BF theory and the $L_\infty$ structure is obtained by the natural square zero extension of the dg Lie algebra in the first line by the remaining part of the diagram.
@@ -2690,7 +2690,10 @@ We are going to prove that it is perturbatively trivial.
 In fact, it will be useful to study a degeneration of the topological twist to a holomorphic twist and describe the corresponding family of twisted theories.
 
 Let $V_\RR = \RR^4$ and $V=V_\RR\otimes_\RR\CC$. 
-Fix a K\"ahler structure on $\RR^4$ and denote by $L\subset V$ the $i$-eigenspace of the complex structure. %Moreover, fix a complex volume form on $L$. 
+Fix a K\"ahler structure on $\RR^4$ and denote by $L\subset V$ the $i$-eigenspace of the complex structure.
+We utilize the same notation for the fields of super Yang-Mills theory as in the previous section. 
+\brian{discuss twisting homomorphism}
+%Moreover, fix a complex volume form on $L$. 
 
 We will use the notation for fields from Section \ref{sect:4d_2_holomorphictwist}. 
 First, we are going to write the functionals \eqref{eq:gaugeI1}, \eqref{eq:gaugeI2}, \eqref{eq:matterI1}, \eqref{eq:matterI2} in terms of these fields.
@@ -2701,7 +2704,9 @@ The $\MU(2)$ decomposition of the functionals $I_{\rm gauge}^{(1)}, I^{(1)}_{\rm
 \begin{align*}
 I_{\rm gauge}^{(1)}(Q_t) &= \int \dvol\left(-(\rho, A_{1, 0}^*) - t(b, A_{0, 1}^*) - (\wt \chi + t\chi)\wt a^*\right) \\
 &+ \int\dvol\left((F_{0, 2}, B^*) + t\Omega^{-1} F_{2, 0}\wedge B^* + (\ol\dd_{A_{0, 1}}a, b^*) + (t\dd_{A_{1, 0}} a, \rho^*) + \frac{1}{2}\Lambda F_{1, 1}(\chi^* - t\wt\chi^*)\right) \\
-I^{(2)}_{\rm gauge} (Q_t, Q_t) &= \int \dvol \left(t\chi^*\wt \chi^* + \frac{t}{2} \xi^*\wedge B^* -\frac{1}{4}(\chi^* + t\wt\chi^*)^2 + t a c^*\right).
+I^{(2)}_{\rm gauge} (Q_t, Q_t) &= \int \dvol \left(t\chi^*\wt \chi^* + \frac{t}{2} \xi^*\wedge B^* -\frac{1}{4}(\chi^* + t\wt\chi^*)^2 + t a c^*\right) \\
+I_{\rm matter}^{(1)}(Q_t) &= \int \dvol \left((\Tilde{\nu}, \nu^*) + t (\varphi, \phi^*) + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*) \right) \\
+I_{\rm matter}^{(2)}(Q_t) &= \int \dvol \frac 14 t (\psi^*, \psi^*)
 \end{align*}
 \end{prop}
 \begin{proof}
@@ -2726,42 +2731,58 @@ where $s_+, s_+' \in S_+^{4}$.
 
 The fields of $4d \cN=2$ decompose as:
 \begin{itemize}
- \item $\gg$-valued Bosons: a gauge field $A \in \Omega^1(\RR^4; \gg)$, and a pair of scalar fields $(a \otimes \alpha_-^{\otimes 2} ,\Tilde{a} \otimes \alpha_+^{\otimes 2}) \in \Omega^0(\RR^4; (S^2_-)^{\otimes 2} \gg \oplus  (S^2_-)^{\otimes 2} \otimes \gg)$.
+ \item $\gg$-valued bosons: a gauge field $A \in \Omega^1(\RR^4; \gg)$, and a pair of scalar fields $(a \otimes \alpha_-^{\otimes 2} ,\Tilde{a} \otimes \alpha_+^{\otimes 2}) \in \Omega^0(\RR^4; (S^2_-)^{\otimes 2} \otimes \gg \oplus  (S^2_-)^{\otimes 2} \otimes \gg)$.
+  \item $\gg$-valued fermions: a $W = W_+ \otimes S_+^2$-valued Dirac spinor $\lambda = (\lambda_+ \otimes \alpha_+, \lambda_-\otimes \alpha_-) \in \Omega^0(\RR^4; (S^4_+ \otimes W \oplus S^4_- \otimes W^*) \otimes \gg)$.
  \item $U$-valued bosons: a $W = W_+ \otimes S_+^2$-valued scalar field $\phi \otimes v \in \Omega^0(\RR^4; W_+ \otimes S_+^2 \otimes U)$.
- \item $\gg$-valued fermions: a $W = W_+ \otimes S_+^2$-valued Dirac spinor $\lambda = (\lambda_+ \otimes \alpha_+, \lambda_-\otimes \alpha_-) \in \Omega^0(\RR^4; (S_+ \otimes W \oplus S_- \otimes W^*) \otimes \gg)$.
- \item $U$-valued fermions: a Dirac spinor $\psi = (\psi_+,\psi_-) \in \Omega^0(\RR^4; (S_+\oplus S_-) \otimes U)$.
+ \item $U$-valued fermions: a Dirac spinor $\psi = (\psi_+ \otimes \alpha_- ,\psi_- \otimes \alpha_+) \in \Omega^0(\RR^4; (S^4_+ \otimes S_-^2 \oplus S^4_- \otimes S_+^2) \otimes U)$.
  \item a ghost $c \in \Omega^0(\RR^4 ; \gg)$.
 \end{itemize}
-
-\brian{If we split $V^{6d}$ as $V^{4d} \oplus N \oplus N^*$ where $N, N^*$ are trivial one-dimensional $\Spin(4)$-representations, then $W^{4d} = W_+^{6d} \otimes N$ and $W^{4d*} = W_+^{6d} \otimes N^*$. 
-Moreover, the isomorphism $\wedge^2 S_+^{6d} \cong V^{6d}$ gives rise to three maps
-\begin{itemize}
-\item $S^{4d}_+ \otimes S^{4d}_- \otimes N \otimes N^* \to V^{4d}$. This is $\Gamma^{4d} \otimes {\rm ev}_N$. 
-\item $\wedge^2(S_+^{4d} \otimes N) \to N^*$. 
-\item $\wedge^2(S_-^{4d} \otimes N^*) \to N$. 
-\end{itemize}
-The bosons in the gauge part live in $a \in N^*$ and $\Tilde{a} \in N$. 
-For $Q_+ \in S^{4d}_+ \otimes W^{4d} = S^{4d}_+ \otimes W^{6d}_+ \otimes N$ and $\lambda_+ \in S^{4d}_+ \otimes W^{4d} = S^{4d}_+ \otimes W^{6d}_+ \otimes N$. 
-I want to make sense of $(\<Q_+, \lambda_+\> , \Tilde{a}^*)$ as a scalar via the composition
-\[
-\wedge^2 (S_+^{4d} \otimes W^{6d}_+ \otimes N) \otimes N  \xto{\omega_{W_+}} \wedge^2(S^{4d}_+ \otimes N) \otimes N \to N^* \otimes N \to \CC .
-\]
-The first map is the symplectic pairing on $W_+$. 
-The second map is the second bullet above. 
-The last map is evaluation.
-Do you see an easier way to canonically write this using only 4d objects?
-}
+The anti-fields decompose in an analogous way.
 
 For a general supercharge $Q_+ \otimes \alpha_+ \in S_+^4 \otimes W = S^4_+ \otimes W_+ \otimes S_+^2$, the functionals $I_{\rm gauge}^{(1)}, I^{(1)}_{\rm matter}, I^{(2)}_{\rm gauge}, I^{(2)}_{\rm matter}$ decompose as:
 \begin{align*}
 I^{(1)}_{\mr{gauge}}(Q_+ \otimes \alpha_+) &= \int \dvol \bigg(-( \Gamma(Q_+,\lambda_-), A^*) + (\langle Q_+,\lambda_+\rangle , \Tilde{a}^* ) + \\
-&\qquad  + \frac 12 ((\rho(F_A)Q_+, \lambda_+^*)(u_+^*,  w_+) + (\rho(\d_A \phi_2(w_+ \wedge u_-^*))Q_+, \lambda_-^*) \bigg)\\
-I^{(1)}_{\mr{matter}}(Q) &= \int \dvol (((Q_+,\psi_+), \phi^*)(v^*,w_+) + \frac 12 (\rho(\d_A \phi)Q_+, \psi_+^*)(v,w_+)) \\
-I^{(2)}_{\mr{gauge}}(Q,Q) &= \int \dvol \big(\frac 14 (Q_+,Q_+)(\lambda_-,\lambda_-)(u_-,w_+)^2 - \frac 12  (Q_+, \lambda_-^*)^2(w_+ \wedge u_-^*)^2 - (Q_+,Q_+)\phi_1(w_+ \wedge w_+)c^* \big) \\
-I^{(2)}_{\mr{matter}}(Q,Q) &= \int \frac 14 \dvol (Q_+,Q_+)(\psi_-^*,\psi_-^*)(w_-^* \wedge w_-^*)
+&\qquad  + \frac 12 ((\rho(F_A)Q_+, \lambda_+^*) + (\rho(\d_A a)Q_+, \lambda_-^*) \bigg)\\
+I^{(1)}_{\mr{matter}}(Q_+ \otimes \alpha_+) &= \int \dvol (((Q_+,\psi_+), \phi^*) + \frac 12 (\rho(\d_A \phi)Q_+, \psi_+^*)) \\
+I^{(2)}_{\mr{gauge}}(Q_+ \otimes \alpha_+) &= \int \dvol \big(\frac 14 (Q_+,Q_+)(\lambda_+^*,\lambda_+^*) - \frac 12  (Q_+, \lambda_+^*)^2 - (Q_+,Q_+) a c^* \big) \\
+I^{(2)}_{\mr{matter}}(Q_+ \otimes \alpha_+) &= \int \frac 14 \dvol (Q_+,Q_+)(\psi_-^*,\psi_-^*) .
 \end{align*}
-if $Q=Q_+ \otimes w_+$ is a non-zero element of $S_+ \otimes W$. \chris{missing thing here: trivialising those wedge pairs, or equivalently restricting $\Gamma(-,-)$ from 6d to 4d.}
 
+The result follows from further decomposing the fields under the action of $\MU(2)$. 
+\end{proof}
+
+\begin{thm}
+The twist of 4d $\cN=2$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges is perturbatively equivalent to the holomorphic Hodge theory $\map(\CC^2, (U//g)_{\mr{Hod}})$. 
+Moreover, this equivalence is $\U(2)$-equivariant.
+\label{thm:4dDonaldsontwist}
+\end{thm}
+\begin{proof}
+The proof proceeds as in the proof of Theorem \ref{thm:10dholomorphictwist} with slight modifications.
+
+Observe that the quadruple of fields $\{\chi^*, \chi, \wt\chi^*, \wt\chi\}$ has the same Poisson brackets as the quadruple $\{\chi^*-t\wt\chi^*, \chi, \wt\chi^*, \wt\chi + t\chi\}$. Therefore, we may eliminate the fields $\chi^*-t\wt\chi^*, \chi$ using Proposition \ref{prop:integrateoutfield}. We then have trivial BRST doublets $\{\wt\chi + t\chi, \wt a\}$ and $\{\rho, A_{1, 0}\}$ which may be eliminated using Proposition \ref{prop:BRSTdoublet}. We are left with the action
+\[S_{BF} + \int\dvol\left(-t(b, A_{0, 1}^*) + t a c^* + \frac{t}{2} \xi^*\wedge B^* + t (\varphi, \phi^*) + \frac t4 (\psi^*, \psi^*) \right),\]
+where $S_{BF}$ is the action functional of the holomorphic twist at $t=0$ found in the previous section. 
+Since the extra terms are quadratic in the fields, the claim is reduced to a comparison of the underlying local $L_\infty$ algebra of the twisted theory and that of the holomorphic Hodge theory. The former is given by (cf. the proof of Theorem \ref{thm:4dholomorphictwist})
+\[
+\xymatrix@R=0.5cm@C=0.5cm{
+\ul{-1} & \ul{0} & \ul{1} & \ul{2} & \ul{3} & \ul{4} \\ 
+& \Omega^0(\CC^2; \gg)_c \ar[r] &\Omega^{0,1}(\CC^2; \gg)_{A_{0,1}} \ar[r] &\Omega^{0,2}(\CC^2; \gg)_{B} \\
+\Omega^0(\CC^2; \gg)_a  \ar@{-->}^{t\id}[ur] \ar[r] &\Omega^{0,1}(\CC^2; \gg)_{b}  \ar@{-->}^{t\id}[ur] \ar[r] &\Omega^{0,2}(\CC^2; \gg)_{\xi^*}  \ar@{-->}^{t\id}[ur] \\
+& &  \Omega^{2,0}(\CC^2 ; \gg)_{B^*}  \ar@{-->}^{t\id}[dr] \ar[r] & \Omega^{2,1}(\CC^2 ; \gg)_{A_{0,1}^*} \ar[r]  \ar@{-->}^{t\id}[dr] & \Omega^{2,2}(\CC^2 ; \gg)_{c^*}  \ar@{-->}^{t\id}[dr] \\
+& & & \Omega^{2,0}(\CC^2; \gg)_\xi \ar[r] &\Omega^{2,1}(\CC^2; \gg)_{b^*} \ar[r] &\Omega^{2,2}(\CC^2; \gg)_{a^*}  \\
+& \Omega^0(\CC^2 ; U)_\phi \ar[r] & \Omega^{0,1}(\CC^2 ; U)_\psi \ar[r] & \Omega^{0,2}(\CC^2 ; U)_{\varphi^*} \\
+\Omega^{2,0}(\CC^2 ; U)_{\varphi} \ar[r]  \ar@{-->}^{t\id}[ur] & \Omega^{2,1}(\CC^2 ; U)_{\psi^*} \ar[r]  \ar@{-->}^{t\id}[ur]  & \Omega^{2,2}(\CC^2 ; U)_{\phi^*}  \ar@{-->}^{t\id}[ur]
+}
+\]
+which is exactly the local $L_\infty$ algebra of the holomorphic Hodge theory.
+\end{proof}
+
+\begin{cor}
+The rank $(2,0)$ topological twist of 4d $\cN=2$ super Yang--Mills is perturbatively trivial.
+\label{cor:4dDonaldsontwist}
+\end{cor}
+\begin{proof}
+The topological twist of 4d $\cN=2$ super Yang--Mills is the twist by $Q_t$ with $t\neq 0$. By Theorem \ref{thm:4dDonaldsontwist} it is equivalent to the $t\neq 0$ specialization of the holomorphic Hodge theory which by Proposition \ref{prop:Hodgetheoryspecialization} is perturbatively trivial.
 \end{proof}
 
 \subsubsection{Rank \texorpdfstring{$(1,1)$}{(1,1)} twist}
