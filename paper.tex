@@ -2689,8 +2689,35 @@ Next we discuss the case of the topological twist.
 We are going to prove that it is perturbatively trivial. 
 In fact, it will be useful to study a degeneration of the topological twist to a holomorphic twist and describe the corresponding family of twisted theories.
 
+Let $S^{2n}_\pm$ be the semi-spin representations of $\Spin(2n , \CC)$.
+The decomposition of $S^{6}_+$ under the subgroup $\Spin(4 , \CC) \times \Spin(2, \CC) \subset \Spin(6,\CC)$ is
+\[
+S_+^6 = S_+^4 \otimes S_+^2 \oplus S_-^4 \otimes S_-^2 .
+\]
+The odd part of the $\cN=2$ supersymmetry algebra is 
+\[
+\Sigma = S_+^6 \otimes W_+ \cong S_+^4 \otimes W \oplus S_-^4 \otimes W^* .
+\]
+where $W_+$ is a complex two-dimensional symplectic vector space. 
+From this, we have identifications $W = W_+ \otimes S_+^2$ and $W^* = W_+ \otimes S_-^2$. 
+Let $\{u \otimes \alpha_+, v \otimes \alpha_+\}$ be a basis for $W = W_+ \otimes S_+^2$ where $\{u,v\}$ is a symplectic basis for $W_+$ and $s_+$ is a basis element for $S_+^2$. 
+%A general supercharge $Q \in S_+^4 \otimes W$ is of the form
+%\[
+%Q = s_+ \otimes u \otimes \alpha_+ + s_+' \otimes v \otimes \alpha_+ 
+%\]
+%where $s_+, s_+' \in S_+^{4}$. 
+
+Let $\{s^1_+, s_+^2\}$ be a basis for $S_+^4$. 
+We twist by a supercharge of the form
+\[
+Q_t = s_+^1 \otimes u \otimes \alpha_+ + t s_+^2 \otimes v \otimes \alpha_+
+\]
+where $t \in \CC$. 
+When $t \ne 0$, this supercharge is of rank $(2,0)$. 
+At $t = 0$ it reduces to the holomorphic supercharge from the previous section.
+
 Let $V_\RR = \RR^4$ and $V=V_\RR\otimes_\RR\CC$. 
-Fix a K\"ahler structure on $\RR^4$ and denote by $L\subset V$ the $i$-eigenspace of the complex structure. %Moreover, fix a complex volume form on $L$. 
+Fix a K\"ahler structure on $\RR^4$ and denote by $L\subset V$ the $i$-eigenspace of the complex structure determined by the holomorphic supercharge $Q_0$. %Moreover, fix a complex volume form on $L$. 
 
 We will use the notation for fields from Section \ref{sect:4d_2_holomorphictwist}. 
 First, we are going to write the functionals \eqref{eq:gaugeI1}, \eqref{eq:gaugeI2}, \eqref{eq:matterI1}, \eqref{eq:matterI2} in terms of these fields.
@@ -2706,24 +2733,6 @@ I^{(2)}_{\rm gauge} (Q_t, Q_t) &= \int \dvol \left(t\chi^*\wt \chi^* + \frac{t}{
 \end{prop}
 \begin{proof}
 We first write down the fields and the functionals in $\Spin(4)$-notation.
-Let $S^{2n}_\pm$ be the semi-spin representations of $\Spin(2n , \CC)$.
-The decomposition of $S^{6}_+$ under the subgroup $\Spin(4 , \CC) \times \Spin(2, \CC) \subset \Spin(6,\CC)$ is
-\[
-S_+^6 = S_+^4 \otimes S_+^2 \oplus S_-^4 \otimes S_-^2 .
-\]
-The odd part of the $\cN=2$ supersymmetry algebra is 
-\[
-\Sigma = S_+^6 \otimes W_+ \cong S_+^4 \otimes W \oplus S_-^4 \otimes W^* .
-\]
-where $W_+$ is a complex two-dimensional symplectic vector space. 
-From this, we have identifications $W = W_+ \otimes S_+^2$ and $W^* = W_+ \otimes S_-^2$. 
-Let $\{u \otimes \alpha_+, v \otimes \alpha_+\}$ be a basis for $W = W_+ \otimes S_+^2$ where $\{u,v\}$ is a symplectic basis for $W_+$ and $s_+$ is a basis element for $S_+^2$. 
-A general supercharge $Q \in S_+^4 \otimes W$ is of the form
-\[
-Q = s_+ \otimes u \otimes \alpha_+ + s_+' \otimes v \otimes \alpha_+ 
-\]
-where $s_+, s_+' \in S_+^{4}$. 
-
 The fields of $4d \cN=2$ decompose as:
 \begin{itemize}
  \item $\gg$-valued Bosons: a gauge field $A \in \Omega^1(\RR^4; \gg)$, and a pair of scalar fields $(a \otimes \alpha_-^{\otimes 2} ,\Tilde{a} \otimes \alpha_+^{\otimes 2}) \in \Omega^0(\RR^4; (S^2_-)^{\otimes 2} \gg \oplus  (S^2_-)^{\otimes 2} \otimes \gg)$.
