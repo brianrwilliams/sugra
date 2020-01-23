@@ -2037,7 +2037,7 @@ The dimensional reduction of 8d $\cN=1$ super Yang--Mills on $L\times N$ alond $
 \[\phi\colon \MU(L)\times \Spin(N_\RR)\xrightarrow{\det^{1/2}\times \id} G_R=\U(1)\times \Spin(N_\RR).\]
 
 \begin{thm}
-The twist of $(4+\dim(L))$-dimensional super Yang--Mills on $L\times N_\RR$ by $Q$ is perturbatively equivalent to the generalized BF theory with the space of fields $T^*[-1] \map(L\times (N_\RR)_{\mr{dR}}, B\fg)$ \brian{the $B$-direction was missing}. Moreover, the equivalence is $\MU(L)\times \Spin(N_\RR)$-equivariant.
+The twist of $(4+\dim(L))$-dimensional super Yang--Mills on $L\times N_\RR$ by $Q$ is perturbatively equivalent to the generalized BF theory with the space of fields $\map(L\times (N_\RR)_{\mr{dR}}, T^*[3] B\fg)$. Moreover, the equivalence is $\MU(L)\times \Spin(N_\RR)$-equivariant.
 \label{thm:8dBFreduction}
 \end{thm}
 \begin{proof}
@@ -2143,7 +2143,7 @@ Let $\omega\in\Omega^{1, 1}(M)$ be the K\"ahler form. We denote the real volume 
 Using Corollary \ref{Kahler_YM_term_cor}, the BV action $S_{\mr{BV}}$ of the $Q$-twisted theory consists of the sum of the following terms:
 
 \begin{align*}
-S_{\gauge} &= \int \dvol \left(-(F^{2, 0}, F^{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2\right) + \\
+S_{\gauge} &= \int \dvol \left(-(F_{2, 0}, F_{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2\right) + \\
 &\qquad + \frac 12 \left( \omega(B \wedge \dd_{A_{1,0}} \rho) + \omega^2\chi\Lambda(\ol \dd_{A_{0,1}} \rho) - \omega(\rho \wedge \dd_{A_{1,0}} B) + \xi \ol \dd_{A_{0,1}} B \right)  \\
 S_{\matter} &= \int \bigg( \dvol ((\dd_{A_{1,0}}\nu, \ol \dd_{A_{0,1}} \phi) + (\dd_{A_{1,0}}\phi, \ol \dd_{A_{0,1}} \nu)) + 2\omega^2\wedge(\wt\nu \ol \dd_{A_{1,0}} \psi) + \psi \wedge \ol \dd_{A_{0,1}} \psi + \\
 &\qquad + 2\dvol(([\xi,\nu],\wt\nu) + ([\chi, \phi], \wt\nu) )   \bigg) \\
@@ -2360,125 +2360,86 @@ The rank $4$ twist of 5d $\cN=2$ super Yang--Mills is perturbatively equivalent 
  
 \section{Dimension 4}
 
-The 4-dimensional supersymmetry algebra has odd part $\Sigma\cong S_+\otimes W\oplus S_-\otimes W^*$, where $S_+, S_-$ are the 2-dimensional spin representations of $\Spin(4, \CC)\cong \SU(2) \times \SU(2)$ and $W$ is a complex vector space. 
-We have isomorphisms $S_\pm \cong S_\pm^*$ which equivalently determine equivariant pairings $S_\pm \otimes S_\pm \to \CC$. 
+The 4-dimensional supersymmetry algebra has odd part $\Sigma\cong S_+\otimes W\oplus S_-\otimes W^*$, where $S_+, S_-$ are the 2-dimensional semi-spin representations of $\Spin(4, \CC)\cong \SL(2, \CC) \times \SL(2, \CC)$ and $W$ is a complex vector space. The semi-spin representations carry symplectic pairings $S_\pm\otimes S_\pm\rightarrow \CC$.
 
 There are Yang--Mills theories with $\cN=1,2,4$ supersymmetry, which we consider separately.
 
-\subsection{\texorpdfstring{$\cN=1$}{N=1} Super Yang-Mills theory} \label{4d_1_section}
-We consider $\cN=1$ supersymmetric Yang-Mills for a Lie algebra $\fg$ coupled to supersymmetric matter.
-The matter consists of the $\cN=1$ chiral multiplet valued in a complex representation $R$. 
+\subsection{\texorpdfstring{$\cN=1$}{N=1} Super Yang--Mills} \label{4d_1_section}
+The general setup for $\cN=1$ super Yang--Mills is described in Section \ref{sec:SYM} which we now recall.  Let $R$ be a complex $\fg$-representation. We consider $\cN=1$ super Yang--Mills theory on $M=\RR^4$ with the Euclidean metric. The theory admits an $R$-symmetry group $G_R=\U(1)$ which acts on $W=\CC$ with weight $1$.
 
-The general setup for $\cN=1$ super Yang--Mills is described in Section \ref{sec:SYM} which we now recall. 
-Let $\fg$ be a complex Lie algebra equipped with a symmetric bilinear invariant nondegenerate pairing and $R$ a complex $\fg$-representation. 
-We consider $\cN=1$ super Yang--Mills theory on $M=\RR^6$ with the Euclidean metric. 
-We fix $W=\CC$. 
-The theory admits an $R$-symmetry group $G_R=\U(1)$.
-
-The field content for the 4-dimensional $\cN=1$ super Yang-Mills theory coupled to chiral matter is given by:
+\vspace{-10pt}
+\paragraph{Fields:} The BRST fields are given by:
 \begin{itemize}
-\item $\fg$-valued bosons: a gauge field $A \in \Omega^1(\RR^4 ; \fg)$.
-\item $R$-valued bosons: $(\Bar{\phi}, \phi) \in C^\infty(\RR^4 ; R \oplus R^*)$.
-\item $\fg$-valued fermions: $(\lambda_+, \lambda_-) \in \Omega^0(\RR^4 ; S_+ \otimes \fg \oplus S_- \otimes \fg)$.
-\item $R$-valued fermions: $(\psi_-,\psi_+) \in C^\infty(\RR^4 ; S_+ \otimes R \oplus \otimes S_- \otimes R^*)$.
+\item Gauge field $A \in \Omega^1(M; \fg)$.
+\item Gauge fermions $(\lambda_+, \lambda_-) \in \Omega^0(M; \Pi S_+ \otimes \fg \oplus \Pi S_- \otimes \fg)$.
+\item Matter bosons $(\Bar{\phi}, \phi) \in \Omega^0(M; R \oplus R^*)$.
+\item Matter fermions $(\psi_-,\psi_+) \in \Omega^0(M; \Pi S_+ \otimes R^* \oplus \Pi S_- \otimes R)$.
+\item A ghost field $A_0\in \Omega^0(M; \gg)[1]$.
 \end{itemize}
 
-This theory admits a unique twist, which is necessarily of rank $1$:
-\begin{itemize}
-\item A square-zero supercharge $Q\neq 0\in\Sigma$ has 2 invariant directions, so it gives rise to a holomorphic theory. 
-The identity homomorphism $\alpha = {\rm id} \colon \U(1) \cong G_R$ makes $Q$ weight $+1$, so in this case we get a $\ZZ$-grading on the twisted theory. 
-Such a supercharge is stabilized by $\SU(2)$. 
-Also, we have a compatible twisting homomorphism 
-\[
-\phi : \MU(2) \to {\rm Spin}(4) \times U(1) 
-\]
-where on the first component is the map $\MU(2) \to {\rm Spin}(4)$ lifting $\U(2) \to \SO(4)$ and on the second component $\det^{1/2} : \MU(2) \to U(1)$ is the square root of determinant. 
-\end{itemize}
+The $R$-symmetry acts with weight $\pm 1$ on $\lambda_\pm, \psi_\pm$.
 
-%The spinorial pairing $(-,-) : S_\pm \otimes S_\pm \to \CC$ induces a pairing between $S_\pm \otimes R$ and $S_{\pm} \otimes R^*$ that we also denote by $(-,-)_R$. 
+The theory admits a unique twist:
+\begin{itemize}
+\item Elements $Q\in S_+\oplus S_-$ of rank $(1, 0)$ or rank $(0, 1)$. Such supercharges are automatically square-zero and are holomorphic. The identity homomorphism $\alpha = {\rm id} \colon \U(1) \cong G_R$ makes $Q$ weight $+1$, so in this case we get a $\ZZ$-grading on the twisted theory. Also, we have a compatible twisting homomorphism $\phi\colon \MU(2)\xrightarrow{\det^{1/2}}\U(1)$.
+\end{itemize}
 
 \subsubsection{Holomorphic twist}
 
-For concreteness, we will fix a square-zero supercharge of positive chirality
+Choose a complex structure $L$ on $V_\RR$. Under the embedding $\MU(L) = \MU(2) \subset \Spin(V_\RR)$, the semi-spin representations decompose as
 \[
-Q = Q_+ \in S_+ \otimes W
+S_+ = \det(L)^{-1/2} \oplus \det(L)^{1/2},\qquad S_- = L \otimes \det(L)^{-1/2} .
 \]
-to twist by. 
-The data of such a $Q_+$ is equivalent to the data of a K\"{a}hler structure $L$ on $V_\RR$. 
+Consider the twisting homomorphism $\phi\colon\MU(2)\rightarrow G_R$ under which $W = \det(L)^{-1/2}$. Then the spinorial representation becomes
+\[\Sigma = (\CC Q\oplus \det(L)^{-1})\oplus L.\]
 
-Under the embedding $\MU(L) = \MU(2) \subset \Spin(\VV_\RR)$, the spin representations decompose as
-\[
-S_+ = \det(L)^{-1/2} \oplus \det(L)^{1/2} \;\; , \;\; S_- = L \otimes \det(L)^{-1/2} .
-\]
-
-We consider the twisting homomorphism
-\[
-\phi = \det \, ^{1/2} : \MU(2) \to \U(1)
-\]
-for which $Q_+$ becomes a scalar.
-Under this twisting homomorphism, we have an $\MU(2)$-identification $W = \det(L)^{1/2}$. 
-By construction, $Q_+$ lies in the first factor of $S_+ \otimes W = \CC \oplus \det(L)$. 
-
-Since we have an isomorphism $\alpha : U(1) \cong G_R$ the twisted theory is $\ZZ$-graded. 
+The identity map $\alpha\colon \U(1)\cong G_R$ makes $Q$ weight $1$.
 
 We first decompose the fields of the 4-dimensional $\mc N=1$ theory with respect to $\MU(2)$.
-The fields decompose as:
-\[
-\begin{array} {lllcccccc}
-& &  & {\rm Untwisted} & R & {\rm Twisted}  \\
-c & \mapsto & A_{0} \in \Omega^0(\CC^2 ; \fg) & -1 & 0 & -1 \\
-A & \mapsto & A_{0,1} + A_{1,0} \in \Omega^{0,1}(\CC^2 ; \fg) \oplus \Omega^{1,0}(\CC^2 ; \fg) & 0 & 0 & 0 \\
-\lambda_- & \mapsto & \lambda_{1,0} \in \Omega^{1,0}(\CC^2 ; \fg) & 0 & -1 & -1 \\
-\lambda_+ & \mapsto & \lambda_0 + A_{0,2} \in \Omega^{0}(\CC^2 ; \fg) \oplus \Omega^{0,2}(\CC^2 ; \fg) & 0 & +1 & + 1 \\
-\phi & \mapsto & \phi \in \Omega^0 (\CC^2 ; R^*) & 0 & 0 & 0 \\
-\Bar{\phi} & \mapsto & \gamma_0 \in \Omega^{0,0}(\CC^2 ; R) & 0 & 0 & 0 \\
-\psi_+ & \mapsto & \psi_0 + \beta_{2,0} \in \Omega^{0}(\CC^2 ; R^*) \oplus \Omega^{2,0}(\CC^2 ; R^*) & 0 & -1 & -1 \\
-\psi_- & \mapsto & \gamma_{0,1} \in \Omega^{0,1}(\CC^2 ; R) & 0 & +1 & +1 
-\end{array}
-\]
-The anti-fields decompose similarly. 
-%\brian{Is it necessary to put in the antifields?} 
-%and their antifields:
-%\begin{align*}
-%c^* & \mapsto B_{2,2} \in \Omega^{2,2}(\CC^2 ; \fg) \\
-%A^* & \mapsto B_{2,1} + A^*_{1,0} \in \Omega^{2,1}(\CC^2;\fg) \oplus \Omega^{1,2}(\CC^2; \fg) \\
-%\lambda^*_- & \mapsto \lambda_{1,0}^* \in \Omega^{1,2}(\CC^2 ; \fg) \\
-%\lambda^*_+ & \mapsto \lambda_0^*+ B_{2,0} \in \Omega^{0}(\CC^2 ; \fg) \oplus \Omega^{2,0}(\CC^2 ; \fg) \\
-%\phi^* & \mapsto \phi^* \in \Omega^{2,2}(\CC^2 ; R^*) \\
-%\Bar{\phi}^* & \mapsto \beta_{2,2} \in \Omega^{2,2} (\CC^2 ; R) \\
-%\psi^*_+ & \mapsto \psi_{2,2}^* + \gamma_{0,2} \in \Omega^{2,2}(\CC^2 ; R) \oplus \Omega^{0,2}(\CC^2 ; R) \\
-%\psi^*_- & \mapsto \beta_{2,1} \in \Omega^{2,1}(\CC^2 ; R)
-%\end{align*}
+\vspace{-10pt}
+\paragraph{Fields:} The BRST fields are given by:
+\begin{itemize}
+\item Gauge fields $A_{1, 0} \in \Omega^{1, 0}(M; \fg)$, $A_{0, 1}\in\Omega^{0, 1}(M; \fg)$.
+\item Gauge fermions $\lambda_{1, 0}\in\Omega^{1, 0}(M; \fg)[1]$, $\lambda_0\in\Omega^0(M; \fg)[-1]$, $A_{0, 2}\in\Omega^{0, 2}(M; \fg)[-1]$.
+\item Matter bosons $\phi\in\Omega^0(M; R^*)$, $\gamma_0\in\Omega^0(M; R)$.
+\item Matter fermions $\psi_0\in\Omega^0(M; R^*)[1]$, $\beta_{2, 0}\in\Omega^{2, 0}(M; R^*)[1]$, $\gamma_{0, 1}\in\Omega^{0, 1}(M; R)[-1]$.
+\item A ghost field $A_0\in \Omega^0(M; \gg)[1]$.
+\end{itemize}
+The corresponding antifields are given by:
+\begin{itemize}
+\item $A_{1, 0}^*\in\Omega^{1, 2}(M; \fg)[-1]$, $B_{2, 1}\in\Omega^{2, 1}(M; \fg)[-1]$.
+\item $\lambda_{1, 0}^*\in\Omega^{1, 2}(M; \fg)[-2]$, $\lambda_0^*\in\Omega^0(M; \fg)$, $B_{2, 0}\in\Omega^{2, 0}(M; \fg)$.
+\item $\phi^*\in\Omega^{2, 2}(M; R)$, $\gamma_0^*\in\Omega^0(M; R^*)$.
+\item $\psi_0^*\in\Omega^{2, 2}(M; R)[-2]$, $\gamma_{0, 2}\in\Omega^{0, 2}(M; R)[-2]$, $\beta_{2, 1}\in\Omega^{2, 1}(M; R^*)$.
+\item $B_{2, 2}\in\Omega^{2, 2}(M; \gg)[-2]$.
+\end{itemize}
 
-Let $\omega\in\Omega^{1, 1}(M)$ be the K\"ahler form, $\Omega\in\Omega^{2, 0}(M)$ the holomorphic volume form and $\ol{\Omega}\in\Omega^{0, 2}(M)$ the antiholomorphic volume form.  We denote the real volume form on $M$ by
-\[\dvol = \frac{\omega^2}{2} = \Omega\wedge \ol{\Omega}.\]
+Let $\omega\in\Omega^{1, 1}(M)$ be the K\"ahler form. We denote the real volume form on $M$ by
+\[\dvol = \frac{\omega^2}{2}.\]
 
 Using Corollary \ref{Kahler_YM_term_cor}, the BV action $S_{\mr{BV}}$ of the $Q$-twisted theory consists of the sum of the following terms:
 
 \begin{align*}
-S_{\mr{gauge}} &= \int \left(-(F^{2, 0}, F^{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2\right) + \frac 12 \left(\lambda_{1,0} \wedge \dd_{A_{1,0}} A_{0,2}) + \omega (\lambda_{1,0} \wedge \dbar_{A_{0,1}} \lambda_0) \right)  \\
-S_{\mr{matter}} &= \int \bigg( ((\dd_{A_{1,0}}\phi , \ol \dd_{A_{0,1}} \gamma_0) + (\dd_{A_{1,0}}\gamma_0, \ol \dd_{A_{0,1}} \phi)) + \omega (\psi_0 \partial_{A_{1,0}} \gamma_{0,1}) + \beta_{2,0} \dbar_{A_{0,1}} \gamma_{0,1}  + \\
-&\qquad + 2 (\omega \wedge ([\lambda_{1,0}, \gamma_{0,1}] ,\gamma_{0}) + ([A_{0,2}, \beta_{2,0}], \phi) )   \bigg) \\
-S_{\mr{anti}} &= \int \dd_{A_{1, 0}} A_0 \wedge A_{1,0}^* + \ol\dd_{A_{0, 1}} A_0\wedge B_{2,1} + [\lambda_{1,0}, A_0]\wedge \lambda_{1,0}^* +  [\lambda_{0}, A_0]\wedge \lambda_{0}^* +B_{2,1} \wedge [A_0, A_{0,1}] + A_{1,0}^* \wedge [A_{0}, A_{1,0}] \\
-&\qquad + \frac{1}{2}[A_0, A_0]A_0^* + [\phi, A_0] \phi^* + [\gamma_0, A_0] \beta_{2,2} + [\gamma_{0,1}, A_0]\wedge \beta_{2,1} + [\psi_0, A_0] \psi_0^* + [\beta_{2,0}, A_0] \wedge \gamma_{0,2} \\
-I^{(1)}_{\mr{gauge}} &=  \int  \left( - (\lambda_{1,0}, A_{0,1}^*) + \frac 12 (F_{0,2},B_{2,0}) + \frac 12 (F_{1,1}, \lambda_0^*)  \right)\\
-I^{(1)}_{\mr{matter}} &=  \int  \left( (\phi, \psi_0^*) + \frac 12( \ol \dd_{A_{0,1}} \gamma_{0}, \beta_{2,1}) \right)\\
-I^{(2)}_{\mr{gauge}} &= -\frac{1}{4}\int  (\lambda_0^*)^2.
+S_{\mr{gauge}} &= \int\dvol\left(-(F_{2, 0}, F_{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2\right) + \frac 12 \left((\lambda_{1,0} \wedge \dd_{A_{1,0}} A_{0,2}) + \omega (\lambda_{1,0} \wedge \dbar_{A_{0,1}} \lambda_0) \right)  \\
+S_{\mr{matter}} &= \int \dvol \left((\dd_{A_{1,0}}\phi , \ol \dd_{A_{0,1}} \gamma_0) + (\dd_{A_{1,0}}\gamma_0, \ol \dd_{A_{0,1}} \phi)\right) + \omega (\psi_0 \partial_{A_{1,0}} \gamma_{0,1}) + \beta_{2,0} \dbar_{A_{0,1}} \gamma_{0,1}  + \\
+&\qquad + 2 (\omega \wedge ([\lambda_{1,0}, \gamma_{0,1}] ,\gamma_{0}) + ([A_{0,2}, \beta_{2,0}], \phi) )  \\
+S_{\mr{anti}} &= \int \bigg(\dd_{A_{1, 0}} A_0 \wedge A_{1,0}^* + \ol\dd_{A_{0, 1}} A_0 \wedge B_{2, 1} + [\lambda_{1,0}, A_0]\wedge \lambda_{1,0}^* + \dvol ([\lambda_{0}, A_0], \lambda_{0}^*) + [A_0, A_{0,1}]\wedge B_{2, 1} + [A_{0}, A_{1,0}]\wedge A_{1, 0}^* \\
+&\qquad + \frac{1}{2}[A_0, A_0]B_{2, 2} + [\phi, A_0] \phi^* + [\gamma_0, A_0] \beta_{2,2} + [\gamma_{0,1}, A_0]\wedge \beta_{2,1} + [\psi_0, A_0] \psi_0^* + [\beta_{2,0}, A_0] \wedge \gamma_{0,2} \bigg) \\
+I^{(1)}_{\mr{gauge}} &=  \int  \left( - \lambda_{1,0}\wedge A_{1,0}^* + \frac 12 F_{0,2}\wedge B_{2,0} + \frac 12 \omega\wedge F_{1,1} \lambda_0^*  \right) \\
+I^{(1)}_{\mr{matter}} &=  \int  \left( \psi_0 \phi^* + \frac 12 \ol \dd_{A_{0,1}} \gamma_{0}\wedge \beta_{2,1} \right)\\
+I^{(2)}_{\mr{gauge}} &= -\frac{1}{4}\int \dvol(\lambda_0^*)^2.
 \end{align*}
-Here, in terms of the K\"ahler form $\omega$, the volume form is identified as $\dvol = \frac{\omega^2}2$.
 
 Notice that a priori the theory is only $\MU(2)$-equivariant, but manifestly descends to a $\U(2)$-equivariant theory. 
 
 \begin{thm}[See also \cite{SWchar}] \label{4d_minimal_twist_thm}
-The minimal twist of 4d $\cN=1$ super Yang-Mills with Lie algebra $\fg$ coupled to the $\cN=1$ chiral multiplet valued in a representation $R$ is $\U(2)$-equivariantly equivalent to holomorphic $BF$ theory for the Lie algebra $\fg$ coupled to the holomorphic $\beta\gamma$ system with values in the representation $R$, with classical moduli space $T^*[-1]\mr{Map}(\CC^2, R/\gg)$. 
+The holomorphic twist of 4d $\cN=1$ super Yang--Mills with matter valued in a $\fg$representation-representation $R$ is perturbatively equivalent to holomorphic $BF$ theory with the space of fields $T^*[-1]\map(\CC^2, R/\fg)$. Moreover, the equivalence is $\U(2)$-equivariant.
 \end{thm}
 
 \begin{proof}
 The proof of this theorem is very similar to the proof of Theorem \ref{thm:10dholomorphictwist}.  
-First, we integrate out the fields $\lambda_0$ and $\lambda_0^*$ using Proposition \ref{prop:integrateoutfield}.  
-We then observe that the action includes the terms $\int  (\lambda_{1,0} , A_{0,1}^*)$ and  $\int (\phi, \psi_{1,1}^*)$.  
-Thus, the two pairs $(\lambda_{1,0}, A_{1,0})$ and $(\phi, \psi_0)$ form BRST doublets, 
-which can be integrated out using Proposition \ref{prop:BRSTdoublet}.  
+First, we eliminate the fields $\lambda_0$ and $\lambda_0^*$ using Proposition \ref{prop:integrateoutfield}.  
+We then observe that the action includes the terms $\int \lambda_{1,0} \wedge A_{1,0}^*$ and  $\int \psi_0\phi^*$. Thus, the two pairs $(\lambda_{1,0}, A_{1,0})$ and $(\phi, \psi_0)$ form trivial BRST doublets, which can be eliminated using Proposition \ref{prop:BRSTdoublet}.
 
 The twisted theory is therefore perturbatively equivalent to the theory with BV action 
 \begin{align*}
@@ -2488,168 +2449,68 @@ The twisted theory is therefore perturbatively equivalent to the theory with BV 
 This is indeed the action functional of the required theory, where $A_{0,\bu}, B_{2,\bu}$ comprise the fields of holomorphic $BF$ theory and $\gamma_{0,\bu}, \beta_{2,\bu}$ comprise the fields of the $\beta\gamma$ system.
 \end{proof}
 
-%\begin{itemize}
-%\item[(1)] 
-%We first decompose the fields of the 4-dimensional $\mc N=1$ theory with respect to the ${\rm U}(2)$ stabilizer.
-%The fields of the pure Yang-Mills part decomposes as:
-%\begin{align*}
-%c & \mapsto A_{0} \in \Omega^0(\CC^2 ; \fg) \\
-%A & \mapsto A_{0,1} + A_{1,0} \in \Omega^{0,1}(\CC^2 ; \fg) \oplus \Omega^{1,0}(\CC^2 ; \fg) \\
-%\lambda_+ & \mapsto \lambda_{1,0} \in \Omega^{1,0}(\CC^2 ; \fg) \\
-%\lambda_- & \mapsto \lambda_0 + A_{0,2} \in \Omega^{0}(\CC^2 ; \fg) \oplus \Omega^{0,2}(\CC^2 ; \fg) 
-%\end{align*}
-%and their antifields:
-%\begin{align*}
-%c^* & \mapsto B_{2,2} \in \Omega^{2,2}(\CC^2 ; \fg) \\
-%A^* & \mapsto B_{2,1} + B_{1,2} \in \Omega^{2,1}(\CC^2;\fg) \oplus \Omega^{1,2}(\CC^2; \fg) \\
-%\lambda^*_+ & \mapsto \lambda_{1,2} \in \Omega^{1,2}(\CC^2 ; \fg) \\
-%\lambda^*_- & \mapsto \lambda_0^*+ B_{2,0} \in \Omega^{0}(\CC^2 ; \fg) \oplus \Omega^{2,0}(\CC^2 ; \fg) 
-%\end{align*}
-%
-%The matter fields decompose as
-%\begin{align*}
-%\phi & \mapsto \gamma_0 \in \Omega^0 (\CC^2 ; R) \\
-%\Bar{\phi} & \mapsto \Bar{\phi} \in \Omega^{2,2}(\CC^2 ; R^*) \\
-%\psi_+ & \mapsto \gamma_{0,1} \in \Omega^{0,1}(\CC^2 ; R) \\
-%\psi_- & \mapsto \beta_{2,0} + \Tilde{\beta}_{2,2} \in \Omega^{2,0}(\CC^2 ; R^*) \oplus \Omega^{2,2}(\CC^2 ; R^*) 
-%\end{align*}
-%and their antifields:
-%\begin{align*}
-%\phi^* & \mapsto \beta_{2,2} \in \Omega^{2,2} (\CC^2 ; R^*) \\
-%\Bar{\phi}^* & \mapsto \Bar{\phi}^* \in \Omega^{0,0}(\CC^2 ; R) \\
-%\psi^*_+ & \mapsto \beta_{2,1} \in \Omega^{2,1}(\CC^2 ; R^*) \\
-%\psi^*_- & \mapsto \Tilde{\gamma}_0 + \gamma_{0,2} \in \Omega^{0,0}(\CC^2 ; R) \oplus \Omega^{0,2}(\CC^2 ; R) 
-%\end{align*}
-%
-%\item[(2)] Next, we study the linear differential in the twisted theory. 
-%At the linear level, the matter and gauge sectors completely decouple. 
-%
-%For the gauge sector, the linear differential on the twisted BV complex is the following:
-%\[
-%\xymatrix{
-%\ul{-1} & \ul{0} & \ul{1} & \ul{2} \\
-%\Omega^0(\CC^2; \fg)_{A_0} \ar[r]^-{\dbar} & \Omega^{0,1}(\CC^2; \fg)_{A_{0,1}} \ar@{.>}[r]^-{\dbar} & \Omega^{0,2}(\CC^2; R)_{A_{0,2} } &  \\
-%& \Omega^{2,0}(\CC^2; \fg)_{B_{2,0}} \ar@{.>}[r]^-{\dbar} & \Omega^{2,1}(\CC^2; \fg)_{B_{2,1}} \ar[r] & \Omega^{2,2}(\CC^2 , \fg)_{B_{2,2}} \\
-%\Omega^{1,0} (\CC^2; \fg)_{\lambda_{1,0}} \ar@{.>}[r]^-{=} & \Omega^{1,0}(\CC^2; \fg)_{A_{1,0}} & \Omega^{2,1}(\CC^2; \fg)_{B_{1,2}} \ar@{.>}[r]^-{=} & \Omega^{2,1}(\CC^2; \fg)_{\lambda_{1,2}} \\
-%& \Omega^0(\CC^2 ; \fg)_{\lambda_0^*} \ar@{.>}[r]^-{=} & \Omega^0(\CC^2 ; \fg)_{\lambda_0} & 
-%}
-%\]
-%The solid arrows represent the piece of the linear differential coming from the original linear BV differential of the untwisted theory.
-%The dotted arrows represent the piece of the linear differential which depends on the supercharge $Q = Q_-$ we are twisting by. 
-%This complex is equivalent to the linearized piece holomorphic BF theory on $\CC^2_{\dbar}$ with values in $\fg$. 
-%
-%For the matter sector, the linear differential is:
-%\[
-%\xymatrix{
-%\ul{-1} & \ul{0} & \ul{1} & \ul{2} \\
-%& \Omega^0(\CC^2; R)_{\gamma_0} \ar@{.>}[r]^-{\dbar} & \Omega^{0,1}(\CC^2; R)_{\gamma_{0,1}} \ar[r]^-{\dbar} & \Omega^{0,2}(\CC^2; R)_{\gamma_{0,2} } \\
-%\Omega^0(\CC^2; R^*)_{\beta_{2,0}} \ar[r]^-{\dbar} & \Omega^{2,1}(\CC^2; R^*)_{\beta_{2,1}} \ar@{.>}[r]^-{\dbar} & \Omega^{2,2}(\CC^2 , R^*)_{\beta_{2,2}} \\
-%\Omega^{2,2} (\CC^2; R^*)_{\Tilde{\beta}_{2,2}} \ar@{.>}[r]^-{=}& \Omega^{2,2}(\CC^2; R^*)_{\Bar{\phi}} & \Omega^{0,0}(\CC^2; R)_{\Bar{\phi}^*} \ar@{.>}[r]^-{=} & \Omega^{0,0}(\CC^2; R)_{\Tilde{\gamma}_0}
-%}
-%\]
-%This complex is equivalent to the holomorphic $\beta\gamma$ system on $\CC^2_{\dbar}$ with values in $R$. 
-%
-%\item[(3)] 
-%We now observe that the interacting parts of the twisted theory agree with the interactions of holomorphic BF theory coupled to the $\beta\gamma$ system. 
-%\end{itemize}
+\subsection{\texorpdfstring{$\cN=2$}{N=2} Super Yang--Mills} \label{4d_2_section}
 
-%There are symmetries in the untwisted theory that will remain symmetries upon twisting. 
-%\begin{itemize}
-%\item The twisted theory is a shifted cotangent theory in the BV formalism. 
-%This means that the action functional of the holomorphic theory must be linear in the fields $B$ and $\beta$ of the holomorphic BF and holomorphic $\beta\gamma$ system, respectively. 
-%\item The action functional is invariant with respect to the group ${\rm U}(2)$ symmetry, which is the stabilizer of the fixed holomorphic supercharge.
-%\item The action functional is translation invariant, this follows from the fact that the untwisted theory has a 
-%\end{itemize}
-%
-%The first symmetry we exploit is translation invariance. 
-%There is a general fact that translation invariant couplings can be described neatly in terms of the Lie algebra homology / cohomology of a certain Lie algebra. 
-%Let $\fg$ and $R$ be a Lie algebra together with a representation.
-%Define the following graded Lie algebra
-%\[
-%\sG_{\cN=1} = \left(\fg[z_1,z_2] \ltimes \d^2 z \; \fg^* [z_1,z_2] [-1]\right) \oplus \left(R[z_1,z_2][-1] \oplus \d^2 z \; R^*[z_1,z_2]\right) .
-%\]
-%One can think of the Lie algebra $\sG_{\cN=1}$ as the $\infty$-jets at $0 \in \CC^2$ \brian{finish} of the Lie algebra describing at 
-%Also, denote by $\CC^2_{\rm trans}$ the abelian Lie algebra which acts on $\sG_{\cN=1}$ by the constant coefficient holomorphic vector fields $\partial_1 = \frac{\partial}{\partial z_1}$ and $\partial_2 = \frac{\partial}{\partial z_2}$. 
-%
-%
-%\begin{prop}
-%The equivalence classes of translation invariant couplings between holomorphic BF theory with values in $\fg$ and the holomorphic $\beta\gamma$ system with values in $R$ on the complex manifold $\CC^2$ are in bijective correspondence with the Lie algebra homology / cohomology:
-%\[
-%\clieu_\bu\left(\CC^2_{\rm trans}, \clie^\bu(\sG_{\cN=1})\right) [2] .
-%\]
-%\end{prop}
+The 4d $\cN=2$ super Yang--Mills theory is obtained by a dimensional reduction from the 6d $\cN=(1, 0)$ super Yang--Mills theory with matter valued in a symplectic $\fg$-representation $U$. It admits the $R$-symmetry group $G_R=\SU(W)\times \U(1)$ with $W$ the two-dimensional representation on which $\U(1)$ acts with weight $1$.
 
-
-\subsection{\texorpdfstring{$\cN=2$}{N=2} Super Yang-Mills Theory} \label{4d_2_section}
-
-The general setup for $\cN=2$ super Yang-Mills is described in Section \ref{sec:SYM} which we now recal.
-Let $\fg$ be a complex Lie algebra equipped with a symmetric bilinear nondegenerate invariant pairing and $U$ a complex symplectic $\fg$-representation. 
-We consider $\cN=2$ super Yang-Mills theory on $M = \RR^4$ with the Euclidean metric. 
-We fix $W=\CC^2$. The $R$-symmetry group depends on the type of the representation $U$:
+\vspace{-10pt}
+\paragraph{Fields:} The BRST fields are given by:
 \begin{itemize}
-\item The theory admits an $R$-symmetry group $G_R=\U(2)$ with $W$ the two-dimensional defining representation.
-%\item If $U = T^* R=R\oplus R^*$ for a $\fg$-representation $R$, then the theory admits an $R$-symmetry group $G_R=\U(2)\times \U(1)$, where $\U(1)$ acts trivially on $W$, with weight $1$ on $R$ and with weight $-1$ on $R^*$.
+\item Gauge field $A \in \Omega^1(M; \fg)$.
+\item Scalar fields $a, \wt a\in\Omega^0(M;\fg)$.
+\item Gauge fermions $(\lambda_+, \lambda_-) \in \Omega^0(M; \Pi S_+ \otimes W\otimes \fg \oplus \Pi S_- \otimes W^*\otimes \fg)$.
+\item Matter boson $\phi\in\Omega^0(M; U\otimes W)$.
+\item Matter fermions $(\psi_-, \psi_+)\in\Omega^0(M; \Pi S_+\otimes U\oplus \Pi S_-\otimes U)$.
+\item A ghost field $A_0\in \Omega^0(M; \gg)[1]$.
 \end{itemize}
 
-\paragraph{Twisting data:}
-There are three classes of square-zero supercharge in the 4d $\mc N=2$ supersymmetry algebra, distinguished by the ranks of the two summands $(Q_+,Q_-) \in S_+ \otimes W \oplus S_- \otimes W^*$.
+$\U(1)\subset G_R$ has the following action: weight $2$ on $a$, weight $-2$ on $\wt a$ and weight $\pm 1$ on $\lambda_\pm,\psi_\pm$.
+
+There are three classes of square-zero supercharge in the 4d $\mc N=2$ supersymmetry algebra, distinguished by the ranks of the two summands $(Q_+,Q_-) \in S_+ \otimes W \oplus S_- \otimes W^*$:
 \begin{itemize}
- \item[1.] Rank $(1,0)$ and $(0,1)$ supercharges automatically square to zero.  
+ \item Rank $(1,0)$ and $(0,1)$ supercharges automatically square to zero.  
  The corresponding twists are holomorphic.
- Such twists factor through a copy of the $\cN = 1$ supersymmetry algebra.
- \item[2.] Rank $(2,0)$ and $(0,2)$ supercharges also automatically square to zero. 
- The corresponding twists are topological (the \emph{Donaldson twist}).
- \item[3.] Rank $(1,1)$ square-zero supercharges have three invariant directions.
+ Such twists factor through a copy of the $\cN = 1$ supersymmetry algebra. As before, they admit a $\ZZ$-grading and a twisting homomorphism from $\MU(2)$.
+ \item Rank $(2,0)$ and $(0,2)$ supercharges also automatically square to zero. 
+ The corresponding twists are topological (the \emph{Donaldson twist}). 
+ \item Rank $(1,1)$ square-zero supercharges have three invariant directions.
 \end{itemize}
 
 \subsubsection{Holomorphic twist}
 \label{sect:4d_2_holomorphictwist}
 
-Take a nonzero square-zero rank $(1,0)$ supercharge $Q\in S_+ \otimes W$.
-We choose a basis for $W$ given by $\{w_1,w_2\}$, and for concreteness we take $Q=q_+ \otimes w_1$ for some nonzero vector $q_+ \in S_+$. 
-Such a $Q$ is automatically holomorphic and the choice of $Q$ is equivalent to the data of a K\"ahler structure $L$ on $V_\RR$ together with a complex half-density on $L$.
-
-Under the embedding $\MU(L) \subset \Spin(V_\RR)$, the $S_+$ splits as
+Choose a basis for $W$ given by $\{w_1, w_2\}$ and for concreteness we take $Q=q_+ \otimes w_1$ for some nonzero vector $q_+ \in S_+$. Denote by $L\subset V$ the image of $\Gamma(Q, -)\colon S_-\rightarrow V$. Under the embedding $\MU(L) \subset \Spin(V_\RR)$, the semi-spin representations decompose as
 \[
-S_+ = \det(L)^{-1/2} \oplus \det(L)^{1/2} \;\; , \;\; S_- = L \otimes \det(L)^{-1/2} .
+S_+ = \det(L)^{-1/2} \oplus \det(L)^{1/2},\qquad S_- = L \otimes \det(L)^{-1/2} .
 \]
+
+For an integer $n\in\ZZ$ consider the homomorphism $\alpha_n\colon \U(1)\rightarrow G_R=\SU(2)\times \U(1)$ under which $w_1$ has weight $1$ and $w_2$ has weight $-1$ and the projection on the second factor is given by $z\mapsto z^n$.
 
 We consider the twisting homomorphism 
 \[
-\phi \colon \MU(2) \xto{\det^{1/2}} U(1) \hookrightarrow \U(2)
+\phi \colon \MU(2) \xto{\det^{1/2}} \U(1) \hookrightarrow G_R
 \]
-for which $Q$ becomes scalar. 
-\brian{I think we want that second map to be $1 \mapsto (1, -1)$, actually.}
-Under this twisting homomorphism we have an $\MU(2)$-identification $W = \det(L)^{1/2} \oplus \det(L)^{1/2}$ and hence $S_+ \otimes W = (\CC \oplus \det(L))^{\oplus 2}$.
-By construction, $Q_+$ lies in the first scalar factor. 
-
-The last piece of the twisting data is the homomorphism $\alpha : \U(1) \hookrightarrow \U(2)$ which embeds diagonally into the Cartan of $\U(2)$. 
-This homomorphism is compatible with the twisting homomorphism $\phi$, so the twisted theory is $\ZZ$-graded.
-\brian{check that $\phi$ and $\alpha$ commute.}
-
-%Moreover, we have an isomorphism $\alpha\colon \U(1)\cong\Spin(2, \RR)$, so the theory is $\ZZ$-graded and carries an $\MU(2)$-action. 
-%In fact, this action will factor through $\U(4)$ by a direct observation.
+under which we have an $\MU(2)$-identification $W=\det(L)^{-1/2}w_1 \oplus \det(L)^{1/2}w_2$, so that
+\[S_+\otimes W\cong \CC Q\oplus \det(L)^{-1}\oplus \CC\oplus \det(L).\]
 
 \vspace{-10pt}
 \paragraph{Fields:} The BRST fields are given by:
 \begin{itemize}
 \item Gauge fields $A_{1, 0}\in\Omega^{1, 0}(M; \gg)$ and $A_{0, 1}\in\Omega^{0, 1}(M; \gg)$.
-\item Gauge scalar fields $\Tilde{a} \in \Omega^{0}(M; \gg)$ and $a \in\Omega^{0}(M; \gg)$;
-\item Gauge fermions $\chi \in \Omega^0(M ; \Pi \gg)$, $\xi \in \Omega^{2,0}(M ; \Pi \gg)$, $B \in \Omega^{0,2}(M ; \gg)$, $b \in \Omega^{0,1}(M ; \gg)$, $\rho \in \Omega^{1,0}(M ; \gg)$,  $\Tilde{\chi} \in \Omega^0(M ; \gg)$.
-%\item Matter bosons $\nu \in \Omega^0(M ; U \otimes K^{-1/2})$, $\phi \in \Omega^0(M ; U \otimes K^{1/2})$.
+\item Scalar fields $\Tilde{a} \in \Omega^{0}(M; \gg)$ and $a \in\Omega^{0}(M; \gg)$;
+\item Gauge fermions $\chi \in \Omega^0(M ; \gg)[-1]$, $\xi \in \Omega^{2,0}(M ; \gg)[1]$, $B \in \Omega^{0,2}(M ; \gg)[-1]$, $b \in \Omega^{0,1}(M ; \gg)[-1]$, $\rho \in \Omega^{1,0}(M ; \gg)[1]$,  $\Tilde{\chi} \in \Omega^0(M ; \gg)[1]$.
 \item Matter bosons $\nu\in\Omega^{0,0}(M; U)$, $\phi\in\Omega^0(M; U)$.
-%\item Matter fermions $\psi \in \Omega^{0,1} (M ; \Pi U \otimes K^{1/2})$, $\varphi \in \Omega^{0} (M ; U \otimes K^{1/2})$, $\Tilde{\nu} \in \Omega^0(M ; U \otimes K^{-1/2})$.
-\item Matter fermions $\psi \in \Omega^{0,1} (M ; \Pi U)$, $\varphi \in \Omega^{2,0} (M ; U)$, $\Tilde{\nu} \in \Omega^{0}(M ; U \otimes K^{-1})$.
+\item Matter fermions $\psi \in \Omega^{0,1} (M ;  U)[-1]$, $\varphi \in \Omega^{2,0} (M ; U)[1]$, $\Tilde{\nu} \in \Omega^{0,2}(M ; U)[1]$.
 \item A ghost field $c\in \Omega^0(M; \gg)[1]$.
 \end{itemize}
 
 \begin{thm}
-The holomorphic twist of 4d $\cN=2$ super Yang--Mills on $M=\RR^4$ is perturbatively equivalent to the holomorphic BF theory on $M\cong\CC^2$ with the space of fields $T^*[-1] \map(M, U \ham g)$. 
+The holomorphic twist of 4d $\cN=2$ super Yang--Mills on $M=\RR^4$ is perturbatively equivalent to the holomorphic BF theory on $M\cong\CC^2$ with the space of fields $T^*[-1] \map(M, (U\oplus \fg)/\fg)$. 
 Moreover, the equivalence is $\U(2)$-equivariant.
 \label{thm:4dholomorphictwist}
 \end{thm}
 \begin{proof}
-4d $\cN=1$ super Yang--Mills theory is obtained by dimensionally reducing 6d $\cN=(1,0)$ super Yang--Mills theory. Under dimensional reduction the 6d fields from Section \ref{sec:6dholomorphictwist} decompose as follows:
+4d $\cN=2$ super Yang--Mills theory is obtained by dimensionally reducing 6d $\cN=(1,0)$ super Yang--Mills theory. Under dimensional reduction the 6d fields from Section \ref{sec:6dholomorphictwist} decompose as follows:
 \begin{align*}
 A_{1, 0}&\rightsquigarrow A_{1, 0}, \Tilde{a} \\
 A_{0, 1}&\rightsquigarrow A_{0, 1}, a \\
@@ -2658,7 +2519,7 @@ B&\rightsquigarrow B, b \\
 \psi & \rightsquigarrow \psi, \varphi . \\
 \end{align*}
 
-The claim about the underlying $\ZZ/2$-graded theories follows by applying dimensional reduction (Proposition \ref{CS_to_BF_diml_red_prop}) to the computation of the minimal twist of 5d $\cN=1$ super Yang--Mills theory (Theorem \ref{thm: 5dholtwist}). 
+The claim about the underlying $\ZZ/2$-graded theories follows by applying dimensional reduction (Proposition \ref{CS_to_BF_diml_red_prop}) to the computation of the minimal twist of 5d $\cN=1$ super Yang--Mills theory (Theorem \ref{thm:5dminimaltwist}).
 
 Next, we check that the equivalence respects  the gradings and the $\MU(2)$-action. 
 Indeed, the equivalence given by Theorem \ref{thm:5dminimaltwist} eliminates fields $A_{1, 0}, \Tilde{a}, \rho, \chi, \Tilde{\chi}$ and hence the underlying local $L_\infty$ algebra after the twist becomes
@@ -2685,9 +2546,7 @@ The matter sector in the twisted theory only depends on $U$ as a complex $\fg$-r
 \subsubsection{Rank \texorpdfstring{$(2,0)$}{(2,0)} topological twist}
 \label{sect:4d_2_donaldson}
 
-Next we discuss the case of the topological twist. 
-We are going to prove that it is perturbatively trivial. 
-In fact, it will be useful to study a degeneration of the topological twist to a holomorphic twist and describe the corresponding family of twisted theories.
+Next we discuss the case of the topological twist. As in Section \ref{sect:8dtopologicaltwist} it will be useful to consider a family of topological supercharges degenerating to a rank $(1, 0)$ holomorphic supercharge.
 
 Let $S^{2n}_\pm$ be the semi-spin representations of $\Spin(2n , \CC)$.
 The decomposition of $S^{6}_+$ under the subgroup $\Spin(4 , \CC) \times \Spin(2, \CC) \subset \Spin(6,\CC)$ is
@@ -2700,7 +2559,7 @@ The odd part of the $\cN=2$ supersymmetry algebra is
 \]
 where $W_+$ is a complex two-dimensional symplectic vector space. 
 From this, we have identifications $W = W_+ \otimes S_+^2$ and $W^* = W_+ \otimes S_-^2$. 
-Let $\{u \otimes \alpha_+, v \otimes \alpha_+\}$ be a basis for $W = W_+ \otimes S_+^2$ where $\{u,v\}$ is a symplectic basis for $W_+$ and $s_+$ is a basis element for $S_+^2$. 
+Let $\{u \otimes \alpha_+, v \otimes \alpha_+\}$ be a basis for $W = W_+ \otimes S_+^2$ where $\{u,v\}$ is a symplectic basis for $W_+$ and $\alpha_+$ is a basis element for $S_+^2$. 
 %A general supercharge $Q \in S_+^4 \otimes W$ is of the form
 %\[
 %Q = s_+ \otimes u \otimes \alpha_+ + s_+' \otimes v \otimes \alpha_+ 
