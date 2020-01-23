@@ -2517,7 +2517,7 @@ under which we have an $\MU(2)$-identification $W=\det(L)^{-1/2}w_1 \oplus \det(
 \end{itemize}
 
 \begin{thm}
-The holomorphic twist of 4d $\cN=2$ super Yang--Mills on $M=\RR^4$ is perturbatively (with respect to the choice of twisting data $\alpha = \alpha_n$) is equivalent to the holomorphic BF theory on $M\cong\CC^2$ with the space of fields $T^*[-1] \map(M, (U\oplus \fg)/\fg)$. 
+The holomorphic twist of 4d $\cN=2$ super Yang--Mills on $M=\RR^4$ is perturbatively (with respect to the choice of twisting data $\alpha = \alpha_n$) is equivalent to the holomorphic BF theory on $M\cong\CC^2$ with the space of fields $T^*[-1] \map(M, (U[2n] \oplus \fg[-4n+2])/\fg)$. 
 Moreover, the equivalence is $\U(2)$-equivariant.
 \label{thm:4dholomorphictwist}
 \end{thm}
@@ -2539,14 +2539,26 @@ Indeed, the equivalence given by Theorem \ref{thm:5dminimaltwist} eliminates fie
 \xymatrix@R=0.5cm@C=0.5cm{
 \ul{0} & \ul{1} & \ul{2} & \ul{3} & \\ 
 \Omega^0(\CC^2; \gg)_c \ar[r] &\Omega^{0,1}(\CC^2; \gg)_{A_{0,1}} \ar[r] &\Omega^{0,2}(\CC^2; \gg)_{B} \\
- & \Omega^0(\CC^2; \gg)_a \ar[r] &\Omega^{0,1}(\CC^2; \gg)_{b} \ar[r] &\Omega^{0,2}(\CC^2; \gg)_{\xi^*} \\
   & \Omega^{2,0}(\CC^2 ; \gg)_{B^*} \ar[r] & \Omega^{2,1}(\CC^2 ; \gg)_{A_{0,1}^*} \ar[r] & \Omega^{2,2}(\CC^2 ; \gg)_{c^*} \\
+  }
+\]
+
+\[
+\xymatrix@R=0.5cm@C=0.5cm{
+\ul{-4n+2} & \ul{-4n+3} & \ul{-4n+4} & \cdots & \ul{4n-1} & \ul{4n} & \ul{4n+1} \\ 
+ &&&& \Omega^0(\CC^2; \gg)_a \ar[r] &\Omega^{0,1}(\CC^2; \gg)_{b} \ar[r] &\Omega^{0,2}(\CC^2; \gg)_{\xi^*} \\
  \Omega^{2,0}(\CC^2; \gg)_\xi \ar[r] &\Omega^{2,1}(\CC^2; \gg)_{b^*} \ar[r] &\Omega^{2,2}(\CC^2; \gg)_{a^*}  \\
-& \Omega^0(\CC^2 ; U)_\phi \ar[r] & \Omega^{0,1}(\CC^2 ; U)_\psi \ar[r] & \Omega^{0,2}(\CC^2 ; U)_{\varphi^*} \\
-\Omega^{2,0}(\CC^2 ; U)_{\varphi} \ar[r] & \Omega^{2,1}(\CC^2 ; U)_{\psi^*} \ar[r] & \Omega^{2,2}(\CC^2 ; U)_{\phi^*}
 }
 \]
-concentrated in cohomological degrees $0, \dots, 3$. These fields have the same degrees as in the holomorphic BF theory and the $L_\infty$ structure is obtained by the natural square zero extension of the dg Lie algebra in the first line by the remaining part of the diagram.
+
+\[
+\xymatrix@R=0.5cm@C=0.5cm{
+\ul{-2n+1} & \ul{-2n+2} & \ul{-2n+3} & \cdots & \ul{2n} & \ul{2n+1} & \ul{2n+2} \\ 
+\Omega^0(\CC^2 ; U)_\phi \ar[r] & \Omega^{0,1}(\CC^2 ; U)_\psi \ar[r] & \Omega^{0,2}(\CC^2 ; U)_{\varphi^*} \\
+& & & & \Omega^{2,0}(\CC^2 ; U)_{\varphi} \ar[r] & \Omega^{2,1}(\CC^2 ; U)_{\psi^*} \ar[r] & \Omega^{2,2}(\CC^2 ; U)_{\phi^*}
+}
+\]
+These fields have the same degrees as in the holomorphic BF theory and the $L_\infty$ structure is obtained by the natural square zero extension of the dg Lie algebra in the first line by the remaining part of the diagram.
 Finally, we observe that the twisted theory manifestly descends to a $\U(2)$-equivariant theory along the natural homomorphism $\MU(2) \to \U(2)$, and all identifications are $\U(2)$-equivariant. 
 \end{proof}
 
