@@ -32,7 +32,7 @@
 \tikzstyle{dimension} = [circle, text centered, text width=0.7cm, minimum height=0.7cm, draw=black]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
-\title{A Catalogue of Twists of Supersymmetric Gauge Theories}
+\title{A Taxonomy of Twists of Supersymmetric Yang--Mills Theories}
 \author{Chris Elliott\and Pavel Safronov \and Brian Williams}
 
 \date{\today}
@@ -2556,10 +2556,23 @@ B&\rightsquigarrow B, b \\
 \psi & \rightsquigarrow \psi, \varphi . \\
 \end{align*}
 
-The claim about the underlying $\ZZ/2$-graded theories follows by applying dimensional reduction (Proposition \ref{CS_to_BF_diml_red_prop}) to the computation of the minimal twist of 5d $\cN=1$ super Yang--Mills theory (Theorem \ref{thm:5dminimaltwist}).
+The claim about the underlying $\ZZ/2$-graded $\MU(2)$-equivariant theories follows by applying dimensional reduction (Proposition \ref{CS_to_BF_diml_red_prop}) to the computation of the minimal twist of 5d $\cN=1$ super Yang--Mills theory (Theorem \ref{thm:5dminimaltwist}).
 
-Next, we check that the equivalence respects  the gradings and the $\MU(2)$-action. 
-Indeed, the equivalence given by Theorem \ref{thm:5dminimaltwist} eliminates fields $A_{1, 0}, \Tilde{a}, \rho, \chi, \Tilde{\chi}$ and hence the underlying local $L_\infty$ algebra after the twist becomes
+Next, we check that the equivalence respects  the gradings. Indeed, the equivalence given by Theorem \ref{thm:5dminimaltwist} eliminates fields $A_{1, 0}, \Tilde{a}, \rho, \chi, \Tilde{\chi}$. The rest of the fields organize into the following collections:
+\begin{align*}
+c+A_{0, 1}+B&\in\Omega^{0, \bullet}(M; \fg)[1] \\
+B^*+A^*_{0, 1}+ c^*&\in\Omega^{2, \bullet}(M; \fg) \\
+a + b + \xi^*&\in\Omega^{0, \bullet}(M; \fg)[2-4n] \\
+\xi + b^* + a^*&\in\Omega^{2, \bullet}(M; \fg)[4n-1] \\
+\phi + \psi + \varphi^*&\in\Omega^{0, \bullet}(M; U\otimes K_M^{1/2})[2n] \\
+\varphi + \psi^* + \phi^* &\in\Omega^{2, \bullet}(M; U\otimes K_M^{-1/2})[1-2n]
+\end{align*}
+
+These fields have the same degrees as in the holomorphic BF theory.
+
+\begin{comment}
+and hence the underlying local $L_\infty$ algebra after the twist becomes
+
 \[
 \xymatrix@R=0.5cm@C=0.5cm{
 \ul{0} & \ul{1} & \ul{2} & \ul{3} & \\ 
@@ -2583,13 +2596,8 @@ Indeed, the equivalence given by Theorem \ref{thm:5dminimaltwist} eliminates fie
 & & & & \Omega^{2,0}(\CC^2 ; U)_{\varphi} \ar[r] & \Omega^{2,1}(\CC^2 ; U)_{\psi^*} \ar[r] & \Omega^{2,2}(\CC^2 ; U)_{\phi^*}
 }
 \]
-These fields have the same degrees as in the holomorphic BF theory and the $L_\infty$ structure is obtained by the natural square zero extension of the dg Lie algebra in the first line by the remaining part of the diagram. \pavel{Brian}
+\end{comment}
 \end{proof}
-
-%\begin{remark}
-%The matter sector in the untwisted theory depends on $U$ as a complex symplectic $\fg$-representation. 
-%The matter sector in the twisted theory only depends on $U$ as a complex $\fg$-representation, the dependence on the symplectic form disappears when we twist. \pavel{Brian} \brian{not quite true, I just meant to say that the shifted symplectic structure no longer explicitly depends on the symplectic structure of $U$, but that's not very precise. I'm deleting this comment.}
-%\end{remark}
 
 \subsubsection{Rank \texorpdfstring{$(2,0)$}{(2,0)} topological twist}
 \label{sect:4d_2_donaldson}
@@ -2636,17 +2644,17 @@ Observe that the quadruple of fields $\{\chi^*, \chi, \wt\chi^*, \wt\chi\}$ has 
 where $S_{BF}$ is the action functional of the holomorphic twist at $t=0$ found in the previous section. 
 Since the extra terms are quadratic in the fields, the claim is reduced to a comparison of the underlying local $L_\infty$ algebra of the twisted theory and that of the holomorphic Hodge theory. The former is given by (cf. the proof of Theorem \ref{thm:4dholomorphictwist})
 \[
-\xymatrix@R=0.5cm@C=0.5cm{
+\xymatrix@R=0.5cm@C=0cm{
 \ul{-1} & \ul{0} & \ul{1} & \ul{2} & \ul{3} & \ul{4} \\ 
 & \Omega^0(\CC^2; \gg)_c \ar[r] &\Omega^{0,1}(\CC^2; \gg)_{A_{0,1}} \ar[r] &\Omega^{0,2}(\CC^2; \gg)_{B} \\
 \Omega^0(\CC^2; \gg)_a  \ar@{-->}^{t\id}[ur] \ar[r] &\Omega^{0,1}(\CC^2; \gg)_{b}  \ar@{-->}^{t\id}[ur] \ar[r] &\Omega^{0,2}(\CC^2; \gg)_{\xi^*}  \ar@{-->}^{t\id}[ur] \\
 & &  \Omega^{2,0}(\CC^2 ; \gg)_{B^*}  \ar@{-->}^{t\id}[dr] \ar[r] & \Omega^{2,1}(\CC^2 ; \gg)_{A_{0,1}^*} \ar[r]  \ar@{-->}^{t\id}[dr] & \Omega^{2,2}(\CC^2 ; \gg)_{c^*}  \ar@{-->}^{t\id}[dr] \\
 & & & \Omega^{2,0}(\CC^2; \gg)_\xi \ar[r] &\Omega^{2,1}(\CC^2; \gg)_{b^*} \ar[r] &\Omega^{2,2}(\CC^2; \gg)_{a^*}  \\
-& & \Omega^0(\CC^2 ; U)_\phi \ar[r] & \Omega^{0,1}(\CC^2 ; U)_\psi \ar[r] & \Omega^{0,2}(\CC^2 ; U)_{\varphi^*} \\
-& \Omega^{2,0}(\CC^2 ; U)_{\varphi} \ar[r]  \ar@{-->}^{t\id}[ur] & \Omega^{2,1}(\CC^2 ; U)_{\psi^*} \ar[r]  \ar@{-->}^{t\id}[ur]  & \Omega^{2,2}(\CC^2 ; U)_{\phi^*}  \ar@{-->}^{t\id}[ur]
+& & \Omega^0(\CC^2 ; U\otimes K^{1/2})_\phi \ar[r] & \Omega^{0,1}(\CC^2 ; U\otimes K^{1/2})_\psi \ar[r] & \Omega^{0,2}(\CC^2 ; U\otimes K^{1/2})_{\varphi^*} \\
+& \Omega^{2,0}(\CC^2 ; U\otimes K^{-1/2})_{\varphi} \ar[r]  \ar@{-->}^{t\id}[ur] & \Omega^{2,1}(\CC^2 ; U\otimes K^{-1/2})_{\psi^*} \ar[r]  \ar@{-->}^{t\id}[ur]  & \Omega^{2,2}(\CC^2 ; U\otimes K^{-1/2})_{\phi^*}  \ar@{-->}^{t\id}[ur]
 }
 \]
-which is exactly the local $L_\infty$ algebra of the holomorphic Hodge theory. \pavel{Brian}
+which is exactly the local $L_\infty$ algebra of the holomorphic Hodge theory.
 \end{proof}
 
 \begin{corollary}
@@ -2727,7 +2735,8 @@ and we consider the supercharge $Q\in S_+\otimes W$ of rank $(1, 0)$ contained i
 
 We consider a homomorphism $\alpha\colon \U(1)\rightarrow G_R$ under which $L\otimes \det(L)^{-1/2}\subset W$ has weight $-1$ and $w_1,w_2$ have weight $1$. In particular, $Q$ has $\alpha$-weight $1$.
 
-The BRST fields are given by:
+\vspace{-10pt}
+\paragraph{Fields:} In the notation of Section \ref{sect:4d_2_holomorphictwist}, the BRST fields are given by:
 \begin{itemize}
 \item Gauge fields $A_{1, 0}\in\Omega^{1, 0}(M; \gg)$ and $A_{0, 1}\in\Omega^{0, 1}(M; \gg)$.
 \item Scalar fields $\Tilde{a} \in \Omega^{0}(M; \gg)[-2]$ and $a \in\Omega^{0}(M; \gg)[2]$;
@@ -2737,19 +2746,30 @@ The BRST fields are given by:
 \item A ghost field $c\in \Omega^0(M; \gg)[1]$.
 \end{itemize}
 
+Note that the $\MU(2)$-action on fields factors through a $\U(2)$-action.
+
 \begin{theorem}
-The holomorphic twist of 4d $\cN=4$ super Yang--Mills on $M=\RR^4$ is perturbatively equivalent to the BF theory with the space of fields $T^*[-1] \map(\CC^2_{\rm Dol} , B \fg)$. Moreover, the equivalence is $\MU(2)$-equivariant.
+The holomorphic twist of 4d $\cN=4$ super Yang--Mills on $M=\RR^4$ is perturbatively equivalent to the BF theory with the space of fields $T^*[-1] \map(\CC^2_{\rm Dol} , B \fg)$. Moreover, the equivalence is $\U(2)$-equivariant.
 \label{thm:4d4holomorphictwist}
 \end{theorem}
 \begin{proof}
 The 4d $\cN=4$ super Yang--Mills theory viewed as a $\cN=2$ theory is 4d $\cN=2$ Yang--Mills theory with matter valued in $U=T^*\fg$. Under this correspondence $\alpha\colon \U(1)\rightarrow G_R$ defined above coincides with $\alpha_0$ from Section \ref{sect:4d_2_holomorphictwist}. From Theorem \ref{thm:4dholomorphictwist} we obtain that the twist is given by $T^*[-1] \map(\CC^2 , (T^*\fg\otimes K_{\CC^2}^{1/2})\ham \fg)$ as a $\ZZ$-graded theory.
 
-Note, however, that the twisting homomorphism used in Section \ref{sect:4d_2_holomorphictwist} differs from the twisting homomorphism defined above. In particular, this equivalence is not $\MU(2)$-equivariant. \pavel{Brian}
+Note, however, that the twisting homomorphism used in Section \ref{sect:4d_2_holomorphictwist} differs from the twisting homomorphism defined above. In particular, this equivalence is not $\U(2)$-equivariant. In the present case the fields organize in the following collections:
+\begin{align*}
+c+A_{0, 1}+B&\in\Omega^{0, \bullet}(M; \fg)[1] \\
+\phi + \psi + \varphi^*&\in\Omega^{1, \bullet}(M; \fg) \\
+\xi + b^* + a^*&\in\Omega^{2, \bullet}(M; \fg)[-1] \\
+\\
+a + b + \xi^*&\in\Omega^{0, \bullet}(M; \fg)[2] \\
+\varphi + \psi^* + \phi^* &\in\Omega^{1, \bullet}(M; \fg)[1] \\
+B^*+A^*_{0, 1}+ c^*&\in\Omega^{2, \bullet}(M; \fg)
+\end{align*}
+These are exactly the fields in $T^*[-1] \map(\CC^2_{\rm Dol} , B \fg)$.
 \end{proof}
 
-\subsubsection{Topological A Twist}
+\subsubsection{Rank (2, 0) twist}
 \label{sect:4dAtwist}
-
 
 \vspace{-10pt}
 \paragraph{Fields:} We can describe the BRST fields of $\mc N=4$ super Yang-Mills by restricting the 5d $\mc N=2$ fields from Section \ref{5d_2_section} to representations of the group $\mr O(4)$.  In addition to the ghost $c$, the fields we obtain are
@@ -2762,20 +2782,17 @@ Note, however, that the twisting homomorphism used in Section \ref{sect:4d_2_hol
 \chris{holomorphic deforming to rank $(2,0)$, proven above} $\mr{Map}(\CC^2_{\mr{Dol}}, B\gg_{\mr{Hod}})$.
 \end{theorem}
 
-\subsubsection{Partially Topological Twist}
+\subsubsection{Rank (1, 1) twist}
 \label{sect:4d4partialtwist}
 
-\subsubsection{Kapustin Twist}
+\subsubsection{Rank (2, 1) twist}
 \label{sect:4dKapustintwist}
 
 \begin{theorem}
 \chris{Rank $(1,1)$ deforming to rank $(2,1)$, the former is done above, the deformation doesn't come from dimensional reduction.  However, we know how $(1,0)$ deforms to $(2,0)$ (further supercharge acts by the differential operator $\dd_2$), so apply the same deformation to $(1,1)$.} $\mr{Map}(\CC_{\mr{Dol}} \times \RR^2_{\mr{dR}}, B\gg_{\mr{Hod}})$.
 \end{theorem}
 
-\subsubsection{Topological B Twist}
-\label{sect:4dBtwist}
-
-\subsubsection{Topological qGL Twist}
+\subsubsection{Rank (2, 2) twist}
 \label{sect:4dqgltwist}
 
 \begin{theorem}
