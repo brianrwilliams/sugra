@@ -2795,19 +2795,35 @@ From Theorem \ref{thm:4dDonaldsontwist} we obtain that the twist is $\Sect\left(
 The twisting homomorphism used in Section \ref{sect:4d_2_holomorphictwist} differs from the twisting homomorphism defined above. 
 In particular, this equivalence is not $\U(2)$-equivariant. In the present case the fields decompose in the same fashion as in the proof of Theorem \ref{thm:4d4holomorphictwist} which are precisely the fields of $\map(\CC_{\rm Dol}, B \fg_{\rm Hod})$.
 \end{proof}
-%\vspace{-10pt}
-%\paragraph{Fields:} We can describe the BRST fields of $\mc N=4$ super Yang-Mills by restricting the 5d $\mc N=2$ fields from Section \ref{5d_2_section} to representations of the group $\mr O(4)$.  In addition to the ghost $c$, the fields we obtain are
-%\begin{itemize}
-% \item Bosons: a gauge field $A \in \Omega^1(\RR^4; \gg)$, and six scalars, which we'll denote by $\phi \in \Omega^1(\RR^4; \gg \otimes \wedge^2(W))$.
-% \item Fermions: four spinors, which we'll denote by $(\lambda_+ \otimes u_+, \lambda_- \otimes u_u) \in \Omega^0(\RR^5; (S_+ \otimes W \oplus S_- \otimes W^*) \otimes \gg)$.
-%\end{itemize}
-
 
 \subsubsection{Rank (1, 1) twist}
 \label{sect:4d4partialtwist}
 
+Next we consider the twist with respect to a rank $(1,1)$ supercharge. As in Section \ref{sect:4d_2_11} the twist is compatible with the group $G = \Spin(2, \RR) \times \Spin(2, \RR)$. However, we will use a different twisting homomorphism. We denote each factor by $\Spin(2, \RR)_i$, $i=1,2$, and by $S_{\pm, i}$ the semi-spin representations of the factor $\Spin(2, \RR)_i$.
+
+The twisting homomorphism is
+\[
+\phi \colon \Spin(2, \RR)_1 \times \Spin(2, \RR)_2 \to G_R=\SL(W),
+\]
+under which $W$ splits as
+\begin{equation}
+W\cong (S_{+, 1}\otimes S_{+, 2}\oplus S_{-, 1}\otimes S_{-, 2})\oplus (S_{+, 1}\otimes S_{-, 2}\oplus S_{-, 1}\otimes S_{+, 2}).
+\label{eq:4d411decomposition}
+\end{equation}
+
+In this case $S_+\otimes W$ and $S_-\otimes W$ have two-dimensional trivial $G$-subrepresentations. Any scalar rank $(1, 1)$ supercharge is square-zero. We choose a homomorphism $\alpha\colon \U(1)\rightarrow G_R$ under which the first two summands in \eqref{eq:4d411decomposition} have weight $1$ and the last two summands have weight $-1$. This makes the chosen rank $(1, 1)$ supercharge have weight $1$.
+
+\begin{theorem}
+The rank (1, 1) twist of 4d $\cN=4$ super Yang--Mills on $M=\RR^4$ is perturbatively equivalent to the generalized BF theory with the space of fields $T^*[-1] \map(\CC_{\rm Dol}\times \RR^2_{\mathrm{dR}}, B \fg)$. Moreover, the equivalence is $\Spin(2, \RR)\times \Spin(2, \RR)$-equivariant.
+\label{thm:4d4partialtwist}
+\end{theorem}
+\begin{proof}
+The 4d $\cN=4$ super Yang--Mills theory viewed as a $\cN=2$ theory is 4d $\cN=2$ Yang--Mills theory with matter valued in $U=T^*\fg$. By Theorem \ref{thm:4d_11_twist} we obtain that the twist is equivalent to $T^*[-1]\map(\CC\times \RR^2_{\mathrm{dR}}, \fg/\fg)$ as a $\ZZ$-graded theory. Let us now analyze the $\Spin(2, \RR)\times \Spin(2, \RR)$-action.
+
+By construction the twisting homomorphism $\Spin(2,\RR)\times \Spin(2, \RR)\rightarrow G_R$ defined by \eqref{eq:4d411decomposition} factors as $\Spin(2, \RR)\times \Spin(2, \RR)\subset \MU(2)\rightarrow G_R$, where the latter map is the twisting homomorphism used in Section \ref{sect:4d4holomorphictwist}. Therefore, we have to restrict the fields used in that section to $\Spin(2, \RR)\times \Spin(2, \RR)$. But by Theorem \ref{thm:4d4holomorphictwist} the fields belong to $T^*[-1]\map(\CC_{\mr Dol}\times \CC_{\mr Dol}, B\fg)$ whose underlying graded $\Spin(2, \RR)\times \Spin(2, \RR)$-equivariant bundle coincides with that of $T^*[-1]\map(\CC_{\mr Dol}\times \RR^2_{\mathrm{dR}}, B\fg)$.
+\end{proof}
+
 \subsubsection{Rank (2, 1) twist}
-\label{sect:4dKapustintwist}
 
 \begin{theorem}
 \chris{Rank $(1,1)$ deforming to rank $(2,1)$, the former is done above, the deformation doesn't come from dimensional reduction.  However, we know how $(1,0)$ deforms to $(2,0)$ (further supercharge acts by the differential operator $\dd_2$), so apply the same deformation to $(1,1)$.} $\mr{Map}(\CC_{\mr{Dol}} \times \RR^2_{\mr{dR}}, B\gg_{\mr{Hod}})$.
