@@ -708,6 +708,9 @@ We denote the space of BV fields by $\cE = \map(X\times Y_{\mr{Dol}}\times M_{\m
 \label{def:generalizedBF}
 \end{definition}
 
+\brian{We have not defined the notation $\Omega^{0,\bu}, \Omega^{\bu,\bu}, \Omega^\bu$.}
+\brian{Also, define the notation $T^*[-1] {\rm Map}$. }
+
 \begin{remark} \label{mapping_stack_remark}
 The mapping stack above has a precise meaning in the language of derived algebraic geometry -- see for instance \cite{PTVV}, where, if $X, Y$ and $M$ are compact, such a mapping stack is shown to carry a $-1$-shifted symplectic structure.  For the purposes of this paper, while we think of the derived stack as the global moduli space of solutions to the equations of motion in generalized BF theory, we will only use the perturbative datum of the classical BV complex.  The language of the mapping stack will simply be used as a compact way of referring to the theory above. 
 \end{remark}
@@ -2682,18 +2685,16 @@ The minimal twist of 4d $\cN=2$ super Yang--Mills on $M=\CC \times \RR^2$ with m
 
 \subsection{\texorpdfstring{$\cN=4$}{N=4} Super Yang-Mills} \label{4d_4_section}
 
-\vspace{-10pt}
-\paragraph{Fields:} We can describe the BRST fields of $\mc N=4$ super Yang-Mills by restricting the 5d $\mc N=2$ fields from Section \ref{5d_2_section} to representations of the group $\mr O(4)$.  In addition to the ghost $c$, the fields we obtain are
-\begin{itemize}
- \item Bosons: a gauge field $A \in \Omega^1(\RR^4; \gg)$, and six scalars, which we'll denote by $\phi \in \Omega^1(\RR^4; \gg \otimes \wedge^2(W))$.
- \item Fermions: four spinors, which we'll denote by $(\lambda_+ \otimes u_+, \lambda_- \otimes u_u) \in \Omega^0(\RR^5; (S_+ \otimes W \oplus S_- \otimes W^*) \otimes \gg)$.
-\end{itemize}
+The 4d $\cN=4$ super Yang--Mills theory is obtained by dimensional reduction from the 10d $\cN=(1, 0)$ super Yang--Mills. 
+It admits $R$-symmetry group $G_R=\Spin(6; \RR)$ under which $W \cong S_+^6$ is the positive semi-spin representation and $W^* \cong S_-^6$. 
 
-\vspace{-10pt}
-\paragraph{Twisting data:}
-The classification of orbits of square-zero supercharges in the 4d $\mc N=4$ supersymmetry algebra is the most interesting among the examples we consider in this paper.  We have the following classes. \chris{some comments claiming we'll discuss things above, to be added.  Also this is to revisit after writing the below.}
+The classification of orbits of square-zero supercharges in the 4d $\mc N=4$ supersymmetry algebra is the most interesting among the examples we consider in this paper.  
+We have the following classes. 
+\chris{some comments claiming we'll discuss things above, to be added.  Also this is to revisit after writing the below.}
 \begin{itemize}
- \item Rank $(1,0)$ (and $(0,1)$) supercharges.  Such supercharges automatically square to zero, and are holomorphic: indeed they sit inside an $\mc N=1$ subalgebra.  They are compatible with $\SU(2)_- \sub \Spin(4;\RR)$, which can be promoted to a twisting homomorphism from the group $\mr U(2)$ as we say in the 4d $\mc N=1$ section above.
+\item Rank $(1,0)$ and $(0,1)$ supercharges.  
+Such supercharges automatically square to zero, and are holomorphic: indeed they sit inside an $\mc N=1$ subalgebra.  
+They are compatible with the subgroup $\U(2) \sub \Spin(6;\RR) = \SU(4)$.
  \item Rank $(2,0)$ (and $(0,2)$) supercharges.  Such supercharges automatically square to zero, and are topological: indeed they sit inside an $\mc N=2$ subalgebra.  They are compatible with any of three possible twisting homomorphisms:
  \begin{enumerate}
   \item The half twisting homomorphism $\phi_{\mr{1/2}} \colon \SU(2)_+ \oplus \SU(2)_- \to \SL(4;\CC)$ given by $(A,B) \mapsto \mr{diag}(A, 1, 1)$.
@@ -2711,8 +2712,29 @@ We can study all the possible twists using what we say in the $\mc N=2$ subsecti
 \subsubsection{Holomorphic Twist}
 \label{sect:4d4holomorphictwist}
 
+We consider a rank $1$ supercharge $Q$ which factors through a $\cN=2$ subalgebra (in fact $\cN=1$ subalgebra). 
+
+\begin{theorem}
+The holomorphic twist of 4d $\cN=4$ super Yang--Mills on $M=\RR^4$ is perturbatively equivalent to the holomorphic BF theory on $\CC^2_{\rm Dol}$ with the space of fields $T^*[-1] \map(\CC^2_{\rm Dol} , B \fg) = T^*[-1] \higgs_G(\CC^2)$. 
+Moreover, the equivalence is $\U(2)$-equivariant.
+\label{thm:4d4holomorphictwist}
+\end{theorem}
+\begin{proof}
+The $4d \cN=4$ super Yang-Mills theory viewed as a $\cN=2$ theory is $\cN=2$ Yang-Mills theory with matter in the adjoint representation. 
+It follows that the twist is given by $T^*[-1] \map(\CC^2 , (\fg \oplus \fg) / \fg)$. 
+\brian{Need to be careful about $\U(2)$ action to get Dolbeault stack.}
+\end{proof}
+
 \subsubsection{Topological A Twist}
 \label{sect:4dAtwist}
+
+
+\vspace{-10pt}
+\paragraph{Fields:} We can describe the BRST fields of $\mc N=4$ super Yang-Mills by restricting the 5d $\mc N=2$ fields from Section \ref{5d_2_section} to representations of the group $\mr O(4)$.  In addition to the ghost $c$, the fields we obtain are
+\begin{itemize}
+ \item Bosons: a gauge field $A \in \Omega^1(\RR^4; \gg)$, and six scalars, which we'll denote by $\phi \in \Omega^1(\RR^4; \gg \otimes \wedge^2(W))$.
+ \item Fermions: four spinors, which we'll denote by $(\lambda_+ \otimes u_+, \lambda_- \otimes u_u) \in \Omega^0(\RR^5; (S_+ \otimes W \oplus S_- \otimes W^*) \otimes \gg)$.
+\end{itemize}
 
 \begin{theorem}
 \chris{holomorphic deforming to rank $(2,0)$, proven above} $\mr{Map}(\CC^2_{\mr{Dol}}, B\gg_{\mr{Hod}})$.
