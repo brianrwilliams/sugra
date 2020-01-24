@@ -2586,10 +2586,10 @@ Indeed, the equivalence given by Theorem \ref{thm:5dminimaltwist} eliminates fie
 These fields have the same degrees as in the holomorphic BF theory and the $L_\infty$ structure is obtained by the natural square zero extension of the dg Lie algebra in the first line by the remaining part of the diagram. \pavel{Brian}
 \end{proof}
 
-\begin{remark}
-The matter sector in the untwisted theory depends on $U$ as a complex symplectic $\fg$-representation. 
-The matter sector in the twisted theory only depends on $U$ as a complex $\fg$-representation, the dependence on the symplectic form disappears when we twist. \pavel{Brian}
-\end{remark}
+%\begin{remark}
+%The matter sector in the untwisted theory depends on $U$ as a complex symplectic $\fg$-representation. 
+%The matter sector in the twisted theory only depends on $U$ as a complex $\fg$-representation, the dependence on the symplectic form disappears when we twist. \pavel{Brian} \brian{not quite true, I just meant to say that the shifted symplectic structure no longer explicitly depends on the symplectic structure of $U$, but that's not very precise. I'm deleting this comment.}
+%\end{remark}
 
 \subsubsection{Rank \texorpdfstring{$(2,0)$}{(2,0)} topological twist}
 \label{sect:4d_2_donaldson}
@@ -2620,7 +2620,7 @@ I_{\rm gauge}^{(1)}(Q_t) &= \int \dvol\left(-(\rho, A_{1, 0}^*) - t(b, A_{0, 1}^
 &+ \int\dvol\left((F_{0, 2}, B^*) + t\Omega^{-1} F_{2, 0}\wedge B^* + (\ol\dd_{A_{0, 1}}a, b^*) + (t\dd_{A_{1, 0}} a, \rho^*) + \frac{1}{2}\Lambda F_{1, 1}(\chi^* - t\wt\chi^*)\right) \\
 I^{(2)}_{\rm gauge} (Q_t, Q_t) &= \int \dvol \left(t\chi^*\wt \chi^* + \frac{t}{2} \xi^*\wedge B^* -\frac{1}{4}(\chi^* + t\wt\chi^*)^2 + t a c^*\right) \\
 I_{\rm matter}^{(1)}(Q_t) &= \int \dvol \left((\Tilde{\nu}, \nu^*) + t (\varphi, \phi^*) + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*) \right) \\
-I_{\rm matter}^{(2)}(Q_t) &= \int \dvol \frac 14 t (\psi^*, \psi^*)
+I_{\rm matter}^{(2)}(Q_t) &= \int \dvol \frac t4  (\psi^*, \psi^*)
 \end{align*}
 \end{prop}
 
@@ -2660,14 +2660,18 @@ The topological twist of 4d $\cN=2$ super Yang--Mills is the twist by $Q_t$ with
 \subsubsection{Rank \texorpdfstring{$(1,1)$}{(1,1)} twist}
 \label{sect:4d_2_11}
 
-We finally consider the twist with respect to a rank $(1,1)$ supercharge. We have a twisting homomorphism
+We finally consider the twist with respect to a rank $(1,1)$ supercharge.
+In this case, the twist is compatible with the group $G = \Spin(2, \RR) \times \Spin(2, \RR)$. 
+We denote each factor by $\Spin(2, \RR)_i$, $i=1,2$.  
+The twisting homomorphism is
 \[
-\phi \colon \Spin(2, \RR) \times \Spin(2, \RR) \to G_R=\SL(W)\times \GL(1, \CC),
+\phi \colon \Spin(2, \RR)_1 \times \Spin(2, \RR)_2 \to G_R=\SL(W)\times \GL(1, \CC),
 \]
-where on the first factor $\Spin(2, \RR)\cong \U(1)\hookrightarrow \SL(2, \CC)$ is given by the diagonal embedding and on the second factor $\Spin(2, \RR)\hookrightarrow \GL(1, |CC)$ is the obvious inclusion. If we denote by $S_\pm^1, S_\pm^2$ the semi-spin representations of the two $\Spin(2, \RR)$, we have
-\[W \cong S_+^2\otimes (S_+^1\oplus S_-^1).\]
-The semi-spin representations of $\Spin(4, \RR)$ decompose with respect to $\Spin(2, \RR)\times \Spin(2, \RR)\subset \Spin(4, \RR)$ as
-\[S_+\cong S_+^1\otimes S_+^2\oplus S_-^1\otimes S_-^2,\qquad S_-\cong S_+^1\otimes S_-^2\oplus S_-^1\otimes S_+^2.\]
+where on the first factor $\Spin(2, \RR)_1 \cong \U(1)\hookrightarrow \SL(2, \CC)$ is given by the diagonal embedding and on the second factor $\Spin(2, \RR)_2 \hookrightarrow \GL(1, \CC)$ is the obvious inclusion. 
+If we denote by $S_{\pm, i}$, $i=1,2$ the semi-spin representations of the factor $\Spin(2, \RR)_i$, we have
+\[W \cong S_{+,2}\otimes (S_{+,1}\oplus S_{-,1}).\]
+The semi-spin representations of $\Spin(4, \RR)$ decompose with respect to $\Spin(2, \RR)_1 \times \Spin(2, \RR)_2\subset \Spin(4, \RR)$ as
+\[S_+\cong S_{+,1} \otimes S_{+,2} \oplus S_{-,1} \otimes S_{-,2},\qquad S_-\cong S_{+,1} \otimes S_{-,2} \oplus S_{-,1} \otimes S_{+,2}.\]
 
 So, both $S_+\otimes W$ and $S_-\otimes W^*$ contain a trivial one-dimensional subspace and hence we obtain a rank $(1, 1)$ square-zero supercharge.
 
@@ -2682,7 +2686,7 @@ The result then follows from Theorem \ref{thm:6dCSreduction} applied to $L = \CC
 
 If $U = T^* R$ is of cotangent type, we may enhance the $R$-symmetry group to $G_R=\SL(W)\times \GL(1, \CC)\times \GL(1, \CC)$. The last $\GL(1, \CC)$ acts trivially on $W$, by weight $+1$ on $R$ and weight $-1$ on $R^*$.
 
-We have a homomorphism $\alpha\colon \U(1)\rightarrow  \SL(W)\times \GL(1, \CC) \times \GL(1, \CC)$ given by the diagonal embedding into the first and the third components. We also use a new twisting homomorphism $\wt\phi\colon \Spin(2, \RR)\times \Spin(2, \RR)\rightarrow G_R$ given by multiplying $\phi$ with the obvious homomorphism from the first $\Spin(2, \RR)$ factor to the last $\GL(1, \CC)$ factor in $G_R$ (cf. the definition of $\alpha$ and $\wt\phi$ in Section \ref{sect:6dholomorphictwist}).
+We have a homomorphism $\alpha\colon \U(1)\rightarrow  \SL(W)\times \GL(1, \CC) \times \GL(1, \CC)$ given by the diagonal embedding into the first and the third components. We also use a new twisting homomorphism $\wt\phi\colon \Spin(2, \RR)_1 \times \Spin(2, \RR)_2\rightarrow G_R$ given by composing $\phi$ with the obvious homomorphism from the first factor $\Spin(2, \RR)_1$ to the last $\GL(1, \CC)$ factor in $G_R$ (cf. the definition of $\alpha$ and $\wt\phi$ in Section \ref{sect:6dholomorphictwist}).
 
 \begin{theorem}\label{thm:4d_11_twistgraded}
 The minimal twist of 4d $\cN=2$ super Yang--Mills on $M=\CC \times \RR^2$ with matter valued in the $\fg$-representation $U=T^* R=R\oplus R^*$ is perturbatively equivalent to the generalized BF theory with the space of fields $T^*[-1]\map(\CC \times \RR^2_{\mathrm{dR}}, R/\fg)$. Moreover, the equivalence is $\U(1)\times \Spin(2, \RR)$-equivariant.
@@ -2690,7 +2694,7 @@ The minimal twist of 4d $\cN=2$ super Yang--Mills on $M=\CC \times \RR^2$ with m
 
 \subsection{\texorpdfstring{$\cN=4$}{N=4} Super Yang-Mills} \label{4d_4_section}
 
-The 4d $\cN=4$ super Yang--Mills theory is obtained by dimensional reduction from the 10d $\cN=(1, 0)$ super Yang--Mills. It admits $R$-symmetry group $G_R=\Spin(6; \CC)\cong \SL(4, \CC)$ under which $W \cong S_+^6$ is the positive semi-spin representation and $W^* \cong S_-^6$. 
+The 4d $\cN=4$ super Yang--Mills theory is obtained by dimensional reduction from the 10d $\cN=(1, 0)$ super Yang--Mills. It admits $R$-symmetry group $G_R=\Spin(6; \CC)\cong \SL(4, \CC)$ under which $W \cong S_+^6$ is the positive six-dimensional semi-spin representation and $W^* \cong S_-^6$. 
 
 Let us decompose the rotation group as $\Spin(4, \RR)\cong \SU(2)_+\times \SU(2)_-$. The classification of orbits of square-zero supercharges in the 4d $\mc N=4$ supersymmetry algebra is the most interesting among the examples we consider in this paper. We have the following classes. 
 \begin{itemize}
@@ -2715,7 +2719,7 @@ Let us decompose the rotation group as $\Spin(4, \RR)\cong \SU(2)_+\times \SU(2)
 \subsubsection{Holomorphic Twist}
 \label{sect:4d4holomorphictwist}
 
-Let $L$ be a complex structure on $V_\RR$. Consider a twisting homomorphism $\MU(L)\rightarrow G_R=\Spin(6, \CC)$ under which $W$ decomposes as
+Let $L$ be a complex structure on $V_\RR$. Consider a twisting homomorphism $\MU(L)\rightarrow G_R=\Spin(6; \CC)$ under which $W$ decomposes as
 \[W = L\otimes \det(L)^{-1/2}\oplus \det(L)^{-1/2} w_1\oplus \det(L)^{1/2} w_2.\]
 In particular,
 \[S_+\otimes W\cong L\oplus L^*\oplus \det(L)\oplus \CC \oplus \CC\oplus \det(L)^{-1}\]
