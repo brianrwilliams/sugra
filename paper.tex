@@ -2774,7 +2774,7 @@ These are exactly the fields in $T^*[-1] \map(\CC^2_{\rm Dol} , B \fg)$.
 Next we look at the case of the twist by a rank $(2,0)$ supercharge. 
 As in Section \ref{sec:4d2Donaldson}, it will be useful to consider a family of topological supercharges which degenerate to the rank $(1,0)$ supercharge we just discussed. 
 
-We use the same twisting homomorphism $\phi : \MU(2) \to \Spin(6;\CC)$ as in the previous section.
+We use the same twisting homomorphism $\phi : \MU(2) \to \Spin(6;\CC)$ and twisting data $\alpha : U(1) \to G_R$ as in Section \ref{sect:4d4holomorphictwist}.
 Then, $S_+ \otimes W$ decomposes nuder $\MU(2)$ as
 \[
 S_+\otimes W\cong L\oplus L^*\oplus \det(L)\oplus \CC \cdot Q_0 \oplus \CC \cdot \Bar{Q}_0 \oplus \det(L)^{-1}.
@@ -2783,14 +2783,17 @@ S_+\otimes W\cong L\oplus L^*\oplus \det(L)\oplus \CC \cdot Q_0 \oplus \CC \cdot
 Consider the family of supercharges $Q_t = Q_0 + t \Bar{Q}_0 \in S_+\otimes W$ of rank $(1, 0)$ contained in the scalar summands above.
 
 \begin{theorem}
-The twist of 4d $\cN=4$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges is perturbatively equivalent to the holomorphic Hodge theory $\Sect\left(\CC^2, \left((T^*\fg \otimes K_{\CC^2}^{1/2})\ham \fg\right)_{\Hod}\right)$. 
+The twist of 4d $\cN=4$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges is perturbatively equivalent to the holomorphic Hodge theory $\map(\CC_{\rm Dol}, B \fg_{\rm Hod})$. 
 Moreover, this equivalence is $\MU(2)$-equivariant.
 \label{thm:4d4Atwist}
 \end{theorem}
 \begin{proof}
 The 4d $\cN=4$ super Yang--Mills theory viewed as a $\cN=2$ theory is 4d $\cN=2$ Yang--Mills theory with matter valued in $U=T^*\fg$. 
 Under this correspondence $\alpha\colon \U(1)\rightarrow G_R$ defined above coincides with $\alpha_0$ from Section \ref{sect:4d_2_holomorphictwist}. 
-From Theorem \ref{thm:4dDonaldsontwist} we obtain the desired result.
+From Theorem \ref{thm:4dDonaldsontwist} we obtain that the twist is $\Sect\left(\CC^2, \left((T^*\fg \otimes K_{\CC^2}^{1/2})\ham \fg\right)_{\Hod}\right)$ as a $\ZZ$-graded theory. 
+
+The twisting homomorphism used in Section \ref{sect:4d_2_holomorphictwist} differs from the twisting homomorphism defined above. 
+In particular, this equivalence is not $\U(2)$-equivariant. In the present case the fields decompose in the same fashion as in the proof of Theorem \ref{thm:4d4holomorphictwist} which are precisely the fields of $\map(\CC_{\rm Dol}, B \fg_{\rm Hod})$.
 \end{proof}
 %\vspace{-10pt}
 %\paragraph{Fields:} We can describe the BRST fields of $\mc N=4$ super Yang-Mills by restricting the 5d $\mc N=2$ fields from Section \ref{5d_2_section} to representations of the group $\mr O(4)$.  In addition to the ghost $c$, the fields we obtain are
