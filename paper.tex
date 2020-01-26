@@ -1958,10 +1958,10 @@ concentrated in cohomological degrees $-1, \dots, 4$. These fields have the same
 Next we discuss the case of the topological twist. We are going to prove that it is perturbatively trivial. In fact, it will be useful to study a degeneration of the topological twist to a holomorphic twist and decribe the corresponding family of twisted theories.
 
 Let $V_\RR = \RR^8$ and $V=V_\RR\otimes_\RR\CC$. Fix a K\"ahler structure on $\RR^8$ and denote by $L\subset V$ the $i$-eigenspace of the complex structure. Moreover, fix a complex volume form on $L$. Under $\SU(L)\subset \Spin(V)$ the semi-spin representation $S_+$ decomposes as
-\[S_+\cong \CC \alpha\oplus \wedge^2 L\oplus \CC \beta.\]
+\[S_+\cong \CC Q_0\oplus \wedge^2 L\oplus \CC \Bar{Q}_0.\]
 The scalar spinorial pairing $S_+\otimes S_+\rightarrow \CC$ is given by pairing the outer terms with each other and $\wedge^2L$ with itself using the complex volume form on $L$. Consider a family of square-zero supercharges
 \begin{equation}
-Q_t = \alpha + t\beta\in S_+
+Q_t = Q_0 + t\Bar{Q}_0\in S_+
 \label{eq:8dHodgefamily}
 \end{equation}
 for $t\in\CC$. We have
@@ -2562,8 +2562,10 @@ Next, we check that the equivalence respects  the gradings. Indeed, the equivale
 \begin{align*}
 c+A_{0, 1}+B&\in\Omega^{0, \bullet}(M; \fg)[1] \\
 B^*+A^*_{0, 1}+ c^*&\in\Omega^{2, \bullet}(M; \fg) \\
+\\
 a + b + \xi^*&\in\Omega^{0, \bullet}(M; \fg)[2-4n] \\
 \xi + b^* + a^*&\in\Omega^{2, \bullet}(M; \fg)[4n-1] \\
+\\
 \phi + \psi + \varphi^*&\in\Omega^{0, \bullet}(M; U\otimes K_M^{1/2})[2n] \\
 \varphi + \psi^* + \phi^* &\in\Omega^{2, \bullet}(M; U\otimes K_M^{-1/2})[1-2n]
 \end{align*}
@@ -2755,7 +2757,7 @@ The holomorphic twist of 4d $\cN=4$ super Yang--Mills on $M=\RR^4$ is perturbati
 \begin{proof}
 The 4d $\cN=4$ super Yang--Mills theory viewed as a $\cN=2$ theory is 4d $\cN=2$ Yang--Mills theory with matter valued in $U=T^*\fg$. Under this correspondence $\alpha\colon \U(1)\rightarrow G_R$ defined above coincides with $\alpha_0$ from Section \ref{sect:4d_2_holomorphictwist}. From Theorem \ref{thm:4dholomorphictwist} we obtain that the twist is given by $T^*[-1] \map(\CC^2 , (T^*\fg\otimes K_{\CC^2}^{1/2})\ham \fg)$ as a $\ZZ$-graded theory.
 
-Note, however, that the twisting homomorphism used in Section \ref{sect:4d_2_holomorphictwist} differs from the twisting homomorphism defined above. In particular, this equivalence is not $\U(2)$-equivariant. In the present case the fields organize in the following collections:
+Note, however, that the twisting homomorphism used in Section \ref{sect:4d_2_holomorphictwist} differs from the twisting homomorphism defined above. In particular, this equivalence is not $\U(2)$-equivariant. In the present case the fields organize into the following collections:
 \begin{align*}
 c+A_{0, 1}+B&\in\Omega^{0, \bullet}(M; \fg)[1] \\
 \phi + \psi + \varphi^*&\in\Omega^{1, \bullet}(M; \fg) \\
@@ -2832,29 +2834,55 @@ By construction the twisting homomorphism $\Spin(2,\RR)\times \Spin(2, \RR)\righ
 \subsubsection{Rank (2, 2) twist}
 \label{sect:4dqgltwist}
 
+Consider a rank $(2, 2)$ supercharge $Q\in S_+\otimes W\oplus S_-\otimes W^*$. It defines embeddings $S_+^*\hookrightarrow W$ and $S_-^*\hookrightarrow W^*$ and the square-zero condition is that their images pair to zero. In other words, we have a short exact sequence
+\[0\longrightarrow S_+^*\longrightarrow W\longrightarrow S_-\longrightarrow 0.\]
+The semi-spin representations $S_\pm$ carry volume forms induced by scalar spinorial pairings. Moreover, $W$ has a canonical volume form since it is the semi-spin representation of $\Spin(6, \CC)\cong \SL(4, \CC)$. Comparing these volume forms under the above exact sequence gives an invariant $s\in\CC^\times$ of a rank $(2, 2)$ square-zero supercharge. Moreover, $\Spin(6, \CC)$-orbits of rank $(2, 2)$ square-zero supercharges are parametrized by this invariant.
+
+Let $N_\RR=\RR^4$ equipped with a Euclidean structure and $N=N_\RR\otimes_\RR\CC$ its complexification. We consider the 8-dimensional Euclidean vector space $N$ which carries a complex half-density. By the results of Section \ref{sect:8dtopologicaltwist} we obtain a family $Q_t$ of 8d square-zero supercharges. Its dimensional reduction to 4 dimensions also gives a family of 4d square-zero supercharges. Then from Theorem \ref{thm:8dHodgereduction} we obtain the following statement.
+
 \begin{theorem}
-\chris{Special rank $(2,2)$ deforming to generic rank $(2,2)$, by dimensional reduction from 5d $2_A$ deforming to $2_B$} $\mr{Map}(\RR^4_{\mr{dR}}, B\gg_{\mr{Hod}})$.
+The twist of 4d $\cN=4$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges is perturbatively equivalent to the topological Hodge theory $\map(\RR^4_{\mathrm{dR}}, B\fg_{\Hod})$.
+\label{thm:4d422Hodgetwist}
 \end{theorem}
 
+Let us now rewrite the family $Q_t$ in 4-dimensional terms. Consider the Kapustin--Witten twisting homomorphism $\phi_{\mathrm{KW}}\colon \Spin(4, \RR)\subset \Spin(4, \RR)\times \Spin(2, \RR)\subset \Spin(6, \CC)$ under which $W$ decomposes as
+\[W\cong S_+\oplus S_-.\]
+In this case the spinorial representation becomes
+\[\Sigma\cong S_+\otimes S_+\oplus S_+\otimes S_-\oplus S_-\otimes S_+\oplus S_-\otimes S_-.\]
+In particular, there are two scalar supercharges $Q_+$ and $Q_-$ given by the volume forms on $S_+$ and $S_-$ respectively. We may then consider a family of supercharges
+\[Q = u Q_+ + i v Q_-\]
+for $u, v\in\CC$. If $u,v\neq 0$ we obtain a rank $(2, 2)$ supercharge. In this case the map $Q\colon S_+^*\cong S_+\rightarrow W$ is given by multiplication by $u$ and the map $Q\colon W\rightarrow S_-$ is given by multiplication by $iv$. Therefore, its $s$-invariant is
+\[s = -\frac{u^2}{v^2}.\]
 
-% \vspace{-10pt}
-% \paragraph{Supersymmetry action:} 
-% \begin{prop}
-% Consider a square-zero supercharge $Q = Q_+ \otimes w_+ + Q_- \otimes w_-$.  After reduction to $\mr O(4)$, the interaction terms $I^{(1)}$ and $I^{(2)}$ become
-% \begin{align*}
-% I^{(1)}(Q) &= \int (\Gamma(Q_+, \lambda_-)(w_+,u_-), A^*) + (\Gamma(Q_-, \lambda_+)(w_-,u_+), A^*) + \langle Q_+, \lambda_+ \rangle (w_+ \wedge u_+, \phi^*) + \langle Q_-, \lambda_- \rangle (\omega(w_- \wedge u_-), \phi^*) + \\
-% &\quad + \frac12 \bigg( \langle \rho(F_A)Q_+, \lambda_+^*\rangle(w_+,u_+^*) + \langle \rho(F_A)Q_-, \lambda_-^*\rangle(w_-,u_-^*) +\\
-% &\qquad \qquad \qquad \qquad \langle\rho(\d_A (w_+ \wedge u_-^*,\phi))Q_+, \lambda_-^*\rangle + \langle\rho(\d_A (\omega(w_- \wedge u_+^*)),\phi)Q_-, \lambda_+^*\rangle \bigg),
-% \end{align*}
-% and
-% \begin{align*}
-% I^{(2)}(Q_1, Q_2) &= \int \frac 12 \left( g(\Gamma(Q_+, Q_-), \Gamma(\lambda^*_+, \lambda^*_-)) (w_+, w_-) (u_+^*,u_-^*) \right) + \\
-% &\quad - \frac 12 \big( \langle Q_+,\lambda_+^*\rangle^2(w_+,u_+^*)^2 + \langle Q_-,\lambda_-^*\rangle^2(w_-,u_-^*)^2 \big) - \langle Q_+,\lambda_+^*\rangle \langle Q_-, \lambda_-^*\rangle (w_+,u_+^*)(w_-,u_-^*) +\\
-% &\quad - (\langle Q_+, Q_+ \rangle (\omega^{-1}(w_+ \wedge w_+),\phi) + \langle Q_-, Q_- \rangle (w_- \wedge w_-,\phi)  ) c^*,
-% \end{align*}
-% where $\omega$ indicates the canonical isomorphism $\omega \colon \wedge^2(W^*) \to \wedge^2(W)$ (the Killing form for $\so(W^*)$).
-% \end{prop}
+\begin{remark}
+The family $uQ_+ + iv Q_-$ of square-zero supercharges is the same family as studied by Kapustin and Witten, see \cite[Section 3.1]{KapustinWitten}.
+\end{remark}
 
+These supercharges are related to $Q_t$ as follows. Let $S_+^8$ be the semi-spin representation of $\Spin(8, \CC)$ and $S_\pm$ the semi-spin representations of $\Spin(4, \CC)$ as before. Under the embedding
+\[\Spin(4, \CC)\subset \Spin(4, CC)\times \Spin(4, \CC)\subset \Spin(8, \CC)\]
+$S_+^8$ splits as
+\[S_+^8\cong S_+\otimes S_+\oplus S_-\otimes S_-,\]
+so $Q_+, Q_-\in S_+^8$. We then obtain
+\[Q_0 = Q_+ + Q_-,\qquad \Bar{Q}_0 = Q_+ - Q_-.\]
+Therefore, the $s$-invariant of the family $Q_t$ is
+\begin{equation}
+s = \frac{(1+t)^2}{(1-t)^2}.
+\label{eq:4d4sinvariant}
+\end{equation}
+
+\begin{cor}
+The rank $(2, 2)$ twist of 4d $\cN=4$ super Yang--Mills for $s=1$ is perturbatively equivalent to the topological BF theory $T^*[-1]\map(\RR^4_{\mathrm{dR}}, B\fg)$.
+\end{cor}
+\begin{proof}
+The supercharge $Q_0$ has $s$-invariant $s=1$. By Theorem \ref{thm:4d422Hodgetwist} the twist by $Q_0$ is perturbatively equivalent to the specialization of the theory $\map(\RR^4_{\mathrm{dR}}, B\fg_{\Hod})$ at $t=0$. By Proposition \ref{prop:Hodgetheoryspecialization} the latter is isomorphic to the topological BF theory $T^*[-1]\map(\RR^4_{\mathrm{dR}}, B\fg)$.
+\end{proof}
+
+\begin{cor}
+The rank $(2, 2)$ twist of 4d $\cN=4$ super Yang--Mills for $s\neq 1$ is perturbatively trivial.
+\end{cor}
+\begin{proof}
+For any $s\neq 1$ we may find $t\neq 0$ solving \eqref{eq:4d4sinvariant}. But by Proposition \ref{prop:Hodgetheoryspecialization} the specialization of the topological Hodge theory $\map(\RR^4_{\mathrm{dR}}, B\fg_{\Hod})$ at $t\neq 0$ is perturbatively trivial.
+\end{proof}
 
 \section{Dimension 3}
 The 3-dimensional $\mc N=k$ supersymmetry algebra has odd part $\Sigma \iso S \otimes W$, where $S$ is the 2-dimensional spinor representation of $\Spin(3) \iso \SU(2)$, and where $W$ is a $k$-dimensional vector space equipped with a bilinear pairing.  The maximal supersymmetric gauge theory has $\mc N=8$.  However, there are $\mc N=4$ super Yang-Mills theories for every choice $U$ of symplectic representation of the gauge group, and $\mc N=2$ super Yang-Mills theories for every choice $R$ of arbitrary representation of the gauge group.  In dimension 3, much like we saw in dimensions 5 and 7, all twisted theories can be obtained by dimensional reduction from theories one dimension higher.
