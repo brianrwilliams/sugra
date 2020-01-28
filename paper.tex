@@ -1923,7 +1923,7 @@ We consider the twisting homomorphism $\det^{1/2}\colon \MU(4)\rightarrow \Spin(
 \paragraph{Fields:} The BRST fields are given by:
 \begin{itemize}
 \item Gauge fields $A_{1, 0}\in\Omega^{1, 0}(M; \gg)$ and $A_{0, 1}\in\Omega^{0, 1}(M; \gg)$.
-\item Scalar fields $\phi\in\Omega^{4,0}(M; \gg)[2]$ and $\wt \phi\in\Omega^{0, 4}(M; \gg)[-2]$.
+\item Scalar fields $a\in\Omega^{4,0}(M; \gg)[2]$ and $\wt a\in\Omega^{0, 4}(M; \gg)[-2]$.
 \item Fermions $\chi\in\Omega^0(M; \gg)[-1]$, $B\in\Omega^{0, 2}(M; \gg)[-1]$, $\wt \chi\in\Omega^{0, 4}(M; \gg)[-1]$, $\rho\in\Omega^{1, 0}(M; \gg)[1]$ and $C\in\Omega^{3, 0}(M; \gg)[1]$.
 \item A ghost field $c\in \Omega^0(M; \gg)[1]$.
 \end{itemize}
@@ -1935,18 +1935,18 @@ The holomorphic twist of 8d $\cN=1$ super Yang--Mills on $M=\RR^8$ is perturbati
 \begin{proof}
 8d $\cN=1$ super Yang--Mills theory is obtained by dimensionally reducing 10d $\cN=1$ super Yang--Mills theory. Under dimensional reduction the 10d fields from Section \ref{sect:10dholomorphictwist} decompose as follows:
 \begin{align*}
-A_{1, 0}&\rightsquigarrow A_{1, 0}, \wt\phi \\
-A_{0, 1}&\rightsquigarrow A_{0, 1}, \phi \\
+A_{1, 0}&\rightsquigarrow A_{1, 0}, \wt a \\
+A_{0, 1}&\rightsquigarrow A_{0, 1}, a \\
 \rho&\rightsquigarrow \rho, \wt\chi \\
 B&\rightsquigarrow B, C.
 \end{align*}
 
-The claim about the underlying $\ZZ/2$-graded theories follows by applying dimensional reduction (Proposition \ref{CS_to_BF_diml_red_prop}) to the computation of the minimal twist of 9d $\cN=1$ super Yang--Mills (Theorem \ref{thm:9dminimaltwist}). We are left to check that the equivalence respects  the gradings and the $\U(4)$-action. Indeed, the equivalence given by Theorem \ref{thm:9dminimaltwist} eliminates fields $A_{1, 0}, \wt\phi, \rho, \chi, \wt\chi$ and hence the underlying local $L_\infty$ algebra after the twist becomes
+The claim about the underlying $\ZZ/2$-graded theories follows by applying dimensional reduction (Proposition \ref{CS_to_BF_diml_red_prop}) to the computation of the minimal twist of 9d $\cN=1$ super Yang--Mills (Theorem \ref{thm:9dminimaltwist}). We are left to check that the equivalence respects  the gradings and the $\U(4)$-action. Indeed, the equivalence given by Theorem \ref{thm:9dminimaltwist} eliminates fields $A_{1, 0}, \wt a, \rho, \chi, \wt\chi$ and hence the underlying local $L_\infty$ algebra after the twist becomes
 \[
 \xymatrix@R=0.5cm@C=0.5cm{
-&\Omega^0(\CC^4; \gg)_c \ar[r] &\Omega^{0,1}(\CC^4; \gg)_{A_{0,1}} \ar[r] &\Omega^{0,2}(\CC^4; \gg)_{B} \ar[r] &\Omega^{0,3}(\CC^4; \gg)_{C^*} \ar[r] &\Omega^{0,4}(\CC^4; \gg)_{\phi^*} \\
+&\Omega^0(\CC^4; \gg)_c \ar[r] &\Omega^{0,1}(\CC^4; \gg)_{A_{0,1}} \ar[r] &\Omega^{0,2}(\CC^4; \gg)_{B} \ar[r] &\Omega^{0,3}(\CC^4; \gg)_{C^*} \ar[r] &\Omega^{0,4}(\CC^4; \gg)_{a^*} \\
 &&\ar@{}^{\bigoplus}[r] &&& \\
-\Omega^{4,0}(\CC^4; \gg)_{\phi} \ar[r] &\Omega^{4,1}(\CC^4; \gg)_C \ar[r] &\Omega^{4,2}(\CC^4; \gg)_{B^*} \ar[r] &\Omega^{4,3}(\CC^4; \gg)_{A_{0,1}^*} \ar[r] &\Omega^{4,4}(\CC^4; \gg)_{c^*}&
+\Omega^{4,0}(\CC^4; \gg)_{a} \ar[r] &\Omega^{4,1}(\CC^4; \gg)_C \ar[r] &\Omega^{4,2}(\CC^4; \gg)_{B^*} \ar[r] &\Omega^{4,3}(\CC^4; \gg)_{A_{0,1}^*} \ar[r] &\Omega^{4,4}(\CC^4; \gg)_{c^*}&
 }
 \]
 concentrated in cohomological degrees $-1, \dots, 4$. These fields have the same degrees as in the holomorphic BF theory.
@@ -1973,9 +1973,9 @@ We will use the notation for fields of 8d $\cN=1$ super Yang--Mills from Section
 \begin{prop}
 The functionals $I^{(1)}$ and $I^{(2)}$ (see \eqref{eq:gaugeI1} and \eqref{eq:gaugeI2}) in terms of the fields of 8d $\cN=1$ super Yang--Mills are
 \begin{align*}
-I^{(1)}(Q_t) &= \int \dvol\left(-(\rho, A_{1, 0}^*) - t(C, A_{0, 1}^*) - (\wt \chi + t\chi)\wt \phi^*\right) \\
-&+ \int\dvol\left((F_{0, 2}, B^*) + t\Omega^{-1} F_{2, 0}\wedge B^* + (\ol\dd_{A_{0, 1}}\phi, C^*) + (t\dd_{A_{1, 0}} \phi, \rho^*) + \frac{1}{2}\Lambda F_{1, 1}(\chi^* - t\wt\chi^*) + \frac{1}{2}[\phi, \wt\phi](\chi^*+t\wt\chi^*)\right) \\
-I^{(2)}(Q_t, Q_t) &= \int \dvol \left(t\chi^*\wt \chi^* + \frac{t}{2}\Omega^{-1}B^*\wedge B^* -\frac{1}{4}(\chi^* + t\wt\chi^*)^2 + t\phi c^*\right).
+I^{(1)}(Q_t) &= \int \dvol\left(-(\rho, A_{1, 0}^*) - t(C, A_{0, 1}^*) - (\wt \chi + t\chi)\wt a^*\right) \\
+&+ \int\dvol\left((F_{0, 2}, B^*) + t\Omega^{-1} F_{2, 0}\wedge B^* + (\ol\dd_{A_{0, 1}} a, C^*) + (t\dd_{A_{1, 0}} a, \rho^*) + \frac{1}{2}\Lambda F_{1, 1}(\chi^* - t\wt\chi^*) + \frac{1}{2}[a, \wt a](\chi^*+t\wt\chi^*)\right) \\
+I^{(2)}(Q_t, Q_t) &= \int \dvol \left(t\chi^*\wt \chi^* + \frac{t}{2}\Omega^{-1}B^*\wedge B^* -\frac{1}{4}(\chi^* + t\wt\chi^*)^2 + tac^*\right).
 \end{align*}
 \end{prop}
 
@@ -1992,13 +1992,13 @@ The twist of 8d $\cN=1$ super Yang--Mills with respect to the family $Q_t$ of sq
 \begin{proof}
 The proof proceeds as in the proof of Theorem \ref{thm:10dholomorphictwist} with slight modifications.
 
-Observe that the quadruple of fields $\{\chi^*, \chi, \wt\chi^*, \wt\chi\}$ has the same Poisson brackets as the quadruple $\{\chi^*-t\wt\chi^*, \chi, \wt\chi^*, \wt\chi + t\chi\}$. Therefore, we may eliminate the fields $\chi^*-t\wt\chi^*, \chi$ using Proposition \ref{prop:integrateoutfield}. We then have trivial BRST doublets $\{\wt\chi + t\chi, \wt\phi\}$ and $\{\rho, A_{1, 0}\}$ which may be eliminated using Proposition \ref{prop:BRSTdoublet}. We are left with the action
-\[S_{BF} + \int\dvol\left(-t(C, A_{0, 1}^*) + t\phi c^* + \frac{t}{2} \Omega^{-1} B^*\wedge B^*\right),\]
+Observe that the quadruple of fields $\{\chi^*, \chi, \wt\chi^*, \wt\chi\}$ has the same Poisson brackets as the quadruple $\{\chi^*-t\wt\chi^*, \chi, \wt\chi^*, \wt\chi + t\chi\}$. Therefore, we may eliminate the fields $\chi^*-t\wt\chi^*, \chi$ using Proposition \ref{prop:integrateoutfield}. We then have trivial BRST doublets $\{\wt\chi + t\chi, \wt a\}$ and $\{\rho, A_{1, 0}\}$ which may be eliminated using Proposition \ref{prop:BRSTdoublet}. We are left with the action
+\[S_{BF} + \int\dvol\left(-t(C, A_{0, 1}^*) + ta c^* + \frac{t}{2} \Omega^{-1} B^*\wedge B^*\right),\]
 where $S_{BF}$ is the action functional of the holomorphic twist at $t=0$. Since the extra terms are quadratic in the fields, the claim is reduced to a comparison of the underlying local $L_\infty$ algebra of the twisted theory and that of the holomorphic Hodge theory. The former is given by (cf. the proof of Theorem \ref{thm:8dholomorphictwist})
 \[
 \xymatrix@C=0.5cm{
-&\Omega^0(\CC^4; \gg)_c \ar[r] &\Omega^{0,1}(\CC^4; \gg)_{A_{0,1}} \ar[r] &\Omega^{0,2}(\CC^4; \gg)_{B} \ar[r] &\Omega^{0,3}(\CC^4; \gg)_{C^*} \ar[r] &\Omega^{0,4}(\CC^4; \gg)_{\phi^*} \\
-\Omega^0(\CC^4; \gg)_{\phi} \ar[r] \ar@{-->}^{t\id}[ur] & \Omega^{0,1}(\CC^4; \gg)_C \ar[r] \ar@{-->}^{t\id}[ur] &\Omega^{0,2}(\CC^4; \gg)_{B^*} \ar[r] \ar@{-->}^{t\id}[ur] &\Omega^{0,3}(\CC^4; \gg)_{A_{0,1}^*} \ar[r] \ar@{-->}^{t\id}[ur] &\Omega^{0,4}(\CC^4; \gg)_{c^*} \ar@{-->}^{t\id}[ur] &
+&\Omega^0(\CC^4; \gg)_c \ar[r] &\Omega^{0,1}(\CC^4; \gg)_{A_{0,1}} \ar[r] &\Omega^{0,2}(\CC^4; \gg)_{B} \ar[r] &\Omega^{0,3}(\CC^4; \gg)_{C^*} \ar[r] &\Omega^{0,4}(\CC^4; \gg)_{a^*} \\
+\Omega^0(\CC^4; \gg)_a \ar[r] \ar@{-->}^{t\id}[ur] & \Omega^{0,1}(\CC^4; \gg)_C \ar[r] \ar@{-->}^{t\id}[ur] &\Omega^{0,2}(\CC^4; \gg)_{B^*} \ar[r] \ar@{-->}^{t\id}[ur] &\Omega^{0,3}(\CC^4; \gg)_{A_{0,1}^*} \ar[r] \ar@{-->}^{t\id}[ur] &\Omega^{0,4}(\CC^4; \gg)_{c^*} \ar@{-->}^{t\id}[ur] &
 }
 \]
 which is exactly the local $L_\infty$ algebra of the holomorphic Hodge theory.
@@ -2851,8 +2851,9 @@ We are going to use the notation of the fields from Section \ref{sect:4d4holomor
 \begin{prop}
 Suppose $Q_t$ is the rank $(1,2)$ supercharge of \eqref{eq:4d412Hodgefamily}. The $\MU(2)$ decomposition of the functionals $I_{\rm gauge}^{(1)}, I^{(2)}_{\rm gauge}$ (see \eqref{eq:gaugeI1}, \eqref{eq:gaugeI2}) in terms of the fields of 4d $\cN=4$ super Yang--Mills theory are
 \begin{align*}
-I_{\gauge}^{(1)}(Q_t) &= \int \dvol\left(-(\rho, A_{1, 0}^*) - \wt \chi\wt a^* + (\Tilde{\nu}, \nu^*)+ t(\phi, A_{1, 0}^*) + t(\wt\nu, A_{0, 1}^*) + t(\Lambda\psi)\wt a^*\right) \\
-&+ \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda F_{1, 1}\chi^* + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*)\right) \\
+I_{\gauge}^{(1)}(Q_t) &= \int \dvol\left(-(\rho, A_{1, 0}^*) - \wt \chi\wt a^* - (\Tilde{\nu}, \nu^*) - t(\varphi, A_{1, 0}^*) - t(\wt\nu, A_{0, 1}^*) - t(b, \nu^*) - t(\rho, \phi^*) - t(\Lambda\psi)\wt a^*\right) \\
+&+ \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda(F_{1, 1} + [\phi, \nu])\chi^* + [\phi, \phi]\xi^* + [\nu, a]\varphi^* + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*)\right) \\
+&+\int\dvol\left(\frac{t}{2} (F_{1, 1} + [\phi, \nu], \psi^*) + t\Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* + t\Lambda \dd_{A_{1, 0}}\nu \chi^* + \right) \\
 I^{(2)}_{\gauge} (Q_t, Q_t) &= \int \dvol \left(-\frac{1}{4}(\chi^*)^2\right) \\
 \end{align*}
 \end{prop}
