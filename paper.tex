@@ -538,7 +538,6 @@ In this section we define what it means for a (super) Lie algebra to act on a cl
 \begin{definition}
 The \emph{Chevalley-Eilenberg complex} for the Lie algebra $\gg$, with coefficients in $\oloc(\cE)$, will be defined as follows.  Consider the graded vector space
 \[C^\bullet(\fg, \oloc(\cE)) = \bigoplus_n \hom(\wedge^n \fg, \oloc(\cE))[-n]\]
-\brian{not crazy about the notation $C^\bu(\fg, \oloc(\cE))$ for just the graded vector space before knowing that $\oloc$ is a module.}
 parametrizing multilinear maps $f\colon \fg^{\otimes n}\rightarrow \oloc(\cE)$ which satisfy the antisymmetry property
 \[f(x_1, \dots, x_i, x_{i+1}, \dots, x_n) = (-1)^{|x_1||x_2|+1} f(x_1, \dots, x_{i+1}, x_i, \dots, x_n)\]
 where $x_j \in \fg$.  The Chevalley-Eilenberg differential is given, following the sign conventions of \cite{SafronovCoisoInt}, by the formula
@@ -560,8 +559,8 @@ Via the BV bracket, the shift of this cochain complex $C^\bu(\fg, \oloc(\cE))[-1
 \begin{definition}
 \label{infinitesimal_action_def}
 Let $(E, Q_{\mr{BV}},\omega, I)$ be a classical field theory. 
-\begin{itemize}
-\item[(1)]
+%\begin{itemize}
+%\item[(1)]
 An \defterm{action} of a super Lie algebra $\fg$ on $(E, Q_{\mr{BV}}, \omega, I)$ is an element of cohomological degree zero 
 \[I_\fg = \sum_{k\geq 0} I_{\fg}^{(k)} \text{ in } C^\bullet(\fg, \oloc(\cE)),\]
 where $I_\fg^{(k)}$ is a multilinear map $\fg^{\otimes k} \to \oloc(\cE)$, that satisfies the following three conditions:
@@ -571,19 +570,15 @@ where $I_\fg^{(k)}$ is a multilinear map $\fg^{\otimes k} \to \oloc(\cE)$, that 
 \item[(c)] $I_\fg$ satisfies the Maurer--Cartan equation:
 \[(\d_{\mr{CE}} + Q_{\mr{BV}}) I_\fg + \frac{1}{2} \{I_\fg, I_\fg\} = 0.\]
 \end{itemize}
-\item[(2)]
-For each $k \geq 1$ there is a decomposition $I_\fg^{(k)} = \sum_{\ell} I_\fg^{(k),\ell}$ where $ I_\fg^{(k),\ell}(x_1,\ldots,x_k) \in \oloc(\cE)$ is $\ell$-linear in the fields $\cE$ for all $x_1,\ldots,x_k \in \fg$.
-An action $I_\fg$ is called \defterm{elliptic} if the induced linear differential operator
-\[
-Q_{\mr{BV}} + \sum_{k \geq 1} \{I_\fg^{(k),2}, -\}
-\]
-is elliptic as a $C^\bu(\fg)$-linear differential operator.
-\end{itemize}
+%\item[(2)]
+%For each $k \geq 1$ there is a decomposition $I_\fg^{(k)} = \sum_{\ell} I_\fg^{(k),\ell}$ where $ I_\fg^{(k),\ell}(x_1,\ldots,x_k) \in \oloc(\cE)$ is $\ell$-linear in the fields $\cE$ for all $x_1,\ldots,x_k \in \fg$.
+%An action $I_\fg$ is called \defterm{elliptic} if the induced linear differential operator
+%\[
+%Q_{\mr{BV}} + \sum_{k \geq 1} \{I_\fg^{(k),2}, -\}
+%\]
+%is elliptic as a $C^\bu(\fg)$-linear differential operator.
+%\end{itemize}
 \end{definition}
-
-\begin{remark}
-\brian{Explain $C^\bu(\fg)$-linear elliptic}
-\end{remark}
 
 \begin{remark}
 We have seen that a classical BV theory can also be presented in terms of a BV action $S \in \oloc(\cE)$ satisfying the classical master equation $\{S, S\} = 0$. 
