@@ -2719,11 +2719,11 @@ Let us decompose the rotation group as $\Spin(4, \RR)\cong \SU(2)_+\times \SU(2)
  
  \item Rank $(1,1)$ supercharges.  Such supercharges have three invariant directions. They factor through a copy of the $\cN=2$ supersymmetry algebra. As before, they admit a twisting homomorphism from $\Spin(2, \RR)\times \Spin(2, \RR)$ and admit a $\ZZ$-grading.
 
- \item Rank $(2,1)$ (and $(1,2)$) supercharges.  Such supercharges are topological, compatible with a twisting homomorphism from $\MU(2)$ and admit a $\ZZ$-grading.
+ \item Rank $(2,1)$ and $(1,2)$ supercharges.  Such supercharges are topological, compatible with a twisting homomorphism from $\MU(2)$ and admit a $\ZZ$-grading.
  
  \item Rank $(2,2)$ square-zero supercharges are topological. They correspond to a choice of an exact sequence
  \[0\rightarrow S_+^*\rightarrow W\rightarrow S_-\rightarrow 0.\]
- Since $S_+$, $S_-$ and $W$ all carry volume forms, such a square-zero supercharge is parametrized by a continuous parameter $s\in\CC^\times$ given by the ratio of the isomorphism $\det(W)\cong \det(S_+)\otimes \det(S_-)$ induced by $Q$ and the isomorphism induced by the volume forms. These supercharges admit a $\ZZ$-grading and are compatible with the twisting homomorphism $\phi_{\mathrm{KW}}\colon \Spin(4, \RR)\rightarrow G_R$.
+ Since $S_+$, $S_-$ and $W$ all carry volume forms, such a square-zero supercharge is parametrized by a continuous parameter $s\in\CC^\times$ given by the ratio of the isomorphism $\det(W)\cong \det(S_+)^*\otimes \det(S_-)$ induced by $Q$ and the isomorphism induced by the volume forms. These supercharges admit a $\ZZ$-grading and are compatible with the twisting homomorphism $\phi_{\mathrm{KW}}\colon \Spin(4, \RR)\rightarrow G_R$.
 \end{itemize}
 
 \subsubsection{Holomorphic Twist}
@@ -2825,10 +2825,41 @@ The 4d $\cN=4$ super Yang--Mills theory viewed as a $\cN=2$ theory is 4d $\cN=2$
 By construction the twisting homomorphism $\Spin(2,\RR)\times \Spin(2, \RR)\rightarrow G_R$ defined by \eqref{eq:4d411decomposition} factors as $\Spin(2, \RR)\times \Spin(2, \RR)\subset \MU(2)\rightarrow G_R$, where the latter map is the twisting homomorphism used in Section \ref{sect:4d4holomorphictwist}. Therefore, we have to restrict the fields used in that section to $\Spin(2, \RR)\times \Spin(2, \RR)$. But by Theorem \ref{thm:4d4holomorphictwist} the fields belong to $T^*[-1]\map(\CC_{\rm Dol}\times \CC_{\rm Dol}, B\fg)$ whose underlying graded $\Spin(2, \RR)\times \Spin(2, \RR)$-equivariant bundle coincides with that of $T^*[-1]\map(\CC_{\rm Dol}\times \RR^2_{\mathrm{dR}}, B\fg)$.
 \end{proof}
 
-\subsubsection{Rank (2, 1) twist}
+\subsubsection{Rank $(1, 2)$ twist}
+
+Next we look at the case of the twist by a rank $(1,2)$ supercharge. 
+As in many cases so far, it will be useful to consider a family of supercharges which are generically of rank $(1,2)$. 
+
+We use the same twisting homomorphism $\phi\colon \MU(2) \to \Spin(6;\CC)$ and twisting data $\alpha\colon U(1) \to G_R$ as in Section \ref{sect:4d4holomorphictwist}.
+Then, $S_+ \otimes W$ decomposes under $\MU(2)$ as
+\[
+S_+\otimes W\cong L\oplus L^*\oplus \det(L)\oplus \CC \cdot Q_0 \oplus \CC \oplus \det(L)^{-1}.
+\]
+Further, the representation $S_- \otimes W^*$ decomposes as
+\[
+S_+ \otimes W^* = L \oplus L^* \oplus \CC Q'\oplus\eend_0(L),
+\]
+where $\eend_0(L)\subset \eend(L)$ is the subspace of traceless endomorphisms. The supercharge $Q_0$ has rank $(1, 0)$ and the supercharge $Q'$ has rank $(0, 2)$. Moreover, both are square-zero and commute with each other. Therefore, we may consider a family of square-zero supercharges
+\begin{equation}
+Q_t = Q_0 + tQ'
+\label{eq:4d412Hodgefamily}
+\end{equation}
+which is of rank $(1, 0)$ at $t=0$ and of rank $(1, 2)$ at $t\neq 0$.
+
+We are going to use the notation of the fields from Section \ref{sect:4d4holomorphictwist}.
+
+\begin{prop}
+Suppose $Q_t$ is the rank $(1,2)$ supercharge of \eqref{eq:4d412Hodgefamily}. The $\MU(2)$ decomposition of the functionals $I_{\rm gauge}^{(1)}, I^{(2)}_{\rm gauge}$ (see \eqref{eq:gaugeI1}, \eqref{eq:gaugeI2}) in terms of the fields of 4d $\cN=4$ super Yang--Mills theory are
+\begin{align*}
+I_{\gauge}^{(1)}(Q_t) &= \int \dvol\left(-(\rho, A_{1, 0}^*) - \wt \chi\wt a^* + (\Tilde{\nu}, \nu^*)+ t(\phi, A_{1, 0}^*) + t(\wt\nu, A_{0, 1}^*) + t(\Lambda\psi)\wt a^*\right) \\
+&+ \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda F_{1, 1}\chi^* + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*)\right) \\
+I^{(2)}_{\gauge} (Q_t, Q_t) &= \int \dvol \left(-\frac{1}{4}(\chi^*)^2\right) \\
+\end{align*}
+\end{prop}
 
 \begin{theorem}
-\chris{Rank $(1,1)$ deforming to rank $(2,1)$, the former is done above, the deformation doesn't come from dimensional reduction.  However, we know how $(1,0)$ deforms to $(2,0)$ (further supercharge acts by the differential operator $\dd_2$), so apply the same deformation to $(1,1)$.} $\mr{Map}(\CC_{\mr{Dol}} \times \RR^2_{\mr{dR}}, B\gg_{\mr{Hod}})$.
+The twist of 4d $\cN=4$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges of Equation \ref{4d12hodge} is perturbatively equivalent to $\map\left(\CC^2_{\rm Dol}, B\fg_{\Hod}\right)$. Moreover, this equivalence is $\U(2)$-equivariant.
+\label{thm:4d12hodge}
 \end{theorem}
 
 \subsubsection{Rank (2, 2) twist}
