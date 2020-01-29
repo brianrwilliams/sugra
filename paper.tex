@@ -497,14 +497,14 @@ A \defterm{morphism} $F\colon (E, Q_{\mr{BV}}, \omega, I) \rightsquigarrow (E', 
 We will now describe two primitive examples of equivalences of classical field theories which will be useful in simplifying twisted theories. First, we consider the process of integrating out an auxiliary field.
 
 \begin{prop}
-Fix a volume form $\dvol_M$ on $M$. Suppose $(E, Q, \omega, I)$ is a classical field theory, where $E\cong E_0\oplus (\cO_M\oplus \Dens_M[-1])$ with the symplectic pairing $\omega$ given by a sum of a symplectic pairing $\omega_0$ on $E_0$ and the standard symplectic pairing on the second summand. Denote by $\phi$ a section of $\cO_M$ and by $\phi^*$ a section of $\Dens_M[-1]$. Suppose the BV action is
+Fix a volume form $\dvol_M$ on $M$. Suppose $(E, \omega, S)$ is a classical field theory, where $E\cong E_0\oplus (\cO_M\oplus \Dens_M[-1])$ with the symplectic pairing $\omega$ given by a sum of a symplectic pairing $\omega_0$ on $E_0$ and the standard symplectic pairing on the second summand. Denote by $\phi$ a section of $\cO_M$ and by $\phi^*$ a section of $\Dens_M[-1]$. Suppose the BV action is
 \[S = S_0 + \frac{1}{2} \int \dvol_M (\phi^2 - 2\phi S_1),\]
-where $S_0$ and $S_1$ are independent of $\phi$. Then the theory $(E, Q, \omega, I)$ is perturbatively equivalent to the theory $(E_0, Q_0, \omega_0, I')$ with the BV action $S_0 - S_1^2/2$, where we set $\phi^* = 0$ and $\phi = S_1$.
+where $S_0$ and $S_1$ are independent of $\phi$. Then the theory $(E, Q, \omega, I)$ is perturbatively equivalent to the theory $(E_0, \omega_0, S')$ with the BV action $S' = S_0 - S_1^2/2$, where we set $\phi^* = 0$ and $\phi = S_1$.
 \label{prop:integrateoutfield}
 \end{prop}
 
 \begin{proof}
-Concretely, suppose that the linear part of $S_1$ is given by an operator $Q_1$, and the interacting part of $Q_1$ is given by a functional $I_1 = \sum_{n=1}^\infty I_1^n$.  Then we define the required perturbative equivalence as follows.  First $F_1(e) = (e, Q_1(e), 0) \in E$.  Then, for $n > 1$, define
+Concretely, suppose that the linear part of $S_1$ is given by an operator $Q_1$, and the interacting part of $S_1$ is given by a functional $I_1 = \sum_{n=1}^\infty I_1^n$.  Then we define the required perturbative equivalence as follows.  First $F_1(e) = (e, Q_1(e), 0) \in E$.  Then, for $n > 1$, define
 \begin{align*}
 F_n \colon \sym^n(E_0) &\to E \\
 e_1 \otimes \cdots \otimes e_n &\mapsto (0, I_1^n(e_1, \ldots, e_n), 0).
@@ -530,12 +530,12 @@ where $i$ is the canonical inclusion, we can replace it with a quasi-isomorphic 
 
 We may also remove a trivial BRST doublet.
 
-\begin{prop}
-Suppose $(E, Q_{\mr{BV}}, \omega, I)$ is a classical field theory, $F\rightarrow M$ is a graded vector bundle, such that $E\cong E_0\oplus E_1\oplus E_1^![-1]\oplus E_1^!\oplus E_1[-1]$. Denote by $\phi, \phi^*$ sections of $E_1,E_1^![-1]$ and by $\psi, \psi^*$ sections of $E_1^!, E_1[-1]$. Suppose
-\[Q_{\mr{BV}}\phi + \{I, \phi\} = \phi - f_\psi \in E_1[-1] ,\qquad Q\psi + \{I, \psi\} = \psi - f_{\phi} \in E_1^![-1],\]
-where $f_\phi$ is independent of $\psi$ and $f_{\psi}$ is independent of $\phi$. Then the theory $(E, Q_{\mr{BV}}, \omega, I)$ is perturbatively equivalent to the theory $(E_0, Q_0, \omega_0, I_0)$ with the BV action obtained by setting $\phi = f_\psi, \phi^* = 0,  \psi = f_\phi, \psi^* = 0$ in the original BV action.
-\label{prop:BRSTdoublet}
-\end{prop}
+%\begin{prop}
+%Suppose $(E, Q_{\mr{BV}}, \omega, I)$ is a classical field theory, $F\rightarrow M$ is a graded vector bundle, such that $E\cong E_0\oplus E_1\oplus E_1^![-1]\oplus E_1^!\oplus E_1[-1]$. Denote by $\phi, \phi^*$ sections of $E_1,E_1^![-1]$ and by $\psi, \psi^*$ sections of $E_1^!, E_1[-1]$. Suppose
+%\[Q_{\mr{BV}}\phi + \{I, \phi\} = \phi - f_\psi \in E_1[-1] ,\qquad Q\psi + \{I, \psi\} = \psi - f_{\phi} \in E_1^![-1],\]
+%where $f_\phi$ is independent of $\psi$ and $f_{\psi}$ is independent of $\phi$. Then the theory $(E, Q_{\mr{BV}}, \omega, I)$ is perturbatively equivalent to the theory $(E_0, Q_0, \omega_0, I_0)$ with the BV action obtained by setting $\phi = f_\psi, \phi^* = 0,  \psi = f_\phi, \psi^* = 0$ in the original BV action.
+%\label{prop:BRSTdoublet}
+%\end{prop}
 
 \begin{prop} 
 Let $(E_0, \omega_0, S_0)$ be a classical BV theory and $F \to M$ a graded vector bundle.
@@ -544,21 +544,26 @@ Consider the theory $(E, \omega, S)$ with underlying graded vector bundle
 E = E_0 \oplus \left(F \oplus F^! [-1]\right) \oplus \left(F^! \oplus F[-1] \right)
 \]
 and $\omega$ given by the sum of $\omega_0$ plus the standard degree $+1$ pairings between $F, F^! [-1]$ and $F^!, F[-1]$. 
-The action functional is
+Suppose further that the action functional
 \[
-S = S_0 + \int \phi^\star \psi .
+S = S_0 + \int \phi^* \psi - \int \phi I_\phi - \int \psi^* I_{\psi^*} 
 \]
+satisfies the classical master equation, where $I_{\phi}, I_{\psi^*}$ are local functionals. 
+Then, the classical BV theory $(E, \omega, S)$ is equivalent to the BV theory $(E_0, \omega_0, S')$ where $S'$ is given by setting $\phi = I_{\psi^*}$ and $\psi^* = I_{\phi}$ in the original action functional $S$. 
 \end{prop}
 
 \begin{proof}
-Again, concretely, we'll write $\sum_{n \ge 1} f^{(n)}_\phi$ and $\sum_{n \ge 1} f^{(n)}_{\psi}$ for the Taylor expansions of $f_\phi$ and $f_{\psi}$ respectively.  We can write out a morphism of classical BV theories $F \colon E_0 \to E$ by defining $F_1(e) = (e, f^{(1)}_{\phi}(e),0,f^{(1)}_\psi(e),0)$, and for $n > 1$ defining 
-\[F_n(e_1\otimes e_n) = (0, f^{(n)}_{\phi}(e_1, \ldots, e_n), 0, f^{(n)}_{\psi}(e_1, \ldots, e_n)).\]
-Again, these $F_n$ manifestly intertwine the pairings on $E_0$ and $E$, since the image of $F_n$ lands in an isotropic summand of the $E_1\oplus E_1^![-1]\oplus E_1^!\oplus E_1[-1]$ part of $E$.  Also, by construction, the $F_n$ intertwine the action functionals, since
+Again, concretely, we'll write $\sum_{n \ge 1} I^{(n)}_\phi$ and $\sum_{n \ge 1} I^{(n)}_{\psi^*}$ for the Taylor expansions of $I_\phi$ and $I_{\psi^*}$ respectively.  
+We can write out a morphism of classical BV theories $F \colon E_0 \to E$ by defining $F_1(e) = (e, I^{(1)}_{\phi}(e),0,0, I^{(1)}_{\psi^*}(e))$, and for $n > 1$ defining 
+\[F_n(e_1\otimes \cdots \otimes e_n) = (0, I^{(n)}_{\phi}(e_1, \ldots, e_n), 0, I^{(n)}_{\psi^*}(e_1, \ldots, e_n)).\]
+
+The maps $F_n$ manifestly intertwine the pairings on $E_0$ and $E$, since the image of $F_n$ lands in an isotropic summand of the $E_1\oplus E_1^![-1]\oplus E_1^!\oplus E_1[-1]$ part of $E$.  
+Also, by construction, the $F_n$ intertwine the action functionals, since
 \begin{align*}
 S(F(e)) &= S_0(e) + \frac{1}{2} \int_M \omega(f_\psi(e), f_\phi(e) - f_\phi(e)) + \omega(f_\phi(e), f_\psi(e) - f_\psi(e)) \\
-&= S_0(e).
+&= S'(e).
 \end{align*}
-Again, $F_1$ is a quasi-isomorphism between the classical BV complexes with quasi-inverse given by the projection onto the summand $E_0$.
+The linear term $F_1$ is a quasi-isomorphism between the classical BV complexes with quasi-inverse given by the projection onto the summand $E_0$.
 \end{proof}
 
 \begin{remark}
