@@ -525,6 +525,19 @@ where $f_\phi$ is independent of $\psi$ and $f_{\psi}$ is independent of $\phi$.
 \label{prop:BRSTdoublet}
 \end{prop}
 
+\begin{prop} 
+Let $(E_0, \omega_0, S_0)$ be a classical BV theory and $F \to M$ a graded vector bundle.
+Consider the theory $(E, \omega, S)$ with underlying graded vector bundle
+\[
+E = E_0 \oplus \left(F \oplus F^! [-1]\right) \oplus \left(F^! \oplus F[-1] \right)
+\]
+and $\omega$ given by the sum of $\omega_0$ plus the standard degree $+1$ pairings between $F, F^! [-1]$ and $F^!, F[-1]$. 
+The action functional is
+\[
+S = S_0 + \int \phi^\star \psi .
+\]
+\end{prop}
+
 \begin{proof}
 Again, concretely, we'll write $\sum_{n \ge 1} f^{(n)}_\phi$ and $\sum_{n \ge 1} f^{(n)}_{\psi}$ for the Taylor expansions of $f_\phi$ and $f_{\psi}$ respectively.  We can write out a morphism of classical BV theories $F \colon E_0 \to E$ by defining $F_1(e) = (e, f^{(1)}_{\phi}(e),0,f^{(1)}_\psi(e),0)$, and for $n > 1$ defining 
 \[F_n(e_1\otimes e_n) = (0, f^{(n)}_{\phi}(e_1, \ldots, e_n), 0, f^{(n)}_{\psi}(e_1, \ldots, e_n)).\]
@@ -2863,11 +2876,7 @@ Suppose $Q_t$ is the rank $(1,2)$ supercharge of \eqref{eq:4d412Hodgefamily}. Th
 I^{(1)}(Q_t) &= \int \dvol\left(-(\rho, A_{1, 0}^*) - \wt \chi\wt a^* - (\Tilde{\nu}, \nu^*) - t(\varphi, A_{1, 0}^*) - t(\wt\nu, A_{0, 1}^*) - t(b, \nu^*) - t(\rho, \phi^*) - t(\Lambda\psi)\wt a^*\right) \\
 &+ \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda(F_{1, 1} + [\phi, \nu] + [a, \wt a])\chi^* + [\phi, \phi]\xi^* + [\nu, a]\varphi^* + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*)\right) \\
 &+t\int\dvol\left(\frac{1}{2} (F_{1, 1} + [\phi, \nu] + \omega\wedge [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* + \Lambda \dd_{A_{1, 0}}\nu \chi^* + \dd_{A_{1, 0}} a \varphi^* + \ol\dd_{A_{0, 1}} a \wt\nu^* + [\phi, a]\rho^* + [\nu, a]b^*\right) \\
-
-I^{(2)}_{pavel} (Q_t, Q_t) &= \int \dvol \left(\frac{t^2}{2} (\xi^* B^* + \chi^* \Tilde{\chi}^*)  -\frac{1}{4}(\chi^* + t \Lambda \psi^*)^2 + t^2 a c^*\right) \\
-
-I^{(2)} (Q_t, Q_t)_{brian} &= \int \dvol \left(t^2(\xi^*B^* + \chi^*\wt\chi^* + \frac{1}{2}(\psi^*, \psi^*)) -\frac{1}{4}(\wt\chi^* + t \Lambda\psi^*)^2 + t^2 ac^*\right) \\
-
+I^{(2)} (Q_t, Q_t) &= \int \dvol \left(t^2(\xi^*B^* + \chi^*\wt\chi^* + \frac{1}{2}(\psi^*, \psi^*)) -\frac{1}{4}(\wt\chi^* + t \Lambda\psi^*)^2 + t^2 ac^*\right) \\
 \end{align*}
 \end{prop}
 
