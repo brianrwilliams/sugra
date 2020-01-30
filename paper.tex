@@ -1929,7 +1929,7 @@ Up to rescaling of the antifields, it coincides with the BV action for holomorph
 A similar claim was previously proved by Baulieu \cite{Baulieu} by adding an auxiliary field to 10d $\mc N=(1, 0)$ super Yang--Mills.
 \end{remark}
 
-\section{Dimension 9}
+\section{Dimension 9} \label{9d_section}
 
 The 9-dimensional supersymmetry algebra has odd part $\Sigma\cong S\otimes W$, where $S$ is the 16-dimensional spin representation of $\Spin(9, \CC)$ and $W$ is a complex vector space equipped with a nondegenerate symmetric bilinear pairing. There is a Yang--Mills theory with $\mc N=1$ supersymmetry, so we fix $W = \CC$.
 
@@ -3146,11 +3146,19 @@ Finally, let's consider maximal super Yang-Mills theory with gauge group $G$ in 
 
 In the $\mc N=8$ supersymmetry algebra the classification of twists is the same as we saw in $\mc N=4$.  That is, there are three orbits: one consisting of rank 1 supercharges, and two orbits of rank 2 supercharges.  We can see this in the following way.
 \begin{lemma}
-There are two $\spin(3;\RR) \times G_R$-orbits of rank 2 supercharges in the 3d $\mc N=8$ supersymmetry algebra.
+There are two $\spin(3;\CC) \times G_R$-orbits of rank 2 supercharges in the 3d $\mc N=8$ supersymmetry algebra.
 \end{lemma}
 
 \begin{proof}
-
+Choose a symplectic basis $\langle s, s' \rangle$ for $S$, and let $Q = s \otimes w + s' \otimes w'$ be a square-zero rank 2 element of $S \otimes W$.  Let $V_7$ denote the fundamental representation of $G_R$.  As in Section \ref{9d_section}, the element $w \in W$ is equivalent to the data of a maximal isotropic subspace $L \sub V_7$, together with a choice of half-density.  This element $w$ is stabilized, in particular, by a copy of the metalinear group $\ML(L)$, under whose action the auxiliary space $W$ decomposes as
+\[W \iso \left(\CC \oplus L \oplus \wedge^2 L \oplus \wedge^3 L \right) \otimes \det(L)^{-1/2},\]
+(see also \cite[Section 4.7]{ElliottSafronov}), with $w$ lying in the last summand.  Under this decomposition, split the remaining element $w' = (v_0, v_1, v_2, v_3)$.  Then
+\begin{itemize}
+ \item $v_0 = 0$, because the square-zero condition implies, in particular, that $(w,w') = 0$ with respect to the scalar spinor pairing on $W$, here given by the wedge pairing.
+ \item Without loss of generality $v_3 = 0$, since under the action of $\spin(3;\CC)$, $s \otimes w + s' \otimes w' \sim s \otimes w + s' \otimes (w'-w)$.
+ \item If $v_1 = 0$ then $v_2 \ne 0$, and all choices of non-zero $v_2$ are in the same orbit under $\SL(L) \sub \stab(w) \sub G_R$.
+ \item If $v_1 \ne 0$ then without loss of generality $v_2 = 0$, using the action by wedge product of $L \sub \stab(w) \sub G_R$.  Finally all choices of non-zero $v_1$ are likewise in the same orbit under $\SL(L) \sub \stab(w) \sub G_R$.  The stabilizer of $w$ acts on the space $v_1 \ne 0$, so these latter two cases comprise two inequivalent orbits.
+\end{itemize}
 \end{proof}
 
 The classification of twists therefore takes the following form.  We identify how the two orbits of rank 2 supercharges arise by dimensional reduction from 4d $\mc N=4$ by forgetting the supertranslation action down to 3d $\mc N=4$ (this may partially break the R-symmetry, but this is enough to distinguish the two classes of twisted theory).
