@@ -538,12 +538,12 @@ S(\Psi(e)) &= S(e, S_1(e), 0) \\
 
 We may also remove a trivial BRST doublet.
 
-%\begin{prop}
-%Suppose $(E, Q_{\mr{BV}}, \omega, I)$ is a classical field theory, $F\rightarrow M$ is a graded vector bundle, such that $E\cong E_0\oplus E_1\oplus E_1^![-1]\oplus E_1^!\oplus E_1[-1]$. Denote by $\phi, \phi^*$ sections of $E_1,E_1^![-1]$ and by $\psi, \psi^*$ sections of $E_1^!, E_1[-1]$. Suppose
-%\[Q_{\mr{BV}}\phi + \{I, \phi\} = \phi - f_\psi \in E_1[-1] ,\qquad Q\psi + \{I, \psi\} = \psi - f_{\phi} \in E_1^![-1],\]
-%where $f_\phi$ is independent of $\psi$ and $f_{\psi}$ is independent of $\phi$. Then the theory $(E, Q_{\mr{BV}}, \omega, I)$ is perturbatively equivalent to the theory $(E_0, Q_0, \omega_0, I_0)$ with the BV action obtained by setting $\phi = f_\psi, \phi^* = 0,  \psi = f_\phi, \psi^* = 0$ in the original BV action.
+\begin{prop}
+Suppose $(E, Q_{\mr{BV}}, \omega, I)$ is a classical field theory, $F\rightarrow M$ is a graded vector bundle, such that $E\cong E_0\oplus E_1\oplus E_1^![-1]\oplus E_1^!\oplus E_1[-1]$. Denote by $\phi, \phi^*$ sections of $E_1,E_1^![-1]$ and by $\psi, \psi^*$ sections of $E_1^!, E_1[-1]$. Suppose
+\[Q_{\mr{BV}}\phi + \{I, \phi\} = \phi - f_\psi \in E_1[-1] ,\qquad Q\psi + \{I, \psi\} = \psi - f_{\phi} \in E_1^![-1],\]
+where $f_\phi$ is independent of $\psi$ and $f_{\psi}$ is independent of $\phi$. Then the theory $(E, Q_{\mr{BV}}, \omega, I)$ is perturbatively equivalent to the theory $(E_0, Q_0, \omega_0, I_0)$ with the BV action obtained by setting $\phi = f_\psi, \phi^* = 0,  \psi = f_\phi, \psi^* = 0$ in the original BV action.
 %\label{prop:BRSTdoublet}
-%\end{prop}
+\end{prop}
 
 \begin{prop} 
 \label{prop:BRSTdoublet}
@@ -1919,9 +1919,9 @@ The holomorphic twist of 10d $\mc N=(1, 0)$ super Yang--Mills on $M=\RR^{10}$ is
 \begin{proof}
 First, we may eliminate $\chi$ and $\chi^*$ using Proposition \ref{prop:integrateoutfield}. So, the above theory is perturbatively equivalent to the theory without $\chi$ and $\chi^*$ with the BV action
 \begin{align*}
-S_{\text{no }\chi} &= \int \dvol \left(-(F_{2, 0}, F_{0, 2}) + (B, \dd_{A_{1, 0}} \psi)\right)  + \frac{1}{2}B\wedge \ol\dd_{A_{0, 1}} B\wedge\Omega \\
+S_{\text{no }\chi} &= \int \dvol \left(-(F_{2, 0}, F_{0, 2}) + (B, \dd_{A_{1, 0}} \rho)\right)  + \frac{1}{2}B\wedge \ol\dd_{A_{0, 1}} B\wedge\Omega \\
 &+ \int \dvol\left((\dd_{A_{1, 0}} c, A_{1, 0}^*) + (\ol\dd_{A_{0, 1}} c, A_{0, 1}^*) + ([\rho, c], \rho^*) + ([B, c], B^*) + \frac{1}{2}[c, c]c^*\right) \\
-&+ \int \dvol(-(\psi, A_{1, 0}^*) + (F_{0, 2}, B^*))
+&+ \int \dvol(-(\rho, A_{1, 0}^*) + (F_{0, 2}, B^*))
 \end{align*}
 
 Next, we have a term $\int \dvol \rho\wedge A_{1, 0}^*$ in the action, i.e. $(\rho, A_{1, 0})$ is a trivial BRST doublet, so by Proposition \ref{prop:BRSTdoublet} we may remove it. The above theory then becomes perturbatively equivalent to the theory without fields $\rho,\rho^*,A_{1,0},A_{1,0}^*$ and with the BV action
@@ -2880,7 +2880,7 @@ Next we look at the case of the twist by a rank $(2,0)$ supercharge.
 As in Section \ref{sect:4d2Donaldson}, it will be useful to consider a family of topological supercharges which degenerate to the rank $(1,0)$ supercharge we just discussed. 
 
 We use the same twisting homomorphism $\phi : \MU(2) \to \Spin(6;\CC)$ and twisting data $\alpha : U(1) \to G_R$ as in Section \ref{sect:4d4holomorphictwist}.
-Then, $S_+ \otimes W$ decomposes nuder $\MU(2)$ as
+Then, $S_+ \otimes W$ decomposes under $\MU(2)$ as
 \[
 S_+\otimes W\cong L\oplus L^*\oplus \det(L)\oplus \CC \cdot Q_0 \oplus \CC \cdot \Bar{Q}_0 \oplus \det(L)^{-1}.
 \]
@@ -3176,7 +3176,7 @@ The classification of twists therefore takes the following form.  We identify ho
 
 \subsubsection{Minimal Twist}
 \label{sect:3d8minimal_twist}
-The 3d $\cN=8$ super Yang--Mills viewed as an $\cN=4$ supersymmetric theory coincides with the 3d $\cN=4$ super Yang--Mills with matter valued in the representation $U = T^*\gg$. From Theorem \ref{3d_4_minimal_twist_thm} we obtain the following statement.
+The 3d $\cN=8$ super Yang--Mills viewed as an $\cN=4$ supersymmetric theory coincides with the 3d $\cN=4$ super Yang--Mills with matter valued in the representation $U = T^*\gg$.  Alternatively, it is obtained by dimensional reduction from the holomorphic twist of 4d $\mc N=4$ super Yang-Mills.  From Theorem \ref{3d_4_minimal_twist_thm} we obtain the following statement.
 
 \begin{theorem} 
 The minimal twist of 3d $\cN=8$ super Yang--Mills on $M=\CC\times \RR$ is perturbatively equivalent to the BF theory with space of fields $T^*[-1]\mr{Map}(\CC \times \RR_{\mr{dR}}, (\gg/\gg)_{\mr{Dol}})$. Moreover, the equivalence is $\U(1)$-equivariant.
