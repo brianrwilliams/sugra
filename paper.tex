@@ -3082,18 +3082,20 @@ We will now consider 3d $\mc N=4$ theories, which arise by dimensional reduction
 In the $\mc N=4$ supersymmetry algebra there are now three non-trivial orbits of square-zero supercharges.  An element $Q \in S \otimes W$ gives rise to a map $S^* \to W$; $Q$ squares to zero if its image is totally isotropic.  The classification of orbits includes the rank of this map.
 \begin{itemize}
  \item Rank 1.  In this case $Q$ is minimal, with 2 invariant directions.  Such supercharges come from the $\mc N=2$ supersymmetry algebra.  They admit the twisting homomorphism $\phi \colon \U(1) \to G_R$ and a $\ZZ$-grading $\alpha \colon \U(1) \to G_R$.
- \item Rank 2 $A$-twist.  Rank 2 supercharges are topological.  A rank 2 supercharge defines a Lagrangian subspace of $W$, and therefore an orientation.  The $G_R = \Spin(4;\RR)$-action factors through an $\SO(4)$ action, which also corresponds to a choice of orientation, so there are two $G_R$ orbits: those determining the same orientation, and those determining the opposite orientation.  We refer to as the $A$-twist and the $B$-twist respectively.  The A-twist admits the twisting homomorphism $\phi \colon \U(1) \to G_R$ and a $\ZZ$-grading $\alpha \colon \U(1) \to G_R$. and a $\ZZ$-grading $\alpha \colon \U(1) \to G_R$.
+ \item Rank 2 $A$-twist.  Rank 2 supercharges are topological.  A rank 2 supercharge defines a Lagrangian subspace of $W$, and therefore an orientation.  The $G_R = \Spin(4;\RR)$-action factors through an $\SO(4)$ action, and so preserves orientation, so there are two $G_R$ orbits corresponding to the two choices of orientation.  We refer to these as the $A$-twist and the $B$-twist, distinguished by whether or not they can be promoted to a twisting datum.  The A-twist admits the twisting homomorphism $\phi \colon \U(1) \to G_R$ and a $\ZZ$-grading $\alpha \colon \U(1) \to G_R$. and a $\ZZ$-grading $\alpha \colon \U(1) \to G_R$.
  \item Rank 2 $B$-twist.  The other topological orbit admits the diagonal twisting homomorphism $\phi' \colon \SU(2) \to \SU(2) \times \SU(2) \iso G_R$.  This twist is only $\ZZ/2\ZZ$-graded
 \end{itemize}
 
-The claims about twisting homomorphisms and $\ZZ$-gradings follows by identifying the twists as dimensional reductions from 4d $\mc N=2$.
+The distinction via twisting homomorphisms and $\ZZ$-gradings follows by identifying the twists as dimensional reductions from 4d $\mc N=2$.
  
 \begin{lemma} \label{3d_4_orbits_lemma}
 A rank $(2,0)$ square 0 supercharge in the 4d $\mc N=2$ supersymmetry algebra restricts to an A-twisting supercharge in 3d $\mc N=4$.  Likewise a rank $(1,1)$ square zero supercharge in 4d $\mc N=2$ restricts to a B-twisting supercharge in 3d $\mc N=4$.
 \end{lemma}
 
 \begin{proof}
-The projection from the 4d $\mc N=2$ supertranslation algebra to the 3d $\mc N=4$ supertranslation algebra induces an isomorphism $W_4 \oplus W_4^* \to W$ of representations of the group $\spin(3;\RR) \sub \spin(3;\CC)$. Here $W_4$ is the $d=4$ auxiliary space, with dimension 2.  This splits the fundamental representation $W$ into the sum of two oriented Lagrangians. A rank $(2,0)$ supercharge induces the Lagrangian subspace $W_4 \sub W$, which is oriented.  A rank $(1,1)$ supercharges induces a Lagrangian subspace of the form $L \oplus L^* \sub W$, where $L$ is a 1-dimensional subspace of $W_4$.  This subspace has the opposite orientation.  
+The projection from the 4d $\mc N=2$ supertranslation algebra to the 3d $\mc N=4$ supertranslation algebra induces an isomorphism $W_4 \oplus W_4^* \to W$ of representations of the group $\spin(3;\RR) \sub \spin(3;\CC)$. Here $W_4$ is the $d=4$ auxiliary space, with dimension 2.  This splits the fundamental representation $W$ into the sum of two Lagrangians, defining an orientation on $W$. A rank $(2,0)$ supercharge induces the Lagrangian subspace $W_4 \sub W$, which is oriented.  The corresponding twist can be promoted to a twisting datum using, so this is the A-twist in our classification above.
+
+A rank $(1,1)$ supercharges induces a Lagrangian subspace of the form $L \oplus L^* \sub W$, where $L$ is a 1-dimensional subspace of $W_4$.  This subspace has the opposite orientation, so corresponds to the B-twist in our classification above.  
 \end{proof}
 
 \subsubsection{Minimal Twist}
@@ -3128,7 +3130,7 @@ The topological $A$ twist of 3d $\cN=4$ super Yang--Mills is perturbatively triv
 We consider $V_\RR=\RR^3$ equipped with a Euclidean structure and as before let $V=V_\RR\otimes_\RR\CC$ be its complexification. $V$ carries a Hermitian structure and a half-density, so by the results of Section \ref{sect:6dholomorphictwist} we obtain a square-zero supercharge $Q$. Under the projection $\Re\colon V\rightarrow V_\RR$ the supercharge $Q$ dimensionally reduces to the topological $B$ supercharge in 3 dimensions. Therefore, from Theorem \ref{thm:6dCSreduction} we obtain the following statement.
 
 \begin{theorem} \label{3d_4_B_twist_thm}
-The rank $2$ B-twist of 3d $\mc N=4$ super Yang-Mills theory with symplectic matter representation $U$ is perturbatively equivalent to the generalized BF theory coupled to a $U$-valued higher holomorphic boson with space of fields $\mr{Map}(\RR^3_{\mr{dR}}, U\ham \gg)$. Moreover, the equivalence is $\Spin(5, \RR)$-equivariant. 
+The rank $2$ B-twist of 3d $\mc N=4$ super Yang-Mills theory with symplectic matter representation $U$ is perturbatively equivalent to the generalized BF theory coupled to a $U$-valued higher holomorphic boson with space of fields $\mr{Map}(\RR^3_{\mr{dR}}, U\ham \gg)$. Moreover, the equivalence is $\Spin(5; \RR)$-equivariant. 
 \end{theorem}
 
 \subsection{\texorpdfstring{$\cN = 8$}{N=8} Super Yang-Mills Theory} \label{3d8section}
