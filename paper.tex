@@ -57,11 +57,9 @@ We give a complete classification of supersymmetric twists of super Yang-Mills t
  \item  perspective in terms of twisting homomorphisms, and putting twisted theories on curved backgrounds.
  \item  Mathematical literature on SUSY Yang-Mills, including Baez-Huerta and references therein.
  \item  Strategy for computations: coupling to background fields, homotopical SUSY action (reference Baulieu et al), proving the CME is satisfied including the background symmetry fields, then computing the twist in terms of the EOM in a few examples, and computing many other examples via dimensional reduction.
- \item  Table of the twists, and commentary on where each has appeared before in the literature.
  \item  EOM of A-twists, and connection to various PDEs of interest in QFT.
  \item  Connection between twisted BV theories and twisted factorization algebras, and therefore to our earlier paper on $\bb E_n$ algebras.
  \item  Quantization: for cotangent theories and their deformations there's a 1-loop exact prequantization, just need to calculate the 1-loop anomaly to the QME.  In many cases this is worked out.
- \item  Summary of the sections of the paper.
 \end{enumerate}}
 
 
@@ -76,7 +74,7 @@ In this section we'll summarize the results of Part \ref{classification_part} of
 
 \textbf{Dimension 9}
 \begin{itemize}
- \item \emph{$\mc N=1$ minimal twist.} The unique twisted super Yang-Mills theory in 9 dimensions is equivalent, as a $\ZZ/2\ZZ$-graded theory, to a mixed version of Chern-Simons theory with one topological direction and four holomorphic directions.  It is $\SU(4)$-invariant, and can be defined on the product of a Calabi-Yau 4-fold and a flat 1-manifold. \chris{Maybe no reference here?  Baulieu, Nekrasov, Losev define a kind of 9d twisted theory but it seems to be truly topological, not partially holomorphic?  It reduces to the 8d A-twist.}
+ \item \emph{$\mc N=1$ minimal twist.} The unique twisted super Yang-Mills theory in 9 dimensions is equivalent, as a $\ZZ/2\ZZ$-graded theory, to a mixed version of Chern-Simons theory with one topological direction and four holomorphic directions.  It is $\SU(4)$-invariant, and can be defined on the product of a Calabi-Yau 4-fold and a flat 1-manifold. 
 \end{itemize}
 
 \textbf{Dimension 8}
@@ -3136,7 +3134,7 @@ The topological $A$ twist of 3d $\cN=4$ super Yang--Mills is perturbatively triv
 We consider $V_\RR=\RR^3$ equipped with a Euclidean structure and as before let $V=V_\RR\otimes_\RR\CC$ be its complexification. $V$ carries a Hermitian structure and a half-density, so by the results of Section \ref{sect:6dholomorphictwist} we obtain a square-zero supercharge $Q$. Under the projection $\Re\colon V\rightarrow V_\RR$ the supercharge $Q$ dimensionally reduces to the topological $B$ supercharge in 3 dimensions. Therefore, from Theorem \ref{thm:6dCSreduction} we obtain the following statement.
 
 \begin{theorem} \label{3d_4_B_twist_thm}
-The rank $2$ B-twist of 3d $\mc N=4$ super Yang-Mills theory with symplectic matter representation $U$ is perturbatively equivalent to the generalized BF theory coupled to a $U$-valued higher holomorphic boson with space of fields $\mr{Map}(\RR^3_{\mr{dR}}, U\ham \gg)$. Moreover, the equivalence is $\Spin(5; \RR)$-equivariant. 
+The rank $2$ B-twist of 3d $\mc N=4$ super Yang-Mills theory with symplectic matter representation $U$ is perturbatively equivalent to the generalized BF theory coupled to a $U$-valued higher holomorphic boson with space of fields $\mr{Map}(\RR^3_{\mr{dR}}, U\ham \gg)$. Moreover, the equivalence is $\Spin(3; \RR)$-equivariant. 
 \end{theorem}
 
 \subsection{\texorpdfstring{$\cN = 8$}{N=8} Super Yang-Mills Theory} \label{3d8section}
@@ -3208,33 +3206,27 @@ The rank $2$ B-twist of 3d $\mc N=8$ super Yang-Mills theory with gauge group $G
 \end{theorem}
 
 \section{Dimension 2}
-
-There are two classes of twisted supersymmetric gauge theory that we will consider in 2d.  First we have theories with $(\mc N, \mc N)$ supersymmetry; these arise via dimensional reduction from supersymmetric gauge theories in higher dimensions.  We additionally have gauge theories with chiral, i.e. $(0,\mc N)$ supersymmetry, which we saw using the observations in Section \ref{sect:2dchiral}.  We'll address twists for these two classes of theory in turn.
+In dimension 2, the semispin representations $S_\pm$ are 1-dimensional, where $\spin(2;\CC) \iso \CC^\times$ acts with weight $\pm 1$.  There is an independent pairing $\Gamma_\pm \colon S_\pm^{\otimes 2} \to V_2 \iso \CC_1 \oplus \CC_{-1}$ for each chirality.  There are two classes of twisted supersymmetric gauge theory that we will consider in 2d.  First we have theories with $(\mc N, \mc N)$ supersymmetry; these arise via dimensional reduction from supersymmetric gauge theories in higher dimensions.  We additionally have gauge theories with chiral, i.e. $(0,\mc N)$ supersymmetry, which we saw using the observations in Section \ref{sect:2dchiral}.  We'll address twists for these two classes of theory in turn.
 
 \subsection{\texorpdfstring{$\cN=(2,2)$}{N=(2,2)} Super Yang-Mills with matter} \label{sect:2d(2,2)}
-First, let's consider the $\mc N=(2,2)$ super Yang-Mills theory, which arises via dimensional reduction from 3d $\mc N=2$ super Yang-Mills.  This theory includes a gauge multiplet with gauge group $G$ and a chiral multiplet valued in a representation $R$ of $G$.
+First, let's consider the $\mc N=(2,2)$ super Yang-Mills theory, which arises via dimensional reduction from 3d $\mc N=2$ super Yang-Mills.  This theory includes a gauge multiplet with gauge group $G$ and a chiral multiplet valued in a representation $R$ of $G$.  The R-symmetry group is $\SO(2) \times \SO(2)$, with the factors acting by their fundamental representation on $W_+$ and $W_-$ repectively.
 
 \vspace{-10pt}
-\paragraph{Fields:} We can describe the BRST fields of $\mc N=(2,2)$ super Yang-Mills by restricting the fields in dimension 3 from Section \ref{sect:3d_2_section}, or equivalently the 3d fields from Section \ref{sect:4d_1_section} to representations of the group $\mr O(2)$.  In addition to the ghost $c$, the fields we obtain are
+\paragraph{Fields:} We can describe the BRST fields of $\mc N=(2,2)$ super Yang-Mills by restricting the fields in dimension 3 from Section \ref{sect:3d_2_section}, or equivalently the 3d fields from Section \ref{sect:4d_1_section} to representations of the group $\mr O(2)$.  The fields we obtain are
 \begin{itemize}
  \item $\gg$-valued bosons: $A \in \Omega^1(\RR^2; \gg)$, and a pair of scalars $(\phi_1,\phi_2) \in \Omega^0(\RR^2; \gg \oplus \gg)$.
  \item $R$-valued bosons: $(\Bar{\phi}, \phi) \in \Omega^0(\RR^2 ; R \oplus R^*)$.
  \item $\gg$-valued fermions: $(\lambda_+ \otimes u_+,\lambda_- \otimes u_-) \in \Omega^0(\RR^2 ; S \otimes (W_+ \oplus S_- \otimes W_-) \otimes \gg)$.
- \item $R$-valued fermions: $(\psi^+_+,\psi^+_-, \psi^-_+, \psi^-_-) \in \Omega^0(\RR^2 ; (S_+ \oplus S_-) \otimes R \oplus \otimes (S_+ \oplus S_-) \otimes R^*)$.
+ \item $R$-valued fermions: $(\psi^+_+,\psi^+_-, \psi^-_+, \psi^-_-) \in \Omega^0(\RR^2 ; (S_+ \oplus S_-) \otimes R \oplus (S_+ \oplus S_-) \otimes R^*)$.
+ \item Ghost field: $c \in \Omega^0(\RR^2; \gg)[1]$.
 \end{itemize}
 
-\vspace{-10pt}
-\paragraph{Supersymmetry action:} 
-\chris{todo}
-
-\vspace{-10pt}
-\paragraph{Twisting data:}
 In the $\mc N=(2,2)$ supersymmetry algebra there is are three classes of non-trivial orbits of square-zero supercharges.  
 \begin{itemize}
- \item Square-zero supercharges of rank $(1,0)$ or $(0,1)$, which are holomorphic
- \item Square-zero supecharges of rank $(1,1)$ are topological, and split into two classes: the B-supercharge arises by dimensional reduction from 3 dimensions, and the A-supercharge does not.
+ \item Square-zero supercharges of rank $(1,0)$ or $(0,1)$, which are holomorphic.  There is a compatible twisting homomorphism from $\mr U(1)$, and a compatible twisting datum $\alpha \colon \mr U(1) \to \spin(2;\RR)$.  
+ \item Square-zero supercharges of rank $(1,1)$ are topological, and split into two orbits under $\spin(2;\RR) \times G_R$: acting by $G_R$, we can \chris{...}. The B-supercharge
+ \item 
 \end{itemize}
-\chris{todo, say something about $\ZZ$-gradings and twisting homomorphisms.}
 
 The calculation of the twists here is similar to what we saw in 4d $\mc N=2$.  The holomorphic twist and the B-twist arise by dimensional reduction from 3d, but the A-twist as a deformation of the holomorphic twist is not, and must be calculated directly.
 
