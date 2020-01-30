@@ -497,7 +497,8 @@ a collection $\Phi =\sum_{n\geq 1}^\infty \Phi_n$ of poly-differential operators
 A classical field theory is \defterm{perturbatively trivial} if it is perturbatively equivalent to the zero theory ($E = 0$).
 \end{definition}
 
-We will now describe two primitive examples of equivalences of classical field theories which will be useful in simplifying twisted theories. First, we consider the process of integrating out an auxiliary field.
+We will now describe two primitive examples of equivalences of classical field theories which will be useful in simplifying twisted theories. 
+First, we consider the process of integrating out an auxiliary field.
 
 \begin{prop}\label{prop:integrateoutfield}
 Fix a volume form $\dvol_M$ on $M$. Suppose $(E, \omega, S)$ is a classical field theory, where $E\cong E_0\oplus (\cO_M\oplus \Dens_M[-1])$ with the symplectic pairing $\omega$ given by a sum of a symplectic pairing $\omega_0$ on $E_0$ and the standard symplectic pairing on the second summand. Denote by $\phi$ a section of $\cO_M$ and by $\phi^*$ a section of $\Dens_M[-1]$. Suppose the BV action is
@@ -2968,10 +2969,10 @@ We begin by applying Corollary \ref{cor: quad} to the two $t$-dependent quadrupl
 \end{align*}
 This has the effect of integrating out the fields $(\rho, A_{1,0})$ and $(\Tilde{\nu}, \nu)$ and replaces the action functionals by
 \begin{align*}
-I^{(1)}(Q_t) &= \int \dvol\left(- \wt \chi\wt a^* - t^2 (\varphi, \phi^*) - t^2 (b, A_{0, 1}^*) - t(\Lambda\psi)\wt a^*\right) \\
-&+ \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda(F_{1, 1} + [a, \wt a])\chi^* + [\phi, \phi]\xi^* + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*)\right) \\
-&+t\int\dvol\left(\omega\wedge [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* \right) \\
-I^{(2)} (Q_t, Q_t) &= \int \dvol \left(t^2(\xi^*B^* + \chi^*\wt\chi^* + \frac{1}{2}(\psi^*, \psi^*)) -\frac{1}{4}(\wt\chi^* + t \Lambda\psi^*)^2 + t^2 ac^*\right) \\
+\Tilde{I}^{(1)}(Q_t) &= \int \dvol\left(- t^2 (\varphi, \phi^*) - t^2 (b, A_{0, 1}^*) - (\wt \chi + t\Lambda\psi) \wt a^*\right) \\
+&+ \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda(F_{1, 1} - t [\phi, A_{0,1}] + [a, \wt a])\chi^* + [\phi, \phi]\xi^* - t [A_{0,1}, a] \phi^* + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*)\right) \\
+&+t\int\dvol\left(\frac{1}{2} (-t \dbar \phi + \partial A_{0,1} -t [\phi, A_{0,1}] -[\phi, A_{0,1}] + \omega\wedge [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* - t^2 \Lambda \partial_{\phi} A_{0,1} \chi^* - t \partial_\phi a \varphi^* \right) \\ & + t \int \dvol \left( + t \dbar_{A_{0,1}} a b^* + t [\phi, a] \varphi^* - t [A_{0,1}, a]b^* \right) \\
+\Tilde{I}^{(2)} (Q_t, Q_t) &= \int \dvol \left(t^2(\xi^*B^* + \chi^*\wt\chi^* + \frac{1}{2}(\psi^*, \psi^*)) -\frac{1}{4}(\wt\chi^* + t \Lambda\psi^*)^2 + t^2 ac^*\right) \\
 \end{align*}
 
 \end{proof}
