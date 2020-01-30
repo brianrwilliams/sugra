@@ -538,12 +538,12 @@ S(\Psi(e)) &= S(e, S_1(e), 0) \\
 
 We may also remove a trivial BRST doublet.
 
-%\begin{prop}
-%Suppose $(E, Q_{\mr{BV}}, \omega, I)$ is a classical field theory, $F\rightarrow M$ is a graded vector bundle, such that $E\cong E_0\oplus E_1\oplus E_1^![-1]\oplus E_1^!\oplus E_1[-1]$. Denote by $\phi, \phi^*$ sections of $E_1,E_1^![-1]$ and by $\psi, \psi^*$ sections of $E_1^!, E_1[-1]$. Suppose
-%\[Q_{\mr{BV}}\phi + \{I, \phi\} = \phi - f_\psi \in E_1[-1] ,\qquad Q\psi + \{I, \psi\} = \psi - f_{\phi} \in E_1^![-1],\]
-%where $f_\phi$ is independent of $\psi$ and $f_{\psi}$ is independent of $\phi$. Then the theory $(E, Q_{\mr{BV}}, \omega, I)$ is perturbatively equivalent to the theory $(E_0, Q_0, \omega_0, I_0)$ with the BV action obtained by setting $\phi = f_\psi, \phi^* = 0,  \psi = f_\phi, \psi^* = 0$ in the original BV action.
-%\label{prop:BRSTdoublet}
-%\end{prop}
+\begin{prop}
+Suppose $(E, Q_{\mr{BV}}, \omega, I)$ is a classical field theory, $F\rightarrow M$ is a graded vector bundle, such that $E\cong E_0\oplus E_1\oplus E_1^![-1]\oplus E_1^!\oplus E_1[-1]$. Denote by $\phi, \phi^*$ sections of $E_1,E_1^![-1]$ and by $\psi, \psi^*$ sections of $E_1^!, E_1[-1]$. Suppose
+\[Q_{\mr{BV}}\phi + \{I, \phi\} = \phi - f_\psi \in E_1[-1] ,\qquad Q\psi + \{I, \psi\} = \psi - f_{\phi} \in E_1^![-1],\]
+where $f_\phi$ is independent of $\psi$ and $f_{\psi}$ is independent of $\phi$. Then the theory $(E, Q_{\mr{BV}}, \omega, I)$ is perturbatively equivalent to the theory $(E_0, Q_0, \omega_0, I_0)$ with the BV action obtained by setting $\phi = f_\psi, \phi^* = 0,  \psi = f_\phi, \psi^* = 0$ in the original BV action.
+\label{prop:BRSTdoublet}
+\end{prop}
 
 \begin{prop} 
 \label{prop:BRSTdoublet}
@@ -556,29 +556,30 @@ whose sections we denote by $e_0 + \varphi + \varphi^* + \psi + \psi^*$ accordin
 The shifted symplectic form $\omega$ is given by the sum of $\omega_0$ plus the standard degree $+1$ pairings between $F, F^! [-1]$ and $F^!, F[-1]$. 
 Suppose further that the local functional
 \[
-S = S_0 + \int \phi \psi^* - \int \phi I_\phi - \int \psi^* I_{\psi^*} 
+S = S_0 + \int \phi \psi^* - \int \phi I_\phi - \int \psi^* I_{\psi^*} - \int \phi^* I_{\phi^*} - \int \psi I_{\psi}
 \]
-satisfies the classical master equation, where $I_{\phi}, I_{\psi^*}$ are polydifferential operators on fields valued in $F^!$, $F$ respectively, and which are independent of $\phi$ and $\psi^*$.
+satisfies the classical master equation, where $I_{\phi}, I_{\psi^*}, I_{\phi^*}, I_{\psi}$ are polydifferential operators on fields valued in $F^!$, $F$, $F$, $F^!$ respectively, and which are independent of $\phi$ and $\psi^*$.
 Then, the classical BV theory $(E, \omega, S)$ is perturbatively equivalent to the BV theory $(E_0, \omega_0, S')$ where $S'$ is given by setting $\phi = I_{\psi^*}, \phi^* = 0$ and $\psi^* = I_{\phi}, \psi = 0$ in the original action functional $S$. 
 \end{prop}
 
 \begin{remark}
 For the classical BV theory $(E, \omega, S)$ as in the proposition, the linearized BV differential defines the following cochain complex of fields:
+%\[\xymatrix{
+%\cdots & \ul{-1} & \ul{0} & \ul{1} & \ul{2} & \cdots \\
+%\cdots \ar[r] & E_0^{-1}\ar[r] \ar[dr] \ar[ddr] &E_0^0 \ar[r]  &E_0^1 \ar[r] &E_0^2 \ar[r] &\cdots \\
+%&&F_\phi \ar^{~}[dr] &F^!_{\phi*} \ar[ur] && \\
+%&&F^!_{\psi^*} \ar^{~}[ur] &F_\psi \ar[uur] && \\
+%}\]
 \[\xymatrix{
 \cdots & \ul{-1} & \ul{0} & \ul{1} & \ul{2} & \cdots \\
-\cdots \ar[r] & E_0^{-1}\ar[r] \ar[dr] \ar[ddr] &E_0^0 \ar[r]  &E_0^1 \ar[r] &E_0^2 \ar[r] &\cdots \\
-&&F_\phi \ar^{~}[dr] &F^!_{\phi*} \ar[ur] && \\
-&&F^!_{\psi^*} \ar^{~}[ur] &F_\psi \ar[uur] && \\
-}\]
-\[\xymatrix{
-\cdots & \ul{-1} & \ul{0} & \ul{1} & \ul{2} & \cdots \\
-\cdots \ar[r] & E_0^{-1}\ar[r] &E_0^0 \ar[ddr] \ar[dr]  \ar[r]  &E_0^1 \ar[r] &E_0^2 \ar[r] &\cdots \\
-&&F_\phi \ar^{~}[dr]  \ar[ur] &F^!_{\phi*} && \\
-&&F^!_{\psi^*} \ar^{~}[ur]  \ar[uur]  &F_\psi && \\
+\cdots \ar[r] & E_0^{-1}\ar[r] \ar@{.>}[dr] \ar@{.>}[ddr] &E_0^0 \ar@{.>}[ddr] \ar@{.>}[dr]  \ar[r]  &E_0^1 \ar[r] &E_0^2 \ar[r] &\cdots \\
+&&F_\phi \ar^{~}[dr]  \ar@{.>}[ur] &F^!_{\phi*}  \ar@{.>}[ur] && \\
+&&F^!_{\psi^*} \ar^{~}[ur]  \ar@{.>}[uur]  &F_\psi  \ar@{.>}[uur] && \\
 }\]
 where the subscripts match the notation for the fields in the statement above. \footnote{Note that we are writing $F$ as if it is concentrated in a single cohomological degree, but the proposition applies for any graded vector bundle as in the statement of the proposition.}
-The differentials $F_\phi \to F_\psi$ and $F^!_{\psi^*} \to F^!_{\phi^*}$ are given by the identity.
-The arrows from the top line to the bottom lines represent potential $\phi^*$ and $\psi$ dependent terms in $I_\phi, I_{\psi^*}$. 
+The top line is the underlying cochain complex of the theory with fields $E_0$. 
+The arrows $F_\phi \to F_\psi$ and $F^!_{\psi^*} \to F^!_{\phi^*}$ are given by the identity.
+The dotted arrows represent terms in the differential arising from $I_\phi, I_{\psi^*}, I_{\phi^*}, I_{\psi}$. 
 The above proposition implies we can replace this cochain complex of fields with a quasi-isomorphic complex consisting of only the first line, provided we make a suitable modification of the classical action functional. 
 \end{remark}
 
@@ -610,9 +611,9 @@ whose sections we denote by $e_0 + \sum_{i=1}^2 (\phi + \phi_i^*) + \sum_{i=1}^2
 The shifted symplectic form $\omega$ is given by the sum of $\omega_0$ plus the standard degree $+1$ pairings between $F, F^! [-1]$ and $F^!, F[-1]$.
 Suppose further that the local functional
 \[
-S = S_0 + \int \left(\phi_2\psi^*_1 + (\phi_2 - \phi_1)\psi_2^*\right) -  \sum_{i=1}^2 \int \phi_i I_{\phi,i} - \sum_{i=1}^2 \int \psi_i^* I_{\psi^*,i} 
+S = S_0 + \int \left(\phi_2\psi^*_1 + (\phi_2 - \phi_1)\psi_2^*\right) -  \sum_{i=1}^2 \int \phi_i I_{\phi,i} - \sum_{i=1}^2 \int \psi_i^* I_{\psi^*,i} -  \sum_{i=1}^2 \int \phi^*_i I_{\phi^*,i} - \sum_{i=1}^2 \int \psi_i I_{\psi,i} 
 \]
-satisfies the classical master equation, where $I_{\phi,i}, I_{\psi^*,i}$ are polydifferential operators on fields valued in $F^!$, $F$ respectively, and which are independent of the fields $\phi_i$ and $\psi^*_i$.
+satisfies the classical master equation, where $I_{\phi,i}, I_{\psi^*,i}, I_{\phi^*,i}, I_{\psi,i}$ are polydifferential operators on fields valued in $F^!$, $F$, $F$, $F^!$ respectively, and which are independent of the fields $\phi_i$ and $\psi^*_i$.
 Then, the classical BV theory $(E, \omega, S)$ is perturbatively equivalent to the BV theory $(E', \omega_0, S')$ where 
 \[
 E' = E_0 \oplus \left(F_{\phi_1} \oplus F^!_{\phi_1^*} [-1]\right) \oplus \left(F^!_{\psi_1^*} \oplus F[-1]_{\psi_1} \right)
@@ -621,7 +622,7 @@ and
 \[
 S' = S_0 + \int \phi_1 \psi_1^* - S''
 \]
-is given by setting $\phi = I_{\psi^*}, \phi^* = 0$ and $\psi^* = I_{\phi}, \psi = 0$ in the original action functional $S$.\brian{finish}
+where $S'$ is given by setting $\phi = I_{\psi^*}, \phi^* = 0$ and $\psi^* = I_{\phi}, \psi = 0$ in the functional functional $S$.\brian{finish}
 \end{cor}
 \begin{proof}
 %Notice that the collection of fields $(e_0, \phi_1, \phi_1^*, \phi_2, \phi_2^*, \psi_1, \psi_1^*, \psi_2, \psi_2^*)$ have the same shifted Poisson brackets as the collection of fields $(\phi_1, \phi_1^*
@@ -2976,7 +2977,7 @@ This has the effect of integrating out the fields $(\rho, A_{1,0})$ and $(\Tilde
 \begin{align*}
 I^{(1)}(Q_t) &= \int \dvol\left(- \wt \chi\wt a^* - t^2 (\varphi, \phi^*) - t^2 (b, A_{0, 1}^*) - t(\Lambda\psi)\wt a^*\right) \\
 &+ \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda(F_{1, 1} + [a, \wt a])\chi^* + [\phi, \phi]\xi^* + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*)\right) \\
-&+t\int\dvol\left(\omega\wedge [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* \right) \\
+&+t\int\dvol\left(\omega\wedge [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* -  t \Lambda \dd_{\phi}\nu \chi^* + t [\phi, a] \varphi^* \right) \\
 I^{(2)} (Q_t, Q_t) &= \int \dvol \left(t^2(\xi^*B^* + \chi^*\wt\chi^* + \frac{1}{2}(\psi^*, \psi^*)) -\frac{1}{4}(\wt\chi^* + t \Lambda\psi^*)^2 + t^2 ac^*\right) \\
 \end{align*}
 
