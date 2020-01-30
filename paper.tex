@@ -3176,15 +3176,24 @@ The classification of twists therefore takes the following form.  We identify ho
 
 \subsubsection{Minimal Twist}
 \label{sect:3d8minimal_twist}
-The 3d $\cN=8$ super Yang--Mills viewed as an $\cN=4$ supersymmetric theory coincides with the 3d $\cN=4$ super Yang--Mills with matter valued in the representation $U = T^*\gg$.  Alternatively, it is obtained by dimensional reduction from the holomorphic twist of 4d $\mc N=4$ super Yang-Mills.  From Theorem \ref{3d_4_minimal_twist_thm} we obtain the following statement.
+The 3d $\cN=8$ super Yang--Mills viewed as an $\cN=4$ supersymmetric theory coincides with the 3d $\cN=4$ super Yang--Mills with matter valued in the representation $U = T^*\gg$.  Alternatively, it is obtained by dimensional reduction from the holomorphic twist of 4d $\mc N=4$ super Yang-Mills.
 
 \begin{theorem} 
 The minimal twist of 3d $\cN=8$ super Yang--Mills on $M=\CC\times \RR$ is perturbatively equivalent to the BF theory with space of fields $T^*[-1]\mr{Map}(\CC \times \RR_{\mr{dR}}, (\gg/\gg)_{\mr{Dol}})$. Moreover, the equivalence is $\U(1)$-equivariant.
 \end{theorem}
 
+\begin{proof}
+On the level of $\ZZ/2\ZZ$-graded theories, we apply the forgetful map from $\mc N=8$ super Poincar\'e action down to the $\mc N=4$ super Poincar\'e action and then apply Theorem \ref{3d_4_minimal_twist_thm}.  We can then enhance this identifying the fields, as $\ZZ$-graded $\mr U(1)$ with the dimensional reduction of the fields from the holomorphic twist of 4d $\mc N=4$ super Yang-Mills.  When we calculate that dimensional reduction the fields reduce according to the rule
+\begin{align*}
+\Omega^{\bullet,\bullet}(\CC^2;\gg[k]) &\mapsto \Omega^{\bullet,\bullet}(\CC; \Omega^\bullet(\RR; \gg[k] \oplus \gg[k-1])) \\
+&\iso \Omega^{0,\bullet}(\CC; \Omega^\bullet(\RR; (\gg[k] \oplus \gg[k-1]) \oplus (\gg[k-1] \oplus \gg[k-2]))).
+\end{align*}
+Starting from the fields of Theorem \ref{3d_4_minimal_twist_thm}, we obtain -- $\mr U(1)$-equivariantly -- the desired fields with their correct $\ZZ$-gradings.
+\end{proof}
+
 \subsubsection{Topological A Twist}
 \label{sect:3d8A_Twist}
-From Theorem \ref{3d_4_A_twist_thm} we obtain the following statement.
+From Theorem \ref{3d_4_A_twist_thm}, using the same argument, we obtain the following statement.
 
 \begin{theorem} 
 The twist of 3d $\cN=8$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges is perturbatively equivalent to the generalized Hodge theory $T^*[-1]\mr{Map}(\CC \times \RR_{\mr{dR}}, (\gg/\gg)_{\mr{Hod}})$. Moreover, this equivalence is $\U(1)$-equivariant.
@@ -3195,7 +3204,7 @@ The twist of 3d $\cN=8$ super Yang--Mills with respect to the family $Q_t$ of sq
 From Theorem \ref{3d_4_B_twist_thm} we obtain the following statement.
 
 \begin{theorem} 
-The rank $2$ B-twist of 3d $\mc N=8$ super Yang-Mills theory with gauge group $G$ is perturbatively equivalent to the BF theory with space of fields $T^*[-1]\mr{Map}(\RR^3_{\mr{dR}}, \gg/\gg)$. Moreover, this equivalence is $\spin(3;\RR)$-equivariant.
+The rank $2$ B-twist of 3d $\mc N=8$ super Yang-Mills theory with gauge group $G$ is perturbatively equivalent to the BF theory with space of fields $T^*[-1]\mr{Map}(\RR^3_{\mr{dR}}, \gg/\gg)$. %Moreover, this equivalence is $\spin(3;\RR)$-equivariant.
 \end{theorem}
 
 \section{Dimension 2}
