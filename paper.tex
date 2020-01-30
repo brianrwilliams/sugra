@@ -491,42 +491,50 @@ defines a classical field theory.
 Next, we formulate the notion of an equivalence of classical BV theories. 
 
 \begin{definition}
-A \defterm{morphism} $F\colon (E, Q_{\mr{BV}}, \omega, I) \rightsquigarrow (E', Q_{\mr{BV}}', \omega', I')$ of classical field theories over the same manifold $M$ is a nonlinear map of vector bundles $E\rightsquigarrow E'$, i.e. a collection $F=\sum_{n\geq 1}^\infty F$ of poly-differential operators $F_n\colon \Sym^n(E)\rightarrow E'$, that intertwines the differentials $Q_{\mr{BV}}, Q_{\mr{BV}}'$, the pairings $\omega, \omega'$, and the interactions $I,I'$. A morphism is a \defterm{perturbative equivalence} if the map $F_1\colon (\cE, Q_{\mr{BV}})\rightarrow (\cE', Q_{\mr{BV}}')$ is a quasi-isomorphism. A classical field theory is \defterm{perturbatively trivial} if it is perturbatively equivalent to the zero theory ($E = 0$).
+A \defterm{morphism} $\Phi \colon (E, Q_{\mr{BV}}, \omega, I) \rightsquigarrow (E', Q_{\mr{BV}}', \omega', I')$ of classical field theories over the same manifold $M$ is
+% a nonlinear map of vector bundles $E\rightsquigarrow E'$, 
+a collection $\Phi =\sum_{n\geq 1}^\infty \Phi_n$ of poly-differential operators $\Phi_n\colon \Sym^n(E)\rightarrow E'$, that intertwines the differentials $Q_{\mr{BV}}, Q_{\mr{BV}}'$, the pairings $\omega, \omega'$, and the interactions $I,I'$. A morphism is a \defterm{perturbative equivalence} if the map $\Phi_1\colon (\cE, Q_{\mr{BV}})\rightarrow (\cE', Q_{\mr{BV}}')$ is a quasi-isomorphism. 
+A classical field theory is \defterm{perturbatively trivial} if it is perturbatively equivalent to the zero theory ($E = 0$).
 \end{definition}
 
 We will now describe two primitive examples of equivalences of classical field theories which will be useful in simplifying twisted theories. First, we consider the process of integrating out an auxiliary field.
 
-\begin{prop}
+\begin{prop}\label{prop:integrateoutfield}
 Fix a volume form $\dvol_M$ on $M$. Suppose $(E, \omega, S)$ is a classical field theory, where $E\cong E_0\oplus (\cO_M\oplus \Dens_M[-1])$ with the symplectic pairing $\omega$ given by a sum of a symplectic pairing $\omega_0$ on $E_0$ and the standard symplectic pairing on the second summand. Denote by $\phi$ a section of $\cO_M$ and by $\phi^*$ a section of $\Dens_M[-1]$. Suppose the BV action is
 \[S = S_0 + \frac{1}{2} \int \dvol_M (\phi^2 - 2\phi S_1),\]
-where $S_0$ and $S_1$ are independent of $\phi$. Then the theory $(E, Q, \omega, I)$ is perturbatively equivalent to the theory $(E_0, \omega_0, S')$ with the BV action $S' = S_0 - S_1^2/2$, where we set $\phi^* = 0$ and $\phi = S_1$.
-\label{prop:integrateoutfield}
+where $S_0$ is a local functional independent of $\phi,\phi^*$ and $S_1$ is a $\cO_M$-valued polydifferential operator which is independent of $\phi$. 
+Then the theory $(E, Q, \omega, I)$ is perturbatively equivalent to the theory $(E_0, \omega_0, S')$ with the BV action $S' = S_0 - S_1^2/2$, where we set and $\phi = S_1$ and $\phi^* = 0$.
 \end{prop}
 
+\begin{remark}
+In terms of the classical BV complex, this proposition tells us that if a classical BV complex is of the form
+\[\xymatrix{
+\cdots & \ul{0} & \ul{1} & \cdots \\
+\cdots \ar[r] & E_0^0 \ar[r]^{Q_0} \ar[dr] & E_0^1 \ar[r] &\cdots \\
+&\cO_M \ar^{{\rm dvol}}[r] \ar[ur] &\dens_M &
+}\]
+where the bottom map multiplies a function by the volume element, then we can replace it with a quasi-isomorphic cochain complex consisting of only the first line, provided we make a suitable modification of the classical action functional. 
+\end{remark}
+
 \begin{proof}
-Concretely, suppose that the linear part of $S_1$ is given by an operator $Q_1$, and the interacting part of $S_1$ is given by a functional $I_1 = \sum_{n=1}^\infty I_1^n$.  Then we define the required perturbative equivalence as follows.  First $F_1(e) = (e, Q_1(e), 0) \in E$.  Then, for $n > 1$, define
+Concretely, suppose that the linear part of $S_1$ is given by an operator $Q_1$, and the interacting part of $S_1$ is given by a functional $I_1 = \sum_{n=1}^\infty I_1^n$.  
+The desired equivalence $\Phi : (E, \omega, S) \to (E_0, \omega_0, S')$ is given by the natural projection $\Phi = \Phi_1 : E \to E_0$. 
+The quasi-inverse $\Psi : (E_0, \omega_0, S') \to (E, \omega, S)$ is defined as follows.
+First $\Psi_1(e) = (e, Q_1(e), 0) \in E$.
+For $n > 1$, define
 \begin{align*}
-F_n \colon \sym^n(E_0) &\to E \\
+\Psi_n \colon \sym^n(E_0) &\to E \\
 e_1 \otimes \cdots \otimes e_n &\mapsto (0, I_1^n(e_1, \ldots, e_n), 0).
 \end{align*}
-These $F_n$ manifestly intertwine the pairings $\omega$ and $\omega'$.  To see that they intertwine the action functionals, we observe that 
+These $\Psi_n$ manifestly intertwines the pairings $\omega$ and $\omega'$.  
+To see that they intertwine the action functionals, we observe that 
 \begin{align*}
-S(F(e)) &= S(e, S_1(e), 0) \\
+S(\Psi(e)) &= S(e, S_1(e), 0) \\
 &= S_0(e) + \frac 12 \dvol_M \int (S_1(e)^2 - 2 S_1(e)^2) \\
 &= S_0(e) - \frac 12 S_1(e)^2 \\
 &= S'(e).
 \end{align*}
-Finally, $F_1$ is a quasi-isomorphism with quasi-inverse given by the projection $(E,Q) \to (E_0,Q_0)$, therefore our specified morphism is an equivalence.
 \end{proof}
-
-\begin{remark}
-In terms of the classical BV complex, this proposition tells us that given a classical BV complex of the form
-\[\xymatrix{
-\cdots \ar[r] &\mc E_0^0 \ar[r]^{Q_0} \ar[dr] &\mc E_0^1 \ar[r] &\cdots \\
-&\cO_M \ar^{i}[r] \ar[ur] &\dens_M &
-}\]
-where $i$ is the canonical inclusion, we can replace it with a quasi-isomorphic complex consisting of only the first line, as long as we suitably modify the differential $Q_0$ and the Lie structure.
-\end{remark}
 
 We may also remove a trivial BRST doublet.
 
@@ -538,43 +546,93 @@ We may also remove a trivial BRST doublet.
 %\end{prop}
 
 \begin{prop} 
+\label{prop:BRSTdoublet}
 Let $(E_0, \omega_0, S_0)$ be a classical BV theory and $F \to M$ a graded vector bundle.
 Consider the theory $(E, \omega, S)$ with underlying graded vector bundle
 \[
 E = E_0 \oplus \left(F \oplus F^! [-1]\right) \oplus \left(F^! \oplus F[-1] \right)
 \]
-and $\omega$ given by the sum of $\omega_0$ plus the standard degree $+1$ pairings between $F, F^! [-1]$ and $F^!, F[-1]$. 
-Suppose further that the action functional
+whose sections we denote by $e_0 + \varphi + \varphi^* + \psi + \psi^*$ according to the above decomposition. 
+The shifted symplectic form $\omega$ is given by the sum of $\omega_0$ plus the standard degree $+1$ pairings between $F, F^! [-1]$ and $F^!, F[-1]$. 
+Suppose further that the local functional
 \[
-S = S_0 + \int \phi^* \psi - \int \phi I_\phi - \int \psi^* I_{\psi^*} 
+S = S_0 + \int \phi \psi^* - \int \phi I_\phi - \int \psi^* I_{\psi^*} 
 \]
-satisfies the classical master equation, where $I_{\phi}, I_{\psi^*}$ are local functionals. 
-Then, the classical BV theory $(E, \omega, S)$ is equivalent to the BV theory $(E_0, \omega_0, S')$ where $S'$ is given by setting $\phi = I_{\psi^*}$ and $\psi^* = I_{\phi}$ in the original action functional $S$. 
+satisfies the classical master equation, where $I_{\phi}, I_{\psi^*}$ are polydifferential operators on fields valued in $F^!$, $F$ respectively, and which are independent of $\phi$ and $\psi^*$.
+Then, the classical BV theory $(E, \omega, S)$ is perturbatively equivalent to the BV theory $(E_0, \omega_0, S')$ where $S'$ is given by setting $\phi = I_{\psi^*}, \phi^* = 0$ and $\psi^* = I_{\phi}, \psi = 0$ in the original action functional $S$. 
 \end{prop}
 
-\begin{proof}
-Again, concretely, we'll write $\sum_{n \ge 1} I^{(n)}_\phi$ and $\sum_{n \ge 1} I^{(n)}_{\psi^*}$ for the Taylor expansions of $I_\phi$ and $I_{\psi^*}$ respectively.  
-We can write out a morphism of classical BV theories $F \colon E_0 \to E$ by defining $F_1(e) = (e, I^{(1)}_{\phi}(e),0,0, I^{(1)}_{\psi^*}(e))$, and for $n > 1$ defining 
-\[F_n(e_1\otimes \cdots \otimes e_n) = (0, I^{(n)}_{\phi}(e_1, \ldots, e_n), 0, I^{(n)}_{\psi^*}(e_1, \ldots, e_n)).\]
+\begin{remark}
+For the classical BV theory $(E, \omega, S)$ as in the proposition, the linearized BV differential defines the following cochain complex of fields:
+\[\xymatrix{
+\cdots & \ul{-1} & \ul{0} & \ul{1} & \ul{2} & \cdots \\
+\cdots \ar[r] & E_0^{-1}\ar[r] \ar[dr] \ar[ddr] &E_0^0 \ar[r]  &E_0^1 \ar[r] &E_0^2 \ar[r] &\cdots \\
+&&F_\phi \ar^{~}[dr] &F^!_{\phi*} \ar[ur] && \\
+&&F^!_{\psi^*} \ar^{~}[ur] &F_\psi \ar[uur] && \\
+}\]
+where the subscripts match the notation for the fields in the statement above. \footnote{Note that we are writing $F$ as if it is concentrated in a single cohomological degree, but the proposition applies for any graded vector bundle as in the statement of the proposition.}
+The differentials $F_\phi \to F_\psi$ and $F^!_{\psi^*} \to F^!_{\phi^*}$ are given by the identity.
+The arrows from the top line to the bottom lines represent potential $\phi^*$ and $\psi$ dependent terms in $I_\phi, I_{\psi^*}$. 
+The above proposition implies we can replace this cochain complex of fields with a quasi-isomorphic complex consisting of only the first line, provided we make a suitable modification of the classical action functional. 
+\end{remark}
 
-The maps $F_n$ manifestly intertwine the pairings on $E_0$ and $E$, since the image of $F_n$ lands in an isotropic summand of the $E_1\oplus E_1^![-1]\oplus E_1^!\oplus E_1[-1]$ part of $E$.  
-Also, by construction, the $F_n$ intertwine the action functionals, since
+\begin{proof}
+Concretely, we'll write $\sum_{n \ge 1} I^{(n)}_\phi$ and $\sum_{n \ge 1} I^{(n)}_{\psi^*}$ for the Taylor expansions of $I_\phi$ and $I_{\psi^*}$ respectively.  
+The desired equivalence $\Phi : (E, \omega, S) \to (E_0, \omega_0, S')$ is given by the natural projection $\Phi = \Phi_1 : E \to E_0$. 
+The quasi-inverse $\Psi : (E_0, \omega_0, S') \to (E, \omega, S)$ is defined as follows.
+The linear term is $\Psi_1(e) = (e, I^{(1)}_{\phi}(e),0,0, I^{(1)}_{\psi^*}(e))$, and for $n > 1$ we have 
+\[\Psi_n(e_1\otimes \cdots \otimes e_n) = (0, I^{(n)}_{\phi}(e_1, \ldots, e_n), 0, I^{(n)}_{\psi^*}(e_1, \ldots, e_n)).\]
+
+The maps $\Psi_n$ manifestly intertwine the pairings on $E_0$ and $E$, since the image of $\Psi_n$ lands in an isotropic summand of the $E_1\oplus E_1^![-1]\oplus E_1^!\oplus E_1[-1]$ part of $E$.  
+Also, by construction, the $\Psi_n$ intertwine the action functionals, since
 \begin{align*}
-S(F(e)) &= S_0(e) + \frac{1}{2} \int_M \omega(f_\psi(e), f_\phi(e) - f_\phi(e)) + \omega(f_\phi(e), f_\psi(e) - f_\psi(e)) \\
+S(F(e)) &= S_0(e) + \frac{1}{2} \int_M \omega(I_{\psi^*}(e), I_\phi(e) - I_\phi(e)) + \omega(I_\phi (e), I_{\psi^*}(e) - I_{\psi^*}(e)) \\
 &= S'(e).
 \end{align*}
-The linear term $F_1$ is a quasi-isomorphism between the classical BV complexes with quasi-inverse given by the projection onto the summand $E_0$.
 \end{proof}
 
-\begin{remark}
-Again, in terms of the classical BV complex, this proposition tells us that given a classical BV complex of the form
-\[\xymatrix{
-\cdots \ar[r] & E_0^{-1}\ar[r] \ar[dr] \ar[ddr] &E_0^0 \ar[r]  &E_0^1 \ar[r] &E_0^2 \ar[r] &\cdots \\
-&&E_1 \ar^{~}[dr] &E_1^! \ar[ur] && \\
-&&E_1^! \ar^{~}[ur] &E_1 \ar[uur] && \\
-}\]
-with the differentials $E_1 \to E_1$ and $E_1^! \to E_1^!$ given by the identity, we can replace it with a quasi-isomorphic complex consisting of only the first line, as long as we suitably modify its differential and Lie structure.
-\end{remark}
+There is a corollary of this proposition obtained by iterating the procedure. 
+We will only use a single iteration. 
+
+\begin{cor} \label{cor: quad}
+Let $(E_0, \omega_0, S_0)$ be a classical BV theory and $F \to M$ a graded vector bundle.
+Consider the theory $(E, \omega, S)$ with underlying graded vector bundle
+\[
+E = E_0 \oplus \bigoplus_{i=1}^2 \left(F \oplus F^! [-1]\right) \oplus \bigoplus_{i=1}^2 \left(F^!  \oplus F[-1] \right)
+\]
+whose sections we denote by $e_0 + \sum_{i=1}^2 (\phi + \phi_i^*) + \sum_{i=1}^2(\psi_i + \psi_i^*)$ according to the above decomposition. 
+The shifted symplectic form $\omega$ is given by the sum of $\omega_0$ plus the standard degree $+1$ pairings between $F, F^! [-1]$ and $F^!, F[-1]$.
+Suppose further that the local functional
+\[
+S = S_0 + \int \left(\phi_2\psi^*_1 + (\phi_2 - \phi_1)\psi_2^*\right) -  \sum_{i=1}^2 \int \phi_i I_{\phi,i} - \sum_{i=1}^2 \int \psi_i^* I_{\psi^*,i} 
+\]
+satisfies the classical master equation, where $I_{\phi,i}, I_{\psi^*,i}$ are polydifferential operators on fields valued in $F^!$, $F$ respectively, and which are independent of the fields $\phi_i$ and $\psi^*_i$.
+Then, the classical BV theory $(E, \omega, S)$ is perturbatively equivalent to the BV theory $(E', \omega_0, S')$ where 
+\[
+E' = E_0 \oplus \left(F_{\phi_1} \oplus F^!_{\phi_1^*} [-1]\right) \oplus \left(F^!_{\psi_1^*} \oplus F[-1]_{\psi_1} \right)
+\]
+and
+\[
+S' = S_0 + \int \phi_1 \psi_1^* - S''
+\]
+is given by setting $\phi = I_{\psi^*}, \phi^* = 0$ and $\psi^* = I_{\phi}, \psi = 0$ in the original action functional $S$.\brian{finish}
+\end{cor}
+\begin{proof}
+%Notice that the collection of fields $(e_0, \phi_1, \phi_1^*, \phi_2, \phi_2^*, \psi_1, \psi_1^*, \psi_2, \psi_2^*)$ have the same shifted Poisson brackets as the collection of fields $(\phi_1, \phi_1^*
+We begin by making the following change of coordinates on the BV fields:
+\begin{align*}
+\Tilde{\phi}_2 & = \phi_2 - \phi_1 \\
+\Tilde{\psi}_2 & = \psi_2 + \psi_1 \\
+%\Tilde{\phi}^*_2 & = \phi^*_2 - \phi^*_1 \\
+%\Tilde{\psi}^*_2 & = \psi^*_2 + \psi^*_1 
+\end{align*}
+with $\phi_1, \psi_1$ left fixed. 
+This change of coordinates is compatible with the $(-1)$-symplectic pairing. 
+Further, in the new coordinates, the action takes the form
+\[
+S = S_0 + \int \Tilde{\phi}_2\Tilde{\psi}^*_2 + \int \phi_1\psi_2^* -  \sum_{i=1}^2 \int \phi_i I_{\phi,i} - \sum_{i=1}^2 \int \psi_i^* I_{\psi^*,i} 
+\]
+\end{proof} 
 
 \subsection{Symmetries in the Classical BV Formalism} \label{symmetry_section}
 In this section we define what it means for a (super) Lie algebra to act on a classical field theory  (see also \cite[Chapter 11]{Book2} for a related discussion). Let $(E, Q_{\mr{BV}},\omega, I)$ be a classical field theory and $\fg$ a super Lie algebra.  We will define $\gg$-equivariant local observables in the classical field theory by introducing $\gg$-valued background fields into our classical field theory, and extending the action functional to a functional that involves these background fields, but still satisfies the classical master equation.  We begin by defining an appropriate version of the Chevalley-Eilenberg cochain complex.
@@ -2902,6 +2960,21 @@ The twist of 4d $\cN=4$ super Yang--Mills with respect to the family $Q_t$ of sq
 \label{thm:4d12hodge}
 \end{theorem}
 
+\begin{proof}
+We begin by applying Corollary \ref{cor: quad} to the two $t$-dependent quadruples of fields:
+\begin{align*}
+& (t \varphi, \rho, t \phi, A_{1,0}) \\
+& (tb, \Tilde{\nu}, t A_{0,1}, \nu) .
+\end{align*}
+This has the effect of integrating out the fields $(\rho, A_{1,0})$ and $(\Tilde{\nu}, \nu)$ and replaces the action functionals by
+\begin{align*}
+I^{(1)}(Q_t) &= \int \dvol\left(- \wt \chi\wt a^* - t^2 (\varphi, \phi^*) - t^2 (b, A_{0, 1}^*) - t(\Lambda\psi)\wt a^*\right) \\
+&+ \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda(F_{1, 1} + [a, \wt a])\chi^* + [\phi, \phi]\xi^* + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*)\right) \\
+&+t\int\dvol\left(\omega\wedge [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* \right) \\
+I^{(2)} (Q_t, Q_t) &= \int \dvol \left(t^2(\xi^*B^* + \chi^*\wt\chi^* + \frac{1}{2}(\psi^*, \psi^*)) -\frac{1}{4}(\wt\chi^* + t \Lambda\psi^*)^2 + t^2 ac^*\right) \\
+\end{align*}
+
+\end{proof}
 \subsubsection{Rank \texorpdfstring{$(2, 2)$}{(2,2)} twist}
 \label{sect:4dqgltwist}
 
