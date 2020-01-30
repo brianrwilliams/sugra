@@ -1,0 +1,213 @@
+\documentclass[10pt, oneside]{article}
+
+\input ./combined_macros.sty
+\def\hCS{\mathrm{hCS}}
+
+\addbibresource{Twist.bib}
+
+\title{Twists of supersymmetric gauge theories}
+\author{Chris Elliott\and Pavel Safronov \and Brian Williams}
+
+\date{\today}
+
+\begin{document}
+
+\section{Background Structure}
+\chris{This section consists of material common to our twisting calculations, to be edited and perhaps inserted before the 10d section}
+
+\chris{As you pointed out, these lemmas should go with other discussion of functional analysis issues.}
+\begin{lemma}[Free to Interacting Spectral Sequence] \label{free_int_ss_lemma}
+Let $(\mc E^\bullet, Q, \omega, I)$ be a classical field theory with polynomial interaction.  There is a convergent spectral sequence whose $E_1$ page is the complex of classical observables of the underlying free theory, and whose $E_\infty$ page is equivalent to the complex of classical observables of the interacting theory.
+\end{lemma}
+
+\begin{lemma} \label{invert_quis_lemma}
+Any quasi-isomorphism of cochain complexes admits a quasi-inverse.
+\end{lemma}
+
+\subsection{Dimensional Reduction} \label{dim_red_section}
+\chris{I'm including this with the aim to not have to prove supersymmetry invariance of non-maximal theories.  It's a pretty rough draft, so apologies there}
+The idea of the \emph{dimensional reduction} of a rotation invariant classical field theory to a linear subspace of $\RR^n$ is to restrict attention to only those fields with are constant in directions perpendicular to the subspace. 
+
+\begin{definition}
+Let $i\colon \RR^m \inj \RR^n$ be the inclusion of a linear subspace, and let $p \colon \RR^n \to \RR^m$ be the corresponding orthogonal projection. Let $(E, \omega, Q, I)$ be a rotation invariant classical field theory on $\RR^n$.  The \emph{dimensional reduction} of the classical field theory from $\RR^n$ to $\RR^m$ is the classical field theory whose underlying bundle of fields is the pullback bundle $i^*E$, with the following structure.  The symplectic pairing is defined as the composite
+\[(i^*\mc E \otimes i^*\mc E)(U) \iso (p^*i^*\mc E \otimes p^*i^*\mc E)(U \times (\RR^m)^\perp) \to (\mc E \otimes \mc E)(U \times (\RR^m)^\perp) \overset \omega \to \dens(U \times (\RR^m)^\perp),\]
+with the observation that the density we obtain splits canonically into a density on $U$ and a constant density on $(\RR^m)^\perp$.  The classical differential $Q \colon i^*\mc E(U) \to i^*\mc E(U)$ is defined by
+\[\phi \mapsto i^*(Q(p^*(\phi))).\]
+Finally, the classical interaction is defined similarly: the pullback $p^*$ defines a map from $\mc O(\mc E)$ to $\mc O(i^*\mc E)$ that preserves locality \footnote{Intuitively, given a local functional on fields on $\RR^n$, restrict to a local functional on those fields constant in directions perpendicular to $\RR^m$.}.
+\end{definition}
+
+Rotation invariance guarantees that the dimensional reduction is independent of the choice of $m$-dimensional subspace of $\RR^n$.
+
+\begin{prop} \label{dim_red_SUSY_prop}
+The dimensional reduction of a supersymmetric classical field theory on $\RR^n$ with supersymmetry algebra $\mf A = (\so(n) \oplus \gg_R) \ltimes (\RR^n \oplus \Pi \Sigma)$ is a supersymmetric classical field theory on $\RR^m$ with supersymmetry algebra $\mf A' = (\so(m) \oplus \gg_R) \ltimes (\RR^m \oplus \Pi \Sigma')$, where $\Sigma'$ is the restriction of the representation $\Sigma$ of $\so(n)$ to a representation of the subalgebra $\so(m)$ of rotations of the subspace $\RR^m \sub \RR^n$.
+\end{prop}
+
+\begin{proof}
+ \chris{I think this will be straightforward.}
+\end{proof}
+
+\chris{we could alternatively write this in terms of BRST fields.}
+
+\chris{By the way, I see no obstruction to proving the following.}
+\begin{lemma}
+If $\mf A$ is an $n$-dimensional supersymmetry algebra, and $Q \in \mf A$ is a square-zero supercharge, then the operations of dimensional reduction from $\RR^n$ to $\RR^m$ and twisting by $Q$ commute.
+\end{lemma}
+
+
+\subsection{Supersymmetric Yang-Mills Theory}
+We'll begin with a detailed description of the maximal (complexified) supersymmetric Yang-Mills theories, which exist in dimensions 3,4, 6 and 10.  Using the methods described in Section \ref{dim_red_section}, the construction of these theory, with the supersymmetry actions, will descend to supersymmetric theories in all lower dimensions.  
+
+Let us begin with a general description of supersymmetric Yang-Mills theory on $\RR^n$, with spinorial matter.  Fix a complex semisimple Lie group $G$ with Lie algebra $\fg$, and a spinorial representation $\Sigma$ of $\so(n;\CC)$ with symmetric equivariant pairing $\Gamma \colon \Sigma \otimes \Sigma \to \CC^n$.  The ordinary fields of super Yang-Mills theory on $\RR^{n}$ consist of:
+\begin{itemize}
+\item A connection $A \in \Omega^1(\RR^{n} ; \fg)$ on the trivial $G$-bundle;
+\item A $\gg$-valued section $\lambda \in \Omega^0(\RR^{n}) \otimes \Pi \Sigma \otimes \fg$ of the spinor bundle associated to the representation $\Sigma$
+\footnote{If we didn't complexify we would instead consider $G_\RR$ a compact connected Lie group, and a section of a real spinor bundle, whose structure is signature dependent.  For our purposes it's interesting enough to just consider the complexified theory and avoid signature issues.}.  
+\end{itemize}
+These fields are acted upon by the group of gauge transformations -- $G$-valued functions on $\RR^{n}$. 
+Hence, there is a single ghost for the theory given by a $\gg$-valued section of the trivial $G$-bundle $c \in \Omega^0(\RR^{n} ; \fg)$. 
+
+We can model the stack of fields modulo gauge transformations infinitesimally near the point $0$ by the corresponding BRST complex.  This is the local super Lie algebra
+\[
+L \;\;\; = \begin{array}{ccccc}
+& \ul{0} & & \ul{1} & \\ 
+& & & & \\
+& \Omega^0(\RR^{n}; \gg) & \to & \Omega^1(\RR^{n}; \gg) \oplus \Omega^0(\RR^{n}; \Pi \Sigma \otimes \gg) & 
+\end{array}
+\]
+with the de Rham differential, placed in cohomological degrees 0 and 1, with bracket induced from the Lie bracket on $\gg$.
+
+The action functional in 10d super Yang-Mills is given by
+\[S(A,\lambda) = \int_{\RR^{n}} \langle \frac{1}{2} F_A \wedge \ast F_A - (\lambda, \sd D_A \lambda)\rangle,\]
+where $\langle - \rangle_\fg$ denotes an invariant pairing on $\gg$, and where the latter term is obtained using the vector-valued pairing $\Gamma$ on $\Sigma$ to obtain a Dirac operator $\sd D_A \colon \Sigma \to \Sigma^*$. \chris{Brian suggested defining this notation in the section on supersymmety more broadly.  I agree.}
+
+We can re-encode this data in terms of the classical BV complex (see also \cite[Section 3.1]{ElliottYoo1}).  
+This is the local $L_\infty$-algebra $\fL$ on $\RR^{n}$ whose underlying cochain complex takes the form
+\[
+\xymatrix{
+& & \ul{0} & \ul{1} & \ul{2} & \ul{3} \\
+\fL & = & \Omega^0(\RR^{n}; \gg) \ar[r]^{\d} &\Omega^1(\RR^{n}; \gg) \ar[r]^{\d \ast \d} &\Omega^{n-1}(\RR^{n}; \gg) \ar[r]^{\d} &\Omega^{n}(\RR^{n}; \gg) \\
+& & &\Omega^0(\RR^{n}; \Pi \Sigma \otimes \gg) \ar[r]^{\ast \sd \d} &\Omega^{n}(\RR^{n}; \Pi \Sigma^* \otimes \gg), &
+}\]
+with degree $(-3)$ invariant pairing $\<-,-\>$ induced by the invariant pairing on $\gg$ and the evaluation pairing $(-,-)$ between $\Sigma$ and $\Sigma^*$, and with degree 2 and 3 brackets given by the action of $\Omega^0(\RR^{n}; \gg)$ on everything along with
+\begin{align*}
+\ell_2^{\mr{Bos}} \colon \Omega^1(\RR^{n};\gg) \otimes \Omega^1(\RR^{n};\gg) &\to \Omega^{n-1}(\RR^{n};\gg) \\
+(A \otimes B) &\mapsto [A \wedge \ast \mr d B] + [\ast \mr d  A \wedge B] + \mathrm{d} \ast[A \wedge B] \\
+\ell_2^{\mr{Fer}} \colon \Omega^1(\RR^{n};\gg) \otimes \Omega^0(\RR^{n}; \Sigma \otimes \gg) &\to \Omega^{n}(\RR^{10}; \Sigma* \otimes \gg) \\
+(A \otimes \lambda) &\mapsto \ast \sd A \lambda
+\end{align*}
+in degree 2, and the map
+\begin{align*}
+\ell_3 \colon \Omega^1(\RR^{n};\gg) \otimes \Omega^1(\RR^{n};\gg) \otimes \Omega^1(\RR^{n};\gg) &\to \Omega^{n-1}(\RR^{n};\gg) \\
+(A \otimes B \otimes C) &\mapsto [A \wedge \ast[B \wedge C]] + [B \wedge \ast[C \wedge A]] + [C \wedge \ast[A \wedge B]]
+\end{align*}
+in degree 3.
+
+We obtain the BV action by the formula
+\[
+S_{BV} (\alpha) = \frac{1}{2} \<\alpha , Q_{BV} \alpha\> + \sum_{n \geq 2} \frac{1}{n!} \<\alpha, \ell_n(\alpha,\ldots, \alpha)\> 
+\]
+where $\alpha$ is a general BV field and $Q_{BV}$ is the linear BV differential. 
+The statement that $S_{BV}$ is gauge invariant is encoded by the fact that it satisfies that classical master equation $\{S_{BV}, S_{BV}\} = 0$, which is equivalent to the statement that $S_{BV}$ determines a Mauer-Cartan element in the dg Lie algebra $\cloc^\bu(\fL)[-1]$.
+
+\subsubsection{Supersymmetry Actions} \label{SUSY_action_section}
+For minimal choices of the spinorial representation, Yang-Mills theory admits an action of the supersymmetry algebra when $n=3,4,6$ or 10, so $\Sigma$ is the 2-dimensional Dirac representation $S$, the 4-dimensional Dirac representation $S_+ \oplus S_-$, the 8-dimensional symplectic Weyl representation $S_+ \otimes W$ where $W$ is a 2-dimensional symplectic vector space, and the 16-dimensional Weyl representation $S_+$ respectively.  We will now proceed to construct this supersymmetry algebra action. \chris{can we do it all in one go, using the fact that the 3 $\psi$ rule \cite[Theorem 11]{BaezHuerta} works exactly in these dimensions?  If not we can just write the calculation out four times.  We've already started to write it in the 10-dimensional case, though it's incomplete.  How would you suggest proceeding?}
+
+\subsection{Standard Equivalences Between Classical Field Theories}
+In this section, we will collect some standard lemmas that we'll use to simplify the descriptions of twisted supersymmetric field theories below.
+
+\begin{lemma} \label{symplectomorphism_lemma}
+A linear symplectomorphism $F \colon \mc E^\bullet \to \mc E^\bullet$ induces an equivalence of theories between $(\mc E^\bullet, Q, \omega, I)$ and $(\mc E^\bullet, F^*Q, \omega, F^*I)$.
+\end{lemma}
+
+\begin{lemma} \label{inclusion_and_projection_lemma}
+Let $(\mc E^\bullet, Q)$ be a cochain complex, and let $(\mc C^\bullet, Q')$ be a contractible cochain complex.
+\begin{enumerate}
+ \item Let $F \colon \mc C^\bullet \to \mc E^\bullet$ be a degree 1 map making $(\mc C^\bullet \overset F\to \mc E^\bullet)$ into a cochain complex.  Then the canonical inclusion $\mc E^\bullet \to (\mc C^\bullet \overset F\to \mc E^\bullet)$ is a quasi-isomorphism.
+ \item Let $F' \colon \mc E^\bullet \to \mc C^\bullet$ be a degree 1 map making $(\mc E^\bullet \overset {F'}\to \mc C^\bullet)$ into a cochain complex.  Then the canonical projection $(\mc E^\bullet \overset {F'}\to \mc C^\bullet) \to \mc E^\bullet$ is a quasi-isomorphism.
+\end{enumerate}
+\end{lemma}
+
+\begin{lemma} \label{symplectic_composite_lemma}
+Let $(\mc E^\bullet,Q)$ be a cochain complex, let $(\mc C_1^\bullet, Q_1)$ and $(\mc C_2^\bullet, Q_2)$ be contractible cochain complexes, and let $\mc C_1^\bullet \overset{F_1}\to \mc E^\bullet \overset{F_2}\to \mc C_2^\bullet$ be a pair of degree 1 maps so that the differential $Q + Q_1 + Q_2 + F_1 + F_2$ on the total complex squares to 0.  Suppose the graded vector space $\mc E^\bullet \oplus \mc C_1^\bullet \oplus C_2^\bullet$ is equipped with a $-1$-shifted symplectic structure so that $\mc C_1^\bullet \oplus \mc C_2^\bullet$ is a symplectic subspace.  Then the cochain map 
+\begin{equation}
+\label{symp_composite_eqn}\mc E^\bullet (\mc C_1^\bullet \overset{F_1}\to \mc E^\bullet \overset{F_2}\to \mc C_2^\bullet)
+\end{equation}
+obtained as the composite of the projection from Lemma \ref{inclusion_and_projection_lemma} (2) with a quasi-inverse to the inclusion from Lemma \ref{inclusion_and_projection_lemma} (1) is a symplectomorphism.
+\end{lemma}
+
+\begin{lemma} \label{interaction_pullback_lemma}
+In the set-up of Lemma \ref{symplectic_composite_lemma}, suppose we're given an interaction $I$ on the graded vector space $\mc E^\bullet \oplus \mc C_1^\bullet \oplus C_2^\bullet$, which pulls back to $I'$ under the inclusion of $\mc E^\bullet$.  If $\mc C_2^\bullet = 0$, or if $\mc C_1^\bullet$ and $\mc C_2^\bullet$ are both isotropic subspaces of $\mc E^\bullet \oplus \mc C_1^\bullet \oplus C_2^\bullet$, then the map \ref{symp_composite_eqn} is compatible with the interactions $I$ and $I'$
+\end{lemma}
+
+\section{Twists}
+\subsection{Dimension 10}
+We'll begin by studying the twist of 10-dimensional $\mc N=(1,0)$ super Yang-Mills theory, with the supersymmetry action we analyzed in Section \ref{SUSY_action_section}.  In the 10d $\mc N=(1,0)$ supersymmetry algebra there is a unique $\Spin(10)$ orbit of non-trivial square-zero supercharges given by the locus of pure spinors.  These square-zero supercharges are holomorphic.
+
+Fix a non-trivial pure spinor $Q$, or equivalently, fix a Calabi-Yau structure on $\RR^{10}$.  The stabilizer of $Q$ in $\Spin(10)$ is isomorphic to $\SU(5)$.  Let us first, therefore, decompose the component fields of 10d super Yang-Mills theory into sections of the associated bundles to irreducible representations of $\SU(5)$.  The BRST fields split as follows:
+\begin{align*}
+c &\mapsto c \in \Omega^0(\CC^5; \gg) \\
+A &\mapsto A_{0, 1} + A_{1, 0} \in \Omega^{0,1}(\CC^5; \gg) \oplus \Omega^{1,0}(\CC^5; \gg)\\
+\lambda &\mapsto \chi + \psi + B \in \Omega^0(\CC^5; \gg) \oplus \Omega^{1,0}(\CC^5; \gg) \oplus \Omega^{0,2}(\CC^5; \gg). 
+\end{align*}
+
+In terms of these component fields, the BV action functional can be written in the following way.  We'll split the action functional up into the BRST action and the antifield action.
+\begin{align*}
+S_{\mr{BRST}} &= \int \d^5z \left(\Lambda^2 \langle F_{0,2} \wedge F_{2,0}\rangle + \frac 12 |\Lambda F_{1,1}|^2 + \Lambda( \chi \wedge (\ol \dd_{A_{0,1}} \psi))  + \Lambda^2(B \wedge (\dd_{A_{1,0}} \psi))\right) \Omega + (B \wedge \ol \dd_{A_{0,1}} B) \\
+S_{\mr{anti}} &= \int \d^5z \langle \dd_{A_{1,0}}c, A_{1,0}^\vee \rangle +  \langle \ol \dd_{A_{0,1}}c, A_{0,1}^\vee \rangle + \langle [c,c], c^\vee \rangle + \langle [\chi,c], \chi^\vee \rangle + \langle [\psi,c], \psi^\vee \rangle + \langle [B,c], B^\vee \rangle,
+\end{align*}
+where $F_{i,j}$ is the $(i,j)$-form component of the curvature of the gauge field $A_{0, 1} + A_{1, 0}$, and $\Omega$ is the Calabi-Yau $(0,5)$-form.  Similarly, we can write explicitly the $L_\infty$ interaction functional associated to the action of the square 0 supercharge $Q$.  It has a quadratic and a cubic component given by
+\begin{align*}
+I^{(1)} &= \int \langle A_{1,0}^\vee, \psi \rangle + \langle \chi^\vee \Lambda F_{1,1} \rangle + \langle B^\vee, F_{0,2} \rangle \\
+I^{(2)} &= \frac 12 \int \d^5z \Omega |\chi^\vee|^2.
+\end{align*}
+The twisted action functional is obtained by adding these terms to the original BV action functional.
+
+We can now calculate the 10d holomorphic twist.  This calculation is originally due to Baulieu \cite{Baulieu}.
+
+\begin{theorem}
+The holomorphic twist of 10d super Yang-Mills theory on a Calabi-Yau 5-fold $X$ is equivalent to holomorphic Chern-Simons theory on $X$.
+\end{theorem}
+
+\begin{remark}
+This twisted theory is only $\ZZ/2\ZZ$-graded, because the R-symmetry group is trivial, so there is no possible R-charge with which to regrade the twisted theory to make it $\ZZ$-graded.  As a consequence, the twisted BV-BRST complex only has an odd symplectic pairing, not a $-1$-symplectic pairing.
+\end{remark}
+
+\begin{proof}
+We'll prove this equivalence by first describing an equivalence of the underlying classical theories, as the composite of several maps, then showing that this equivalence is compatible with the two interaction functionals, and therefore defines a morphism of classical field theories, and finally observing that by Lemma \ref{free_int_ss_lemma} this morphism is automatically an equivalence.
+
+\begin{enumerate}
+ \item The first part of our equivalence of classical field theories will be a simple change of variables.  Let $\chi'^\vee = \chi^\vee + \Lambda F_{1,1}$, and dually let $\chi' = \chi + \Lambda F_{1,1}^\vee$.  In terms of $\chi'$, the quadratic part of the twisted action functional becomes
+ \begin{align*}
+  S^Q &= \int \d^5z \left(\Lambda^2 \langle \ol \dd A_{0,1} \wedge \dd A_{1,0} \rangle + \frac 12 |\chi'^\vee|^2 + \Lambda( \chi' \wedge (\ol \dd \psi)) - \Lambda^2(\dd A_{0,1} \wedge \ol \dd \psi) + \Lambda^2(B \wedge (\dd \psi))\right) \Omega + (B \wedge \ol \dd B) \\
+  &\quad + \langle \dd c, A_{1,0}^\vee \rangle +  \langle \ol \dd c, A_{0,1}^\vee \rangle + \langle A_{1,0}^\vee, \psi \rangle + \langle B^\vee, \ol \dd A_{0,1} \rangle.
+ \end{align*}
+ The classical BV complex associated to the theory after performing this change of variables is quasi-isomorphic to the classical BV complex of the original theory according to Lemma \ref{symplectomorphism_lemma}.  However, after performing the change of variables, the classical BV complex takes the form $(\Omega^0(\CC^5; \gg)_{\chi'^\vee} \overset \id \to \Pi\Omega^0(\CC^5; \gg)_{\chi'}) \to \mc E^\bullet$, where $\mc E^\bullet$ is the part of the BV complex generated by all fields other than $\chi'$ and $\chi'^\vee$, and where the map into $\mc E^\bullet$ is given by the map $\ol \dd$ from $\chi$ to $\psi^\vee$.  Therefore the inclusion of the complex $\mc E^\bullet$ is a quasi-isomorphism by Lemma \ref{inclusion_and_projection_lemma}.  We think of this as ``integrating out'' the field $\chi'$ and its antifield.
+ 
+ \item We'll now use a similar trick to integrate out the fields $\psi, A_{1,0}$ and their antifields.  We've argued in step 1 that the free part of the $Q$-twisted theory is equivalent to the theory with action functional 
+ \[  S^Q = \int \d^5z \left(\Lambda^2 \langle \ol \dd A_{0,1} \wedge \dd A_{1,0} \rangle + \Lambda^2(B \wedge (\dd \psi))\right) \Omega + (B \wedge \ol \dd B) + \langle \dd c, A_{1,0}^\vee \rangle +  \langle \ol \dd c, A_{0,1}^\vee \rangle + \langle A_{1,0}^\vee, \psi \rangle + \langle B^\vee, \ol \dd A_{0,1} \rangle.\]
+ We'll begin, as in step 1, by performing a linear change of variables, setting $A'_{1,0} = A_{1,0} - \ol{A_{0,1}}$, and performing the dual change of variables on the antifields.  This change of variables has the effect of eliminating the term $\langle \dd c, A_{1,0}^\vee \rangle$ from the quadratic part of the action. \chris{This isn't quite right I think.  We need to kill that term, however, for the below argument to work.  Can we fix it?}
+ 
+ Observe that the classical BV complex associated to this action functional can now be written in the following form:
+ \[\xymatrix{
+ &&\Omega^{1,0}(\CC^5;\gg)_\psi \ar[dl] \ar[dr] \ar[r] &\Omega^{1,0}(\CC^5;\gg)_{{A'}_{1,0}} \ar[dr]\\
+ \Omega^0(\CC^5;\gg)_c \ar[r] &\Omega^{0,1}(\CC^5;\gg)_{A_{0,1}}  \ar[dl] \ar[r] &\Omega^{0,2}(\CC^5;\gg)_{B} \ar[dl]\ar[r] &\Omega^{0,3}(\CC^5;\gg)_{B^\vee} \ar[r] &\Omega^{0,4}(\CC^5;\gg)_{A_{0,1}^\vee} \ar[dlll] \ar[r] &\Omega^{0,5}(\CC^5;\gg)_{c^\vee} \\
+ \Omega^{4,0}(\CC^5;\gg)_{{A'}_{1,0}^\vee} \ar[r]   &\Omega^{4,0}(\CC^5;\gg)_{\psi^\vee},
+ }\]
+ where the first and third rows are dual under the symplectic pairing.  This is exactly in the form required to apply Lemma \ref{symplectic_composite_lemma}, so applying that result tells us that the underlying free theory of the twisted 10d super Yang Mills theory is equivalent to the middle row alone, i.e. the Dolbeault complex, which is exactly the free part of holomorphic Chern-Simons theory on $\CC^5$.
+ 
+ \item Now, let's understand how the interaction functional behaves under this equivalence of classical field theories.  We'll use Lemma \ref{interaction_pullback_lemma}.  Take our original action functional after the change of variables from step 1, and set the fields $\chi, \psi, A_{1,0}$ and their antifields to zero (i.e, in the notation of Lemma \ref{interaction_pullback_lemma}, restrict the interaction to the complex $\mc E^\bullet$).  The resulting interaction is 
+ \[
+  I^Q = \int \d^5z (B \wedge [A_{0,1} \wedge B]) + \langle B^\vee, [A_{0,1} \wedge A_{0,1}] \rangle + \langle [c,c], c^\vee \rangle + \langle [A_{0,1}, c], A_{0,1}^\vee \rangle + \langle [B,c], B^\vee \rangle,
+ \]
+ which is, indeed, the interaction functional for holomorphic Chern-Simons theory.  The composite of the morphisms in steps 1 and 2 therefore defines a morphism of classical field theories from holomorphic Chern-Simons theory to twisted 10d super Yang-Mills theory.
+ 
+ \item To conclude the proof, we only need to apply Lemma \ref{free_int_ss_lemma}.  The morphism of classical field theories that we've constructed induces an equivalence of the $E_1$ pages of the free-to-interacting spectral sequences associated to holomorphically twisted 10d super Yang-Mills theory and holomorphic Chern-Simons theory.  Because the spectral sequences are convergent, there is likewise an equivalence of the $E_\infty$ pages, i.e. an equivalence of classical field theories.
+\end{enumerate}
+\end{proof}
+
+The above argument can be applied identically on a general Calabi-Yau 5-fold $X$.
+
+\pagestyle{bib}
+\printbibliography
+
+\end{document}
