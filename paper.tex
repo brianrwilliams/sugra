@@ -42,7 +42,9 @@
 \maketitle
 
 \begin{abstract}
-We give a complete classification of supersymmetric twists of super Yang-Mills theories with matter in all dimensions.  Super Yang-Mills theories can be modelled classically using the BV formalism; we construct the supersymmetry algebra action using the language of $L_\infty$ algebras, then for each class of square-zero supercharge we give a description of the corresponding twisted theory in terms of partially holomorphic versions of Chern-Simons and BF theory. 
+We give a complete classification of twists of supersymmetric Yang-Mills theories with in dimensions~$2\leq n \leq 10$.
+We formulate supersymmetric Yang-Mills theory classically using the BV formalism, and then we construct an action by the supersymmetry algebra using the language of $L_\infty$ algebras.
+For each class of square-zero supercharges in the supersymmetry algebra, we give a description of the corresponding twisted theory in terms of partially holomorphic and topological versions of Chern-Simons and $BF$ theory. 
 \end{abstract}
 
 \tableofcontents
@@ -61,6 +63,17 @@ We give a complete classification of supersymmetric twists of super Yang-Mills t
  \item  Connection between twisted BV theories and twisted factorization algebras, and therefore to our earlier paper on $\bb E_n$ algebras.
  \item  Quantization: for cotangent theories and their deformations there's a 1-loop exact prequantization, just need to calculate the 1-loop anomaly to the QME.  In many cases this is worked out.
 \end{enumerate}}
+
+\subsection*{Applications to quantization and a relationship to factorization algebras}
+\addcontentsline{toc}{subsection}{Applications to quantization and a relationship to factorization algebras}
+
+The quantization of gauge theories is notoriously subtle and leads to a rich theory of renormalization.
+An attractive application of the descriptions of the twists of supersymmetric gauge theories that we provide is to study quantization. 
+
+To rigorously study the quantization of supersymmetric Yang-Mills theory we can work with the mathematical theory of renormalization developed by Costello in \cite{CosRenorm}. 
+In the context of (non-supersymmetric) Yang-Mills theory it is shown that this theory of re
+
+
 
 
 \subsection*{Summary of Twisted Super Yang-Mills Theories}
@@ -2727,6 +2740,7 @@ With respect to $\alpha_n\colon \U(1)\rightarrow G_R$ the supercharge $Q_0$ has 
 We will use the notation for fields from Section \ref{sect:4d_2_holomorphictwist}. First, we are going to write the functionals \eqref{eq:gaugeI1}, \eqref{eq:gaugeI2}, \eqref{eq:matterI1}, \eqref{eq:matterI2} in terms of these fields.
 
 \begin{prop}
+\label{4d_donaldson_susy_prop}
 Suppose $Q_t$ is the rank $(2,0)$ supercharge of \ref{eq:4dHodgefamily}.
 The $\MU(2)$ decomposition of the functionals $I_{\rm gauge}^{(1)}, I^{(1)}_{\rm matter}, I^{(2)}_{\rm gauge}, I^{(2)}_{\rm matter}$ (see \eqref{eq:gaugeI1},  \eqref{eq:gaugeI2}, \eqref{eq:matterI1}, \eqref{eq:matterI2}) in terms of the fields of 4d $\cN=2$ super Yang--Mills theory are
 \begin{align*}
@@ -2755,7 +2769,7 @@ The twist of 4d $\cN=2$ super Yang--Mills with respect to the family $Q_t$ of sq
 \begin{proof}
 The proof proceeds as in the proof of Theorem \ref{thm:10dholomorphictwist} with slight modifications.
 
-Observe that the quadruple of fields $\{\chi^*, \chi, \wt\chi^*, \wt\chi\}$ has the same Poisson brackets as the quadruple $\{\chi^*-t\wt\chi^*, \chi, \wt\chi^*, \wt\chi + t\chi\}$. Therefore, we may eliminate the fields $\chi^*-t\wt\chi^*, \chi$ using Proposition \ref{prop:integrateoutfield}. We then have trivial BRST doublets $\{\wt\chi + t\chi, \wt a\}$ and $\{\rho, A_{1, 0}\}$ which may be eliminated using Proposition \ref{prop:BRSTdoublet}. We are left with the action
+Observe that the quadruple of fields $\{\chi^*, \chi, \wt\chi^*, \wt\chi\}$ has the same Poisson brackets as the quadruple $\{\chi^*-t\wt\chi^*, \chi, \wt\chi^*, \wt\chi + t\chi\}$. Therefore, we may eliminate the fields $\chi^*-t\wt\chi^*, \chi$ using Proposition \ref{prop:integrateoutfield}. We then have trivial BRST doublets $\{\wt\chi + t\chi, \wt a\}$, $\{\nu, \wt \nu\}$ and $\{\rho, A_{1, 0}\}$ which may be eliminated using Proposition \ref{prop:BRSTdoublet}. We are left with the action
 \[S_{BF} + t \int\dvol\left(-(b, A_{0, 1}^*) + a c^* + \frac{1}{2} \xi^* B^* + t (\varphi, \phi^*) + \frac 14 (\psi^*, \psi^*) \right),\]
 where $S_{BF}$ is the action functional of the holomorphic twist at $t=0$ found in the previous section. 
 Since the extra terms are quadratic in the fields, the claim is reduced to a comparison of the underlying local $L_\infty$ algebra of the twisted theory and that of the holomorphic Hodge theory. The former is given by (cf. the proof of Theorem \ref{thm:4dholomorphictwist})
@@ -2999,6 +3013,42 @@ The next step is to decompose the $(1,1)$ form $\psi$ as
 where $\Lambda \psi_{\perp} = 0$. 
 
 \end{proof}
+
+\chris{I just made the following attempt}
+\begin{theorem}
+The twist of 4d $\cN=4$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges of Equation \ref{eq:4d412Hodgefamily} is perturbatively equivalent to $\map\left(\CC_{\rm Dol} \times \RR^2_{\mr{dR}}, B\fg_{\Hod}\right)$. Moreover, this equivalence is $\spin(2;\RR) \times \spin(2;\RR)$-equivariant.
+\end{theorem}
+
+\begin{proof}
+Fix a rank $(2,1)$ supercharge of the form $Q_{st} = Q_0 + tQ_1 + sQ_2$, where $Q_t = Q_0 + tQ_1$ is a rank $(2,0)$ supercharge lying within a 4d $\mc N=2$ subalgebra of the 4d $\mc N=4$ supertranslation algebra.  Consider the supersymmetry actions 
+\begin{align*}
+&I^{(1)}(Q_0 + tQ_1 + sQ_2) \\
+&I^{(2)}(Q_0 + tQ_1 + sQ_2, Q_0 + tQ_1 + sQ_2).
+\end{align*}
+We will compute the corresponding $\ZZ$-graded $Q_{st}$-twisted theory.  Let us first recall the steps of the proof of Theorem \ref{thm:4dDonaldsontwist}: the twist of 4d $\mc N=2$ super Yang-Mills with matter by $Q_t$.  We will do the same thing to eliminate fields in the $Q_{st}$-twisted theory.  The key fact is that the part of the deformation of the action proportional to $s$, namely
+\[I^{(1)}(sQ_2) + 2 I^{(2)}(Q_0, sQ_2) + 2 I^{(2)}(tQ_1, sQ_2) + I^{(2)}(sQ_2, sQ_2)\]
+only includes terms involving both $\mc N=4$ fields in the set $\{c, A_{1,0}, A_{0,1}, a, \wt a, \chi \wt \chi, b, B, \xi, \rho\}$ coming from the $\mc N=2$ vector multiplet (plus their antifields) \emph{and} $\mc N=4$ fields in the set $\{\nu, \wt \nu, \phi, \psi, \varphi\}$ coming from the $\mc N=2$ hypermultiplet (and their antifields).  More precisely, the action involves the images of the fields in these sets after restricting from $\mr U(2)$-representations to $\spin(2;\RR) \times \spin(2;\RR)$-representations.  In what follows we will write $\mr U(2)$-expressions, with the understanding that the further deformation by $sQ_2$ will further break these component fields.
+
+So, we first performed a chance of variables sending $\{\chi^*, \chi, \wt\chi^*, \wt\chi\}$ to $\{\chi^*-t\wt\chi^*, \chi, \wt\chi^*, \wt\chi + t\chi\}$: this only used the fact that the two quadruples had the same Poisson brackets, which still applies here.  We then used Proposition \ref{prop:integrateoutfield} to eliminate the fields $\chi^*-t\wt\chi^*, \chi$.  The proposition still applies here, because the further twist by $sQ_2$ does not introduce a $\chi^2$ or $(\chi^*-t\wt\chi^*)^2$ term.  Finally, we used Proposition \ref{prop:BRSTdoublet} to eliminate the trivial BRST doublets $\{\wt\chi + t\chi, \wt a\}$, $\{\nu, \wt \nu\}$ and $\{\rho, A_{1, 0}\}$.  Again, the proposition still applies here: each time we apply the proposition, we must only ensure that there are no terms in the twisted action proportional to a pair of fields $(X, Y)$, we need only observe that the deformation could not introduce terms to the action proportional to $XX^*$ or $YY^*$.
+
+As a result of this argument, we are free -- as in the proof of Theorem \ref{thm:4dDonaldsontwist}, to set the eliminated fields $\chi, \wt\chi^*, \wt\chi + t\chi, \wt a, \wt a^*, \nu, \nu^*, \wt \nu, \wt \nu^* \rho, \rho^*, A_{1,0}$ and $A_{1,0}^*$ to 0 in the twisted action functional.  Finally, we set the remaining eliminated field $\chi^*-t\wt\chi^*$ equal to the expression $S_1$, as in Proposition \ref{prop:integrateoutfield}.  This twisted action coincides with the sum of the $Q_0 + sQ_2$-twisted action functional from Theorem \ref{thm:4d_11_twist}, with the deformation by $tQ_1$, namely
+\begin{equation}
+\label{eq:4d_12_general_def}
+\left(I^{(1)}(tQ_1) + 2 I^{(2)}(Q_0, tQ_1) + I^{(2)}(tQ_1, tQ_1)\right) + 2I^{(2)}(tQ_1, sQ_2).
+\end{equation}
+To see this, we must verify that the expression $S_1$ occuring in the $Q_{st}$-twisted action functional agrees with the corresponding expression in the $Q_0 + sQ_2$-twisted action functional.  This follows from the fact that the only term proportional to $t(\chi^*-t\wt\chi^*)$ in the $Q_0 + tQ_1$-twisted action functional from equation \ref{4d_donaldson_susy_prop} is proportional to $\wt \chi^*$, and so vanishes after setting $\wt \chi^* = 0$.
+
+The deformation given by the first three terms in \ref{eq:4d_12_general_def} was computed in the proof of Theorem \ref{thm:4dDonaldsontwist} to be
+\begin{equation}
+\label{eq:4d_12_further_deformation}
+t \int\dvol\left(-(b, A_{0, 1}^*) + a c^* + \frac{1}{2} \xi^* B^* + t (\varphi, \phi^*) + \frac 14 (\psi^*, \psi^*) \right).
+\end{equation}
+The fourth and final term, proportional to $st$, vanishes after the field elimination we have performed, since $\Gamma_{10}(Q_1,Q_2) = 0$, and the remaining term from equation \ref{eq:gaugeI2}, of form $st(Q_1,\lambda^*)(Q_2,\lambda^*)$, is proportional to $(Q_1,\lambda^*)$, which is proportional to $\chi^*$.
+
+Therefore, the $Q_{st}$ twisted action theory is equivalent to the rank $(1,1)$-twisted theory from Theorem \ref{thm:4d_11_twist}, with action deformed by the expression \ref{eq:4d_12_further_deformation}.  This deformation gives the desired theory.  The rank $(1,1)$-twisted theory was $\ZZ$-graded, and the deformation here by $tQ_1$ is a deformation by a degree 1 operator, so the twisted theory is also $\ZZ$-graded.  Finally, the rank $(1,1)$-twisted theory was shown to be $\spin(2;\RR) \times \spin(2;\RR)$-invariant, and the deformation \ref{eq:4d_12_further_deformation} was $\MU(2)$-equivariant, so the rank $(1,2)$-twisted theory is still $\spin(2;\RR) \times \spin(2;\RR)$-invariant.
+
+\end{proof}
+
 \subsubsection{Rank \texorpdfstring{$(2, 2)$}{(2,2)} twist}
 \label{sect:4dqgltwist}
 
