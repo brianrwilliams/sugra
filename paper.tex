@@ -2486,6 +2486,7 @@ whose first component is $\MU(L)\rightarrow \SU(2)$ as before and the second com
 The twist by $Q$ of $(3+\dim(L))$-dimensional super Yang--Mills on $L\times N_\RR$ with 8 supercharges and matter valued in a symplectic $\fg$-representation $U$ is perturbatively equivalent to the generalized Chern--Simons theory with the space of fields $\Sect(L\times (N_\RR)_{\mr{dR}}, (U\otimes K_L^{1/2})\ham \fg)$. Moreover, the equivalence is $\MU(L)\times \Spin(N_\RR)$-equivariant.
 \label{thm:6dCSreduction}
 \end{theorem}
+
 \begin{proof}
 By Theorem \ref{thm:6dholomorphictwist} the twist of 6d $\cN=(1, 0)$ super Yang--Mills on $L\times N$ by $Q$ is perturbatively equivalent to the holomorphic Chern--Simons theory with the space of fields $\Sect(L\times N, (U\otimes K_L^{1/2})\ham \fg)$. By Proposition \ref{CS_diml_red_prop} we get that the dimensional reduction of holomorphic Chern--Simons on $L\times N$ along $\Re\colon N\rightarrow N_\RR$ is isomorphic to the generalized Chern--Simons theory with the space of fields $\Sect(L\times N_\RR, (U\otimes K_L^{1/2})\ham\fg)$ and this isomorphism is $\MU(L)\times \SO(N_\RR)$-equivariant, where $\SO(N_\RR)$ acts on $N$ via the homomorphism \eqref{eq:SOtoSU}.
 \end{proof}
@@ -3346,7 +3347,7 @@ First, let's consider the $\mc N=(2,2)$ super Yang-Mills theory, which arises vi
 \begin{itemize}
  \item $\gg$-valued bosons: $A \in \Omega^1(\RR^2; \gg)$, and a pair of scalars $(\phi_1,\phi_2) \in \Omega^0(\RR^2; \gg \oplus \gg)$.
  \item $R$-valued bosons: $(\Bar{\phi}, \phi) \in \Omega^0(\RR^2 ; R \oplus R^*)$.
- \item $\gg$-valued fermions: $(\lambda_+ \otimes u_+,\lambda_- \otimes u_-) \in \Omega^0(\RR^2 ; S \otimes (W_+ \oplus S_- \otimes W_-) \otimes \gg)$.
+ \item $\gg$-valued fermions: $(\lambda_+ \otimes u_+,\lambda_- \otimes u_-) \in \Omega^0(\RR^2 ; (S_+ \otimes W_+ \oplus S_- \otimes W_-) \otimes \gg)$.
  \item $R$-valued fermions: $(\psi^+_+,\psi^+_-, \psi^-_+, \psi^-_-) \in \Omega^0(\RR^2 ; (S_+ \oplus S_-) \otimes R \oplus (S_+ \oplus S_-) \otimes R^*)$.
  \item Ghost field: $c \in \Omega^0(\RR^2; \gg)[1]$.
 \end{itemize}
@@ -3366,10 +3367,34 @@ The minimal twist of 2d $\cN=(2,2)$ super Yang-Mills theory with gauge group $G$
 \end{theorem}
 
 \begin{proof}
-This follows, as in 3d, by dimensionally reducing the holomorphic twist of 3d $\mc N=2$ super Yang-Mills.  That is, we start with the result from Theorem \ref{3d_minimal_twist_thm}, then apply Proposition \ref{CS_to_BF_diml_red_prop} to dimensionally reduce in the real de Rham direction.
+The statement about the equivalence of the underlying $\ZZ/2\ZZ$-graded theories follows from applying dimensional reduction (Theorem \ref{CS_to_BF_diml_red_prop}) to Theorem \ref{3d_minimal_twist_thm} calculating the minimal twist of 3d $\mc N=2$ super Yang-Mills on $\CC \times \RR_{\mr{dR}}$.  This equivalence is $\mr U(1)$-equivariant.  It is also $\ZZ$-graded, using the twisting datum $\alpha = \phi_A$.
 \end{proof}
 
 \subsubsection{Topological A Twist} \label{sect:2d22Atwist}
+
+To deform the holomorphic twist to the topological A-twist, obtaining a Hodge deformation, we use similar techniques to those of Section \ref{sect:4d2Donaldson}.  We first analyze how the supersymmetry action decomposes.  Consider the 1-parameter family of supercharges
+\begin{equation} \label{eq:2dHodgefamily}
+Q_t = Q_0 + tQ',
+\end{equation}
+where $Q_0 = (1,i) \in S_+$ is a holomorphic supercharge, and $Q' = (1,i) \in S_-$.  This family of supercharges are all compatible with the twisting homomorphism $\phi_A$ -- the map $\U(1) \to \spin(2;\CC) \times \spin(2;\CC)$ with weights $(1,1)$.  They are promoted to twisting data using the homomorphism $\phi_B$ with weights $(1,-1)$.  Let us first decompose our fields according to the twisting homomorphism $\phi_A$.  The fields we obtain are given as follows, where the subscripts denote the $\mr U(1)$-weight.
+\begin{itemize}
+ \item $\gg$-valued bosons: $(A_1, A_{-1}, \chi_1, \chi_{-1}) \in \Omega^0(\RR^2; \gg^4)$.
+ \item $R$-valued bosons: $(\phi_0, \ol \phi_0) \in \Omega^0(\RR^2 ; R \oplus R^*)$.
+ \item $\gg$-valued fermions: $(\lambda_2, \lambda_0, \lambda'_{0}, \lambda_{-2}) \in \Omega^0(\RR^2 ; \gg[-1] \oplus \gg[-1] \oplus \gg[1] \oplus \gg[1])$.
+ \item $R$-valued fermions: $(\psi_1, \psi_{-1}, \ol \psi_1, \ol \psi_{-1}) \in \Omega^0(\RR^2 ; R[-1] \oplus R[-1] \oplus R^*[1] \oplus R^*[1])$.
+ \item Ghost field: $c_0 \in \Omega^0(\RR^2; \gg[1])$.
+\end{itemize}
+
+\begin{prop}
+Suppose $Q_t$ is the rank $(1,1)$ supercharge of \ref{eq:2dHodgefamily}.
+The $\U(1)$ decomposition of the functionals $I_{\rm gauge}^{(1)}, I^{(1)}_{\rm matter}, I^{(2)}_{\rm gauge}, I^{(2)}_{\rm matter}$ (see \eqref{eq:gaugeI1},  \eqref{eq:gaugeI2}, \eqref{eq:matterI1}, \eqref{eq:matterI2}) in terms of the fields of 2d $\cN=(2,2)$ super Yang--Mills theory are
+\begin{align*}
+I_{\rm gauge}^{(1)}(Q_t) &= \int \dvol \left(\frac 12((\rho(\dd_{A_1}A_1), \lambda_{-2}^*) + (\rho(\dd_{A_1}\chi_{-1}), \lambda_0^*)) -t(\lambda_{-2}, A^*_1) + (\lambda_0, \chi^*_{-1})) \right)  \\
+I^{(2)}_{\rm gauge} (Q_t, Q_t) &= \int \dvol  \\
+I_{\rm matter}^{(1)}(Q_t) &= \int \dvol  \\
+I_{\rm matter}^{(2)}(Q_t) &= \int \dvol .
+\end{align*}
+\end{prop}
 
 \begin{theorem} \label{2d_2_A_twist_thm}
 The topological A-twist of 2d $\mc N=(2,2)$ super Yang-Mills theory with gauge group $G$ coupled to the $\mc N=(2,2)$ chiral multiplet valued in a representation $R$ is perturbatively equivalent, as a one-parameter deformation of the holomorphic twist, to the Hodge family with moduli space $T^*[-1]\mr{Map}(\CC, (R/\gg)_{\mr{Hod}})$.
