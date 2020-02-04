@@ -47,42 +47,104 @@ We formulate supersymmetric Yang-Mills theory classically using the BV formalism
 For each class of square-zero supercharges in the supersymmetry algebra, we give a description of the corresponding twisted theory in terms of partially holomorphic and topological versions of Chern-Simons and $BF$ theory. 
 \end{abstract}
 
+\setcounter{tocdepth}{2}
 \tableofcontents
 
 \section*{Introduction} 
 \label{sect:intro}
 \addcontentsline{toc}{section}{Introduction}
 
-\chris{Possible topics for the introduction
+In this paper we calculate supersymmetric twists of super Yang--Mills theories in dimension 2 through 10. Our main tools are the classical Batalin--Vilkovisky formalism which eliminates the need for auxiliary fields to close the on-shell supersymmetry action and a consistent use of dimensional reduction which allows us to deduce lower-dimensional statements from higher-dimensional statements.
+
+\subsection*{Classical field theories}
+
+Let us begin with an informal discussion of classical field theories. A classical field theory is usually taken to be the data of the space of fields $\cF$ equipped with an action functional. To incorporate gauge symmetries, one may either work with $\cF$ as a stack or, as in the BRST formalism, with $\cF$ as a $Q$-manifold, i.e. a graded manifold equipped with a square-zero vector field of cohomological degree $1$ (the BRST differential). In the Batalin--Vilkovisky approach one considers instead the space of BV fields $\cE$ which is equipped with a $(-1)$-shifted symplectic structure which may be modeled by a $QP$-manifold. Moreover, we assume that the $Q$-structure is Hamiltonian, i.e. it is given by a Poisson bracket $\{S, -\}$ with respect to the BV action functional. Here $\cE$ is supposed to be the derived critical locus of the action functional on $\cF$.
+
+In this paper we follow the approach developed in the works of Costello and Gwilliam \cite{CostelloBook,Book1}. As the space of BV fields $\cE$ is an infinite-dimensional manifold, it is difficult to work with it directly (for instance, to make sense of a $(-1)$-shifted symplectic structure). Instead, we zoom in on a neighborhood of a point where $Q$ vanishes (i.e. we consider a given classical solution). We may then consider $\cE$ as the space of sections of a graded vector bundle $E\rightarrow M$ over the spacetime manifold $M$. This allows us to work with finite-dimensional objects throughout. Namely, a $(-1)$-shifted symplectic structure on $\cE$ boils down to a $(-1)$-shifted symplectic pairing $E\cong E^![-1]$, where $E^!=E^*\otimes \Dens_M$. We refer to Definition \ref{def:classicalfieldtheory} for the precise definition of a classical field theory in the BV formalism that we use. Moreover, with this definition we may talk about weak equivalences of classical field theories (a notion inaccessible with $QP$-manifolds) which are simply maps of classical field theories inducing a quasi-isomorphism on $\cE$. We call these \emph{perturbative equivalences} (see Definition \ref{def:perturbativeequivalence}) to emphasize that we are working in a formal neighborhood of a given classical solution. For simplicity, throughout the paper we ignore issues of unitarity, so we complexify all fields.
+
+\subsection*{Supersymmetric classical field theories}
+
+Now consider a classical field theory where the spacetime manifold is $M=\RR^n$ which is moreover translation-invariant. Given the data of a spinorial representation $\Sigma$ equipped with a symmetric pairing $\Gamma\colon\Sym^2(\Sigma)\rightarrow V=\CC^n$, we may construct a super Lie algebra of supertranslations $\fA=\Pi\Sigma\oplus V$ with the only nonvanishing Lie bracket given by $\Gamma$. A supersymmetric classical field theory is then a translation-invariant classical field theory on $\RR^n$ where the translation action is extended to an action of the super Lie algebra $\fA$. In addition, we may consider an $R$-symmetry group $G_R$ which acts on $\Sigma$ preserving $\Gamma$ and the $\so(n)$-action and also compatibly on the classical field theory.
+
+In most literature on supersymmetry one simply tries to build an action of $\fA$ on the space of ordinary fields $\cF$. However, one often runs into a problem that the supersymmetry action is only \emph{on-shell}: the map from $\fA$ to vector fields $\mathrm{Vect}(\cF)$ preserves Lie brackets only on the critical locus of the action functional. The usual solution is to enlarge the space of fields by adding auxiliary fields with no kinetic terms on which there is an honest (\emph{off-shell}) action of $\fA$. However, this choice may be not canonical. For instance, in 10d $\cN=(1, 0)$ super Yang--Mills one needs to break the Lorentz group $\SO(10)$ to $\Spin(7)\times\SO(2)$ to have an off-shell action of a subalgebra of $\fA$ where the odd part is 9-dimensional (instead of 16-dimensional) \cite{BaulieuBerkovitsBossardMartin}.
+
+We instead take another approach pioneered by Baulieu \cite{}. Namely, one may canonically extend the supersymmetry action from ordinary fields $\cF$ to the space of BV fields $\cE$. The property of the action being on-shell now means that the map $\fA\rightarrow \mathrm{Vect}(\cE)$ preserves Lie brackets up to homotopy. One may then try to extend it to an $L_\infty$ action.
+
+In these paper we consider supersymmetric Yang--Mills theories in dimensions 2 through 10. In dimensions 3 through 10 these may be obtained by dimensional reduction of the following theories: 10d $\cN=(1, 0)$ super Yang--Mills, 6d $\cN=(1, 0)$ super Yang--Mills, 4d $\cN=1$ super Yang--Mills and 3d $\cN=1$ super Yang--Mills. First of all, these theories depend on a choice of a Lie algebra $\fg$ equipped with a symmetric nondegenerate bilinear pairing. In addition, in dimensions 6, 4 and 3 we may add matter multiplets: in dimension 6 these depend on a choice of a symplectic $\fg$-representation (a hypermultiplet), in dimension 4 these depend on a choice of a $\fg$-representation (a chiral multiplet) and in dimension 3 thse depend on a choice of an orthogonal $\fg$-representation. We do not consider superpotential and mass terms in this paper. Moreover, as we are working perturbatively, we ignore all topological terms ($\theta$-terms).
+
+The on-shell supersymmetry of pure super Yang--Mills theories in these dimensions can be proven by using a well-known relationship between composition algebras (e.g. division algebras) and supersymmetry (see Section \ref{sect:compositionalgebras}) which goes back to the works \cite{Evans,KugoTownsend}. For instance, we may construct the 10d $\cN=(1, 0)$ supersymmetry from octonions $\mathbb{O}$, 6d $\cN=(1, 0)$ supersymmetry from quaternions $\mathbb{H}$, 4d $\cN=1$ supersymmetry from complex numbers $\CC$ and 3d $\cN=1$ supersymmetry from real numbers $\RR$. Our treatment follows the work of Baez and Huerta \cite{BaezHuerta} and we show how to extend the $\fA$-action to an $L_\infty$-action using these ideas. As a new result, we also construct an $L_\infty$-action on matter multiplets where the language of composition algebras turns out to be indispensable (see Section \ref{sect:mattermultipletSUSY}). Namely, for any real associative composition algebra $A_\RR$ we simply need a complex $\fg$-representation equipped with an $A_\RR$-module structure and a symmetric bilinear pairing. We have the following three cases:
+\begin{itemize}
+\item (\textbf{6d $\cN=(1, 0)$ supersymmetry}) For $A_\RR=\mathbb{H}$ this forces $P=U\otimes W_+$, where $U$ is a symplectic $\fg$-representation and $W_+$ is a 2d complex symplectic vector space (so that $\mathbb{H}\otimes_\RR\CC\cong \eend(W_+)$).
+\item (\textbf{4d $\cN=1$ supersymmetry}) For $A_\RR=\mathbb{C}$ this forces $P=R\oplus R^*$, where $R$ is a $\fg$-representation.
+\item (\textbf{3d $\cN=1$ supersymmetry}) For $A_\RR=\mathbb{R}$ we simply have an orthogonal $\fg$-representation $P$.
+\end{itemize}
+
+In addition to dimensional reduction of these four super Yang--Mills theories, there are also certain special super Yang--Mills theories with chiral supersymmetry: namely, 2d $\cN=(1, 0)$, $\cN=(2, 0)$ and $\cN=(4, 0)$ with matter as well as pure $\cN=(\cN_+, 0)$ theories for any $\cN_+$. We treat these separately (see Section \ref{sect:2dchiral}), but again the language of composition algebras turns out to be convenient.
+
+\subsection*{Supersymmetric twists}
+
+The notion of supersymmetric twist of a supersymmetric field theory was introduced by Witten \cite{WittenTQFT}. The definitions we use in this paper will follow our previous work \cite{ElliottSafronov}, so let us briefly recall those.
+
+Suppose $Q$ is a square-zero supercharge, i.e. an odd element $Q\in\fA$ such that $[Q, Q]=0$. Then it gives rise to a square-zero odd symplectic vector field on the space of BV fields $\cE$. In particular, we may modify the differential on $\cE$ as $\mathrm{d}\mapsto \mathrm{d}+Q$. Working up to perturbative equivalence, this turns out to drastically simplify the theory as we will shortly see.
+
+The original classical field theory carried a $\ZZ\times\ZZ/2$-grading, where $\ZZ$ is the cohomological (ghost) grading and $\ZZ/2$ is the fermionic grading. We see that $\mathrm{d}$ has bidegree $(1, 0)$ while $Q$ has bidegree $(0, 1)$. So, in general the twisted theory is only $\ZZ/2$-graded (with respect to the total grading). To improve that, we may additionally consider a homomorphism $\alpha\colon \U(1)\rightarrow G_R$ into the R-symmetry group under which $Q$ has weight $1$ and such that the $\alpha$-grading modulo 2 coincides with the fermionic grading. Then the $\alpha$-grading gives rise to a $\ZZ$-grading on the twisted theory.
+
+Finally, let us observe that the original classical field theory carried an action of $\Spin(n)$ by rotations of $\RR^n$. But since $Q$ is not preserved under $\Spin(n)$, this action does not survive in the twisted theory. To improve that, we may consider a group $G$ with a \emph{twisting homomorphism} $G\rightarrow \Spin(n)\times G_R$ under which $Q$ is a scalar. Given such a twisting homomorphism, the twisted theory carries a $G$-action.
+
+To summarize, supersymmetric twisting consists of the following three steps:
 \begin{enumerate}
- \item  Context and literature on twists, including in the BV formalism.  There's a perspective there in terms of derived algebraic geometry (our mapping stacks we like to talk about).  Also at least a remark on the perspective in terms of coupling to twisted sugra.
- \item  perspective in terms of twisting homomorphisms, and putting twisted theories on curved backgrounds.
- \item  Mathematical literature on SUSY Yang-Mills, including Baez-Huerta and references therein.
- \item  Strategy for computations: coupling to background fields, homotopical SUSY action (reference Baulieu et al), proving the CME is satisfied including the background symmetry fields, then computing the twist in terms of the EOM in a few examples, and computing many other examples via dimensional reduction.
- \item  EOM of A-twists, and connection to various PDEs of interest in QFT.
- \item  Connection between twisted BV theories and twisted factorization algebras, and therefore to our earlier paper on $\bb E_n$ algebras.
- \item  Quantization: for cotangent theories and their deformations there's a 1-loop exact prequantization, just need to calculate the 1-loop anomaly to the QME.  In many cases this is worked out.
-\end{enumerate}}
+\item Choose a square-zero supercharge $Q\in\Sigma$ and modify the differential of the theory as $\mathrm{d}\mapsto\mathrm{d}+Q$.
 
-\subsection*{Applications to quantization and a relationship to factorization algebras}
-\addcontentsline{toc}{subsection}{Applications to quantization and a relationship to factorization algebras}
+\item Choose a group $G$ together with a twisting homomorphism $G\rightarrow \Spin(n)\times G_R$ under which $Q$ is scalar. To remove redundancy, we will assume $G\rightarrow \Spin(n)$ is an embedding.
 
-The quantization of gauge theories is notoriously subtle and leads to a rich theory of renormalization.
-An attractive application of the descriptions of the twists of supersymmetric gauge theories that we provide is to study quantization. 
+\item Choose a homomorphism $\alpha\colon \U(1)\rightarrow G_R$ under which $Q$ has weight $1$ and such that the $\alpha$-grading modulo 2 is the fermionic grading. This step may not be possible in general.
+\end{enumerate}
 
-To rigorously study the quantization of supersymmetric Yang-Mills theory we can work with the mathematical theory of renormalization developed by Costello in \cite{CosRenorm}. 
-In the context of (non-supersymmetric) Yang-Mills theory it is shown that this theory of re
+A classification of possible square-zero supercharges $Q$ was previously done in \cite{ElliottSafronov} and in this paper we use that classification to calculate the twist of super Yang--Mills theories on $\RR^n$ in all dimensions.
+
+\subsection*{Supersymmetric twists and supergravity}
+
+In this paper we only consider the case of global supersymmetry for super Yang--Mills theories on $\RR^n$. In certain cases one may consider coupling of super Yang--Mills to supergravity in which case the interpretation of the twist is that we consider a nontrivial supergravity background. Let us briefly explain this perspective.
+
+A classical solution of supergravity consists, in particular, of the following data: a spacetime manifold $M$, a $\Spin(n)$-bundle $P_\Spin\rightarrow M$ equipped with a connection (spin connection), a $G_R$-bundle $P_R\rightarrow M$ equipped with a connection and a ghost for supertranslations $\eta\in \Gamma(M, (P_\Spin\times P_R)\times^{\Spin(n)\times G_R}\Sigma)$. If we couple super Yang--Mills to supergravity, then the super Yang--Mills fields become sections of the associated bundles to $P_\Spin\times P_R$.
+
+We have the following supergravity analogs of the data $(Q, \phi, \alpha)$ for supersymmetric twisting:
+\begin{itemize}
+\item The supergravity analog of the choice of a square-zero supercharge $Q$ is the value of the ghost $\eta$.
+
+\item In the supergravity setting we consider a $G$-bundle $P_G\rightarrow M$ with a connection so that $P_\Spin\times P_R$ is induced via the homomorphism $G\rightarrow \Spin(n)\times G_R$.
+
+\item Given $\alpha\colon \U(1)\rightarrow G_R$, we consider a trivial $\U(1)$-subbundle in $G_R$ on which the connection restricts to zero.
+\end{itemize}
+
+
+%\chris{Possible topics for the introduction
+%\begin{enumerate}
+% \item  Context and literature on twists, including in the BV formalism.  There's a perspective there in terms of derived algebraic geometry (our mapping stacks we like to talk about).  Also at least a remark on the perspective in terms of coupling to twisted sugra.
+% \item  perspective in terms of twisting homomorphisms, and putting twisted theories on curved backgrounds.
+% \item  Mathematical literature on SUSY Yang-Mills, including Baez-Huerta and references therein.
+% \item  Strategy for computations: coupling to background fields, homotopical SUSY action (reference Baulieu et al), proving the CME is satisfied including the background symmetry fields, then computing the twist in terms of the EOM in a few examples, and computing many other examples via dimensional reduction.
+% \item  EOM of A-twists, and connection to various PDEs of interest in QFT.
+% \item  Connection between twisted BV theories and twisted factorization algebras, and therefore to our earlier paper on $\bb E_n$ algebras.
+% \item  Quantization: for cotangent theories and their deformations there's a 1-loop exact prequantization, just need to calculate the 1-loop anomaly to the QME.  In many cases this is worked out.
+%\end{enumerate}}
 
 
 
+\subsection*{Summary of Twisted Super Yang--Mills Theories}
+%\addcontentsline{toc}{subsection}{Summary of Twisted Super Yang-Mills Theories}
 
-\subsection*{Summary of Twisted Super Yang-Mills Theories}
-\addcontentsline{toc}{subsection}{Summary of Twisted Super Yang-Mills Theories}
-In this section we'll summarize the results of Part \ref{classification_part} of the paper, in which we classify all twists of super Yang-Mills theories in dimensions 2 to 10.  We'll give this summary in two forms.  In Tables \ref{table_of_twists_16}, \ref{table_of_twists_8} and \ref{table_of_twists_4} we will display all the possible twists with a short name, and a precise description in terms of the moduli space of solutions to the twisted equations of motion.  We will also, in this subsection, give a short description of each twisted theory in more physical language, with references to where in the literature it was previously considered.
+In this section we will summarize the main results of the paper presented in Part \ref{classification_part}, where we calculate twists of super Yang--Mills theories in dimensions 2 through 10.
+
+Let us begin by explaining what we mean by ``calculation''. Recall that for a Lie algebra $\fg$ there is a $d$-dimensional topological BF theory defined on a $d$-dimensional spacetime manifold $M$ with the space of BV fields $\Omega^\bullet(M; \fg)[1]\oplus \Omega^\bullet(M; \fg^*)[d-2]$, where $\Omega^\bullet$ denotes the space of differential forms equipped with the de Rham differential $\mathrm{d}$. If $M$ is replaced by a complex manifold $X$, we may also consider its version with the space of fields $\Omega^{\bullet, \bullet}(X; \fg)[1]\oplus \Omega^{\bullet, \bullet}(X; \fg^*)[2\dim(X)-2]$, where $\Omega^{\bullet, \bullet}$ is the space of differential forms equipped with the Dolbeault differential. Finally, we have yet another version, a \emph{holomorphic BF theory}, with the space of BV fields $\Omega^{0, \bullet}(X; \fg)[1]\oplus \Omega^{\dim(X), \bullet}(X; \fg^*)[\dim(X)-2]$. We will denote the space of fields in these three examples as $T^*[-1]\map(M_{\mathrm{dR}}, B\fg)$, $T^*[-1]\map(X_{\mathrm{Dol}}, B\fg)$ and $T^*[-1]\map(X, B\fg)$ respectively (the notation is explained in Section \ref{}). We may also combine these three examples into what we call a \emph{generalized BF theory} with the spaces of fields $T^*[-1]\map(X\times Y_{\mathrm{Dol}}\times M_{\mathrm{dR}}, B\fg)$ (see Definition \ref{def:generalizedBF} for more details).
+
+Let us also recall that if $\fg$ is equipped with a symmetric bilinear nondegenerate pairing, we also have a 3-dimensional topological Chern--Simons theory. If we forgo $\ZZ$-gradings and work with $\ZZ/2$-gradings, we may also consider a topological Chern--Simons theory in any odd dimension (see \cite{AlekseevMnev} for a 1-dimensional version and \cite{BakGustavsson2} for a 5-dimensional version). Just like for the BF theory, we also have two other versions which may be combined into a generalized Chern--Simons theory. Another direction we can generalize in is to replace the Lie algebra $\fg$ by a dg Lie algebra in which case the BF theory itself becomes a particular example of the Chern--Simons theory.
+
+Our goal will then be to show that a particular twist of super Yang--Mills is equivalent to a given generalized Chern--Simons theory. We summarize our results in two forms. In Tables \ref{table_of_twists_16}, \ref{table_of_twists_8} and \ref{table_of_twists_4} we summarize all the possible twists of dimensional reductions of 10d $\cN=(1, 0)$ super Yang--Mills, 6d $\cN=(1, 0)$ super Yang--Mills and 4d $\cN=1$ super Yang--Mills respectively. We will now give a short description of each twisted theory in a more physical language, with references to where in the literature it was previously considered.
 
 \textbf{Dimension 10}
 \begin{itemize}
- \item \emph{$\mc N=(1,0)$ holomorphic twist.} The unique twisted super Yang-Mills theory in 10 dimensions is equivalent, as a $\ZZ/2\ZZ$-graded theory, to 5d holomorphic Chern-Simons theory.  It is $\SU(5)$ invariant, and can be defined on a Calabi-Yau 5-fold.  This twist was first studied by Baulieu \cite{Baulieu}.
+ \item \emph{$\mc N=(1,0)$ holomorphic twist.} The unique twisted super Yang-Mills theory in 10 dimensions is equivalent, as a $\ZZ/2\ZZ$-graded theory, to 5d holomorphic Chern-Simons theory.  It is $\SU(5)$ invariant, and can be defined on a Calabi-Yau 5-fold.  This twist was first studied by Baulieu \cite{Baulieu}. As is well-known \cite{}, the theory has a one-loop anomaly and does not admit a quantization.
 \end{itemize}
 
 \textbf{Dimension 9}
@@ -342,8 +404,17 @@ In this section we'll summarize the results of Part \ref{classification_part} of
 \label{fig:superchargeorbits}
 \end{figure}
 
+\subsection*{Applications to quantization and a relationship to factorization algebras}
+%\addcontentsline{toc}{subsection}{Applications to quantization and a relationship to factorization algebras}
+
+The quantization of gauge theories is notoriously subtle and leads to a rich theory of renormalization.
+An attractive application of the descriptions of the twists of supersymmetric gauge theories that we provide is to study quantization. 
+
+To rigorously study the quantization of supersymmetric Yang-Mills theory we can work with the mathematical theory of renormalization developed by Costello in \cite{CostelloBook}. 
+In the context of (non-supersymmetric) Yang-Mills theory it is shown that this theory of re
+
 \subsection*{Outline of the Paper}
-\addcontentsline{toc}{subsection}{Outline of the Paper}
+%\addcontentsline{toc}{subsection}{Outline of the Paper}
 The remainder of the paper is divided into two parts.  In Part \ref{formalism_part} we set up the formalism that we will use when we study supersymmetric gauge theories and their twists.  The first main ingredient is the Batalin-Vilkovisky formalism \cite{BatalinVilkovisky} for classical field theory (Section \ref{BV_section}), as developed by Costello and Gwilliam in \cite{CostelloBook, Book1, Book2}.  The other main ingredient is the systematic study of supersymmetry algebras and supersymmetric action functionals using normed division algebras (Section \ref{sect:susy}), following Baez and Huerta \cite{BaezHuerta}.  We use this formalism to prove in Section \ref{sect:SYM} that super Yang-Mills theories with matter in dimensions 10, 6, 4 and 3 are in fact supersymmetric, meaning that there is a well-defined $L_\infty$ action of the supersymmetry algebra on the classical BV theory in question.  We introduce the idea of dimensional reduction (Section \ref{dim_red_section}) for classical field theories to show that supersymmetry action are well-defined in lower dimensions.
 
 In Part \ref{classification_part} of the paper, we produce the classification of supersymmetric Yang-Mills theories in dimensions 2 to 10 systematically.  We start with dimension 10 and work down by dimensional reduction.  Each subsection is divided by the number of supersymmetries, and the orbits of square-zero supercharges by which we can twist.  Twisted theories are characterized up to perturbative equivalence, including the residual Lorentz symmetry acting on each twisted theory.
@@ -471,6 +542,7 @@ A \defterm{classical BV field theory} (or simply, classical field theory) is a f
 \[I \in \oloc^+(\cE)\]
 of cohomological degree zero satisfying the Maurer-Cartan equation
 \[Q_{\mr{BV}} I + \frac{1}{2} \{I,I\} = 0 .\]
+\label{def:classicalfieldtheory}
 \end{definition}
 
 Given a classical field theory $(E, Q_{\mr{BV}}, \omega, I)$ we denote by
@@ -508,6 +580,7 @@ A \defterm{morphism} $\Phi \colon (E, Q_{\mr{BV}}, \omega, I) \rightsquigarrow (
 % a nonlinear map of vector bundles $E\rightsquigarrow E'$, 
 a collection $\Phi =\sum_{n\geq 1}^\infty \Phi_n$ of poly-differential operators $\Phi_n\colon \Sym^n(E)\rightarrow E'$, that intertwines the differentials $Q_{\mr{BV}}, Q_{\mr{BV}}'$, the pairings $\omega, \omega'$, and the interactions $I,I'$. A morphism is a \defterm{perturbative equivalence} if the map $\Phi_1\colon (\cE, Q_{\mr{BV}})\rightarrow (\cE', Q_{\mr{BV}}')$ is a quasi-isomorphism. 
 A classical field theory is \defterm{perturbatively trivial} if it is perturbatively equivalent to the zero theory ($E = 0$).
+\label{def:perturbativeequivalence}
 \end{definition}
 
 We will now describe two primitive examples of equivalences of classical field theories which will be useful in simplifying twisted theories. 
