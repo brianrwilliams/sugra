@@ -672,7 +672,7 @@ Consider the theory $(E, \omega, S)$ with underlying graded vector bundle
 \[
 E = E_0 \oplus \left(F \oplus F^! [-1]\right) \oplus \left(F^! \oplus F[-1] \right)
 \]
-whose sections we denote by $e_0 + \varphi + \varphi^* + \psi + \psi^*$ according to the above decomposition. 
+whose sections we denote by $e_0 + \varsigma + \varsigma^* + \psi + \psi^*$ according to the above decomposition. 
 The shifted symplectic form $\omega$ is given by the sum of $\omega_0$ plus the standard degree $+1$ pairings between $F, F^! [-1]$ and $F^!, F[-1]$. 
 Suppose further that the local functional
 \[
@@ -2763,7 +2763,7 @@ under which we have an $\MU(2)$-identification $W=\det(L)^{-1/2}w_1 \oplus \det(
 \item Scalar fields $\Tilde{a} \in \Omega^{0}(M; \gg)[4n-2]$ and $a \in\Omega^{0}(M; \gg)[-4n+2]$;
 \item Gauge fermions $\chi \in \Omega^0(M ; \gg)[-1]$, $\xi \in \Omega^{2,0}(M ; \gg)[4n-1]$, $B \in \Omega^{0,2}(M ; \gg)[-1]$, $b \in \Omega^{0,1}(M ; \gg)[-4n+1]$, $\rho \in \Omega^{1,0}(M ; \gg)[1]$,  $\Tilde{\chi} \in \Omega^0(M ; \gg)[4n-1]$.
 \item Matter bosons $\nu\in\Omega^0(M; U\otimes K_M^{-1/2})[-2n]$, $\phi\in\Omega^0(M; U\otimes K_M^{1/2})[2n]$.
-\item Matter fermions $\psi \in \Omega^{0,1} (M ;  U\otimes K_M^{1/2})[2n-1]$, $\varphi \in \Omega^{2,0} (M ; U\otimes K_M^{-1/2})[-2n+1]$, $\Tilde{\nu} \in \Omega^{0,2}(M ; U\otimes K_M^{-1/2})[-2n+1]$.
+\item Matter fermions $\psi \in \Omega^{0,1} (M ;  U\otimes K_M^{1/2})[2n-1]$, $\varsigma \in \Omega^{2,0} (M ; U\otimes K_M^{-1/2})[-2n+1]$, $\Tilde{\nu} \in \Omega^{0,2}(M ; U\otimes K_M^{-1/2})[-2n+1]$.
 \item A ghost field $c\in \Omega^0(M; \gg)[1]$.
 \end{itemize}
 
@@ -2778,7 +2778,7 @@ A_{1, 0}&\rightsquigarrow A_{1, 0}, \Tilde{a} \\
 A_{0, 1}&\rightsquigarrow A_{0, 1}, a \\
 B&\rightsquigarrow B, b \\
 \rho&\rightsquigarrow \rho, \Tilde{\chi} \\
-\psi & \rightsquigarrow \psi, \varphi . \\
+\psi & \rightsquigarrow \psi, \varsigma . \\
 \end{align*}
 
 The claim about the underlying $\ZZ/2$-graded $\MU(2)$-equivariant theories follows by applying dimensional reduction (Proposition \ref{CS_to_BF_diml_red_prop}) to the computation of the minimal twist of 5d $\cN=1$ super Yang--Mills theory (Theorem \ref{thm:5dminimaltwist}).
@@ -2791,8 +2791,8 @@ B^*+A^*_{0, 1}+ c^*&\in\Omega^{2, \bullet}(M; \fg) \\
 a + b + \xi^*&\in\Omega^{0, \bullet}(M; \fg)[2-4n] \\
 \xi + b^* + a^*&\in\Omega^{2, \bullet}(M; \fg)[4n-1] \\
 \\
-\phi + \psi + \varphi^*&\in\Omega^{0, \bullet}(M; U\otimes K_M^{1/2})[2n] \\
-\varphi + \psi^* + \phi^* &\in\Omega^{2, \bullet}(M; U\otimes K_M^{-1/2})[1-2n]
+\phi + \psi + \varsigma^*&\in\Omega^{0, \bullet}(M; U\otimes K_M^{1/2})[2n] \\
+\varsigma + \psi^* + \phi^* &\in\Omega^{2, \bullet}(M; U\otimes K_M^{-1/2})[1-2n]
 \end{align*}
 
 These fields have the same degrees as in the holomorphic BF theory.
@@ -2819,8 +2819,8 @@ and hence the underlying local $L_\infty$ algebra after the twist becomes
 \[
 \xymatrix@R=0.5cm@C=0.5cm{
 \ul{-2n+1} & \ul{-2n+2} & \ul{-2n+3} & \cdots & \ul{2n} & \ul{2n+1} & \ul{2n+2} \\ 
-\Omega^0(\CC^2 ; U)_\phi \ar[r] & \Omega^{0,1}(\CC^2 ; U)_\psi \ar[r] & \Omega^{0,2}(\CC^2 ; U)_{\varphi^*} \\
-& & & & \Omega^{2,0}(\CC^2 ; U)_{\varphi} \ar[r] & \Omega^{2,1}(\CC^2 ; U)_{\psi^*} \ar[r] & \Omega^{2,2}(\CC^2 ; U)_{\phi^*}
+\Omega^0(\CC^2 ; U)_\phi \ar[r] & \Omega^{0,1}(\CC^2 ; U)_\psi \ar[r] & \Omega^{0,2}(\CC^2 ; U)_{\varsigma^*} \\
+& & & & \Omega^{2,0}(\CC^2 ; U)_{\varsigma} \ar[r] & \Omega^{2,1}(\CC^2 ; U)_{\psi^*} \ar[r] & \Omega^{2,2}(\CC^2 ; U)_{\phi^*}
 }
 \]
 \end{comment}
@@ -2857,16 +2857,16 @@ I_{\rm gauge}^{(1)}(Q_t) &= \int \dvol\left(-(\rho, A_{1, 0}^*) - t(b, A_{0, 1}^
 &+ \int\dvol\left( t\Omega^{-1} F_{2, 0}\wedge B^* + (t\dd_{A_{1, 0}} a, \rho^*)\right) \\
 %&+ \int\dvol\left((F_{0, 2}, B^*) + t\Omega^{-1} F_{2, 0}\wedge B^* + (\ol\dd_{A_{0, 1}}a, b^*) + (t\dd_{A_{1, 0}} a, \rho^*) + \frac{1}{2}\Lambda F_{1, 1}(\chi^* - t\wt\chi^*)\right) \\
 I^{(2)}_{\rm gauge} (Q_t, Q_t) &= \int \dvol \left(t\chi^*\wt \chi^* + \frac{t}{2} \xi^* B^* -\frac{1}{4}(\chi^* + t\wt\chi^*)^2 + t a c^*\right) \\
-I_{\rm matter}^{(1)}(Q_t) &= \int \dvol \left((\Tilde{\nu}, \nu^*) + t (\varphi, \phi^*) + [\phi, \nu] + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*) + [\nu, a]\varphi^* \right) \\
+I_{\rm matter}^{(1)}(Q_t) &= \int \dvol \left((\Tilde{\nu}, \nu^*) + t (\varsigma, \phi^*) + [\phi, \nu] + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*) + [\nu, a]\varsigma^* \right) \\
 I_{\rm matter}^{(2)}(Q_t) &= \int \dvol \frac t4  (\psi^*, \psi^*)
 \end{align*}
 \end{prop}
 
 %The $(1,2)$ action is in comments, it should agree with the $t=0$ limit of the above.
 %\begin{align*}
-%I^{(1)}(Q_t) &= \int \dvol\left(-(\rho, A_{1, 0}^*) - \wt \chi\wt a^* - (\Tilde{\nu}, \nu^*) - t(\varphi, A_{1, 0}^*) - t(\wt\nu, A_{0, 1}^*) - t(b, \nu^*) - t(\rho, \phi^*) - t(\Lambda\psi)\wt a^*\right) \\
-%&+ \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda(F_{1, 1} + [\phi, \nu] + [a, \wt a])\chi^* + [\phi, \phi]\xi^* + [\nu, a]\varphi^* + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*)\right) \\
-%&+t\int\dvol\left(\frac{1}{2} (F_{1, 1} + [\phi, \nu] + \omega\wedge [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* + \Lambda \dd_{A_{1, 0}}\nu \chi^* + \dd_{A_{1, 0}} a \varphi^* + \ol\dd_{A_{0, 1}} a \wt\nu^* + [\phi, a]\rho^* + [\nu, a]b^*\right) \\
+%I^{(1)}(Q_t) &= \int \dvol\left(-(\rho, A_{1, 0}^*) - \wt \chi\wt a^* - (\Tilde{\nu}, \nu^*) - t(\varsigma, A_{1, 0}^*) - t(\wt\nu, A_{0, 1}^*) - t(b, \nu^*) - t(\rho, \phi^*) - t(\Lambda\psi)\wt a^*\right) \\
+%&+ \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda(F_{1, 1} + [\phi, \nu] + [a, \wt a])\chi^* + [\phi, \phi]\xi^* + [\nu, a]\varsigma^* + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*)\right) \\
+%&+t\int\dvol\left(\frac{1}{2} (F_{1, 1} + [\phi, \nu] + \omega\wedge [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* + \Lambda \dd_{A_{1, 0}}\nu \chi^* + \dd_{A_{1, 0}} a \varsigma^* + \ol\dd_{A_{0, 1}} a \wt\nu^* + [\phi, a]\rho^* + [\nu, a]b^*\right) \\
 %I^{(2)} (Q_t, Q_t) &= \int \dvol \left(t^2(\xi^*B^* + \chi^*\wt\chi^* + \frac{1}{2}(\psi^*, \psi^*)) -\frac{1}{4}(\chi^* + t \Lambda\psi^*)^2 + t^2 ac^*\right) \\
 %\end{align*}
 
@@ -2878,7 +2878,7 @@ The twist of 4d $\cN=2$ super Yang--Mills with respect to the family $Q_t$ of sq
 The proof proceeds as in the proof of Theorem \ref{thm:10dholomorphictwist} with slight modifications.
 
 Observe that the quadruple of fields $\{\chi^*, \chi, \wt\chi^*, \wt\chi\}$ has the same Poisson brackets as the quadruple $\{\chi^*-t\wt\chi^*, \chi, \wt\chi^*, \wt\chi + t\chi\}$. Therefore, we may eliminate the fields $\chi^*-t\wt\chi^*, \chi$ using Proposition \ref{prop:integrateoutfield}. We then have trivial BRST doublets $\{\wt\chi + t\chi, \wt a\}$, $\{\nu, \wt \nu\}$ and $\{\rho, A_{1, 0}\}$ which may be eliminated using Proposition \ref{prop:BRSTdoublet}. We are left with the action
-\[S_{BF} + t \int\dvol\left(-(b, A_{0, 1}^*) + a c^* + \frac{1}{2} \xi^* B^* + t (\varphi, \phi^*) + \frac 14 (\psi^*, \psi^*) \right),\]
+\[S_{BF} + t \int\dvol\left(-(b, A_{0, 1}^*) + a c^* + \frac{1}{2} \xi^* B^* + t (\varsigma, \phi^*) + \frac 14 (\psi^*, \psi^*) \right),\]
 where $S_{BF}$ is the action functional of the holomorphic twist at $t=0$ found in the previous section. 
 Since the extra terms are quadratic in the fields, the claim is reduced to a comparison of the underlying local $L_\infty$ algebra of the twisted theory and that of the holomorphic Hodge theory. The former is given by (cf. the proof of Theorem \ref{thm:4dholomorphictwist})
 \[
@@ -2888,8 +2888,8 @@ Since the extra terms are quadratic in the fields, the claim is reduced to a com
 \Omega^0(\CC^2; \gg)_a  \ar@{-->}^{t\id}[ur] \ar[r] &\Omega^{0,1}(\CC^2; \gg)_{b}  \ar@{-->}^{t\id}[ur] \ar[r] &\Omega^{0,2}(\CC^2; \gg)_{\xi^*}  \ar@{-->}^{t\id}[ur] \\
 & &  \Omega^{2,0}(\CC^2 ; \gg)_{B^*}  \ar@{-->}^{t\id}[dr] \ar[r] & \Omega^{2,1}(\CC^2 ; \gg)_{A_{0,1}^*} \ar[r]  \ar@{-->}^{t\id}[dr] & \Omega^{2,2}(\CC^2 ; \gg)_{c^*}  \ar@{-->}^{t\id}[dr] \\
 & & & \Omega^{2,0}(\CC^2; \gg)_\xi \ar[r] &\Omega^{2,1}(\CC^2; \gg)_{b^*} \ar[r] &\Omega^{2,2}(\CC^2; \gg)_{a^*}  \\
-& & \Omega^0(\CC^2 ; U\otimes K^{1/2})_\phi \ar[r] & \Omega^{0,1}(\CC^2 ; U\otimes K^{1/2})_\psi \ar[r] & \Omega^{0,2}(\CC^2 ; U\otimes K^{1/2})_{\varphi^*} \\
-& \Omega^{2,0}(\CC^2 ; U\otimes K^{-1/2})_{\varphi} \ar[r]  \ar@{-->}^{t\id}[ur] & \Omega^{2,1}(\CC^2 ; U\otimes K^{-1/2})_{\psi^*} \ar[r]  \ar@{-->}^{t\id}[ur]  & \Omega^{2,2}(\CC^2 ; U\otimes K^{-1/2})_{\phi^*}  \ar@{-->}^{t\id}[ur]
+& & \Omega^0(\CC^2 ; U\otimes K^{1/2})_\phi \ar[r] & \Omega^{0,1}(\CC^2 ; U\otimes K^{1/2})_\psi \ar[r] & \Omega^{0,2}(\CC^2 ; U\otimes K^{1/2})_{\varsigma^*} \\
+& \Omega^{2,0}(\CC^2 ; U\otimes K^{-1/2})_{\varsigma} \ar[r]  \ar@{-->}^{t\id}[ur] & \Omega^{2,1}(\CC^2 ; U\otimes K^{-1/2})_{\psi^*} \ar[r]  \ar@{-->}^{t\id}[ur]  & \Omega^{2,2}(\CC^2 ; U\otimes K^{-1/2})_{\phi^*}  \ar@{-->}^{t\id}[ur]
 }
 \]
 which is exactly the local $L_\infty$ algebra of the holomorphic Hodge theory.
@@ -2980,7 +2980,7 @@ We consider a homomorphism $\alpha\colon \U(1)\rightarrow G_R$ under which $L\ot
 \item Scalar fields $\Tilde{a} \in \Omega^{0}(M; \gg)[-2]$ and $a \in\Omega^{0}(M; \gg)[2]$;
 \item Gauge fermions $\chi \in \Omega^0(M ; \gg)[-1]$, $\xi \in \Omega^{2,0}(M ; \gg)[-1]$, $B \in \Omega^{0,2}(M ; \gg)[-1]$, $b \in \Omega^{0,1}(M ; \gg)[1]$, $\rho \in \Omega^{1,0}(M ; \gg)[1]$,  $\Tilde{\chi} \in \Omega^0(M ; \gg)[-1]$.
 \item Matter bosons $\nu\in\Omega^{0, 1}(M; \fg)$, $\phi\in\Omega^{1,0}(M; \fg)$.
-\item Matter fermions $\psi \in \Omega^{1,1} (M;  \fg)[-1]$, $\varphi \in \Omega^{1,0} (M ; \fg)[1]$, $\Tilde{\nu} \in \Omega^{0,1}(M; \fg)[1]$.
+\item Matter fermions $\psi \in \Omega^{1,1} (M;  \fg)[-1]$, $\varsigma \in \Omega^{1,0} (M ; \fg)[1]$, $\Tilde{\nu} \in \Omega^{0,1}(M; \fg)[1]$.
 \item A ghost field $c\in \Omega^0(M; \gg)[1]$.
 \end{itemize}
 
@@ -2996,11 +2996,11 @@ The 4d $\cN=4$ super Yang--Mills theory viewed as a $\cN=2$ theory is 4d $\cN=2$
 Note, however, that the twisting homomorphism used in Section \ref{sect:4d_2_holomorphictwist} differs from the twisting homomorphism defined above. In particular, this equivalence is not $\U(2)$-equivariant. In the present case the fields organize into the following collections:
 \begin{align*}
 c+A_{0, 1}+B&\in\Omega^{0, \bullet}(M; \fg)[1] \\
-\phi + \psi + \varphi^*&\in\Omega^{1, \bullet}(M; \fg) \\
+\phi + \psi + \varsigma^*&\in\Omega^{1, \bullet}(M; \fg) \\
 \xi + b^* + a^*&\in\Omega^{2, \bullet}(M; \fg)[-1] \\
 \\
 a + b + \xi^*&\in\Omega^{0, \bullet}(M; \fg)[2] \\
-\varphi + \psi^* + \phi^* &\in\Omega^{1, \bullet}(M; \fg)[1] \\
+\varsigma + \psi^* + \phi^* &\in\Omega^{1, \bullet}(M; \fg)[1] \\
 B^*+A^*_{0, 1}+ c^*&\in\Omega^{2, \bullet}(M; \fg)
 \end{align*}
 These are exactly the fields in $T^*[-1] \map(\CC^2_{\rm Dol} , B \fg)$.
@@ -3087,9 +3087,9 @@ We are going to use the notation of the fields from Section \ref{sect:4d4holomor
 \begin{prop}
 Suppose $Q_t$ is the rank $(1,2)$ supercharge of \eqref{eq:4d412Hodgefamily}. The $\MU(2)$ decomposition of the functionals $I^{(1)}, I^{(2)}$ (see \eqref{eq:gaugeI1}, \eqref{eq:gaugeI2}) in terms of the fields of 4d $\cN=4$ super Yang--Mills theory are
 \begin{align*}
-I^{(1)}(Q_t) &= \int \dvol\left(-(\rho, A_{1, 0}^*) - \wt \chi\wt a^* - (\Tilde{\nu}, \nu^*) - t(\varphi, A_{1, 0}^*) - t(\wt\nu, A_{0, 1}^*) - t(b, \nu^*) - t(\rho, \phi^*) - t(\Lambda\psi)\wt a^*\right) \\
-&+ \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda(F_{1, 1} + [\phi, \nu] + \omega [a, \wt a])\chi^* + [\phi, \phi]\xi^* + [\nu, a]\varphi^* + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*)\right) \\
-&+t\int\dvol\left(\frac{1}{2} (F_{1, 1} + [\phi, \nu] + \omega [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* + \Lambda \dd_{A_{1, 0}}\nu \chi^* + \dd_{A_{1, 0}} a \varphi^* + \ol\dd_{A_{0, 1}} a \wt\nu^* + [\phi, a]\rho^* + [\nu, a]b^*\right) \\
+I^{(1)}(Q_t) &= \int \dvol\left(-(\rho, A_{1, 0}^*) - \wt \chi\wt a^* - (\Tilde{\nu}, \nu^*) - t(\varsigma, A_{1, 0}^*) - t(\wt\nu, A_{0, 1}^*) - t(b, \nu^*) - t(\rho, \phi^*) - t(\Lambda\psi)\wt a^*\right) \\
+&+ \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda(F_{1, 1} + [\phi, \nu] + \omega [a, \wt a])\chi^* + [\phi, \phi]\xi^* + [\nu, a]\varsigma^* + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*)\right) \\
+&+t\int\dvol\left(\frac{1}{2} (F_{1, 1} + [\phi, \nu] + \omega [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* + \Lambda \dd_{A_{1, 0}}\nu \chi^* + \dd_{A_{1, 0}} a \varsigma^* + \ol\dd_{A_{0, 1}} a \wt\nu^* + [\phi, a]\rho^* + [\nu, a]b^*\right) \\
 I^{(2)} (Q_t, Q_t) &= \int \dvol \left(t^2(\xi^*B^* + \chi^*\wt\chi^* + \frac{1}{2}(\psi^*, \psi^*)) -\frac{1}{4}(\chi^* + t \Lambda\psi^*)^2 + t^2 ac^*\right) \\
 \end{align*}
 \end{prop}
@@ -3102,15 +3102,15 @@ The twist of 4d $\cN=4$ super Yang--Mills with respect to the family $Q_t$ of sq
 \begin{proof}
 We begin by applying Corollary \ref{cor: quad} to the two $t$-dependent quadruples of fields:
 \begin{align*}
-& (t \varphi, \rho, t \phi, A_{1,0}) \\
+& (t \varsigma, \rho, t \phi, A_{1,0}) \\
 & (tb, \Tilde{\nu}, t A_{0,1}, \nu) .
 \end{align*}
 This has the effect of integrating out the fields $(\rho, A_{1,0})$ and $(\Tilde{\nu}, \nu)$ and replaces the action functionals by
 \begin{align*}
-\Tilde{I}^{(1)}(Q_t) &= \int \dvol\left(- t^2 (\varphi, \phi^*) - t^2 (b, A_{0, 1}^*) - (\wt \chi + t\Lambda\psi) \wt a^*\right) \\
+\Tilde{I}^{(1)}(Q_t) &= \int \dvol\left(- t^2 (\varsigma, \phi^*) - t^2 (b, A_{0, 1}^*) - (\wt \chi + t\Lambda\psi) \wt a^*\right) \\
 &+ \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda(F_{1, 1} - t [\phi, A_{0,1}] + \omega [a, \wt a])\chi^* + [\phi, \phi]\xi^* - t [A_{0,1}, a] \phi^* + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*)\right) \\
-%&+t\int\dvol\left(\frac{1}{2} (-t \dbar \phi + \partial A_{0,1} -t [\phi, A_{0,1}] + \omega\wedge [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* - t^2 \Lambda \partial_{\phi} A_{0,1} \chi^* - t \partial_\phi a \varphi^* \right) \\ & + t \int \dvol \left( t \dbar_{A_{0,1}} a b^* + t [\phi, a] \varphi^* - t [A_{0,1}, a]b^* \right) \\
-&+t\int\dvol\left(\frac{1}{2} (F_{1,1} -t [\phi, A_{0,1}] + \omega [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* - t^2 \Lambda \partial_{\phi} A_{0,1} \chi^* - t \partial_\phi a \varphi^* \right) \\ & + t \int \dvol \left( t \dbar_{A_{0,1}} a b^* + t [\phi, a] \varphi^* - t [A_{0,1}, a]b^* \right) \\
+%&+t\int\dvol\left(\frac{1}{2} (-t \dbar \phi + \partial A_{0,1} -t [\phi, A_{0,1}] + \omega\wedge [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* - t^2 \Lambda \partial_{\phi} A_{0,1} \chi^* - t \partial_\phi a \varsigma^* \right) \\ & + t \int \dvol \left( t \dbar_{A_{0,1}} a b^* + t [\phi, a] \varsigma^* - t [A_{0,1}, a]b^* \right) \\
+&+t\int\dvol\left(\frac{1}{2} (F_{1,1} -t [\phi, A_{0,1}] + \omega [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* - t^2 \Lambda \partial_{\phi} A_{0,1} \chi^* - t \partial_\phi a \varsigma^* \right) \\ & + t \int \dvol \left( t \dbar_{A_{0,1}} a b^* + t [\phi, a] \varsigma^* - t [A_{0,1}, a]b^* \right) \\
 \Tilde{I}^{(2)} (Q_t, Q_t) &= \int \dvol \left(t^2(\xi^*B^* + \chi^*\wt\chi^* + \frac{1}{2}(\psi^*, \psi^*)) -\frac{1}{4}(\chi^* + t \Lambda\psi^*)^2 + t^2 ac^*\right)
 \end{align*}
 
@@ -3135,7 +3135,7 @@ Fix a rank $(2,1)$ supercharge of the form $Q_{st} = Q_0 + tQ_1 + sQ_2$, where $
 \end{align*}
 We will compute the corresponding $\ZZ$-graded $Q_{st}$-twisted theory.  Let us first recall the steps of the proof of Theorem \ref{thm:4dDonaldsontwist}: the twist of 4d $\mc N=2$ super Yang-Mills with matter by $Q_t$.  We will do the same thing to eliminate fields in the $Q_{st}$-twisted theory.  The key fact is that the part of the deformation of the action proportional to $s$, namely
 \[I^{(1)}(sQ_2) + 2 I^{(2)}(Q_0, sQ_2) + 2 I^{(2)}(tQ_1, sQ_2) + I^{(2)}(sQ_2, sQ_2)\]
-only includes terms involving both $\mc N=4$ fields in the set $\{c, A_{1,0}, A_{0,1}, a, \wt a, \chi \wt \chi, b, B, \xi, \rho\}$ coming from the $\mc N=2$ vector multiplet (plus their antifields) \emph{and} $\mc N=4$ fields in the set $\{\nu, \wt \nu, \phi, \psi, \varphi\}$ coming from the $\mc N=2$ hypermultiplet (and their antifields).  More precisely, the action involves the images of the fields in these sets after restricting from $\mr U(2)$-representations to $\spin(2;\RR) \times \spin(2;\RR)$-representations.  In what follows we will write $\mr U(2)$-expressions, with the understanding that the further deformation by $sQ_2$ will further break these component fields.
+only includes terms involving both $\mc N=4$ fields in the set $\{c, A_{1,0}, A_{0,1}, a, \wt a, \chi \wt \chi, b, B, \xi, \rho\}$ coming from the $\mc N=2$ vector multiplet (plus their antifields) \emph{and} $\mc N=4$ fields in the set $\{\nu, \wt \nu, \phi, \psi, \varsigma\}$ coming from the $\mc N=2$ hypermultiplet (and their antifields).  More precisely, the action involves the images of the fields in these sets after restricting from $\mr U(2)$-representations to $\spin(2;\RR) \times \spin(2;\RR)$-representations.  In what follows we will write $\mr U(2)$-expressions, with the understanding that the further deformation by $sQ_2$ will further break these component fields.
 
 So, we first performed a chance of variables sending $\{\chi^*, \chi, \wt\chi^*, \wt\chi\}$ to $\{\chi^*-t\wt\chi^*, \chi, \wt\chi^*, \wt\chi + t\chi\}$: this only used the fact that the two quadruples had the same Poisson brackets, which still applies here.  We then used Proposition \ref{prop:integrateoutfield} to eliminate the fields $\chi^*-t\wt\chi^*, \chi$.  The proposition still applies here, because the further twist by $sQ_2$ does not introduce a $\chi^2$ or $(\chi^*-t\wt\chi^*)^2$ term.  Finally, we used Proposition \ref{prop:BRSTdoublet} to eliminate the trivial BRST doublets $\{\wt\chi + t\chi, \wt a\}$, $\{\nu, \wt \nu\}$ and $\{\rho, A_{1, 0}\}$.  Again, the proposition still applies here: each time we apply the proposition, we must only ensure that there are no terms in the twisted action proportional to a pair of fields $(X, Y)$, we need only observe that the deformation could not introduce terms to the action proportional to $XX^*$ or $YY^*$.
 
@@ -3149,7 +3149,7 @@ To see this, we must verify that the expression $S_1$ occuring in the $Q_{st}$-t
 The deformation given by the first three terms in \ref{eq:4d_12_general_def} was computed in the proof of Theorem \ref{thm:4dDonaldsontwist} to be
 \begin{equation}
 \label{eq:4d_12_further_deformation}
-t \int\dvol\left(-(b, A_{0, 1}^*) + a c^* + \frac{1}{2} \xi^* B^* + t (\varphi, \phi^*) + \frac 14 (\psi^*, \psi^*) \right).
+t \int\dvol\left(-(b, A_{0, 1}^*) + a c^* + \frac{1}{2} \xi^* B^* + t (\varsigma, \phi^*) + \frac 14 (\psi^*, \psi^*) \right).
 \end{equation}
 The fourth and final term, proportional to $st$, vanishes after the field elimination we have performed, since $\Gamma_{10}(Q_1,Q_2) = 0$, and the remaining term from equation \ref{eq:gaugeI2}, of form $st(Q_1,\lambda^*)(Q_2,\lambda^*)$, is proportional to $(Q_1,\lambda^*)$, which is proportional to $\chi^*$.
 
