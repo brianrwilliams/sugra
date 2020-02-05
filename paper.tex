@@ -3446,7 +3446,7 @@ I_{\rm matter}^{(2)}(Q_t) &= \int \dvol \frac t4 \left( (\psi^*_{-1} ,\psi^*_{-1
 \end{prop}
 
 \begin{theorem} \label{2d_2_A_twist_thm}
-The topological A-twist of 2d $\mc N=(2,2)$ super Yang-Mills theory with gauge group $G$ coupled to the $\mc N=(2,2)$ chiral multiplet valued in a representation $R$ is perturbatively equivalent, as a one-parameter deformation of the holomorphic twist, to the Hodge family with moduli space $T^*[-1]\mr{Map}(\CC, (R/\gg)_{\mr{Hod}})$.
+The topological A-twist of 2d $\mc N=(2,2)$ super Yang-Mills theory with gauge group $G$ coupled to the $\mc N=(2,2)$ chiral multiplet valued in a representation $R$ is perturbatively equivalent, as a one-parameter deformation of the holomorphic twist, to the Hodge family with moduli space $T^*[-1]\mr{Map}(\CC, (R/\gg)_{\mr{Hod}})$.  This equivalence is $\mr U(1)$-invariant.
 \end{theorem}
 
 \begin{proof}
@@ -3467,9 +3467,10 @@ This is exactly the deformation to $T^*[-1]\mr{Map}(\CC, (R/\gg)_{\mr{Hod}})$.
 
 \subsubsection{Topological B Twist} \label{sect:2d22Btwist}
 
-Finally, there is the 2d B-twist.  This is much easier, since it arises directly from 3d via dimensional reduction in a non-invariant direction.
+Finally, there is the 2d B-twist.  This is much easier, since it arises directly from 3d via dimensional reduction in a non-invariant direction.  Indeed, let $W_3$ be the 2d auxiliary space in the 3d $\mc N=2$ supertranslation algebra.  The 3d spin representation $S \otimes W_3$ splits into $S_+ \otimes W_3 \oplus S_- \otimes W_3$ as a $\spin(2;\CC)$-module.  Rank one square zero elements in 3d $\mc N=2$ generically become rank $(1,1)$ square zero elements in the 2d $\mc N=(2,2)$ supersymmetry algebra.  There is a square-zero supercharge in 3d $\mc N=2$ compatible with the identity twisting homomorphism $\spin(2;\CC) \to \spin(2;\CC)$.  This becomes the B-twisting homomorphism of $\spin(2;\CC) \to \spin(2;\CC) \times \spin(2;\CC)$ of weight $(1,-1)$ in the 2d $\mc N=(2,2)$-algebra.
+
 \begin{theorem} \label{2d_2_B_twist_thm}
-The topological B-twist of 2d $\mc N=(2,2)$ super Yang-Mills theory with gauge group $G$ coupled to the $\mc N=(2,2)$ chiral multiplet valued in a representation $R$ is perturbatively equivalent to the topological BF theory with moduli space $T^*[-1]\mr{Map}(\RR^2_{\mr{dR}}, (R/\gg))$.
+The topological B-twist of 2d $\mc N=(2,2)$ super Yang-Mills theory with gauge group $G$ coupled to the $\mc N=(2,2)$ chiral multiplet valued in a representation $R$ is perturbatively equivalent to the topological BF theory with moduli space $T^*[-1]\mr{Map}(\RR^2_{\mr{dR}}, (R/\gg))$.  This equivalence is $\mr U(1)$-invariant.
 \end{theorem}
 
 \begin{proof}
@@ -3477,17 +3478,20 @@ We again dimensionally reduce the holomorphic twist of 3d $\mc N=2$ super Yang-M
 \end{proof}
 
 \subsection{\texorpdfstring{$\cN=(4,4)$}{N=(4,4)} and \texorpdfstring{$\cN=(8,8)$}{N=(8,8)} Super Yang-Mills with matter} \label{sect:2d(4,4)}
-We can likewise consider $\mc N=(4,4)$ super Yang-Mills theory with gauge group $G$, with a hypermultiplet valued in a symplectic representation $U$, by dimensionally reducing 3d $\mc N=4$ super Yang-Mills, or we can consider $\mc N=(8,8)$ super Yang-Mills with gauge group $G$, by dimensionally reducing 3d $\mc N=8$ super Yang-Mills.  We will address these two theories together, since in neither case are there any new classes of twist which were not visible already in the $\mc N=(2,2)$ section above.  
+We can likewise consider $\mc N=(4,4)$ super Yang-Mills theory with gauge group $G$, with a hypermultiplet valued in a symplectic representation $U$, by dimensionally reducing 3d $\mc N=4$ super Yang-Mills, or we can consider $\mc N=(8,8)$ super Yang-Mills with gauge group $G$, by dimensionally reducing 3d $\mc N=8$ super Yang-Mills.  We will address these two theories together, since in neither case are there any new classes of twist which were not visible already in the $\mc N=(2,2)$ section above.  In other words, every square-zero supercharge sits inside an $\mc N=(2,2)$ subalgebra.
+
+The R-symmetry group in the $\mc N=(4,4)$ case is $\spin(4;\CC) \times \spin(4;\CC)$, and in the $\mc N=(8,8)$ case it is $\spin(8;\CC)$ (acting on both $W_+$ and $W_-$ by its defining representation.  In this latter case we must be somewhat careful since the $B$-twisting homomorphism $\phi_B$ does not factor through the diagonal. \chris{todo}
 
 The following equivalences follow from the results in the previous section by substituting $R = U \oplus \gg$.
 
 \subsubsection{Minimal Twist} \label{sect:2d44minimaltwist}
-\subsubsection{Topological A Twist} \label{sect:2d44Atwist}
-
 \begin{theorem}
-The holomorphic twist of 2d $\mc N=(4,4)$ super Yang-Mills with gauge group $G$ and symplectic matter representation $U$ admits a one-parameter deformation to the A-twist.  Together they are perturbatively equivalent to a holomorphic BF theory and its Hodge deformation, with moduli space given by $T^*[-1]\mr{Map}(\CC, (U \ham \gg)_{\mr{Hod}})$.
+The holomorphic twist of 2d $\mc N=(4,4)$ super Yang-Mills with gauge group $G$ and symplectic matter representation $U$ is perturbatively equivalent to a holomorphic BF theory, with moduli space given by $T^*[-1]\mr{Map}(\CC, (U \ham \gg)_{\mr{Dol}})$.  If $U = T^*\gg$ then the $\mc N=(4,4)$ supersymmetry is promoted to $\mc N=(8,8)$, and the twisted moduli space can be identified with  $T^*[-1]\mr{Map}(\CC, (T^*[2](\gg / \gg))_{\mr{Dol}})$.
+\end{theorem}
 
-If $U = T^*\gg$ then the $\mc N=(4,4)$ supersymmetry is promoted to $\mc N=(8,8)$, and the twisted moduli space can be identified with  $T^*[-1]\mr{Map}(\CC, (T^*[2](\gg / \gg))_{\mr{Hod}})$.
+\subsubsection{Topological A Twist} \label{sect:2d44Atwist}
+\begin{theorem}
+The holomorphic twist of 2d $\mc N=(4,4)$ super Yang-Mills with gauge group $G$ and symplectic matter representation $U$ admits a one-parameter deformation to the A-twist.  This family is perturbatively equivalent to a Hodge theory, with moduli space given by $T^*[-1]\mr{Map}(\CC, (U \ham \gg)_{\mr{Hod}})$.  If $U = T^*\gg$ then the $\mc N=(4,4)$ supersymmetry is promoted to $\mc N=(8,8)$, and the twisted moduli space can be identified with  $T^*[-1]\mr{Map}(\CC, (T^*[2](\gg / \gg))_{\mr{Hod}})$.
 \end{theorem}
 
 \subsubsection{Topological B Twist} \label{sect:2d44Btwist}
