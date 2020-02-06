@@ -62,7 +62,7 @@ Let us begin with an informal discussion of classical field theories. A classica
 
 In this paper we follow the approach developed in the works of Costello and Gwilliam \cite{CostelloBook,Book1}. As the space of BV fields $\cE$ is an infinite-dimensional manifold, it is difficult to work with it directly (for instance, to make sense of a $(-1)$-shifted symplectic structure). Instead, we zoom in on a neighborhood of a point where $Q$ vanishes (i.e. we consider a given classical solution). We may then consider $\cE$ as the space of sections of a graded vector bundle $E\rightarrow M$ over the spacetime manifold $M$. This allows us to work with finite-dimensional objects throughout. Namely, a $(-1)$-shifted symplectic structure on $\cE$ boils down to a $(-1)$-shifted symplectic pairing $E\cong E^![-1]$, where $E^!=E^*\otimes \Dens_M$. We refer to Definition \ref{def:classicalfieldtheory} for the precise definition of a classical field theory in the BV formalism that we use. Moreover, with this definition we may talk about weak equivalences of classical field theories (a notion inaccessible with $QP$-manifolds) which are simply maps of classical field theories inducing a quasi-isomorphism on $\cE$. We call these \emph{perturbative equivalences} (see Definition \ref{def:perturbativeequivalence}) to emphasize that we are working in a formal neighborhood of a given classical solution. For simplicity, throughout the paper we ignore issues of unitarity, so we complexify all fields.
 
-\subsection*{Supersymmetric Classical Field Theories}
+\subsection*{Classical Supersymmetric Field Theories}
 
 Now consider a classical field theory where the spacetime manifold is $M=\RR^n$ which is moreover translation-invariant. Given the data of a spinorial representation $\Sigma$ equipped with a symmetric pairing $\Gamma\colon\Sym^2(\Sigma)\rightarrow V=\CC^n$, we may construct a super Lie algebra of supertranslations $\fA=\Pi\Sigma\oplus V$ with the only nonvanishing Lie bracket given by $\Gamma$. A supersymmetric classical field theory is then a translation-invariant classical field theory on $\RR^n$ where the translation action is extended to an action of the super Lie algebra $\fA$. In addition, we may consider an $R$-symmetry group $G_R$ which acts on $\Sigma$ preserving $\Gamma$ and the $\so(n)$-action and also compatibly on the classical field theory.
 
@@ -238,7 +238,8 @@ Our goal will then be to show that a particular twist of super Yang--Mills is eq
  \item \emph{Non-Chiral ($\mc N=(2,2), (4,4), (8,8)$) holomorphic twist.}
  \item \emph{Non-Chiral ($\mc N=(4,4), (8,8)$) topological A twist.}
  \item \emph{Non-Chiral ($\mc N=(4,4), (8,8)$) topological B twist.}
- \item \emph{Chiral $\mc N=(0,N_-)$ holomorphic twist.}
+ \item \emph{Chiral $\mc N=(0,N_-)$ holomorphic twist.} 
+Twisted $(0,2)$ $\sigma$-models were first studied by Witten in \cite{WittenCDO} in relationship to the chiral algebra of chiral differential operators. 
 \end{itemize}
 
 
@@ -487,6 +488,9 @@ where ${\rm PolyDiff}(\cE^{\times n}, \cF)$ denotes the space of polydifferentia
 When $\cF = \cE$, we refer to ${\rm Fun}_{\rm loc}(\cE, \cE)$ as the space of local vector fields on $E$. 
 There is a natural Lie bracket on ${\rm Fun}_{\rm loc}(\cE, \cE)$ and a canonical action of this Lie algebra on local functionals. 
 
+\subsection{Local formal moduli problems}
+
+
 \subsection{Classical BV Theories}
 
 The classical BV (Batalin-Vilkovisky) formalism \cite{BatalinVilkovisky} is a model for classical field theory from the Lagrangian perspective.  In brief the classical BV formalism produces a local model for the critical locus of an action functional, but considered in the derived sense.  That is, given a space $\Phi$ of fields and an action functional with derivative $\d S$, one considers not just the usual locus in $\Phi$ of fields with $\d S(\phi) = 0$, but the derived intersection $\mr{dCrit}(S) = \Phi \cap^h_{T^*\Phi} \Gamma_{\d S}$ of the zero section in $T^*\Phi$ with the graph of $\d S$.  The formalism we describe below can be interpreted as an abstract formalism for modelling the tangent complex at a point to a derived critical locus $\mr{dCrit}(S)$.
@@ -511,6 +515,8 @@ that is
 \end{enumerate}
 \end{itemize}
 \end{definition}
+
+\brian{Cite Getzler \cite{GetzlerBracket}}
 
 We call $\cE$ the \defterm{space of BV fields}. The pairing $\omega$ equips the algebra of local functionals on $E$ with a \defterm{BV bracket} (see \cite[Chapter 5.3]{CostelloBook}) 
 \[
@@ -3215,7 +3221,7 @@ The 3-dimensional $\mc N=k$ supersymmetry algebra has odd part $\Sigma \iso S \o
 
 \subsection{\texorpdfstring{$\cN = 2$}{N=2} Super Yang-Mills with Chiral Matter} 
 \label{sect:3d_2_section}
-We'll begin with the minimal super Yang-Mills theory that admits non-trivial twists (if $\mc N=1$ there are no square-zero supercharges).  So, fix a gauge group $G$, and a representation $R$.  The 3d $\mc N=2$ super Yang-Mills theory arises by dimensional reduction from $\mc N=1$ super Yang-Mills theory on $\RR^4$ with an $R$-valued chiral multiplet.  We fix $W = \CC^2$ equipped with a nondegenerate symmetric bililear pairing.
+We'll begin with the minimal super Yang-Mills theory that admits non-trivial twists (if $\mc N=1$ there are no square-zero supercharges).  So, fix a gauge group $G$, and a representation $R$.  The 3d $\mc N=2$ super Yang-Mills theory arises by dimensional reduction from $\mc N=1$ super Yang-Mills theory on $\RR^4$ with an $R$-valued chiral multiplet.  We fix $W = \CC^2$ equipped with a nondegenerate symmetric bilinear pairing.
 
 The R-symmetry group is $\spin(2;\CC)$, acting on $W$ by its defining representation. 
 
