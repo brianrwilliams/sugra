@@ -165,6 +165,7 @@ While ambitious, the first natural problem would be to compute anomalies which w
 
 \subsection*{The Relationship to Factorization Algebras}
 
+
 \subsection*{Summary of Twisted Super Yang--Mills Theories}
 %\addcontentsline{toc}{subsection}{Summary of Twisted Super Yang-Mills Theories}
 
@@ -3099,30 +3100,29 @@ The twist of 4d $\cN=4$ super Yang--Mills with respect to the family $Q_t$ of sq
 \label{thm:4d12hodge}
 \end{theorem}
 
-\begin{proof}
-We begin by applying Corollary \ref{cor: quad} to the two $t$-dependent quadruples of fields:
-\begin{align*}
-& (t \varsigma, \rho, t \phi, A_{1,0}) \\
-& (tb, \Tilde{\nu}, t A_{0,1}, \nu) .
-\end{align*}
-This has the effect of integrating out the fields $(\rho, A_{1,0})$ and $(\Tilde{\nu}, \nu)$ and replaces the action functionals by
-\begin{align*}
-\Tilde{I}^{(1)}(Q_t) &= \int \dvol\left(- t^2 (\varsigma, \phi^*) - t^2 (b, A_{0, 1}^*) - (\wt \chi + t\Lambda\psi) \wt a^*\right) \\
-&+ \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda(F_{1, 1} - t [\phi, A_{0,1}] + \omega [a, \wt a])\chi^* + [\phi, \phi]\xi^* - t [A_{0,1}, a] \phi^* + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*)\right) \\
-%&+t\int\dvol\left(\frac{1}{2} (-t \dbar \phi + \partial A_{0,1} -t [\phi, A_{0,1}] + \omega\wedge [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* - t^2 \Lambda \partial_{\phi} A_{0,1} \chi^* - t \partial_\phi a \varsigma^* \right) \\ & + t \int \dvol \left( t \dbar_{A_{0,1}} a b^* + t [\phi, a] \varsigma^* - t [A_{0,1}, a]b^* \right) \\
-&+t\int\dvol\left(\frac{1}{2} (F_{1,1} -t [\phi, A_{0,1}] + \omega [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* - t^2 \Lambda \partial_{\phi} A_{0,1} \chi^* - t \partial_\phi a \varsigma^* \right) \\ & + t \int \dvol \left( t \dbar_{A_{0,1}} a b^* + t [\phi, a] \varsigma^* - t [A_{0,1}, a]b^* \right) \\
-\Tilde{I}^{(2)} (Q_t, Q_t) &= \int \dvol \left(t^2(\xi^*B^* + \chi^*\wt\chi^* + \frac{1}{2}(\psi^*, \psi^*)) -\frac{1}{4}(\chi^* + t \Lambda\psi^*)^2 + t^2 ac^*\right)
-\end{align*}
+%\begin{proof}
+%We begin by applying Corollary \ref{cor: quad} to the two $t$-dependent quadruples of fields:
+%\begin{align*}
+%& (t \varsigma, \rho, t \phi, A_{1,0}) \\
+%& (tb, \Tilde{\nu}, t A_{0,1}, \nu) .
+%\end{align*}
+%This has the effect of integrating out the fields $(\rho, A_{1,0})$ and $(\Tilde{\nu}, \nu)$ and replaces the action functionals by
+%\begin{align*}
+%\Tilde{I}^{(1)}(Q_t) &= \int \dvol\left(- t^2 (\varsigma, \phi^*) - t^2 (b, A_{0, 1}^*) - (\wt \chi + t\Lambda\psi) \wt a^*\right) \\
+%&+ \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda(F_{1, 1} - t [\phi, A_{0,1}] + \omega [a, \wt a])\chi^* + [\phi, \phi]\xi^* - t [A_{0,1}, a] \phi^* + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*)\right) \\
+%%&+t\int\dvol\left(\frac{1}{2} (-t \dbar \phi + \partial A_{0,1} -t [\phi, A_{0,1}] + \omega\wedge [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* - t^2 \Lambda \partial_{\phi} A_{0,1} \chi^* - t \partial_\phi a \varsigma^* \right) \\ & + t \int \dvol \left( t \dbar_{A_{0,1}} a b^* + t [\phi, a] \varsigma^* - t [A_{0,1}, a]b^* \right) \\
+%&+t\int\dvol\left(\frac{1}{2} (F_{1,1} -t [\phi, A_{0,1}] + \omega [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* - t^2 \Lambda \partial_{\phi} A_{0,1} \chi^* - t \partial_\phi a \varsigma^* \right) \\ & + t \int \dvol \left( t \dbar_{A_{0,1}} a b^* + t [\phi, a] \varsigma^* - t [A_{0,1}, a]b^* \right) \\
+%\Tilde{I}^{(2)} (Q_t, Q_t) &= \int \dvol \left(t^2(\xi^*B^* + \chi^*\wt\chi^* + \frac{1}{2}(\psi^*, \psi^*)) -\frac{1}{4}(\chi^* + t \Lambda\psi^*)^2 + t^2 ac^*\right)
+%\end{align*}
+%
+%The next step is to decompose the $(1,1)$ form $\psi$ as
+%\[
+%\psi = \omega \Lambda \psi + \psi_{\perp}
+%\]
+%where $\Lambda \psi_{\perp} = 0$. 
+%
+%\end{proof}
 
-The next step is to decompose the $(1,1)$ form $\psi$ as
-\[
-\psi = \omega \Lambda \psi + \psi_{\perp}
-\]
-where $\Lambda \psi_{\perp} = 0$. 
-
-\end{proof}
-
-\chris{I just made the following attempt}
 \begin{theorem}
 The twist of 4d $\cN=4$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges of Equation \ref{eq:4d412Hodgefamily} is perturbatively equivalent to $\map\left(\CC_{\rm Dol} \times \RR^2_{\mr{dR}}, B\fg_{\Hod}\right)$. Moreover, this equivalence is $\spin(2;\RR) \times \spin(2;\RR)$-equivariant.
 \end{theorem}
@@ -3229,7 +3229,7 @@ The R-symmetry group is $\spin(2;\CC)$, acting on $W$ by its defining representa
  \item Ghost: $c \in \Omega^0(\RR^3; \gg)[1]$.
 \end{itemize}
 
-This theory admits a unique twist:
+This theory admits a unique twist up to equivalence:
 \begin{itemize}
  \item A square zero supercharge $Q \ne 0 \in \Sigma$ has two invariant directions.  There is a twisting homomorphism $\phi \colon \MU(1) = \U(1)\hookrightarrow G_R$, so the twisted theory carries a $U(1)$-action.
 \end{itemize}
@@ -3263,9 +3263,21 @@ We will now consider 3d $\mc N=4$ theories, which arise by dimensional reduction
 
 In the $\mc N=4$ supersymmetry algebra there are now three non-trivial orbits of square-zero supercharges.  An element $Q \in S \otimes W$ gives rise to a map $S^* \to W$; $Q$ squares to zero if its image is totally isotropic.  The classification of orbits includes the rank of this map.
 \begin{itemize}
- \item Rank 1.  In this case $Q$ is minimal, with 2 invariant directions.  Such supercharges come from the $\mc N=2$ supersymmetry algebra.  They admit the twisting homomorphism $\phi \colon \U(1) \to G_R$ and a $\ZZ$-grading $\alpha \colon \U(1) \to G_R$.
- \item Rank 2 $A$-twist.  Rank 2 supercharges are topological.  A rank 2 supercharge defines a Lagrangian subspace of $W$, and therefore an orientation.  The $G_R = \Spin(4;\RR)$-action factors through an $\SO(4)$ action on $W$, and so preserves orientation, so there are two $G_R$ orbits corresponding to the two choices of orientation.  We refer to these as the $A$-twist and the $B$-twist, distinguished by whether or not they can be promoted to a twisting datum.  The A-twist admits the twisting homomorphism $\phi \colon \U(1) \to G_R$ and a $\ZZ$-grading $\alpha \colon \U(1) \to G_R$. and a $\ZZ$-grading $\alpha \colon \U(1) \to G_R$.
- \item Rank 2 $B$-twist.  The other topological orbit admits the diagonal twisting homomorphism $\phi' \colon \SU(2) \to \SU(2) \times \SU(2) \to G_R$.  This twist is only $\ZZ/2\ZZ$-graded
+ \item Rank 1.  
+ In this case $Q$ is minimal, with 2 invariant directions.  
+ Such supercharges lie in a subalgebra isomorphic to the $\mc N=2$ supersymmetry algebra and are unique up to equivalence.
+They admit a twisting homomorphism $\phi \colon \U(1) \to G_R$ and a $\ZZ$-grading defined by a homomorphism $\alpha \colon \U(1) \to G_R$.
+ \item Rank 2. Such supercharges are topological.  
+A rank 2 supercharge defines a Lagrangian subspace of $W$, and therefore an orientation.  
+The $G_R = \Spin(4;\CC)$-action factors through an $\SO(4)$ action on $W$, and so preserves orientation, so there are two $G_R$ orbits corresponding to the two choices of orientation.  
+We refer to these as the $A$-twist and the $B$-twist, distinguished by whether or not they can be promoted to a twisting datum.
+\begin{enumerate}
+\item
+An $A$-twist supercharge admits a twisting homomorphism $\phi \colon \U(1) \to G_R$ and a $\ZZ$-grading $\alpha \colon \U(1) \to G_R$. and a $\ZZ$-grading $\alpha \colon \U(1) \to G_R$.
+\item
+A $B$-twist supercharge admits the diagonal twisting homomorphism $\phi' \colon \SU(2) \to \SU(2) \times \SU(2) \to G_R$.  
+This twist is only $\ZZ/2\ZZ$-graded
+\end{enumerate}
 \end{itemize}
 
 The distinction via twisting homomorphisms and $\ZZ$-gradings follows by identifying the twists as dimensional reductions from 4d $\mc N=2$.
