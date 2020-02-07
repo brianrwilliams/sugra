@@ -1,0 +1,54 @@
+\subsubsection{Yang--Mills Theory with Spinorial Matter} \label{YM_section}
+
+Let us now give an example of a theory which is not partially holomorphic. We will give a general description of the Yang--Mills theory on a vector space $V_\RR = \RR^n$ with adjoint spinorial matter. Denote by $V=V_\RR\otimes_\RR \CC$ its complexification.
+
+Fix a Lie algebra $\fg$ equipped with a nondegenerate symmetric bilinear pairing $\langle -, -\rangle$ and a spinorial representation $\Sigma$ of $\so(V)$ with an $\so(V)$-equivariant pairing $\Gamma \colon \Sym^2(\Sigma)\to V$. We define the Clifford action $\rho\colon V\rightarrow \hom(\Sigma, \Sigma^*)$ by
+\begin{equation}
+(\rho(v) Q_1, Q_2) = (v, \Gamma(Q_1, Q_2))
+\label{eq:Gammaspinorpairing}
+\end{equation}
+for any $Q_1, Q_2\in\Sigma$ and $v\in V$.
+
+The fields of Yang--Mills theory are as follows:
+\begin{itemize}
+\item A connection $A \in \Omega^1(V_\RR; \fg)$ on the trivial bundle.
+
+\item A section $\lambda \in \Omega^0(V_\RR; \Pi \Sigma \otimes \fg)$.
+
+\item The ghost field $c\in\Omega^0(V_\RR; \fg)[1]$.
+\end{itemize}
+
+Thus, the bundle of BRST fields is
+\[F = (\Omega^1(V_\RR)\oplus \Omega^0(V_\RR; \Pi\Sigma)\oplus \Omega^0(V_\RR)[1])\otimes \fg.\]
+The corresponding local super dg Lie algebra $L=F[-1]$ is
+\[
+L \;\;\; = \begin{array}{ccccc}
+& \ul{0} & & \ul{1} & \\ 
+& & & & \\
+& \Omega^0(V_\RR; \gg) & \to & \Omega^1(V_\RR; \gg) \oplus \Omega^0(V_\RR; \Pi \Sigma \otimes \gg) & 
+\end{array}
+\]
+whose differential is the de Rham differential $\Omega^0(V_\RR; \gg)\rightarrow \Omega^1(V_\RR; \gg)$ and the bracket is induced from the Lie bracket on $\gg$.
+
+Denote by $F_A = \d_{\dR} A + \frac{1}{2}[A\wedge A]$ the curvature of $A$ and let $\sd D_A \colon \Sigma \to \Sigma^*$ be the Dirac operator obtained from $\Gamma$ (see Section \ref{sec: susy}).
+
+The BRST action is given by
+\[S(A, \lambda) = \int_{V_\RR} \left\langle -\frac{1}{4} F_A \wedge \ast F_A + \frac{1}{2}(\lambda, \sd D_A \lambda)\right\rangle.\]
+
+The associated BV theory $(E, Q, \omega, I)$ is given as follows (see also \cite[Section 3.1]{ElliottYoo1}). Let $A^*, \lambda^*, c^*$ be the antifields corresponding to $A, \lambda, c$ respectively. The bundle of BV fields is
+\[E = \Omega^1(V_\RR; \fg)\oplus \Omega^0(V_\RR; \Pi\Sigma\otimes \fg)\oplus \Omega^0(V_\RR; \fg)[1] \oplus \Omega^{n-1}(V_\RR; \fg^*)[-1]\oplus \Omega^n(V_\RR; \Pi\Sigma^*\otimes \fg^*)[-1]\oplus \Omega^n(V_\RR; \fg^*)[-2].\]
+The pairing $\omega$ on $E$ is induced by the evaluation pairings $\gg^*\otimes \gg\rightarrow \CC$ and $\Sigma^*\otimes\Sigma\rightarrow\CC$. The BV action is given by
+\[S_{BV} = \int_{V_\RR} \left\langle -\frac{1}{4} F_A \wedge \ast F_A + \frac{1}{2}(\lambda, \sd D_A \lambda)\right\rangle - (\d_A c, A^*) + ([\lambda, c], \lambda^*) + \frac{1}{2}([c, c], c^*).\]
+
+We conclude this section with a discussion of the Poincar\'e invariance of classical Yang--Mills theory.
+
+\begin{definition}
+The {\bf Poincar\'e group} is $\mr{ISO}(V_\RR) = \Spin(V_\RR) \ltimes \RR^n$. The {\bf Poincar\'e algebra} is its complexified Lie algebra $\mf{iso}(V)$.
+\end{definition}
+
+The Poincar\'e group acts, in the sense of Definition \ref{group_action_def}, on Yang--Mills theory on $\RR^n$. Indeed, there is an obvious Poincar\'e action on fields where we use that $\Sigma$ is a representation of $\Spin(V_\RR)$. The corresponding Hamiltonian is given by
+\begin{equation}
+I^{(1)}(v) = \int_{V_\RR} -(L_{v}A, A^*) - (v.\lambda, \lambda^*) - (v.c)c^*,
+\label{eq:Poincareaction}
+\end{equation}
+for $v\in\mf{iso}(V)$, where $v.\lambda$ contains both a derivative and the $\so(V)$ action on $\Sigma$.
