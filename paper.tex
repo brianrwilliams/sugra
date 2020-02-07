@@ -1223,7 +1223,7 @@ and similarly an isomorphism of bundles on $V_\RR$:
 \[\Omega^\bullet_{V_\RR}\cong \Sym_\RR^\bullet(\underline{V}_\RR[-1])\otimes_\RR\CC.\]
 
 Under the composition
-\[\Omega^\bullet(V_\RR; \CC)\rightarrow \Omega^\bullet(V)\rightarrow \Omega^{0, \bullet}(V)\]
+\[\Omega^\bullet(V_\RR; \CC)\xto{p^*} \Omega^\bullet(V)\rightarrow \Omega^{0, \bullet}(V)\]
 defined by pulling back forms along $p$ and projecting onto $(0,\bu)$-forms, the map $\Omega_V\wedge (-)\colon \Omega^{0, \bullet}_V \to \Omega^{{\rm dim}(V),\bu}_V \to \Omega^{\dim(V),\dim(V)}_V = {\rm Dens}_V$ which projects onto the top component, reduces to the map $\Omega^{\bullet}(V_\RR;\CC)\rightarrow \Omega^{\dim(V)}_{V_\RR} = {\rm Dens}_{V_\RR}$ which also projects onto the top component. 
 This shows that the BV pairings of the original and dimensionally reduced theory are compatible. 
 \end{proof}
@@ -1781,13 +1781,6 @@ Therefore, again using Assumption \ref{assumption:3psi} we see that the cyclic s
 
 \subsection{Coupling to Matter Multiplets}
 \label{sect:mattermultipletSUSY}
-
-\brian{How do we see the various flavors of matter multiplets? For instance, in $2d (0,2)$ there is the Fermi multiplet and the chiral multiplet. 
-Your description only sees the chiral.
-In $2d (0,4)$ there are even more: the hypermultiplet (two $(0,2)$ chirals), the twisted hypermultiplet (the same as the hyper, different $R$-symmetry), the fermi multiplet (two $(0,2)$ fermi multiplets). 
-I'm not sure which your description sees, but I have a hunch it's the $(0,4)$ hypermultiplet. 
-What is the reason for only seeing certain multiplets via this general setup?
-} \chris{Presumably pure $\mc N = (0,N)$ means a $(0,2)$ vector coupled to $N-2$ Fermi multiplets, so some of these are already covered by the classification?  Perhaps your concern is that you want a formalism that allows Fermis that are not adjoint valued?  I don't think the difference between this hyper and twisted hyper is germane here: the proof of supersymmetry is that there is an action of super Poincar\'e, it doesn't involve the action of R-symmetry.}
 
 In this section we describe the coupling of super Yang--Mills theory to matter valued in a $\fg$-representation $P$, i.e. the supersymmetric gauged linear $\sigma$-models. Our description of the supersymmetry of the matter multiplet is inspired by the presentation of the supersymmetric nonlinear $\sigma$-models by Deligne and Freed in \cite[Chapter 3]{DeligneFreed}.
 
