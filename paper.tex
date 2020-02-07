@@ -1184,7 +1184,8 @@ To simplify the proof, we assume $X=Y=M=\pt$. Then $\fg$ carries a $(-2)$-shifte
 \[\map(\pt, T^*[-1] B \fg)\]
 has the bundle of BV fields $\fg[1] \oplus \fg^*[-2]$. We may identify it with $\fg[1]\oplus \fg$, where the pairing $\omega_N$ pairs the two factors using $\langle-,-\rangle$.
 
-We may identify $p^*(\fg[1]\oplus \fg)\cong \Omega^\bullet_{\RR}\otimes \fg[1]$. Under this identification the integration pairing $\omega_M$ on differential forms reduces to the pairing $\omega_N$. The de Rham differential vanishes on translation-invariant forms which shows a compatibility of dimensional reduction with the differentials $Q_{\mr{BV}}$. Finally, in both cases the interaction term comes from the $L_\infty$ structure on $\fg$.
+We may identify $p^*(\fg[1]\oplus \fg)\cong \Omega^\bullet_{\RR}\otimes \fg[1]$ as vector bundles on $\RR$. 
+Under this identification the integration pairing $\omega_M$ on differential forms reduces to the pairing $\omega_N$. The de Rham differential vanishes on translation-invariant forms which shows a compatibility of dimensional reduction with the differentials $Q_{\mr{BV}}$. Finally, in both cases the interaction term comes from the $L_\infty$ structure on $\fg$.
 \end{proof}
 
 \begin{corollary}
@@ -1216,14 +1217,15 @@ The isomorphism is moreover $\SO(V_\RR)$-equivariant.
 \begin{proof}
 We may assume $X,Y,M=\pt$ as in the previous proof.
 
-We have
+We have an isomorphism of vector bundles on $V$:
 \[\Omega^{0, \bullet}_V\cong \Sym_\CC^\bullet(\underline{V}[-1])\]
-and
+and similarly an isomorphism of bundles on $V_\RR$:
 \[\Omega^\bullet_{V_\RR}\cong \Sym_\RR^\bullet(\underline{V}_\RR[-1])\otimes_\RR\CC.\]
 
-Under the pullback map
+Under the composition
 \[\Omega^\bullet(V_\RR; \CC)\rightarrow \Omega^\bullet(V)\rightarrow \Omega^{0, \bullet}(V)\]
-the integration map $\int_V \Omega_V\wedge (-)\colon \Omega^{0, \bullet}(V)\rightarrow \CC$ reduces to the integration map $\int_{V_\RR} (-)\colon \Omega^{\bullet}(V_\RR;\CC)\rightarrow \CC$. \brian{This is not defined} \chris{is compactly supported enough?  We want to compare pairings.}
+defined by pulling back forms along $p$ and projecting onto $(0,\bu)$-forms, the map $\Omega_V\wedge (-)\colon \Omega^{0, \bullet}_V \to \Omega^{{\rm dim}(V),\bu}_V \to \Omega^{\dim(V),\dim(V)}_V = {\rm Dens}_V$ which projects onto the top component, reduces to the map $\Omega^{\bullet}(V_\RR;\CC)\rightarrow \Omega^{\dim(V)}_{V_\RR} = {\rm Dens}_{V_\RR}$ which also projects onto the top component. 
+This shows that the BV pairings of the original and dimensionally reduced theory are compatible. 
 \end{proof}
 
 \begin{corollary}
@@ -1581,7 +1583,8 @@ In each case the lower-dimensional theories are obtained by dimensional reductio
 \subsection{Pure Super Yang--Mills Theory}
 \label{sect:gaugemultipletSUSY}
 
-We begin with a description of certain pure supersymmetric Yang--Mills theories. Let $V_\RR$ be a real vector space equipped with a nondegenerate symmetric bilinear pairing and $V$ its complexification. Fix a $\ZZ/2\ZZ$-graded Clifford module $\Sigma\oplus \Sigma^*\rightarrow \CC$ with the associated $\Gamma$-pairings
+We begin with a description of certain pure supersymmetric Yang--Mills theories. Let $V_\RR = \RR^n$ be a real vector space of dimension $n$ equipped with a nondegenerate symmetric bilinear pairing and $V$ its complexification. 
+Fix a $\ZZ/2\ZZ$-graded Clifford module $\Sigma\oplus \Sigma^*\rightarrow \CC$ with the associated $\Gamma$-pairings
 \[\Gamma\colon \Sym^2(\Sigma)\rightarrow V,\qquad \Gamma\colon \Sym^2(\Sigma^*)\rightarrow V\]
 defined as in Appendix \ref{sect:spinors}. We make the following assumption on this setup.
 
@@ -1610,24 +1613,42 @@ Let $\fg$ be a Lie algebra equipped with a nondegenerate symmetric bilinear pair
 
 \item A spinor $\lambda \in \Gamma(V_\RR; \Pi \Sigma \otimes \fg)$.
 
-\item A ghost field $c\in\Gamma(V_\RR; \fg[1])$.
+\item A ghost field $c\in\Omega^0(V_\RR; \fg[1])$.
 \end{itemize}
-
-We also introduce their antifields $A^*\in\Omega^1(V_\RR; \fg[-1])$, $\lambda^*\in\Gamma(V_\RR; \Pi\Sigma^*\otimes \fg[-1])$ and $c^*\in\Gamma(V_\RR; \fg[-2])$. Let $\cE_{\gauge}$ denote the space of BV fields. 
 
 Denote by $F_A = \d A + \frac{1}{2}[A\wedge A]$ the curvature of $A$ and let $\sd\d_A$ be the twisted Dirac operator obtained from $\Gamma$ (see Appendix \ref{sect:spinors}).
 
-The BRST action is given by
-\[S_{\mr{BRST}}(A, \lambda) = \int_{V_\RR}\dvol \left( -\frac{1}{4} (F_A, F_A) + \frac{1}{2}(\lambda, \sd \d_A \lambda)\right).\]
+\begin{definition}
+The BRST theory for classical supersymmetric Yang-Mills theory has underlying $\ZZ \times \ZZ/2$-graded bundle:
+\[
+F_{\rm gauge} = \Omega^1(V_\RR; \fg) \oplus \Gamma(V_\RR; \Pi \Sigma \otimes \fg) \oplus \Omega^0(V_\RR; \fg[1])
+\]
+whose sections we denote by $(A, \lambda, c)$.  
+The dg Lie structure on $F_{\rm gauge}[-1]$ has differential given by the de Rham differential $\d : \Omega^0(V_{\RR} ; \fg) \to \Omega^1(V_{\RR} ; \fg)$ and bracket
+\[
+\begin{array}{ccccccc}
+[-,-] & : & \Omega^0(V_{\RR} ; \fg) \otimes \left(\Omega^1(V_{\RR} ; \fg) \oplus \Gamma(V_\RR ; \Sigma \otimes \fg) \oplus \Omega^0(V_{\RR} ; \fg) \right) & \to & \Omega^1(V_{\RR} ; \fg) \oplus \Gamma(V_\RR ; \Sigma \otimes \fg) \oplus \Omega^0(V_\RR ; \fg)
+\end{array}
+\]
+defined by $[c, A + \lambda + c'] = [c, A] + [c, \lambda] + [c,c']$.
+The BRST action is defined by
+\[
+S_{\mr{BRST}}(A, \lambda) = \int_{V_\RR}\dvol \left( -\frac{1}{4} (F_A, F_A) + \frac{1}{2}(\lambda, \sd \d_A \lambda)\right).
+\]
+\end{definition}
 
-We introduce gauge transformations
-\[\delta A = -\d_A c,\qquad \delta \lambda = [c, \lambda],\qquad \delta c = \frac{1}{2}[c, c],\]
-so that the BV action is given by
+The BV theory of supersymmetric Yang-Mills is the BV theory associated to this BRST theory. 
+By definition, the fields are identified with sections of the bundle $T^*[-1] F_{\rm gauge} = F_{\rm gauge} \oplus F_{\rm gauge}^! [-1]$. 
+If we denote by $(A^*, \lambda^*,c^*)$ the anti-fields, the full BV action takes the form:
+%We introduce gauge transformations
+%\[\delta A = -\d_A c,\qquad \delta \lambda = [c, \lambda],\qquad \delta c = \frac{1}{2}[c, c],\]
+%so that the BV action is given by
 \begin{equation}
 S_{\gauge} = \int_{V_\RR}\dvol \left( -\frac{1}{4} (F_A, F_A) + \frac{1}{2}(\lambda, \sd\d_A \lambda) + (\d_A c, A^*) + ([c, \lambda], \lambda^*) + \frac{1}{2}([c, c], c^*)\right).
 \label{eq:YMBVaction}
 \end{equation}
-
+%
+%We also introduce their antifields $A^*\in\Omega^1(V_\RR; \fg[-1])$, $\lambda^*\in\Gamma(V_\RR; \Pi\Sigma^*\otimes \fg[-1])$ and $c^*\in\Gamma(V_\RR; \fg[-2])$. Let $\cE_{\gauge}$ denote the space of BV fields. 
 To simplify the notation, the pairing on $\fg$ from now on will be implicit.
 
 The Poincar\'e group acts, in the sense of Definition \ref{group_action_def}, on Yang--Mills theory on $\RR^n$. Indeed, there is an obvious Poincar\'e action on fields where we use that $\Sigma$ is a representation of $\Spin(V_\RR)$. The corresponding Hamiltonian is given by
