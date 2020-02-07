@@ -516,14 +516,15 @@ that is
 \end{itemize}
 \end{definition}
 
-\brian{Cite Getzler \cite{GetzlerBracket}}
-
 We call $\cE$ the \defterm{space of BV fields}. The pairing $\omega$ equips the algebra of local functionals on $E$ with a \defterm{BV bracket} (see \cite[Chapter 5.3]{CostelloBook}) 
 \[
 \{-,-\}\colon \oloc(\cE) \times \oloc(\cE) \to \oloc(\cE) .
 \]
 This bracket is of cohomological degree $+1$. 
-We will now explain how to define the BV bracket.  First note that there is a linear map
+This bracket is a graded version to the so-called Soloviev bracket defined on the $\infty$-jets, as described in Section 4 of \cite{GetzlerBracket}. 
+
+We explain how to define the BV bracket in our context.  
+First note that there is a linear map
 \[
 \d_{\mr{dR}} : \oloc(\cE) \to {\rm Fun}_{\rm loc}(\cE, \cE^!) 
 \]
@@ -725,48 +726,48 @@ S(F(e)) &= S_0(e) + \frac{1}{2} \int_M \omega(I_{\psi^*}(e), I_\phi(e) - I_\phi(
 \end{align*}
 \end{proof}
 
-There is a corollary of this proposition obtained by iterating the procedure. 
-We will only use a single iteration. 
-
-\begin{cor} \label{cor: quad}
-Let $(E_0, \omega_0, S_0)$ be a classical BV theory and $F \to M$ a graded vector bundle.
-Consider the theory $(E, \omega, S)$ with underlying graded vector bundle
-\[
-E = E_0 \oplus \bigoplus_{i=1}^2 \left(F \oplus F^! [-1]\right) \oplus \bigoplus_{i=1}^2 \left(F^!  \oplus F[-1] \right)
-\]
-whose sections we denote by $e_0 + \sum_{i=1}^2 (\phi + \phi_i^*) + \sum_{i=1}^2(\psi_i + \psi_i^*)$ according to the above decomposition. 
-The shifted symplectic form $\omega$ is given by the sum of $\omega_0$ plus the standard degree $+1$ pairings between $F, F^! [-1]$ and $F^!, F[-1]$.
-Suppose further that the local functional
-\[
-S = S_0 + \int \left(\phi_2\psi^*_1 + (\phi_2 - \phi_1)\psi_2^*\right) -  \sum_{i=1}^2 \int \phi_i I_{\phi,i} - \sum_{i=1}^2 \int \psi_i^* I_{\psi^*,i} -  \sum_{i=1}^2 \int \phi^*_i I_{\phi^*,i} - \sum_{i=1}^2 \int \psi_i I_{\psi,i} 
-\]
-satisfies the classical master equation, where $I_{\phi,i}, I_{\psi^*,i}, I_{\phi^*,i}, I_{\psi,i}$ are polydifferential operators on fields valued in $F^!$, $F$, $F$, $F^!$ respectively, and which are independent of the fields $\phi_i$ and $\psi^*_i$.
-Then, the classical BV theory $(E, \omega, S)$ is perturbatively equivalent to the BV theory $(E', \omega_0, S')$ where 
-\[
-E' = E_0 \oplus \left(F_{\phi_1} \oplus F^!_{\phi_1^*} [-1]\right) \oplus \left(F^!_{\psi_1^*} \oplus F[-1]_{\psi_1} \right)
-\]
-and
-\[
-S' = S_0 + \int \phi_1 \psi_1^* - S''
-\]
-where $S'$ is given by setting $\phi = I_{\psi^*}, \phi^* = 0$ and $\psi^* = I_{\phi}, \psi = 0$ in the functional functional $S$.\brian{finish}
-\end{cor}
-\begin{proof}
-%Notice that the collection of fields $(e_0, \phi_1, \phi_1^*, \phi_2, \phi_2^*, \psi_1, \psi_1^*, \psi_2, \psi_2^*)$ have the same shifted Poisson brackets as the collection of fields $(\phi_1, \phi_1^*
-We begin by making the following change of coordinates on the BV fields:
-\begin{align*}
-\Tilde{\phi}_2 & = \phi_2 - \phi_1 \\
-\Tilde{\psi}_2 & = \psi_2 + \psi_1 \\
-%\Tilde{\phi}^*_2 & = \phi^*_2 - \phi^*_1 \\
-%\Tilde{\psi}^*_2 & = \psi^*_2 + \psi^*_1 
-\end{align*}
-with $\phi_1, \psi_1$ left fixed. 
-This change of coordinates is compatible with the $(-1)$-symplectic pairing. 
-Further, in the new coordinates, the action takes the form
-\[
-S = S_0 + \int \Tilde{\phi}_2\Tilde{\psi}^*_2 + \int \phi_1\psi_2^* -  \sum_{i=1}^2 \int \phi_i I_{\phi,i} - \sum_{i=1}^2 \int \psi_i^* I_{\psi^*,i} 
-\]
-\end{proof} 
+%There is a corollary of this proposition obtained by iterating the procedure. 
+%We will only use a single iteration. 
+%
+%\begin{cor} \label{cor: quad}
+%Let $(E_0, \omega_0, S_0)$ be a classical BV theory and $F \to M$ a graded vector bundle.
+%Consider the theory $(E, \omega, S)$ with underlying graded vector bundle
+%\[
+%E = E_0 \oplus \bigoplus_{i=1}^2 \left(F \oplus F^! [-1]\right) \oplus \bigoplus_{i=1}^2 \left(F^!  \oplus F[-1] \right)
+%\]
+%whose sections we denote by $e_0 + \sum_{i=1}^2 (\phi + \phi_i^*) + \sum_{i=1}^2(\psi_i + \psi_i^*)$ according to the above decomposition. 
+%The shifted symplectic form $\omega$ is given by the sum of $\omega_0$ plus the standard degree $+1$ pairings between $F, F^! [-1]$ and $F^!, F[-1]$.
+%Suppose further that the local functional
+%\[
+%S = S_0 + \int \left(\phi_2\psi^*_1 + (\phi_2 - \phi_1)\psi_2^*\right) -  \sum_{i=1}^2 \int \phi_i I_{\phi,i} - \sum_{i=1}^2 \int \psi_i^* I_{\psi^*,i} -  \sum_{i=1}^2 \int \phi^*_i I_{\phi^*,i} - \sum_{i=1}^2 \int \psi_i I_{\psi,i} 
+%\]
+%satisfies the classical master equation, where $I_{\phi,i}, I_{\psi^*,i}, I_{\phi^*,i}, I_{\psi,i}$ are polydifferential operators on fields valued in $F^!$, $F$, $F$, $F^!$ respectively, and which are independent of the fields $\phi_i$ and $\psi^*_i$.
+%Then, the classical BV theory $(E, \omega, S)$ is perturbatively equivalent to the BV theory $(E', \omega_0, S')$ where 
+%\[
+%E' = E_0 \oplus \left(F_{\phi_1} \oplus F^!_{\phi_1^*} [-1]\right) \oplus \left(F^!_{\psi_1^*} \oplus F[-1]_{\psi_1} \right)
+%\]
+%and
+%\[
+%S' = S_0 + \int \phi_1 \psi_1^* - S''
+%\]
+%where $S'$ is given by setting $\phi = I_{\psi^*}, \phi^* = 0$ and $\psi^* = I_{\phi}, \psi = 0$ in the functional functional $S$.\brian{finish}
+%\end{cor}
+%\begin{proof}
+%%Notice that the collection of fields $(e_0, \phi_1, \phi_1^*, \phi_2, \phi_2^*, \psi_1, \psi_1^*, \psi_2, \psi_2^*)$ have the same shifted Poisson brackets as the collection of fields $(\phi_1, \phi_1^*
+%We begin by making the following change of coordinates on the BV fields:
+%\begin{align*}
+%\Tilde{\phi}_2 & = \phi_2 - \phi_1 \\
+%\Tilde{\psi}_2 & = \psi_2 + \psi_1 \\
+%%\Tilde{\phi}^*_2 & = \phi^*_2 - \phi^*_1 \\
+%%\Tilde{\psi}^*_2 & = \psi^*_2 + \psi^*_1 
+%\end{align*}
+%with $\phi_1, \psi_1$ left fixed. 
+%This change of coordinates is compatible with the $(-1)$-symplectic pairing. 
+%Further, in the new coordinates, the action takes the form
+%\[
+%S = S_0 + \int \Tilde{\phi}_2\Tilde{\psi}^*_2 + \int \phi_1\psi_2^* -  \sum_{i=1}^2 \int \phi_i I_{\phi,i} - \sum_{i=1}^2 \int \psi_i^* I_{\psi^*,i} 
+%\]
+%\end{proof} 
 
 \subsection{Symmetries in the Classical BV Formalism} \label{symmetry_section}
 In this section we define what it means for a (super) Lie algebra to act on a classical field theory  (see also \cite[Chapter 11]{Book2} for a related discussion). Let $(E, Q_{\mr{BV}},\omega, I)$ be a classical field theory and $\fg$ a super Lie algebra.  We will define $\gg$-equivariant local observables in the classical field theory by introducing $\gg$-valued background fields into our classical field theory, and extending the action functional to a functional that involves these background fields, but still satisfies the classical master equation.  We begin by defining an appropriate version of the Chevalley-Eilenberg cochain complex.
@@ -3134,7 +3135,7 @@ The twist of 4d $\cN=4$ super Yang--Mills with respect to the family $Q_t$ of sq
 \end{theorem}
 
 \begin{proof}
-Fix a rank $(2,1)$ supercharge of the form $Q_{st} = Q_0 + tQ_1 + sQ_2$, where $Q_t = Q_0 + tQ_1$ is a rank $(2,0)$ supercharge lying within a 4d $\mc N=2$ subalgebra of the 4d $\mc N=4$ supertranslation algebra.  Consider the supersymmetry actions 
+Fix a rank $(2,1)$ supercharge of the form $Q_{s,t} = Q_0 + tQ_1 + sQ_2$, where $Q_t = Q_0 + tQ_1$ is a rank $(2,0)$ supercharge lying within a 4d $\mc N=2$ subalgebra of the 4d $\mc N=4$ supertranslation algebra.  Consider the supersymmetry actions 
 \begin{align*}
 &I^{(1)}(Q_0 + tQ_1 + sQ_2) \\
 &I^{(2)}(Q_0 + tQ_1 + sQ_2, Q_0 + tQ_1 + sQ_2).
