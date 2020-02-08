@@ -440,15 +440,6 @@ Twisted $(0,2)$ $\sigma$-models were first studied by Witten in \cite{WittenCDO}
 \label{fig:superchargeorbits}
 \end{figure}
 
-\subsection*{Applications to Quantization and a Relationship to Factorization algebras}
-%\addcontentsline{toc}{subsection}{Applications to quantization and a relationship to factorization algebras}
-
-The quantization of gauge theories is notoriously subtle and leads to a rich theory of renormalization.
-An attractive application of the descriptions of the twists of supersymmetric gauge theories that we provide is to study quantization. 
-
-To rigorously study the quantization of supersymmetric Yang-Mills theory we can work with the mathematical theory of renormalization developed by Costello in \cite{CostelloBook}. 
-In the context of (non-supersymmetric) Yang-Mills theory it is shown that this theory of re
-
 \subsection*{Outline of the Paper}
 %\addcontentsline{toc}{subsection}{Outline of the Paper}
 The remainder of the paper is divided into two parts.  In Part \ref{formalism_part} we set up the formalism that we will use when we study supersymmetric gauge theories and their twists.  The first main ingredient is the Batalin-Vilkovisky formalism \cite{BatalinVilkovisky} for classical field theory (Section \ref{BV_section}), as developed by Costello and Gwilliam in \cite{CostelloBook, Book1, Book2}.  The other main ingredient is the systematic study of supersymmetry algebras and supersymmetric action functionals using normed division algebras (Section \ref{sect:susy}), following Baez and Huerta \cite{BaezHuerta}.  We use this formalism to prove in Section \ref{sect:SYM} that super Yang-Mills theories with matter in dimensions 10, 6, 4 and 3 are in fact supersymmetric, meaning that there is a well-defined $L_\infty$ action of the supersymmetry algebra on the classical BV theory in question.  We introduce the idea of dimensional reduction (Section \ref{dim_red_section}) for classical field theories to show that supersymmetry action are well-defined in lower dimensions.
@@ -526,14 +517,14 @@ This bracket is a graded version to the so-called Soloviev bracket defined on th
 We explain how to define the BV bracket in our context.  
 First note that there is a linear map
 \[
-\d_{\mr{dR}} : \oloc(\cE) \to {\rm Fun}_{\rm loc}(\cE, \cE^!) 
+\d_{\mr{dR}} \colon \oloc(\cE) \to {\rm Fun}_{\rm loc}(\cE, \cE^!) 
 \]
 defined as follows. 
 A local functional $F \in  \oloc(\cE)$ can be written as an equivalence class of a sum of densities of the form
 \[
 D_1(-) \cdots D_n(-) \Omega
 \]
-where $D_i$ is a differential operator $D_i : \cE \to C^\infty_M$ and $\Omega$ is a density on $M$. 
+where $D_i$ is a differential operator $D_i \colon \cE \to C^\infty_M$ and $\Omega$ is a density on $M$. 
 Without loss of generality, suppose $F$ is of this form. 
 Then, we can view $F$ as a functional in $\cO(\cE_c)$ by the assignment
 \[
@@ -552,7 +543,7 @@ This implies that $\d_{\mr{dR}} F \in {\rm Fun}_{\rm loc}(\cE, \cE^!)$.
 
 The non-degenerate pairing $\omega$ determines a bundle isomorphism $\omega \colon E \cong E^! [-1]$ and hence an isomorphism of local functions
 \[
-\omega : {\rm Fun}_{\rm loc}(\cE, \cE^!) \cong {\rm Fun}_{\rm loc}(\cE, \cE[1]) .
+\omega \colon {\rm Fun}_{\rm loc}(\cE, \cE^!) \cong {\rm Fun}_{\rm loc}(\cE, \cE[1]) .
 \]
 We recognize the right hand side as the space of local vector fields placed in a shifted cohomological degree.
 In total, we see that a local functional $F$ determines a local vector field by applying this isomorphism to $\d_{\mr{dR}}F$:
@@ -647,8 +638,8 @@ where the bottom map multiplies a function by the volume element, then we can re
 
 \begin{proof}
 Concretely, suppose that the linear part of $S_1$ is given by an operator $Q_1$, and the interacting part of $S_1$ is given by a functional $I_1 = \sum_{n=1}^\infty I_1^n$.  
-The desired equivalence $\Phi : (E, \omega, S) \to (E_0, \omega_0, S')$ is given by the natural projection $\Phi = \Phi_1 : E \to E_0$. 
-The quasi-inverse $\Psi : (E_0, \omega_0, S') \to (E, \omega, S)$ is defined as follows.
+The desired equivalence $\Phi \colon (E, \omega, S) \to (E_0, \omega_0, S')$ is given by the natural projection $\Phi = \Phi_1 \colon E \to E_0$. 
+The quasi-inverse $\Psi \colon (E_0, \omega_0, S') \to (E, \omega, S)$ is defined as follows.
 First $\Psi_1(e) = (e, Q_1(e), 0) \in E$.
 For $n > 1$, define
 \begin{align*}
@@ -713,8 +704,8 @@ The above proposition implies we can replace this cochain complex of fields with
 
 \begin{proof}
 Concretely, we'll write $\sum_{n \ge 1} I^{(n)}_\phi$ and $\sum_{n \ge 1} I^{(n)}_{\psi^*}$ for the Taylor expansions of $I_\phi$ and $I_{\psi^*}$ respectively.  
-The desired equivalence $\Phi : (E, \omega, S) \to (E_0, \omega_0, S')$ is given by the natural projection $\Phi = \Phi_1 : E \to E_0$. 
-The quasi-inverse $\Psi : (E_0, \omega_0, S') \to (E, \omega, S)$ is defined as follows.
+The desired equivalence $\Phi \colon (E, \omega, S) \to (E_0, \omega_0, S')$ is given by the natural projection $\Phi = \Phi_1 \colon E \to E_0$. 
+The quasi-inverse $\Psi \colon (E_0, \omega_0, S') \to (E, \omega, S)$ is defined as follows.
 The linear term is $\Psi_1(e) = (e, I^{(1)}_{\phi}(e),0,0, I^{(1)}_{\psi^*}(e))$, and for $n > 1$ we have 
 \[\Psi_n(e_1\otimes \cdots \otimes e_n) = (0, I^{(n)}_{\phi}(e_1, \ldots, e_n), 0, I^{(n)}_{\psi^*}(e_1, \ldots, e_n)).\]
 
@@ -1087,7 +1078,7 @@ There is a special case of this, which one might label the ``holomorphic symplec
 \end{example}
 
 \subsubsection{Generalized Hodge Theory}
-Generalized BF theories can be naturally deformed to theories which are perturbatively trivial, but which arise as shadows of non-trivial non-perturbative theories.  These will often appear as topological twists of supersymmetric field theories, the most famous example being the 2d A-model \chris{refer also to the introduction}. By a deformation we will mean a $\CC[t]$-family of classical BV theories which reduce to the given theory at $t=0$.
+Generalized BF theories can be naturally deformed to theories which are perturbatively trivial, but which arise as shadows of non-trivial non-perturbative theories.  These will often appear as topological twists of supersymmetric field theories, the most famous example being the 2d A-model. By a deformation we will mean a $\CC[t]$-family of classical BV theories which reduce to the given theory at $t=0$.
 
 Given an $L_\infty$ algebra $\fg$ we denote by $\fg_{\Hod}$ the $\CC[t]$-linear $L_\infty$ algebra
 \[\fg_{\Hod} = \CC[t]\otimes (\fg\oplus \fg[1])\]
@@ -1624,10 +1615,10 @@ The BRST theory for classical supersymmetric Yang-Mills theory has underlying $\
 F_{\rm gauge} = \Omega^1(V_\RR; \fg) \oplus \Gamma(V_\RR; \Pi \Sigma \otimes \fg) \oplus \Omega^0(V_\RR; \fg[1])
 \]
 whose sections we denote by $(A, \lambda, c)$.  
-The dg Lie structure on $F_{\rm gauge}[-1]$ has differential given by the de Rham differential $\d : \Omega^0(V_{\RR} ; \fg) \to \Omega^1(V_{\RR} ; \fg)$ and bracket
+The dg Lie structure on $F_{\rm gauge}[-1]$ has differential given by the de Rham differential $\d :\colon \Omega^0(V_{\RR} ; \fg) \to \Omega^1(V_{\RR} ; \fg)$ and bracket
 \[
 \begin{array}{ccccccc}
-[-,-] & : & \Omega^0(V_{\RR} ; \fg) \otimes \left(\Omega^1(V_{\RR} ; \fg) \oplus \Gamma(V_\RR ; \Sigma \otimes \fg) \oplus \Omega^0(V_{\RR} ; \fg) \right) & \to & \Omega^1(V_{\RR} ; \fg) \oplus \Gamma(V_\RR ; \Sigma \otimes \fg) \oplus \Omega^0(V_\RR ; \fg)
+[-,-] & \colon & \Omega^0(V_{\RR} ; \fg) \otimes \left(\Omega^1(V_{\RR} ; \fg) \oplus \Gamma(V_\RR ; \Sigma \otimes \fg) \oplus \Omega^0(V_{\RR} ; \fg) \right) & \to & \Omega^1(V_{\RR} ; \fg) \oplus \Gamma(V_\RR ; \Sigma \otimes \fg) \oplus \Omega^0(V_\RR ; \fg)
 \end{array}
 \]
 defined by $[c, A + \lambda + c'] = [c, A] + [c, \lambda] + [c,c']$.
@@ -3034,7 +3025,7 @@ These are exactly the fields in $T^*[-1] \map(\CC^2_{\rm Dol} , B \fg)$.
 Next we look at the case of the twist by a rank $(2,0)$ supercharge. 
 As in Section \ref{sect:4d2Donaldson}, it will be useful to consider a family of topological supercharges which degenerate to the rank $(1,0)$ supercharge we just discussed. 
 
-We use the same twisting homomorphism $\phi : \MU(2) \to \Spin(6;\CC)$ and twisting data $\alpha : U(1) \to G_R$ as in Section \ref{sect:4d4holomorphictwist}.
+We use the same twisting homomorphism $\phi \colon \MU(2) \to \Spin(6;\CC)$ and twisting data $\alpha \colon U(1) \to G_R$ as in Section \ref{sect:4d4holomorphictwist}.
 Then, $S_+ \otimes W$ decomposes under $\MU(2)$ as
 \[
 S_+\otimes W\cong L\oplus L^*\oplus \det(L)\oplus \CC \cdot Q_0 \oplus \CC \cdot \Bar{Q}_0 \oplus \det(L)^{-1}.
@@ -3387,7 +3378,7 @@ The classification of twists therefore takes the following form.  We identify ho
 \label{sect:3d8minimal_twist}
 The 3d $\cN=8$ super Yang--Mills viewed as an $\cN=4$ supersymmetric theory coincides with the 3d $\cN=4$ super Yang--Mills with matter valued in the representation $U = T^*\gg$.  Alternatively, it is obtained by dimensional reduction from the holomorphic twist of 4d $\mc N=4$ super Yang-Mills.
 
-\begin{theorem} 
+\begin{theorem}  \label{3d_8_minimal_twist_thm}
 The minimal twist of 3d $\cN=8$ super Yang--Mills on $M=\CC\times \RR$ is perturbatively equivalent to the BF theory with space of fields $T^*[-1]\mr{Map}(\CC \times \RR_{\mr{dR}}, (\gg/\gg)_{\mr{Dol}})$. Moreover, the equivalence is $\U(1)$-equivariant.
 \end{theorem}
 
@@ -3404,7 +3395,7 @@ Starting from the fields of Theorem \ref{3d_4_minimal_twist_thm}, we obtain -- $
 \label{sect:3d8A_Twist}
 From Theorem \ref{3d_4_A_twist_thm}, using the same argument, we obtain the following statement.
 
-\begin{theorem} 
+\begin{theorem} \label{3d_8_A_twist_thm}
 The twist of 3d $\cN=8$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges is perturbatively equivalent to the generalized Hodge theory $T^*[-1]\mr{Map}(\CC \times \RR_{\mr{dR}}, (\gg/\gg)_{\mr{Hod}})$. Moreover, this equivalence is $\U(1)$-equivariant.
 \end{theorem}
 
@@ -3412,7 +3403,7 @@ The twist of 3d $\cN=8$ super Yang--Mills with respect to the family $Q_t$ of sq
 \label{sect:3d8B_Twist}
 From Theorem \ref{3d_4_B_twist_thm} we obtain the following statement.
 
-\begin{theorem} 
+\begin{theorem} \label{3d_8_B_twist_thm}
 The rank $2$ B-twist of 3d $\mc N=8$ super Yang-Mills theory with gauge group $G$ is perturbatively equivalent to the BF theory with space of fields $T^*[-1]\mr{Map}(\RR^3_{\mr{dR}}, \gg/\gg)$. %Moreover, this equivalence is $\spin(3;\RR)$-equivariant.
 \end{theorem}
 
@@ -3593,8 +3584,6 @@ The B-twist of 2d $\mc N=(8,8)$ super Yang-Mills is perturbatively equivalent to
 
 We consider $\cN=(0,2)$ super Yang-Mills for a Lie algebra $\fg$ coupled to $\cN=(0,2)$ supersymmetric matter. 
 The supersymmetric matter consists of the $\cN = (0,2)$ chiral multiplet with values in a representation $R$. 
-
-\brian{Should we also compute what happens to the $(0,2)$ Fermi multiplet?}
 
 The untwisted fields are given by:
 \begin{itemize}
