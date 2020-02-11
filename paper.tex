@@ -2886,7 +2886,7 @@ The twist of 4d $\cN=2$ super Yang--Mills with respect to the family $Q_t$ of sq
 The proof proceeds as in the proof of Theorem \ref{thm:10dholomorphictwist} with slight modifications.
 
 Observe that the quadruple of fields $\{\chi^*, \chi, \wt\chi^*, \wt\chi\}$ has the same Poisson brackets as the quadruple $\{\chi^*-t\wt\chi^*, \chi, \wt\chi^*, \wt\chi + t\chi\}$. Therefore, we may eliminate the fields $\chi^*-t\wt\chi^*, \chi$ using Proposition \ref{prop:integrateoutfield}. We then have trivial BRST doublets $\{\wt\chi + t\chi, \wt a\}$, $\{\nu, \wt \nu\}$ and $\{\rho, A_{1, 0}\}$ which may be eliminated using Proposition \ref{prop:BRSTdoublet}. We are left with the action
-\[S_{BF} + t \int\dvol\left(-(b, A_{0, 1}^*) + a c^* + \frac{1}{2} \xi^* B^* + t (\varsigma, \phi^*) + \frac 14 (\psi^*, \psi^*) \right),\]
+\[S_{BF} + t \int\dvol\left(-(b, A_{0, 1}^*) + a c^* + \frac{1}{2} \xi^* B^* + (\varsigma, \phi^*) + \frac 14 (\psi^*, \psi^*) \right),\]
 where $S_{BF}$ is the action functional of the holomorphic twist at $t=0$ found in the previous section. 
 Since the extra terms are quadratic in the fields, the claim is reduced to a comparison of the underlying local $L_\infty$ algebra of the twisted theory and that of the holomorphic Hodge theory. The former is given by (cf. the proof of Theorem \ref{thm:4dholomorphictwist})
 \[
@@ -3102,33 +3102,33 @@ I^{(2)} (Q_t, Q_t) &= \int \dvol \left(t^2(\xi^*B^* + \chi^*\wt\chi^* + \frac{1}
 \end{align*}
 \end{prop}
 
-\begin{theorem}
-The twist of 4d $\cN=4$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges of Equation \ref{eq:4d412Hodgefamily} is perturbatively equivalent to $\map\left(\CC^2_{\rm Dol}, B\fg_{\Hod}\right)$. Moreover, this equivalence is $\U(2)$-equivariant.
-\label{thm:4d12hodge}
-\end{theorem}
+%\begin{theorem}
+%The twist of 4d $\cN=4$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges of Equation \ref{eq:4d412Hodgefamily} is perturbatively equivalent to $\map\left(\CC^2_{\rm Dol}, B\fg_{\Hod}\right)$. Moreover, this equivalence is $\U(2)$-equivariant.
+%\label{thm:4d12hodge}
+%\end{theorem}
 
-%\begin{proof}
-%We begin by applying Corollary \ref{cor: quad} to the two $t$-dependent quadruples of fields:
-%\begin{align*}
-%& (t \varsigma, \rho, t \phi, A_{1,0}) \\
-%& (tb, \Tilde{\nu}, t A_{0,1}, \nu) .
-%\end{align*}
-%This has the effect of integrating out the fields $(\rho, A_{1,0})$ and $(\Tilde{\nu}, \nu)$ and replaces the action functionals by
-%\begin{align*}
-%\Tilde{I}^{(1)}(Q_t) &= \int \dvol\left(- t^2 (\varsigma, \phi^*) - t^2 (b, A_{0, 1}^*) - (\wt \chi + t\Lambda\psi) \wt a^*\right) \\
-%&+ \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda(F_{1, 1} - t [\phi, A_{0,1}] + \omega [a, \wt a])\chi^* + [\phi, \phi]\xi^* - t [A_{0,1}, a] \phi^* + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*)\right) \\
-%%&+t\int\dvol\left(\frac{1}{2} (-t \dbar \phi + \partial A_{0,1} -t [\phi, A_{0,1}] + \omega\wedge [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* - t^2 \Lambda \partial_{\phi} A_{0,1} \chi^* - t \partial_\phi a \varsigma^* \right) \\ & + t \int \dvol \left( t \dbar_{A_{0,1}} a b^* + t [\phi, a] \varsigma^* - t [A_{0,1}, a]b^* \right) \\
-%&+t\int\dvol\left(\frac{1}{2} (F_{1,1} -t [\phi, A_{0,1}] + \omega [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* - t^2 \Lambda \partial_{\phi} A_{0,1} \chi^* - t \partial_\phi a \varsigma^* \right) \\ & + t \int \dvol \left( t \dbar_{A_{0,1}} a b^* + t [\phi, a] \varsigma^* - t [A_{0,1}, a]b^* \right) \\
-%\Tilde{I}^{(2)} (Q_t, Q_t) &= \int \dvol \left(t^2(\xi^*B^* + \chi^*\wt\chi^* + \frac{1}{2}(\psi^*, \psi^*)) -\frac{1}{4}(\chi^* + t \Lambda\psi^*)^2 + t^2 ac^*\right)
-%\end{align*}
-%
-%The next step is to decompose the $(1,1)$ form $\psi$ as
-%\[
-%\psi = \omega \Lambda \psi + \psi_{\perp}
-%\]
-%where $\Lambda \psi_{\perp} = 0$. 
-%
-%\end{proof}
+\begin{proof}
+We begin by applying Corollary \ref{cor: quad} to the two $t$-dependent quadruples of fields:
+\begin{align*}
+& (t \varsigma, \rho, t \phi, A_{1,0}) \\
+& (tb, \Tilde{\nu}, t A_{0,1}, \nu) .
+\end{align*}
+This has the effect of integrating out the fields $(\rho, A_{1,0})$ and $(\Tilde{\nu}, \nu)$ and replaces the action functionals by
+\begin{align*}
+\Tilde{I}^{(1)}(Q_t) &= \int \dvol\left(- t^2 (\varsigma, \phi^*) - t^2 (b, A_{0, 1}^*) - (\wt \chi + t\Lambda\psi) \wt a^*\right) \\
+&+ \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda(F_{1, 1} - t [\phi, A_{0,1}] + \omega [a, \wt a])\chi^* + [\phi, \phi]\xi^* - t [A_{0,1}, a] \phi^* + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*)\right) \\
+%&+t\int\dvol\left(\frac{1}{2} (-t \dbar \phi + \partial A_{0,1} -t [\phi, A_{0,1}] + \omega\wedge [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* - t^2 \Lambda \partial_{\phi} A_{0,1} \chi^* - t \partial_\phi a \varsigma^* \right) \\ & + t \int \dvol \left( t \dbar_{A_{0,1}} a b^* + t [\phi, a] \varsigma^* - t [A_{0,1}, a]b^* \right) \\
+&+t\int\dvol\left(\frac{1}{2} (F_{1,1} -t [\phi, A_{0,1}] + \omega [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* - t^2 \Lambda \partial_{\phi} A_{0,1} \chi^* - t \partial_\phi a \varsigma^* \right) \\ & + t \int \dvol \left( t \dbar_{A_{0,1}} a b^* + t [\phi, a] \varsigma^* - t [A_{0,1}, a]b^* \right) \\
+\Tilde{I}^{(2)} (Q_t, Q_t) &= \int \dvol \left(t^2(\xi^*B^* + \chi^*\wt\chi^* + \frac{1}{2}(\psi^*, \psi^*)) -\frac{1}{4}(\chi^* + t \Lambda\psi^*)^2 + t^2 ac^*\right)
+\end{align*}
+
+The next step is to decompose the $(1,1)$ form $\psi$ as
+\[
+\psi = \omega \Lambda \psi + \psi_{\perp}
+\]
+where $\Lambda \psi_{\perp} = 0$. 
+
+\end{proof}
 
 \begin{theorem}
 The twist of 4d $\cN=4$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges of Equation \ref{eq:4d412Hodgefamily} is perturbatively equivalent to $\map\left(\CC_{\rm Dol} \times \RR^2_{\mr{dR}}, B\fg_{\Hod}\right)$. Moreover, this equivalence is $\spin(2;\RR) \times \spin(2;\RR)$-equivariant.
