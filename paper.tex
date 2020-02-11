@@ -64,13 +64,13 @@ In this paper we follow the approach developed in the works of Costello and Gwil
 
 \subsection*{Classical Supersymmetric Field Theories}
 
-Now consider a classical field theory where the spacetime manifold is $M=\RR^n$ which is moreover translation-invariant. Given the data of a spinorial representation $\Sigma$ equipped with a symmetric pairing $\Gamma\colon\Sym^2(\Sigma)\rightarrow V=\CC^n$, we may construct a super Lie algebra of supertranslations $\fA=\Pi\Sigma\oplus V$ with the only nonvanishing Lie bracket given by $\Gamma$. A supersymmetric classical field theory is then a translation-invariant classical field theory on $\RR^n$ where the translation action is extended to an action of the super Lie algebra $\fA$. In addition, we may consider an $R$-symmetry group $G_R$ which acts on $\Sigma$ preserving $\Gamma$ and the $\so(n)$-action and also compatibly on the classical field theory.
+Now consider a classical field theory where the spacetime manifold is $M=\RR^n$, which is moreover translation-invariant. Given the data of a spinorial representation $\Sigma$ equipped with a symmetric pairing $\Gamma\colon\Sym^2(\Sigma)\rightarrow V=\CC^n$, we may construct a super Lie algebra of supertranslations $\fA=\Pi\Sigma\oplus V$ with the only nonvanishing Lie bracket given by $\Gamma$. A supersymmetric classical field theory is then a translation-invariant classical field theory on $\RR^n$ where the translation action is extended to an action of the super Lie algebra $\fA$. In addition, we may consider an $R$-symmetry group $G_R$ which acts on $\Sigma$ preserving $\Gamma$ and the $\so(n)$-action and also compatibly on the classical field theory.
 
 In most literature on supersymmetry one simply tries to build an action of $\fA$ on the space of ordinary fields $\cF$. However, one often runs into a problem that the supersymmetry action is only \emph{on-shell}: the map from $\fA$ to vector fields $\mathrm{Vect}(\cF)$ preserves Lie brackets only on the critical locus of the action functional. The usual solution is to enlarge the space of fields by adding auxiliary fields with no kinetic terms on which there is an honest (\emph{off-shell}) action of $\fA$. However, this choice may be not canonical. For instance, in 10d $\cN=(1, 0)$ super Yang--Mills one needs to break the Lorentz group $\SO(10)$ to $\Spin(7)\times\SO(2)$ to have an off-shell action of a subalgebra of $\fA$ where the odd part is 9-dimensional (instead of 16-dimensional) \cite{BaulieuBerkovitsBossardMartin}.
 
 We instead take another approach pioneered by Baulieu \cite{BaulieuBV}. Namely, one may canonically extend the supersymmetry action from ordinary fields $\cF$ to the space of BV fields $\cE$. The property of the action being on-shell now means that the map $\fA\rightarrow \mathrm{Vect}(\cE)$ preserves Lie brackets up to homotopy. One may then try to extend it to an $L_\infty$ action.
 
-In these paper we consider supersymmetric Yang--Mills theories in dimensions 2 through 10. In dimensions 3 through 10 these may be obtained by dimensional reduction of the following theories: 10d $\cN=(1, 0)$ super Yang--Mills, 6d $\cN=(1, 0)$ super Yang--Mills, 4d $\cN=1$ super Yang--Mills and 3d $\cN=1$ super Yang--Mills. First of all, these theories depend on a choice of a Lie algebra $\fg$ equipped with a symmetric nondegenerate bilinear pairing. In addition, in dimensions 6, 4 and 3 we may add matter multiplets: in dimension 6 these depend on a choice of a symplectic $\fg$-representation (a hypermultiplet), in dimension 4 these depend on a choice of a $\fg$-representation (a chiral multiplet) and in dimension 3 thse depend on a choice of an orthogonal $\fg$-representation. We do not consider superpotential and mass terms in this paper. Moreover, as we are working perturbatively, we ignore all topological terms ($\theta$-terms).
+In these paper we consider supersymmetric Yang--Mills theories in dimensions 2 through 10. In dimensions 3 through 10 these may be obtained by dimensional reduction of the following theories: 10d $\cN=(1, 0)$ super Yang--Mills, 6d $\cN=(1, 0)$ super Yang--Mills, 4d $\cN=1$ super Yang--Mills and 3d $\cN=1$ super Yang--Mills. First of all, these theories depend on a choice of a Lie algebra $\fg$ equipped with a symmetric nondegenerate bilinear pairing. In addition, in dimensions 6, 4 and 3 we may add matter multiplets: in dimension 6 these depend on a choice of a symplectic $\fg$-representation (a hypermultiplet), in dimension 4 these depend on a choice of a $\fg$-representation (a chiral multiplet) and in dimension 3 these depend on a choice of an orthogonal $\fg$-representation. We do not consider superpotential and mass terms in this paper. Moreover, as we are working perturbatively, we ignore all topological terms ($\theta$-terms).
 
 The on-shell supersymmetry of pure super Yang--Mills theories in these dimensions can be proven by using a well-known relationship between composition algebras (e.g. division algebras) and supersymmetry (see Section \ref{sect:compositionalgebras}) which goes back to the works \cite{Evans,KugoTownsend}. For instance, we may construct the 10d $\cN=(1, 0)$ supersymmetry from octonions $\mathbb{O}$, 6d $\cN=(1, 0)$ supersymmetry from quaternions $\mathbb{H}$, 4d $\cN=1$ supersymmetry from complex numbers $\CC$ and 3d $\cN=1$ supersymmetry from real numbers $\RR$. Our treatment follows the work of Baez and Huerta \cite{BaezHuerta} and we show how to extend the $\fA$-action to an $L_\infty$-action using these ideas. As a new result, we also construct an $L_\infty$-action on matter multiplets where the language of composition algebras turns out to be indispensable (see Section \ref{sect:mattermultipletSUSY}). Namely, for any real associative composition algebra $A_\RR$ we simply need a complex $\fg$-representation equipped with an $A_\RR$-module structure and a symmetric bilinear pairing. We have the following three cases:
 \begin{itemize}
@@ -119,49 +119,22 @@ We have the following supergravity analogs of the data $(Q, \phi, \alpha)$ for s
 \item Given $\alpha\colon \U(1)\rightarrow G_R$, we consider a trivial $\U(1)$-subbundle in $G_R$ on which the connection restricts to zero.
 \end{itemize}
 
-% \item  Context and literature on twists, including in the BV formalism.  There's a perspective there in terms of derived algebraic geometry (our mapping stacks we like to talk about).  Also at least a remark on the perspective in terms of coupling to twisted sugra.
-% \item  perspective in terms of twisting homomorphisms, and putting twisted theories on curved backgrounds.
-% \item  Mathematical literature on SUSY Yang-Mills, including Baez-Huerta and references therein.
-% \item  Strategy for computations: coupling to background fields, homotopical SUSY action (reference Baulieu et al), proving the CME is satisfied including the background symmetry fields, then computing the twist in terms of the EOM in a few examples, and computing many other examples via dimensional reduction.
-% \item  EOM of A-twists, and connection to various PDEs of interest in QFT.
-% \item  Connection between twisted BV theories and twisted factorization algebras, and therefore to our earlier paper on $\bb E_n$ algebras.
-% \item  Quantization: for cotangent theories and their deformations there's a 1-loop exact prequantization, just need to calculate the 1-loop anomaly to the QME.  In many cases this is worked out.
-%\end{enumerate}}
-
 \subsection*{Applications to Quantization}
 %\addcontentsline{toc}{subsection}{Applications to quantization}
 
-The quantization of gauge theories is notoriously subtle and leads to a rich theory of renormalization.
-An attractive application of the descriptions of the twists of supersymmetric gauge theories that we provide is to study quantization.
+The quantization of gauge theories is notoriously subtle and requires a rich theory of renormalization.  One attractive application of the descriptions of the twists of supersymmetric gauge theories that we provide is to study quantization in a setting where the machinery required for renormalization is much more rigid.
 
-To rigorously study the quantization of supersymmetric Yang-Mills theory we can work with the mathematical theory of renormalization developed by Costello in \cite{CosRenorm}. 
-This theory of renormalization can been used to study field theories with and without supersymmetry. \brian{many citations}
-In the context of (non-supersymmetric) Yang-Mills theory, for instance, it is shown that this theory recovers asymptotic freedom by an explicit analysis of the local counterterms present in the four-dimensional gauge theory \cite{EWY}.  
+To rigorously study the quantization of supersymmetric Yang-Mills theory we can work with the mathematical theory of renormalization developed by Costello in \cite{CostelloBook}. This theory of renormalization can been used to study field theories with and without supersymmetry. \brian{many citations} In the context of (non-supersymmetric) Yang-Mills theory, for instance, it is shown that this theory recovers asymptotic freedom by an explicit analysis of the local counterterms present in the four-dimensional gauge theory \cite{EWY}.  
 
-In principle, the existence of local counterterms can be used to analyze the full untwisted supersymmetric gauge theories in a mathematically rigorous way.
-In practice, however, our approach to renormalization does not provide any significant advantage over traditional approaches used in QFT. 
+In principle, the existence of local counterterms can be used to analyze the full untwisted supersymmetric gauge theories in a mathematically rigorous way.  In practice, however, our approach to renormalization does not provide any significant advantage over traditional approaches used in QFT.  However, a significant simplification happens at the level of the {\em twisted} supersymmetric Yang-Mills theories that we study in this work. To start with, for some examples (but not all), the twisted theory turns out to be a {\em topological field theory}. The theory of renormalization for topological theories can be handled using configuration spaces \cite{Kontsevich}. \brian{more examples} 
 
-A significant simplification happens at the level of {\em twisted} supersymmetric Yang-Mills theories that we study in this work. 
-For few examples, but not all, the twisted theory turns out to be a {\em topological field theory}. 
-The theory of renormalization for topological theories can be handled using configuration spaces \cite{Kontsevich}. \brian{more examples} 
+In the general setting of this paper, while not every twist results in a topological field theory, it does result in a theory in which some directions of spacetime behave topologically, and the remaining directions behave holomorphically. For a mixed holomorphic-topological translation invariant field theory of this type on $\RR^n \times \CC^d$, this means that at least half of the linearly independent translation invariant vector fields act on the field theory in a BRST exact way.
 
-There are drawbacks to the traditional approach to studying TFTs in the context of supersymmetric Yang-Mills theory.
-For instance, upon performing a topological twist, when it exists, one can argue that a significant portion of the data of the full supersymmetric field theory is lost.
-Furthermore, there are many examples of twists of supersymmetric field theories that are not topological, so the usual methods of TFT do not apply even at the twisted level. 
-Perhaps the most fundamental example of this is $10$-dimensional supersymmetric Yang-Mills theory, where no topological twist exists. 
+Inspired by the work of Costello and Li in \cite{BCOV1} and Li in \cite{LiFeynman, LiVertex}, the foundations of renormalization for mixed holomorphic-topological field theories on Euclidean space has been developed in \cite{BWhol}. The key result is that the renormalization for mixed holomorphic-topological theories is extremely well-behaved from an analytic perspective. It is shown in the cited work that to first order in $\hbar$, the renormalization of mixed holomorphic/topological theory is {\em finite}. Furthermore, in \cite{LiVertex}, it is shown that in real dimension two this holds to all orders in $\hbar$. 
 
-We show that while not every twist results in a topological field theory, it does result in a theory in which some directions of spacetime behave topologically, and the remaining directions behave holomorphically. 
-For a translation invariant field theory, this means that at least half of the linearly independent translation invariant vector fields act on the field theory in a BRST exact way, but it is possible that more than half of the translation invariant vector fields act trivially in cohomology.
+These results yield a salient approach to mathematically characterizing the one-loop quantization of every twist of supersymmetric Yang-Mills theory. Furthermore, in all examples of theories obtained via twisting occuring in dimensions 8 and lower, not much is lost when asking for the one-loop quantization.  The twisted gauge theories here are all either equivalent to $BF$-type theories, or deformations of such theories by a holomorphic differential operator.  Such theories admit prequantizations (that is, they define families of effective field theories compatible under renormalization group flow), which are exact at one loop; meaning all higher order corrections vanish identically.  
 
-Inspired by the work of Costello and Li in \cite{BCOV1} and Li in \cite{LiVertex, LiFeynman}, the foundations of renormalization for mixed holomorphic / topological field theories on Euclidean space has been developed in \cite{BWhol}.
-The key result is that the renormalization for mixed holomorphic / topological theories is extremely well-behaved from an analytic perspective. 
-It is shown in the cited work that to first order in $\hbar$, the renormalization of mixed holomorphic/topological theory is {\em finite}. 
-Furthermore, in \cite{LiVertex}, it is shown that in real dimension two this holds to all orders in $\hbar$. 
-
-These results yield a salient approach to mathematically characterizing the one-loop quantization of every twist of supersymmetric Yang-Mills theory. 
-Furthermore, in many examples of theories obtained via twisting not much is lost when asking for the one-loop quantization.
-The twisted gauge theories of type $BF$, which are plentiful in the examples we consider,  admit quantizations which are exact at one loop; meaning all higher order corrections vanish identically. 
-While ambitious, the first natural problem would be to compute anomalies which we plan to return to in future work.
+From this starting point, the first natural problem would be to verify whether these one-loop exact prequantizations define actual quantizations of the classical twisted field theory.  That is, for each such theory, to compute the one-loop anomalies to the solution of the quantum master equation.  This problem comes in two parts: first, to compute the one-loop anomaly to quantization of the theory on flat space $\RR^n \times \CC^d$, and second -- in the case where we can use a twisting homomorphism to define the twisted theory on certain structured $(n+2d)$-manifolds, to calculate the corresponding one-loop anomaly on curved space (in other words, incorporating the computation of a gravitational anomaly). We plan to return to this question in future work.
 
 \subsection*{The Relationship to Factorization Algebras}
 
@@ -239,7 +212,7 @@ Our goal will then be to show that a particular twist of super Yang--Mills is eq
  \item \emph{Non-Chiral ($\mc N=(4,4), (8,8)$) topological A twist.}
  \item \emph{Non-Chiral ($\mc N=(4,4), (8,8)$) topological B twist.}
  \item \emph{Chiral $\mc N=(0,N_-)$ holomorphic twist.} 
-Twisted $(0,2)$ $\sigma$-models were first studied by Witten in \cite{WittenCDO} in relationship to the chiral algebra of chiral differential operators. 
+Twisted $(0,2)$ $\sigma$-models were first studied by Witten in \cite{WittenMirror}, and can be used to obtain the chiral algebra of chiral differential operators \cite{WittenCDO}. 
 \end{itemize}
 
 
@@ -720,7 +693,7 @@ S(F(e)) &= S_0(e) + \frac{1}{2} \int_M \omega(I_{\psi^*}(e), I_\phi(e) - I_\phi(
 %There is a corollary of this proposition obtained by iterating the procedure. 
 %We will only use a single iteration. 
 %
-%\begin{cor} \label{cor: quad}
+%\begin{cor} \label{cor:quad}
 %Let $(E_0, \omega_0, S_0)$ be a classical BV theory and $F \to M$ a graded vector bundle.
 %Consider the theory $(E, \omega, S)$ with underlying graded vector bundle
 %\[
@@ -3146,7 +3119,7 @@ I^{(2)} (Q_t, Q_t) &= \int \dvol \left(t^2(\xi^*B^* + \chi^*\wt\chi^* + \frac{1}
 %\end{theorem}
 
 \begin{proof}
-We begin by applying Corollary \ref{cor: quad} to the two $t$-dependent quadruples of fields:
+We begin by applying Corollary \ref{cor:quad} to the two $t$-dependent quadruples of fields:
 \begin{align*}
 & (t \varsigma, \rho, t \phi, A_{1,0}) \\
 & (tb, \Tilde{\nu}, t A_{0,1}, \nu) .
