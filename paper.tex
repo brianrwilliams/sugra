@@ -122,37 +122,19 @@ We have the following supergravity analogs of the data $(Q, \phi, \alpha)$ for s
 \subsection*{Applications to Quantization}
 %\addcontentsline{toc}{subsection}{Applications to quantization}
 
-The quantization of gauge theories is notoriously subtle and leads to a rich theory of renormalization.
-An attractive application of the descriptions of the twists of supersymmetric gauge theories that we provide is to study quantization.
+The quantization of gauge theories is notoriously subtle and requires a rich theory of renormalization.  One attractive application of the descriptions of the twists of supersymmetric gauge theories that we provide is to study quantization in a setting where the machinery required for renormalization is much more rigid.
 
-To rigorously study the quantization of supersymmetric Yang-Mills theory we can work with the mathematical theory of renormalization developed by Costello in \cite{CosRenorm}. 
-This theory of renormalization can been used to study field theories with and without supersymmetry. \brian{many citations}
-In the context of (non-supersymmetric) Yang-Mills theory, for instance, it is shown that this theory recovers asymptotic freedom by an explicit analysis of the local counterterms present in the four-dimensional gauge theory \cite{EWY}.  
+To rigorously study the quantization of supersymmetric Yang-Mills theory we can work with the mathematical theory of renormalization developed by Costello in \cite{CostelloBook}. This theory of renormalization can been used to study field theories with and without supersymmetry. \brian{many citations} In the context of (non-supersymmetric) Yang-Mills theory, for instance, it is shown that this theory recovers asymptotic freedom by an explicit analysis of the local counterterms present in the four-dimensional gauge theory \cite{EWY}.  
 
-In principle, the existence of local counterterms can be used to analyze the full untwisted supersymmetric gauge theories in a mathematically rigorous way.
-In practice, however, our approach to renormalization does not provide any significant advantage over traditional approaches used in QFT. 
+In principle, the existence of local counterterms can be used to analyze the full untwisted supersymmetric gauge theories in a mathematically rigorous way.  In practice, however, our approach to renormalization does not provide any significant advantage over traditional approaches used in QFT.  However, a significant simplification happens at the level of the {\em twisted} supersymmetric Yang-Mills theories that we study in this work. To start with, for some examples (but not all), the twisted theory turns out to be a {\em topological field theory}. The theory of renormalization for topological theories can be handled using configuration spaces \cite{Kontsevich}. \brian{more examples} 
 
-A significant simplification happens at the level of {\em twisted} supersymmetric Yang-Mills theories that we study in this work. 
-For few examples, but not all, the twisted theory turns out to be a {\em topological field theory}. 
-The theory of renormalization for topological theories can be handled using configuration spaces \cite{Kontsevich}. \brian{more examples} 
+In the general setting of this paper, while not every twist results in a topological field theory, it does result in a theory in which some directions of spacetime behave topologically, and the remaining directions behave holomorphically. For a mixed holomorphic-topological translation invariant field theory of this type on $\RR^n \times \CC^d$, this means that at least half of the linearly independent translation invariant vector fields act on the field theory in a BRST exact way.
 
-There are drawbacks to the traditional approach to studying TFTs in the context of supersymmetric Yang-Mills theory.
-For instance, upon performing a topological twist, when it exists, one can argue that a significant portion of the data of the full supersymmetric field theory is lost.
-Furthermore, there are many examples of twists of supersymmetric field theories that are not topological, so the usual methods of TFT do not apply even at the twisted level. 
-Perhaps the most fundamental example of this is $10$-dimensional supersymmetric Yang-Mills theory, where no topological twist exists. 
+Inspired by the work of Costello and Li in \cite{BCOV1} and Li in \cite{LiFeynman, LiVertex}, the foundations of renormalization for mixed holomorphic-topological field theories on Euclidean space has been developed in \cite{BWhol}. The key result is that the renormalization for mixed holomorphic-topological theories is extremely well-behaved from an analytic perspective. It is shown in the cited work that to first order in $\hbar$, the renormalization of mixed holomorphic/topological theory is {\em finite}. Furthermore, in \cite{LiVertex}, it is shown that in real dimension two this holds to all orders in $\hbar$. 
 
-We show that while not every twist results in a topological field theory, it does result in a theory in which some directions of spacetime behave topologically, and the remaining directions behave holomorphically. 
-For a translation invariant field theory, this means that at least half of the linearly independent translation invariant vector fields act on the field theory in a BRST exact way, but it is possible that more than half of the translation invariant vector fields act trivially in cohomology.
+These results yield a salient approach to mathematically characterizing the one-loop quantization of every twist of supersymmetric Yang-Mills theory. Furthermore, in all examples of theories obtained via twisting occuring in dimensions 8 and lower, not much is lost when asking for the one-loop quantization.  The twisted gauge theories here are all either equivalent to $BF$-type theories, or deformations of such theories by a holomorphic differential operator.  Such theories admit prequantizations (that is, they define families of effective field theories compatible under renormalization group flow), which are exact at one loop; meaning all higher order corrections vanish identically.  
 
-Inspired by the work of Costello and Li in \cite{BCOV1} and Li in \cite{LiVertex, LiFeynman}, the foundations of renormalization for mixed holomorphic / topological field theories on Euclidean space has been developed in \cite{BWhol}.
-The key result is that the renormalization for mixed holomorphic / topological theories is extremely well-behaved from an analytic perspective. 
-It is shown in the cited work that to first order in $\hbar$, the renormalization of mixed holomorphic/topological theory is {\em finite}. 
-Furthermore, in \cite{LiVertex}, it is shown that in real dimension two this holds to all orders in $\hbar$. 
-
-These results yield a salient approach to mathematically characterizing the one-loop quantization of every twist of supersymmetric Yang-Mills theory. 
-Furthermore, in many examples of theories obtained via twisting not much is lost when asking for the one-loop quantization.
-The twisted gauge theories of type $BF$, which are plentiful in the examples we consider,  admit quantizations which are exact at one loop; meaning all higher order corrections vanish identically. 
-While ambitious, the first natural problem would be to compute anomalies which we plan to return to in future work.
+From this starting point, the first natural problem would be to verify whether these one-loop exact prequantizations define actual quantizations of the classical twisted field theory.  That is, for each such theory, to compute the one-loop anomalies to the solution of the quantum master equation.  This problem comes in two parts: first, to compute the one-loop anomaly to quantization of the theory on flat space $\RR^n \times \CC^d$, and second -- in the case where we can use a twisting homomorphism to define the twisted theory on certain structured $(n+2d)$-manifolds, to calculate the corresponding one-loop anomaly on curved space (in other words, incorporating the computation of a gravitational anomaly). We plan to return to this question in future work.
 
 \subsection*{The Relationship to Factorization Algebras}
 
@@ -230,7 +212,7 @@ Our goal will then be to show that a particular twist of super Yang--Mills is eq
  \item \emph{Non-Chiral ($\mc N=(4,4), (8,8)$) topological A twist.}
  \item \emph{Non-Chiral ($\mc N=(4,4), (8,8)$) topological B twist.}
  \item \emph{Chiral $\mc N=(0,N_-)$ holomorphic twist.} 
-Twisted $(0,2)$ $\sigma$-models were first studied by Witten in \cite{WittenCDO} in relationship to the chiral algebra of chiral differential operators. 
+Twisted $(0,2)$ $\sigma$-models were first studied by Witten in \cite{WittenMirror}, and can be used to obtain the chiral algebra of chiral differential operators \cite{WittenCDO}. 
 \end{itemize}
 
 
@@ -711,7 +693,7 @@ S(F(e)) &= S_0(e) + \frac{1}{2} \int_M \omega(I_{\psi^*}(e), I_\phi(e) - I_\phi(
 %There is a corollary of this proposition obtained by iterating the procedure. 
 %We will only use a single iteration. 
 %
-%\begin{cor} \label{cor: quad}
+%\begin{cor} \label{cor:quad}
 %Let $(E_0, \omega_0, S_0)$ be a classical BV theory and $F \to M$ a graded vector bundle.
 %Consider the theory $(E, \omega, S)$ with underlying graded vector bundle
 %\[
@@ -3108,7 +3090,7 @@ I^{(2)} (Q_t, Q_t) &= \int \dvol \left(t^2(\xi^*B^* + \chi^*\wt\chi^* + \frac{1}
 %\end{theorem}
 
 \begin{proof}
-We begin by applying Corollary \ref{cor: quad} to the two $t$-dependent quadruples of fields:
+We begin by applying Corollary \ref{cor:quad} to the two $t$-dependent quadruples of fields:
 \begin{align*}
 & (t \varsigma, \rho, t \phi, A_{1,0}) \\
 & (tb, \Tilde{\nu}, t A_{0,1}, \nu) .
