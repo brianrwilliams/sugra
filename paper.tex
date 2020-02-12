@@ -971,6 +971,7 @@ In fact, the $\SO(n_3)$-action given by the previous proposition extends to a ho
 The next class of examples of classical BV theories we give are generalizations of Chern-Simons theory. Unlike the example of the generalized BF theory, these theories are not of cotangent type.
 
 \begin{definition}
+\label{dfn: cs}
 Let $X$ and $Y$ be complex manifolds and $M$ a smooth oriented manifold. Fix an $L_\infty$ algebra $\fg$. We assume $X$ is equipped with a holomorphic volume form $\Omega_X \in\Omega^{\dim(X), 0}(X)$ and $\fg$ is equipped with a nondegenerate invariant symmetric pairing $\langle-, -\rangle\colon \fg\otimes\fg\rightarrow \CC[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 3]$. The \defterm{generalized Chern--Simons theory} is the following classical BV theory:
 \begin{itemize}
 \item The spacetime is the smooth manifold $X\times Y\times M$.
@@ -1140,7 +1141,7 @@ Therefore, it makes sense to talk about ``the'' dimensional reduction of a class
 We will now describe dimensional reductions of the classical Chern--Simons theory.
 
 \begin{prop} \label{CS_to_BF_diml_red_prop}
-Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$ equipped with a nondegenerate invariant pairing and consider the generalized Chern--Simons theory
+Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$ equipped with a nondegenerate invariant pairing as in Definition \ref{dfn: cs} and consider the corresponding generalized Chern--Simons theory
 \[\map(X\times Y_{\mr{Dol}}\times (M\times \RR)_{\mr{dR}}, B\fg).\]
 Its dimensional reduction along the projection $p\colon X\times Y\times (M\times \RR)\rightarrow X\times Y\times M$ is isomorphic to the generalized BF theory
 \[\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1] B\fg).\]
@@ -3330,10 +3331,6 @@ The statement about the equivalence of the underlying $\ZZ/2\ZZ$-graded theories
 To incorporate the $\ZZ$-grading, we use the twisting datum $\alpha \colon \mr U(1) \to \SU(2)_+ \times \SU(2)_- \iso G_R$.  The action of this $\alpha$ on $W$ coincides with the action of $\alpha_0$ in Section \ref{sect:4d_2_holomorphictwist} on the sum of the 4d auxiliary space with its dual $W_4 \oplus W_4^*$, composed with the isomorphism $W_4 \oplus W_4^* \to W$: indeed, both have weights $(1,1,-1,-1)$.  Therefore our equivalence is compatible with the $\ZZ$-grading in Theorem \ref{4d_2_minimal_twist_thm} induced by $\alpha_0$.
 \end{proof}
 
-\begin{remark}
-\brian{Cotangent type.}
-\end{remark}
-
 \subsubsection{Topological A Twist}
 \label{sect:3d_4_A_twist}
 Let $L=\CC$ equipped with a Hermitian structure and a complex half density, $N_\RR=\RR$ equipped with a Euclidean structure and $N=N_\RR\otimes_\RR\CC$ its complexification. Consider the 4-dimensional spacetime $V_\RR=L\times N$. Under the projection $\Re\colon N\rightarrow N_\RR$ the family $Q_t$ of 4-dimensional square-zero supercharges given by \eqref{eq:4dHodgefamily} dimensionally reduces to a family of 3-dimensional square-zero supercharges which at $t\neq 0$ are topological at and $t=0$ have 2 invariant directions. Since they admit a compatible $\ZZ$-grading, at $t=0$ we obtain the holomorphic twist and at $t\neq 0$ we obtain the topological B twist. Therefore, from Theorem \ref{thm:4dDonaldsontwist} we obtain the following statement.
@@ -3356,7 +3353,8 @@ The rank $2$ B-twist of 3d $\mc N=4$ super Yang-Mills theory with symplectic mat
 \end{theorem}
 
 \subsection{\texorpdfstring{$\cN = 8$}{N=8} Super Yang-Mills Theory} \label{3d8section}
-Finally, let's consider maximal super Yang-Mills theory with gauge group $G$ in dimension 3, with $\mc N=8$ supersymmetry.  This is the theory obtained by compactifying $\mc N=(1,0)$ super Yang-Mills on $\RR^{10}$ down to $\RR^3$.  The $R$-symmetry group is $G_R = \Spin(7;\CC)$, acting on $W$ by its (Dirac) spin representation.
+Finally, let's consider maximal super Yang-Mills theory with gauge group $G$ in dimension 3, with $\mc N=8$ supersymmetry.  This is the theory obtained by compactifying $\mc N=(1,0)$ super Yang-Mills on $\RR^{10}$ down to $\RR^3$.  
+The $R$-symmetry group is $G_R = \Spin(7;\CC)$, and $W$ is its $8$-dimensional (Dirac) spin representation.
 
 \vspace{-10pt}
 \paragraph{Fields:} We can describe the BRST fields of $\mc N=4$ super Yang-Mills by restricting the 4d fields from Section \ref{4d_4_section} to representations of the group $\spin(3;\CC)$.  The fields we obtain are
@@ -3368,11 +3366,12 @@ Finally, let's consider maximal super Yang-Mills theory with gauge group $G$ in 
 
 In the $\mc N=8$ supersymmetry algebra the classification of twists is the same as we saw in $\mc N=4$.  That is, there are three orbits: one consisting of rank 1 supercharges, and two orbits of rank 2 supercharges.  We can see this in the following way.
 \begin{lemma}
-There are two $\spin(3;\CC) \times G_R$-orbits of rank 2 supercharges in the 3d $\mc N=8$ supersymmetry algebra.
+There are two distinct $\spin(3;\CC) \times G_R$-orbits of square-zero supercharges of rank $2$ in the 3d $\mc N=8$ supersymmetry algebra.
 \end{lemma}
 
 \begin{proof}
-Choose a symplectic basis $\langle s, s' \rangle$ for $S$, and let $Q = s \otimes w + s' \otimes w'$ be a square-zero rank 2 element of $S \otimes W$.  Let $V_7$ denote the fundamental representation of $G_R$.  As in Section \ref{9d_section}, the element $w \in W$ is equivalent to the data of a maximal isotropic subspace $L \sub V_7$, together with a choice of half-density.  This element $w$ is stabilized, in particular, by a copy of the metalinear group $\ML(L)$, under whose action the auxiliary space $W$ decomposes as
+Choose a symplectic basis $\langle s, s' \rangle$ for $S$, and let $Q = s \otimes w + s' \otimes w'$ be a square-zero rank 2 element of $S \otimes W$.  Let $V_7$ denote the fundamental representation of $G_R$.  As in Section \ref{9d_section}, the element $w \in W$ is equivalent to the data of a maximal isotropic subspace $L \sub V_7$, together with a choice of a half-density.  This element $w$ is stabilized, in particular, by a copy of the metalinear group $\ML(L)$.
+Under the group $\ML(L)$ the auxiliary space $W$ decomposes as
 \[W \iso \left(\CC \oplus L \oplus \wedge^2 L \oplus \wedge^3 L \right) \otimes \det(L)^{-1/2},\]
 (see also \cite[Section 4.7]{ElliottSafronov}), with $w$ lying in the last summand.  Under this decomposition, split the remaining element $w' = (v_0, v_1, v_2, v_3)$.  Then
 \begin{itemize}
@@ -3397,6 +3396,10 @@ The 3d $\cN=8$ super Yang--Mills viewed as an $\cN=4$ supersymmetric theory coin
 \begin{theorem}  \label{3d_8_minimal_twist_thm}
 The minimal twist of 3d $\cN=8$ super Yang--Mills on $M=\CC\times \RR$ is perturbatively equivalent to the BF theory with space of fields $T^*[-1]\mr{Map}(\CC \times \RR_{\mr{dR}}, (\gg/\gg)_{\mr{Dol}})$. Moreover, the equivalence is $\U(1)$-equivariant.
 \end{theorem}
+
+\begin{proof}
+
+
 
 \begin{proof}
 On the level of $\ZZ/2\ZZ$-graded theories, we apply the forgetful map from $\mc N=8$ super Poincar\'e action down to the $\mc N=4$ super Poincar\'e action and then apply Theorem \ref{3d_4_minimal_twist_thm}.  We can then enhance this identifying the fields with the dimensional reduction of the fields from the holomorphic twist of 4d $\mc N=4$ super Yang-Mills, as a $\ZZ$-graded vector bundle equipped with a $\mr U(1)$-equivariant structure.  The dimensionally reduced theory is a $\ZZ$-graded and $\mr U(1)$-equivariant theory, equivalent as a $\ZZ/2\ZZ$-graded theory to the one obtained from 3d $\mc N=4$ -- this promotes the description given above to a $\ZZ$-graded and $\mr U(1)$-equivariant theory.  When we calculate that dimensional reduction, the fields reduce according to the rule
