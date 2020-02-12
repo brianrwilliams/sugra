@@ -2705,7 +2705,7 @@ This is indeed the action functional of the required theory, where $A_{0,\bu}, B
 
 \subsection{\texorpdfstring{$\cN=2$}{N=2} Super Yang--Mills} \label{4d_2_section}
 
-The 4d $\cN=2$ super Yang--Mills theory is obtained by a dimensional reduction from the 6d $\cN=(1, 0)$ super Yang--Mills theory with matter valued in a symplectic $\fg$-representation $U$. Let $W$ be a two-dimensional complex symplectic vector space. The theory admits the $R$-symmetry group $G_R=\SL(2)\times \GL(1, \CC)$, where $\GL(1, \CC)$ acts on $W$ with weight $1$.
+The 4d $\cN=2$ super Yang--Mills theory is obtained by a dimensional reduction from the 6d $\cN=(1, 0)$ super Yang--Mills theory with matter valued in a symplectic $\fg$-representation $U$. Let $W$ be a two-dimensional complex symplectic vector space. The theory admits the $R$-symmetry group $G_R=\SL(2;\CC)\times \GL(1, \CC)$, where $\GL(1, \CC)$ acts on $W$ with weight $1$.
 
 \vspace{-10pt}
 \paragraph{Fields:} The BRST fields are given by:
@@ -2825,25 +2825,26 @@ and hence the underlying local $L_\infty$ algebra after the twist becomes
 \end{comment}
 \end{proof}
 
-When $U$ is of cotangent type $U = R \oplus R^*$ the $R$-symmetry group enhances to $G_R = \SL(2, \CC) \times \GL(1, \CC) \times \GL(1,\CC)$ where the last $\GL(1, \CC)$ acts by $+1$ on $R$ and $-1$ on $R^*$. 
-In this case, the twist admits twisting data homomorphism $\alpha \colon \U(1) \rightarrow \SL(2, \CC)\times \GL(1, \CC) \times \GL(1, \CC)$ given by the diagonal embedding into the last two components. 
+%There is an alternative $\ZZ$-grading one can assign to the twist when $U$ is of cotangent type $U = R \oplus R^*$. 
+%In this case, the $R$-symmetry group enhances to $G_R = \SL(2, \CC) \times \GL(1, \CC) \times \GL(1,\CC)$ where the last $\GL(1, \CC)$ acts by $+1$ on $R$ and $-1$ on $R^*$. 
+%The new twisting datum is $\Tilde{\alpha} \colon \U(1) \rightarrow \SL(2, \CC)\times \GL(1, \CC) \times \GL(1, \CC)$ given by the diagonal embedding into the last two components. 
+%%\[
+%%\begin{array}{ccccc}
+%%\alpha \colon & \U(1) & \rightarrow & \SL(2, \CC)\times \GL(1, \CC) \times \GL(1, \CC) \\
+%%&  z & \mapsto & \left(1 , z, z \right)
+%%\end{array}
+%%\]
+%There is also a new twisting homomorphism 
 %\[
-%\begin{array}{ccccc}
-%\alpha \colon & \U(1) & \rightarrow & \SL(2, \CC)\times \GL(1, \CC) \times \GL(1, \CC) \\
-%&  z & \mapsto & \left(1 , z, z \right)
-%\end{array}
+%\Tilde{\phi} \colon \MU(2) \xto{\det^{1/2}} \U(1) \xto{\Tilde{\alpha}} G_R
 %\]
-There is a new twisting homomorphism 
-\[
-\Tilde{\phi} \colon \MU(2) \xto{\det^{1/2}} \U(1) \xto{\alpha} G_R
-\]
-By Theorem \ref{thm:5dminimaltwistgraded}, we obtain the following.
-
-\begin{thm}
-\label{thm:4d_2minimaltwistgraded}
-The minimal twist of $4d \cN=2$ super Yang-Mills on $M = \CC^2$ with matter representation $U = T^* R = R \oplus R^*$ is pertubatively equivalent to holomorphic BF theory with fields $T^*[-1] {\rm Map}(\CC^2 , R / \fg)$. 
-Moreover, this equivalence is $\U(2)$-equivariant.
-\end{thm}
+%By Theorem \ref{thm:5dminimaltwistgraded}, we obtain the following.
+%
+%\begin{thm}
+%\label{thm:4d_2minimaltwistgraded}
+%The minimal twist of $4d \cN=2$ super Yang-Mills on $M = \CC^2$ with matter representation $U = T^* R = R \oplus R^*$ is pertubatively equivalent to holomorphic BF theory with fields $T^*[-1] {\rm Map}(\CC^2 , R / \fg)$. 
+%Moreover, this equivalence is $\U(2)$-equivariant.
+%\end{thm}
 
 \subsubsection{Rank \texorpdfstring{$(2,0)$}{(2,0)} Topological Twist}
 \label{sect:4d2Donaldson}
@@ -3271,7 +3272,7 @@ By Theorem \ref{4d_minimal_twist_thm} the twist of 4d $\cN=1$ super Yang--Mills 
 \end{proof}
 
 \subsection{\texorpdfstring{$\cN = 4$}{N=4} Super Yang-Mills with Hypermultiplet Matter} \label{3d_4_section}
-We will now consider 3d $\mc N=4$ theories, which arise by dimensional reduction from 4d $\mc N=2$ super Yang-Mills with gauge group $G$, coupled to a hypermultiplet valued in a symplectic representation $U$, or equivalently by dimensional reduction from 6d $\mc N=(1,0)$ super Yang-Mills coupled to a hypermultiplet.  The $R$-symmetry group is $G_R = \Spin(4;\CC)$, acting on $W$ by its defining representation.
+We will now consider 3d $\mc N=4$ theories, which arise by dimensional reduction from 4d $\mc N=2$ super Yang-Mills with gauge group $G$, coupled to a hypermultiplet valued in a symplectic representation $U$, or equivalently by dimensional reduction from 6d $\mc N=(1,0)$ super Yang-Mills coupled to a hypermultiplet.  The $R$-symmetry group is $G_R = \Spin(4;\CC)$, and $W$ is its defining representation.
 
 \vspace{-10pt}
 \paragraph{Fields:}We can describe the BRST fields of $\mc N=4$ super Yang-Mills by restricting the 4d fields from Section \ref{4d_2_section} to representations of the group $\spin(3;\CC)$.  The fields we obtain are
@@ -3309,7 +3310,10 @@ A rank $(2,0)$ square 0 supercharge in the 4d $\mc N=2$ supersymmetry algebra re
 \end{lemma}
 
 \begin{proof}
-The projection from the 4d $\mc N=2$ supertranslation algebra to the 3d $\mc N=4$ supertranslation algebra induces an isomorphism $W_4 \oplus W_4^* \to W$ of representations of the group $\spin(3;\CC)$. Here $W_4$ is the $d=4$ auxiliary space, with dimension 2.  This splits the fundamental representation $W$ into the sum of two Lagrangians, defining an orientation on $W$. A rank $(2,0)$ supercharge induces the Lagrangian subspace $W_4 \sub W$, which is oriented.  The corresponding twist can be promoted to a twisting datum using a copy of $\mr U(1)$ acting with weight 1 on $W_4$ -- if $G_R = \SL(2;\CC)_+ \times \SL(2;\CC)_-$ where the first factor is the 4d R-symmetry group, by a $\mr U(1)$ in the second factor -- so this is the A-twist in our classification above.
+Let $W_4$ be the complex two-dimensional auxiliary space of the 4d $\cN=2$ supesymmetry algebra.
+The projection from the 4d $\mc N=2$ supertranslation algebra to the 3d $\mc N=4$ supertranslation algebra induces an isomorphism $W_4 \oplus W_4^* \to W$ of representations of the group $\spin(3;\CC)$.  
+This splits the fundamental representation $W$ into the sum of two Lagrangians, defining an orientation on $W$. 
+A rank $(2,0)$ supercharge induces the Lagrangian subspace $W_4 \sub W$, which is oriented.  The corresponding twist can be promoted to a twisting datum using a copy of $\mr U(1)$ acting with weight 1 on $W_4$ -- if $G_R = \SL(2;\CC)_+ \times \SL(2;\CC)_-$ where the first factor is the 4d R-symmetry group, by a $\mr U(1)$ in the second factor -- so this is the A-twist in our classification above.
 
 A rank $(1,1)$ supercharges induces a Lagrangian subspace of the form $L \oplus L^* \sub W$, where $L$ is a 1-dimensional subspace of $W_4$.  This subspace has the opposite orientation, so corresponds to the B-twist in our classification above.  
 \end{proof}
@@ -3318,6 +3322,10 @@ A rank $(1,1)$ supercharges induces a Lagrangian subspace of the form $L \oplus 
 \label{sect:3d_4_minimal_twist}
 The 3d $\cN=4$ super Yang--Mills viewed as a $\cN=2$ supersymmetric theory coincides with the 3d $\cN=2$ super Yang--Mills with matter valued in the representation $R = U \oplus \gg$.  
 
+There is a unique twisting homomorphism $\phi : \U(1) \to \Spin(4;\CC)$ given by the restriction of the 4d $\cN=2$ twisting homomorphism for the minimal twist as in Theorem \ref{4d_2_minimal_twist_thm} to the subgroup $\U(1) \subset \MU(2)$. 
+
+This twist also admits the following twisting datum.
+To incorporate the $\ZZ$-grading, we use the twisting datum $\alpha \colon \mr U(1) \to \SU(2)_+ \times \SU(2)_- \iso G_R$.  The action of this $\alpha$ on $W$ coincides with the action of $\alpha_0$ in Section \ref{sect:4d_2_holomorphictwist} on the sum of the 4d auxiliary space with its dual $W_4 \oplus W_4^*$, composed with the isomorphism $W_4 \oplus W_4^* \to W$: indeed, both have weights $(1,1,-1,-1)$.  Therefore our equivalence is compatible with the $\ZZ$-grading in Theorem \ref{4d_2_minimal_twist_thm} induced by $\alpha_0$.
 %However, as in Section \ref{4d_2_section} we should take care: this identification is not R-symmetry equivariant.  Indeed, there is no choice of a 2-dimensional subspace $W' \sub W$, and an embedding $\mr O(2) \inj G_R = \Spin(4;\RR)$, making the map $W' \to W$ equivariant for the action of $\mr O(2)$ on $W'$ with weight 1.
 
 \begin{theorem} \label{3d_4_minimal_twist_thm}
@@ -3326,8 +3334,6 @@ The minimal twist of 3d $\cN=4$ super Yang--Mills on $N \times L=\CC\times \RR$ 
 
 \begin{proof}
 The statement about the equivalence of the underlying $\ZZ/2\ZZ$-graded theories follows from applying dimensional reduction (Theorem \ref{CS_diml_red_prop}) to Theorem \ref{4d_2_minimal_twist_thm} calculating the holomorphic twist of 4d $\mc N=2$ super Yang-Mills on $N \times L_\CC$.  This equivalence is equivariant for the action of $\mr U(1) \iso \MU(N) \sub \MU(N \times L_\CC)$.
-
-To incorporate the $\ZZ$-grading, we use the twisting datum $\alpha \colon \mr U(1) \to \SU(2)_+ \times \SU(2)_- \iso G_R$.  The action of this $\alpha$ on $W$ coincides with the action of $\alpha_0$ in Section \ref{sect:4d_2_holomorphictwist} on the sum of the 4d auxiliary space with its dual $W_4 \oplus W_4^*$, composed with the isomorphism $W_4 \oplus W_4^* \to W$: indeed, both have weights $(1,1,-1,-1)$.  Therefore our equivalence is compatible with the $\ZZ$-grading in Theorem \ref{4d_2_minimal_twist_thm} induced by $\alpha_0$.
 \end{proof}
 
 \begin{remark}
