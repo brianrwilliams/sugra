@@ -1010,7 +1010,7 @@ Let $X$ and $Y$ be complex manifolds and $M$ a smooth oriented manifold. Fix an 
 
 \item The BRST action is $S_{\mr{BRST}} = 0$.
 \end{itemize}
-We denote the space of BV fields by $\cE = \map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[d] B\fg)$, where $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1$.
+We denote the space of BV fields by $T^*[-1] \map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B\fg)$.
 \label{def:generalizedBF}
 \end{definition}
 
@@ -2386,7 +2386,7 @@ The twist of $(4+\dim(L))$-dimensional super Yang--Mills on $L\times N_\RR$ by $
 By Theorem \ref{thm:8dholomorphictwist} the twist of 8d $\cN=1$ super Yang--Mills on $L\times N$ by $Q$ is perturbatively equivalent to the holomorphic BF theory. Moreover, the equivalence is $\MU(L)\times \SU(N)$-equivariant. By Corollary \ref{cor:BFholomorphicreduction} we get that the dimensional reduction of holomorphic BF theory on $L\times N$ along $\Re\colon N\rightarrow N_\RR$ is isomorphic to the generalized BF theory with the space of fields $T^*[-1]\map(L\times N_\RR, B\fg)$ and this isomorphism is $\MU(L)\times \SO(N_\RR)$-equivariant, where $\SO(N_\RR)$ acts on $N$ via the homomorphism \eqref{eq:SOtoSU}.
 \end{proof}
 
-We will now concentrate on the 7-dimensional case.
+The 7-dimensional result immediately follows.
 
 \begin{theorem}
 The minimal twist of 7d $\cN=1$ super Yang--Mills on $M=\CC^3\times \RR$ is perturbatively equivalent to the generalized BF theory with the space of fields $T^*[-1]\map(\CC^3\times \RR_{\mr{dR}}, B\fg)$. Moreover, the equivalence is $\U(3)$-equivariant.
@@ -3502,10 +3502,6 @@ The 3d $\cN=8$ super Yang--Mills viewed as an $\cN=4$ supersymmetric theory coin
 \begin{theorem}  \label{3d_8_minimal_twist_thm}
 The minimal twist of 3d $\cN=8$ super Yang--Mills on $M=\CC\times \RR$ is perturbatively equivalent to the BF theory with space of fields $T^*[-1]\mr{Map}(\CC \times \RR_{\mr{dR}}, (\gg/\gg)_{\mr{Dol}})$. Moreover, the equivalence is $\U(1)$-equivariant.
 \end{theorem}
-
-\begin{proof}
-
-
 
 \begin{proof}
 On the level of $\ZZ/2\ZZ$-graded theories, we apply the forgetful map from $\mc N=8$ super Poincar\'e action down to the $\mc N=4$ super Poincar\'e action and then apply Theorem \ref{3d_4_minimal_twist_thm}.  We can then enhance this identifying the fields with the dimensional reduction of the fields from the holomorphic twist of 4d $\mc N=4$ super Yang-Mills, as a $\ZZ$-graded vector bundle equipped with a $\mr U(1)$-equivariant structure.  The dimensionally reduced theory is a $\ZZ$-graded and $\mr U(1)$-equivariant theory, equivalent as a $\ZZ/2\ZZ$-graded theory to the one obtained from 3d $\mc N=4$ -- this promotes the description given above to a $\ZZ$-graded and $\mr U(1)$-equivariant theory.  When we calculate that dimensional reduction, the fields reduce according to the rule
