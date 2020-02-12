@@ -124,9 +124,9 @@ We have the following supergravity analogs of the data $(Q, \phi, \alpha)$ for s
 
 The quantization of gauge theories is notoriously subtle and requires a rich theory of renormalization.  One attractive application of the descriptions of the twists of supersymmetric gauge theories that we provide is to study quantization in a setting where the machinery required for renormalization is much more rigid.
 
-To rigorously study the quantization of supersymmetric Yang-Mills theory we can work with the mathematical theory of renormalization developed by Costello in \cite{CostelloBook}. This theory of renormalization can been used to study field theories with and without supersymmetry. \brian{many citations} In the context of (non-supersymmetric) Yang-Mills theory, for instance, it is shown that this theory recovers asymptotic freedom by an explicit analysis of the local counterterms present in the four-dimensional gauge theory \cite{EWY}.  
+To rigorously study the quantization of supersymmetric Yang-Mills theory we can work with the mathematical theory of renormalization developed by Costello in \cite{CostelloBook}. This theory of renormalization can been used to study field theories with and without supersymmetry. \brian{many citations} \chris{I'm not sure what you want to cite here.} In the context of (non-supersymmetric) Yang-Mills theory, for instance, it is shown that this theory recovers asymptotic freedom by an explicit analysis of the local counterterms present in the four-dimensional gauge theory \cite{EWY}.  
 
-In principle, the existence of local counterterms can be used to analyze the full untwisted supersymmetric gauge theories in a mathematically rigorous way.  In practice, however, our approach to renormalization does not provide any significant advantage over traditional approaches used in QFT.  However, a significant simplification happens at the level of the {\em twisted} supersymmetric Yang-Mills theories that we study in this work. To start with, for some examples (but not all), the twisted theory turns out to be a {\em topological field theory}. The theory of renormalization for topological theories can be handled using configuration spaces \cite{Kontsevich}. \brian{more examples} 
+In principle, the existence of local counterterms can be used to analyze the full untwisted supersymmetric gauge theories in a mathematically rigorous way.  In practice, however, our approach to renormalization does not provide any significant advantage over traditional approaches used in QFT.  However, a significant simplification happens at the level of the {\em twisted} supersymmetric Yang-Mills theories that we study in this work. To start with, for some examples (but not all), the twisted theory turns out to be a {\em topological field theory}. The theory of renormalization for topological theories can be handled using configuration spaces \cite{Kontsevich, AxelrodSinger}. 
 
 In the general setting of this paper, while not every twist results in a topological field theory, it does result in a theory in which some directions of spacetime behave topologically, and the remaining directions behave holomorphically. For a mixed holomorphic-topological translation invariant field theory of this type on $\RR^n \times \CC^d$, this means that at least half of the linearly independent translation invariant vector fields act on the field theory in a BRST exact way.
 
@@ -137,6 +137,17 @@ These results yield a salient approach to mathematically characterizing the one-
 From this starting point, the first natural problem would be to verify whether these one-loop exact prequantizations define actual quantizations of the classical twisted field theory.  That is, for each such theory, to compute the one-loop anomalies to the solution of the quantum master equation.  This problem comes in two parts: first, to compute the one-loop anomaly to quantization of the theory on flat space $\RR^n \times \CC^d$, and second -- in the case where we can use a twisting homomorphism to define the twisted theory on certain structured $(n+2d)$-manifolds, to calculate the corresponding one-loop anomaly on curved space (in other words, incorporating the computation of a gravitational anomaly). We plan to return to this question in future work.
 
 \subsection*{The Relationship to Factorization Algebras}
+In our previous paper \cite{ElliottSafronov}, we discussed supersymmetric twisting with an emphasis not on the classical fields of a supersymmetric field theory, but instead on their classical or quantum \emph{observables}.  The factorization algebra formalism of Costello and Gwilliam \cite{Book1, Book2} provides a model for the local structure of the observables in a general quantum field theory.  In brief, for every open subset $U \sub M$ of the spacetime manifold, one associates a (possibly $\ZZ \times \ZZ/2\ZZ$-graded) vector space $\obs(U)$ of local observables on $U$.  For any pair $U_1, U_2 \sub V$ of disjoint open subsets of an open set $V$, one associates a morphism
+\[m_{U_1, U_2}^V \colon \obs(U_1) \otimes \obs(U_2)\to \obs(V),\]
+thought of as an \emph{operator product} for local observables.  These products should vary smoothly as one varies the open subsets $U_1, U_2$ and $V$.  Starting with a classical field theory on $M$, defined using the BV formalism, one can build a factorization algebra $\obs^{\mr{cl}}$ modelling the classical observables of the field theory.  If the classical field theory carried the action of a group $G$, so would the factorization algebra.  Furthermore, Costello and Gwilliam develop techniques for the quantization of such algebras of classical observables, using the theory of renormalization as discussed in the previous section.
+
+In \cite{ElliottSafronov} we studied the supersymmetric twisting procedure as applied to factorization algebras on $\RR^n$ with an action of a supersymmetry algebra.  If $Q$ is a topological supercharge, then the $Q$-twist $\obs^Q$ of a supersymmetric factorization algebra automatically satisfies a strong translation invariance condition: all translations must act homotopically trivially.  In good circumstances, we can say even more.  An \emph{$\bb E_n$-algebra} is an algebra over the operad of little $n$-disks; in the language above, this is a factorization algebra for which homotopy equivalent configurations $U_1, U_2 \sub V$ induce homotopy equivalent products.
+\begin{nonum}[{\cite[Theorem 3]{ElliottSafronov}}]
+If $Q$ is a topological supercharge, and the operator $\obs^Q(B_r(0)) \to \obs^Q(B_R(0))$ associated to the inclusion of concentric balls is an equivalence, then the factorization algebra $\obs^Q$ has the canonical structure of an $\bb E_n$-algebra.
+\end{nonum}
+The hypothesis of the theorem is automatically satisfied, for example, for superconformal theories, and should be concretely checkable in examples.
+
+In the present work we classify twists of classical field theories, to which one can associate twisted factorization algebras of classical -- and, if the appropriate anomalies vanish, quantum -- observables in the sense of our previous work.  In some (topological) examples, these define $\bb E_n$-algebras.  In other examples, where the twist is not fully topological, the twisted local observables will define higher analogues of vertex algebras (as in, for instance, \cite{GwilliamWilliamsKM}).
 
 
 \subsection*{Summary of Twisted Super Yang--Mills Theories}
@@ -144,7 +155,7 @@ From this starting point, the first natural problem would be to verify whether t
 
 In this section we will summarize the main results of the paper presented in Part \ref{classification_part}, where we calculate twists of super Yang--Mills theories in dimensions 2 through 10.
 
-Let us begin by explaining what we mean by ``calculation''. Recall that for a Lie algebra $\fg$ there is a $d$-dimensional topological BF theory defined on a $d$-dimensional spacetime manifold $M$ with the space of BV fields $\Omega^\bullet(M; \fg)[1]\oplus \Omega^\bullet(M; \fg^*)[d-2]$, where $\Omega^\bullet$ denotes the space of differential forms equipped with the de Rham differential $\mathrm{d}$. If $M$ is replaced by a complex manifold $X$, we may also consider its version with the space of fields $\Omega^{\bullet, \bullet}(X; \fg)[1]\oplus \Omega^{\bullet, \bullet}(X; \fg^*)[2\dim(X)-2]$, where $\Omega^{\bullet, \bullet}$ is the space of differential forms equipped with the Dolbeault differential. Finally, we have yet another version, a \emph{holomorphic BF theory}, with the space of BV fields $\Omega^{0, \bullet}(X; \fg)[1]\oplus \Omega^{\dim(X), \bullet}(X; \fg^*)[\dim(X)-2]$. We will denote the space of fields in these three examples as $T^*[-1]\map(M_{\mathrm{dR}}, B\fg)$, $T^*[-1]\map(X_{\mathrm{Dol}}, B\fg)$ and $T^*[-1]\map(X, B\fg)$ respectively (the notation is explained in Section \ref{}). We may also combine these three examples into what we call a \emph{generalized BF theory} with the spaces of fields $T^*[-1]\map(X\times Y_{\mathrm{Dol}}\times M_{\mathrm{dR}}, B\fg)$ (see Definition \ref{def:generalizedBF} for more details).
+Let us begin by explaining what we mean by ``calculation''. Recall that for a Lie algebra $\fg$ there is a $d$-dimensional topological BF theory defined on a $d$-dimensional spacetime manifold $M$ with the space of BV fields $\Omega^\bullet(M; \fg)[1]\oplus \Omega^\bullet(M; \fg^*)[d-2]$, where $\Omega^\bullet$ denotes the space of differential forms equipped with the de Rham differential $\mathrm{d}$. If $M$ is replaced by a complex manifold $X$, we may also consider its version with the space of fields $\Omega^{\bullet, \bullet}(X; \fg)[1]\oplus \Omega^{\bullet, \bullet}(X; \fg^*)[2\dim(X)-2]$, where $\Omega^{\bullet, \bullet}$ is the space of differential forms equipped with the Dolbeault differential. Finally, we have yet another version, a \emph{holomorphic BF theory}, with the space of BV fields $\Omega^{0, \bullet}(X; \fg)[1]\oplus \Omega^{\dim(X), \bullet}(X; \fg^*)[\dim(X)-2]$. We will denote the space of fields in these three examples as $T^*[-1]\map(M_{\mathrm{dR}}, B\fg)$, $T^*[-1]\map(X_{\mathrm{Dol}}, B\fg)$ and $T^*[-1]\map(X, B\fg)$ respectively (the notation is explained in Section \ref{sect:FMP}). We may also combine these three examples into what we call a \emph{generalized BF theory} with the spaces of fields $T^*[-1]\map(X\times Y_{\mathrm{Dol}}\times M_{\mathrm{dR}}, B\fg)$ (see Definition \ref{def:generalizedBF} for more details).
 
 Let us also recall that if $\fg$ is equipped with a symmetric bilinear nondegenerate pairing, we also have a 3-dimensional topological Chern--Simons theory. If we forgo $\ZZ$-gradings and work with $\ZZ/2\ZZ$-gradings, we may also consider a topological Chern--Simons theory in any odd dimension (see \cite{AlekseevMnev} for a 1-dimensional version and \cite{BakGustavsson2} for a 5-dimensional version). Just like for the BF theory, we also have two other versions which may be combined into a generalized Chern--Simons theory. Another direction we can generalize in is to replace the Lie algebra $\fg$ by a dg Lie algebra in which case the BF theory itself becomes a particular example of the Chern--Simons theory.
 
@@ -171,15 +182,15 @@ Our goal will then be to show that a particular twist of super Yang--Mills is eq
 \begin{itemize}
  \item \emph{$\mc N=1$ minimal twist.} The twists of super Yang-Mills theory in 7 dimensions arise by dimensionally reducing the twists in 8 dimensions.  The minimal twist is equivalent to a generalized version of BF theory with one topological direction and three complex holomorphic directions.  This theory is $\mr U(3)$-invariant, and can be defined on the product of a complex 3-fold with a flat 1-manifold.
  \item \emph{$\mc N=1$ intermediate twist.} This minimal twist admits a further twist which is topological in three directions and holomorphic in the remaining two complex directions.  This intermediate twisted theory is equivalent, as a $\ZZ/2\ZZ$-graded theory, to a generalized version of Chern-Simons theory.  It is $\SU(2) \times \Spin(3;\RR)$-invariant, and can be defined on the product of a Calabi-Yau surface and a 3-manifold with spin structure.
- \item \emph{$\mc N=1$ topological twist.} The topological twist in 8-dimensions reduces to a topological twist in 7 dimensions.  This theory is again perturbatively trivial, but can be realized as the generic point in a 1-parameter degeneration of the minimal twist.  It is $G_2$-invariant, although the full one-parameter family is only $\SU(3)$-invariant.  This theory was also studied in \cite{AcharyaOLoughlinSpence}; its equations of motion include the $G_2$-monopole equations.
+ \item \emph{$\mc N=1$ topological twist.} The topological twist in 8-dimensions reduces to a topological twist in 7 dimensions.  This theory is again perturbatively trivial, but can be realized as the generic point in a 1-parameter degeneration of the minimal twist.  It is $G_2$-invariant, although the full one-parameter family is only $\SU(3)$-invariant.  This theory was also studied in \cite{AcharyaOLoughlinSpence, BaulieuKannoSinger}; its equations of motion include the $G_2$-monopole equations.
 \end{itemize}
 
 \textbf{Dimension 6}
 \begin{itemize}
- \item \emph{$\mc N=(1,0)$ and $\mc N=(1,1)$ holomorphic twist.} There is a holomorphic twist in 6 dimensions that can be defined for the $\mc N=(1,0)$ supersymmetric theory coupled to a hypermultiplet valued in a symplectic representation $U$.  This twist is equivalent to holomorphic Chern-Simons theory coupled to a holomorphic symplectic boson valued in the representation $U$.  It is generally only $\ZZ/2\ZZ$-graded, but can be promoted to a $\ZZ$-graded theory when $U = T^*R$ is of cotangent type.  It is invariant for the action of $\SU(3)$ in general, and can be defined on Calabi-Yau 3-folds, and the metalinear unitary group $\mr {MU}(3)$ in the cotangent case, and can be defined on complex 3-folds with a choice of square root of the canonical bundle.  When $U = T^*\gg$, the supersymmetry can be promoted to $\mc N=(1,1)$ supersymmetry, and the twist can be identified with a holomorphic BF theory coupled to adjoint holomorphic matter.  This twist has also been calculated in forthcoming work of Dylan Butson \cite{Butson}. \chris{something was studied by \cite{BaulieuBossard} in the pure $\mc N=(1,0)$ case, but it doesn't look the same?}
+ \item \emph{$\mc N=(1,0)$ and $\mc N=(1,1)$ holomorphic twist.} There is a holomorphic twist in 6 dimensions that can be defined for the $\mc N=(1,0)$ supersymmetric theory coupled to a hypermultiplet valued in a symplectic representation $U$.  This twist is equivalent to holomorphic Chern-Simons theory coupled to a holomorphic symplectic boson valued in the representation $U$.  It is generally only $\ZZ/2\ZZ$-graded, but can be promoted to a $\ZZ$-graded theory when $U = T^*R$ is of cotangent type.  It is invariant for the action of $\SU(3)$ in general, and can be defined on Calabi-Yau 3-folds, and the metalinear unitary group $\mr {MU}(3)$ in the cotangent case, and can be defined on complex 3-folds with a choice of square root of the canonical bundle.  When $U = T^*\gg$, the supersymmetry can be promoted to $\mc N=(1,1)$ supersymmetry, and the twist can be identified with a holomorphic BF theory coupled to adjoint holomorphic matter.  This twist has also been calculated in forthcoming work of Dylan Butson \cite{Butson}. 
  \item \emph{$\mc N=(1,1)$ special rank $(1,1)$ twist.} In the $\mc N=(1,1)$ case there are two intermediate twists.  The one by a supercharge of rank $(1,1)$ is equivalent to a generalized form of BF theory, with two topological directions and two complex holomorphic directions.  This theory is $\mr U(2) \times \spin(2;\RR)$-invariant, and can be defined on the product of a complex surface with a Riemann surface.
  \item \emph{$\mc N=(1,1)$ rank $(2,2)$ twist.} The other intermediate twist, by a rank $(2,2)$ supercharge, is equivalent to a generalized form of Chern-Simons theory with four real directions and one complex holomorphic direction.  This theory is only $\ZZ/2\ZZ$-graded.  It is invariant for the action of $\spin(4;\RR)$, and can be defined on the product of a flat Riemann surface and a spin 4-manifold.
- \item \emph{$\mc N=(1,1)$ topological twist.} Finally, there is a topological twist in 6 dimensions obtained by dimensionally reducing the 7-dimensional topological twist.  This theory is again perturbatively trivial, but can be realized as the generic point in a 1-parameter degeneration of the holomorphic twist.  It is $\SU(3)$-invariant, although the full one-parameter family is only $\SU(2) \times \spin(2;\RR)$-invariant.  This theory was also studied in \cite{AcharyaOLoughlinSpence} (\chris{I'm struggling to understand whether we should cite \cite{BaulieuKannoSinger, BaulieuLosevNekrasov} here or elsewhere.}; its equations of motion include the Donaldson-Thomas equations.
+ \item \emph{$\mc N=(1,1)$ topological twist.} Finally, there is a topological twist in 6 dimensions obtained by dimensionally reducing the 7-dimensional topological twist.  This theory is again perturbatively trivial, but can be realized as the generic point in a 1-parameter degeneration of the holomorphic twist.  It is $\SU(3)$-invariant, although the full one-parameter family is only $\SU(2) \times \spin(2;\RR)$-invariant.  This theory was also studied in \cite{AcharyaOLoughlinSpence, BaulieuKannoSinger}; its equations of motion include the Donaldson-Thomas equations.
 \end{itemize}
 
 \textbf{Dimension 5}
@@ -201,18 +212,17 @@ Our goal will then be to show that a particular twist of super Yang--Mills is eq
 
 \textbf{Dimension 3}
 \begin{itemize}
- \item \emph{$\mc N=2$, $\mc N=4$ and $\mc N=8$ minimal twist.} There is a minimal twist in dimension 3 which can be defined with $\mc N=2$ supersymmetry, including a chiral multiplet valued in a representation $R$.  This twist is perturbatively equivalent to a generalized form of BF theory with one real direction and one complex holomorphic direction, coupled to a generalized $\beta \gamma$-system valued in $R$.  This theory is $\mr U(1)$-equivariant, and can be defined on the product of a Riemann surface and a flat 1-manifold.  If the supersymmetry is promoted to $\mc N=4$, with $R = U \oplus \gg$ for a symplectic representation $U$, and the twisted theory is modelled by a generalized BF theory now coupled to a generalized symplectic boson.  Finally, if $U = T^*\gg$ the supersymmetry lifts to $\mc N=8$, and the twisted theory can be identified with generalized BF theory valued in $T[1](\gg/\gg)$.
+ \item \emph{$\mc N=2$, $\mc N=4$ and $\mc N=8$ minimal twist.} There is a minimal twist in dimension 3 which can be defined with $\mc N=2$ supersymmetry, including a chiral multiplet valued in a representation $R$.  This twist is perturbatively equivalent to a generalized form of BF theory with one real direction and one complex holomorphic direction, coupled to a generalized $\beta \gamma$-system valued in $R$.  This theory is $\mr U(1)$-equivariant, and can be defined on the product of a Riemann surface and a flat 1-manifold.  If the supersymmetry is promoted to $\mc N=4$, with $R = U \oplus \gg$ for a symplectic representation $U$, then the twisted theory is modelled by a generalized BF theory now coupled to a generalized symplectic boson.  Finally, if $U = T^*\gg$ the supersymmetry lifts to $\mc N=8$, and the twisted theory can be identified with generalized BF theory valued in $T[1](\gg/\gg)$.
  \item \emph{$\mc N=4$ and $\mc N=8$ topological A twist.} If $\mc N$ is at least 4, this minimal twist can be deformed in two inequivalent ways.  The first is a perturbatively trivial theory which we refer to as the A-twist, obtained by dimensional reduction from the 4d A-twist.  This theory fits into a non-trivial family deforming the minimal twist, which is $\mr U(1)$-equivariant, and can be defined on the product of a Riemann surface and a flat 1-manifold.  This twist was studied by Blau and Thompson \cite{BlauThompson1}, where it is referred to as a Casson invariant model, as well as Kapustin and Vyas \cite{KapustinVyas} as a dimensional reduction of Donaldson-Witten theory.
  \item \emph{$\mc N=4$ and $\mc N=8$ topological B twist.} The remaining topological twist is perturbatively equivalent to the 3d topological BF theory coupled to a symplectic boson valued in symplectic representation $U$.  It is $\spin(3;\RR)$-invariant, and can be defined on arbitrary 3-manifolds. This form of twist was studied by Rozansky and Witten, \cite{RozanskyWitten} as well as by Blau and Thompson \cite{BlauThompson2}.
 \end{itemize}
 
 \textbf{Dimension 2}
 \begin{itemize}
- \item \emph{Non-Chiral ($\mc N=(2,2), (4,4), (8,8)$) holomorphic twist.}
- \item \emph{Non-Chiral ($\mc N=(4,4), (8,8)$) topological A twist.}
- \item \emph{Non-Chiral ($\mc N=(4,4), (8,8)$) topological B twist.}
- \item \emph{Chiral $\mc N=(0,N_-)$ holomorphic twist.} 
-Twisted $(0,2)$ $\sigma$-models were first studied by Witten in \cite{WittenMirror}, and can be used to obtain the chiral algebra of chiral differential operators \cite{WittenCDO}. 
+ \item \emph{Non-Chiral ($\mc N=(2,2), (4,4), (8,8)$) holomorphic twist.} There is a holomorphic twist in dimension 2 which can be defined with $\mc N=(2,2)$ supersymmetry, including a chiral multiplet valued in a representation $R$.  This twist is perturbatively equivalent to a holomorphic BF theory coupled to a $\beta \gamma$-system valued in $R$.  More specifically: to holomorphic BG theory valued in the tangent space $T[1]R/\gg$.  This theory is $\mr U(1)$-equivariant, and can be defined on any Riemann surface.  If the supersymmetry is promoted to $\mc N=(4,4)$, with $R = U \oplus \gg$ for a symplectic representation $U$, then the twisted theory can now be modelled by holomorphic BF theory coupled to a holomorphic symplectic boson.  Finally, if $U = T^*\gg$ the supersymmetry lifts to $\mc N=8$, and the twisted theory can be identified with holomorphic BF theory valued in $T[1]T^*[2](\gg/\gg))$.  The study of twists of 2d $\mc N=(2,2)$ supersymmetric field theories goes back to work of Eguchi and Yang \cite{EguchiYang} and Witten \cite{Wittenmirror}.
+ \item \emph{Non-Chiral ($\mc N=(2,2), (4,4), (8,8)$) topological A twist.} In each of these cases, the minimal twist can again be deformed to a topological theory in two inequivalent ways.  The first is a perturbatively trivial theory: the A-model valued in the cotangent space to the quotient stack $R/\gg$.
+ \item \emph{Non-Chiral ($\mc N=(2,2), (4,4), (8,8)$) topological B twist.} The remaining topological twist, the B-twist, is perturbatively equivalent to a 2d topological BF theory, coupled a topological matter valued in the representation $R$.
+ \item \emph{Chiral $\mc N=(0,N_-)$ holomorphic twist.} Chiral theories in 2-dimensions only admit a holomorphic twist.  These twists can all be realised as holomorphic BF theory on $\CC$, coupled to a holomorphic $\beta \gamma$-system (in the case where the chiral theory includes matter), or to a holomorphic free fermion (in the case where the chiral theory is pure gauge with $\mc N=(0,N_-)$ supersymmetry). Twisted $(0,2)$ $\sigma$-models were first studied by Witten in \cite{Wittenmirror}, and can be used to obtain the chiral algebra of chiral differential operators \cite{WittenCDO}. 
 \end{itemize}
 
 
@@ -452,10 +462,7 @@ where ${\rm PolyDiff}(\cE^{\times n}, \cF)$ denotes the space of polydifferentia
 When $\cF = \cE$, we refer to ${\rm Fun}_{\rm loc}(\cE, \cE)$ as the space of local vector fields on $E$. 
 There is a natural Lie bracket on ${\rm Fun}_{\rm loc}(\cE, \cE)$ and a canonical action of this Lie algebra on local functionals. 
 
-\subsection{Local formal moduli problems}
-
-
-\subsection{Classical BV Theories}
+\subsection{Classical BV Theories} \label{sect:BV}
 
 The classical BV (Batalin-Vilkovisky) formalism \cite{BatalinVilkovisky} is a model for classical field theory from the Lagrangian perspective.  In brief the classical BV formalism produces a local model for the critical locus of an action functional, but considered in the derived sense.  That is, given a space $\Phi$ of fields and an action functional with derivative $\d S$, one considers not just the usual locus in $\Phi$ of fields with $\d S(\phi) = 0$, but the derived intersection $\mr{dCrit}(S) = \Phi \cap^h_{T^*\Phi} \Gamma_{\d S}$ of the zero section in $T^*\Phi$ with the graph of $\d S$.  The formalism we describe below can be interpreted as an abstract formalism for modelling the tangent complex at a point to a derived critical locus $\mr{dCrit}(S)$.
 
@@ -885,6 +892,107 @@ If the fields of the classical BRST theory are denoted by $\phi$, we denote thei
 \brian{Looks like you're using a bracket we haven't defined. 
 We've only defined brackets on local functionals, but I think when you write $\phi(x)$ you mean a point-like observable, which is far from local.} \chris{I don't think we need to say this so precisely.  I think it's enough to say that a homogeneous splitting $F = \bigoplus_i \Phi_i$ induces a splitting $F^! = \bigoplus_i \Phi_i^!$, and if we denote a general element of the summand $\Phi_i$ by $\phi$ then we will denote a general element of the summand $\Phi_i^!$ by $\phi^*$.}
 
+\subsection{Local Formal Moduli Problems} \label{sect:FMP}
+
+It will be convenient for us to represent spaces of fields in classical field theories in terms of mapping spaces. In this section we explain their meaning, while in the rest of the paper it will be just a convenient notation.
+
+Recall that a formal moduli problem is a functor from connective dg Artinian algebras $(R, \mathfrak{m})$ to simplicial sets which satisfies a derived version of Schlessinger's condition. We refer to \cite{DAGX,PridhamFMP,Toen} for more details.
+
+For instance, if $\fg$ is an $L_\infty$ algebra, we have a formal moduli problem $B\fg$ defined by
+\[(B\fg)(R, \mathfrak{m})=\mathrm{MC}(\fg\otimes \mathfrak{m}),\]
+where $\mathrm{MC}(\fg\otimes \mathfrak{m})$ is the simplicial set of Maurer--Cartan elements. The main result of \cite{DAGX,PridhamFMP} is that the functor $B$ defines an equivalence of $\infty$-categories between $L_\infty$ algebras and formal moduli problems. The inverse functor sends a formal moduli problem $\cM$ to the $L_\infty$-algebra $T_{\cM, \ast}[-1]$, the shifted tangent complex of $\cM$ at the basepoint. This important result will only serve as a motivation.
+
+Let $V$ be a $\fg$-representation. Then we may construct an $L_\infty$ algebra
+\[L_{V, \fg}=\fg\oplus V[-1]\]
+with the only nontrivial brackets coming from the $L_\infty$ brackets on $\fg$ and the action map of $\fg$ on $V$. We introduce the notation
+\[V/\fg:= B L_{V, \fg}.\]
+
+\begin{example}
+If $\fg$ is an $L_\infty$ algebra, it has an adjoint representation $\fg$. We define the \defterm{$n$-shifted tangent bundle} of $B\fg$ to be
+\[T[n] B\fg = \fg[n+1] / \fg.\]
+\label{ex:tangentBg}
+\end{example}
+
+\begin{example}
+Suppose $\fg$ is an $L_\infty$ algebra which is bounded as a complex and has finite-dimensional graded pieces. Then $\fg^*$ is a coadjoint representation of $\fg$. We define the \defterm{$n$-shifted cotangent bundle} of $B\fg$ to be
+\[T^*[n] B\fg = \fg^*[n-1] / \fg.\]
+\label{ex:cotangentBg}
+\end{example}
+
+\begin{definition}
+Let $\fg$ be an $L_\infty$ algebra. A \defterm{$\Gm$-action} on a formal moduli problem $B\fg$ is a weight grading $\fg = \oplus_m \fg(m)$ compatible with the $L_\infty$ structure.
+\end{definition}
+
+\begin{example}
+Suppose $\fg$ is an $L_\infty$ algebra and $V$ is a $\fg$-representation. Then $V/\fg$ carries a $\Gm$-action: the underlying $L_\infty$ algebra $\fg\oplus V[-1]$ carries a grading where $\fg$ has weight $0$ and $V[-1]$ has weight $1$. For instance, $T[n] B\fg$ and $T^*[n] B\fg$ carry $\Gm$-actions.
+\end{example}
+
+Now suppose $L$ is a local $L_\infty$ algebra on a manifold $M$. For every open subset $U\subset M$ we have a formal moduli problem
+\[(B L)(U) = B L(U),\]
+i.e. $\cL$ defines a presheaf $B L$ of formal moduli problems on $M$. The following definition was introduced in \cite[Definition 4.1.3.3]{Book2}.
+
+\begin{definition}
+A \defterm{local formal moduli problem on $M$} is a presheaf of formal moduli problems on $M$ represented by a local $L_\infty$ algebra.
+\end{definition}
+
+\begin{remark}
+In \cite{Book2} an extra assumption of ellipticity is required for the local $L_\infty$ algebras considered. It is only relevant for quantization which we do not consider in this paper, so we will drop this extra assumption.
+\end{remark}
+
+\begin{example}
+Let $X,Y$ be complex manifolds, $M$ a smooth manifold and $B\fg$ a formal moduli problem represented by an $L_\infty$ algebra $\fg$. Then we may define the following local formal moduli problem on $X\times Y\times M$. Let $\Omega^{0, \bullet}_X$ be the graded vector bundle of $(0, n)$-forms on $X$, $\Omega^{\bullet, \bullet}_Y$ be the graded vector bundle of $(p, q)$-forms on $Y$ and $\Omega^\bullet_M$ a graded vector bundle of differential forms on $M$. We may then consider a graded vector bundle
+\[L = \Omega^{0,\bullet}_X\otimes \Omega^{\bullet, \bullet}_Y\otimes \Omega^\bullet_M\otimes \fg\]
+on $X\times Y\times M$. It carries a differential given by the sum $\ol\dd_X + \ol\dd_Y + \d_M + \d_\fg$. It also carries a local $L_\infty$ structure which uses the $L_\infty$ structure on $\fg$ and the wedge product of differential forms. We then define
+\[\map(X\times Y_{\mathrm{Dol}}\times M_{\mathrm{dR}}, B\fg) := B L.\]
+\label{ex:mappingspace}
+\end{example}
+
+\begin{remark}
+A smooth complex algebraic variety $X$ gives rise to derived stacks $X_{\mathrm{Dol}}$ and $X_{\mathrm{dR}}$ defined by Simpson \cite{Simpson,PTVV}. So, given smooth complex algebraic varieties $X,Y,M$ and a derived stack $F$ we may consider the mapping stack
+\[\map(X\times Y_{\mathrm{Dol}}\times M_{\mathrm{dR}}, F).\]
+Example \ref{ex:mappingspace} is an analogous construction in the world of formal moduli problems.
+\end{remark}
+
+\begin{example}
+Consider $X, Y, M, \fg$ as in Example \ref{ex:mappingspace} and suppose $E$ is a line bundle on $X\times Y\times M$, equipped with a holomorphic structure along $X\times Y$ and a flat connection along $M$. Moreover, assume $B\fg$ carries a $\Gm$-action. We then have a local $L_\infty$ algebra
+\[L = \bigoplus_m \Omega^{0,\bullet}_X\otimes \Omega^{\bullet, \bullet}_Y\otimes \Omega^\bullet_M\otimes \fg(m)\otimes E^{\otimes m}\]
+on $X\times Y\times M$. We define
+\[\Sect(X\times Y_{\mathrm{Dol}}\times M_{\mathrm{dR}}, B\fg\times_{\Gm} L) := B L.\]
+\end{example}
+
+As in Examples \ref{ex:tangentBg} and \ref{ex:cotangentBg}, we may define shifted tangent and cotangent bundles of a local formal moduli problem which give more examples.
+
+\begin{lemma}
+Consider $X,Y,M, \fg$ as in Example \ref{ex:mappingspace}. The local formal moduli problem $T^*[n]\map(X\times Y_{\mathrm{Dol}}\times M_{\mathrm{dR}}, B\fg)$ is isomorphic to the local formal moduli problem
+\[\Sect\left(X\times Y_{\mathrm{Dol}}\times M_{\mathrm{dR}}, T^*[n+\dim(X)+2\dim(Y)+\dim(M)] B\fg\times_{\Gm} (K_X\otimes \Dens_M)\right),\]
+where $K_X$ is the canonical bundle of $X$ and $\Dens_M$ is the line bundle of densities on $M$.
+\end{lemma}
+\begin{proof}
+The claim follows from the following isomorphisms of graded vector bundles:
+\begin{align*}
+\left(\Omega^{0, \bullet}_X\right)^!&\cong \Omega^{0, \bullet}_X\otimes K_X[\dim(X)] \\
+\left(\Omega^{\bullet, \bullet}_Y\right)^!&\cong \Omega^{\bullet, \bullet}_Y[2\dim(Y)] \\
+\left(\Omega^\bullet_M\right)^!&\cong \Omega^\bullet_M\otimes \Dens_M[\dim(M)].
+\end{align*}
+\end{proof}
+
+Given a local formal moduli problem, we may talk about shifted symplectic structures \cite{PTVV} on it. In this paper will only be interested in a strict notion as follows.
+
+\begin{definition}
+Let $\cM$ be a local formal moduli problem on $M$ represented by a local $L_\infty$ algebra $L$. A \defterm{strict $n$-shifted symplectic structure} on $\cM$ is a pairing $\omega\colon L\otimes L\rightarrow \Dens_M[n-2]$ satisfying the following conditions:
+\begin{enumerate}
+\item It is fiberwise nondegenerate.
+\item It is graded skew symmetric.
+\item The pairing $\cL_c\otimes \cL_c \rightarrow \CC$ defined by
+\[\alpha\otimes \beta \mapsto \int_M \omega (\alpha \otimes \beta)\]
+is an invariant pairing on the $L_\infty$ algebra $\cL_c$.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}
+A classical BV field theory as defined in Section \ref{sect:BV} is equivalent to the data of a local formal moduli problem on the spacetime manifold $M$ equipped with a strict $(-1)$-shifted symplectic structure.
+\end{remark}
+
 \subsection{Examples of Classical Field Theories}
 
 In this section we give some examples of classical field theories we will use in our classification of twisted supersymmetric field theories. All theories we consider in this section are $\ZZ$-graded, i.e. the space $E$ of fields will be completely even with respect to the $\ZZ/2\ZZ$-grading.
@@ -904,12 +1012,9 @@ Let $X$ and $Y$ be complex manifolds and $M$ a smooth oriented manifold. Fix an 
 
 \item The BRST action is $S_{\mr{BRST}} = 0$.
 \end{itemize}
-We denote the space of BV fields by $\cE = \map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[d] B\fg)$, where $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1$.
+We denote the space of BV fields by $T^*[-1] \map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B\fg)$.
 \label{def:generalizedBF}
 \end{definition}
-
-\brian{We have not defined the notation $\Omega^{0,\bu}, \Omega^{\bu,\bu}, \Omega^\bu$.}
-\brian{Also, define the notation $T^*[-1] {\rm Map}$. }
 
 \begin{remark} \label{mapping_stack_remark}
 The mapping stack above has a precise meaning in the language of derived algebraic geometry -- see for instance \cite{PTVV}, where, if $X, Y$ and $M$ are compact, such a mapping stack is shown to carry a $-1$-shifted symplectic structure.  For the purposes of this paper, while we think of the derived stack as the global moduli space of solutions to the equations of motion in generalized BF theory, we will only use the perturbative datum of the classical BV complex.  The language of the mapping stack will simply be used as a compact way of referring to the theory above. 
@@ -971,6 +1076,7 @@ In fact, the $\SO(n_3)$-action given by the previous proposition extends to a ho
 The next class of examples of classical BV theories we give are generalizations of Chern-Simons theory. Unlike the example of the generalized BF theory, these theories are not of cotangent type.
 
 \begin{definition}
+\label{dfn: cs}
 Let $X$ and $Y$ be complex manifolds and $M$ a smooth oriented manifold. Fix an $L_\infty$ algebra $\fg$. We assume $X$ is equipped with a holomorphic volume form $\Omega_X \in\Omega^{\dim(X), 0}(X)$ and $\fg$ is equipped with a nondegenerate invariant symmetric pairing $\langle-, -\rangle\colon \fg\otimes\fg\rightarrow \CC[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 3]$. The \defterm{generalized Chern--Simons theory} is the following classical BV theory:
 \begin{itemize}
 \item The spacetime is the smooth manifold $X\times Y\times M$.
@@ -1020,14 +1126,14 @@ We will also sometimes use the following variant of the generalized Chern--Simon
 
 \begin{definition}
 Let $m$ be a positive integer. Suppose $X$ is a complex manifold equipped with an $m$-th root $K_X^{1/m}$ of the canonical bundle, $Y, M, \fg$ are as before and $\fg$ is equipped with a weight grading $\fg=\oplus_n \fg(n)$ for which the symmetric pairing $\langle -, -\rangle$ on $\fg$ has weight $m$. We may consider a version of the generalized Chern--Simons theory with the bundle of BV fields
-\[E = \bigoplus_n \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg(m)\otimes K_X^{n/m} [1]\]
+\[E = \bigoplus_n \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg(n)\otimes K_X^{n/m} [1]\]
 and the symplectic pairing $\omega$ and the action functional as before where we do not use the holomorphic volume form on $X$.
 \end{definition}
 
 We denote the space of fields $\cE = \Sect(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B \fg\times_{\Gm} K_X^{1/m})$.
 
 \begin{example}
-Consider the setting of Example \ref{ex:CSHamiltonianreduction}. The dg Lie algebra $\cL$ carries a weight grading, where we consider $\fg$ in weight 0, $V$ in weight $1$ and $\fg^*$ in weight $2$. With respec to this weight grading the bilinear pairing on $\fg$ has weight $2$, so we may define the corresponding generalized Chern--Simons theory with the space of fields
+Consider the setting of Example \ref{ex:CSHamiltonianreduction}. The dg Lie algebra $\cL$ carries a weight grading, where we consider $\fg$ in weight 0, $V$ in weight $1$ and $\fg^*$ in weight $2$. With respect to this weight grading the bilinear pairing on $\fg$ has weight $2$, so we may define the corresponding generalized Chern--Simons theory with the space of fields
 \[\Sect(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, (U\otimes K_X^{1/2})\ham \fg).\]
 \end{example}
 
@@ -1140,7 +1246,7 @@ Therefore, it makes sense to talk about ``the'' dimensional reduction of a class
 We will now describe dimensional reductions of the classical Chern--Simons theory.
 
 \begin{prop} \label{CS_to_BF_diml_red_prop}
-Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$ equipped with a nondegenerate invariant pairing and consider the generalized Chern--Simons theory
+Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$ equipped with a nondegenerate invariant pairing as in Definition \ref{dfn: cs} and consider the corresponding generalized Chern--Simons theory
 \[\map(X\times Y_{\mr{Dol}}\times (M\times \RR)_{\mr{dR}}, B\fg).\]
 Its dimensional reduction along the projection $p\colon X\times Y\times (M\times \RR)\rightarrow X\times Y\times M$ is isomorphic to the generalized BF theory
 \[\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1] B\fg).\]
@@ -2279,7 +2385,7 @@ The twist of $(4+\dim(L))$-dimensional super Yang--Mills on $L\times N_\RR$ by $
 By Theorem \ref{thm:8dholomorphictwist} the twist of 8d $\cN=1$ super Yang--Mills on $L\times N$ by $Q$ is perturbatively equivalent to the holomorphic BF theory. Moreover, the equivalence is $\MU(L)\times \SU(N)$-equivariant. By Corollary \ref{cor:BFholomorphicreduction} we get that the dimensional reduction of holomorphic BF theory on $L\times N$ along $\Re\colon N\rightarrow N_\RR$ is isomorphic to the generalized BF theory with the space of fields $T^*[-1]\map(L\times N_\RR, B\fg)$ and this isomorphism is $\MU(L)\times \SO(N_\RR)$-equivariant, where $\SO(N_\RR)$ acts on $N$ via the homomorphism \eqref{eq:SOtoSU}.
 \end{proof}
 
-We will now concentrate on the 7-dimensional case.
+The 7-dimensional result immediately follows.
 
 \begin{theorem}
 The minimal twist of 7d $\cN=1$ super Yang--Mills on $M=\CC^3\times \RR$ is perturbatively equivalent to the generalized BF theory with the space of fields $T^*[-1]\map(\CC^3\times \RR_{\mr{dR}}, B\fg)$. Moreover, the equivalence is $\U(3)$-equivariant.
@@ -3069,7 +3175,7 @@ W\cong (S_{+, 1}\otimes S_{+, 2}\oplus S_{-, 1}\otimes S_{-, 2})\oplus (S_{+, 1}
 \label{eq:4d411decomposition}
 \end{equation}
 
-In this case $S_+\otimes W$ and $S_-\otimes W$ have two-dimensional trivial $G$-subrepresentations. Any scalar rank $(1, 1)$ supercharge is square-zero. We choose a homomorphism $\alpha\colon \U(1)\rightarrow G_R$ under which the first two summands in \eqref{eq:4d411decomposition} have weight $1$ and the last two summands have weight $-1$. This makes the chosen rank $(1, 1)$ supercharge have weight $1$.
+In this case $S_+\otimes W$ and $S_-\otimes W^*$ have two-dimensional trivial $G$-subrepresentations. Any scalar rank $(1, 1)$ supercharge is square-zero. We choose a homomorphism $\alpha\colon \U(1)\rightarrow G_R$ under which the first two summands in \eqref{eq:4d411decomposition} have weight $1$ and the last two summands have weight $-1$. This makes the chosen rank $(1, 1)$ supercharge have weight $1$.
 
 \begin{theorem}
 The rank (1, 1) twist of 4d $\cN=4$ super Yang--Mills on $M=\RR^4$ is perturbatively equivalent to the generalized BF theory with the space of fields $T^*[-1] \map(\CC_{\rm Dol}\times \RR^2_{\mathrm{dR}}, B \fg)$. Moreover, the equivalence is $\Spin(2, \RR)\times \Spin(2, \RR)$-equivariant.
@@ -3336,10 +3442,6 @@ The minimal twist of 3d $\cN=4$ super Yang--Mills on $N \times L=\CC\times \RR$ 
 The statement about the equivalence of the underlying $\ZZ/2\ZZ$-graded theories follows from applying dimensional reduction (Theorem \ref{CS_diml_red_prop}) to Theorem \ref{4d_2_minimal_twist_thm} calculating the holomorphic twist of 4d $\mc N=2$ super Yang-Mills on $N \times L_\CC$.  This equivalence is equivariant for the action of $\mr U(1) \iso \MU(N) \sub \MU(N \times L_\CC)$.
 \end{proof}
 
-\begin{remark}
-\brian{Cotangent type.}
-\end{remark}
-
 \subsubsection{Topological A Twist}
 \label{sect:3d_4_A_twist}
 Let $L=\CC$ equipped with a Hermitian structure and a complex half density, $N_\RR=\RR$ equipped with a Euclidean structure and $N=N_\RR\otimes_\RR\CC$ its complexification. Consider the 4-dimensional spacetime $V_\RR=L\times N$. Under the projection $\Re\colon N\rightarrow N_\RR$ the family $Q_t$ of 4-dimensional square-zero supercharges given by \eqref{eq:4dHodgefamily} dimensionally reduces to a family of 3-dimensional square-zero supercharges which at $t\neq 0$ are topological at and $t=0$ have 2 invariant directions. Since they admit a compatible $\ZZ$-grading, at $t=0$ we obtain the holomorphic twist and at $t\neq 0$ we obtain the topological B twist. Therefore, from Theorem \ref{thm:4dDonaldsontwist} we obtain the following statement.
@@ -3362,7 +3464,8 @@ The rank $2$ B-twist of 3d $\mc N=4$ super Yang-Mills theory with symplectic mat
 \end{theorem}
 
 \subsection{\texorpdfstring{$\cN = 8$}{N=8} Super Yang-Mills Theory} \label{3d8section}
-Finally, let's consider maximal super Yang-Mills theory with gauge group $G$ in dimension 3, with $\mc N=8$ supersymmetry.  This is the theory obtained by compactifying $\mc N=(1,0)$ super Yang-Mills on $\RR^{10}$ down to $\RR^3$.  The $R$-symmetry group is $G_R = \Spin(7;\CC)$, acting on $W$ by its (Dirac) spin representation.
+Finally, let's consider maximal super Yang-Mills theory with gauge group $G$ in dimension 3, with $\mc N=8$ supersymmetry.  This is the theory obtained by compactifying $\mc N=(1,0)$ super Yang-Mills on $\RR^{10}$ down to $\RR^3$.  
+The $R$-symmetry group is $G_R = \Spin(7;\CC)$, and $W$ is its $8$-dimensional (Dirac) spin representation.
 
 \vspace{-10pt}
 \paragraph{Fields:} We can describe the BRST fields of $\mc N=4$ super Yang-Mills by restricting the 4d fields from Section \ref{4d_4_section} to representations of the group $\spin(3;\CC)$.  The fields we obtain are
@@ -3374,11 +3477,12 @@ Finally, let's consider maximal super Yang-Mills theory with gauge group $G$ in 
 
 In the $\mc N=8$ supersymmetry algebra the classification of twists is the same as we saw in $\mc N=4$.  That is, there are three orbits: one consisting of rank 1 supercharges, and two orbits of rank 2 supercharges.  We can see this in the following way.
 \begin{lemma}
-There are two $\spin(3;\CC) \times G_R$-orbits of rank 2 supercharges in the 3d $\mc N=8$ supersymmetry algebra.
+There are two distinct $\spin(3;\CC) \times G_R$-orbits of square-zero supercharges of rank $2$ in the 3d $\mc N=8$ supersymmetry algebra.
 \end{lemma}
 
 \begin{proof}
-Choose a symplectic basis $\langle s, s' \rangle$ for $S$, and let $Q = s \otimes w + s' \otimes w'$ be a square-zero rank 2 element of $S \otimes W$.  Let $V_7$ denote the fundamental representation of $G_R$.  As in Section \ref{9d_section}, the element $w \in W$ is equivalent to the data of a maximal isotropic subspace $L \sub V_7$, together with a choice of half-density.  This element $w$ is stabilized, in particular, by a copy of the metalinear group $\ML(L)$, under whose action the auxiliary space $W$ decomposes as
+Choose a symplectic basis $\langle s, s' \rangle$ for $S$, and let $Q = s \otimes w + s' \otimes w'$ be a square-zero rank 2 element of $S \otimes W$.  Let $V_7$ denote the fundamental representation of $G_R$.  As in Section \ref{9d_section}, the element $w \in W$ is equivalent to the data of a maximal isotropic subspace $L \sub V_7$, together with a choice of a half-density.  This element $w$ is stabilized, in particular, by a copy of the metalinear group $\ML(L)$.
+Under the group $\ML(L)$ the auxiliary space $W$ decomposes as
 \[W \iso \left(\CC \oplus L \oplus \wedge^2 L \oplus \wedge^3 L \right) \otimes \det(L)^{-1/2},\]
 (see also \cite[Section 4.7]{ElliottSafronov}), with $w$ lying in the last summand.  Under this decomposition, split the remaining element $w' = (v_0, v_1, v_2, v_3)$.  Then
 \begin{itemize}
@@ -3879,5 +3983,19 @@ Note that both Proposition \ref{prop:cliffordactionproperty2} and Proposition \r
 
 \pagestyle{bib}
 \printbibliography
+
+\textsc{University of Massachusetts, Amherst}\\
+\textsc{Department of Mathematics and Statistics, 710 N Pleasant St, Amherst, MA 01003}\\
+\texttt{celliott@math.umass.edu}\\
+\vspace{-5pt}
+
+\textsc{Institut f\"ur Mathematik, Universit\"at Z\"urich}\\
+\textsc{Winterthurerstrasse 190, 8057 Z\"urich, Switzerland}\\
+\texttt{pavel.safronov@math.uzh.ch}\\
+\vspace{-5pt}
+
+\textsc{Northeastern University}\\
+\textsc{Department of Mathematics, 360 Huntington Ave, Boston, MA 02115}\\
+\texttt{brianwilliams.math@gmail.com}\\
 
 \end{document}
