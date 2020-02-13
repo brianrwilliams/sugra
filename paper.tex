@@ -282,7 +282,7 @@ Our goal will then be to show that a particular twist of super Yang--Mills is eq
  && \multirow{2}*{\hyperref[sect:3d8A_Twist] {Rank $2$ (A)}} & {Perturbatively trivial} & \multirow{2}*{3 (topological)} \\
  &&& $\mr{Map}(\CC_{\mr{Dol}} \times \RR_{\mr{dR}}, \gg/\gg)_{\mr{dR}}$ & \\ \hline
  \end{tabular}
- \caption{Twists of Maximally Supersymmetric Pure Yang-Mills Theories with gauge Lie algebra $\fg$ (16 supercharges).}
+ \caption{Twists of Maximally Supersymmetric Pure Yang-Mills Theories with Lie algebra $\fg$ (16 supercharges).}
  \label{table_of_twists_16}
 \end{table}
 
@@ -459,7 +459,7 @@ There is a natural Lie bracket on ${\rm Fun}_{\rm loc}(\cE, \cE)$ and a canonica
 \subsection{Formal Moduli Problems and Classical Field Theories}
 \label{sect:FMPs}
 
-It will be convenient for us to represent spaces of fields in classical field theories in terms of mapping spaces. In this section we explain their meaning, while in the rest of the paper it will be just a convenient notation.
+The classical BV (Batalin-Vilkovisky) formalism \cite{BatalinVilkovisky} is a model for classical field theory from the Lagrangian perspective.  In brief, the classical BV formalism produces a local model for the critical locus of an action functional, but considered in the derived sense.  That is, given a space $\mc F$ of fields and an action functional with derivative $\d S$, one considers not just the usual locus in $\mc F$ of fields with $\d S(\phi) = 0$, but the derived intersection $\mr{dCrit}(S) = \mc F \cap^h_{T^*\mc F} \Gamma_{\d S}$ of the zero section in $T^*\mc F$ with the graph of $\d S$.  The formalism we describe below can be interpreted as an abstract formalism for modelling the tangent complex at a point to a derived critical locus $\mr{dCrit}(S)$ as a formal moduli problem.
 
 Recall that a formal moduli problem is a functor from connective dg Artinian algebras $(R, \mathfrak{m})$ to simplicial sets which satisfies a derived version of Schlessinger's condition. We refer to \cite{DAGX,PridhamFMP,Toen} for more details.
 
@@ -569,11 +569,8 @@ Let $\cM$ be a local formal moduli problem on $M$ represented by a local $L_\inf
 
 \item It is graded skew symmetric.
 
-\item The pairing
-\begin{align*}
-\cL_c\otimes \cL_c&\rightarrow \CC \\
-\alpha\otimes \beta&\mapsto \int_M \langle \alpha, \beta\rangle
-\end{align*}
+\item The pairing $\cL_c\otimes \cL_c \rightarrow \CC$ defined by
+\[\alpha\otimes \beta \mapsto \int_M \omega( \alpha, \beta)\]
 is an invariant pairing on the $L_\infty$ algebra $\cL_c$.
 \end{enumerate}
 \end{definition}
@@ -642,13 +639,39 @@ A \defterm{classical BV field theory} (or, simply, classical field theory) is a 
 \label{def:classicalfieldtheory}
 \end{definition}
 
-Given a classical field theory represented by a local $L_\infty$ algebra $L$ on $M$, we call $E=L[1]$ the \defterm{bundle of BV fields}. Moreover, we call the Poisson bracket on $\oloc(\cM)$ the \defterm{BV bracket}. It will be convenient to think of a classical field theory as a triple $(E, \omega, S)$ of the bundle of BV fields equipped with a $(-1)$-shifted symplectic pairing $\omega$ and an action functional $S$.
+Given a classical field theory represented by a local $L_\infty$ algebra $L$ on $M$, we call $E=L[1]$ the \defterm{bundle of BV fields}, and we call the complex $(E, Q_{\mr{BV}})$ the \defterm{classical BV complex}. We call the Poisson bracket on $\oloc(\cM)$ the \defterm{BV bracket}. It will be convenient to think of a classical field theory as a quadruple $(E, \omega, Q_{\mr{BV}}, I)$ consisting of the bundle of BV fields equipped with a $(-1)$-shifted symplectic pairing $\omega$, a classical BV differential $Q_{\mr{BV}}$ and an interaction functional $I$.  We characterize such data in the following way.
 
-\begin{example}
+\begin{definition}
+A \defterm{free BV theory} on a manifold $M$ is the data of:
+\begin{itemize}
+\item a finite rank graded vector bundle $E \to M$ equipped with an even differential operator of cohomological degree $+1$
+\[
+Q_{\mr{BV}} \colon \cE \to \cE [1] 
+\]
+such that $(1)$: $Q_{\mr{BV}}^2 = 0$ and $(2)$: the pair $(\cE , Q_{\mr{BV}})$ is an elliptic complex;
+\item a map of bundles
+\[
+\omega\colon E \otimes E \to \Dens_M [-1]
+\]
+that is
+\begin{enumerate}
+\item[$(1)$] fiberwise nondegenerate,
+\item[$(2)$] graded skew symmetric, and
+\item[$(3)$] satisfies $\int_M \omega(e_0, Q_{\mr{BV}} e_1) = (-1)^{|e_0|} \int_M \omega(Q_{\mr{BV}} e_0, e_1)$ where $e_i$ are compactly supported sections of $E$ .
+\end{enumerate}
+\end{itemize}
+\end{definition}
+
+The datum of a classical BV field theory as in Definition \ref{def:classicalfieldtheory} is equivalent to the datum of a free BV theory $(E, Q, \omega)$ equipped with an even functional
+\[I \in \oloc^+(\cE)\]
+of cohomological degree zero satisfying the Maurer-Cartan equation
+\[Q_{\mr{BV}} I + \frac{1}{2} \{I,I\} = 0,\]
+under the identification of the BV action as
+\[S = \frac{1}{2} \int_M \omega(e, Q_{\mr{BV}} e) + I\in \oloc(E).\]
+
+\begin{example} \label{def:cotangent_type}
 Let $\cM=BL$ be a local formal moduli problem. Then the $(-1)$-shifted cotangent bundle $T^*[-1]\cM$ carries a natural $(-1)$-shifted symplectic structure. Indeed, $T^*[-1]\cM = B(L\oplus L^![-3])$ and we simply pair $L$ and $L^!$. Classical field theories arising via this construction are called of \defterm{cotangent type}.
 \end{example}
-
-%The classical BV (Batalin-Vilkovisky) formalism \cite{BatalinVilkovisky} is a model for classical field theory from the Lagrangian perspective.  In brief the classical BV formalism produces a local model for the critical locus of an action functional, but considered in the derived sense.  That is, given a space $\Phi$ of fields and an action functional with derivative $\d S$, one considers not just the usual locus in $\Phi$ of fields with $\d S(\phi) = 0$, but the derived intersection $\mr{dCrit}(S) = \Phi \cap^h_{T^*\Phi} \Gamma_{\d S}$ of the zero section in $T^*\Phi$ with the graph of $\d S$.  The formalism we describe below can be interpreted as an abstract formalism for modelling the tangent complex at a point to a derived critical locus $\mr{dCrit}(S)$.
 
 We will also consider $\CC[t]$-families of classical field theories.
 \begin{definition} \label{family_of_BV_theories_def}
@@ -661,12 +684,15 @@ comes from a pairing
 \[\omega_0\colon L_0\otimes L_0\rightarrow \Dens_M[-3].\]
 In this case the local $L_\infty$ structure is encoded in a $t$-dependent action functional $S$.
 
+\begin{remark}
 Besides the $\ZZ$-graded classical field theories defined above, we may consider the following variants of the above definition:
 \begin{itemize}
 \item A $\ZZ\times \ZZ/2\ZZ$-graded local $L_\infty$ algebra is a $\ZZ$-graded local $L_\infty$ algebra $L$ equipped with an extra $\ZZ/2\ZZ$-grading (the \defterm{fermionic grading}) with respect to which all operations are even. An $n$-shifted symplectic structure on a $\ZZ\times\ZZ/2\ZZ$-graded local formal moduli problem $BL$ is a pairing $L\otimes L\rightarrow \Dens_M[n-2]$ which is even with respect to the fermionic grading.
 
 \item A $\ZZ/2\ZZ$-graded classical field theory is defined in the same way as a $\ZZ$-graded classical field theory where we only consider the cohomological grading modulo 2.
 \end{itemize}
+\end{remark}
+
 
 \subsection{Perturbative Equivalence of Classical Field Theories}
 
@@ -724,12 +750,6 @@ where the bottom map multiplies a function by the volume element, then we can re
 
 
 We may also eliminate pairs of fields as follows.
-
-% \begin{prop}
-% Suppose $(E, Q_{\mr{BV}}, \omega, I)$ is a classical field theory, $F\rightarrow M$ is a graded vector bundle, such that $E\cong E_0\oplus E_1\oplus E_1^![-1]\oplus E_1^!\oplus E_1[-1]$. Denote by $\phi, \phi^*$ sections of $E_1,E_1^![-1]$ and by $\psi, \psi^*$ sections of $E_1^!, E_1[-1]$. Suppose
-% \[Q_{\mr{BV}}\phi + \{I, \phi\} = \phi - f_\psi \in E_1[-1] ,\qquad Q\psi + \{I, \psi\} = \psi - f_{\phi} \in E_1^![-1],\]
-% where $f_\phi$ is independent of $\psi$ and $f_{\psi}$ is independent of $\phi$. Then the theory $(E, Q_{\mr{BV}}, \omega, I)$ is perturbatively equivalent to the theory $(E_0, Q_0, \omega_0, I_0)$ with the BV action obtained by setting $\phi = f_\psi, \phi^* = 0,  \psi = f_\phi, \psi^* = 0$ in the original BV action.
-% \end{prop}
 
 \begin{prop} 
 \label{prop:BRSTdoublet}
@@ -836,13 +856,13 @@ where $S_{k, l}$ is the set of $(k, l)$-shuffles, $\epsilon$ is the usual Koszul
 \[\epsilon_1 = |g|k + \sum_{i=1}^k |x_{\sigma(i)}|(l+|g|).\]
 \end{definition}
 
-%The operator $Q_{\mr{BV}}$ on $\oloc(\cE)$ extends $C^\bu(\fg)$-linearly to an operator on $C^\bullet(\fg, \oloc(\cE))$ by the rule
-%\[
-%(Q_{\mr{BV}} f)(x_1,\ldots, x_n) = Q_{\mr{BV}} f(x_1,\ldots, x_n) 
-%\]
-%where $f \colon \fg^{\otimes n} \to \oloc(\cE)$. 
-%The differentials $\d_{\mr{CE}}$ and $Q_{\mr{BV}}$ are compatible in the sense that $(\d_{\mr{CE}} + Q_{\mr{BV}})^2 = 0$ making $C^\bu(\fg, \oloc(\cE))$ into a cochain complex with total differential $\d_{\mr{CE}} + Q_{\mr{BV}}$. 
-%Via the BV bracket, the shift of this cochain complex $C^\bu(\fg, \oloc(\cE))[-1]$ is a dg Lie algebra.  This shifted cotangent complex will model equivariant local observables in our classical field theory, but to finish defining the $\gg$ action we must define the equivariant version of the classical interaction.  This is defined as follows.
+The operator $Q_{\mr{BV}}$ on $\oloc(\cE)$ extends $C^\bu(\fg)$-linearly to an operator on $C^\bullet(\fg, \oloc(\cE))$ by the rule
+\[
+(Q_{\mr{BV}} f)(x_1,\ldots, x_n) = Q_{\mr{BV}} f(x_1,\ldots, x_n) 
+\]
+where $f \colon \fg^{\otimes n} \to \oloc(\cE)$. 
+The differentials $\d_{\mr{CE}}$ and $Q_{\mr{BV}}$ are compatible in the sense that $(\d_{\mr{CE}} + Q_{\mr{BV}})^2 = 0$ making $C^\bu(\fg, \oloc(\cE))$ into a cochain complex with total differential $\d_{\mr{CE}} + Q_{\mr{BV}}$. 
+Via the BV bracket, the shift of this cochain complex $C^\bu(\fg, \oloc(\cE))[-1]$ is a dg Lie algebra.  This shifted cotangent complex will model equivariant local observables in our classical field theory, but to finish defining the $\gg$ action we must define the equivariant version of the classical interaction.  This is defined as follows.
 
 \begin{definition}
 \label{infinitesimal_action_def}
@@ -867,6 +887,16 @@ By assumption that the Noether current is at least quadratic in the fields, we s
 \fg^{\otimes k} \otimes \cE^{\otimes \ell} \to \cE
 \]
 combining to give $\cE$ the structure of an $L_\infty$-module for $\fg$.
+\end{remark}
+
+\begin{remark}
+We have seen that a classical BV theory can also be presented in terms of a BV differential $Q_{\mr{BV}}$ and an interaction $I$ satisfying the Maurer-Cartan equation
+\[Q_{\mr{BV}} I + \frac{1}{2} \{I,I\} = 0 .\]
+One can also formulate actions of a Lie algebra on a classical theory in these terms. 
+The data of an action of a Lie algebra $\fg$ on a classical field theory $(E, \omega, S)$ is equivalent to the choice of a local interaction functional 
+\[I_\fg = \sum_{k\geq 0} I_{\fg}^{(k)} \text{ in } C^\bullet(\fg, \oloc(\cE)),\]
+satisfying the Maurer-Cartan equation
+\[(\d_{\mr{CE}} + Q_{\mr{BV}}) I_\fg + \frac{1}{2} \{I_\fg, I_\fg\} = 0.\]
 \end{remark}
 
 We may also define actions of supergroups on classical field theories.  The action of a supergroup $G$ is more data than the action of a super Lie algebra $\gg$: it includes the infinitesimal action of the Lie algebra $\gg$, along with an action of $G$ on the fields exponentiating this infinitesimal action.  That is, we make the following definition.
@@ -916,6 +946,12 @@ Given a classical BRST theory, we may consider the cotangent theory $T^*[-1]\cM$
 \begin{definition}
 Let $(\cM, S_{\mr{BRST}})$ be a classical BRST theory. The \defterm{associated classical BV theory} is the $(-1)$-shifted cotangent bundle $T^*[-1]\cM$ equipped with its natural $(-1)$-shifted symplectic structure and the action functional $S_{\mathrm{BRST}} + S_g$.
 \end{definition}
+
+In the case where $S_{\mr{BRST}} = 0$, the associated BV theory is of cotangent type, as in Example \ref{def:cotangent_type}.
+
+\begin{remark}
+In general, multiple BRST theories can give rise to the same BV theory.  A BV theory $(E, Q_{\mr{BV}}, \omega, I)$ is of cotangent type as long as there is \emph{some} $F$ with $S_{\mr{BRST}} = 0$ producing the given theory using the construction above.  Theories of cotangent type can still have interesting, non-trivial action functionals, encoded by the $L_\infty$ structure on $F$.
+\end{remark}
 
 \begin{remark}
 It is common to refer to coordinates on $\cM$ as \defterm{fields} and coordinates along the cotangent direction of $T^*[-1]\cM$ as \defterm{antifields}. Given a field $\phi$ the corresponding antifield will be denoted by $\phi^*$.
@@ -1654,8 +1690,7 @@ If we denote by $(A^*, \lambda^*,c^*)$ the anti-fields, the full BV action takes
 S_{\gauge} = \int_{V_\RR}\dvol \left( -\frac{1}{4} (F_A, F_A) + \frac{1}{2}(\lambda, \sd\d_A \lambda) + (\d_A c, A^*) + ([c, \lambda], \lambda^*) + \frac{1}{2}([c, c], c^*)\right).
 \label{eq:YMBVaction}
 \end{equation}
-%
-%We also introduce their antifields $A^*\in\Omega^1(V_\RR; \fg[-1])$, $\lambda^*\in\Gamma(V_\RR; \Pi\Sigma^*\otimes \fg[-1])$ and $c^*\in\Gamma(V_\RR; \fg[-2])$. Let $\cE_{\gauge}$ denote the space of BV fields. 
+
 To simplify the notation, the pairing on $\fg$ from now on will be implicit.
 
 The Poincar\'e group acts, in the sense of Definition \ref{group_action_def}, on Yang--Mills theory on $\RR^n$. Indeed, there is an obvious Poincar\'e action on fields where we use that $\Sigma$ is a representation of $\Spin(V_\RR)$. The corresponding Hamiltonian is given by
@@ -3278,8 +3313,6 @@ We'll begin with the minimal super Yang-Mills theory that admits non-trivial twi
 
 The R-symmetry group is $\spin(2;\CC) = \CC^\times$, acting on $W$ by the defining representation.  
 
-%The R-symmetry group is $\spin(2;\CC) = \CC^\times$, acting on $W$ by its defining representation. 
-
 \vspace{-10pt}
 \paragraph{Fields:} We can describe the BRST field content of $\mc N=2$ super Yang-Mills by restricting the 4d fields from Section \ref{sect:4d_1_section} to representations of the group $\spin(3;\CC)$.  The fields we obtain are
 \begin{itemize}
@@ -3355,7 +3388,6 @@ The projection from the 4d $\mc N=2$ supertranslation algebra to the 3d $\mc N=4
 This splits the fundamental representation $W$ into the sum of two Lagrangians, defining an orientation on $W$. 
 A rank $(2,0)$ supercharge induces the Lagrangian subspace $W_4 \sub W$, which is oriented.  The corresponding twist can be promoted to a twisting datum using a copy of $\mr U(1)$ acting with weight 1 on $W_4$; explicitly, this is the homomorphism $\alpha : \U(1) \to G_R = \SL(2;\CC) \times \SL(2;\CC)$ given by the embedding into the second factor. 
 This is the $A$-twist in our classification above.
-%-- if $G_R = \SL(2;\CC)_+ \times \SL(2;\CC)_-$ where the first factor is the 4d R-symmetry group, by a $\mr U(1)$ in the second factor -- so this is the A-twist in our classification above.
 
 A rank $(1,1)$ supercharges induces a Lagrangian subspace of the form $L \oplus L^* \sub W$, where $L$ is a 1-dimensional subspace of $W_4$.  This subspace has the opposite orientation, so corresponds to the $B$-twist in our classification above.  
 \end{proof}
@@ -3791,8 +3823,6 @@ The claim now follows from Theorem \ref{2d(0,2)}.
 The matter sector in the untwisted theory depends on $U$ as a complex symplectic $\fg$-representation. 
 The matter sector in the twisted theory only depends on $U$ as a complex $\fg$-representation, the dependence on the symplectic form disappears when we twist.
 \end{remark} 
-
-% \cN=(0,8) Super Yang-Mills with matter
 
 \subsection{\texorpdfstring{$\cN=(0,\cN_-)$}{N=(0,N-)} Super Yang-Mills}
 
