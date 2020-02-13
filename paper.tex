@@ -543,6 +543,7 @@ As in Examples \ref{ex:tangentBg} and \ref{ex:cotangentBg}, we may define shifte
 Consider $X,Y,M, \fg$ as in Example \ref{ex:mappingspace}. The local formal moduli problem $T^*[n]\map(X\times Y_{\mathrm{Dol}}\times M_{\mathrm{dR}}, B\fg)$ is isomorphic to the local formal moduli problem
 \[\Sect\left(X\times Y_{\mathrm{Dol}}\times M_{\mathrm{dR}}, T^*[n+\dim(X)+2\dim(Y)+\dim(M)] B\fg\times_{\Gm} (K_X\otimes \Dens_M)\right),\]
 where $K_X$ is the canonical bundle of $X$ and $\Dens_M$ is the line bundle of densities on $M$.
+\label{prop:mapintocotangent}
 \end{prop}
 \begin{proof}
 The claim follows from the following isomorphisms of graded vector bundles:
@@ -1021,6 +1022,14 @@ We will also use the notation
 for the same theory.
 \end{example}
 
+\begin{example}
+There is a special case of this, which one might label the ``holomorphic symplectic boson'' \cite[Definition 4.8]{SWSuperconformal} which is the theory
+\[\Sect(\CC, (U\otimes K_\CC^{1/2})\ham\fg).\]
+For $U=T^*R$ this theory is isomorphic to the holomorphic BF theory
+\[T^*[-1] \map(\CC, R / \fg)\]
+by Proposition \ref{prop:mapintocotangent}.
+\end{example}
+
 As with generalized BF theory, generalized Chern--Simons theory carries a natural rotation action by linear automorphism groups of spacetime.
 
 \begin{prop}
@@ -1038,10 +1047,6 @@ Suppose $\fg$ is a dg Lie algebra and $U$ a $\fg$-representation equipped with a
 \[\Sect(\CC^{n_1}\times (\CC^{n_2})_{\mr{Dol}}\times (\RR^{n_3})_{\mr{dR}}, (U\otimes K_{\CC^{n_1}}^{1/2})\ham\fg).\]
 Then it carries an action of $\MU(n_1)\times \U(n_2)\times \SO(n_3)$ given by the pullback action on differential forms on $\CC^{n_1}\times \CC^{n_2}\times \RR^{n_3}$.
 \end{prop}
-
-%\begin{example}
-%There is a special case of this, which one might label the ``holomorphic symplectic boson'' \cite[Definition 4.8]{SWchar}.  This is the case when $n_1 = 1$, $n_2 = n_3 = 0$, so $V$ is a $\fg$ representation with an ordinary symplectic structure.  If $V = T^*R$, we are considering the classical cotangent field theory whose classical solutions to the equations of motion model the cotangent bundle to $G$-bundles on a Riemann surface with a section of the associated bundle to $R$.
-%\end{example}
 
 \subsubsection{Generalized Hodge Theory}
 Generalized BF theories can be naturally deformed to theories which are perturbatively trivial, but which arise as shadows of non-trivial non-perturbative theories.  These will often appear as topological twists of supersymmetric field theories, the most famous example being the 2d A-model. By a deformation we will mean a $\CC[t]$-family of classical BV theories which reduce to the given theory at $t=0$.
