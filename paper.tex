@@ -1357,32 +1357,32 @@ This equivalence is $\SO(V_\RR)$-equivariant.
 \label{prop:BFholomorphicreduction}
 \end{prop}
 
-Finally, we take $Y$ to be a complex manifold of the form $\CC^{n-k} \times V$, where $V$ is complex $k$-dimensional and consider the projection
+Finally, we take $Y$ to be a complex manifold of the form $Y' \times \CC$, where $V$ is complex $k$-dimensional and consider the projection
 \[
-p_{\rm Dol} : X \times (\CC^{n-k} \times V) \times M \to X \times Y' \times (M \times V_\RR) 
+p_{\rm Dol} : X \times (Y' \times \CC) \times M \to X \times Y' \times (M \times \RR) 
 \]
-induced by ${\rm Re} : V \to V_\RR$.
+induced by ${\rm Re} : \CC \to \RR$.
 
 \begin{prop}
 \label{prop:BFdolbeaultreduction}
-Let $X, M, V_\RR, V$ be as before.
+Let $X, M, Y'$ be as above.
 Fix an $L_\infty$ algebra $\fg$ and consider the generalized $BF$ theory
 \[
-T^*[-1] {\rm Map}(X \times (\CC^{n-k} \times V)_{\rm Dol} \times M_{\rm dR} , B \fg) .
+T^*[-1] {\rm Map}(X \times (Y' \times \CC)_{\rm Dol} \times M_{\rm dR} , B \fg) .
 \]
 Its dimensional reduction along $p_{\rm Dol}$ is equivalent to the generalized BF theory
 \[
-T^*[-1] {\rm Map} (X \times \CC^{n-k} \times (M \times V_\RR)_{\rm dR}, B \fg[\epsilon_1,\ldots,\epsilon_n])
+T^*[-1] {\rm Map} (X \times Y'_{\rm Dol} \times (M \times \RR)_{\rm dR}, \fg / \fg)
 \]
-where $\epsilon_1,\ldots, \epsilon_n$ are formal parameters of degree $+1$.
 This equivalence is $\SO(V_\RR)$-equivariant.
 \end{prop}
 \begin{proof}
 Note that there is an isomorphism of $L_\infty$ algebras
 \[
-\Omega^{\bu, \bu} (\CC^{n-k} \times V ; \fg) = \Omega^{0,\bu}(\CC^{n-k} \times V ; \fg) \otimes {\rm Sym}(\CC^n [-1]) = \Omega^{0,\bu} (\CC^{n-k} \times V ; \fg[\epsilon_1,\ldots, \epsilon_n]) .
+\Omega^{\bu, \bu} (Y' \times \CC ; \fg) = \Omega^{\bu,\bu}(Y') \otimes \Omega^{0,\bu}(\CC) \otimes \fg[\epsilon]
 \]
-The result then follows from Proposition \ref{prop:BFholomorphicreduction} applied to the $L_\infty$ algebra $\fg[\epsilon_1,\ldots, \epsilon_n]$. 
+where $\epsilon$ is a parameter of degree $+1$.
+The result then follows from Proposition \ref{prop:BFholomorphicreduction} applied to the $L_\infty$ algebra $\fg[\epsilon]$. 
 \end{proof}
 
 \section{Supersymmetry} \label{sect:susy}
@@ -3466,7 +3466,7 @@ The $G_R = \Spin(4;\CC)$-action factors through an $\SO(4)$ action on $W$, and s
 We refer to these as the $A$-twist and the $B$-twist, distinguished by whether or not they can be promoted to a twisting datum.
 \begin{enumerate}
 \item
-An $A$-twist supercharge admits a twisting homomorphism $\phi \colon \U(1) \to G_R$ and a $\ZZ$-grading $\alpha \colon \U(1) \to G_R$. and a $\ZZ$-grading $\alpha \colon \U(1) \to G_R$.
+An $A$-twist supercharge admits a twisting homomorphism $\phi \colon \U(1) \to G_R$ and a $\ZZ$-grading $\alpha \colon \U(1) \to G_R$.
 \item
 A $B$-twist supercharge admits the diagonal twisting homomorphism $\phi' \colon \SU(2) \to \SU(2) \times \SU(2) \to G_R$.  
 This twist is only $\ZZ/2\ZZ$-graded
@@ -3476,16 +3476,18 @@ This twist is only $\ZZ/2\ZZ$-graded
 The distinction via twisting homomorphisms and $\ZZ$-gradings follows by identifying the twists as dimensional reductions from 4d $\mc N=2$.
  
 \begin{lemma} \label{3d_4_orbits_lemma}
-A rank $(2,0)$ square 0 supercharge in the 4d $\mc N=2$ supersymmetry algebra restricts to an A-twisting supercharge in 3d $\mc N=4$.  Likewise a rank $(1,1)$ square zero supercharge in 4d $\mc N=2$ restricts to a B-twisting supercharge in 3d $\mc N=4$.
+A rank $(2,0)$ square 0 supercharge in the 4d $\mc N=2$ supersymmetry algebra restricts to an $A$-twisting supercharge in 3d $\mc N=4$.  Likewise a rank $(1,1)$ square zero supercharge in 4d $\mc N=2$ restricts to a $B$-twisting supercharge in 3d $\mc N=4$.
 \end{lemma}
 
 \begin{proof}
 Let $W_4$ be the complex two-dimensional auxiliary space of the 4d $\cN=2$ supesymmetry algebra.
 The projection from the 4d $\mc N=2$ supertranslation algebra to the 3d $\mc N=4$ supertranslation algebra induces an isomorphism $W_4 \oplus W_4^* \to W$ of representations of the group $\spin(3;\CC)$.  
 This splits the fundamental representation $W$ into the sum of two Lagrangians, defining an orientation on $W$. 
-A rank $(2,0)$ supercharge induces the Lagrangian subspace $W_4 \sub W$, which is oriented.  The corresponding twist can be promoted to a twisting datum using a copy of $\mr U(1)$ acting with weight 1 on $W_4$ -- if $G_R = \SL(2;\CC)_+ \times \SL(2;\CC)_-$ where the first factor is the 4d R-symmetry group, by a $\mr U(1)$ in the second factor -- so this is the A-twist in our classification above.
+A rank $(2,0)$ supercharge induces the Lagrangian subspace $W_4 \sub W$, which is oriented.  The corresponding twist can be promoted to a twisting datum using a copy of $\mr U(1)$ acting with weight 1 on $W_4$; explicitly, this is the homomorphism $\alpha : \U(1) \to G_R = \SL(2;\CC) \times \SL(2;\CC)$ given by the embedding into the second factor. 
+This is the $A$-twist in our classification above.
+%-- if $G_R = \SL(2;\CC)_+ \times \SL(2;\CC)_-$ where the first factor is the 4d R-symmetry group, by a $\mr U(1)$ in the second factor -- so this is the A-twist in our classification above.
 
-A rank $(1,1)$ supercharges induces a Lagrangian subspace of the form $L \oplus L^* \sub W$, where $L$ is a 1-dimensional subspace of $W_4$.  This subspace has the opposite orientation, so corresponds to the B-twist in our classification above.  
+A rank $(1,1)$ supercharges induces a Lagrangian subspace of the form $L \oplus L^* \sub W$, where $L$ is a 1-dimensional subspace of $W_4$.  This subspace has the opposite orientation, so corresponds to the $B$-twist in our classification above.  
 \end{proof}
 
 \subsubsection{Minimal Twist}
@@ -3506,7 +3508,7 @@ The minimal twist of 3d $\cN=4$ super Yang--Mills on $N \times L=\CC\times \RR$ 
 The statement about the equivalence of the underlying $\ZZ/2\ZZ$-graded theories follows from applying dimensional reduction (Theorem \ref{CS_diml_red_prop}) to Theorem \ref{4d_2_minimal_twist_thm} calculating the holomorphic twist of 4d $\mc N=2$ super Yang-Mills on $N \times L_\CC$.  This equivalence is equivariant for the action of $\mr U(1) \iso \MU(N) \sub \MU(N \times L_\CC)$.
 \end{proof}
 
-\subsubsection{Topological A Twist}
+\subsubsection{Topological $A$-Twist}
 \label{sect:3d_4_A_twist}
 Let $L=\CC$ equipped with a Hermitian structure and a complex half density, $N_\RR=\RR$ equipped with a Euclidean structure and $N=N_\RR\otimes_\RR\CC$ its complexification. Consider the 4-dimensional spacetime $V_\RR=L\times N$. Under the projection $\Re\colon N\rightarrow N_\RR$ the family $Q_t$ of 4-dimensional square-zero supercharges given by \eqref{eq:4dHodgefamily} dimensionally reduces to a family of 3-dimensional square-zero supercharges which at $t\neq 0$ are topological at and $t=0$ have 2 invariant directions. Since they admit a compatible $\ZZ$-grading, at $t=0$ we obtain the holomorphic twist and at $t\neq 0$ we obtain the topological B twist. Therefore, from Theorem \ref{thm:4dDonaldsontwist} we obtain the following statement.
 
@@ -3519,7 +3521,7 @@ The twist of 3d $\cN=4$ super Yang--Mills with respect to the family $Q_t$ of sq
 The topological $A$ twist of 3d $\cN=4$ super Yang--Mills is perturbatively trivial.
 \end{corollary}
 
-\subsubsection{Topological B Twist}
+\subsubsection{Topological $B$-Twist}
 \label{sect:3d_4_B_twist}
 We consider $V_\RR=\RR^3$ equipped with a Euclidean structure and as before let $V=V_\RR\otimes_\RR\CC$ be its complexification. $V$ carries a Hermitian structure and a half-density, so by the results of Section \ref{sect:6dholomorphictwist} we obtain a square-zero supercharge $Q$. Under the projection $\Re\colon V\rightarrow V_\RR$ the supercharge $Q$ dimensionally reduces to the topological $B$ supercharge in 3 dimensions. Therefore, from Theorem \ref{thm:6dCSreduction} we obtain the following statement.
 
@@ -3570,12 +3572,11 @@ The 3d $\cN=8$ super Yang--Mills viewed as an $\cN=4$ supersymmetric theory coin
 Alternatively, it is obtained by dimensional reduction from the holomorphic twist of 4d $\mc N=4$ super Yang-Mills.
 
 \begin{theorem}  \label{3d_8_minimal_twist_thm}
-The minimal twist of 3d $\cN=8$ super Yang--Mills on $M=\CC\times \RR$ is perturbatively equivalent to the generalized BF theory with space of fields $T^*[-1]\mr{Map}(\CC \times \RR_{\mr{dR}}, T^*(\fg/\fg))$. Moreover, the equivalence is $\U(1)$-equivariant.
+The minimal twist of 3d $\cN=8$ super Yang--Mills on $M=\CC\times \RR$ is perturbatively equivalent to the generalized BF theory with space of fields $T^*[-1]\mr{Map}(\CC_{\rm Dol} \times \RR_{\mr{dR}}, \fg/\fg)$. Moreover, the equivalence is $\U(1)$-equivariant.
 \end{theorem}
 
 \begin{proof}
-By Proposition \ref{thm:4d4holomorphictwist} and Proposition \ref{prop:BFdolbeaultreduction} the dimensional reduction of the minimal twist of 4d $\cN=4$ super Yang-Mills along $\CC^2 \to \CC \times \RR$ is equivalent to generalized BF theory on $\CC \times \RR_{\rm dR}$ for dg Lie algebra $\fg[\epsilon_1,\epsilon_2]$ where $\epsilon_1,\epsilon_2$ are of cohomological degree $+1$. 
-The result the follows from the identification of formal moduli problems $T^*(\fg / \fg) = B \fg[\epsilon_1,\epsilon_2]$.
+By Proposition \ref{thm:4d4holomorphictwist} and Proposition \ref{prop:BFdolbeaultreduction} the dimensional reduction of the minimal twist of 4d $\cN=4$ super Yang-Mills along $\CC^2 \to \CC \times \RR$ is equivalent to the desired generalized BF theory.
 \end{proof}
 
 %\begin{proof}
@@ -3587,7 +3588,7 @@ The result the follows from the identification of formal moduli problems $T^*(\f
 %Starting from the fields of Theorem \ref{3d_4_minimal_twist_thm}, we obtain -- $\mr U(1)$-equivariantly -- the desired fields with their correct $\ZZ$-gradings.
 %\end{proof}
 
-\subsubsection{Topological A Twist}
+\subsubsection{Topological $A$-Twist}
 \label{sect:3d8A_Twist}
 From Theorem \ref{3d_4_A_twist_thm}, using the same argument, we obtain the following statement.
 
@@ -3599,7 +3600,7 @@ The twist of 3d $\cN=8$ super Yang--Mills with respect to the family $Q_t$ of sq
 The topological $A$-twist of 3d $\cN=8$ super Yang-Mills is perturbatively trivial.
 \end{corollary}
 
-\subsubsection{Topological B Twist}
+\subsubsection{Topological $B$-Twist}
 \label{sect:3d8B_Twist}
 From Theorem \ref{3d_4_B_twist_thm} we obtain the following statement.
 
