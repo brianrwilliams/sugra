@@ -186,7 +186,7 @@ Our goal will then be to show that a particular twist of super Yang--Mills is eq
 
 \textbf{Dimension 6}
 \begin{itemize}
- \item \emph{$\mc N=(1,0)$ and $\mc N=(1,1)$ holomorphic twist.} There is a holomorphic twist in 6 dimensions that can be defined for the $\mc N=(1,0)$ supersymmetric theory coupled to a hypermultiplet valued in a symplectic representation $U$.  This twist is equivalent to holomorphic Chern-Simons theory coupled to a holomorphic symplectic boson valued in the representation $U$.  It is generally only $\ZZ/2\ZZ$-graded, but can be promoted to a $\ZZ$-graded theory when $U = T^*R$ is of cotangent type.  It is invariant for the action of $\SU(3)$ in general, and can be defined on Calabi-Yau 3-folds, and the metalinear unitary group $\mr {MU}(3)$ in the cotangent case, and can be defined on complex 3-folds with a choice of square root of the canonical bundle.  When $U = T^*\gg$, the supersymmetry can be promoted to $\mc N=(1,1)$ supersymmetry, and the twist can be identified with a holomorphic BF theory coupled to adjoint holomorphic matter.  This twist has also been calculated in forthcoming work of Dylan Butson \cite{Butson}. 
+ \item \emph{$\mc N=(1,0)$ and $\mc N=(1,1)$ holomorphic twist.} There is a holomorphic twist in 6 dimensions that can be defined for the $\mc N=(1,0)$ supersymmetric theory coupled to a hypermultiplet valued in a symplectic representation $U$.  This twist is equivalent to holomorphic Chern-Simons theory coupled to a holomorphic symplectic boson valued in the representation $U$.  It is generally only $\ZZ/2\ZZ$-graded, but can be promoted to a $\ZZ$-graded theory when $U = T^*R$ is of cotangent type.  It is invariant for the action of $\SU(3)$ in general, and can be defined on Calabi-Yau 3-folds, and the unitary metalinear group $\mr {MU}(3)$ in the cotangent case, and can be defined on complex 3-folds with a choice of square root of the canonical bundle.  When $U = T^*\gg$, the supersymmetry can be promoted to $\mc N=(1,1)$ supersymmetry, and the twist can be identified with a holomorphic BF theory coupled to adjoint holomorphic matter.  This twist has also been calculated in forthcoming work of Dylan Butson \cite{Butson}. 
  \item \emph{$\mc N=(1,1)$ special rank $(1,1)$ twist.} In the $\mc N=(1,1)$ case there are two intermediate twists.  The one by a supercharge of rank $(1,1)$ is equivalent to a generalized form of BF theory, with two topological directions and two complex holomorphic directions.  This theory is $\mr U(2) \times \spin(2;\RR)$-invariant, and can be defined on the product of a complex surface with a Riemann surface.
  \item \emph{$\mc N=(1,1)$ rank $(2,2)$ twist.} The other intermediate twist, by a rank $(2,2)$ supercharge, is equivalent to a generalized form of Chern-Simons theory with four real directions and one complex holomorphic direction.  This theory is only $\ZZ/2\ZZ$-graded.  It is invariant for the action of $\spin(4;\RR)$, and can be defined on the product of a flat Riemann surface and a spin 4-manifold.
  \item \emph{$\mc N=(1,1)$ topological twist.} Finally, there is a topological twist in 6 dimensions obtained by dimensionally reducing the 7-dimensional topological twist.  This theory is again perturbatively trivial, but can be realized as the generic point in a 1-parameter degeneration of the holomorphic twist.  It is $\SU(3)$-invariant, although the full one-parameter family is only $\SU(2) \times \spin(2;\RR)$-invariant.  This theory was also studied in \cite{AcharyaOLoughlinSpence, BaulieuKannoSinger}; its equations of motion include the Donaldson-Thomas equations.
@@ -430,12 +430,12 @@ We would like to thank Owen Gwilliam, Justin Hilburn and Philsang Yoo for helpfu
 
 \section{The BV-BRST Formalism} \label{BV_section}
 
-In this section we will set up the homological formalism in which we study classical field theory: the BV-BRST formalism.  Most of the material in this section is not original.  We refer the reader to \cite{CostelloBook, Book2} for more details on this perspective.  We will conclude the section by describing a number of fundamental examples of classical field theories that are highly structured: partially holomorphic or topological theories.  We will also discuss the concept of \emph{dimensional reduction} of a classical field theory on $M$ along a fibration $M \to N$.  We will use the idea of dimensional reduction to construct many of the supersymmetric field theories which we will consider in the next section.  
+In this section we will set up the homological formalism in which we study classical field theory: the BV-BRST formalism.  Much of the material in this section is not original.  We refer the reader to \cite{CostelloBook, Book2} for more details on this perspective.  We will conclude the section by describing a number of fundamental examples of classical field theories that are highly structured: mixed holomorphic-topological theories.  We will also discuss the concept of \emph{dimensional reduction} of a classical field theory on $M$ along a fibration $M \to N$.  We will use the idea of dimensional reduction to construct many of the supersymmetric field theories which we will consider in the next section.  
 
 \subsection{Conventions}
 Throughout the paper we will frequently study obects, for instance vector bundles, equipped with a $\ZZ\times\ZZ/2\ZZ$-grading. \emph{Degree} will refer to the first (cohomological) grading and \emph{odd} or \emph{even} to the second (fermionic) grading.  For an element $x$ we denote by $|x|\in\ZZ/2\ZZ$ the total degree.
 
-Given a vector bundle $E\rightarrow M$ we denote by $\cE$ the topological vector space of smooth sections of $E$ and $\cE_c$ the topological vector space of smooth compactly supported sections.
+Given a vector bundle $E\rightarrow M$ we denote by $\cE$ the topological vector space of smooth sections of $E$ and by $\cE_c$ the topological vector space of smooth compactly supported sections.
 We denote by $\cO(\cE)$ (respectively $\cO(\cE_c)$) the completed algebra of symmetric functions on $\cE$ (respectively $\cE_c)$. 
 We denote by $\oloc(\cE)$ the space of local functionals on $\cE$ (see \cite[Definition 4.5.1.1]{Book2}). An element of $\oloc(\cE)$ will be denoted symbolically by an expression of the form
 \[\int_M f (\phi, \phi', \dots),\]
@@ -458,7 +458,7 @@ There is a natural Lie bracket on ${\rm Fun}_{\rm loc}(\cE, \cE)$ and a canonica
 
 \subsection{Classical BV Theories} \label{sect:BV}
 
-The classical BV (Batalin-Vilkovisky) formalism \cite{BatalinVilkovisky} is a model for classical field theory from the Lagrangian perspective.  In brief the classical BV formalism produces a local model for the critical locus of an action functional, but considered in the derived sense.  That is, given a space $\Phi$ of fields and an action functional with derivative $\d S$, one considers not just the usual locus in $\Phi$ of fields with $\d S(\phi) = 0$, but the derived intersection $\mr{dCrit}(S) = \Phi \cap^h_{T^*\Phi} \Gamma_{\d S}$ of the zero section in $T^*\Phi$ with the graph of $\d S$.  The formalism we describe below can be interpreted as an abstract formalism for modelling the tangent complex at a point to a derived critical locus $\mr{dCrit}(S)$.
+The classical BV (Batalin-Vilkovisky) formalism \cite{BatalinVilkovisky} is a model for classical field theory from the Lagrangian perspective.  In brief the classical BV formalism produces a local model for the critical locus of an action functional, but considered in the derived sense.  That is, given a space $\mc F$ of fields and an action functional with derivative $\d S$, one considers not just the usual locus in $\mc F$ of fields with $\d S(\phi) = 0$, but the derived intersection $\mr{dCrit}(S) = \mc F \cap^h_{T^*\mc F} \Gamma_{\d S}$ of the zero section in $T^*\mc F$ with the graph of $\d S$.  The formalism we describe below can be interpreted as an abstract formalism for modelling the tangent complex at a point to a derived critical locus $\mr{dCrit}(S)$.
 
 \begin{definition}
 A \defterm{free BV theory} on a manifold $M$ is the data of:
@@ -481,12 +481,12 @@ that is
 \end{itemize}
 \end{definition}
 
-We call $\cE$ the \defterm{space of BV fields}. The pairing $\omega$ equips the algebra of local functionals on $E$ with a \defterm{BV bracket} (see \cite[Chapter 5.3]{CostelloBook}) 
+We call $\cE$ the \defterm{space of BV fields}, and we call the complex $(E, Q_{\mr{BV}})$ the \defterm{classical BV complex}. The pairing $\omega$ equips the algebra of local functionals on $E$ with a \defterm{BV bracket} (see \cite[Chapter 5.3]{CostelloBook}) 
 \[
 \{-,-\}\colon \oloc(\cE) \times \oloc(\cE) \to \oloc(\cE) .
 \]
 This bracket is of cohomological degree $+1$. 
-This bracket is a graded version to the so-called Soloviev bracket defined on the $\infty$-jets, as described in Section 4 of \cite{GetzlerBracket}. 
+This bracket is a graded version of the so-called Soloviev bracket \cite{Soloviev} defined on the $\infty$-jets, as described in Section 4 of \cite{GetzlerBracket}. 
 
 We explain how to define the BV bracket in our context.  
 First note that there is a linear map
@@ -512,7 +512,7 @@ Define the symmetric multilinear map
 & & (\phi_1, \ldots, \phi_{n-1}) & \mapsto & D_1(\phi_1) \cdots D_{n-1}(\phi_{n-1}) D_{n} (-) + \{{\rm symmetric\;terms}\} .
 \end{array}
 \]
-Integrating by parts, we see that for any $(n-1)$-tuple $\phi_1, \ldots, \phi_{n-1} \in \cE_c$ that the linear functional $(\d_{\mr{dR}} F) (\phi_1,\ldots, \phi_{n-1})$ is an element of $\cE^!$. 
+Integrating by parts, we see that for any $(n-1)$-tuple $(\phi_1, \ldots, \phi_{n-1}) \in \cE_c^{n-1}$ the linear functional $(\d_{\mr{dR}} F) (\phi_1,\ldots, \phi_{n-1})$ is an element of $\cE^!$. 
 This implies that $\d_{\mr{dR}} F \in {\rm Fun}_{\rm loc}(\cE, \cE^!)$.
 
 The non-degenerate pairing $\omega$ determines a bundle isomorphism $\omega \colon E \cong E^! [-1]$ and hence an isomorphism of local functions
@@ -558,10 +558,9 @@ the BV action of the theory.
 
 The local functional $S$ satisfies the {\em classical master equation} \[\{S, S\} = 0.\] 
 
-In fact, given a degree $(-1)$ nondegenerate pairing $\omega$ on $E$, prescribing the data of a classical field theory (namely a pair $Q_{\mr{BV}}, I$ satisfying the Maurer-Cartan equation) is equivalent to prescribing a local functional $S \in \oloc(\cE)$ that is at least quadratic and satisfies the classical master equation.
-The operator $Q_{\mr{BV}}$ is the BV bracket with the quadratic part of the BV action $S$, and the cubic and higher terms in $S$ coincide with $I$.
+In fact, given a degree $(-1)$ nondegenerate pairing $\omega$ on $E$, prescribing the data of a classical field theory (namely a pair $(Q_{\mr{BV}}, I)$ satisfying the Maurer-Cartan equation) is equivalent to prescribing a local functional $S \in \oloc(\cE)$ that is at least quadratic and satisfies the classical master equation.  The operator $Q_{\mr{BV}}$ is the BV bracket with the quadratic part of the BV action $S$, and the cubic and higher terms in $S$ coincide with $I$.
 
-Because of this, we will sometimes refer to the triple $(E, S, \omega)$ instead $(E, Q_{\mr{BV}}, I, \omega)$ as the data of a classical field theory.
+Because of this, we will sometimes refer to the triple $(E, S, \omega)$ instead of the quadruple$(E, Q_{\mr{BV}}, I, \omega)$ as the data of a classical field theory.
 
 \begin{remark}
 We will also consider \defterm{$\ZZ/2\ZZ$-graded classical field theories} which are defined as before, but where $E$ has only a single $\ZZ/2\ZZ$-grading and, correspondingly, $Q_{\mr{BV}}$ is simply an odd operator.
@@ -580,24 +579,26 @@ where, for each $t_0 \in \CC$, the quadruple $(E,Q^{t_0}_{\mr{BV}}, \omega, I)$
 defines a classical field theory.
 \end{definition}
 
-Next, we formulate the notion of an equivalence of classical BV theories. 
+Next, we formulate the notion of a morphism, and an equivalence, of classical BV theories. 
 
 \begin{definition}
-A \defterm{morphism} $\Phi \colon (E, Q_{\mr{BV}}, \omega, I) \rightsquigarrow (E', Q_{\mr{BV}}', \omega', I')$ of classical field theories over the same manifold $M$ is
-% a nonlinear map of vector bundles $E\rightsquigarrow E'$, 
-a collection $\Phi =\sum_{n\geq 1}^\infty \Phi_n$ of poly-differential operators $\Phi_n\colon \Sym^n(E)\rightarrow E'$, that intertwines the differentials $Q_{\mr{BV}}, Q_{\mr{BV}}'$, the pairings $\omega, \omega'$, and the interactions $I,I'$. A morphism is a \defterm{perturbative equivalence} if the map $\Phi_1\colon (\cE, Q_{\mr{BV}})\rightarrow (\cE', Q_{\mr{BV}}')$ is a quasi-isomorphism. 
+A \defterm{morphism} $\Phi \colon (E, Q_{\mr{BV}}, \omega, I) \rightsquigarrow (E', Q_{\mr{BV}}', \omega', I')$ of classical field theories over the same manifold $M$ is a collection $\Phi =\sum_{n\geq 1}^\infty \Phi_n$ of poly-differential operators $\Phi_n\colon \Sym^n(E)\rightarrow E'$, that intertwine the differentials $Q_{\mr{BV}}, Q_{\mr{BV}}'$, the pairings $\omega, \omega'$, and the interactions $I,I'$. A morphism is a \defterm{perturbative equivalence} if the map $\Phi_1\colon (\cE, Q_{\mr{BV}})\rightarrow (\cE', Q_{\mr{BV}}')$ is a quasi-isomorphism. 
+\end{definition}
+
+The interpretation of this definition is that $\Phi$ is a non-linear map between the bundles of BV fields, and $\Phi_n$ is its $n^{\text{th}}$ Taylor coefficient.
+
+\begin{definition}
 A classical field theory is \defterm{perturbatively trivial} if it is perturbatively equivalent to the zero theory ($E = 0$).
 \label{def:perturbativeequivalence}
 \end{definition}
 
-We will now describe two primitive examples of equivalences of classical field theories which will be useful in simplifying twisted theories. 
-First, we consider the process of integrating out an auxiliary field.
+We will now describe two primitive examples of equivalences of classical field theories which will be useful in simplifying our descriptions of twisted theories. First, we consider the process of integrating out an auxiliary field.
 
 \begin{prop}\label{prop:integrateoutfield}
 Fix a volume form $\dvol_M$ on $M$. Suppose $(E, \omega, S)$ is a classical field theory, where $E\cong E_0\oplus (\cO_M\oplus \Dens_M[-1])$ with the symplectic pairing $\omega$ given by a sum of a symplectic pairing $\omega_0$ on $E_0$ and the standard symplectic pairing on the second summand. Denote by $\phi$ a section of $\cO_M$ and by $\phi^*$ a section of $\Dens_M[-1]$. Suppose the BV action is
 \[S = S_0 + \frac{1}{2} \int \dvol_M (\phi^2 - 2\phi S_1),\]
 where $S_0$ is a local functional independent of $\phi,\phi^*$ and $S_1$ is a $\cO_M$-valued polydifferential operator which is independent of $\phi$. 
-Then the theory $(E, Q, \omega, I)$ is perturbatively equivalent to the theory $(E_0, \omega_0, S')$ with the BV action $S' = S_0 - S_1^2/2$, where we set and $\phi = S_1$ and $\phi^* = 0$.
+Then the theory $(E, Q, \omega, I)$ is perturbatively equivalent to the theory $(E_0, \omega_0, S')$ with the BV action $S' = S_0 - S_1^2/2$, where the equivalence sets $\phi = S_1$ and $\phi^* = 0$.
 \end{prop}
 
 \begin{remark}
@@ -611,14 +612,14 @@ where the bottom map multiplies a function by the volume element, then we can re
 \end{remark}
 
 \begin{proof}
-Concretely, suppose that the linear part of $S_1$ is given by an operator $Q_1$, and the interacting part of $S_1$ is given by a functional $I_1 = \sum_{n=1}^\infty I_1^n$.  
+Concretely, suppose that the linear part of $S_1$ is given by an operator $Q_1$, and the interacting part of $S_1$ is given by a functional $I_1 = \sum_{n=1}^\infty I_1^{(n)}$.  
 The desired equivalence $\Phi \colon (E, \omega, S) \to (E_0, \omega_0, S')$ is given by the natural projection $\Phi = \Phi_1 \colon E \to E_0$. 
 The quasi-inverse $\Psi \colon (E_0, \omega_0, S') \to (E, \omega, S)$ is defined as follows.
 First $\Psi_1(e) = (e, Q_1(e), 0) \in E$.
 For $n > 1$, define
 \begin{align*}
 \Psi_n \colon \sym^n(E_0) &\to E \\
-e_1 \otimes \cdots \otimes e_n &\mapsto (0, I_1^n(e_1, \ldots, e_n), 0).
+e_1 \otimes \cdots \otimes e_n &\mapsto (0, I_1^{(n)}(e_1, \ldots, e_n), 0).
 \end{align*}
 These $\Psi_n$ manifestly intertwines the pairings $\omega$ and $\omega'$.  
 To see that they intertwine the action functionals, we observe that 
@@ -645,7 +646,7 @@ Consider the theory $(E, \omega, S)$ with underlying graded vector bundle
 \[
 E = E_0 \oplus \left(F \oplus F^! [-1]\right) \oplus \left(F^! \oplus F[-1] \right)
 \]
-whose sections we denote by $e_0 + \varsigma + \varsigma^* + \psi + \psi^*$ according to the above decomposition. 
+whose sections we denote by $e_0 + \phi + \phi^* + \psi + \psi^*$ according to the above decomposition. 
 The shifted symplectic form $\omega$ is given by the sum of $\omega_0$ plus the standard degree $+1$ pairings between $F, F^! [-1]$ and $F^!, F[-1]$. 
 Suppose further that the local functional
 \[
@@ -657,23 +658,13 @@ Then, the classical BV theory $(E, \omega, S)$ is perturbatively equivalent to t
 
 \begin{remark}
 For the classical BV theory $(E, \omega, S)$ as in the proposition, the linearized BV differential defines the following cochain complex of fields:
-%\[\xymatrix{
-%\cdots & \ul{-1} & \ul{0} & \ul{1} & \ul{2} & \cdots \\
-%\cdots \ar[r] & E_0^{-1}\ar[r] \ar[dr] \ar[ddr] &E_0^0 \ar[r]  &E_0^1 \ar[r] &E_0^2 \ar[r] &\cdots \\
-%&&F_\phi \ar^{~}[dr] &F^!_{\phi*} \ar[ur] && \\
-%&&F^!_{\psi^*} \ar^{~}[ur] &F_\psi \ar[uur] && \\
-%}\]
 \[\xymatrix{
 \cdots & \ul{-1} & \ul{0} & \ul{1} & \ul{2} & \cdots \\
 \cdots \ar[r] & E_0^{-1}\ar[r] \ar@{.>}[dr] \ar@{.>}[ddr] &E_0^0 \ar@{.>}[ddr] \ar@{.>}[dr]  \ar[r]  &E_0^1 \ar[r] &E_0^2 \ar[r] &\cdots \\
 &&F_\phi \ar^{~}[dr]  \ar@{.>}[ur] &F^!_{\phi*}  \ar@{.>}[ur] && \\
 &&F^!_{\psi^*} \ar^{~}[ur]  \ar@{.>}[uur]  &F_\psi  \ar@{.>}[uur] && \\
 }\]
-where the subscripts match the notation for the fields in the statement above. \footnote{Note that we are writing $F$ as if it is concentrated in a single cohomological degree, but the proposition applies for any graded vector bundle as in the statement of the proposition.}
-The top line is the underlying cochain complex of the theory with fields $E_0$. 
-The arrows $F_\phi \to F_\psi$ and $F^!_{\psi^*} \to F^!_{\phi^*}$ are given by the identity.
-The dotted arrows represent terms in the differential arising from $I_\phi, I_{\psi^*}, I_{\phi^*}, I_{\psi}$. 
-The above proposition implies we can replace this cochain complex of fields with a quasi-isomorphic complex consisting of only the first line, provided we make a suitable modification of the classical action functional. 
+where the subscripts match the notation for the fields in the statement above \footnote{Note that we are writing $F$ as if it is concentrated in a single cohomological degree, but the proposition applies for any graded vector bundle as in the statement of the proposition.}.  The top line is the underlying cochain complex of the theory with fields $E_0$. The arrows $F_\phi \to F_\psi$ and $F^!_{\psi^*} \to F^!_{\phi^*}$ are given by the identity. The dotted arrows represent terms in the differential arising from $I_\phi, I_{\psi^*}, I_{\phi^*}, I_{\psi}$. The above proposition implies we can replace this cochain complex of fields with a quasi-isomorphic complex consisting of only the first line, provided we make a suitable modification of the classical action functional. 
 \end{remark}
 
 \begin{proof}
@@ -694,7 +685,7 @@ S(F(e)) &= S_0(e) + \frac{1}{2} \int_M \omega(I_{\psi^*}(e), I_\phi(e) - I_\phi(
 %There is a corollary of this proposition obtained by iterating the procedure. 
 %We will only use a single iteration. 
 %
-%\begin{cor} \label{cor:quad}
+%\begin{corollary} \label{cor:quad}
 %Let $(E_0, \omega_0, S_0)$ be a classical BV theory and $F \to M$ a graded vector bundle.
 %Consider the theory $(E, \omega, S)$ with underlying graded vector bundle
 %\[
@@ -715,8 +706,9 @@ S(F(e)) &= S_0(e) + \frac{1}{2} \int_M \omega(I_{\psi^*}(e), I_\phi(e) - I_\phi(
 %\[
 %S' = S_0 + \int \phi_1 \psi_1^* - S''
 %\]
-%where $S'$ is given by setting $\phi = I_{\psi^*}, \phi^* = 0$ and $\psi^* = I_{\phi}, \psi = 0$ in the functional functional $S$.\brian{finish}
-%\end{cor}
+%where $S'$ is given by setting $\phi = I_{\psi^*}, \phi^* = 0$ and $\psi^* = I_{\phi}, \psi = 0$ in the functional functional $S$
+
+%\end{corollary}
 %\begin{proof}
 %%Notice that the collection of fields $(e_0, \phi_1, \phi_1^*, \phi_2, \phi_2^*, \psi_1, \psi_1^*, \psi_2, \psi_2^*)$ have the same shifted Poisson brackets as the collection of fields $(\phi_1, \phi_1^*
 %We begin by making the following change of coordinates on the BV fields:
@@ -735,10 +727,10 @@ S(F(e)) &= S_0(e) + \frac{1}{2} \int_M \omega(I_{\psi^*}(e), I_\phi(e) - I_\phi(
 %\end{proof} 
 
 \subsection{Symmetries in the Classical BV Formalism} \label{symmetry_section}
-In this section we define what it means for a (super) Lie algebra to act on a classical field theory  (see also \cite[Chapter 11]{Book2} for a related discussion). Let $(E, Q_{\mr{BV}},\omega, I)$ be a classical field theory and $\fg$ a super Lie algebra.  We will define $\gg$-equivariant local observables in the classical field theory by introducing $\gg$-valued background fields into our classical field theory, and extending the action functional to a functional that involves these background fields, but still satisfies the classical master equation.  We begin by defining an appropriate version of the Chevalley-Eilenberg cochain complex.
+In this section we define what it means for a (super) Lie algebra to act on a classical field theory  (see also \cite[Chapter 11]{Book2} for a related discussion). Let $(E, Q_{\mr{BV}},\omega, I)$ be a classical field theory and let $\fg$ be a super Lie algebra.  We will define $\gg$-equivariant local observables in the classical field theory by introducing $\gg$-valued background fields into our classical field theory, and extending the action functional to a functional that involves these background fields, but still satisfies the classical master equation.  We begin by defining an appropriate version of the Chevalley-Eilenberg cochain complex.
 
 \begin{definition}
-The \emph{Chevalley-Eilenberg complex} for the Lie algebra $\gg$, with coefficients in $\oloc(\cE)$, will be defined as follows.  Consider the graded vector space
+The \defterm{Chevalley-Eilenberg complex} for the Lie algebra $\gg$, with coefficients in $\oloc(\cE)$, will be defined as follows.  Consider the graded vector space
 \[C^\bullet(\fg, \oloc(\cE)) = \bigoplus_n \hom(\wedge^n \fg, \oloc(\cE))[-n]\]
 parametrizing multilinear maps $f\colon \fg^{\otimes n}\rightarrow \oloc(\cE)$ which satisfy the antisymmetry property
 \[f(x_1, \dots, x_i, x_{i+1}, \dots, x_n) = (-1)^{|x_1||x_2|+1} f(x_1, \dots, x_{i+1}, x_i, \dots, x_n)\]
@@ -827,12 +819,12 @@ While we allow for $L_\infty$ actions of Lie algebras, we will only consider str
 \end{remark}
 
 \subsection{From BRST to BV}
-We will now explain how to build classical BV theories from more traditional data: that of the \emph{usual} fields of a classical field theory, together with the usual action functional and the action of gauge transformations.  These data can be packaged into what's known as a BRST theory, where fermionic fields (ghosts) are introduced to generate the infinitesimal gauge transformations, in the following way.
+We will now explain how to build classical BV theories from more traditional data: that of the \emph{usual} fields of a classical field theory, together with the usual action functional and the action of gauge transformations.  These data can be packaged into what's known as a BRST theory, where fermionic fields (referred to as ghosts) are introduced to generate the infinitesimal gauge transformations, in the following way.
 
 \begin{definition}
 A \defterm{classical BRST theory} on a manifold $M$ consists of the following data:
 \begin{itemize}
-\item a $\ZZ\times\ZZ/2\ZZ$-graded vector bundle $F$ together with the structure of a local $L_\infty$ algebra on the shift $F[-1]$;
+\item a $\ZZ\times\ZZ/2\ZZ$-graded vector bundle $F$ together with the structure of a local $L_\infty$ algebra on the shift $F[-1]$.
 \item A local functional $S_{\mr{BRST}} \in \oloc(\cF)$ of polynomial degree $\geq 2$.
 \end{itemize}
 Together, these data must satisfy the equation
@@ -854,11 +846,9 @@ The underlying bundle of the BV theory is
 \[
 E = F \oplus F^! [-1].
 \]
-The BV pairing $\omega$ on $E$ is defined in terms of the natural pairing between $F$ and $F^!$.
-The differential of the free BV theory is
+The BV pairing $\omega$ on $E$ is defined in terms of the natural pairing between $F$ and $F^!$.  The differential of the free BV theory is
 \[Q_{\mr{BV}} = \ell_1 + S^{free}_{\mr{BRST}}.
 \]
-
 
 The interacting theory is constructed as follows. First, note that for $k \geq 2$ the $L_\infty$ structure maps $\{\ell_k\}_{k \geq 2}$ on $\cF$ pull back to multilinear maps on $\cE$ via the obvious projection $p\colon \cE\rightarrow \cF$. These structure maps assemble into a local functional $I_F \in \oloc^+(\cE)$ defined by
 \[
@@ -873,9 +863,7 @@ I_{\mr{BV}} = I_{F} + p^* I_{\mr{BRST}} \in \oloc^+(\cE) .
 Suppose $(F, S_{\mr{BRST}})$ is a classical BRST theory such that $(\cE, Q)$ defined above is an elliptic complex. Then $(E, Q_{\mr{BV}}, \omega, I)$ is a classical BV theory.
 \end{lemma}
 
-We refer to the classical BV theory $(E, Q_{\mr{BV}}, \omega, I)$ as {\em the BV theory associated to the BRST theory} $\cF$.
-%and by abuse of notation we often denote it simply by $\cE = T^*[-1] \cF$. 
-In the case $S_{\mr{BRST}} = 0$ we refer to the associated BV theory as being of {\em cotangent type}, which we will denote by $T^*[-1] \cF$. 
+We refer to the classical BV theory $(E, Q_{\mr{BV}}, \omega, I)$ as {\em the BV theory associated to the BRST theory} $\cF$.  In the case where $S_{\mr{BRST}} = 0$ we refer to the associated BV theory as being of {\em cotangent type}, which we will denote by $T^*[-1] \cF$. 
 
 \begin{remark}
 In general, multiple BRST theories can give rise to the same BV theory.  A BV theory $(E, Q_{\mr{BV}}, \omega, I)$ is of cotangent type as long as there is \emph{some} $F$ with $S_{\mr{BRST}} = 0$ producing the given theory using the construction above.  Theories of cotangent type can still have interesting, non-trivial action functionals, encoded by the $L_\infty$ structure on $F$.
@@ -892,7 +880,7 @@ It will be convenient for us to represent spaces of fields in classical field th
 
 Recall that a formal moduli problem is a functor from connective dg Artinian algebras $(R, \mathfrak{m})$ to simplicial sets which satisfies a derived version of Schlessinger's condition. We refer to \cite{DAGX,PridhamFMP,Toen} for more details.
 
-For instance, if $\fg$ is an $L_\infty$ algebra, we have a formal moduli problem $B\fg$ defined by
+For instance, if $\fg$ is a complex $L_\infty$ algebra, we have a formal moduli problem $B\fg$ defined by
 \[(B\fg)(R, \mathfrak{m})=\mathrm{MC}(\fg\otimes \mathfrak{m}),\]
 where $\mathrm{MC}(\fg\otimes \mathfrak{m})$ is the simplicial set of Maurer--Cartan elements. The main result of \cite{DAGX,PridhamFMP} is that the functor $B$ defines an equivalence of $\infty$-categories between $L_\infty$ algebras and formal moduli problems. The inverse functor sends a formal moduli problem $\cM$ to the $L_\infty$-algebra $T_{\cM, \ast}[-1]$, the shifted tangent complex of $\cM$ at the basepoint. This important result will only serve as a motivation.
 
@@ -914,7 +902,7 @@ Suppose $\fg$ is an $L_\infty$ algebra which is bounded as a complex and has fin
 \end{example}
 
 \begin{definition}
-Let $\fg$ be an $L_\infty$ algebra. A \defterm{$\Gm$-action} on a formal moduli problem $B\fg$ is a weight grading $\fg = \oplus_m \fg(m)$ compatible with the $L_\infty$ structure.
+Let $\fg$ be an $L_\infty$ algebra. A \defterm{$\Gm$-action} on a formal moduli problem $B\fg$ is a weight grading $\fg = \bigoplus_{m \in \ZZ} \fg(m)$ compatible with the $L_\infty$ structure.
 \end{definition}
 
 \begin{example}
@@ -930,11 +918,11 @@ A \defterm{local formal moduli problem on $M$} is a presheaf of formal moduli pr
 \end{definition}
 
 \begin{remark}
-In \cite{Book2} an extra assumption of ellipticity is required for the local $L_\infty$ algebras considered. It is only relevant for quantization which we do not consider in this paper, so we will drop this extra assumption.
+In \cite{Book2} an extra assumption of ellipticity is required for the local $L_\infty$ algebras considered. It is only relevant for quantization which we do not consider in this paper, so for simplicity we will not require ellipticity (though in fact all examples we consider will end up being elliptic).
 \end{remark}
 
 \begin{example}
-Let $X,Y$ be complex manifolds, $M$ a smooth manifold and $B\fg$ a formal moduli problem represented by an $L_\infty$ algebra $\fg$. Then we may define the following local formal moduli problem on $X\times Y\times M$. Let $\Omega^{0, \bullet}_X$ be the graded vector bundle of $(0, n)$-forms on $X$, $\Omega^{\bullet, \bullet}_Y$ be the graded vector bundle of $(p, q)$-forms on $Y$ and $\Omega^\bullet_M$ a graded vector bundle of differential forms on $M$. We may then consider a graded vector bundle
+Let $X,Y$ be complex manifolds, $M$ a smooth manifold and $B\fg$ a formal moduli problem represented by a complex $L_\infty$ algebra $\fg$. Then we may define the following local formal moduli problem on $X\times Y\times M$. Let $\Omega^{0, \bullet}_X$ be the graded vector bundle of $(0, n)$-forms on $X$, $\Omega^{\bullet, \bullet}_Y$ be the graded vector bundle of $(p, q)$-forms on $Y$ and $\Omega^\bullet_M$ a graded vector bundle of differential forms on $M$. We may then consider a graded vector bundle
 \[L = \Omega^{0,\bullet}_X\otimes \Omega^{\bullet, \bullet}_Y\otimes \Omega^\bullet_M\otimes \fg\]
 on $X\times Y\times M$. It carries a differential given by the sum $\ol\dd_X + \ol\dd_Y + \d_M + \d_\fg$. It also carries a local $L_\infty$ structure which uses the $L_\infty$ structure on $\fg$ and the wedge product of differential forms. We then define
 \[\map(X\times Y_{\mathrm{Dol}}\times M_{\mathrm{dR}}, B\fg) := B L.\]
@@ -944,7 +932,7 @@ on $X\times Y\times M$. It carries a differential given by the sum $\ol\dd_X + \
 \begin{remark}
 A smooth complex algebraic variety $X$ gives rise to derived stacks $X_{\mathrm{Dol}}$ and $X_{\mathrm{dR}}$ defined by Simpson \cite{Simpson,PTVV}. So, given smooth complex algebraic varieties $X,Y,M$ and a derived stack $F$ we may consider the mapping stack
 \[\map(X\times Y_{\mathrm{Dol}}\times M_{\mathrm{dR}}, F).\]
-Example \ref{ex:mappingspace} is an analogous construction in the world of formal moduli problems.
+If $F = BG$ is the classifying stack of a complex algebraic group, the mapping stack $\map(X\times Y_{\mathrm{Dol}}\times M_{\mathrm{dR}}, BG)$ has a natural geometric interpretation: its closed points correspond to algebraic principal $G$-bundles $P$ on $X \times Y \times M$, with a Higgs field on each slice $P|_{\{x\} \times Y \times \{m\}}$ and a flat connection on each slice $P|_{\{x\} \times \{y\} \times M}$.  Example \ref{ex:mappingspace} is an analogous construction in the world of formal moduli problems, and can be thought of as modelling the formal neighborhood of the trivial bundle in this moduli stack.
 \end{remark}
 
 \begin{example}
@@ -998,11 +986,11 @@ Our first example will generalize the fundamental example of \emph{BF theory} to
 This theory is, in fact, of cotangent type, where the base of the cotangent includes $A$ and its antifield, and the fiber includes $B$ and its antifield.  This basic setup can be generalized to a setting where $M$ need not be entirely topological, and where $\gg$ may be a more general $L_\infty$ algebra, in the following way.
 
 \begin{definition}
-Let $X$ and $Y$ be complex manifolds and $M$ a smooth oriented manifold. Fix an $L_\infty$ algebra $\fg$. The \defterm{generalized $BF$ theory} is the BV theory associated to the following BRST theory:
+Let $X$ and $Y$ be complex manifolds and let $M$ be a smooth oriented manifold. Fix a complex $L_\infty$ algebra $\fg$. The \defterm{generalized $BF$ theory} is the BV theory associated to the following BRST theory:
 \begin{itemize}
 \item The spacetime is the smooth manifold $X\times Y\times M$.
 
-\item The bundle of BRST fields is the $\ZZ$-graded bundle $F = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1]$. $F[-1]$ is equipped with a natural local $L_\infty$ algebra structure from $\fg$.
+\item The bundle of BRST fields is the $\ZZ$-graded bundle $F = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1]$. The shift $F[-1]$ is equipped with a natural local $L_\infty$ algebra structure from $\fg$.
 
 \item The BRST action is $S_{\mr{BRST}} = 0$.
 \end{itemize}
@@ -1010,31 +998,25 @@ We denote the space of BV fields by $T^*[-1] \map(X\times Y_{\mr{Dol}}\times M_{
 \label{def:generalizedBF}
 \end{definition}
 
-\begin{remark} \label{mapping_stack_remark}
-The mapping stack above has a precise meaning in the language of derived algebraic geometry -- see for instance \cite{PTVV}, where, if $X, Y$ and $M$ are compact, such a mapping stack is shown to carry a $-1$-shifted symplectic structure.  For the purposes of this paper, while we think of the derived stack as the global moduli space of solutions to the equations of motion in generalized BF theory, we will only use the perturbative datum of the classical BV complex.  The language of the mapping stack will simply be used as a compact way of referring to the theory above. 
-\end{remark}
-
 Let us unpack the definition. Let $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M)$. Then the bundle of BV fields is
 \[E = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1]\oplus \Omega^{\dim(X),\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M\otimes \fg^*[d-2],\]
 where we denote the two fields by $A$ and $B$. The BV action is
 \[S = \int_{X\times Y\times M} \langle B\wedge (\dbar_X + \dbar_Y + \d_{\dR, M}) A\rangle + \sum_{k\geq 1}\frac{1}{k!} \int_{X\times Y\times M} \langle B\wedge \ell_k(A, \dots, A)\rangle,\]
-where $\langle -, -\rangle$ is the natural pairing between $\fg^*$ and $\fg$ and $\ell_k$ denote the components of the $L_\infty$ structure on $\fg$.
+where $\langle -, -\rangle$ is the natural pairing between $\fg^*$ and $\fg$ and where $\ell_k$ denote the $k^{\text{th}}$ component of the $L_\infty$ structure on $\fg$.
 
 \begin{example}
 For $X=Y=\pt$ and $\fg$ an ordinary Lie algebra we recover the usual topological $BF$ theory with the BV action
 \[S = \int_M \left\langle B\wedge \left(\d_\dR A+ \frac{1}{2}[A\wedge A]\right)\right\rangle.\]
 \end{example}
 
-We will see many $BF$ theories as the output when we twists a supersymmetric gauge theories.
-In fact, a special case of the definition above also arises when twisting theories of matter.  We will refer to as a generalized $\beta\gamma$ system, extending the usual 2d $\beta \gamma$ system. 
+We will see many $BF$ theories as the output when we twist supersymmetric gauge theories.
+In fact, a special case of the definition above also arises when twisting theories of matter.  We will refer to as this as a generalized $\beta\gamma$ system, where the definition will extend that of the usual 2d $\beta \gamma$ system. 
 
 \begin{definition}
-Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix a complex vector space $V$. The \defterm{generalized $\beta\gamma$ system} is the BV theory associated to the following BRST theory:
+Let $X$ and $Y$ be complex manifolds and let $M$ be a smooth manifold. Fix a complex vector space $V$. The \defterm{generalized $\beta\gamma$ system} valued in $V$ is the BV theory associated to the following BRST theory:
 \begin{itemize}
 \item The spacetime is the smooth manifold $X\times Y\times M$.
-
 \item The bundle of BRST fields is the $\ZZ$-graded bundle $F = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes V$. $F[-1]$ is equipped with an $L_\infty$ structure with $\ell_{k} = 0$ for $k \geq 2$. 
-
 \item The BRST action is $S_{\mr{BRST}} = 0$.
 \end{itemize}
 \end{definition}
@@ -1048,7 +1030,7 @@ We may also couple a $\beta\gamma$ system to a more general generalized $BF$ the
 \begin{example}
 Let $X,Y,M$ be as before. Suppose $\fg$ is a dg Lie algebra and $V$ is a dg representation of $\fg$. Consider the dg Lie algebra
 \[\cL = \fg\oplus V[-1]\]
-with the only nontrivial brackets $\fg\otimes \fg\rightarrow \fg$ given by the Lie bracket on $\fg$ and $\fg\otimes V\rightarrow V$ given by the $\fg$-action on $V$. The space of fields in the corresponding generalized BF theory will be denoted using the mapping stack notation (as in Remark \ref{mapping_stack_remark}) as
+with the only nontrivial brackets $\fg\otimes \fg\rightarrow \fg$ given by the Lie bracket on $\fg$ and $\fg\otimes V\rightarrow V$ given by the $\fg$-action on $V$. The space of fields in the corresponding generalized BF theory will be denoted using the formal moduli problem notation  as
 \[\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[d] (V / \fg)):=\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[d] \cL),\]
 where $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1$.
 \end{example}
@@ -1067,17 +1049,17 @@ In fact, the $\SO(n_3)$-action given by the previous proposition extends to a ho
 \end{remark}
 
 \subsubsection{Generalized Chern--Simons Theory} \label{gen_CS_section}
-The next class of examples of classical BV theories we give are generalizations of Chern-Simons theory. Unlike the example of the generalized BF theory, these theories are not of cotangent type.
+The next class of examples of classical BV theories will be generalizations of Chern-Simons theory. Unlike the example of the generalized BF theory, these theories are not generally of cotangent type.
 
 \begin{definition}
 \label{dfn: cs}
-Let $X$ and $Y$ be complex manifolds and $M$ a smooth oriented manifold. Fix an $L_\infty$ algebra $\fg$. We assume $X$ is equipped with a holomorphic volume form $\Omega_X \in\Omega^{\dim(X), 0}(X)$ and $\fg$ is equipped with a nondegenerate invariant symmetric pairing $\langle-, -\rangle\colon \fg\otimes\fg\rightarrow \CC[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 3]$. The \defterm{generalized Chern--Simons theory} is the following classical BV theory:
+Let $X$ and $Y$ be complex manifolds and let $M$ be a smooth oriented manifold. Fix an $L_\infty$ algebra $\fg$. We assume that $X$ is equipped with a holomorphic volume form $\Omega_X \in\Omega^{\dim(X), 0}(X)$ and that $\fg$ is equipped with a nondegenerate invariant symmetric pairing $\langle-, -\rangle\colon \fg\otimes\fg\rightarrow \CC[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 3]$. The \defterm{generalized Chern--Simons theory} is the following classical BV theory:
 \begin{itemize}
 \item The spacetime is the smooth manifold $X\times Y\times M$.
 
 \item The bundle of BV fields is the $\ZZ$-graded bundle $E = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1]$.
 
-\item $Q = \dbar_X + \dbar_Y + \d_{\dR, M} + \ell_1$.
+\item $Q_{\mr{BV}} = \dbar_X + \dbar_Y + \d_{\dR, M} + \ell_1$.
 
 \item The pairing $\omega\colon E\otimes E\rightarrow \Dens_M[-1]$ is given by the combination of the wedge product of differential forms, wedging with $\Omega_X$ and the pairing $\langle -, -\rangle$ on $\fg$.
 
@@ -1113,7 +1095,6 @@ Let $X,Y,M$ be as before and denote $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M)$. 
 with the brackets $\fg\otimes \fg\rightarrow \fg$ given by the Lie bracket on $\fg$, $\fg\otimes V\rightarrow V$ given by the $\fg$-action on $V$, $\fg\otimes \fg^*\rightarrow \fg^*$ given by the coadjoint action and $\mu\colon V\otimes V\rightarrow \fg^*[d-1]$ defined by $(\mu(v, w), x)_\fg = ([x, v], w)_V$. The dg Lie algebra $\cL$ carries nondegenerate invariant symmetric pairing of cohomological degree $d-3$ given by pairing $\fg$ and $\fg^*$ and pairing $V$ with itself. The space of fields in the corresponding Chern--Simons theory will be denoted by
 \[\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, V \ham \fg):= \map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B \cL).\]
 \label{ex:CSHamiltonianreduction}
-\brian{Will $V\ham \fg$ already be defined above in the FMP section?}
 \end{example}
 
 We will also sometimes use the following variant of the generalized Chern--Simons theory (see also \cite{GinzburgRozenblyum}).
@@ -1124,7 +1105,7 @@ Let $m$ be a positive integer. Suppose $X$ is a complex manifold equipped with a
 and the symplectic pairing $\omega$ and the action functional as before where we do not use the holomorphic volume form on $X$.
 \end{definition}
 
-We denote the space of fields $\cE = \Sect(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B \fg\times_{\Gm} K_X^{1/m})$.
+We denote the space of fields by $\cE = \Sect(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B \fg\times_{\Gm} K_X^{1/m})$.
 
 \begin{example}
 Consider the setting of Example \ref{ex:CSHamiltonianreduction}. The dg Lie algebra $\cL$ carries a weight grading, where we consider $\fg$ in weight 0, $V$ in weight $1$ and $\fg^*$ in weight $2$. With respect to this weight grading the bilinear pairing on $\fg$ has weight $2$, so we may define the corresponding generalized Chern--Simons theory with the space of fields
@@ -1179,7 +1160,7 @@ At $t=0$ we get
 \[\left.\fg_\Hod\right|_{t=0}\cong \fg\oplus \fg[1]\cong \fg\oplus \fg^*[d-1],\]
 where we use the symmetric bilinear pairing on $\fg$ in the second isomorphism. The first claim then follows from Example \ref{ex:CSBF}.
 
-At $t\neq 0$ the $L_\infty$ algebra $\fg_\Hod$ becomes acyclic which proves the second claim.
+At $t\neq 0$ the $L_\infty$ algebra $\fg_\Hod$ becomes acyclic, which proves the second claim.
 \end{proof}
 
 
@@ -1188,7 +1169,7 @@ At $t\neq 0$ the $L_\infty$ algebra $\fg_\Hod$ becomes acyclic which proves the 
 In this section we formulate the procedure of dimensional reduction of a classical field theory. Fix a submersion $p\colon M\rightarrow N$ equipped with a fiberwise volume form, i.e. an isomorphism $p^*\Dens_N\cong \Dens_M$.  The idea is that the \emph{dimensional reduction} of a classical field theory on $M$ along the submersion $p$ is the theory obtained by restricting to those fields which are constant along the fibers of $p$.  We will begin with an abstract definition of dimensional reduction, then prove that if $M = N \times \RR^k$, and we consider field theories which are translation invariant along the fiber, then this procedure is well-defined.
 
 \begin{definition}
-We say that a classical field theory $(E_N, Q_N, \omega_N, I_N)$ on $N$ is a \defterm{dimensional reduction} along $p$ of the classical field theory $(E_M, Q_M, \omega_M, I_M)$ on a manifold $M$ if one is given the data of an isomorphism $p^* E_N\cong E_M$ of the bundles of BV fields satisfying the following conditions:
+We say that a classical field theory $(E_N, Q_N, \omega_N, I_N)$ on $N$ is a \defterm{dimensional reduction} along $p$ of the classical field theory $(E_M, Q_M, \omega_M, I_M)$ on a manifold $M$ if one is given the data of a linear isomorphism $p^* E_N\cong E_M$ of the bundles of BV fields satisfying the following conditions:
 \begin{itemize}
 \item The diagram
 \[
@@ -1212,7 +1193,7 @@ is commutative.
 \end{itemize}
 \end{definition}
 
-We have an obvious notion of isomorphisms of dimensional reductions: these are isomorphisms of classical field theories on $N$ which are compatible with the isomorphisms $p^* E_N\cong E_M$. Thus, the collection of dimensional reductions of a given classical field theory on $M$ forms a groupoid.  In fact, when dimensional reduction makes sense, this groupoid is always contractible.
+We have an obvious notion of isomorphisms of dimensional reductions: these are linear isomorphisms of classical field theories on $N$ which are compatible with the isomorphisms $p^* E_N\cong E_M$. Thus, the collection of dimensional reductions of a given classical field theory on $M$ forms a groupoid.  In fact, when dimensional reduction makes sense, this groupoid is always contractible.
 
 \begin{prop}
 Suppose $(E_M, Q_M, \omega_M, I_M)$ is a classical field theory on $M$ and $p\colon M\rightarrow N$ is a homotopy equivalence. Then the groupoid of dimensional reductions of $(E_M, Q_M, \omega_M, I_M)$ is either contractible or empty.
@@ -1220,7 +1201,7 @@ Suppose $(E_M, Q_M, \omega_M, I_M)$ is a classical field theory on $M$ and $p\co
 Suppose $M=N\times \RR$ and choose a translation-invariant density along the $\RR$ direction. If the original classical field theory is translation-invariant along the $\RR$ direction, dimensional reductions exist.
 \label{prop:dimensionalreductionunique}
 \end{prop}
-\begin{proof} \textbf{Uniqueness}. We begin by showing that any two dimensional reductions are isomorphic and moreover such an isomorphism is unique if it exists. Since $p\colon M\rightarrow N$ is a homotopy equivalence, the functor $p^*$ establishes an isomorphism between the category of graded vector bundles on $N$ and on $M$. In a similar way, $p^*$ establishes an equivalence between the category of graded vector bundles $E_N$ on $N$ equipped with a nondegenerate pairing $E_N\otimes E_N\rightarrow \Dens_N[-1]$ and a similar category for $M$.
+\begin{proof} \textbf{Uniqueness}. We begin by showing that any two dimensional reductions are isomorphic and moreover that such an isomorphism is unique if it exists. Since $p\colon M\rightarrow N$ is a homotopy equivalence, the functor $p^*$ establishes an isomorphism between the category of graded vector bundles on $N$ and on $M$. In a similar way, $p^*$ establishes an equivalence between the category of graded vector bundles $E_N$ on $N$ equipped with a nondegenerate pairing $E_N\otimes E_N\rightarrow \Dens_N[-1]$ and a similar category for $M$.
 
 Since $\cE_N\rightarrow \cE_M$ is injective, the diagram
 \[
@@ -1246,9 +1227,7 @@ X \times Y_{\rm Dol} \times M_{\rm dR} .
 \end{equation}
 
 We first consider the case in which $M$ is of the form $M' \times \RR$ and we reduce along the projection
-\[
-p_{\rm dR} : X \times Y \times (M' \times \RR) \to X \times Y \times M' .
-\]
+\[p_{\rm dR} \colon X \times Y \times (M' \times \RR) \to X \times Y \times M' .\]
 In this case, we will only need to know the dimensional reduction of generalized Chern-Simons theory.
 
 \begin{prop} \label{CS_to_BF_diml_red_prop}
@@ -1262,7 +1241,7 @@ T^*[-1] {\rm Map}(X\times Y_{\mr{Dol}}\times M'_{\mr{dR}}, B\fg) .
 \end{prop}
 
 \begin{proof}
-To simplify the proof, we assume $X,Y,M'=\pt$. Then $\fg$ carries a $(-2)$-shifted pairing $\langle-,-\rangle$. In particular, the generalized BF theory
+To simplify the notation in the proof, we assume $X,Y,M'=\pt$, though the argument in the general case is identical. Then $\fg$ carries a $(-2)$-shifted pairing $\langle-,-\rangle$. In particular, the generalized BF theory
 \[T^*[-1] \map(\pt, B \fg) = T^*[-1] B \fg\]
 has the bundle of BV fields $\fg[1] \oplus \fg^*[-2]$. We may identify it with $\fg[1]\oplus \fg$, where the pairing $\omega_N$ pairs the two factors using $\langle-,-\rangle$.
 
@@ -1425,7 +1404,7 @@ Fix the following data:
 
 Note that the supertranslation Lie algebra $\fA$ is a $\Spin(V_\RR)\times G_R$-equivariant super Lie algebra.  We will sometimes want to refer to the infinitesimal version of this action.
 \begin{definition}
-Let $\fA$ be a supertranslation algebra.  The corresponding \emph{supersymmetry algebra} is the Lie algebra $(\so(V) \oplus \gg_R) \ltimes \fA$.
+Let $\fA$ be a supertranslation algebra.  The corresponding \defterm{supersymmetry algebra} is the Lie algebra $(\so(V) \oplus \gg_R) \ltimes \fA$.
 \end{definition}
 
 We will now define the fundamental notion of a supersymmetric field theory.  Consider a spacetime manifold $M=V_\RR$. Let $\ISO(V_\RR) = \Spin(V_\RR)\ltimes V_\RR$ be the \defterm{Poincar\'{e} group} which acts by affine transformations on $M$.
@@ -1748,7 +1727,7 @@ Let $\fg$ be a Lie algebra equipped with a nondegenerate symmetric bilinear pair
 Denote by $F_A = \d A + \frac{1}{2}[A\wedge A]$ the curvature of $A$ and let $\sd\d_A$ be the twisted Dirac operator obtained from $\Gamma$ (see Appendix \ref{sect:spinors}).
 
 \begin{definition}
-The BRST theory for classical supersymmetric Yang-Mills theory has underlying $\ZZ \times \ZZ/2$-graded bundle:
+The BRST theory for classical supersymmetric Yang-Mills theory has underlying $\ZZ \times \ZZ/2\ZZ$-graded bundle:
 \[
 F_{\rm gauge} = \Omega^1(V_\RR; \fg) \oplus \Gamma(V_\RR; \Pi \Sigma \otimes \fg) \oplus \Omega^0(V_\RR; \fg[1])
 \]
@@ -3377,16 +3356,16 @@ s = \frac{(1+t)^2}{(1-t)^2}.
 \label{eq:4d4sinvariant}
 \end{equation}
 
-\begin{cor}
+\begin{corollary}
 The rank $(2, 2)$ twist of 4d $\cN=4$ super Yang--Mills for $s=1$ is perturbatively equivalent to the topological BF theory $T^*[-1]\map(\RR^4_{\mathrm{dR}}, B\fg)$.
-\end{cor}
+\end{corollary}
 \begin{proof}
 The supercharge $Q_0$ has $s$-invariant $s=1$. By Theorem \ref{thm:4d422Hodgetwist} the twist by $Q_0$ is perturbatively equivalent to the specialization of the theory $\map(\RR^4_{\mathrm{dR}}, B\fg_{\Hod})$ at $t=0$. By Proposition \ref{prop:Hodgetheoryspecialization} the latter is isomorphic to the topological BF theory $T^*[-1]\map(\RR^4_{\mathrm{dR}}, B\fg)$.
 \end{proof}
 
-\begin{cor}
+\begin{corollary}
 The rank $(2, 2)$ twist of 4d $\cN=4$ super Yang--Mills for $s\neq 1$ is perturbatively trivial.
-\end{cor}
+\end{corollary}
 \begin{proof}
 For any $s\neq 1$ we may find $t\neq 0$ solving \eqref{eq:4d4sinvariant}. But by Proposition \ref{prop:Hodgetheoryspecialization} the specialization of the topological Hodge theory $\map(\RR^4_{\mathrm{dR}}, B\fg_{\Hod})$ at $t\neq 0$ is perturbatively trivial.
 \end{proof}
