@@ -43,8 +43,7 @@
 
 \begin{abstract}
 We give a complete classification of twists of supersymmetric Yang-Mills theories in dimensions~$2\leq n \leq 10$.
-We formulate supersymmetric Yang-Mills theory classically using the BV formalism, and then we construct an action by the supersymmetry algebra using the language of $L_\infty$ algebras.
-For each class of square-zero supercharges in the supersymmetry algebra, we give a description of the corresponding twisted theory in terms of partially holomorphic and topological versions of Chern-Simons and $BF$ theory. 
+We formulate supersymmetric Yang-Mills theory classically using the BV formalism, and then we construct an action of the supersymmetry algebra using the language of $L_\infty$ algebras.  For each orbit in the space of square-zero supercharges in the supersymmetry algebra, under the action of the spin group and the group of R-symmetries, we give a description of the corresponding twisted theory.  These twists can be described in terms of mixed holomorphic-topological versions of Chern-Simons and $BF$ theory. 
 \end{abstract}
 
 \setcounter{tocdepth}{2}
@@ -54,40 +53,40 @@ For each class of square-zero supercharges in the supersymmetry algebra, we give
 \label{sect:intro}
 \addcontentsline{toc}{section}{Introduction}
 
-In this paper we calculate supersymmetric twists of super Yang--Mills theories in dimension 2 through 10. Our main tools are the classical Batalin--Vilkovisky formalism which eliminates the need for auxiliary fields to close the on-shell supersymmetry action and a consistent use of dimensional reduction which allows us to deduce lower-dimensional statements from higher-dimensional statements.
+In this paper we calculate supersymmetric twists of super Yang--Mills theories in dimension 2 through 10. Our main tools are the classical Batalin--Vilkovisky formalism, which eliminates the need for auxiliary fields to close the on-shell supersymmetry action, and a consistent use of dimensional reduction which allows us to deduce lower-dimensional statements from higher-dimensional statements.
 
 \subsection*{Classical Field Theories}
 
-Let us begin with an informal discussion of classical field theories. A classical field theory is usually taken to be the data of the space of fields $\cF$ equipped with an action functional. To incorporate gauge symmetries, one may either work with $\cF$ as a stack or, as in the BRST formalism, with $\cF$ as a $Q$-manifold, i.e. a graded manifold equipped with a square-zero vector field of cohomological degree $1$ (the BRST differential). In the Batalin--Vilkovisky approach one considers instead the space of BV fields $\cE$ which is equipped with a $(-1)$-shifted symplectic structure which may be modeled by a $QP$-manifold. Moreover, we assume that the $Q$-structure is Hamiltonian, i.e. it is given by a Poisson bracket $\{S, -\}$ with respect to the BV action functional. Here $\cE$ is supposed to be the derived critical locus of the action functional on $\cF$.
+Let us begin with an informal discussion of classical field theories. A classical field theory is usually defined in terms of the data of the space of fields $\cF$ equipped with an action functional. To incorporate gauge symmetries, one may either work with $\cF$ as a stack or, as in the BRST formalism, with $\cF$ as a $Q$-manifold, i.e. a graded manifold equipped with a square-zero vector field of cohomological degree $1$ (the BRST differential). In the Batalin--Vilkovisky approach one considers instead the space of BV fields $\cE$, which is equipped with a $(-1)$-shifted symplectic structure; this may be modeled by a $QP$-manifold \cite{Schwarz}. Moreover, we assume that the $Q$-structure is Hamiltonian, i.e. that it is given by a Poisson bracket $\{S, -\}$ with respect to the BV action functional. Here $\cE$ is supposed to be the derived critical locus of the action functional on $\cF$.
 
-In this paper we follow the approach developed in the works of Costello and Gwilliam \cite{CostelloBook,Book1}. As the space of BV fields $\cE$ is an infinite-dimensional manifold, it is difficult to work with it directly (for instance, to make sense of a $(-1)$-shifted symplectic structure). Instead, we zoom in on a neighborhood of a point where $Q$ vanishes (i.e. we consider a given classical solution). We may then consider $\cE$ as the space of sections of a graded vector bundle $E\rightarrow M$ over the spacetime manifold $M$. This allows us to work with finite-dimensional objects throughout. Namely, a $(-1)$-shifted symplectic structure on $\cE$ boils down to a $(-1)$-shifted symplectic pairing $E\cong E^![-1]$, where $E^!=E^*\otimes \Dens_M$. We refer to Definition \ref{def:classicalfieldtheory} for the precise definition of a classical field theory in the BV formalism that we use. Moreover, with this definition we may talk about weak equivalences of classical field theories (a notion inaccessible with $QP$-manifolds) which are simply maps of classical field theories inducing a quasi-isomorphism on $\cE$. We call these \emph{perturbative equivalences} (see Definition \ref{def:perturbativeequivalence}) to emphasize that we are working in a formal neighborhood of a given classical solution. For simplicity, throughout the paper we ignore issues of unitarity, so we complexify all fields.
+In this paper we follow the approach developed in the works of Costello and Gwilliam \cite{CostelloBook,Book1}. As the space of BV fields $\cE$ is an infinite-dimensional manifold, it is difficult to work with it directly (for instance, to make sense of a $(-1)$-shifted symplectic structure). Instead, we zoom in on the neighborhood of a point where $Q$ vanishes (i.e. we consider a given classical solution). We may then consider $\cE$ as the space of sections of a graded vector bundle $E\rightarrow M$ over the spacetime manifold $M$. This allows us to work with finite-dimensional objects throughout. Namely, a $(-1)$-shifted symplectic structure on $\cE$ boils down to a $(-1)$-shifted symplectic pairing $E\cong E^![-1]$, where $E^!=E^*\otimes \Dens_M$. We refer to Definition \ref{def:classicalfieldtheory} for the precise definition of a classical field theory in the BV formalism that we use. Moreover, with this definition we may talk about weak equivalences of classical field theories (a notion inaccessible with $QP$-manifolds) which are simply maps of classical field theories inducing a quasi-isomorphism on $\cE$. We call these \emph{perturbative equivalences} (see Definition \ref{def:perturbativeequivalence}) to emphasize that we are working in a formal neighborhood of a given classical solution. For simplicity, throughout the paper we ignore issues of unitarity: in other words, we always consider complexified bundles of fields.
 
 \subsection*{Classical Supersymmetric Field Theories}
 
-Now consider a classical field theory where the spacetime manifold is $M=\RR^n$, which is moreover translation-invariant. Given the data of a spinorial representation $\Sigma$ equipped with a symmetric pairing $\Gamma\colon\Sym^2(\Sigma)\rightarrow V=\CC^n$, we may construct a super Lie algebra of supertranslations $\fA=\Pi\Sigma\oplus V$ with the only nonvanishing Lie bracket given by $\Gamma$. A supersymmetric classical field theory is then a translation-invariant classical field theory on $\RR^n$ where the translation action is extended to an action of the super Lie algebra $\fA$. In addition, we may consider an $R$-symmetry group $G_R$ which acts on $\Sigma$ preserving $\Gamma$ and the $\so(n)$-action and also compatibly on the classical field theory.
+Now consider a classical field theory where the spacetime manifold is $M=\RR^n$, and where the theory is moreover translation-invariant. Given the data of a spinorial representation $\Sigma$ equipped with a symmetric pairing $\Gamma\colon\Sym^2(\Sigma)\rightarrow V=\CC^n$, we may construct a super Lie algebra of supertranslations $\fA=\Pi\Sigma\oplus V$ with the only nonvanishing Lie bracket given by $\Gamma$. A supersymmetric classical field theory is then a translation-invariant classical field theory on $\RR^n$ where the translation action on the fields is extended to an action of the super Lie algebra $\fA$. In addition, we may consider an $R$-symmetry group $G_R$ which acts on $\Sigma$ preserving $\Gamma$ and the $\so(n)$-action and also compatibly on the classical field theory.
 
 In most literature on supersymmetry one simply tries to build an action of $\fA$ on the space of ordinary fields $\cF$. However, one often runs into a problem that the supersymmetry action is only \emph{on-shell}: the map from $\fA$ to vector fields $\mathrm{Vect}(\cF)$ preserves Lie brackets only on the critical locus of the action functional. The usual solution is to enlarge the space of fields by adding auxiliary fields with no kinetic terms on which there is an honest (\emph{off-shell}) action of $\fA$. However, this choice may be not canonical. For instance, in 10d $\cN=(1, 0)$ super Yang--Mills one needs to break the Lorentz group $\SO(10)$ to $\Spin(7)\times\SO(2)$ to have an off-shell action of a subalgebra of $\fA$ where the odd part is 9-dimensional (instead of 16-dimensional) \cite{BaulieuBerkovitsBossardMartin}.
 
-We instead take another approach pioneered by Baulieu \cite{BaulieuBV}. Namely, one may canonically extend the supersymmetry action from ordinary fields $\cF$ to the space of BV fields $\cE$. The property of the action being on-shell now means that the map $\fA\rightarrow \mathrm{Vect}(\cE)$ preserves Lie brackets up to homotopy. One may then try to extend it to an $L_\infty$ action.
+We instead take another approach pioneered by Baulieu, Bellon, Ouvry and Wallet \cite{BaulieuBV}. Namely, one may canonically extend the supersymmetry action from ordinary fields $\cF$ to the space of BV fields $\cE$. The property of the action being on-shell now means that the map $\fA\rightarrow \mathrm{Vect}(\cE)$ preserves Lie brackets, but only up to homotopy. One may then try to incorporate these homotopies: to extend the Lie action to an $L_\infty$ action.  This contrasts with the auxiliary field approach of the previous paragraph, where one instead builds a resolution of the space of BV fields on which the supersymmetry Lie algebra acts strictly.
 
-In these paper we consider supersymmetric Yang--Mills theories in dimensions 2 through 10. In dimensions 3 through 10 these may be obtained by dimensional reduction of the following theories: 10d $\cN=(1, 0)$ super Yang--Mills, 6d $\cN=(1, 0)$ super Yang--Mills, 4d $\cN=1$ super Yang--Mills and 3d $\cN=1$ super Yang--Mills. First of all, these theories depend on a choice of a Lie algebra $\fg$ equipped with a symmetric nondegenerate bilinear pairing. In addition, in dimensions 6, 4 and 3 we may add matter multiplets: in dimension 6 these depend on a choice of a symplectic $\fg$-representation (a hypermultiplet), in dimension 4 these depend on a choice of a $\fg$-representation (a chiral multiplet) and in dimension 3 these depend on a choice of an orthogonal $\fg$-representation. We do not consider superpotential and mass terms in this paper. Moreover, as we are working perturbatively, we ignore all topological terms ($\theta$-terms).
+In this paper we consider supersymmetric Yang--Mills theories in dimensions 2 through 10. In dimensions 3 through 10 these may be obtained by dimensional reduction of the following theories: 10d $\cN=(1, 0)$ super Yang--Mills, 6d $\cN=(1, 0)$ super Yang--Mills, 4d $\cN=1$ super Yang--Mills and 3d $\cN=1$ super Yang--Mills. These theories depend on a choice of a Lie algebra $\fg$ equipped with a symmetric nondegenerate bilinear pairing. In addition, in dimensions 6, 4 and 3 we may add matter multiplets: in dimension 6 these depend on a choice of a symplectic $\fg$-representation (a hypermultiplet), in dimension 4 these depend on a choice of a $\fg$-representation (a chiral multiplet) and in dimension 3 these depend on a choice of an orthogonal $\fg$-representation. We do not consider superpotential and mass terms in this paper. Moreover, as we are working perturbatively, we ignore all topological terms ($\theta$-terms).
 
-The on-shell supersymmetry of pure super Yang--Mills theories in these dimensions can be proven by using a well-known relationship between composition algebras (e.g. division algebras) and supersymmetry (see Section \ref{sect:compositionalgebras}) which goes back to the works \cite{Evans,KugoTownsend}. For instance, we may construct the 10d $\cN=(1, 0)$ supersymmetry from octonions $\mathbb{O}$, 6d $\cN=(1, 0)$ supersymmetry from quaternions $\mathbb{H}$, 4d $\cN=1$ supersymmetry from complex numbers $\CC$ and 3d $\cN=1$ supersymmetry from real numbers $\RR$. Our treatment follows the work of Baez and Huerta \cite{BaezHuerta} and we show how to extend the $\fA$-action to an $L_\infty$-action using these ideas. As a new result, we also construct an $L_\infty$-action on matter multiplets where the language of composition algebras turns out to be indispensable (see Section \ref{sect:mattermultipletSUSY}). Namely, for any real associative composition algebra $A_\RR$ we simply need a complex $\fg$-representation equipped with an $A_\RR$-module structure and a symmetric bilinear pairing. We have the following three cases:
+The on-shell supersymmetry of pure super Yang--Mills theories in these dimensions can be proven by using a well-known relationship between composition algebras (e.g. division algebras) and supersymmetry (see Section \ref{sect:compositionalgebras}) which goes back to the works \cite{Evans,KugoTownsend}. For instance, we may construct the 10d $\cN=(1, 0)$ supersymmetry from the algebra of octonions $\mathbb{O}$, 6d $\cN=(1, 0)$ supersymmetry from the algebra of quaternions $\mathbb{H}$, 4d $\cN=1$ supersymmetry from the complex numbers $\CC$ and 3d $\cN=1$ supersymmetry from the real numbers $\RR$. Our treatment follows the work of Baez and Huerta \cite{BaezHuerta} and we show how to extend the on-shell $\fA$-action to an $L_\infty$-action using these ideas. As a new result, we also construct an $L_\infty$-action on matter multiplets where the language of composition algebras turns out to be indispensable (see Section \ref{sect:mattermultipletSUSY}). Namely, for any real associative composition algebra $A_\RR$ we simply need a complex $\fg$-representation equipped with an $A_\RR$-module structure and a symmetric bilinear pairing. We have the following three cases:
 \begin{itemize}
 \item (\textbf{6d $\cN=(1, 0)$ supersymmetry}) For $A_\RR=\mathbb{H}$ this forces $P=U\otimes W_+$, where $U$ is a symplectic $\fg$-representation and $W_+$ is a 2d complex symplectic vector space (so that $\mathbb{H}\otimes_\RR\CC\cong \eend(W_+)$).
 \item (\textbf{4d $\cN=1$ supersymmetry}) For $A_\RR=\mathbb{C}$ this forces $P=R\oplus R^*$, where $R$ is a $\fg$-representation.
 \item (\textbf{3d $\cN=1$ supersymmetry}) For $A_\RR=\mathbb{R}$ we simply have an orthogonal $\fg$-representation $P$.
 \end{itemize}
 
-In addition to dimensional reduction of these four super Yang--Mills theories, there are also certain special super Yang--Mills theories with chiral supersymmetry: namely, 2d $\cN=(1, 0)$, $\cN=(2, 0)$ and $\cN=(4, 0)$ with matter as well as pure $\cN=(\cN_+, 0)$ theories for any $\cN_+$. We treat these separately (see Section \ref{sect:2dchiral}), but again the language of composition algebras turns out to be convenient.
+In addition to the dimensional reduction of these four super Yang--Mills theories, there are also certain special super Yang--Mills theories with chiral supersymmetry: namely, 2d $\cN=(1, 0)$, $\cN=(2, 0)$ and $\cN=(4, 0)$ with matter as well as pure $\cN=(\cN_+, 0)$ theories for any $\cN_+$. We treat these separately (see Section \ref{sect:2dchiral}), but again the language of composition algebras turns out to be convenient.
 
 \subsection*{Supersymmetric Twists}
 
-The notion of supersymmetric twist of a supersymmetric field theory was introduced by Witten \cite{WittenTQFT}. The definitions we use in this paper will follow our previous work \cite{ElliottSafronov}, so let us briefly recall those.
+The notion of supersymmetric twisting for a supersymmetric field theory was introduced by Witten \cite{WittenTQFT}. The definitions we use in this paper will follow our previous work \cite{ElliottSafronov}, so let us briefly recall those.
 
-Suppose $Q$ is a square-zero supercharge, i.e. an odd element $Q\in\fA$ such that $[Q, Q]=0$. Then it gives rise to a square-zero odd symplectic vector field on the space of BV fields $\cE$. In particular, we may modify the differential on $\cE$ as $\mathrm{d}\mapsto \mathrm{d}+Q$. Working up to perturbative equivalence, this turns out to drastically simplify the theory as we will shortly see.
+Suppose $Q$ is a square-zero supercharge, i.e. an odd element $Q\in\fA$ such that $[Q, Q]=0$. Then it gives rise to a square-zero odd symplectic vector field on the space of BV fields $\cE$. In particular, we may modify the differential on $\cE$ by the replacement $\mathrm{d}\mapsto \mathrm{d}+Q$. Working up to perturbative equivalence, this turns out to drastically simplify the theory as we will shortly see.
 
-The original classical field theory carried a $\ZZ\times\ZZ/2\ZZ$-grading, where $\ZZ$ is the cohomological (ghost) grading and $\ZZ/2\ZZ$ is the fermionic grading. We see that $\mathrm{d}$ has bidegree $(1, 0)$ while $Q$ has bidegree $(0, 1)$. So, in general the twisted theory is only $\ZZ/2\ZZ$-graded (with respect to the total grading). To improve that, we may additionally consider a homomorphism $\alpha\colon \U(1)\rightarrow G_R$ into the R-symmetry group under which $Q$ has weight $1$ and such that the $\alpha$-grading modulo 2 coincides with the fermionic grading. Then the $\alpha$-grading gives rise to a $\ZZ$-grading on the twisted theory.
+The original classical field theory carried a $\ZZ\times\ZZ/2\ZZ$-grading, where $\ZZ$ is the cohomological (in the physics literature: ghost number) grading and $\ZZ/2\ZZ$ is the fermionic grading. We see that $\mathrm{d}$ has bidegree $(1, 0)$ while $Q$ has bidegree $(0, 1)$. So, in general the twisted theory is only $\ZZ/2\ZZ$-graded (with respect to the total grading). To improve that, we may additionally consider a homomorphism $\alpha\colon \U(1)\rightarrow G_R$ into the R-symmetry group under which $Q$ has weight $1$ and such that the $\alpha$-grading modulo 2 coincides with the fermionic grading. Then the $\alpha$-grading gives rise to a $\ZZ$-grading on the twisted theory.
 
 Finally, let us observe that the original classical field theory carried an action of $\Spin(n)$ by rotations of $\RR^n$. But since $Q$ is not preserved under $\Spin(n)$, this action does not survive in the twisted theory. To improve that, we may consider a group $G$ with a \emph{twisting homomorphism} $G\rightarrow \Spin(n)\times G_R$ under which $Q$ is a scalar. Given such a twisting homomorphism, the twisted theory carries a $G$-action.
 
@@ -106,17 +105,17 @@ A classification of possible square-zero supercharges $Q$ was previously done in
 
 \subsection*{Supersymmetric Twists and Supergravity}
 
-In this paper we only consider the case of global supersymmetry for super Yang--Mills theories on $\RR^n$. In certain cases one may consider coupling of super Yang--Mills to supergravity in which case the interpretation of the twist is that we consider a nontrivial supergravity background. Let us briefly explain this perspective.
+In this paper we only consider the case of global supersymmetry for super Yang--Mills theories on $\RR^n$. In certain cases one may consider coupling of super Yang--Mills to supergravity in which case there is an interpretation of the twisting procedure as performing perturbation theory in a nontrivial supergravity background. Let us briefly explain this perspective.
 
-A classical solution of supergravity consists, in particular, of the following data: a spacetime manifold $M$, a $\Spin(n)$-bundle $P_\Spin\rightarrow M$ equipped with a connection (spin connection), a $G_R$-bundle $P_R\rightarrow M$ equipped with a connection and a ghost for supertranslations $\eta\in \Gamma(M, (P_\Spin\times P_R)\times^{\Spin(n)\times G_R}\Sigma)$. If we couple super Yang--Mills to supergravity, then the super Yang--Mills fields become sections of the associated bundles to $P_\Spin\times P_R$.
+A classical solution of supergravity consists, in particular, of the following data: a spacetime manifold $M$, a $\Spin(n)$-bundle $P_\Spin\rightarrow M$ equipped with a connection (spin connection), a $G_R$-bundle $P_R\rightarrow M$ equipped with a connection and a ghost for supertranslations $\eta\in \Gamma(M, (P_\Spin\times P_R)\times^{\Spin(n)\times G_R}\Sigma)$.  The ghost $\eta$ is bosonic: it lives in bidegree $(-1,1)$ for the $\ZZ \times \ZZ/2\ZZ$-grading, so it makes sense to give it a non-zero value.  If we couple super Yang--Mills to supergravity, then the super Yang--Mills fields become sections of the associated bundles to $P_\Spin\times P_R$.
 
 We have the following supergravity analogs of the data $(Q, \phi, \alpha)$ for supersymmetric twisting:
 \begin{itemize}
 \item The supergravity analog of the choice of a square-zero supercharge $Q$ is the value of the ghost $\eta$.
 
-\item In the supergravity setting we consider a $G$-bundle $P_G\rightarrow M$ with a connection so that $P_\Spin\times P_R$ is induced via the homomorphism $G\rightarrow \Spin(n)\times G_R$.
+\item The supergravity analog of the twisting homomorphism is a choice of $G$-bundle $P_G\rightarrow M$ with connection so that $P_\Spin\times P_R$ is induced via the homomorphism $G\rightarrow \Spin(n)\times G_R$.
 
-\item Given $\alpha\colon \U(1)\rightarrow G_R$, we consider a trivial $\U(1)$-subbundle in $G_R$ on which the connection restricts to zero.
+\item The supergravity analog of $\alpha\colon \U(1)\rightarrow G_R$, if a choice of trivial $\U(1)$-subbundle in $G_R$ on which the connection restricts to zero.
 \end{itemize}
 
 \subsection*{Applications to Quantization}
@@ -124,19 +123,30 @@ We have the following supergravity analogs of the data $(Q, \phi, \alpha)$ for s
 
 The quantization of gauge theories is notoriously subtle and requires a rich theory of renormalization.  One attractive application of the descriptions of the twists of supersymmetric gauge theories that we provide is to study quantization in a setting where the machinery required for renormalization is much more rigid.
 
-To rigorously study the quantization of supersymmetric Yang-Mills theory we can work with the mathematical theory of renormalization developed by Costello in \cite{CostelloBook}. This theory of renormalization can been used to study field theories with and without supersymmetry. \brian{many citations} In the context of (non-supersymmetric) Yang-Mills theory, for instance, it is shown that this theory recovers asymptotic freedom by an explicit analysis of the local counterterms present in the four-dimensional gauge theory \cite{EWY}.  
+To rigorously study the quantization of supersymmetric Yang-Mills theory we can work with the mathematical theory of renormalization developed by Costello in \cite{CostelloBook}. This theory of renormalization can been used to study field theories with and without supersymmetry. \brian{many citations} \chris{I'm not sure what you want to cite here.} In the context of (non-supersymmetric) Yang-Mills theory, for instance, it is shown that this theory recovers asymptotic freedom by an explicit analysis of the local counterterms present in the four-dimensional gauge theory \cite{EWY}.  
 
-In principle, the existence of local counterterms can be used to analyze the full untwisted supersymmetric gauge theories in a mathematically rigorous way.  In practice, however, our approach to renormalization does not provide any significant advantage over traditional approaches used in QFT.  However, a significant simplification happens at the level of the {\em twisted} supersymmetric Yang-Mills theories that we study in this work. To start with, for some examples (but not all), the twisted theory turns out to be a {\em topological field theory}. The theory of renormalization for topological theories can be handled using configuration spaces \cite{Kontsevich}. \brian{more examples} 
+In principle, the existence of local counterterms can be used to analyze the full untwisted supersymmetric gauge theories in a mathematically rigorous way.  In practice, however, our approach to renormalization does not provide any significant advantage over traditional approaches used in QFT.  However, a significant simplification happens at the level of the {\em twisted} supersymmetric Yang-Mills theories that we study in this work. To start with, for some examples (but not all), the twisted theory turns out to be a {\em topological field theory}.  This occurs whenever the bracket $[Q,-]$ with the twisting supercharge surjects onto the space of translations. The theory of renormalization for topological theories can be handled using configuration spaces \cite{Kontsevich, AxelrodSinger}. 
 
 In the general setting of this paper, while not every twist results in a topological field theory, it does result in a theory in which some directions of spacetime behave topologically, and the remaining directions behave holomorphically. For a mixed holomorphic-topological translation invariant field theory of this type on $\RR^n \times \CC^d$, this means that at least half of the linearly independent translation invariant vector fields act on the field theory in a BRST exact way.
 
-Inspired by the work of Costello and Li in \cite{BCOV1} and Li in \cite{LiFeynman, LiVertex}, the foundations of renormalization for mixed holomorphic-topological field theories on Euclidean space has been developed in \cite{BWhol}. The key result is that the renormalization for mixed holomorphic-topological theories is extremely well-behaved from an analytic perspective. It is shown in the cited work that to first order in $\hbar$, the renormalization of mixed holomorphic/topological theory is {\em finite}. Furthermore, in \cite{LiVertex}, it is shown that in real dimension two this holds to all orders in $\hbar$. 
+Inspired by the work of Costello and Li in \cite{BCOV1} and Li in \cite{LiFeynman, LiVertex}, the foundations of renormalization for mixed holomorphic-topological field theories on Euclidean space has been developed in \cite{BWhol}. The key result is that the renormalization for mixed holomorphic-topological theories is extremely well-behaved from an analytic perspective. It is shown in the cited work that, to first order in $\hbar$, the renormalization of mixed holomorphic/topological theory is {\em finite}. Furthermore, in \cite{LiVertex}, it is shown that in real dimension two this holds to all orders in $\hbar$. 
 
-These results yield a salient approach to mathematically characterizing the one-loop quantization of every twist of supersymmetric Yang-Mills theory. Furthermore, in all examples of theories obtained via twisting occuring in dimensions 8 and lower, not much is lost when asking for the one-loop quantization.  The twisted gauge theories here are all either equivalent to $BF$-type theories, or deformations of such theories by a holomorphic differential operator.  Such theories admit prequantizations (that is, they define families of effective field theories compatible under renormalization group flow), which are exact at one loop; meaning all higher order corrections vanish identically.  
+These results yield a practical approach to the problem of mathematically characterizing the one-loop quantization of every twist of supersymmetric Yang-Mills theory. Furthermore, in all examples of theories obtained via twisting occuring in dimensions 8 and lower, not much is lost when asking for the one-loop quantization.  The twisted gauge theories here are all either equivalent to $BF$-type theories (see Section \ref{gen_BF_section}) or deformations of such theories by a holomorphic differential operator.  Such theories admit prequantizations (that is, they define families of effective field theories compatible under renormalization group flow), which are exact at one loop, meaning all higher order corrections vanish identically.  
 
 From this starting point, the first natural problem would be to verify whether these one-loop exact prequantizations define actual quantizations of the classical twisted field theory.  That is, for each such theory, to compute the one-loop anomalies to the solution of the quantum master equation.  This problem comes in two parts: first, to compute the one-loop anomaly to quantization of the theory on flat space $\RR^n \times \CC^d$, and second -- in the case where we can use a twisting homomorphism to define the twisted theory on certain structured $(n+2d)$-manifolds, to calculate the corresponding one-loop anomaly on curved space (in other words, incorporating the computation of a gravitational anomaly). We plan to return to this question in future work.
 
 \subsection*{The Relationship to Factorization Algebras}
+In our previous paper \cite{ElliottSafronov}, we discussed supersymmetric twisting with an emphasis not on the classical fields of a supersymmetric field theory, but instead on their classical or quantum \emph{observables}.  The factorization algebra formalism of Costello and Gwilliam \cite{Book1, Book2} provides a model for the local structure of the observables in a general quantum field theory.  In brief, for every open subset $U \sub M$ of the spacetime manifold, one associates a (possibly $\ZZ \times \ZZ/2\ZZ$-graded) vector space $\obs(U)$ of local observables on $U$.  For any pair $U_1, U_2 \sub V$ of disjoint open subsets of an open set $V$, one associates a morphism
+\[m_{U_1, U_2}^V \colon \obs(U_1) \otimes \obs(U_2)\to \obs(V),\]
+thought of as an \emph{operator product} for local observables.  These products should vary smoothly as one varies the open subsets $U_1, U_2$ and $V$.  Starting with a classical field theory on $M$, defined using the BV formalism, one can build a factorization algebra $\obs^{\mr{cl}}$ modelling the classical observables of the field theory.  If the classical field theory carries the action of a group $G$, so does the associated factorization algebra.  Furthermore, Costello and Gwilliam develop techniques for the quantization of such algebras of classical observables, using the theory of renormalization as discussed in the previous section.
+
+In \cite{ElliottSafronov} we studied the supersymmetric twisting procedure as applied to factorization algebras on $\RR^n$ with an action of a supersymmetry algebra.  If $Q$ is a topological supercharge, then the $Q$-twist $\obs^Q$ of a supersymmetric factorization algebra automatically satisfies a strong translation invariance condition: all translations must act homotopically trivially.  In good circumstances, we can say even more.  An \emph{$\bb E_n$-algebra} is an algebra over the operad of little $n$-disks; in the language above, this can be obtained from a factorization algebra for which homotopy equivalent configurations $U_1, U_2 \sub V$ induce homotopy equivalent products.
+\begin{nonum}[{\cite[Theorem 3]{ElliottSafronov}}]
+If $Q$ is a topological supercharge, and the operator $\obs^Q(B_r(0)) \to \obs^Q(B_R(0))$ associated to the inclusion of concentric balls is an equivalence, then the factorization algebra $\obs^Q$ has the canonical structure of an $\bb E_n$-algebra.
+\end{nonum}
+The hypothesis of the theorem is automatically satisfied, for example, for superconformal theories, and should be concretely checkable in examples.
+
+In the present work we classify twists of classical field theories, to which one can associate twisted factorization algebras of classical -- and, if the appropriate anomalies vanish, quantum -- observables in the sense of our previous work.  In some (topological) examples, these define $\bb E_n$-algebras.  In other examples, where the twist is not fully topological, the twisted local observables will define higher analogues of vertex algebras (as in, for instance, \cite{GwilliamWilliamsKM}).
 
 
 \subsection*{Summary of Twisted Super Yang--Mills Theories}
@@ -144,11 +154,11 @@ From this starting point, the first natural problem would be to verify whether t
 
 In this section we will summarize the main results of the paper presented in Part \ref{classification_part}, where we calculate twists of super Yang--Mills theories in dimensions 2 through 10.
 
-Let us begin by explaining what we mean by ``calculation''. Recall that for a Lie algebra $\fg$ there is a $d$-dimensional topological BF theory defined on a $d$-dimensional spacetime manifold $M$ with the space of BV fields $\Omega^\bullet(M; \fg)[1]\oplus \Omega^\bullet(M; \fg^*)[d-2]$, where $\Omega^\bullet$ denotes the space of differential forms equipped with the de Rham differential $\mathrm{d}$. If $M$ is replaced by a complex manifold $X$, we may also consider its version with the space of fields $\Omega^{\bullet, \bullet}(X; \fg)[1]\oplus \Omega^{\bullet, \bullet}(X; \fg^*)[2\dim(X)-2]$, where $\Omega^{\bullet, \bullet}$ is the space of differential forms equipped with the Dolbeault differential. Finally, we have yet another version, a \emph{holomorphic BF theory}, with the space of BV fields $\Omega^{0, \bullet}(X; \fg)[1]\oplus \Omega^{\dim(X), \bullet}(X; \fg^*)[\dim(X)-2]$. We will denote the space of fields in these three examples as $T^*[-1]\map(M_{\mathrm{dR}}, B\fg)$, $T^*[-1]\map(X_{\mathrm{Dol}}, B\fg)$ and $T^*[-1]\map(X, B\fg)$ respectively (the notation is explained in Section \ref{sect:FMPs}). We may also combine these three examples into what we call a \emph{generalized BF theory} with the spaces of fields $T^*[-1]\map(X\times Y_{\mathrm{Dol}}\times M_{\mathrm{dR}}, B\fg)$ (see Definition \ref{def:generalizedBF} for more details).
+Let us begin by explaining what we mean by ``calculation''. Recall that for a Lie algebra $\fg$ there is a $d$-dimensional topological BF theory defined on a $d$-dimensional spacetime manifold $M$ with the space of BV fields $\Omega^\bullet(M; \fg)[1]\oplus \Omega^\bullet(M; \fg^*)[d-2]$, where $\Omega^\bullet$ denotes the space of differential forms equipped with the de Rham differential $\mathrm{d}$. If $M$ is replaced by a complex manifold $X$, we may also consider its version with the space of fields $\Omega^{\bullet, \bullet}(X; \fg)[1]\oplus \Omega^{\bullet, \bullet}(X; \fg^*)[2\dim(X)-2]$, where $\Omega^{\bullet, \bullet}$ is the space of differential forms equipped with the Dolbeault differential. Finally, we have yet another version, a \emph{holomorphic BF theory}, with the space of BV fields $\Omega^{0, \bullet}(X; \fg)[1]\oplus \Omega^{\dim(X), \bullet}(X; \fg^*)[\dim(X)-2]$, again equipped with the Dolbeault differential. We will denote the space of fields in these three examples as $T^*[-1]\map(M_{\mathrm{dR}}, B\fg)$, $T^*[-1]\map(X_{\mathrm{Dol}}, B\fg)$ and $T^*[-1]\map(X, B\fg)$ respectively (the notation is explained in Section \ref{sect:FMPs}). We may also combine these three examples into what we call a \emph{generalized BF theory} with the spaces of fields $T^*[-1]\map(X\times Y_{\mathrm{Dol}}\times M_{\mathrm{dR}}, B\fg)$ (see Definition \ref{def:generalizedBF} for more details).
 
-Let us also recall that if $\fg$ is equipped with a symmetric bilinear nondegenerate pairing, we also have a 3-dimensional topological Chern--Simons theory. If we forgo $\ZZ$-gradings and work with $\ZZ/2\ZZ$-gradings, we may also consider a topological Chern--Simons theory in any odd dimension (see \cite{AlekseevMnev} for a 1-dimensional version and \cite{BakGustavsson2} for a 5-dimensional version). Just like for the BF theory, we also have two other versions which may be combined into a generalized Chern--Simons theory. Another direction we can generalize in is to replace the Lie algebra $\fg$ by a dg Lie algebra in which case the BF theory itself becomes a particular example of the Chern--Simons theory.
+Let us also recall that if $\fg$ is equipped with a symmetric bilinear nondegenerate pairing, we also have a 3-dimensional topological Chern--Simons theory. If we forgo $\ZZ$-gradings and work with $\ZZ/2\ZZ$-gradings, we may also consider a topological Chern--Simons theory in any odd dimension (see \cite{AlekseevMnev} for a 1-dimensional version and \cite{BakGustavsson2} for a 5-dimensional version). Just like for the BF theory, we also have two other versions which may be combined into a generalized Chern--Simons theory. Another direction we can generalize in is to replace the Lie algebra $\fg$ by a dg Lie algebra, in which case the BF theory itself becomes a particular example of the Chern--Simons theory.
 
-Our goal will then be to show that a particular twist of super Yang--Mills is equivalent to a given generalized Chern--Simons theory. We summarize our results in two forms. In Tables \ref{table_of_twists_16}, \ref{table_of_twists_8} and \ref{table_of_twists_4} we summarize all the possible twists of dimensional reductions of 10d $\cN=(1, 0)$ super Yang--Mills, 6d $\cN=(1, 0)$ super Yang--Mills and 4d $\cN=1$ super Yang--Mills respectively. We will now give a short description of each twisted theory in a more physical language, with references to where in the literature it was previously considered.
+Our goal will then be to show that a particular twist of super Yang--Mills is equivalent to a given generalized Chern--Simons theory. We summarize our results in two forms. In Tables \ref{table_of_twists_16}, \ref{table_of_twists_8} and \ref{table_of_twists_4} we summarize all the possible twists of dimensional reductions of 10d $\cN=(1, 0)$ super Yang--Mills, 6d $\cN=(1, 0)$ super Yang--Mills and 4d $\cN=1$ super Yang--Mills respectively.  In Table \ref{table_of_twists_2d} we summarize the twists of 2d supersymmetric Yang-Mills theory. Before these tables, we will give a short description of each twisted theory in a more physical language, with references to where in the literature it was previously considered.
 
 \textbf{Dimension 10}
 \begin{itemize}
@@ -157,35 +167,35 @@ Our goal will then be to show that a particular twist of super Yang--Mills is eq
 
 \textbf{Dimension 9}
 \begin{itemize}
- \item \emph{$\mc N=1$ minimal twist.} The unique twisted super Yang-Mills theory in 9 dimensions is equivalent, as a $\ZZ/2\ZZ$-graded theory, to a generalized version of Chern-Simons theory with one topological direction and four holomorphic directions.  It is $\SU(4)$-invariant, and can be defined on the product of a Calabi-Yau 4-fold and a flat 1-manifold. 
+ \item \emph{$\mc N=1$ minimal twist.} The unique twisted super Yang-Mills theory in 9 dimensions is equivalent, as a $\ZZ/2\ZZ$-graded theory, to a generalized version of Chern-Simons theory with one topological direction and four holomorphic directions.  It is $\SU(4)$-invariant, and can be defined on the product of a Calabi-Yau 4-fold and a flat 1-manifold (i.e. $\RR$ or $\RR/\ZZ$). 
 \end{itemize}
 
 \textbf{Dimension 8}
 \begin{itemize}
- \item \emph{$\mc N=1$ holomorphic twist.} Super Yang-Mills theory in 8 dimensions admits three classes of twist.  The minimal twist, by a holomorphic supercharge, is equivalent to a holomorphic version of BF theory.  This theory is $\mr U(4)$-invariant, and can be defined on arbitrary complex 4-folds.
- \item \emph{$\mc N=1$ intermediate twist.} This minimal twist admits a further twist which is topological in two directions and holomorphic in the remaining three complex directions.  This intermediate twisted theory is equivalent, as a $\ZZ/2\ZZ$-graded theory, to a generalized version of Chern-Simons theory.  It is $\SU(3) \times \Spin(2;\RR)$-invariant, and can be defined on the product of a Calabi-Yau 3-fold and a Riemann surface.
+ \item \emph{$\mc N=1$ holomorphic twist.} Super Yang-Mills theory in 8 dimensions admits three classes of twist.  The minimal twist, by a holomorphic (or, equivalently, pure) supercharge, is equivalent to a holomorphic version of BF theory.  This theory is $\mr U(4)$-invariant, and can be defined on arbitrary complex 4-folds.
+ \item \emph{$\mc N=1$ intermediate twist.} This minimal twist admits a further twist by a rank 1 impure spinor, which is topological in two directions and holomorphic in the remaining three complex directions.  This intermediate twisted theory is equivalent, as a $\ZZ/2\ZZ$-graded theory, to a generalized version of Chern-Simons theory.  It is $\SU(3) \times \Spin(2;\RR)$-invariant, and can be defined on the product of a Calabi-Yau 3-fold and a Riemann surface.
  \item \emph{$\mc N=1$ topological twist.}  There is, finally, a novel topological twist in 8-dimensions, which does not arise via dimensional reduction from the theories above.  This theory is perturbatively trivial, in the sense that the classical BV complex is contractible.  It can, however, be realised as the generic point in a 1-parameter degeneration of the holomorphic twist.  This theory is $\spin(7;\RR)$-invariant, although the full one-parameter family is only $\SU(4)$-invariant.  This theory was studied in \cite{AcharyaOLoughlinSpence,BaulieuKannoSinger}; its equations of motion include the $\spin(7)$-instanton equation.
 \end{itemize}
 
 \textbf{Dimension 7}
 \begin{itemize}
- \item \emph{$\mc N=1$ minimal twist.} The twists of super Yang-Mills theory in 7 dimensions arise by dimensionally reducing the twists in 8 dimensions.  The minimal twist is equivalent to a generalized version of BF theory with one topological direction and three complex holomorphic directions.  This theory is $\mr U(3)$-invariant, and can be defined on the product of a complex 3-fold with a flat 1-manifold.
- \item \emph{$\mc N=1$ intermediate twist.} This minimal twist admits a further twist which is topological in three directions and holomorphic in the remaining two complex directions.  This intermediate twisted theory is equivalent, as a $\ZZ/2\ZZ$-graded theory, to a generalized version of Chern-Simons theory.  It is $\SU(2) \times \Spin(3;\RR)$-invariant, and can be defined on the product of a Calabi-Yau surface and a 3-manifold with spin structure.
- \item \emph{$\mc N=1$ topological twist.} The topological twist in 8-dimensions reduces to a topological twist in 7 dimensions.  This theory is again perturbatively trivial, but can be realized as the generic point in a 1-parameter degeneration of the minimal twist.  It is $G_2$-invariant, although the full one-parameter family is only $\SU(3)$-invariant.  This theory was also studied in \cite{AcharyaOLoughlinSpence}; its equations of motion include the $G_2$-monopole equations.
+ \item \emph{$\mc N=1$ minimal twist.} The twists of super Yang-Mills theory in 7 dimensions arise by dimensionally reducing the twists in 8 dimensions.  The minimal twist, by a pure spinor, is equivalent to a generalized version of BF theory with one topological direction and three complex holomorphic directions.  This theory is $\mr U(3)$-invariant, and can be defined on the product of a complex 3-fold with a flat 1-manifold.
+ \item \emph{$\mc N=1$ intermediate twist.} This minimal twist admits a further twist, by a rank 1 impure spinor, which is topological in three directions and holomorphic in the remaining two complex directions.  This intermediate twisted theory is equivalent, as a $\ZZ/2\ZZ$-graded theory, to a generalized version of Chern-Simons theory.  It is $\SU(2) \times \Spin(3;\RR)$-invariant, and can be defined on the product of a Calabi-Yau surface and a 3-manifold with spin structure.
+ \item \emph{$\mc N=1$ topological twist.} The topological twist in 8-dimensions reduces to a topological twist in 7 dimensions.  This theory is again perturbatively trivial, but can be realized as the generic point in a 1-parameter degeneration of the minimal twist.  It is $G_2$-invariant, although the full one-parameter family is only $\SU(3)$-invariant.  This theory was also studied in \cite{AcharyaOLoughlinSpence, BaulieuKannoSinger}; its equations of motion include the $G_2$-monopole equations.
 \end{itemize}
 
 \textbf{Dimension 6}
 \begin{itemize}
- \item \emph{$\mc N=(1,0)$ and $\mc N=(1,1)$ holomorphic twist.} There is a holomorphic twist in 6 dimensions that can be defined for the $\mc N=(1,0)$ supersymmetric theory coupled to a hypermultiplet valued in a symplectic representation $U$.  This twist is equivalent to holomorphic Chern-Simons theory coupled to a holomorphic symplectic boson valued in the representation $U$.  It is generally only $\ZZ/2\ZZ$-graded, but can be promoted to a $\ZZ$-graded theory when $U = T^*R$ is of cotangent type.  It is invariant for the action of $\SU(3)$ in general, and can be defined on Calabi-Yau 3-folds, and the metalinear unitary group $\mr {MU}(3)$ in the cotangent case, and can be defined on complex 3-folds with a choice of square root of the canonical bundle.  When $U = T^*\gg$, the supersymmetry can be promoted to $\mc N=(1,1)$ supersymmetry, and the twist can be identified with a holomorphic BF theory coupled to adjoint holomorphic matter.  This twist has also been calculated in forthcoming work of Dylan Butson \cite{Butson}. \chris{something was studied by \cite{BaulieuBossard} in the pure $\mc N=(1,0)$ case, but it doesn't look the same?}
+ \item \emph{$\mc N=(1,0)$ and $\mc N=(1,1)$ holomorphic twist.} There is a holomorphic twist in 6 dimensions that can be defined for the $\mc N=(1,0)$ supersymmetric theory coupled to a hypermultiplet valued in a symplectic representation $U$.  This twist is equivalent to holomorphic Chern-Simons theory coupled to a holomorphic symplectic boson valued in the representation $U$.  It is generally only $\ZZ/2\ZZ$-graded, but can be promoted to a $\ZZ$-graded theory when $U = T^*R$ is of cotangent type.  It is invariant for the action of $\SU(3)$ in general, and can be defined on Calabi-Yau 3-folds, and the unitary metalinear group $\mr {MU}(3)$ in the cotangent case, and can be defined on complex 3-folds with a choice of square root of the canonical bundle.  When $U = T^*\gg$, the supersymmetry can be promoted to $\mc N=(1,1)$ supersymmetry, and the twist can be identified with a holomorphic BF theory coupled to adjoint holomorphic matter.  This twist has also been calculated in forthcoming work of Dylan Butson \cite{Butson}. 
  \item \emph{$\mc N=(1,1)$ special rank $(1,1)$ twist.} In the $\mc N=(1,1)$ case there are two intermediate twists.  The one by a supercharge of rank $(1,1)$ is equivalent to a generalized form of BF theory, with two topological directions and two complex holomorphic directions.  This theory is $\mr U(2) \times \spin(2;\RR)$-invariant, and can be defined on the product of a complex surface with a Riemann surface.
  \item \emph{$\mc N=(1,1)$ rank $(2,2)$ twist.} The other intermediate twist, by a rank $(2,2)$ supercharge, is equivalent to a generalized form of Chern-Simons theory with four real directions and one complex holomorphic direction.  This theory is only $\ZZ/2\ZZ$-graded.  It is invariant for the action of $\spin(4;\RR)$, and can be defined on the product of a flat Riemann surface and a spin 4-manifold.
- \item \emph{$\mc N=(1,1)$ topological twist.} Finally, there is a topological twist in 6 dimensions obtained by dimensionally reducing the 7-dimensional topological twist.  This theory is again perturbatively trivial, but can be realized as the generic point in a 1-parameter degeneration of the holomorphic twist.  It is $\SU(3)$-invariant, although the full one-parameter family is only $\SU(2) \times \spin(2;\RR)$-invariant.  This theory was also studied in \cite{AcharyaOLoughlinSpence} (\chris{I'm struggling to understand whether we should cite \cite{BaulieuKannoSinger, BaulieuLosevNekrasov} here or elsewhere.}; its equations of motion include the Donaldson-Thomas equations.
+ \item \emph{$\mc N=(1,1)$ topological twist.} Finally, there is a topological twist in 6 dimensions obtained by dimensionally reducing the 7-dimensional topological twist.  This theory is again perturbatively trivial, but can be realized as the generic point in a 1-parameter degeneration of the holomorphic twist.  It is $\SU(3)$-invariant, although the full one-parameter family is only $\SU(2) \times \spin(2;\RR)$-invariant.  This theory was also studied in \cite{AcharyaOLoughlinSpence, BaulieuKannoSinger}; its equations of motion include the Donaldson-Thomas equations.
 \end{itemize}
 
 \textbf{Dimension 5}
 \begin{itemize}
- \item \emph{$\mc N=1$ and $\mc N=2$ minimal twist.}  There is a minimal twist in 5 dimensions which can be defined with $\mc N=1$ supersymmetry in the presence of a $U$-valued hypermultiplet, obtained by dimensional reduction from 6d $\mc N=(1,0)$.  This twist is equivalent to a generalized form of Chern-Simons theory with one topological direction and two complex holomorphic directions, coupled to a partially holomorphic symplectic boson.  It is invariant for the metalinear group $\MU(2)$ for general $U$, and for $\mr U(2)$ when $U = T^*R$ is of cotangent type, and can be defined on the product of a flat 1-manifold and an arbitrary complex surface (with a choice of square root of the canonical bundle in the general case).  This theory was studied by K\"all\'en and Zabzine  \cite{KallenZabzine}.  If $U = T^*\gg$ the supersymmetry action can be promoted to the $\mc N=2$ supersymmetry algebra, and the twisted theory can be identified with a generalized form of BF theory valued in the adjoint quotient $\gg/\gg$.
- \item \emph{$\mc N=2$ intermediate twist.} In the $\mc N=2$ case there is an intermediate twist, with four invariant directions.  This twist can be identified with a generalized BF theory with three topological directions and one complex holomorphic direction.  It is invariant for the group $\spin(2;\RR) \times \spin(3;\RR)$ and can be defined on the product of a 2-manifold and a 3-manifold, each equipped with a spin structure.  This twist was considered in \cite{ElliottPestun} on manifolds of the form $\Sigma \times C \times S^1$, where $\Sigma$ and $C$ are Riemann surfaces, where the moduli space can be viewed as a multiplicative version of the Hitchin system.
+ \item \emph{$\mc N=1$ and $\mc N=2$ minimal twist.}  There is a minimal twist in 5 dimensions which can be defined with $\mc N=1$ supersymmetry in the presence of a $U$-valued hypermultiplet, obtained by dimensional reduction from 6d $\mc N=(1,0)$.  This twist is equivalent to a generalized form of Chern-Simons theory with one topological direction and two complex holomorphic directions, coupled to a partially holomorphic symplectic boson.  It is invariant for the metalinear group $\MU(2)$ for general $U$, and for $\mr U(2)$ when $U = T^*R$ is of cotangent type, and can be defined on the product of a flat 1-manifold and an arbitrary complex surface (with a choice of square root of the canonical bundle in the general case).  This theory was studied by K\"all\'en and Zabzine  \cite{KallenZabzine}.  If $U = T^*\gg$ the supersymmetry action can be promoted to the $\mc N=2$ supersymmetry algebra, and the twisted theory can be identified with a generalized BF theory valued in the adjoint quotient $\gg/\gg$.
+ \item \emph{$\mc N=2$ intermediate twist.} In the $\mc N=2$ case there is an intermediate twist with four invariant directions.  This twist can be identified with a generalized BF theory with three topological directions and one complex holomorphic direction.  It is invariant for the group $\spin(2;\RR) \times \spin(3;\RR)$ and can be defined on the product of a 2-manifold and a 3-manifold, each equipped with a spin structure.  This twist was considered in \cite{ElliottPestun} on manifolds of the form $\Sigma \times C \times S^1$, where $\Sigma$ and $C$ are Riemann surfaces, where the moduli space can be viewed as a multiplicative version of the Hitchin system.
  \item \emph{$\mc N=2$ topological A twist.} There are two topological twists in 5d $\mc N=2$.  One, which we refer to as the A-twist, arises by dimensionally reducing the topological twist of 6d $\mc N=(1,1)$ super Yang-Mills theory.  It is perturbatively trivial, but can be realized non-trivially as the generic point in a 1-parameter degeneration of the intermediate twist.  The full family is invariant for the group $\Spin(3;\RR)$.  This theory was studied by Qiu and Zabzine, \cite{QiuZabzine}, where the equations of motion were shown to include the Haydys-Witten equations.  Twisting homomorphisms in this situation were previously studied by Anderson \cite{Anderson}.
  \item \emph{$\mc N=2$ topological B twist.} Finally, the other topological twist, associated to a rank 4 supercharge, can be identified with 5d Chern-Simons theory.  This theory is only $\ZZ/2\ZZ$-graded, and it is invariant for the group $\spin(3;\RR)$.  This twist was identified in work of Geyer-M\"ulsch and of Bak-Gustavsson\cite{GeyerMuelsch, BakGustavsson1,BakGustavsson2}.
 \end{itemize}
@@ -196,23 +206,22 @@ Our goal will then be to show that a particular twist of super Yang--Mills is eq
  \item \emph{$\mc N=2$ and $\mc N=4$ intermediate twist.}  If $\mc N=2$ then there is an intermediate twist, with three invariant directions.  This twist is equivalent to a generalized version of BF theory with two real directions and one complex holomorphic direction, coupled to a generalized version of a $U$-valued symplectic boson.  This theory is $\spin(2;\RR) \times \spin(2;\RR)$-invariant, and can be defined on the product of two Riemann surfaces.  This twist is often referred to as the \emph{Kapustin twist} \cite{KapustinHolo}.
  \item \emph{$\mc N=2$ and $\mc N=4$ topological A twist.} There is also a topological twist for $\mc N=2$, the \emph{Donaldson twist}, which is perturbatively trivial, but can be realized non-trivially as the generic point in a 1-parameter degeneration of the holomorphic twist.  This theory was first considered in \cite{WittenTQFT}, and the coupling to a hypermultiplet of cotangent type was studied in \cite{AlvarezLabastida, HyunParkPark}.  Its equations of motion include the Donaldson-Witten equations.  If the supersymmetry is promoted to $\mc N=4$, then this theory is identified either with the theory studied by Vafa and Witten, \cite{VafaWitten}, or with the A-twist studied by Kapustin and Witten \cite{KapustinWitten}, depending on the twisting homomorphism one uses to make the twisted theory $\spin(4;\RR)$-invariant.
  \item \emph{$\mc N=4$ topological B twist.} If $\mc N=4$, there are additional topological twists.  The most important one is the Kapustin-Witten B-twist \cite{KapustinWitten}.  This theory is obtained by dimensional reduction from the B-twist of 5d $\mc N=2$, or by twisting by a special supercharge of rank $(2,2)$.  It is equivalent to a topological BF theory.  This theory is $\spin(4;\RR)$-invariant using the Kapustin-Witten twisting homomorphism, and can be defined on arbitrary 4-manifolds.
- \item \emph{More general $\mc N=4$ topological twists} In the $\mc N=4$ case, the B-twist fits into a larger family of topological twists, most of which are perturbatively trivial.  A $\bb{CP^1}$-family of such twists, generically of rank $(2,2)$, was studied by Kapustin and Witten \cite{KapustinWitten}, which is invariant for $\spin(4;\RR)$ using the Kapustin-Witten twisting homomorphism.  There are additional topological twists, including those of rank $(1,2)$, which are only invariant for the group $\spin(2;\RR) \times \spin(2;\RR)$.  An analysis of these twists using similar techniques to this paper, but with an aim to obtain the full derived stack of solutions to the equations of motion, rather than only the perturbative classical field theory, was carried out in \cite{ElliottYoo1}.
+ \item \emph{More general $\mc N=4$ topological twists} In the $\mc N=4$ case, the B-twist fits into a larger family of topological twists, most of which are perturbatively trivial.  A $\bb{CP^1}$-family of such twists, generically of rank $(2,2)$, was studied by Kapustin and Witten \cite{KapustinWitten}, which is invariant for $\spin(4;\RR)$ using the Kapustin-Witten twisting homomorphism.  There are additional topological twists, including those of rank $(1,2)$, which are only invariant for the group $\spin(2;\RR) \times \spin(2;\RR)$.  An analysis of these twists using similar techniques to this paper, but with the aim of obtaining the full derived stack of solutions to the equations of motion, rather than only the perturbative classical field theory, was carried out in \cite{ElliottYoo1}.
 \end{itemize}
 
 \textbf{Dimension 3}
 \begin{itemize}
- \item \emph{$\mc N=2$, $\mc N=4$ and $\mc N=8$ minimal twist.} There is a minimal twist in dimension 3 which can be defined with $\mc N=2$ supersymmetry, including a chiral multiplet valued in a representation $R$.  This twist is perturbatively equivalent to a generalized form of BF theory with one real direction and one complex holomorphic direction, coupled to a generalized $\beta \gamma$-system valued in $R$.  This theory is $\mr U(1)$-equivariant, and can be defined on the product of a Riemann surface and a flat 1-manifold.  If the supersymmetry is promoted to $\mc N=4$, with $R = U \oplus \gg$ for a symplectic representation $U$, and the twisted theory is modelled by a generalized BF theory now coupled to a generalized symplectic boson.  Finally, if $U = T^*\gg$ the supersymmetry lifts to $\mc N=8$, and the twisted theory can be identified with generalized BF theory valued in $T[1](\gg/\gg)$.
+ \item \emph{$\mc N=2$, $\mc N=4$ and $\mc N=8$ minimal twist.} There is a minimal twist in dimension 3 which can be defined with $\mc N=2$ supersymmetry, including a chiral multiplet valued in a representation $R$.  This twist is perturbatively equivalent to a generalized form of BF theory with one real direction and one complex holomorphic direction, coupled to a generalized $\beta \gamma$-system valued in $R$.  This theory is $\mr U(1)$-equivariant, and can be defined on the product of a Riemann surface and a flat 1-manifold.  If the supersymmetry is promoted to $\mc N=4$, with $R = U \oplus \gg$ for a symplectic representation $U$, then the twisted theory is modelled by a generalized BF theory now coupled to a generalized symplectic boson.  Finally, if $U = T^*\gg$ the supersymmetry lifts to $\mc N=8$, and the twisted theory can be identified with generalized BF theory valued in $T[1](\gg/\gg)$.
  \item \emph{$\mc N=4$ and $\mc N=8$ topological A twist.} If $\mc N$ is at least 4, this minimal twist can be deformed in two inequivalent ways.  The first is a perturbatively trivial theory which we refer to as the A-twist, obtained by dimensional reduction from the 4d A-twist.  This theory fits into a non-trivial family deforming the minimal twist, which is $\mr U(1)$-equivariant, and can be defined on the product of a Riemann surface and a flat 1-manifold.  This twist was studied by Blau and Thompson \cite{BlauThompson1}, where it is referred to as a Casson invariant model, as well as Kapustin and Vyas \cite{KapustinVyas} as a dimensional reduction of Donaldson-Witten theory.
  \item \emph{$\mc N=4$ and $\mc N=8$ topological B twist.} The remaining topological twist is perturbatively equivalent to the 3d topological BF theory coupled to a symplectic boson valued in symplectic representation $U$.  It is $\spin(3;\RR)$-invariant, and can be defined on arbitrary 3-manifolds. This form of twist was studied by Rozansky and Witten, \cite{RozanskyWitten} as well as by Blau and Thompson \cite{BlauThompson2}.
 \end{itemize}
 
 \textbf{Dimension 2}
 \begin{itemize}
- \item \emph{Non-Chiral ($\mc N=(2,2), (4,4), (8,8)$) holomorphic twist.}
- \item \emph{Non-Chiral ($\mc N=(4,4), (8,8)$) topological A twist.}
- \item \emph{Non-Chiral ($\mc N=(4,4), (8,8)$) topological B twist.}
- \item \emph{Chiral $\mc N=(0,N_-)$ holomorphic twist.} 
-Twisted $(0,2)$ $\sigma$-models were first studied by Witten in \cite{WittenMirror}, and can be used to obtain the chiral algebra of chiral differential operators \cite{WittenCDO}. 
+ \item \emph{Non-Chiral ($\mc N=(2,2), (4,4), (8,8)$) holomorphic twist.} There is a holomorphic twist in dimension 2 which can be defined with $\mc N=(2,2)$ supersymmetry, including a chiral multiplet valued in a representation $R$.  This twist is perturbatively equivalent to a holomorphic BF theory coupled to a $\beta \gamma$-system valued in $R$.  More specifically: to holomorphic BG theory valued in the tangent space $T[1]R/\gg$.  This theory is $\mr U(1)$-equivariant, and can be defined on any Riemann surface.  If the supersymmetry is promoted to $\mc N=(4,4)$, with $R = U \oplus \gg$ for a symplectic representation $U$, then the twisted theory can now be modelled by holomorphic BF theory coupled to a holomorphic symplectic boson.  Finally, if $U = T^*\gg$ the supersymmetry lifts to $\mc N=8$, and the twisted theory can be identified with holomorphic BF theory valued in $T[1]T^*[2](\gg/\gg))$.  The study of twists of 2d $\mc N=(2,2)$ supersymmetric field theories goes back to work of Eguchi and Yang \cite{EguchiYang} and Witten \cite{Wittenmirror}.
+ \item \emph{Non-Chiral ($\mc N=(2,2), (4,4), (8,8)$) topological A twist.} In each of these cases, the minimal twist can again be deformed to a topological theory in two inequivalent ways.  The first is a perturbatively trivial theory: the A-model valued in the cotangent space to the quotient stack $R/\gg$.
+ \item \emph{Non-Chiral ($\mc N=(2,2), (4,4), (8,8)$) topological B twist.} The remaining topological twist, the B-twist, is perturbatively equivalent to a 2d topological BF theory, coupled a topological matter valued in the representation $R$.
+ \item \emph{Chiral $\mc N=(0,N_-)$ holomorphic twist.} Chiral theories in 2-dimensions only admit a holomorphic twist.  These twists can all be realised as holomorphic BF theory on $\CC$, coupled to a holomorphic $\beta \gamma$-system (in the case where the chiral theory includes matter), or to a holomorphic free fermion (in the case where the chiral theory is pure gauge with $\mc N=(0,N_-)$ supersymmetry). Twisted $(0,2)$ $\sigma$-models were first studied by Witten in \cite{Wittenmirror}, and can be used to obtain the chiral algebra of chiral differential operators \cite{WittenCDO}. 
 \end{itemize}
 
 
@@ -231,11 +240,11 @@ Twisted $(0,2)$ $\sigma$-models were first studied by Witten in \cite{WittenMirr
  &&& $\mr{Map}(\CC^3 \times \RR^2_{\mr{dR}}, B\gg)$ & \\ \cline{3-5}
   && \multirow{2}*{\hyperref[sect:8dtopologicaltwist]{Rank $(1,0)$ impure}} & Perturbatively trivial ($\Spin(7)$ Instanton)& \multirow{2}*{8 (topological)} \\
  &&& $\mr{Map}(\CC^4, B\gg)_\mr{dR}$ & \\ \hline
-  \multirow{6}*{7} & \multirow{6}*{1} & \multirow{2}*{\hyperref[sect:7dminimaltwist] {Rank $1$ Pure}} & Generalized BF Theory & \multirow{2}*{4 (minimal)} \\
+  \multirow{6}*{7} & \multirow{6}*{1} & \multirow{2}*{\hyperref[sect:7dminimaltwist] {Rank $1$ pure}} & Generalized BF Theory & \multirow{2}*{4 (minimal)} \\
  &&& $T^*[-1]\mr{Map}(\CC^3 \times \RR_{\mr{dR}}, B\gg)$ & \\ \cline{3-5}
  && \multirow{2}*{\hyperref[sect:7dpartialtwist] {Rank $2$}} & Generalized Chern-Simons Theory& \multirow{2}*{5} \\
  &&& $\mr{Map}(\CC^2 \times \RR^3_{\mr{dR}}, B\gg)$ & \\ \cline{3-5}
-  && \multirow{2}*{\hyperref[sect:7dtopologicaltwist]{Rank $1$ Impure}} & Perturbatively trivial ($G_2$ Monopole)& \multirow{2}*{7 (topological)} \\
+  && \multirow{2}*{\hyperref[sect:7dtopologicaltwist]{Rank $1$ impure}} & Perturbatively trivial ($G_2$ Monopole)& \multirow{2}*{7 (topological)} \\
  &&& $\mr{Map}(\CC^3 \times \RR_{\mr{dR}}, B\gg)_\mr{dR}$ & \\ \hline
  \multirow{8}*{6} & \multirow{8}*{$(1,1)$} & \multirow{2}*{\hyperref[sect:6d11holomorphictwist]{Rank $(1,0)$}} & {Holomorphic BF Theory} & \multirow{2}*{3 (holomorphic)} \\
  &&& $T^*[-1]\mr{Map}(\CC^3, \gg/\gg)$ & \\ \cline{3-5}
@@ -266,17 +275,12 @@ Twisted $(0,2)$ $\sigma$-models were first studied by Witten in \cite{WittenMirr
   && \multirow{2}*{\hyperref[sect:4dqgltwist] {Rank $(2,2)$ generic}} & {Perturbatively trivial} & \multirow{2}*{4 (topological)} \\
  &&& $\mr{Map}(\RR^4_{\mr{dR}}, B\gg)_{\mr{dR}}$ & \\ \hline
   \multirow{8}*{3} & \multirow{8}*{$8$} & \multirow{2}*{\hyperref[sect:3d8minimal_twist] {Rank $1$}} & {Generalized BF Theory} & \multirow{2}*{2 (minimal)} \\
- &&& $T^*[-1]\mr{Map}(\CC_{\mr{Dol}} \times \RR_{\mr{dR}}, T^*[2](\gg/\gg))$  & \\ \cline{3-5}
+ &&& $T^*[-1]\mr{Map}(\CC_{\rm Dol} \times \RR_{\mr{dR}}, \gg/\gg)$
+ & \\ \cline{3-5}
  && \multirow{2}*{\hyperref[sect:3d8B_Twist] {Rank $2$ (B)}} & {BF Theory } & \multirow{2}*{3 (topological)} \\
  &&& $T^*[-1]\mr{Map}(\RR^3_{\mr{dR}}, \gg/\gg)$ & \\ \cline{3-5}
  && \multirow{2}*{\hyperref[sect:3d8A_Twist] {Rank $2$ (A)}} & {Perturbatively trivial} & \multirow{2}*{3 (topological)} \\
- &&& $T^*[-1]\mr{Map}(\CC_{\mr{Dol}} \times \RR_{\mr{dR}}, \gg/\gg)_{\mr{dR}}$ & \\ \hline
- %\multirow{6}*{2} & \multirow{6}*{$(8,8)$} & \multirow{2}*{Rank $(1,0)$} & {} & \multirow{2}*{1 (holomorphic)} \\
- %&&& {} & \\ \cline{3-5}
- %&& \multirow{2}*{Rank $(1,1)$ (B)} & {} & \multirow{2}*{2 (topological)} \\
- %&&& {} & \\ \cline{3-5}
- %&& \multirow{2}*{Rank $(1,1)$ (A)} & {} & \multirow{2}*{2 (topological)} \\
- %&&& {} & \\ \hline
+ &&& $\mr{Map}(\CC_{\mr{Dol}} \times \RR_{\mr{dR}}, \gg/\gg)_{\mr{dR}}$ & \\ \hline
  \end{tabular}
  \caption{Twists of Maximally Supersymmetric Pure Yang-Mills Theories with gauge Lie algebra $\fg$ (16 supercharges).}
  \label{table_of_twists_16}
@@ -409,7 +413,7 @@ Twisted $(0,2)$ $\sigma$-models were first studied by Witten in \cite{WittenMirr
   \draw[arrow] (44g) -- (33A);
   
 \end{tikzpicture}
-\caption{This figure shows the orbits of square-zero supercharges in each dimension.  The labels indicate each orbit: the number refers to the rank, and the subscript indicates the situations where the supercharges of a given rank split into multiplet orbits.  Each column is labelled by a dimension, and each row by the number of invariant directions of the supercharge.  Colours indicate the maximal supersymmetry algebra where the given supercharges live, so red indicates supercharges defined in algebras with 16 supercharges, orange those with 8 supercharges, and yellow those with 4 supercharges.}
+\caption{This figure shows the orbits of square-zero supercharges in each dimension, and how they relate to one another under dimensional reduction.  The labels indicate each orbit: the number refers to the rank, and the subscript indicates the situations where the supercharges of a given rank split into multiplet orbits.  Each column is labelled by a dimension, and each row by the number of invariant directions of the supercharge.  Colours indicate the maximal supersymmetry algebra where the given supercharges live, so red indicates supercharges defined in algebras with 16 supercharges, orange those with 8 supercharges, and yellow those with 4 supercharges.  There is an arrow whenever one twist dimensionally reduces to another twist one dimension lower.}
 \label{fig:superchargeorbits}
 \end{figure}
 
@@ -426,12 +430,12 @@ We would like to thank Owen Gwilliam, Justin Hilburn and Philsang Yoo for helpfu
 
 \section{The BV-BRST Formalism} \label{BV_section}
 
-In this section we will set up the homological formalism in which we study classical field theory: the BV-BRST formalism.  Most of the material in this section is not original.  We refer the reader to \cite{CostelloBook, Book2} for more details on this perspective.  We will conclude the section by describing a number of fundamental examples of classical field theories that are highly structured: partially holomorphic or topological theories.  We will also discuss the concept of \emph{dimensional reduction} of a classical field theory on $M$ along a fibration $M \to N$.  We will use the idea of dimensional reduction to construct many of the supersymmetric field theories which we will consider in the next section.  
+In this section we will set up the homological formalism in which we study classical field theory: the BV-BRST formalism.  Much of the material in this section is not original.  We refer the reader to \cite{CostelloBook, Book2} for more details on this perspective.  We will conclude the section by describing a number of fundamental examples of classical field theories that are highly structured: mixed holomorphic-topological theories.  We will also discuss the concept of \emph{dimensional reduction} of a classical field theory on $M$ along a fibration $M \to N$.  We will use the idea of dimensional reduction to construct many of the supersymmetric field theories which we will consider in the next section.  
 
 \subsection{Conventions}
 Throughout the paper we will frequently study obects, for instance vector bundles, equipped with a $\ZZ\times\ZZ/2\ZZ$-grading. \emph{Degree} will refer to the first (cohomological) grading and \emph{odd} or \emph{even} to the second (fermionic) grading.  For an element $x$ we denote by $|x|\in\ZZ/2\ZZ$ the total degree.
 
-Given a vector bundle $E\rightarrow M$ we denote by $\cE$ the topological vector space of smooth sections of $E$ and $\cE_c$ the topological vector space of smooth compactly supported sections.
+Given a vector bundle $E\rightarrow M$ we denote by $\cE$ the topological vector space of smooth sections of $E$ and by $\cE_c$ the topological vector space of smooth compactly supported sections.
 We denote by $\cO(\cE)$ (respectively $\cO(\cE_c)$) the completed algebra of symmetric functions on $\cE$ (respectively $\cE_c)$. 
 We denote by $\oloc(\cE)$ the space of local functionals on $\cE$ (see \cite[Definition 4.5.1.1]{Book2}). An element of $\oloc(\cE)$ will be denoted symbolically by an expression of the form
 \[\int_M f (\phi, \phi', \dots),\]
@@ -505,7 +509,7 @@ A \defterm{local formal moduli problem on $M$} is a presheaf of formal moduli pr
 \end{definition}
 
 \begin{remark}
-In \cite{Book2} an extra assumption of ellipticity is required for the local $L_\infty$ algebras considered. It is only relevant for quantization which we do not consider in this paper, so we will drop this extra assumption.
+In \cite{Book2} an extra assumption of ellipticity is required for the local $L_\infty$ algebras considered. It is only relevant for quantization which we do not consider in this paper, so for simplicity we will not require ellipticity (though in fact all examples we consider will end up being elliptic).
 \end{remark}
 
 Given a local formal moduli problem $\cM=B L$, we may consider the space of local functionals which is defined as
@@ -577,7 +581,7 @@ Given a local formal moduli problem $\cM = BL$ equipped with a strict $n$-shifte
 \[
 \{-,-\}\colon \oloc(\cM) \times \oloc(\cM) \to \oloc(\cM)[-n]
 \]
-This bracket is a graded version to the so-called Soloviev bracket defined on the $\infty$-jets, as described in \cite[Section 4]{GetzlerBracket}. 
+This bracket is a graded version to the so-called Soloviev bracket \cite{Soloviev} defined on the $\infty$-jets, as described in \cite[Section 4]{GetzlerBracket}. 
 
 We explain how to define the Poisson bracket in our context. Write $E = L[1]$ for convenience. First note that there is a linear map
 \[
@@ -602,7 +606,7 @@ Define the symmetric multilinear map
 & & (\phi_1, \ldots, \phi_{n-1}) & \mapsto & D_1(\phi_1) \cdots D_{n-1}(\phi_{n-1}) D_{n} (-) + \{{\rm symmetric\;terms}\} .
 \end{array}
 \]
-Integrating by parts, we see that for any $(n-1)$-tuple $\phi_1, \ldots, \phi_{n-1} \in \cE_c$ that the linear functional $(\d_{\mr{dR}} F) (\phi_1,\ldots, \phi_{n-1})$ is an element of $\cE^!$. 
+Integrating by parts, we see that for any $(n-1)$-tuple $(\phi_1, \ldots, \phi_{n-1}) \in \cE_c^{n-1}$ the linear functional $(\d_{\mr{dR}} F) (\phi_1,\ldots, \phi_{n-1})$ is an element of $\cE^!$. 
 This implies that $\d_{\mr{dR}} F \in {\rm Fun}_{\rm loc}(\cE, \cE^!)$.
 
 The non-degenerate pairing $\omega$ determines a bundle isomorphism $\omega \colon E \cong E^! [n]$ and hence an isomorphism of local functions
@@ -663,9 +667,15 @@ Besides the $\ZZ$-graded classical field theories defined above, we may consider
 \item A $\ZZ/2\ZZ$-graded classical field theory is defined in the same way as a $\ZZ$-graded classical field theory where we only consider the cohomological grading modulo 2.
 \end{itemize}
 
-\subsection{Perturbative equivalence of classical field theories}
+\subsection{Perturbative Equivalence of Classical Field Theories}
 
-Next, we formulate the notion of an equivalence of classical BV theories. 
+Next, we formulate the notion of a morphism, and an equivalence, of classical BV theories. 
+
+\begin{definition}
+A \defterm{morphism} $\Phi \colon (E, Q_{\mr{BV}}, \omega, I) \rightsquigarrow (E', Q_{\mr{BV}}', \omega', I')$ of classical field theories over the same manifold $M$ is a collection $\Phi =\sum_{n\geq 1}^\infty \Phi_n$ of poly-differential operators $\Phi_n\colon \Sym^n(E)\rightarrow E'$, that intertwine the differentials $Q_{\mr{BV}}, Q_{\mr{BV}}'$, the pairings $\omega, \omega'$, and the interactions $I,I'$. A morphism is a \defterm{perturbative equivalence} if the map $\Phi_1\colon (\cE, Q_{\mr{BV}})\rightarrow (\cE', Q_{\mr{BV}}')$ is a quasi-isomorphism. 
+\end{definition}
+
+The interpretation of this definition is that $\Phi$ is a non-linear map between the bundles of BV fields, and $\Phi_n$ is its $n^{\text{th}}$ Taylor coefficient.
 
 \begin{definition}
 A \defterm{morphism} $\Phi\colon (E, \omega, S)\rightsquigarrow (E', \omega', S')$ of classical field theories over the same manifold $M$ is a collection $\Phi =\sum_{n\geq 1}^\infty \Phi_n$ of poly-differential operators $\Phi_n\colon \Sym^n(E)\rightarrow E'$ that intertwines the pairings $\omega, \omega'$ and defines an $L_\infty$ map $\cE_c[-1]\rightarrow \cE'_c[-1]$. A morphism is a \defterm{perturbative equivalence} if the map $\Phi_1\colon \cE\rightarrow \cE'$ is a quasi-isomorphism. A classical field theory is \defterm{perturbatively trivial} if it is perturbatively equivalent to the zero theory ($E = 0$).
@@ -682,14 +692,14 @@ where $S_0$ is a local functional independent of $\phi,\phi^*$ and $S_1$ is a $\
 Then the theory $(E, \omega, S)$ is perturbatively equivalent to the theory $(E_0, \omega_0, S')$ with the BV action $S' = S_0 - S_1^2/2$, where we set and $\phi = S_1$ and $\phi^* = 0$.
 \end{prop}
 \begin{proof}
-Concretely, suppose that the linear part of $S_1$ is given by an operator $Q_1$, and the interacting part of $S_1$ is given by a functional $I_1 = \sum_{n=1}^\infty I_1^n$.  
+Concretely, suppose that the linear part of $S_1$ is given by an operator $Q_1$, and the interacting part of $S_1$ is given by a functional $I_1 = \sum_{n=1}^\infty I_1^{(n)}$.  
 The desired equivalence $\Phi \colon (E, \omega, S) \to (E_0, \omega_0, S')$ is given by the natural projection $\Phi = \Phi_1 \colon E \to E_0$. 
 The quasi-inverse $\Psi \colon (E_0, \omega_0, S') \to (E, \omega, S)$ is defined as follows.
 First $\Psi_1(e) = (e, Q_1(e), 0) \in E$.
 For $n > 1$, define
 \begin{align*}
 \Psi_n \colon \sym^n(E_0) &\to E \\
-e_1 \otimes \cdots \otimes e_n &\mapsto (0, I_1^n(e_1, \ldots, e_n), 0).
+e_1 \otimes \cdots \otimes e_n &\mapsto (0, I_1^{(n)}(e_1, \ldots, e_n), 0).
 \end{align*}
 These $\Psi_n$ manifestly intertwines the pairings $\omega$ and $\omega'$.  
 To see that they intertwine the action functionals, we observe that 
@@ -753,23 +763,13 @@ S(F(e)) &= S_0(e) + \frac{1}{2} \int_M \omega(I_{\psi^*}(e), I_\phi(e) - I_\phi(
 
 \begin{remark}
 For the classical BV theory $(E, \omega, S)$ as in the proposition, the linearized BV differential defines the following cochain complex of fields:
-%\[\xymatrix{
-%\cdots & \ul{-1} & \ul{0} & \ul{1} & \ul{2} & \cdots \\
-%\cdots \ar[r] & E_0^{-1}\ar[r] \ar[dr] \ar[ddr] &E_0^0 \ar[r]  &E_0^1 \ar[r] &E_0^2 \ar[r] &\cdots \\
-%&&F_\phi \ar^{~}[dr] &F^!_{\phi*} \ar[ur] && \\
-%&&F^!_{\psi^*} \ar^{~}[ur] &F_\psi \ar[uur] && \\
-%}\]
 \[\xymatrix{
 \cdots & \ul{-1} & \ul{0} & \ul{1} & \ul{2} & \cdots \\
 \cdots \ar[r] & E_0^{-1}\ar[r] \ar@{.>}[dr] \ar@{.>}[ddr] &E_0^0 \ar@{.>}[ddr] \ar@{.>}[dr]  \ar[r]  &E_0^1 \ar[r] &E_0^2 \ar[r] &\cdots \\
 &&F_\phi \ar^{~}[dr]  \ar@{.>}[ur] &F^!_{\phi*}  \ar@{.>}[ur] && \\
 &&F^!_{\psi^*} \ar^{~}[ur]  \ar@{.>}[uur]  &F_\psi  \ar@{.>}[uur] && \\
 }\]
-where the subscripts match the notation for the fields in the statement above. \footnote{Note that we are writing $F$ as if it is concentrated in a single cohomological degree, but the proposition applies for any graded vector bundle as in the statement of the proposition.}
-The top line is the underlying cochain complex of the theory with fields $E_0$. 
-The arrows $F_\phi \to F_\psi$ and $F^!_{\psi^*} \to F^!_{\phi^*}$ are given by the identity.
-The dotted arrows represent terms in the differential arising from $I_\phi, I_{\psi^*}, I_{\phi^*}, I_{\psi}$. 
-The above proposition implies we can replace this cochain complex of fields with a quasi-isomorphic complex consisting of only the first line, provided we make a suitable modification of the classical action functional. 
+where the subscripts match the notation for the fields in the statement above \footnote{Note that we are writing $F$ as if it is concentrated in a single cohomological degree, but the proposition applies for any graded vector bundle as in the statement of the proposition.}.  The top line is the underlying cochain complex of the theory with fields $E_0$. The arrows $F_\phi \to F_\psi$ and $F^!_{\psi^*} \to F^!_{\phi^*}$ are given by the identity. The dotted arrows represent terms in the differential arising from $I_\phi, I_{\psi^*}, I_{\phi^*}, I_{\psi}$. The above proposition implies we can replace this cochain complex of fields with a quasi-isomorphic complex consisting of only the first line, provided we make a suitable modification of the classical action functional. 
 \end{remark}
 \begin{remark}
 We will call the pair $(\phi, \psi)$ satisfying the conditions of the previous proposition a \defterm{trivial BRST doublet}.
@@ -778,7 +778,7 @@ We will call the pair $(\phi, \psi)$ satisfying the conditions of the previous p
 %There is a corollary of this proposition obtained by iterating the procedure. 
 %We will only use a single iteration. 
 %
-%\begin{cor} \label{cor:quad}
+%\begin{corollary} \label{cor:quad}
 %Let $(E_0, \omega_0, S_0)$ be a classical BV theory and $F \to M$ a graded vector bundle.
 %Consider the theory $(E, \omega, S)$ with underlying graded vector bundle
 %\[
@@ -799,8 +799,9 @@ We will call the pair $(\phi, \psi)$ satisfying the conditions of the previous p
 %\[
 %S' = S_0 + \int \phi_1 \psi_1^* - S''
 %\]
-%where $S'$ is given by setting $\phi = I_{\psi^*}, \phi^* = 0$ and $\psi^* = I_{\phi}, \psi = 0$ in the functional functional $S$.\brian{finish}
-%\end{cor}
+%where $S'$ is given by setting $\phi = I_{\psi^*}, \phi^* = 0$ and $\psi^* = I_{\phi}, \psi = 0$ in the functional functional $S$
+
+%\end{corollary}
 %\begin{proof}
 %%Notice that the collection of fields $(e_0, \phi_1, \phi_1^*, \phi_2, \phi_2^*, \psi_1, \psi_1^*, \psi_2, \psi_2^*)$ have the same shifted Poisson brackets as the collection of fields $(\phi_1, \phi_1^*
 %We begin by making the following change of coordinates on the BV fields:
@@ -890,8 +891,7 @@ While we allow for $L_\infty$ actions of Lie algebras, we only consider strict a
 \end{remark}
 
 \subsection{From BRST to BV}
-
-We will now explain how to build classical BV theories from more traditional data: that of the \emph{usual} fields of a classical field theory, together with the usual action functional and the action of gauge transformations.  These data can be packaged into what is known as a BRST theory, where fermionic fields (ghosts) are introduced to generate the infinitesimal gauge transformations, in the following way.
+We will now explain how to build classical BV theories from more traditional data: that of the \emph{usual} fields of a classical field theory, together with the usual action functional and the action of gauge transformations.  These data can be packaged into what is known as a BRST theory, where fermionic fields (referred to as ghosts) are introduced to generate the infinitesimal gauge transformations, in the following way.
 
 \begin{definition}
 A \defterm{classical BRST theory} on a manifold $M$ consists of the following data:
@@ -940,15 +940,15 @@ Let us unpack the definition. Let $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M)$. Th
 \[E = \Omega^{0,\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M \otimes \fg[1]\oplus \Omega^{\dim(X),\bu}_X \otimes \Omega^{\bu,\bu}_Y \otimes \Omega^\bu_M\otimes \fg^*[d-2],\]
 where we denote the two fields by $A$ and $B$. The BV action is
 \[S = \int_{X\times Y\times M} \langle B\wedge (\dbar_X + \dbar_Y + \d_{\dR, M}) A\rangle + \sum_{k\geq 1}\frac{1}{k!} \int_{X\times Y\times M} \langle B\wedge \ell_k(A, \dots, A)\rangle,\]
-where $\langle -, -\rangle$ is the natural pairing between $\fg^*$ and $\fg$ and $\ell_k$ denote the components of the $L_\infty$ structure on $\fg$.
+where $\langle -, -\rangle$ is the natural pairing between $\fg^*$ and $\fg$ and where $\ell_k$ denote the $k^{\text{th}}$ component of the $L_\infty$ structure on $\fg$.
 
 \begin{example}
 For $X=Y=\pt$ and $\fg$ an ordinary Lie algebra we recover the usual topological $BF$ theory with the BV action
 \[S = \int_M \left\langle B\wedge \left(\d_\dR A+ \frac{1}{2}[A\wedge A]\right)\right\rangle.\]
 \end{example}
 
-We will see many $BF$ theories as the output when we twists a supersymmetric gauge theories.
-In fact, a special case of the definition above also arises when twisting theories of matter.  We will refer to as a generalized $\beta\gamma$ system, extending the usual 2d $\beta \gamma$ system. 
+We will see many $BF$ theories as the output when we twist supersymmetric gauge theories.
+In fact, a special case of the definition above also arises when twisting theories of matter.  We will refer to as this as a generalized $\beta\gamma$ system, where the definition will extend that of the usual 2d $\beta \gamma$ system. 
 
 \begin{definition}
 Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix a complex vector space $V$. The \defterm{generalized $\beta\gamma$ system} is the classical field theory
@@ -969,7 +969,7 @@ In fact, the $\mathrm{O}(n_3)$-action given by the previous proposition extends 
 \end{remark}
 
 \subsubsection{Generalized Chern--Simons Theory} \label{gen_CS_section}
-The next class of examples of classical BV theories we give are generalizations of Chern-Simons theory. Unlike the example of the generalized BF theory, these theories are not of cotangent type.
+The next class of examples of classical BV theories will be generalizations of Chern-Simons theory. Unlike the example of the generalized BF theory, these theories are not generally of cotangent type.
 
 \begin{definition}
 Let $X$ and $Y$ be complex manifolds and $M$ a smooth oriented manifold. Fix an $L_\infty$ algebra $\fg$. We assume $X$ is equipped with a holomorphic volume form $\Omega_X \in\Omega^{\dim(X), 0}(X)$ and $\fg$ is equipped with a nondegenerate invariant symmetric pairing $\langle-, -\rangle\colon \fg\otimes\fg\rightarrow \CC[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 3]$. The \defterm{generalized Chern--Simons theory} is the classical field theory
@@ -1062,9 +1062,7 @@ Let $X$ and $Y$ be complex manifolds and $M$ a smooth oriented manifold. Fix an 
 \end{definition}
 
 \begin{prop}
-The $t=0$ specialization of the generalized Hodge theory $\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B \fg_\Hod)$ is isomorphic to the generalized BF theory $\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[d] B \fg)$, where $d = \dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1$.
-
-The specialization of the generalized Hodge theory at $t\neq 0$ is perturbatively trivial.
+The $t=0$ specialization of the generalized Hodge theory $\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B \fg_\Hod)$ is isomorphic to the generalized BF theory $T^*[-1]\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B \fg)$. The specialization of the generalized Hodge theory at $t\neq 0$ is perturbatively trivial.
 \label{prop:Hodgetheoryspecialization}
 \end{prop}
 
@@ -1073,7 +1071,7 @@ At $t=0$ we get
 \[\left.\fg_\Hod\right|_{t=0}\cong \fg\oplus \fg[1]\cong \fg\oplus \fg^*[d-1],\]
 where we use the symmetric bilinear pairing on $\fg$ in the second isomorphism. The first claim then follows from Example \ref{ex:CSBF}.
 
-At $t\neq 0$ the $L_\infty$ algebra $\fg_\Hod$ becomes acyclic which proves the second claim.
+At $t\neq 0$ the $L_\infty$ algebra $\fg_\Hod$ becomes acyclic, which proves the second claim.
 \end{proof}
 
 \subsection{Dimensional Reduction} \label{dim_red_section}
@@ -1081,7 +1079,7 @@ At $t\neq 0$ the $L_\infty$ algebra $\fg_\Hod$ becomes acyclic which proves the 
 In this section we formulate the procedure of dimensional reduction of a classical field theory. Fix a submersion $p\colon M\rightarrow N$ equipped with a fiberwise volume form, i.e. an isomorphism $p^*\Dens_N\cong \Dens_M$.  The idea is that the \emph{dimensional reduction} of a classical field theory on $M$ along the submersion $p$ is the theory obtained by restricting to those fields which are constant along the fibers of $p$.  We will begin with an abstract definition of dimensional reduction, then prove that if $M = N \times \RR^k$, and we consider field theories which are translation invariant along the fiber, then this procedure is well-defined.
 
 \begin{definition}
-We say that a classical field theory $(E_N, \omega_N, S_N)$ on $N$ is a \defterm{dimensional reduction} along $p$ of the classical field theory $(E_M, \omega_M, S_M)$ on a manifold $M$ if one is given the data of an isomorphism $p^* E_N\cong E_M$ of the bundles of BV fields satisfying the following conditions:
+We say that a classical field theory $(E_N, \omega_N, S_N)$ on $N$ is a \defterm{dimensional reduction} along $p$ of the classical field theory $(E_M, \omega_M, S_M)$ on a manifold $M$ if one is given the data of a linear isomorphism $p^* E_N\cong E_M$ of the bundles of BV fields satisfying the following conditions:
 \begin{itemize}
 \item The diagram
 \[
@@ -1096,7 +1094,7 @@ is commutative.
 \end{itemize}
 \end{definition}
 
-We have an obvious notion of isomorphisms of dimensional reductions: these are isomorphisms of classical field theories on $N$ which are compatible with the isomorphisms $p^* E_N\cong E_M$. Thus, the collection of dimensional reductions of a given classical field theory on $M$ forms a groupoid.
+We have an obvious notion of isomorphisms of dimensional reductions: these are linear isomorphisms of classical field theories on $N$ which are compatible with the isomorphisms $p^* E_N\cong E_M$. Thus, the collection of dimensional reductions of a given classical field theory on $M$ forms a groupoid.
 
 \begin{prop}
 Suppose $(E_M, \omega_M, S_M)$ is a classical field theory on $M$ and $p\colon M\rightarrow N$ is a homotopy equivalence. Then the groupoid of dimensional reductions of $(E_M, \omega_M, S_M)$ is either contractible or empty.
@@ -1104,7 +1102,7 @@ Suppose $(E_M, \omega_M, S_M)$ is a classical field theory on $M$ and $p\colon M
 Suppose $M=N\times \RR$ and choose a translation-invariant density along the $\RR$ direction. If the original classical field theory is translation-invariant along the $\RR$ direction, dimensional reductions exist.
 \label{prop:dimensionalreductionunique}
 \end{prop}
-\begin{proof} \textbf{Uniqueness}. We begin by showing that any two dimensional reductions are isomorphic and moreover such an isomorphism is unique if it exists. Since $p\colon M\rightarrow N$ is a homotopy equivalence, the functor $p^*$ establishes an equivalence between the category of graded vector bundles on $N$ and on $M$. In a similar way, $p^*$ establishes an equivalence between the category of graded vector bundles $E_N$ on $N$ equipped with a nondegenerate pairing $E_N\otimes E_N\rightarrow \Dens_N[-1]$ and a similar category for $M$.
+\begin{proof} \textbf{Uniqueness}. We begin by showing that any two dimensional reductions are isomorphic and moreover that such an isomorphism is unique if it exists. Since $p\colon M\rightarrow N$ is a homotopy equivalence, the functor $p^*$ establishes an equivalence between the category of graded vector bundles on $N$ and on $M$. In a similar way, $p^*$ establishes an equivalence between the category of graded vector bundles $E_N$ on $N$ equipped with a nondegenerate pairing $E_N\otimes E_N\rightarrow \Dens_N[-1]$ and a similar category for $M$.
 
 Since $\cE_N\rightarrow \cE_M$ is injective, the condition $p^* S_M = S_N$ uniquely determines $S_N$.
 
@@ -1115,52 +1113,79 @@ Since $\cE_N\rightarrow \cE_M$ is injective, the condition $p^* S_M = S_N$ uniqu
 Therefore, it makes sense to talk about ``the'' dimensional reduction of a classical field theory along the projection $p \colon N \times \RR \to N$: there exists a dimensional reduction which is unique up to a canonical isomorphism.
 \end{remark}
 
-We will now describe dimensional reductions of the classical Chern--Simons theory.
+We will now describe dimensional reductions of some of the previously discussed BV theories.
+Throughout this section we let $X$ and $Y$ be complex manifolds and $M$ be a smooth manifold. 
+We focus on BV theories described as formal mapping spaces whose sources are formal manifolds of the form 
+\begin{equation}\label{eqn: generalized}
+X \times Y_{\rm Dol} \times M_{\rm dR} .
+\end{equation}
+
+We first consider the case in which $M$ is of the form $M' \times \RR$ and we reduce along the projection
+\[p_{\rm dR} \colon X \times Y \times (M' \times \RR) \to X \times Y \times M' .\]
+In this case, we will only need to know the dimensional reduction of generalized Chern-Simons theory.
 
 \begin{prop} \label{CS_to_BF_diml_red_prop}
-Let $X$ and $Y$ be complex manifolds and $M$ a smooth manifold. Fix an $L_\infty$ algebra $\fg$ equipped with a nondegenerate invariant pairing and consider the generalized Chern--Simons theory
-\[\map(X\times Y_{\mr{Dol}}\times (M\times \RR)_{\mr{dR}}, B\fg).\]
-Its dimensional reduction along the projection $p\colon X\times Y\times (M\times \RR)\rightarrow X\times Y\times M$ is isomorphic to the generalized BF theory
-\[\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1] B\fg).\]
+Fix an $L_\infty$ algebra $\fg$ equipped with a nondegenerate invariant pairing as in Definition \ref{def:generalizedCS} and consider the corresponding generalized Chern--Simons theory
+\[\map(X\times Y_{\mr{Dol}}\times (M'\times \RR)_{\mr{dR}}, B\fg).\]
+Its dimensional reduction along the projection $p_{\rm dR}$ is equivalent to the generalized BF theory
+\[
+T^*[-1] {\rm Map}(X\times Y_{\mr{Dol}}\times M'_{\mr{dR}}, B\fg) .
+\]
+%\map(X\times Y_{\mr{Dol}}\times M'_{\mr{dR}}, T^*[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1] B\fg).\]
 \end{prop}
 
 \begin{proof}
-To simplify the proof, we assume $X=Y=M=\pt$. Then $\fg$ carries a $(-2)$-shifted pairing $\langle-,-\rangle$. In particular, the generalized BF theory
-\[\map(\pt, T^*[-1] B \fg)\]
+To simplify the notation in the proof, we assume $X,Y,M'=\pt$, though the argument in the general case is identical. Then $\fg$ carries a $(-2)$-shifted pairing $\langle-,-\rangle$. In particular, the generalized BF theory
+\[T^*[-1] \map(\pt, B \fg) = T^*[-1] B \fg\]
 has the bundle of BV fields $\fg[1] \oplus \fg^*[-2]$. We may identify it with $\fg[1]\oplus \fg$, where the pairing $\omega_N$ pairs the two factors using $\langle-,-\rangle$.
 
 We may identify $p^*(\fg[1]\oplus \fg)\cong \Omega^\bullet_{\RR}\otimes \fg[1]$ as vector bundles on $\RR$. 
 Under this identification the integration pairing $\omega_M$ on differential forms reduces to the pairing $\omega_N$. The de Rham differential vanishes on translation-invariant forms which shows a compatibility of dimensional reduction with the differentials $Q_{\mr{BV}}$. Finally, in both cases the interaction term comes from the $L_\infty$ structure on $\fg$.
 \end{proof}
 
-\begin{corollary}
-Let $X, Y, M, \fg$ be as before. Consider the generalized Hodge theory
-\[\map(X\times Y_{\mr{Dol}}\times (M\times\RR)_{\mr{dR}}, B\fg_\Hod).\]
-Its dimensional reduction along the projection $p\colon X\times Y\times (M\times \RR)\rightarrow X\times Y\times M$ is isomorphic to the generalized Hodge theory
-\[\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1] B\fg_\Hod).\]
-\label{cor:Hodgetopologicalreduction}
-\end{corollary}
+%\begin{corollary}
+%Let $X, Y, M, \fg$ be as before. Consider the generalized Hodge theory
+%\[\map(X\times Y_{\mr{Dol}}\times (M\times\RR)_{\mr{dR}}, B\fg_\Hod).\]
+%Its dimensional reduction along the projection $p\colon X\times Y\times (M\times \RR)\rightarrow X\times Y\times M$ is isomorphic to the generalized Hodge theory
+%\[\map(X\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[\dim_\CC(X) + 2\dim_\CC(Y) + \dim(M) - 1] B\fg_\Hod).\]
+%\label{cor:Hodgetopologicalreduction}
+%\end{corollary}
 
-Let $V_\RR$ be a real vector space equipped with a nondegenerate symmetric bilinear pairing and an orientation. Recall that the symmetric bilinear pairing trivializes $\det(V_\RR)^{\otimes 2}$ and the orientation allows us to obtain a trivialization of $\det(V_\RR)$, i.e. a real volume form. We denote by $V=V_\RR\otimes_{\RR}\CC$ its complexification. $V$ inherits a nondegenerate Hermitian form from the symmetric bilinear pairing on $V_\RR$. Moreover, $V$ carries a complex volume form $\Omega_V$:
+Next, we consider dimensional reduction along a holomorphic direction. 
+First, we set up some notation.
+
+Let $V_\RR$ be a real vector space equipped with a nondegenerate symmetric bilinear pairing and an orientation. 
+The symmetric bilinear pairing trivializes $\det(V_\RR)^{\otimes 2}$ and the orientation allows us to obtain a trivialization of $\det(V_\RR)$, i.e. a real volume form. 
+We denote by $V=V_\RR\otimes_{\RR}\CC$ its complexification. 
+Note that $V$ inherits a nondegenerate Hermitian form from the symmetric bilinear pairing on $V_\RR$. 
+Also, since
 \[\det(V)\cong \det(V_\RR)\otimes_{\RR}\CC\]
-and we use the real volume form on $V_\RR$.
+the real volume form on $V_\RR$ determines a complex volume form on $V$. 
 
-Functoriality of this construction gives a group homomorphism
+Complexification yields a group homomorphism
 \begin{equation}
 \SO(V_\RR)\longrightarrow \SU(V)
 \label{eq:SOtoSU}
 \end{equation}
 such that the real projection $\Re\colon V\rightarrow V_\RR$ is $\SO(V_\RR)$-equivariant.
 
+As in Equation (\ref{eqn: generalized}), we assume $X$ is a complex manifold of the form $X' \times V$ and consider the dimensional reduction along the map
+\[
+p_{\dbar}\colon (X' \times V) \times Y \times M \to X' \times Y \times (M \times V_\RR)
+\]
+induced by ${\rm Re}\colon V \to V_{\RR}$.
+
+
+
 \begin{prop} \label{CS_diml_red_prop}
-Let $X,Y,M,\fg$ be as before and $V_\RR, V$ as above. Consider the generalized Chern--Simons theory
-\[\map((X\times V)\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B\fg).\]
-Its dimensional reduction along the projection $p\colon (X\times V)\times Y\times M\rightarrow X\times Y\times (M\times V_\RR)$ induced by the projection $\Re\colon V\rightarrow V_\RR$ is isomorphic to the generalized Chern--Simons theory
-\[\map(X\times Y_{\mr{Dol}}\times (M\times V_\RR)_{\mr{dR}}, B\fg).\]
-The isomorphism is moreover $\SO(V_\RR)$-equivariant.
+Let $X,Y,M,\fg$ be as before and $V_\RR, V$ as above. Fix an $L_\infty$ algebra $\fg$ equipped with a nondegenerate invariant pairing as in Definition \ref{def:generalizedCS} and consider the generalized Chern--Simons theory
+\[\map((X'\times V)\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B\fg).\]
+Its dimensional reduction along the projection $p_{\dbar}$ is equivalent to the generalized Chern--Simons theory
+\[\map(X'\times Y_{\mr{Dol}}\times (M\times V_\RR)_{\mr{dR}}, B\fg).\]
+The equivalence is $\SO(V_\RR)$-equivariant.
 \end{prop}
 \begin{proof}
-We may assume $X,Y,M=\pt$ as in the previous proof.
+We may assume $X',Y,M=\pt$ as in the previous proof.
 
 We have an isomorphism of vector bundles on $V$:
 \[\Omega^{0, \bullet}_V\cong \Sym_\CC^\bullet(\underline{V}[-1])\]
@@ -1173,25 +1198,57 @@ defined by pulling back forms along $p$ and projecting onto $(0,\bu)$-forms, the
 This shows that the BV pairings of the original and dimensionally reduced theory are compatible. 
 \end{proof}
 
-\begin{corollary}
-Let $X, Y, M, V_\RR, V$ be as before. Consider the generalized BF theory
-\[\map((X\times V)\times Y_{\mr{Dol}}\times M_{\mr{dR}}, T^*[d] B\fg).\]
-
-Its dimensional reduction along the projection $p\colon (X\times V)\times Y\times M\rightarrow X\times Y\times (M\times V_\RR)$ induced by the projection $\Re\colon V\rightarrow V_\RR$ is isomorphic to the generalized BF theory
-\[\map(X\times Y_{\mr{Dol}}\times (M\times V_\RR)_{\mr{dR}}, T^*[d] B\fg).\]
-The isomorphism is moreover $\SO(V_\RR)$-equivariant.
-\label{cor:BFholomorphicreduction}
-\end{corollary}
+As a corollary of this result we obtain the reduction of generalized Hodge theory.
 
 \begin{corollary}
-Let $X, Y, M, V_\RR, V$ be as before. Consider the generalized Hodge theory
-\[\map((X\times V)\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B\fg_\Hod).\]
-
-Its dimensional reduction along the projection $p\colon (X\times V)\times Y\times M\rightarrow X\times Y\times (M\times V_\RR)$ induced by the projection $\Re\colon V\rightarrow V_\RR$ is isomorphic to the generalized Hodge theory
-\[\map(X\times Y_{\mr{Dol}}\times (M\times V_\RR)_{\mr{dR}}, B\fg_\Hod).\]
-The isomorphism is moreover $\SO(V_\RR)$-equivariant.
+Let $X', Y, M, V_\RR, V$ be as before. 
+Fix an $L_\infty$ algebra equipped with a non-degenerate pairing as in Definition \ref{Hodge_family_def} and consider the generalized Hodge theory
+\[\map((X'\times V)\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B\fg_\Hod).\]
+Its dimensional reduction along the projection $p_{\dbar}$ is equivalent to the generalized Hodge theory
+\[\map(X'\times Y_{\mr{Dol}}\times (M\times V_\RR)_{\mr{dR}}, B\fg_\Hod).\]
+The equivalence is $\SO(V_\RR)$-equivariant.
 \label{cor:Hodgeholomorphicreduction}
 \end{corollary}
+
+By essentially the same argument as in the proof of Proposition \ref{CS_diml_red_prop}, we obtain the reduction of generalized BF theory. 
+
+\begin{prop}
+Let $X', Y, M, V_\RR, V$ be as before. 
+Fix an $L_\infty$ algebra $\fg$ and consider the generalized BF theory
+\[T^*[-1] \map((X'\times V)\times Y_{\mr{Dol}}\times M_{\mr{dR}}, B\fg).\]
+Its dimensional reduction along the projection $p_{\dbar}$ is equivalent to the generalized BF theory
+\[T^*[-1] \map(X'\times Y_{\mr{Dol}}\times (M\times V_\RR)_{\mr{dR}}, B\fg).\]
+This equivalence is $\SO(V_\RR)$-equivariant.
+\label{prop:BFholomorphicreduction}
+\end{prop}
+
+Finally, we take $Y$ to be a complex manifold of the form $Y' \times \CC$, where $V$ is complex $k$-dimensional and consider the projection
+\[
+p_{\rm Dol} : X \times (Y' \times \CC) \times M \to X \times Y' \times (M \times \RR) 
+\]
+induced by ${\rm Re} : \CC \to \RR$.
+
+\begin{prop}
+\label{prop:BFdolbeaultreduction}
+Let $X, M, Y'$ be as above.
+Fix an $L_\infty$ algebra $\fg$ and consider the generalized $BF$ theory
+\[
+T^*[-1] {\rm Map}(X \times (Y' \times \CC)_{\rm Dol} \times M_{\rm dR} , B \fg) .
+\]
+Its dimensional reduction along $p_{\rm Dol}$ is equivalent to the generalized BF theory
+\[
+T^*[-1] {\rm Map} (X \times Y'_{\rm Dol} \times (M \times \RR)_{\rm dR}, \fg / \fg)
+\]
+This equivalence is $\SO(V_\RR)$-equivariant.
+\end{prop}
+\begin{proof}
+Note that there is an isomorphism of $L_\infty$ algebras
+\[
+\Omega^{\bu, \bu} (Y' \times \CC ; \fg) = \Omega^{\bu,\bu}(Y') \otimes \Omega^{0,\bu}(\CC) \otimes \fg[\epsilon]
+\]
+where $\epsilon$ is a parameter of degree $+1$.
+The result then follows from Proposition \ref{prop:BFholomorphicreduction} applied to the $L_\infty$ algebra $\fg[\epsilon]$. 
+\end{proof}
 
 \section{Supersymmetry} \label{sect:susy}
 Having set up the formalism behind classical field theories in the BV and BRST formalisms, we will introduce the other main formal ingredient of this paper: the supersymmetry action.  So, we will discuss the classification of supersymmetry algebras, the notion of a supersymmetric field theory, and the idea of a \emph{twist} of a supersymmetric field theory, extending work of the first two authors in \cite{ElliottSafronov}.  We will introduce the classification of supersymmetry algebras using the division algebra perspective of Baez and Huerta \cite{BaezHuerta}, which will be useful for the classification of super Yang-Mills theories in Section \ref{sect:SYM} below.
@@ -1241,7 +1298,7 @@ Fix the following data:
 
 Note that the supertranslation Lie algebra $\fA$ is a $\Spin(V_\RR)\times G_R$-equivariant super Lie algebra.  We will sometimes want to refer to the infinitesimal version of this action.
 \begin{definition}
-Let $\fA$ be a supertranslation algebra.  The corresponding \emph{supersymmetry algebra} is the Lie algebra $(\so(V) \oplus \gg_R) \ltimes \fA$.
+Let $\fA$ be a supertranslation algebra.  The corresponding \defterm{supersymmetry algebra} is the Lie algebra $(\so(V) \oplus \gg_R) \ltimes \fA$.
 \end{definition}
 
 We will now define the fundamental notion of a supersymmetric field theory.  Consider a spacetime manifold $M=V_\RR$. Let $\ISO(V_\RR) = \Spin(V_\RR)\ltimes V_\RR$ be the \defterm{Poincar\'{e} group} which acts by affine transformations on $M$.
@@ -1564,7 +1621,7 @@ Let $\fg$ be a Lie algebra equipped with a nondegenerate symmetric bilinear pair
 Denote by $F_A = \d A + \frac{1}{2}[A\wedge A]$ the curvature of $A$ and let $\sd\d_A$ be the twisted Dirac operator obtained from $\Gamma$ (see Appendix \ref{sect:spinors}).
 
 \begin{definition}
-The BRST theory for classical supersymmetric Yang-Mills theory has underlying $\ZZ \times \ZZ/2$-graded bundle:
+The BRST theory for classical supersymmetric Yang-Mills theory has underlying $\ZZ \times \ZZ/2\ZZ$-graded bundle:
 \[
 F_{\rm gauge} = \Omega^1(V_\RR; \fg) \oplus \Gamma(V_\RR; \Pi \Sigma \otimes \fg) \oplus \Omega^0(V_\RR; \fg[1])
 \]
@@ -1922,7 +1979,7 @@ $\{I_{\matter}^{(1)}, I_{\matter}^{(2)}\}(Q_1,Q_2,Q_3)$ is obtained by cyclicall
 
 \part{Classification of Twists} \label{classification_part}
 
-In the following sections we fix a complex Lie algebra $\fg$ equipped with a symmetric bilinear invariant nondegenerate pairing which should be thought of as the complexified Lie algebra of the gauge group.
+In the following sections we fix a complex Lie algebra $\fg$ equipped with a symmetric bilinear invariant nondegenerate pairing, which should be thought of as the complexified Lie algebra of the gauge group.
 
 \section{Dimension 10}
 
@@ -2254,10 +2311,10 @@ The twist of $(4+\dim(L))$-dimensional super Yang--Mills on $L\times N_\RR$ by $
 \label{thm:8dBFreduction}
 \end{theorem}
 \begin{proof}
-By Theorem \ref{thm:8dholomorphictwist} the twist of 8d $\cN=1$ super Yang--Mills on $L\times N$ by $Q$ is perturbatively equivalent to the holomorphic BF theory. Moreover, the equivalence is $\MU(L)\times \SU(N)$-equivariant. By Corollary \ref{cor:BFholomorphicreduction} we get that the dimensional reduction of holomorphic BF theory on $L\times N$ along $\Re\colon N\rightarrow N_\RR$ is isomorphic to the generalized BF theory with the space of fields $T^*[-1]\map(L\times N_\RR, B\fg)$ and this isomorphism is $\MU(L)\times \SO(N_\RR)$-equivariant, where $\SO(N_\RR)$ acts on $N$ via the homomorphism \eqref{eq:SOtoSU}.
+By Theorem \ref{thm:8dholomorphictwist} the twist of 8d $\cN=1$ super Yang--Mills on $L\times N$ by $Q$ is perturbatively equivalent to the holomorphic BF theory. Moreover, the equivalence is $\MU(L)\times \SU(N)$-equivariant. By Proposition \ref{prop:BFholomorphicreduction} we get that the dimensional reduction of holomorphic BF theory on $L\times N$ along $\Re\colon N\rightarrow N_\RR$ is isomorphic to the generalized BF theory with the space of fields $T^*[-1]\map(L\times N_\RR, B\fg)$ and this isomorphism is $\MU(L)\times \SO(N_\RR)$-equivariant, where $\SO(N_\RR)$ acts on $N$ via the homomorphism \eqref{eq:SOtoSU}.
 \end{proof}
 
-We will now concentrate on the 7-dimensional case.
+The 7-dimensional result immediately follows.
 
 \begin{theorem}
 The minimal twist of 7d $\cN=1$ super Yang--Mills on $M=\CC^3\times \RR$ is perturbatively equivalent to the generalized BF theory with the space of fields $T^*[-1]\map(\CC^3\times \RR_{\mr{dR}}, B\fg)$. Moreover, the equivalence is $\U(3)$-equivariant.
@@ -2683,7 +2740,7 @@ This is indeed the action functional of the required theory, where $A_{0,\bu}, B
 
 \subsection{\texorpdfstring{$\cN=2$}{N=2} Super Yang--Mills} \label{4d_2_section}
 
-The 4d $\cN=2$ super Yang--Mills theory is obtained by a dimensional reduction from the 6d $\cN=(1, 0)$ super Yang--Mills theory with matter valued in a symplectic $\fg$-representation $U$. Let $W$ be a two-dimensional complex symplectic vector space. The theory admits the $R$-symmetry group $G_R=\SL(2)\times \GL(1, \CC)$, where $\GL(1, \CC)$ acts on $W$ with weight $1$.
+The 4d $\cN=2$ super Yang--Mills theory is obtained by a dimensional reduction from the 6d $\cN=(1, 0)$ super Yang--Mills theory with matter valued in a symplectic $\fg$-representation $U$. Let $W$ be a two-dimensional complex symplectic vector space. The theory admits the $R$-symmetry group $G_R=\SL(2;\CC)\times \GL(1, \CC)$, where $\GL(1, \CC)$ acts on $W$ with weight $1$.
 
 \vspace{-10pt}
 \paragraph{Fields:} The BRST fields are given by:
@@ -2758,7 +2815,7 @@ B&\rightsquigarrow B, b \\
 \psi & \rightsquigarrow \psi, \varsigma . \\
 \end{align*}
 
-The claim about the underlying $\ZZ/2\ZZ$-graded $\MU(2)$-equivariant theories follows by applying dimensional reduction (Proposition \ref{CS_to_BF_diml_red_prop}) to the computation of the minimal twist of 5d $\cN=1$ super Yang--Mills theory (Theorem \ref{thm:5dminimaltwist}).
+The claim about the underlying $\ZZ/2\ZZ$-graded $\MU(2)$-equivariant theories follows by applying dimensional reduction (Proposition \ref{CS_to_BF_diml_red_prop}) to the minimal twist of 5d $\cN=1$ super Yang--Mills theory (Theorem \ref{thm:5dminimaltwist}).
 
 Next, we check that the equivalence respects  the gradings. Indeed, the equivalence given by Theorem \ref{thm:5dminimaltwist} eliminates fields $A_{1, 0}, \Tilde{a}, \rho, \chi, \Tilde{\chi}$. The rest of the fields organize into the following collections:
 \begin{align*}
@@ -2803,25 +2860,26 @@ and hence the underlying local $L_\infty$ algebra after the twist becomes
 \end{comment}
 \end{proof}
 
-When $U$ is of cotangent type $U = R \oplus R^*$ the $R$-symmetry group enhances to $G_R = \SL(2, \CC) \times \GL(1, \CC) \times \GL(1,\CC)$ where the last $\GL(1, \CC)$ acts by $+1$ on $R$ and $-1$ on $R^*$. 
-In this case, the twist admits twisting data homomorphism $\alpha \colon \U(1) \rightarrow \SL(2, \CC)\times \GL(1, \CC) \times \GL(1, \CC)$ given by the diagonal embedding into the last two components. 
+%There is an alternative $\ZZ$-grading one can assign to the twist when $U$ is of cotangent type $U = R \oplus R^*$. 
+%In this case, the $R$-symmetry group enhances to $G_R = \SL(2, \CC) \times \GL(1, \CC) \times \GL(1,\CC)$ where the last $\GL(1, \CC)$ acts by $+1$ on $R$ and $-1$ on $R^*$. 
+%The new twisting datum is $\Tilde{\alpha} \colon \U(1) \rightarrow \SL(2, \CC)\times \GL(1, \CC) \times \GL(1, \CC)$ given by the diagonal embedding into the last two components. 
+%%\[
+%%\begin{array}{ccccc}
+%%\alpha \colon & \U(1) & \rightarrow & \SL(2, \CC)\times \GL(1, \CC) \times \GL(1, \CC) \\
+%%&  z & \mapsto & \left(1 , z, z \right)
+%%\end{array}
+%%\]
+%There is also a new twisting homomorphism 
 %\[
-%\begin{array}{ccccc}
-%\alpha \colon & \U(1) & \rightarrow & \SL(2, \CC)\times \GL(1, \CC) \times \GL(1, \CC) \\
-%&  z & \mapsto & \left(1 , z, z \right)
-%\end{array}
+%\Tilde{\phi} \colon \MU(2) \xto{\det^{1/2}} \U(1) \xto{\Tilde{\alpha}} G_R
 %\]
-There is a new twisting homomorphism 
-\[
-\Tilde{\phi} \colon \MU(2) \xto{\det^{1/2}} \U(1) \xto{\alpha} G_R
-\]
-By Theorem \ref{thm:5dminimaltwistgraded}, we obtain the following.
-
-\begin{thm}
-\label{thm:4d_2minimaltwistgraded}
-The minimal twist of $4d \cN=2$ super Yang-Mills on $M = \CC^2$ with matter representation $U = T^* R = R \oplus R^*$ is pertubatively equivalent to holomorphic BF theory with fields $T^*[-1] {\rm Map}(\CC^2 , R / \fg)$. 
-Moreover, this equivalence is $\U(2)$-equivariant.
-\end{thm}
+%By Theorem \ref{thm:5dminimaltwistgraded}, we obtain the following.
+%
+%\begin{thm}
+%\label{thm:4d_2minimaltwistgraded}
+%The minimal twist of $4d \cN=2$ super Yang-Mills on $M = \CC^2$ with matter representation $U = T^* R = R \oplus R^*$ is pertubatively equivalent to holomorphic BF theory with fields $T^*[-1] {\rm Map}(\CC^2 , R / \fg)$. 
+%Moreover, this equivalence is $\U(2)$-equivariant.
+%\end{thm}
 
 \subsubsection{Rank \texorpdfstring{$(2,0)$}{(2,0)} Topological Twist}
 \label{sect:4d2Donaldson}
@@ -3096,28 +3154,28 @@ I^{(2)} (Q_t, Q_t) &= \int \dvol \left(t^2(\xi^*B^* + \chi^*\wt\chi^* + \frac{1}
 %\label{thm:4d12hodge}
 %\end{theorem}
 
-\begin{proof}
-We begin by applying Corollary \ref{cor:quad} to the two $t$-dependent quadruples of fields:
-\begin{align*}
-& (t \varsigma, \rho, t \phi, A_{1,0}) \\
-& (tb, \Tilde{\nu}, t A_{0,1}, \nu) .
-\end{align*}
-This has the effect of integrating out the fields $(\rho, A_{1,0})$ and $(\Tilde{\nu}, \nu)$ and replaces the action functionals by
-\begin{align*}
-\Tilde{I}^{(1)}(Q_t) &= \int \dvol\left(- t^2 (\varsigma, \phi^*) - t^2 (b, A_{0, 1}^*) - (\wt \chi + t\Lambda\psi) \wt a^*\right) \\
-&+ \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda(F_{1, 1} - t [\phi, A_{0,1}] + \omega [a, \wt a])\chi^* + [\phi, \phi]\xi^* - t [A_{0,1}, a] \phi^* + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*)\right) \\
-%&+t\int\dvol\left(\frac{1}{2} (-t \dbar \phi + \partial A_{0,1} -t [\phi, A_{0,1}] + \omega\wedge [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* - t^2 \Lambda \partial_{\phi} A_{0,1} \chi^* - t \partial_\phi a \varsigma^* \right) \\ & + t \int \dvol \left( t \dbar_{A_{0,1}} a b^* + t [\phi, a] \varsigma^* - t [A_{0,1}, a]b^* \right) \\
-&+t\int\dvol\left(\frac{1}{2} (F_{1,1} -t [\phi, A_{0,1}] + \omega [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* - t^2 \Lambda \partial_{\phi} A_{0,1} \chi^* - t \partial_\phi a \varsigma^* \right) \\ & + t \int \dvol \left( t \dbar_{A_{0,1}} a b^* + t [\phi, a] \varsigma^* - t [A_{0,1}, a]b^* \right) \\
-\Tilde{I}^{(2)} (Q_t, Q_t) &= \int \dvol \left(t^2(\xi^*B^* + \chi^*\wt\chi^* + \frac{1}{2}(\psi^*, \psi^*)) -\frac{1}{4}(\chi^* + t \Lambda\psi^*)^2 + t^2 ac^*\right)
-\end{align*}
-
-The next step is to decompose the $(1,1)$ form $\psi$ as
-\[
-\psi = \omega \Lambda \psi + \psi_{\perp}
-\]
-where $\Lambda \psi_{\perp} = 0$. 
-
-\end{proof}
+%\begin{proof}
+%We begin by applying Corollary \ref{cor:quad} to the two $t$-dependent quadruples of fields:
+%\begin{align*}
+%& (t \varsigma, \rho, t \phi, A_{1,0}) \\
+%& (tb, \Tilde{\nu}, t A_{0,1}, \nu) .
+%\end{align*}
+%This has the effect of integrating out the fields $(\rho, A_{1,0})$ and $(\Tilde{\nu}, \nu)$ and replaces the action functionals by
+%\begin{align*}
+%\Tilde{I}^{(1)}(Q_t) &= \int \dvol\left(- t^2 (\varsigma, \phi^*) - t^2 (b, A_{0, 1}^*) - (\wt \chi + t\Lambda\psi) \wt a^*\right) \\
+%&+ \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda(F_{1, 1} - t [\phi, A_{0,1}] + \omega [a, \wt a])\chi^* + [\phi, \phi]\xi^* - t [A_{0,1}, a] \phi^* + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*)\right) \\
+%%&+t\int\dvol\left(\frac{1}{2} (-t \dbar \phi + \partial A_{0,1} -t [\phi, A_{0,1}] + \omega\wedge [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* - t^2 \Lambda \partial_{\phi} A_{0,1} \chi^* - t \partial_\phi a \varsigma^* \right) \\ & + t \int \dvol \left( t \dbar_{A_{0,1}} a b^* + t [\phi, a] \varsigma^* - t [A_{0,1}, a]b^* \right) \\
+%&+t\int\dvol\left(\frac{1}{2} (F_{1,1} -t [\phi, A_{0,1}] + \omega [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* - t^2 \Lambda \partial_{\phi} A_{0,1} \chi^* - t \partial_\phi a \varsigma^* \right) \\ & + t \int \dvol \left( t \dbar_{A_{0,1}} a b^* + t [\phi, a] \varsigma^* - t [A_{0,1}, a]b^* \right) \\
+%\Tilde{I}^{(2)} (Q_t, Q_t) &= \int \dvol \left(t^2(\xi^*B^* + \chi^*\wt\chi^* + \frac{1}{2}(\psi^*, \psi^*)) -\frac{1}{4}(\chi^* + t \Lambda\psi^*)^2 + t^2 ac^*\right)
+%\end{align*}
+%
+%The next step is to decompose the $(1,1)$ form $\psi$ as
+%\[
+%\psi = \omega \Lambda \psi + \psi_{\perp}
+%\]
+%where $\Lambda \psi_{\perp} = 0$. 
+%
+%\end{proof}
 
 \begin{theorem}
 The twist of 4d $\cN=4$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges of Equation \ref{eq:4d412Hodgefamily} is perturbatively equivalent to $\map\left(\CC_{\rm Dol} \times \RR^2_{\mr{dR}}, B\fg_{\Hod}\right)$. Moreover, this equivalence is $\spin(2;\RR) \times \spin(2;\RR)$-equivariant.
@@ -3192,16 +3250,16 @@ s = \frac{(1+t)^2}{(1-t)^2}.
 \label{eq:4d4sinvariant}
 \end{equation}
 
-\begin{cor}
+\begin{corollary}
 The rank $(2, 2)$ twist of 4d $\cN=4$ super Yang--Mills for $s=1$ is perturbatively equivalent to the topological BF theory $T^*[-1]\map(\RR^4_{\mathrm{dR}}, B\fg)$.
-\end{cor}
+\end{corollary}
 \begin{proof}
 The supercharge $Q_0$ has $s$-invariant $s=1$. By Theorem \ref{thm:4d422Hodgetwist} the twist by $Q_0$ is perturbatively equivalent to the specialization of the theory $\map(\RR^4_{\mathrm{dR}}, B\fg_{\Hod})$ at $t=0$. By Proposition \ref{prop:Hodgetheoryspecialization} the latter is isomorphic to the topological BF theory $T^*[-1]\map(\RR^4_{\mathrm{dR}}, B\fg)$.
 \end{proof}
 
-\begin{cor}
+\begin{corollary}
 The rank $(2, 2)$ twist of 4d $\cN=4$ super Yang--Mills for $s\neq 1$ is perturbatively trivial.
-\end{cor}
+\end{corollary}
 \begin{proof}
 For any $s\neq 1$ we may find $t\neq 0$ solving \eqref{eq:4d4sinvariant}. But by Proposition \ref{prop:Hodgetheoryspecialization} the specialization of the topological Hodge theory $\map(\RR^4_{\mathrm{dR}}, B\fg_{\Hod})$ at $t\neq 0$ is perturbatively trivial.
 \end{proof}
@@ -3249,7 +3307,7 @@ By Theorem \ref{4d_minimal_twist_thm} the twist of 4d $\cN=1$ super Yang--Mills 
 \end{proof}
 
 \subsection{\texorpdfstring{$\cN = 4$}{N=4} Super Yang-Mills with Hypermultiplet Matter} \label{3d_4_section}
-We will now consider 3d $\mc N=4$ theories, which arise by dimensional reduction from 4d $\mc N=2$ super Yang-Mills with gauge group $G$, coupled to a hypermultiplet valued in a symplectic representation $U$, or equivalently by dimensional reduction from 6d $\mc N=(1,0)$ super Yang-Mills coupled to a hypermultiplet.  The $R$-symmetry group is $G_R = \Spin(4;\CC)$, acting on $W$ by its defining representation.
+We will now consider 3d $\mc N=4$ theories, which arise by dimensional reduction from 4d $\mc N=2$ super Yang-Mills with gauge group $G$, coupled to a hypermultiplet valued in a symplectic representation $U$, or equivalently by dimensional reduction from 6d $\mc N=(1,0)$ super Yang-Mills coupled to a hypermultiplet.  The $R$-symmetry group is $G_R = \Spin(4;\CC)$, and $W$ is its defining representation.
 
 \vspace{-10pt}
 \paragraph{Fields:}We can describe the BRST fields of $\mc N=4$ super Yang-Mills by restricting the 4d fields from Section \ref{4d_2_section} to representations of the group $\spin(3;\CC)$.  The fields we obtain are
@@ -3273,7 +3331,7 @@ The $G_R = \Spin(4;\CC)$-action factors through an $\SO(4)$ action on $W$, and s
 We refer to these as the $A$-twist and the $B$-twist, distinguished by whether or not they can be promoted to a twisting datum.
 \begin{enumerate}
 \item
-An $A$-twist supercharge admits a twisting homomorphism $\phi \colon \U(1) \to G_R$ and a $\ZZ$-grading $\alpha \colon \U(1) \to G_R$. and a $\ZZ$-grading $\alpha \colon \U(1) \to G_R$.
+An $A$-twist supercharge admits a twisting homomorphism $\phi \colon \U(1) \to G_R$ and a $\ZZ$-grading $\alpha \colon \U(1) \to G_R$.
 \item
 A $B$-twist supercharge admits the diagonal twisting homomorphism $\phi' \colon \SU(2) \to \SU(2) \times \SU(2) \to G_R$.  
 This twist is only $\ZZ/2\ZZ$-graded
@@ -3283,19 +3341,28 @@ This twist is only $\ZZ/2\ZZ$-graded
 The distinction via twisting homomorphisms and $\ZZ$-gradings follows by identifying the twists as dimensional reductions from 4d $\mc N=2$.
  
 \begin{lemma} \label{3d_4_orbits_lemma}
-A rank $(2,0)$ square 0 supercharge in the 4d $\mc N=2$ supersymmetry algebra restricts to an A-twisting supercharge in 3d $\mc N=4$.  Likewise a rank $(1,1)$ square zero supercharge in 4d $\mc N=2$ restricts to a B-twisting supercharge in 3d $\mc N=4$.
+A rank $(2,0)$ square 0 supercharge in the 4d $\mc N=2$ supersymmetry algebra restricts to an $A$-twisting supercharge in 3d $\mc N=4$.  Likewise a rank $(1,1)$ square zero supercharge in 4d $\mc N=2$ restricts to a $B$-twisting supercharge in 3d $\mc N=4$.
 \end{lemma}
 
 \begin{proof}
-The projection from the 4d $\mc N=2$ supertranslation algebra to the 3d $\mc N=4$ supertranslation algebra induces an isomorphism $W_4 \oplus W_4^* \to W$ of representations of the group $\spin(3;\CC)$. Here $W_4$ is the $d=4$ auxiliary space, with dimension 2.  This splits the fundamental representation $W$ into the sum of two Lagrangians, defining an orientation on $W$. A rank $(2,0)$ supercharge induces the Lagrangian subspace $W_4 \sub W$, which is oriented.  The corresponding twist can be promoted to a twisting datum using a copy of $\mr U(1)$ acting with weight 1 on $W_4$ -- if $G_R = \SL(2;\CC)_+ \times \SL(2;\CC)_-$ where the first factor is the 4d R-symmetry group, by a $\mr U(1)$ in the second factor -- so this is the A-twist in our classification above.
+Let $W_4$ be the complex two-dimensional auxiliary space of the 4d $\cN=2$ supesymmetry algebra.
+The projection from the 4d $\mc N=2$ supertranslation algebra to the 3d $\mc N=4$ supertranslation algebra induces an isomorphism $W_4 \oplus W_4^* \to W$ of representations of the group $\spin(3;\CC)$.  
+This splits the fundamental representation $W$ into the sum of two Lagrangians, defining an orientation on $W$. 
+A rank $(2,0)$ supercharge induces the Lagrangian subspace $W_4 \sub W$, which is oriented.  The corresponding twist can be promoted to a twisting datum using a copy of $\mr U(1)$ acting with weight 1 on $W_4$; explicitly, this is the homomorphism $\alpha : \U(1) \to G_R = \SL(2;\CC) \times \SL(2;\CC)$ given by the embedding into the second factor. 
+This is the $A$-twist in our classification above.
+%-- if $G_R = \SL(2;\CC)_+ \times \SL(2;\CC)_-$ where the first factor is the 4d R-symmetry group, by a $\mr U(1)$ in the second factor -- so this is the A-twist in our classification above.
 
-A rank $(1,1)$ supercharges induces a Lagrangian subspace of the form $L \oplus L^* \sub W$, where $L$ is a 1-dimensional subspace of $W_4$.  This subspace has the opposite orientation, so corresponds to the B-twist in our classification above.  
+A rank $(1,1)$ supercharges induces a Lagrangian subspace of the form $L \oplus L^* \sub W$, where $L$ is a 1-dimensional subspace of $W_4$.  This subspace has the opposite orientation, so corresponds to the $B$-twist in our classification above.  
 \end{proof}
 
 \subsubsection{Minimal Twist}
 \label{sect:3d_4_minimal_twist}
 The 3d $\cN=4$ super Yang--Mills viewed as a $\cN=2$ supersymmetric theory coincides with the 3d $\cN=2$ super Yang--Mills with matter valued in the representation $R = U \oplus \gg$.  
 
+There is a unique twisting homomorphism $\phi : \U(1) \to \Spin(4;\CC)$ given by the restriction of the 4d $\cN=2$ twisting homomorphism for the minimal twist as in Theorem \ref{4d_2_minimal_twist_thm} to the subgroup $\U(1) \subset \MU(2)$. 
+
+This twist also admits the following twisting datum.
+To incorporate the $\ZZ$-grading, we use the twisting datum $\alpha \colon \mr U(1) \to \SU(2)_+ \times \SU(2)_- \iso G_R$.  The action of this $\alpha$ on $W$ coincides with the action of $\alpha_0$ in Section \ref{sect:4d_2_holomorphictwist} on the sum of the 4d auxiliary space with its dual $W_4 \oplus W_4^*$, composed with the isomorphism $W_4 \oplus W_4^* \to W$: indeed, both have weights $(1,1,-1,-1)$.  Therefore our equivalence is compatible with the $\ZZ$-grading in Theorem \ref{4d_2_minimal_twist_thm} induced by $\alpha_0$.
 %However, as in Section \ref{4d_2_section} we should take care: this identification is not R-symmetry equivariant.  Indeed, there is no choice of a 2-dimensional subspace $W' \sub W$, and an embedding $\mr O(2) \inj G_R = \Spin(4;\RR)$, making the map $W' \to W$ equivariant for the action of $\mr O(2)$ on $W'$ with weight 1.
 
 \begin{theorem} \label{3d_4_minimal_twist_thm}
@@ -3304,15 +3371,9 @@ The minimal twist of 3d $\cN=4$ super Yang--Mills on $N \times L=\CC\times \RR$ 
 
 \begin{proof}
 The statement about the equivalence of the underlying $\ZZ/2\ZZ$-graded theories follows from applying dimensional reduction (Theorem \ref{CS_diml_red_prop}) to Theorem \ref{4d_2_minimal_twist_thm} calculating the holomorphic twist of 4d $\mc N=2$ super Yang-Mills on $N \times L_\CC$.  This equivalence is equivariant for the action of $\mr U(1) \iso \MU(N) \sub \MU(N \times L_\CC)$.
-
-To incorporate the $\ZZ$-grading, we use the twisting datum $\alpha \colon \mr U(1) \to \SU(2)_+ \times \SU(2)_- \iso G_R$.  The action of this $\alpha$ on $W$ coincides with the action of $\alpha_0$ in Section \ref{sect:4d_2_holomorphictwist} on the sum of the 4d auxiliary space with its dual $W_4 \oplus W_4^*$, composed with the isomorphism $W_4 \oplus W_4^* \to W$: indeed, both have weights $(1,1,-1,-1)$.  Therefore our equivalence is compatible with the $\ZZ$-grading in Theorem \ref{4d_2_minimal_twist_thm} induced by $\alpha_0$.
 \end{proof}
 
-\begin{remark}
-\brian{Cotangent type.}
-\end{remark}
-
-\subsubsection{Topological A Twist}
+\subsubsection{Topological $A$-Twist}
 \label{sect:3d_4_A_twist}
 Let $L=\CC$ equipped with a Hermitian structure and a complex half density, $N_\RR=\RR$ equipped with a Euclidean structure and $N=N_\RR\otimes_\RR\CC$ its complexification. Consider the 4-dimensional spacetime $V_\RR=L\times N$. Under the projection $\Re\colon N\rightarrow N_\RR$ the family $Q_t$ of 4-dimensional square-zero supercharges given by \eqref{eq:4dHodgefamily} dimensionally reduces to a family of 3-dimensional square-zero supercharges which at $t\neq 0$ are topological at and $t=0$ have 2 invariant directions. Since they admit a compatible $\ZZ$-grading, at $t=0$ we obtain the holomorphic twist and at $t\neq 0$ we obtain the topological B twist. Therefore, from Theorem \ref{thm:4dDonaldsontwist} we obtain the following statement.
 
@@ -3325,7 +3386,7 @@ The twist of 3d $\cN=4$ super Yang--Mills with respect to the family $Q_t$ of sq
 The topological $A$ twist of 3d $\cN=4$ super Yang--Mills is perturbatively trivial.
 \end{corollary}
 
-\subsubsection{Topological B Twist}
+\subsubsection{Topological $B$-Twist}
 \label{sect:3d_4_B_twist}
 We consider $V_\RR=\RR^3$ equipped with a Euclidean structure and as before let $V=V_\RR\otimes_\RR\CC$ be its complexification. $V$ carries a Hermitian structure and a half-density, so by the results of Section \ref{sect:6dholomorphictwist} we obtain a square-zero supercharge $Q$. Under the projection $\Re\colon V\rightarrow V_\RR$ the supercharge $Q$ dimensionally reduces to the topological $B$ supercharge in 3 dimensions. Therefore, from Theorem \ref{thm:6dCSreduction} we obtain the following statement.
 
@@ -3334,7 +3395,8 @@ The rank $2$ B-twist of 3d $\mc N=4$ super Yang-Mills theory with symplectic mat
 \end{theorem}
 
 \subsection{\texorpdfstring{$\cN = 8$}{N=8} Super Yang-Mills Theory} \label{3d8section}
-Finally, let's consider maximal super Yang-Mills theory with gauge group $G$ in dimension 3, with $\mc N=8$ supersymmetry.  This is the theory obtained by compactifying $\mc N=(1,0)$ super Yang-Mills on $\RR^{10}$ down to $\RR^3$.  The $R$-symmetry group is $G_R = \Spin(7;\CC)$, acting on $W$ by its (Dirac) spin representation.
+Finally, let's consider maximal super Yang-Mills theory with gauge group $G$ in dimension 3, with $\mc N=8$ supersymmetry.  This is the theory obtained by compactifying $\mc N=(1,0)$ super Yang-Mills on $\RR^{10}$ down to $\RR^3$.  
+The $R$-symmetry group is $G_R = \Spin(7;\CC)$, and $W$ is its $8$-dimensional (Dirac) spin representation.
 
 \vspace{-10pt}
 \paragraph{Fields:} We can describe the BRST fields of $\mc N=4$ super Yang-Mills by restricting the 4d fields from Section \ref{4d_4_section} to representations of the group $\spin(3;\CC)$.  The fields we obtain are
@@ -3346,11 +3408,12 @@ Finally, let's consider maximal super Yang-Mills theory with gauge group $G$ in 
 
 In the $\mc N=8$ supersymmetry algebra the classification of twists is the same as we saw in $\mc N=4$.  That is, there are three orbits: one consisting of rank 1 supercharges, and two orbits of rank 2 supercharges.  We can see this in the following way.
 \begin{lemma}
-There are two $\spin(3;\CC) \times G_R$-orbits of rank 2 supercharges in the 3d $\mc N=8$ supersymmetry algebra.
+There are two distinct $\spin(3;\CC) \times G_R$-orbits of square-zero supercharges of rank $2$ in the 3d $\mc N=8$ supersymmetry algebra.
 \end{lemma}
 
 \begin{proof}
-Choose a symplectic basis $\langle s, s' \rangle$ for $S$, and let $Q = s \otimes w + s' \otimes w'$ be a square-zero rank 2 element of $S \otimes W$.  Let $V_7$ denote the fundamental representation of $G_R$.  As in Section \ref{9d_section}, the element $w \in W$ is equivalent to the data of a maximal isotropic subspace $L \sub V_7$, together with a choice of half-density.  This element $w$ is stabilized, in particular, by a copy of the metalinear group $\ML(L)$, under whose action the auxiliary space $W$ decomposes as
+Choose a symplectic basis $\langle s, s' \rangle$ for $S$, and let $Q = s \otimes w + s' \otimes w'$ be a square-zero rank 2 element of $S \otimes W$.  Let $V_7$ denote the fundamental representation of $G_R$.  As in Section \ref{9d_section}, the element $w \in W$ is equivalent to the data of a maximal isotropic subspace $L \sub V_7$, together with a choice of a half-density.  This element $w$ is stabilized, in particular, by a copy of the metalinear group $\ML(L)$.
+Under the group $\ML(L)$ the auxiliary space $W$ decomposes as
 \[W \iso \left(\CC \oplus L \oplus \wedge^2 L \oplus \wedge^3 L \right) \otimes \det(L)^{-1/2},\]
 (see also \cite[Section 4.7]{ElliottSafronov}), with $w$ lying in the last summand.  Under this decomposition, split the remaining element $w' = (v_0, v_1, v_2, v_3)$.  Then
 \begin{itemize}
@@ -3370,22 +3433,27 @@ The classification of twists therefore takes the following form.  We identify ho
 
 \subsubsection{Minimal Twist}
 \label{sect:3d8minimal_twist}
-The 3d $\cN=8$ super Yang--Mills viewed as an $\cN=4$ supersymmetric theory coincides with the 3d $\cN=4$ super Yang--Mills with matter valued in the representation $U = T^*\gg$.  Alternatively, it is obtained by dimensional reduction from the holomorphic twist of 4d $\mc N=4$ super Yang-Mills.
+The 3d $\cN=8$ super Yang--Mills viewed as an $\cN=4$ supersymmetric theory coincides with the 3d $\cN=4$ super Yang--Mills with matter valued in the representation $U = T^*\gg$.  
+Alternatively, it is obtained by dimensional reduction from the holomorphic twist of 4d $\mc N=4$ super Yang-Mills.
 
 \begin{theorem}  \label{3d_8_minimal_twist_thm}
-The minimal twist of 3d $\cN=8$ super Yang--Mills on $M=\CC\times \RR$ is perturbatively equivalent to the BF theory with space of fields $T^*[-1]\mr{Map}(\CC \times \RR_{\mr{dR}}, (\gg/\gg)_{\mr{Dol}})$. Moreover, the equivalence is $\U(1)$-equivariant.
+The minimal twist of 3d $\cN=8$ super Yang--Mills on $M=\CC\times \RR$ is perturbatively equivalent to the generalized BF theory with space of fields $T^*[-1]\mr{Map}(\CC_{\rm Dol} \times \RR_{\mr{dR}}, \fg/\fg)$. Moreover, the equivalence is $\U(1)$-equivariant.
 \end{theorem}
 
 \begin{proof}
-On the level of $\ZZ/2\ZZ$-graded theories, we apply the forgetful map from $\mc N=8$ super Poincar\'e action down to the $\mc N=4$ super Poincar\'e action and then apply Theorem \ref{3d_4_minimal_twist_thm}.  We can then enhance this identifying the fields with the dimensional reduction of the fields from the holomorphic twist of 4d $\mc N=4$ super Yang-Mills, as a $\ZZ$-graded vector bundle equipped with a $\mr U(1)$-equivariant structure.  The dimensionally reduced theory is a $\ZZ$-graded and $\mr U(1)$-equivariant theory, equivalent as a $\ZZ/2\ZZ$-graded theory to the one obtained from 3d $\mc N=4$ -- this promotes the description given above to a $\ZZ$-graded and $\mr U(1)$-equivariant theory.  When we calculate that dimensional reduction, the fields reduce according to the rule
-\begin{align*}
-\Omega^{\bullet,\bullet}(\CC^2) \otimes \gg[k] &\mapsto \Omega^{\bullet,\bullet}(\CC) \otimes \Omega^\bullet(\RR) \otimes (\gg[k] \oplus \gg[k-1 \\
-&\iso \Omega^{0,\bullet}(\CC)\otimes \Omega^\bullet(\RR) \otimes ((\gg[k] \oplus \gg[k-1]) \oplus (\gg[k-1] \oplus \gg[k-2])).
-\end{align*}
-Starting from the fields of Theorem \ref{3d_4_minimal_twist_thm}, we obtain -- $\mr U(1)$-equivariantly -- the desired fields with their correct $\ZZ$-gradings.
+By Proposition \ref{thm:4d4holomorphictwist} and Proposition \ref{prop:BFdolbeaultreduction} the dimensional reduction of the minimal twist of 4d $\cN=4$ super Yang-Mills along $\CC^2 \to \CC \times \RR$ is equivalent to the desired generalized BF theory.
 \end{proof}
 
-\subsubsection{Topological A Twist}
+%\begin{proof}
+%On the level of $\ZZ/2\ZZ$-graded theories, we apply the forgetful map from $\mc N=8$ super Poincar\'e action down to the $\mc N=4$ super Poincar\'e action and then apply Theorem \ref{3d_4_minimal_twist_thm}.  We can then enhance this identifying the fields with the dimensional reduction of the fields from the holomorphic twist of 4d $\mc N=4$ super Yang-Mills, as a $\ZZ$-graded vector bundle equipped with a $\mr U(1)$-equivariant structure.  The dimensionally reduced theory is a $\ZZ$-graded and $\mr U(1)$-equivariant theory, equivalent as a $\ZZ/2\ZZ$-graded theory to the one obtained from 3d $\mc N=4$ -- this promotes the description given above to a $\ZZ$-graded and $\mr U(1)$-equivariant theory.  When we calculate that dimensional reduction, the fields reduce according to the rule
+%\begin{align*}
+%\Omega^{\bullet,\bullet}(\CC^2) \otimes \gg[k] &\mapsto \Omega^{\bullet,\bullet}(\CC) \otimes \Omega^\bullet(\RR) \otimes (\gg[k] \oplus \gg[k-1 \\
+%&\iso \Omega^{0,\bullet}(\CC)\otimes \Omega^\bullet(\RR) \otimes ((\gg[k] \oplus \gg[k-1]) \oplus (\gg[k-1] \oplus \gg[k-2])).
+%\end{align*}
+%Starting from the fields of Theorem \ref{3d_4_minimal_twist_thm}, we obtain -- $\mr U(1)$-equivariantly -- the desired fields with their correct $\ZZ$-gradings.
+%\end{proof}
+
+\subsubsection{Topological $A$-Twist}
 \label{sect:3d8A_Twist}
 From Theorem \ref{3d_4_A_twist_thm}, using the same argument, we obtain the following statement.
 
@@ -3393,7 +3461,11 @@ From Theorem \ref{3d_4_A_twist_thm}, using the same argument, we obtain the foll
 The twist of 3d $\cN=8$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges is perturbatively equivalent to the generalized Hodge theory $T^*[-1]\mr{Map}(\CC \times \RR_{\mr{dR}}, (\gg/\gg)_{\mr{Hod}})$. Moreover, this equivalence is $\U(1)$-equivariant.
 \end{theorem}
 
-\subsubsection{Topological B Twist}
+\begin{corollary}
+The topological $A$-twist of 3d $\cN=8$ super Yang-Mills is perturbatively trivial.
+\end{corollary}
+
+\subsubsection{Topological $B$-Twist}
 \label{sect:3d8B_Twist}
 From Theorem \ref{3d_4_B_twist_thm} we obtain the following statement.
 
@@ -3851,5 +3923,19 @@ Note that both Proposition \ref{prop:cliffordactionproperty2} and Proposition \r
 
 \pagestyle{bib}
 \printbibliography
+
+\textsc{University of Massachusetts, Amherst}\\
+\textsc{Department of Mathematics and Statistics, 710 N Pleasant St, Amherst, MA 01003}\\
+\texttt{celliott@math.umass.edu}\\
+\vspace{-5pt}
+
+\textsc{Institut f\"ur Mathematik, Universit\"at Z\"urich}\\
+\textsc{Winterthurerstrasse 190, 8057 Zurich, Switzerland}\\
+\texttt{pavel.safronov@math.uzh.ch}\\
+\vspace{-5pt}
+
+\textsc{Northeastern University}\\
+\textsc{Department of Mathematics, 360 Huntington Ave, Boston, MA 02115}\\
+\texttt{brianwilliams.math@gmail.com}\\
 
 \end{document}
