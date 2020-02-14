@@ -305,17 +305,17 @@ F_{0, 2} + \ol\dd^*_A u &= 0 \\
  \multirow{2}*{5} & \multirow{2}*{$1$} & \multirow{2}*{\hyperref[sect:5d1minimaltwist] {Rank $1$}} & {Generalized BF Theory coupled to a generalized symplectic boson} & \multirow{2}*{3 (minimal)} \\
  &&& $\Sect(\CC^2 \times \RR_{\mr{dR}}, (U\otimes K_{\CC^2}^{1/2}) \ham \fg)$ & \\ \hline
  \multirow{6}*{4} & \multirow{6}*{$2$} & \multirow{2}*{\hyperref[sect:4d_2_holomorphictwist] {Rank $(1,0)$}} & {Holomorphic BF Theory} & \multirow{2}*{2 (holomorphic)} \\
- &&& $T^*[-1]\mr{Map}(\CC^2, U \ham \fg)$ & \\ \cline{3-5}
+ &&& $T^*[-1]\mr{Sect}(\CC^2, U \ham \fg)$ & \\ \cline{3-5}
  && \multirow{2}*{\hyperref[sect:4d_2_11] {Rank $(1,1)$}} & {Generalized BF Theory coupled to a generalized symplectic boson} & \multirow{2}*{3} \\
  &&& $\Sect(\CC \times \RR^2_{\mr{dR}}, (U\otimes K_\CC^{1/2}) \ham \fg)$  & \\ \cline{3-5}
  && \multirow{2}*{\hyperref[sect:4d2Donaldson] {Rank $(2,0)$}} & {Perturbatively trivial } & \multirow{2}*{4 (topological)} \\
- &&& $\mr{Map}(\CC^2, U \ham \fg)_{\mr{dR}}$ & \\ \hline
+ &&& $\mr{Sect}(\CC^2, U \ham \fg)_{\mr{dR}}$ & \\ \hline
  \multirow{6}*{3} & \multirow{6}*{$4$} & \multirow{2}*{\hyperref[sect:3d_4_minimal_twist] {Rank $1$}} & {Generalized BF Theory coupled to a generalized symplectic boson} & \multirow{2}*{2 (minimal)} \\
- &&& $T^*[-1]\mr{Map}(\CC \times \RR_{\mr{dR}}, U \ham \fg)$  & \\ \cline{3-5}
+ &&& $T^*[-1]\mr{Sect}(\CC \times \RR_{\mr{dR}}, U \ham \fg)$  & \\ \cline{3-5}
  && \multirow{2}*{\hyperref[sect:3d_4_B_twist] {Rank $2$ (B)}} & {BF Theory coupled to a symplectic boson} & \multirow{2}*{3 (topological)} \\
- &&& $\mr{Map}(\RR^3_{\mr{dR}}, U \ham \fg)$ & \\ \cline{3-5}
+ &&& $\mr{Sect}(\RR^3_{\mr{dR}}, U \ham \fg)$ & \\ \cline{3-5}
  && \multirow{2}*{\hyperref[sect:3d_4_A_twist] {Rank $2$ (A)}} & {Perturbatively trivial } & \multirow{2}*{3 (topological)} \\
- &&& $\mr{Map}(\CC \times \RR_{\mr{dR}}, U \ham \fg)_{\mr{dR}}$ & \\ \hline
+ &&& $\mr{Sect}(\CC \times \RR_{\mr{dR}}, U \ham \fg)_{\mr{dR}}$ & \\ \hline
   \end{tabular}
  \caption{Twists of Supersymmetric Yang-Mills Theories with gauge Lie algebra $\fg$ with a hypermultiplet valued in a symplectic representation $U$ (8 supercharges).}
  \label{table_of_twists_8}
@@ -747,10 +747,12 @@ S(\Psi(e)) &= S(e, S_1(e), 0) \\
 In terms of the classical BV complex, this proposition tells us that if a classical BV complex is of the form
 \[\xymatrix{
 \cdots & \ul{0} & \ul{1} & \cdots \\
-\cdots \ar[r] & E_0^0 \ar[r]^{Q_0} \ar[dr] & E_0^1 \ar[r] &\cdots \\
-&\cO_M \ar^{{\rm dvol}}[r] \ar[ur] &\dens_M &
+\cdots \ar[r] & E_0^0 \ar[r]^{Q_0} \ar@{.>}[dr] & E_0^1 \ar[r] &\cdots \\
+&\cO_M \ar^-{{\rm dvol}}[r] \ar@{.>}[ur] &\dens_M &
 }\]
-where the bottom map multiplies a function by the volume element, then we can replace it with a quasi-isomorphic cochain complex consisting of only the first line, provided we make a suitable modification of the classical action functional. 
+The bottom map multiplies a function by the volume element.
+The dotted arrows are induced from $S_1$.
+The proposition implies that we can replace this with a quasi-isomorphic cochain complex consisting of only the first line, provided we make a suitable modification of the classical action functional. 
 \end{remark}
 
 
@@ -1065,10 +1067,10 @@ for the same theory.
 
 \begin{example}
 There is a special case of this, which one might label the ``holomorphic symplectic boson'' \cite[Definition 4.8]{SWSuperconformal} which is the theory
-\[\Sect(\CC, (U\otimes K_\CC^{1/2})\ham\fg).\]
-For $U=T^*R$ this theory is isomorphic to the holomorphic BF theory
-\[T^*[-1] \map(\CC, R / \fg)\]
-by Proposition \ref{prop:mapintocotangent}.
+\[\Sect(X, (U\otimes K_X^{1/2})\ham\fg) . \]
+%For $U=T^*R$ this theory is isomorphic to the holomorphic BF theory
+%\[T^*[-1] \map(\CC, R / \fg)\]
+%by Proposition \ref{prop:mapintocotangent}.
 \end{example}
 
 As with generalized BF theory, generalized Chern--Simons theory carries a natural rotation action by linear automorphism groups of spacetime.
@@ -3029,7 +3031,7 @@ The semi-spin representations of $\Spin(4, \RR)$ decompose with respect to $\Spi
 So, both $S_+\otimes W$ and $S_-\otimes W^*$ contain a trivial one-dimensional subspace and hence we obtain a rank $(1, 1)$ square-zero supercharge.
 
 \begin{theorem} \label{thm:4d_11_twist}
-The rank $(1,1)$ partially topological twist of 4d $\mc N=2$ super Yang-Mills theory is perturbatively equivalent to the generalized Chern-Simons theory with space of fields $\mr{Map}(\CC \times \RR^2_{\mr{dR}}, U\ham \gg)$.  
+The rank $(1,1)$ partially topological twist of 4d $\mc N=2$ super Yang-Mills theory is perturbatively equivalent to the generalized Chern-Simons theory with space of fields $\mr{Sect}(\CC \times \RR^2_{\mr{dR}}, (U \otimes K_\CC^{1/2}) \ham \gg)$.  
 Moreover, this equivalence is $\U(1) \times \Spin(2, \RR)$-equivariant.
 \end{theorem}
 \begin{proof}
@@ -3427,7 +3429,7 @@ The statement about the equivalence of the underlying $\ZZ/2\ZZ$-graded theories
 Let $L=\CC$ equipped with a Hermitian structure and a complex half density, $N_\RR=\RR$ equipped with a Euclidean structure and $N=N_\RR\otimes_\RR\CC$ its complexification. Consider the 4-dimensional spacetime $V_\RR=L\times N$. Under the projection $\Re\colon N\rightarrow N_\RR$ the family $Q_t$ of 4-dimensional square-zero supercharges given by \eqref{eq:4dHodgefamily} dimensionally reduces to a family of 3-dimensional square-zero supercharges which at $t\neq 0$ are topological at and $t=0$ have 2 invariant directions. Since they admit a compatible $\ZZ$-grading, at $t=0$ we obtain the holomorphic twist and at $t\neq 0$ we obtain the topological B twist. Therefore, from Theorem \ref{thm:4dDonaldsontwist} we obtain the following statement.
 
 \begin{theorem}
-The twist of 3d $\cN=4$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges is perturbatively equivalent to the generalized Hodge theory $\mr{Map}(N \times L_{\mr{dR}}, ((U \otimes K^{1/2}_N)\ham \gg)_{\mr{Hod}})$. Moreover, this equivalence is $\U(1)$-equivariant.
+The twist of 3d $\cN=4$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges is perturbatively equivalent to the generalized Hodge theory $\mr{Sect}(N \times L_{\mr{dR}}, ((U \otimes K^{1/2}_N)\ham \gg)_{\mr{Hod}})$. Moreover, this equivalence is $\U(1)$-equivariant.
 \label{3d_4_A_twist_thm}
 \end{theorem}
 
@@ -3440,7 +3442,7 @@ The topological $A$ twist of 3d $\cN=4$ super Yang--Mills is perturbatively triv
 We consider $V_\RR=\RR^3$ equipped with a Euclidean structure and as before let $V=V_\RR\otimes_\RR\CC$ be its complexification. $V$ carries a Hermitian structure and a half-density, so by the results of Section \ref{sect:6dholomorphictwist} we obtain a square-zero supercharge $Q$. Under the projection $\Re\colon V\rightarrow V_\RR$ the supercharge $Q$ dimensionally reduces to the topological $B$ supercharge in 3 dimensions. Therefore, from Theorem \ref{thm:6dCSreduction} we obtain the following statement.
 
 \begin{theorem} \label{3d_4_B_twist_thm}
-The rank $2$ B-twist of 3d $\mc N=4$ super Yang-Mills theory with symplectic matter representation $U$ is perturbatively equivalent to the generalized BF theory coupled to a $U$-valued higher holomorphic boson with space of fields $\mr{Map}(\RR^3_{\mr{dR}}, U\ham \gg)$. Moreover, the equivalence is $\Spin(3; \RR)$-equivariant. 
+The rank $2$ B-twist of 3d $\mc N=4$ super Yang-Mills theory with symplectic matter representation $U$ is perturbatively equivalent to the generalized BF theory coupled to a $U$-valued higher holomorphic boson with space of fields $\mr{Sect}(\RR^3_{\mr{dR}}, U\ham \gg)$. Moreover, the equivalence is $\Spin(3; \RR)$-equivariant. 
 \end{theorem}
 
 \subsection{\texorpdfstring{$\cN = 8$}{N=8} Super Yang-Mills Theory} \label{3d8section}
