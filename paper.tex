@@ -1270,9 +1270,9 @@ This equivalence is $\SO(V_\RR)$-equivariant.
 
 Finally, we take $Y$ to be a complex manifold of the form $Y' \times \CC$, where $V$ is complex $k$-dimensional and consider the projection
 \[
-p_{\rm Dol} : X \times (Y' \times \CC) \times M \to X \times Y' \times (M \times \RR) 
+p_{\rm Dol} \colon X \times (Y' \times \CC) \times M \to X \times Y' \times (M \times \RR) 
 \]
-induced by ${\rm Re} : \CC \to \RR$.
+induced by ${\rm Re} \colon \CC \to \RR$.
 
 \begin{prop}
 \label{prop:BFdolbeaultreduction}
@@ -1672,7 +1672,7 @@ The BRST theory for classical supersymmetric Yang-Mills theory has underlying $\
 F_{\rm gauge} = \Omega^1(V_\RR; \fg) \oplus \Gamma(V_\RR; \Pi \Sigma \otimes \fg) \oplus \Omega^0(V_\RR; \fg[1])
 \]
 whose sections we denote by $(A, \lambda, c)$.  
-The dg Lie structure on $F_{\rm gauge}[-1]$ has differential given by the de Rham differential $\d :\colon \Omega^0(V_{\RR} ; \fg) \to \Omega^1(V_{\RR} ; \fg)$ and bracket
+The dg Lie structure on $F_{\rm gauge}[-1]$ has differential given by the de Rham differential $\d \colon \Omega^0(V_{\RR} ; \fg) \to \Omega^1(V_{\RR} ; \fg)$ and bracket
 \[
 \begin{array}{ccccccc}
 [-,-] & \colon & \Omega^0(V_{\RR} ; \fg) \otimes \left(\Omega^1(V_{\RR} ; \fg) \oplus \Gamma(V_\RR ; \Sigma \otimes \fg) \oplus \Omega^0(V_{\RR} ; \fg) \right) & \to & \Omega^1(V_{\RR} ; \fg) \oplus \Gamma(V_\RR ; \Sigma \otimes \fg) \oplus \Omega^0(V_\RR ; \fg)
@@ -3331,7 +3331,7 @@ The R-symmetry group is $\spin(2;\CC) = \CC^\times$, acting on $W$ by the defini
 This theory admits a unique twist up to equivalence:
 \begin{itemize}
  \item A square zero supercharge $Q \ne 0 \in \Sigma$ has two invariant directions.  There is a twisting homomorphism $\phi = (-)^{1/2} \colon \U(1)\hookrightarrow G_R$, so the twisted theory carries a $U(1)$-action.
-The twist is $\ZZ$-graded with $\alpha : \U(1) \hookrightarrow G_R$ given by the natural embedding. 
+The twist is $\ZZ$-graded with $\alpha \colon \U(1) \hookrightarrow G_R$ given by the natural embedding. 
 \end{itemize}
 
 \subsubsection{Minimal Twist}
@@ -3391,7 +3391,7 @@ A rank $(2,0)$ square 0 supercharge in the 4d $\mc N=2$ supersymmetry algebra re
 Let $W_4$ be the complex two-dimensional auxiliary space of the 4d $\cN=2$ supesymmetry algebra.
 The projection from the 4d $\mc N=2$ supertranslation algebra to the 3d $\mc N=4$ supertranslation algebra induces an isomorphism $W_4 \oplus W_4^* \to W$ of representations of the group $\spin(3;\CC)$.  
 This splits the fundamental representation $W$ into the sum of two Lagrangians, defining an orientation on $W$. 
-A rank $(2,0)$ supercharge induces the Lagrangian subspace $W_4 \sub W$, which is oriented.  The corresponding twist can be promoted to a twisting datum using a copy of $\mr U(1)$ acting with weight 1 on $W_4$; explicitly, this is the homomorphism $\alpha : \U(1) \to G_R = \SL(2;\CC) \times \SL(2;\CC)$ given by the embedding into the second factor. 
+A rank $(2,0)$ supercharge induces the Lagrangian subspace $W_4 \sub W$, which is oriented.  The corresponding twist can be promoted to a twisting datum using a copy of $\mr U(1)$ acting with weight 1 on $W_4$; explicitly, this is the homomorphism $\alpha \colon \U(1) \to G_R = \SL(2;\CC) \times \SL(2;\CC)$ given by the embedding into the second factor. 
 This is the $A$-twist in our classification above.
 
 A rank $(1,1)$ supercharges induces a Lagrangian subspace of the form $L \oplus L^* \sub W$, where $L$ is a 1-dimensional subspace of $W_4$.  This subspace has the opposite orientation, so corresponds to the $B$-twist in our classification above.  
@@ -3401,7 +3401,7 @@ A rank $(1,1)$ supercharges induces a Lagrangian subspace of the form $L \oplus 
 \label{sect:3d_4_minimal_twist}
 The 3d $\cN=4$ super Yang--Mills viewed as a $\cN=2$ supersymmetric theory coincides with the 3d $\cN=2$ super Yang--Mills with matter valued in the representation $R = U \oplus \gg$.  
 
-There is a unique twisting homomorphism $\phi : \U(1) \to \Spin(4;\CC)$ given by the restriction of the 4d $\cN=2$ twisting homomorphism for the minimal twist as in Theorem \ref{4d_2_minimal_twist_thm} to the subgroup $\U(1) \subset \MU(2)$. 
+There is a unique twisting homomorphism $\phi \colon \U(1) \to \Spin(4;\CC)$ given by the restriction of the 4d $\cN=2$ twisting homomorphism for the minimal twist as in Theorem \ref{4d_2_minimal_twist_thm} to the subgroup $\U(1) \subset \MU(2)$. 
 
 This twist also admits the following twisting datum.
 To incorporate the $\ZZ$-grading, we use the twisting datum $\alpha \colon \mr U(1) \to \SU(2)_+ \times \SU(2)_- \iso G_R$.  The action of this $\alpha$ on $W$ coincides with the action of $\alpha_0$ in Section \ref{sect:4d_2_holomorphictwist} on the sum of the 4d auxiliary space with its dual $W_4 \oplus W_4^*$, composed with the isomorphism $W_4 \oplus W_4^* \to W$: indeed, both have weights $(1,1,-1,-1)$.  Therefore our equivalence is compatible with the $\ZZ$-grading in Theorem \ref{4d_2_minimal_twist_thm} induced by $\alpha_0$.
