@@ -324,9 +324,21 @@
 \fancyhead[R]{\textsf{Section \nouppercase{\leftmark}}}
 \fancyhead[L]{\textsf{\textbf{\thepage}}}
 
+\fancypagestyle{standard}{
+  \fancyhf{}
+  \fancyhead[R]{\textsf{Section \nouppercase{\leftmark}}}
+  \fancyhead[L]{\textsf{\textbf{\thepage}}}
+}
+
 \fancypagestyle{bib}{
   \fancyhf{}
   \fancyhead[R]{\textsf{\nouppercase{\leftmark}}}
+  \fancyhead[L]{\textsf{\textbf{\thepage}}}
+}
+
+\fancypagestyle{intro}{
+  \fancyhf{}
+  \fancyhead[R]{}
   \fancyhead[L]{\textsf{\textbf{\thepage}}}
 }
 
