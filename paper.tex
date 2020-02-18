@@ -3586,6 +3586,8 @@ On the contrary, the $A$-twist as a deformation of the holomorphic twist does no
 
 \subsubsection{Minimal Twist} \label{sect:2d22minimaltwist}
 
+First, we record the minimal twist of 2d $\cN=(2,2)$ supersymmetric Yang--Mills theory.
+
 \begin{theorem} \label{2d_minimal_twist_thm}
 The minimal twist of 2d $\cN=(2,2)$ super Yang-Mills theory with gauge group $G$ coupled to the $\cN=(2,2)$ chiral multiplet valued in a representation $R$ is perturbatively equivalent to holomorphic $BF$ theory for the Lie algebra $\fg$ coupled to the $\beta\gamma$ system with values in the representation $R$, with moduli space $T^*[-1]\mr{Map}(\CC, (R/\gg)_{\mr{Dol}})$.  Moreover, this equivalence is $\mr U(1)$-equivariant.
 \end{theorem}
@@ -3639,9 +3641,15 @@ The topological A-twist of 2d $\mc N=(2,2)$ super Yang-Mills theory with gauge g
 \end{theorem}
 
 \begin{proof}
-We first perform a change of variables sending $\lambda_2$ to $\lambda_2 + t\lambda_0'$, and its antifield $\lambda_{-2}^*$ to $\lambda_{-2}^* - t\lambda_0^{'*}$, integrating out the field $\lambda_2 + t\lambda_0'$ and its antifield using Proposition \ref{prop:integrateoutfield}.  We can then eliminate the trivial BRST doublets $(\lambda_{-2}, A_{-1}), (\ol \psi_{-1}, \phi_0)$ and $(\lambda_0, \chi_1)$ using Proposition \ref{prop:BRSTdoublet}.  At $t=0$, we are left with the holomorphic twist from Theorem \ref{2d_minimal_twist_thm}, i.e, the theory $T^*[-1]\mr{Map}(\CC, (R/\gg)_{\mr{Dol}})$.  The action functional is further deformed by the remaining $t$-linear terms, which together take the form
-\[\int \dvol t\left( -(\lambda'_0, \chi_{1}^*) - (\chi_{-1}, c_0^*) + (\ol \psi_1, \ol \phi_0^*) + \frac 14 (\psi^*_{-1} ,\psi^*_{-1}) + \frac 14  (\psi^*_{1}, \psi^*_{1})\right).\]
-In terms of the classical BV complex we can identify these terms as introducing the following dotted isomorphism between two summands:
+We first perform a change of variables sending $\lambda_2$ to $\lambda_2 + t\lambda_0'$, and its antifield $\lambda_{-2}^*$ to $\lambda_{-2}^* - t\lambda_0^{'*}$.
+We integrate out the field $\lambda_2 + t\lambda_0'$ and its antifield using Proposition \ref{prop:integrateoutfield}.  
+We then eliminate the trivial BRST doublets $(\lambda_{-2}, A_{-1}), (\ol \psi_{-1}, \phi_0)$ and $(\lambda_0, \chi_1)$ using Proposition \ref{prop:BRSTdoublet}. 
+The resulting action functional is of the form
+\[
+S_{BF} + \int \dvol t\left( -(\lambda'_0, \chi_{1}^*) - (\chi_{-1}, c_0^*) + (\ol \psi_1, \ol \phi_0^*) + \frac 14 (\psi^*_{-1} ,\psi^*_{-1}) + \frac 14  (\psi^*_{1}, \psi^*_{1})\right)\]
+Here $S_{BF}$ is the action functional of holomorphic $BF$ theory as in the result of the minimal twist of $\cN=(2,2)$, see Theorem \ref{2d_minimal_twist_thm}, obtained by setting $t = 0$. 
+
+We can identify the linearized BV complex with the following diagram:
 \[\xymatrix@R=0.4cm@C=0.2cm{
 \ul{-2} & \ul{-1} & \ul{0} & \ul{1} & \ul{2} & \ul{3} \\
 &\Omega^0(\RR^2; \gg)_{c_0} \ar[r] &\Omega^{0,1}(\RR^2; \gg)_{A_1} & & \Omega^0(\RR^2; \gg^*)_{\lambda^{'*}_0} \ar[r] &\Omega^{0,1}(\RR^2; \gg^*)_{\chi_1^*} \\
@@ -3651,12 +3659,18 @@ In terms of the classical BV complex we can identify these terms as introducing 
 &&\Omega^0(\RR^2; R)_{\psi_{-1}^*} \ar[r] \ar@{-->}[dr] &\Omega^{0,1}(\RR^2;  R)_{\ol \phi^*_0} \ar@{-->}[dr] &&\\
 &&& \Omega^0(\RR^2; R)_{\psi_1} \ar[r]  &\Omega^{0,1}(\RR^2; R)_{\ol \psi^*_{1}}. &\\
 }\]
+Here, the solid arrows represent the linearized BV operator of the minimal twist, and the dotted arrows represent the $t$-dependent terms.
 This is exactly the deformation to $T^*[-1]\mr{Map}(\CC, (R/\gg)_{\mr{Hod}})$.
 \end{proof}
 
 \subsubsection{Topological B Twist} \label{sect:2d22Btwist}
 
-Finally, there is the 2d B-twist.  This is much easier, since it arises directly from 3d via dimensional reduction in a non-invariant direction.  Indeed, let $W_3$ be the 2d auxiliary space in the 3d $\mc N=2$ supertranslation algebra.  The 3d spin representation $S \otimes W_3$ splits into $S_+ \otimes W_3 \oplus S_- \otimes W_3$ as a $\spin(2;\CC)$-module.  Rank one square zero elements in 3d $\mc N=2$ generically become rank $(1,1)$ square zero elements in the 2d $\mc N=(2,2)$ supersymmetry algebra.  There is a square-zero supercharge in 3d $\mc N=2$ compatible with the identity twisting homomorphism $\spin(2;\CC) \to \spin(2;\CC)$.  This becomes the B-twisting homomorphism of $\spin(2;\CC) \to \spin(2;\CC) \times \spin(2;\CC)$ of weight $(1,-1)$ in the 2d $\mc N=(2,2)$-algebra.
+Finally, there is the $B$-twist of 2d $\cN=(2,2)$ supersymmetry.
+This twist arises from the twist of 3d $\cN=2$ via dimensional reduction in a non-invariant direction.  
+Indeed, let $W_3$ be the two-dimensional auxiliary space in the 3d $\mc N=2$ supertranslation algebra.  
+As a $\spin(2;\CC)$-representation, the 3d $\cN=2$ spinorial representation decomposes as $S_+ \otimes W_3 \oplus S_- \otimes W_3$.
+Generically, rank one square zero elements in 3d $\mc N=2$ supersymmetry define rank $(1,1)$ square zero elements in the 2d $\mc N=(2,2)$ supersymmetry algebra.  
+There is a square-zero supercharge in 3d $\mc N=2$ compatible with the identity twisting homomorphism $\spin(2;\CC) \to \spin(2;\CC)$.  This becomes the B-twisting homomorphism of $\spin(2;\CC) \to \spin(2;\CC) \times \spin(2;\CC)$ of weight $(1,-1)$ in the 2d $\mc N=(2,2)$-algebra.
 
 \begin{theorem} \label{2d_2_B_twist_thm}
 The topological B-twist of 2d $\mc N=(2,2)$ super Yang-Mills theory with gauge group $G$ coupled to the $\mc N=(2,2)$ chiral multiplet valued in a representation $R$ is perturbatively equivalent to the topological BF theory with moduli space $T^*[-1]\mr{Map}(\RR^2_{\mr{dR}}, (R/\gg))$.  This equivalence is $\mr U(1)$-invariant.
