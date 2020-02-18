@@ -948,7 +948,11 @@ We call $L[1]$ the \defterm{space of BRST fields}.
 In the most typical examples, the bundle $L[1]$ is concentrated in $\ZZ$-degrees $-1$ and 0.  In this case, sections in degree 0 are thought of as physical fields, and ghosts -- sections in degree $-1$ -- are thought of as generators of the infinitesimal gauge symmetry.  The action of gauge transformations on fields is then encoded by the Lie structure.
 \end{remark}
 
-Given a classical BRST theory, we may consider the cotangent theory $T^*[-1]\cM$ whose action functional we denote by $S_g$. Let us denote the pullback of $S_{\mathrm{BRST}}$ along the obvious projection $T^*[-1]\cM\rightarrow \cM$ by the same letter. Then the equation $Q_{\mathrm{BRST}} S_{\mathrm{BRST}} = 0$ in $\oloc(\cM)$ implies that $\{S_g, S_{\mathrm{BRST}}\} = 0$ in $\oloc(T^*[-1]\cM)$.
+Given a classical BRST theory $\cM$, we may consider the cotangent theory $T^*[-1]\cM$ whose action functional we denote by $S_g$.
+\brian{
+Why $S_g$? I suggest $S_0$, or $S_\cM$, or $S_{\rm cot}$. Also it's not clear from this sentence how $S_g$ depends on the data of the BRST theory. It doesn't use $S_{BRST}$, for instance.
+} 
+Let us denote the pullback of $S_{\mathrm{BRST}}$ along the obvious projection $T^*[-1]\cM\rightarrow \cM$ by the same letter. Then the equation $Q_{\mathrm{BRST}} S_{\mathrm{BRST}} = 0$ in $\oloc(\cM)$ implies that $\{S_g, S_{\mathrm{BRST}}\} = 0$ in $\oloc(T^*[-1]\cM)$.
 
 \begin{definition}
 Let $(\cM, S_{\mr{BRST}})$ be a classical BRST theory. The \defterm{associated classical BV theory} is the $(-1)$-shifted cotangent bundle $T^*[-1]\cM$ equipped with its natural $(-1)$-shifted symplectic structure and the action functional $S_{\mathrm{BRST}} + S_g$.
@@ -2242,11 +2246,10 @@ We consider the twisting homomorphism $\det^{1/2}\colon \MU(4)\rightarrow \Spin(
 \begin{itemize}
 \item Gauge fields $A_{1, 0}\in\Omega^{1, 0}(M; \gg)$ and $A_{0, 1}\in\Omega^{0, 1}(M; \gg)$.
 \item Scalar fields $a\in\Omega^{4,0}(M; \gg)[2]$ and $\wt a\in\Omega^{0, 4}(M; \gg)[-2]$.
-\item Fermions $\chi\in\Omega^0(M; \gg)[-1]$, $B\in\Omega^{0, 2}(M; \gg)[-1]$, $\wt \chi\in\Omega^{0, 4}(M; \gg)[-1]$, $\rho\in\Omega^{1, 0}(M; \gg)[1]$ and $C\in\Omega^{4, 1}(M; \gg)[1]$.
+\item Fermions $\chi\in\Omega^0(M; \gg)[-1]$, $B\in\Omega^{0, 2}(M; \gg)[-1]$, $\wt \chi\in\Omega^{0, 4}(M; \gg)[-1]$, $\rho\in\Omega^{1, 0}(M; \gg)[1]$ and $C\in\Omega^{3,0}(M; \gg)[1]$.
 %Fermions $\chi\in\Omega^0(M; \gg)[-1]$, $B\in\Omega^{0, 2}(M; \gg)[-1]$, $\wt \chi\in\Omega^{0, 4}(M; \gg)[-1]$, $\rho\in\Omega^{1, 0}(M; \gg)[1]$ and $C\in\Omega^{3, 0}(M; \gg)[1]$.
 \item A ghost field $c\in \Omega^0(M; \gg)[1]$.
 \end{itemize}
-\brian{I've changed where $C$ lives to fit the proof below.}
 
 \begin{theorem}
 The holomorphic twist of 8d $\cN=1$ super Yang--Mills on $M=\RR^8$ is perturbatively equivalent to the holomorphic BF theory on $M\cong\CC^4$ with the space of fields $T^*[-1]\map(M, B\fg)$. Moreover, the equivalence is $\U(4)$-equivariant.
@@ -2276,6 +2279,7 @@ The claim about the underlying $\ZZ/2\ZZ$-graded theories follows by applying di
 \Omega^{4,0}(\CC^4; \gg)_{a} \ar[r] &\Omega^{4,1}(\CC^4; \gg)_C \ar[r] &\Omega^{4,2}(\CC^4; \gg)_{B^*} \ar[r] &\Omega^{4,3}(\CC^4; \gg)_{A_{0,1}^*} \ar[r] &\Omega^{4,4}(\CC^4; \gg)_{c^*}&
 }
 \]
+
 concentrated in cohomological degrees $-1, \dots, 4$. These fields have the same degrees as in the holomorphic BF theory.
 \end{proof}
 
@@ -2295,7 +2299,7 @@ for $t\in\CC$. We have
 \[(Q_t, Q_t) = t,\]
 so at $t=0$ we have a holomorphic supercharge and and $t\neq 0$ we have a topological supercharge.
 
-We will use the notation for fields of 8d $\cN=1$ super Yang--Mills from Section \ref{sect:8dholomorphictwist}. Using the Calabi--Yau structure we will regard $C\in\Omega^{0, 1}(\CC^4;\fg)[1]$ and $\wt\chi\in\Omega^0(\CC^4;\fg)[-1]$. First, we are going to write the functionals \eqref{eq:gaugeI1} and \eqref{eq:gaugeI2} in terms of these fields.
+We will use the notation for fields of 8d $\cN=1$ super Yang--Mills from Section \ref{sect:8dholomorphictwist}. Using the Calabi--Yau structure we will regard $C\in\Omega^{0, 1}(\CC^4;\fg)[1]$, $\wt\chi\in\Omega^0(\CC^4;\fg)[-1]$, and $a \in \Omega^0(\CC^4 ; \fg)$. First, we are going to write the functionals \eqref{eq:gaugeI1} and \eqref{eq:gaugeI2} in terms of these fields.
 
 \begin{prop}
 The functionals $I^{(1)}$ and $I^{(2)}$ (see \eqref{eq:gaugeI1} and \eqref{eq:gaugeI2}) in terms of the fields of 8d $\cN=1$ super Yang--Mills are
@@ -2329,7 +2333,6 @@ where $S_{BF}$ is the action functional of the holomorphic twist at $t=0$. Since
 }
 \]
 which is exactly the local $L_\infty$ algebra of the holomorphic Hodge theory.
-\brian{Need to be careful with where things live. This diagram does not match the diagram above, though we are using the same twisting homomorphism.}
 \end{proof}
 
 \begin{corollary}
@@ -2791,9 +2794,9 @@ S_{\mr{matter}} &= \int \dvol \bigg((\dd_{A_{1,0}}\phi , \ol \dd_{A_{0,1}} \gamm
 S_{\mr{anti}} &= \int \dvol \bigg((\dd_{A_{1, 0}} A_0, A_{1,0}^*) + (\ol\dd_{A_{0, 1}} A_0, A_{0,1}^*) \bigg) +  \\
 & \qquad + \dvol \bigg([A_0, \lambda_0] \lambda_0^* + [A_0, A_{0,2}] A_{0,2}^* \bigg) + [\lambda_{1,0}, A_0] \wedge \lambda_{1,0}^* + \dvol \frac{1}{2}[A_0, A_0]A_0^*\\ 
 &\qquad  + \dvol \bigg( [\phi, A_0] \phi^* + [\gamma_0, A_0] \gamma_0^*  + [\psi_0, A_0] \psi_0^* + [\beta_{2,0}, A_0] \beta_{2,0}^* \bigg) + [\gamma_{0,1}, A_0]\wedge \gamma_{0,1}^*\\
-I^{(1)}_{\mr{gauge}} &=  \int  \dvol - (\lambda_{1,0} A_{1,0}^*)  + \frac 12  \left(F_{0,2}\wedge A_{0,2}^*+ \omega\wedge F_{1,1} \lambda_0^*  \right) \\
-I^{(1)}_{\mr{matter}} &=  \int  \dvol \left( \psi_0 \phi^* + \frac 12 ( \ol \dd_{A_{0,1}} \gamma_{0} , \gamma_{0,1}^*) \right)\\
-I^{(2)}_{\mr{gauge}} &= -\frac{1}{4}\int \dvol(\lambda_0^*)^2.
+S^{(1)}_{\mr{gauge}} &=  \int  \dvol - (\lambda_{1,0} A_{1,0}^*)  + \frac 12  \left(F_{0,2}\wedge A_{0,2}^*+ \omega\wedge F_{1,1} \lambda_0^*  \right) \\
+S^{(1)}_{\mr{matter}} &=  \int  \dvol \left( \psi_0 \phi^* + \frac 12 ( \ol \dd_{A_{0,1}} \gamma_{0} , \gamma_{0,1}^*) \right)\\
+S^{(2)}_{\mr{gauge}} &= -\frac{1}{4}\int \dvol(\lambda_0^*)^2.
 \end{align*}
 
 Notice that a priori the theory is only $\MU(2)$-equivariant, but manifestly descends to a $\U(2)$-equivariant theory. 
