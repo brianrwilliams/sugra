@@ -3551,13 +3551,21 @@ The rank $2$ B-twist of 3d $\mc N=8$ super Yang-Mills theory with gauge group $G
 \end{theorem}
 
 \section{Dimension 2}
-In dimension 2, the semispin representations $S_\pm$ are 1-dimensional, where $\spin(2;\CC) \iso \CC^\times$ acts with weight $\pm 1$.  There is an independent pairing $\Gamma_\pm \colon S_\pm^{\otimes 2} \to V_2 \iso \CC_1 \oplus \CC_{-1}$ for each chirality.  There are two classes of twisted supersymmetric gauge theory that we will consider in 2d.  First we have theories with $(\mc N, \mc N)$ supersymmetry; these arise via dimensional reduction from supersymmetric gauge theories in higher dimensions.  We additionally have gauge theories with chiral, i.e. $(0,\mc N)$ supersymmetry, which we saw using the observations in Section \ref{sect:2dchiral}.  We'll address twists for these two classes of theory in turn.
+The odd part of the $2$-dimensional supersymmetry algebra is $\Sigma = S_+ \otimes W_+ \oplus S_- \otimes W_-$.
+The comlpex semispin representations $S_\pm$ are 1-dimensional, where $\spin(2;\CC) \iso \CC^\times$ acts with weight $\pm \frac{1}{2}$. 
+There is an independent pairing $\Gamma_\pm \colon S_\pm^{\otimes 2} \to V_2 \iso \CC_1 \oplus \CC_{-1}$ for each chirality.  
+
+There are two classes of twisted supersymmetric gauge theory that we will consider in 2d.  First we have theories with $(\mc N, \mc N)$ supersymmetry corresponding to $\dim(W_+) = \dim(W_-)$; these arise via dimensional reduction from supersymmetric gauge theories in higher dimensions.  We additionally have gauge theories with chiral, i.e. $(0,\mc N)$ supersymmetry, which we saw using the observations in Section \ref{sect:2dchiral}.  
+We'll address twists for these two classes of theory in turn.
 
 \subsection{\texorpdfstring{$\cN=(2,2)$}{N=(2,2)} Super Yang-Mills with Matter} \label{sect:2d(2,2)}
-First, let's consider the $\mc N=(2,2)$ super Yang-Mills theory, which arises via dimensional reduction from 3d $\mc N=2$ super Yang-Mills.  This theory includes a gauge multiplet with gauge group $G$ and a chiral multiplet valued in a representation $R$ of $G$.  The R-symmetry group is $G_R = \ZZ/2\ZZ \ltimes (\spin(2;\CC) \times \spin(2;\CC)) \iso \CC^\times \times \CC^\times$, with the factors acting by their vector representation on $W_+$ and $W_-$ repectively, and with $\ZZ/2\ZZ$ acting on both $W_+$ and $W_-$ by $(a,b) \mapsto (a^{-1}, b^{-1})$.
+First, let's consider the $\mc N=(2,2)$ super Yang-Mills theory, which arises via dimensional reduction from 3d $\mc N=2$ super Yang-Mills.  
+This theory includes a gauge multiplet with gauge group $G$ and a chiral multiplet valued in a representation $R$ of $G$.  
+The R-symmetry group is $G_R = \ZZ/2\ZZ \ltimes (\spin(2;\CC) \times \spin(2;\CC)) \iso \ZZ/2 \ltimes ( \CC^\times \times \CC^\times)$, with the factors acting by their vector representation on $W_+ \cong \CC^2$ and $W_- \cong \CC^2$ respectively, and with $\ZZ/2\ZZ$ acting on both $W_+$ and $W_-$ by $(a,b) \mapsto (a^{-1}, b^{-1})$. \brian{Not sure what $(a^{-1},b^{-1})$ means? Do you mean $(-a,-b)$?}
 
 \vspace{-10pt}
-\paragraph{Fields:} We can describe the BRST fields of $\mc N=(2,2)$ super Yang-Mills by restricting the fields in dimension 3 from Section \ref{sect:3d_2_section}, or equivalently the 3d fields from Section \ref{sect:4d_1_section} to representations of the group $\spin(2;\CC)$.  The fields we obtain are
+\paragraph{Fields:} We can describe the BRST fields of $\mc N=(2,2)$ super Yang-Mills by restricting the fields in dimension 3 from Section \ref{sect:3d_2_section}, or equivalently the 4d fields from Section \ref{sect:4d_1_section} to representations of the group $\spin(2;\CC)$.  
+In any case, the fields we obtain are
 \begin{itemize}
  \item $\gg$-valued bosons: $A \in \Omega^1(\RR^2; \gg)$, and a pair of scalars $(a, \Bar{a}) \in \Omega^0(\RR^2; \gg \oplus \gg)$.
  \item $R$-valued bosons: $(\Bar{\phi}, \phi) \in \Omega^0(\RR^2 ; R \oplus R^*)$.
@@ -3603,62 +3611,88 @@ To deform the holomorphic twist to the topological A-twist, obtaining a Hodge de
 Q_t = Q_0 + tQ',
 \end{equation}
 where $Q_0 = (1,i) \in S_+$ is a holomorphic supercharge, and $Q' = (1,i) \in S_-$.  This family of supercharges are all compatible with the twisting homomorphism $\phi_A$ -- the map $\U(1) \to \spin(2;\CC) \times \spin(2;\CC)$ with weights $(1,1)$.  They are promoted to twisting data using the homomorphism $\phi_B$ with weights $(1,-1)$.  Let us first decompose our fields according to the twisting homomorphism $\phi_A$.  The fields we obtain are given as follows, where the subscripts denote the $\mr U(1)$-weight.
-\begin{itemize}
- \item $\gg$-valued bosons: $A_{1,0} \in \Omega^{1,0}(\CC; \fg)$, $A_{0,1} \in \Omega^{0,1} (\CC ; \fg)$, $\chi_1 \in \Omega^0(\CC ; \fg[2])$, $\chi_{-1} \in \Omega^0(\CC ; \fg[2])$. 
- %$\chi_1 \in \Omega$(A_1, A_{-1}, \chi_1, \chi_{-1}) \in \Omega^0(\RR^2; \gg^2 \oplus \gg[-2] \oplus \gg[-2])$.
- \item  $R$-valued bosons: $\phi_0 \in \Omega^0(\CC ; R)$,  $\ol \phi_0 \in \Omega^0(\CC ; R^*)$.
- %$R$-valued bosons: $(\phi_0, \ol \phi_0) \in \Omega^0(\RR^2 ; R \oplus R^*)$.
- \item $\gg$-valued fermions: $(\lambda_2, \lambda_0, \lambda'_{0}, \lambda_{-2}) \in \Omega^0(\RR^2 ; \gg[-1] \oplus \gg[-1] \oplus \gg[1] \oplus \gg[1])$.
- \item $R$-valued fermions: $(\psi_1, \psi_{-1}, \ol \psi_1, \ol \psi_{-1}) \in \Omega^0(\RR^2 ; R[-1] \oplus R[-1] \oplus R^*[1] \oplus R^*[1])$.
- \item Ghost field: $c_0 \in \Omega^0(\RR^2; \gg[1])$.
-\end{itemize}
+%\begin{itemize}
+% \item $\gg$-valued bosons: $A_{1,0} \in \Omega^{1,0}(\CC; \fg)$, $A_{0,1} \in \Omega^{0,1} (\CC ; \fg)$, $\chi_1 \in \Omega^0(\CC ; \fg[2])$, $\chi_{-1} \in \Omega^0(\CC ; \fg[2])$. 
+% %$\chi_1 \in \Omega$(A_1, A_{-1}, \chi_1, \chi_{-1}) \in \Omega^0(\RR^2; \gg^2 \oplus \gg[-2] \oplus \gg[-2])$.
+% \item  $R$-valued bosons: $\phi_0 \in \Omega^0(\CC ; R)$,  $\ol \phi_0 \in \Omega^0(\CC ; R^*)$.
+% %$R$-valued bosons: $(\phi_0, \ol \phi_0) \in \Omega^0(\RR^2 ; R \oplus R^*)$.
+% \item $\gg$-valued fermions: $(\lambda_2, \lambda_0, \lambda'_{0}, \lambda_{-2}) \in \Omega^0(\RR^2 ; \gg[-1] \oplus \gg[-1] \oplus \gg[1] \oplus \gg[1])$.
+% \item $R$-valued fermions: $(\psi_1, \psi_{-1}, \ol \psi_1, \ol \psi_{-1}) \in \Omega^0(\RR^2 ; R[-1] \oplus R[-1] \oplus R^*[1] \oplus R^*[1])$.
+% \item Ghost field: $c_0 \in \Omega^0(\RR^2; \gg[1])$.
+%\end{itemize}
 
 \begin{itemize}
-\item $\gg$-valued bosons: $A_{1,0} \in \Omega^{1,0}(\CC; \fg)$, $A_{0,1} \in \Omega^{0,1} (\CC ; \fg)$, $a \in \Omega^0(\CC ; \fg)[2]$, $\Bar{a} \in \Omega^0(\CC ; \fg)[2]$. 
-\item $\gg$-valued fermions: $\lambda \in \Omega^{??}(\CC ; \fg)[-1]$, $\Bar{\lambda} \in \Omega^{??}(\CC ; \fg) [-1]$, $\lambda' \in \Omega^{0,1}(\CC ; \fg)[1]$, $\Bar{\lambda}' \in \Omega^{??}(\CC ; \fg)[1]$.
+\item $\gg$-valued bosons: $A_{1,0} \in \Omega^{1,0}(\CC; \fg)$, $A_{0,1} \in \Omega^{0,1} (\CC ; \fg)$, $a \in \Omega^0(\CC ; \fg)[2]$, $\Tilde{a} \in \Omega^0(\CC ; \fg)[2]$. 
+\item $\gg$-valued fermions: $\lambda_0 \in \Omega^{0}(\CC ; \fg)[-1]$, $\chi_{0,1} \in \Omega^{0,1}(\CC ; \fg) [1]$, $\lambda_{1,0} \in \Omega^{1,0}(\CC ; \fg)[1]$, $\Tilde{\lambda}_0 \in \Omega^0(\CC ; \fg) [3]$.
  %$\chi_1 \in \Omega$(A_1, A_{-1}, \chi_1, \chi_{-1}) \in \Omega^0(\RR^2; \gg^2 \oplus \gg[-2] \oplus \gg[-2])$.
- \item  $R$-valued bosons: $\phi_0 \in \Omega^0(\CC ; R)$,  $\ol \phi_0 \in \Omega^0(\CC ; R^*)$.
+ \item  $R$-valued bosons: $\gamma_0 \in \Omega^0(\CC ; R)$, $\phi \in \Omega^0(\CC ; R^*)$;
  %$R$-valued bosons: $(\phi_0, \ol \phi_0) \in \Omega^0(\RR^2 ; R \oplus R^*)$.
- \item $R$-valued fermions: $(\psi_1, \psi_{-1}, \ol \psi_1, \ol \psi_{-1}) \in \Omega^0(\RR^2 ; R[-1] \oplus R[-1] \oplus R^*[1] \oplus R^*[1])$.
- \item Ghost field: $c_0 \in \Omega^0(\RR^2; \gg[1])$.
+ \item $R$-valued fermions: $\gamma_{0,1} \in \Omega^{0,1}(\CC ; R)[-1]$, $\Tilde{\psi}_0 \in \Omega^0(\CC ; R)[1]$, $\beta_{1,0} \in \Omega^{1,0}(\CC ; R^*)[-1]$, $\psi \in \Omega^0(\CC ; R^*)[1]$; 
+ \item Ghost field: $c \in \Omega^0(\RR^2; \fg)[1]$.
 \end{itemize}
 We write the antifields similarly: the antifield of a field $x_n$ is written $x^*_{-n}$, with opposite $\mr U(1)$-weight.
 
 \begin{prop}
 Suppose $Q_t$ is the rank $(1,1)$ supercharge of \ref{eq:2dHodgefamily}.
-The $\U(1)$ decomposition of the functionals $I_{\rm gauge}^{(1)}, I^{(1)}_{\rm matter}, I^{(2)}_{\rm gauge}, I^{(2)}_{\rm matter}$ (see \eqref{eq:gaugeI1},  \eqref{eq:gaugeI2}, \eqref{eq:matterI1}, \eqref{eq:matterI2}) in terms of the fields of 2d $\cN=(2,2)$ super Yang--Mills theory are
+The $\U(1)$ decomposition of the functionals $S_{\rm gauge}^{(1)}, S^{(1)}_{\rm matter}, S^{(2)}_{\rm gauge}, S^{(2)}_{\rm matter}$ (see \eqref{eq:gaugeI1},  \eqref{eq:gaugeI2}, \eqref{eq:matterI1}, \eqref{eq:matterI2}) in terms of the fields of 2d $\cN=(2,2)$ super Yang--Mills theory are
 \begin{align*}
-S_{\rm gauge}^{(1)}(Q_t) &= \int \dvol \left(-(\lambda_{-2}, A^*_1) - (\lambda_0, \chi^*_{-1})) + \frac 12((\rho(\ol \dd_{A_1}A_1), \lambda_{-2}^*) + (\rho(\ol \dd_{A_1}\chi_{-1}), \lambda_0^*)) \right)  \\
-&+  \int \dvol t \left( -(\lambda_{2}, A^*_1) - (\lambda'_0, \chi^*_{1})) + \frac 12((\rho(\dd_{A_{-1}}A_{-1}), \lambda_{2}^*) + (\rho(\dd_{A_{-1}}\chi_{1}), \lambda_0^{'*}))   \right)  \\
-S^{(2)}_{\rm gauge} (Q_t) &= \int \dvol \left(\frac t2 (\lambda_{-2}^*, \lambda_0^{'*}) - \frac 12(\lambda_{-2}^* + t\lambda_0^{'*})^2 - t(\chi_{-1}, c_0^*)\right)  \\
-S_{\rm matter}^{(1)}(Q_t) &= \int \dvol \left(\left( (\ol \psi_{-1},\phi_0^*) + \frac 12 (\ol \dd_{A_1} \ol \phi_0, \psi_{-1}^*) \right) +t\left( (\ol \psi_{1},\ol \phi_0^*) + \frac 12 (\dd_{A_{-1}}  \phi_0, \psi_{1}^*)  \right)\right)  \\
-S_{\rm matter}^{(2)}(Q_t) &= \int \dvol \frac t4 \left( (\psi^*_{-1} ,\psi^*_{-1}) +  (\psi^*_{1}, \psi^*_{1}) \right).
+S_{\rm gauge}^{(1)}(Q_t) &= \int \dvol \left(-(\lambda_{1,0}, A_{1,0}^*) - (\Tilde{\lambda}_0, \Tilde{a}^*) + \frac 12(F_{1,1} \lambda_0^* + (\ol \dd_{A_{0,1}}a, \chi_{0,1}^*)) \right)  \\
+&+  \int \dvol t \left( -(\chi_{0,1}, A_{0,1}^*) - (\lambda_0, \Tilde{a}^*) + \frac 12(F_{1,1} \Tilde{\lambda}_0^*+ (\partial_{A_{1,0}} \Tilde{a}, \lambda_{1,0}^*) )   \right)  \\
+S^{(2)}_{\rm gauge} (Q_t) &= \int \dvol \left(t (\lambda_0^*, \Tilde{\lambda}_0^*) - \frac 14(\lambda_0^* + t \Tilde{\lambda}_0^*)^2 + t(a, c^*)\right)  \\
+S_{\rm matter}^{(1)}(Q_t) &= \int \dvol \left(\left( \psi_0 \phi^* + \frac 12 (\ol \dd_{A_{0,1}} \gamma_0, \gamma_{0,1}^*) \right) +t\left( (\Tilde{\psi}_0, \gamma_0^*) + \frac 12 (\dd_{A_{1,0}}  \phi, \beta_{1,0}^*)  \right)\right)  \\
+S_{\rm matter}^{(2)}(Q_t) &= \int \dvol \frac t2 \left(\beta_{1,0}^*, \gamma_{0,1}^*\right).
 \end{align*}
 \end{prop}
+
+%\begin{prop}
+%Suppose $Q_t$ is the rank $(1,1)$ supercharge of \ref{eq:2dHodgefamily}.
+%The $\U(1)$ decomposition of the functionals $I_{\rm gauge}^{(1)}, I^{(1)}_{\rm matter}, I^{(2)}_{\rm gauge}, I^{(2)}_{\rm matter}$ (see \eqref{eq:gaugeI1},  \eqref{eq:gaugeI2}, \eqref{eq:matterI1}, \eqref{eq:matterI2}) in terms of the fields of 2d $\cN=(2,2)$ super Yang--Mills theory are
+%\begin{align*}
+%S_{\rm gauge}^{(1)}(Q_t) &= \int \dvol \left(-(\lambda_{-2}, A^*_1) - (\lambda_0, \chi^*_{-1})) + \frac 12((\rho(\ol \dd_{A_1}A_1), \lambda_{-2}^*) + (\rho(\ol \dd_{A_1}\chi_{-1}), \lambda_0^*)) \right)  \\
+%&+  \int \dvol t \left( -(\lambda_{2}, A^*_1) - (\lambda'_0, \chi^*_{1})) + \frac 12((\rho(\dd_{A_{-1}}A_{-1}), \lambda_{2}^*) + (\rho(\dd_{A_{-1}}\chi_{1}), \lambda_0^{'*}))   \right)  \\
+%S^{(2)}_{\rm gauge} (Q_t) &= \int \dvol \left(t (\lambda_0^*, \Tilde{\lambda}_0^*) - \frac 14(\lambda_0^* + t \Tilde{\lambda}_0^*)^2 + t(a, c^*)\right)  \\
+%S_{\rm matter}^{(1)}(Q_t) &= \int \dvol \left(\left( (\ol \psi_{-1},\phi_0^*) + \frac 12 (\ol \dd_{A_1} \ol \phi_0, \psi_{-1}^*) \right) +t\left( (\ol \psi_{1},\ol \phi_0^*) + \frac 12 (\dd_{A_{-1}}  \phi_0, \psi_{1}^*)  \right)\right)  \\
+%S_{\rm matter}^{(2)}(Q_t) &= \int \dvol \frac t4 \left( (\psi^*_{-1} ,\psi^*_{-1}) +  (\psi^*_{1}, \psi^*_{1}) \right).
+%\end{align*}
+%\end{prop}
 
 \begin{theorem} \label{2d_2_A_twist_thm}
 The topological A-twist of 2d $\mc N=(2,2)$ super Yang-Mills theory with gauge group $G$ coupled to the $\mc N=(2,2)$ chiral multiplet valued in a representation $R$ is perturbatively equivalent, as a one-parameter deformation of the holomorphic twist, to the Hodge family with moduli space $T^*[-1]\mr{Map}(\CC, (R/\gg)_{\mr{Hod}})$.  This equivalence is $\mr U(1)$-invariant.
 \end{theorem}
 
 \begin{proof}
-We first perform a change of variables sending $\lambda_2$ to $\lambda_2 + t\lambda_0'$, and its antifield $\lambda_{-2}^*$ to $\lambda_{-2}^* - t\lambda_0^{'*}$.
-We integrate out the field $\lambda_2 + t\lambda_0'$ and its antifield using Proposition \ref{prop:integrateoutfield}.  
-We then eliminate the trivial BRST doublets $(\lambda_{-2}, A_{-1}), (\ol \psi_{-1}, \phi_0)$ and $(\lambda_0, \chi_1)$ using Proposition \ref{prop:BRSTdoublet}. 
-The resulting action functional is of the form
+Observe that the quadruple of fields $\{\lambda_0^*, \lambda_0, \Tilde{\lambda}_0^*, \Tilde{\lambda}_0\}$ has the same Poisson brackets as the quadruple $\{\lambda_0^* - t \Tilde{\lambda}_0^*, \lambda_0, \lambda_0^*, \Tilde{\lambda}_0 + t \lambda_0\}$. 
+Therefore, we may eliminate the fields $\lambda_0^*-t\wt\lambda_0^*, \chi$ using Proposition \ref{prop:integrateoutfield}. 
+We then have trivial BRST doublets $\{\wt\lambda_0 + t\lambda_0, \wt a\}$, $\{\lambda_{1,0}, A_{1,0}\}, \{\psi_0, \phi\}$ which may be eliminated using Proposition \ref{prop:BRSTdoublet}. We are left with the action
+
+%We first perform a change of variables sending $\lambda_0$ to $\lambda_0 + t\lambda_0'$, and its antifield $\lambda_{-2}^*$ to $\lambda_{-2}^* - t\lambda_0^{'*}$.
+%We integrate out the field $\lambda_2 + t\lambda_0'$ and its antifield using Proposition \ref{prop:integrateoutfield}.  
+%We then eliminate the trivial BRST doublets $(\lambda_{-2}, A_{-1}), (\ol \psi_{-1}, \phi_0)$ and $(\lambda_0, \chi_1)$ using Proposition \ref{prop:BRSTdoublet}. 
+%The resulting action functional is of the form
 \[
-S_{BF} + \int \dvol t\left( -(\lambda'_0, \chi_{1}^*) - (\chi_{-1}, c_0^*) + (\ol \psi_1, \ol \phi_0^*) + \frac 14 (\psi^*_{-1} ,\psi^*_{-1}) + \frac 14  (\psi^*_{1}, \psi^*_{1})\right)\]
+S_{BF} + \int \dvol t \bigg( -(\chi_{0,1}, A_{0,1}^*) + (a, c^*) + (\Tilde{\psi}_0, \gamma_0^*) + \frac{1}{2} (\beta_{1,0}^*, \gamma_{0,1}^*) \bigg) 
+\]
 Here $S_{BF}$ is the action functional of holomorphic $BF$ theory as in the result of the minimal twist of $\cN=(2,2)$, see Theorem \ref{2d_minimal_twist_thm}, obtained by setting $t = 0$. 
 
 We can identify the linearized BV complex with the following diagram:
 \[\xymatrix@R=0.4cm@C=0.2cm{
 \ul{-2} & \ul{-1} & \ul{0} & \ul{1} & \ul{2} & \ul{3} \\
-&\Omega^0(\RR^2; \gg)_{c_0} \ar[r] &\Omega^{0,1}(\RR^2; \gg)_{A_1} & & \Omega^0(\RR^2; \gg^*)_{\lambda^{'*}_0} \ar[r] &\Omega^{0,1}(\RR^2; \gg^*)_{\chi_1^*} \\
-\Omega^0(\RR^2; \gg)_{\chi_{-1}} \ar[r] \ar@{-->}[ur] &\Omega^{0,1}(\RR^2; \gg)_{\lambda'_0} \ar@{-->}[ur] && \Omega^0(\RR^2; \gg^*)_{A^*_1} \ar[r] \ar@{-->}[ur] &\Omega^{0,1}(\RR^2; \gg^*)_{c_0^*} \ar@{-->}[ur]\\
-&\Omega^0(\RR^2; R^*)_{\ol \psi_{-1}} \ar[r] \ar@{-->}[dr] &\Omega^{0,1}(\RR^2; R^*)_{\psi^*_1} \ar@{-->}[dr] &&&\\
-&& \Omega^0(\RR^2; R^*)_{\ol \phi_0} \ar[r]  &\Omega^{0,1}(\RR^2; R^*)_{\psi_{-1}} &&\\
-&&\Omega^0(\RR^2; R)_{\psi_{-1}^*} \ar[r] \ar@{-->}[dr] &\Omega^{0,1}(\RR^2;  R)_{\ol \phi^*_0} \ar@{-->}[dr] &&\\
-&&& \Omega^0(\RR^2; R)_{\psi_1} \ar[r]  &\Omega^{0,1}(\RR^2; R)_{\ol \psi^*_{1}}. &\\
+&\Omega^0(\CC; \gg)_{c} \ar[r] &\Omega^{0,1}(\CC; \gg)_{A_{0,1}} & & \Omega^{1,0}(\CC; \gg^*)_{\chi_{0,1}^*} \ar[r] &\Omega^{1,1}(\CC; \gg^*)_{a^*} \\
+\Omega^0(\CC; \gg)_{a} \ar[r] \ar@{-->}[ur] &\Omega^{0,1}(\CC; \gg)_{\chi_{0,1}} \ar@{-->}[ur] && \Omega^{1,0}(\CC; \gg^*)_{A_{0,1}^*} \ar[r] \ar@{-->}[ur] &\Omega^{1,1}(\CC; \gg^*)_{c^*} \ar@{-->}[ur]\\
+&\Omega^0(\CC; R^*)_{\Tilde{\psi}} \ar[r] \ar@{-->}[dr] &\Omega^{0,1}(\CC; R^*)_{\beta_{1,0}^*} \ar@{-->}[dr] &&&\\
+&& \Omega^0(\CC; R^*)_{\gamma_0} \ar[r]  &\Omega^{0,1}(\CC; R^*)_{\gamma_{0,1}} &&\\
+&&\Omega^{1,0}(\CC; R)_{\gamma_{0,1}^*} \ar[r] \ar@{-->}[dr] &\Omega^{1,1}(\CC;  R)_{\gamma_0^*} \ar@{-->}[dr] &&\\
+&&& \Omega^{1,0}(\CC; R)_{\beta_{1,0}} \ar[r]  &\Omega^{1,1}(\CC; R)_{\Tilde{\psi}_0^*}. &\\
 }\]
+%\[\xymatrix@R=0.4cm@C=0.2cm{
+%\ul{-2} & \ul{-1} & \ul{0} & \ul{1} & \ul{2} & \ul{3} \\
+%&\Omega^0(\RR^2; \gg)_{c_0} \ar[r] &\Omega^{0,1}(\RR^2; \gg)_{A_1} & & \Omega^0(\RR^2; \gg^*)_{\lambda^{'*}_0} \ar[r] &\Omega^{0,1}(\RR^2; \gg^*)_{\chi_1^*} \\
+%\Omega^0(\RR^2; \gg)_{\chi_{-1}} \ar[r] \ar@{-->}[ur] &\Omega^{0,1}(\RR^2; \gg)_{\lambda'_0} \ar@{-->}[ur] && \Omega^0(\RR^2; \gg^*)_{A^*_1} \ar[r] \ar@{-->}[ur] &\Omega^{0,1}(\RR^2; \gg^*)_{c_0^*} \ar@{-->}[ur]\\
+%&\Omega^0(\RR^2; R^*)_{\ol \psi_{-1}} \ar[r] \ar@{-->}[dr] &\Omega^{0,1}(\RR^2; R^*)_{\psi^*_1} \ar@{-->}[dr] &&&\\
+%&& \Omega^0(\RR^2; R^*)_{\ol \phi_0} \ar[r]  &\Omega^{0,1}(\RR^2; R^*)_{\psi_{-1}} &&\\
+%&&\Omega^0(\RR^2; R)_{\psi_{-1}^*} \ar[r] \ar@{-->}[dr] &\Omega^{0,1}(\RR^2;  R)_{\ol \phi^*_0} \ar@{-->}[dr] &&\\
+%&&& \Omega^0(\RR^2; R)_{\psi_1} \ar[r]  &\Omega^{0,1}(\RR^2; R)_{\ol \psi^*_{1}}. &\\
+%}\]
 Here, the solid arrows represent the linearized BV operator of the minimal twist, and the dotted arrows represent the $t$-dependent terms.
 This is exactly the deformation to $T^*[-1]\mr{Map}(\CC, (R/\gg)_{\mr{Hod}})$.
 \end{proof}
