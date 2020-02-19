@@ -46,10 +46,10 @@ We give a complete classification of twists of supersymmetric Yang-Mills theorie
 We formulate supersymmetric Yang-Mills theory classically using the BV formalism, and then we construct an action of the supersymmetry algebra using the language of $L_\infty$ algebras.  For each orbit in the space of square-zero supercharges in the supersymmetry algebra, under the action of the spin group and the group of R-symmetries, we give a description of the corresponding twisted theory.  These twists can be described in terms of mixed holomorphic-topological versions of Chern-Simons and $BF$ theory. 
 \end{abstract}
 
+\pagestyle{intro}
 \setcounter{tocdepth}{2}
 \tableofcontents
 
-\pagestyle{intro}
 \section*{Introduction} 
 \label{sect:intro}
 \addcontentsline{toc}{section}{Introduction}
@@ -991,6 +991,7 @@ We call $L[1]$ the \defterm{space of BRST fields}.
 In the most typical examples, the bundle $L[1]$ is concentrated in $\ZZ$-degrees $-1$ and 0.  In this case, sections in degree 0 are thought of as physical fields, and ghosts -- sections in degree $-1$ -- are thought of as generators of the infinitesimal gauge symmetry.  The action of gauge transformations on fields is then encoded by the Lie structure.
 \end{remark}
 
+
 Given a classical BRST theory $\cM$, we may consider the cotangent theory $T^*[-1]\cM$ whose action functional we denote by $S_{\rm anti}$.
 Let us denote the pullback of $S_{\mathrm{BRST}}$ along the obvious projection $T^*[-1]\cM\rightarrow \cM$ by the same letter. Then the equation $Q_{\mathrm{BRST}} S_{\mathrm{BRST}} = 0$ in $\oloc(\cM)$ implies that $\{S_{\rm anti}, S_{\mathrm{BRST}}\} = 0$ in $\oloc(T^*[-1]\cM)$.
 
@@ -1316,9 +1317,9 @@ This equivalence is $\SO(V_\RR)$-equivariant.
 
 Finally, we take $Y$ to be a complex manifold of the form $Y' \times \CC$, where $V$ is complex $k$-dimensional and consider the projection
 \[
-p_{\rm Dol} : X \times (Y' \times \CC) \times M \to X \times Y' \times (M \times \RR) 
+p_{\rm Dol} \colon X \times (Y' \times \CC) \times M \to X \times Y' \times (M \times \RR) 
 \]
-induced by ${\rm Re} : \CC \to \RR$.
+induced by ${\rm Re} \colon \CC \to \RR$.
 
 \begin{prop}
 \label{prop:BFdolbeaultreduction}
@@ -1719,7 +1720,7 @@ The BRST theory for classical supersymmetric Yang-Mills theory has underlying $\
 F_{\rm gauge} = \Omega^1(V_\RR; \fg) \oplus \Gamma(V_\RR; \Pi \Sigma \otimes \fg) \oplus \Omega^0(V_\RR; \fg[1])
 \]
 whose sections we denote by $(A, \lambda, c)$.  
-The dg Lie structure on $F_{\rm gauge}[-1]$ has differential given by the de Rham differential $\d :\colon \Omega^0(V_{\RR} ; \fg) \to \Omega^1(V_{\RR} ; \fg)$ and bracket
+The dg Lie structure on $F_{\rm gauge}[-1]$ has differential given by the de Rham differential $\d \colon \Omega^0(V_{\RR} ; \fg) \to \Omega^1(V_{\RR} ; \fg)$ and bracket
 \[
 \begin{array}{ccccccc}
 [-,-] & \colon & \Omega^0(V_{\RR} ; \fg) \otimes \left(\Omega^1(V_{\RR} ; \fg) \oplus \Gamma(V_\RR ; \Sigma \otimes \fg) \oplus \Omega^0(V_{\RR} ; \fg) \right) & \to & \Omega^1(V_{\RR} ; \fg) \oplus \Gamma(V_\RR ; \Sigma \otimes \fg) \oplus \Omega^0(V_\RR ; \fg)
@@ -3307,28 +3308,33 @@ Fix a rank $(2,1)$ supercharge of the form $Q_{s,t} = Q_0 + tQ_1 + sQ_2$, where 
 &I^{(1)}(Q_0 + tQ_1 + sQ_2) \\
 &I^{(2)}(Q_0 + tQ_1 + sQ_2, Q_0 + tQ_1 + sQ_2).
 \end{align*}
-We will compute the corresponding $\ZZ$-graded $Q_{st}$-twisted theory.  Let us first recall the steps of the proof of Theorem \ref{thm:4dDonaldsontwist}: the twist of 4d $\mc N=2$ super Yang-Mills with matter by $Q_t$.  We will do the same thing to eliminate fields in the $Q_{st}$-twisted theory.  The key fact is that the part of the deformation of the action proportional to $s$, namely
-\[I^{(1)}(sQ_2) + 2 I^{(2)}(Q_0, sQ_2) + 2 I^{(2)}(tQ_1, sQ_2) + I^{(2)}(sQ_2, sQ_2)\]
-only includes terms involving both $\mc N=4$ fields in the set $\{c, A_{1,0}, A_{0,1}, a, \wt a, \chi \wt \chi, b, B, \xi, \rho\}$ coming from the $\mc N=2$ vector multiplet (plus their antifields) \emph{and} $\mc N=4$ fields in the set $\{\nu, \wt \nu, \phi, \psi, \varsigma\}$ coming from the $\mc N=2$ hypermultiplet (and their antifields).  More precisely, the action involves the images of the fields in these sets after restricting from $\mr U(2)$-representations to $\spin(2;\RR) \times \spin(2;\RR)$-representations.  In what follows we will write $\mr U(2)$-expressions, with the understanding that the further deformation by $sQ_2$ will further break these component fields.
+We will compute the corresponding $\ZZ$-graded $Q_{s,t}$-twisted theory.  Our strategy will be to realize the twisted BV action functional as the $Q_0 + sQ_2$-twisted action functional from Theorem \ref{thm:4d_11_twist} plus a correction term, which we will identify as turning on the Hodge deformation.
 
-So, we first performed a chance of variables sending $\{\chi^*, \chi, \wt\chi^*, \wt\chi\}$ to $\{\chi^*-t\wt\chi^*, \chi, \wt\chi^*, \wt\chi + t\chi\}$: this only used the fact that the two quadruples had the same Poisson brackets, which still applies here.  We then used Proposition \ref{prop:integrateoutfield} to eliminate the fields $\chi^*-t\wt\chi^*, \chi$.  The proposition still applies here, because the further twist by $sQ_2$ does not introduce a $\chi^2$ or $(\chi^*-t\wt\chi^*)^2$ term.  Finally, we used Proposition \ref{prop:BRSTdoublet} to eliminate the trivial BRST doublets $\{\wt\chi + t\chi, \wt a\}$, $\{\nu, \wt \nu\}$ and $\{\rho, A_{1, 0}\}$.  Again, the proposition still applies here: each time we apply the proposition, we must only ensure that there are no terms in the twisted action proportional to a pair of fields $(X, Y)$, we need only observe that the deformation could not introduce terms to the action proportional to $XX^*$ or $YY^*$.
-
-As a result of this argument, we are free, as in the proof of Theorem \ref{thm:4dDonaldsontwist}, to set the eliminated fields $\chi, \wt\chi^*, \wt\chi + t\chi, \wt a, \wt a^*, \nu, \nu^*, \wt \nu, \wt \nu^* \rho, \rho^*, A_{1,0}$ and $A_{1,0}^*$ to 0 in the twisted action functional.  Finally, we set the remaining eliminated field $\chi^*-t\wt\chi^*$ equal to the expression $S_1$, as in Proposition \ref{prop:integrateoutfield}.  This twisted action coincides with the sum of the $Q_0 + sQ_2$-twisted action functional from Theorem \ref{thm:4d_11_twist}, with the deformation by $tQ_1$, namely
+We will make this identification by eliminating component fields from the correction term using the strategy of the proof of Theorem \ref{thm:4dDonaldsontwist}.  The correction in question is the sum
 \begin{equation}
 \label{eq:4d_12_general_def}
 \left(I^{(1)}(tQ_1) + 2 I^{(2)}(Q_0, tQ_1) + I^{(2)}(tQ_1, tQ_1)\right) + 2I^{(2)}(tQ_1, sQ_2).
 \end{equation}
-To see this, we must verify that the expression $S_1$ occuring in the $Q_{st}$-twisted action functional agrees with the corresponding expression in the $Q_0 + sQ_2$-twisted action functional.  This follows from the fact that the only term proportional to $t(\chi^*-t\wt\chi^*)$ in the $Q_0 + tQ_1$-twisted action functional from equation \ref{4d_donaldson_susy_prop} is proportional to $\wt \chi^*$, and so vanishes after setting $\wt \chi^* = 0$.
+First let us observe that the final term, $I^{(2)}(tQ_1, sQ_2)$, is proportional to $st \wt \chi^*$, since $\Gamma_{10}(Q_1,Q_2) = 0$, and the remaining term from equation \ref{eq:gaugeI2}, of form $st(Q_1,\lambda^*)(Q_2,\lambda^*)$, is proportional to $st (Q_1,\lambda^*)$, which is proportional to $st \wt \chi^*$.  This is important because in a moment we will be able to set $\wt \chi^* = 0$, so this term will vanish.
 
-The deformation given by the first three terms in \ref{eq:4d_12_general_def} was computed in the proof of Theorem \ref{thm:4dDonaldsontwist} to be
+Now, we will make the same moves as in the proof of Theorem \ref{thm:4dDonaldsontwist} to eliminate component fields.  The key fact, which means that this procedure works, is that the part of the deformation of the action proportional to $s$, namely
+\[I^{(1)}(sQ_2) + 2 I^{(2)}(Q_0, sQ_2) + 2 I^{(2)}(tQ_1, sQ_2) + I^{(2)}(sQ_2, sQ_2)\]
+is a sum of terms that all involve both $\mc N=4$ fields in the set $\{c, A_{1,0}, A_{0,1}, a, \wt a, \chi \wt \chi, b, B, \xi, \rho\}$ coming from the $\mc N=2$ vector multiplet (plus their antifields) \emph{and} $\mc N=4$ fields in the set $\{\nu, \wt \nu, \phi, \psi, \varsigma\}$ coming from the $\mc N=2$ hypermultiplet (and their antifields).  That is, none of the summands involve only fields from the vector multiplet, or only fields from the hypermultiplet.  To be a little more precise we should say that the action involves the images of the fields in these sets after restricting from $\mr U(2)$-representations to $\spin(2;\RR) \times \spin(2;\RR)$-representations.  In what follows we will write $\mr U(2)$-expressions, with the understanding that the further deformation by $sQ_2$ will further break these component fields.
+
+So, in the proof of Theorem \ref{thm:4dDonaldsontwist}, we first performed a chance of variables sending $\{\chi^*, \chi, \wt\chi^*, \wt\chi\}$ to $\{\chi^*-t\wt\chi^*, \chi, \wt\chi^*, \wt\chi + t\chi\}$: this only used the fact that the two quadruples had the same Poisson brackets, which still applies here.  We then used Proposition \ref{prop:integrateoutfield} to eliminate the fields $\chi^*-t\wt\chi^*, \chi$.  The proposition still applies here, because the further twist by $sQ_2$ does not introduce a $\chi^2$ or $(\chi^*-t\wt\chi^*)^2$ term.  Finally, we used Proposition \ref{prop:BRSTdoublet} to eliminate the trivial BRST doublets $\{\wt\chi + t\chi, \wt a\}$, $\{\nu, \wt \nu\}$ and $\{\rho, A_{1, 0}\}$.  Again, the proposition still applies here: each time we apply the proposition, we must only ensure that there are no terms in the twisted action proportional to a pair of fields $(X, Y)$, we need only observe that the deformation could not introduce terms to the action proportional to $XX^*$ or $YY^*$.
+
+As a result of this argument, we are free, as in the proof of Theorem \ref{thm:4dDonaldsontwist}, to set the eliminated fields $\chi, \wt\chi^*, \wt\chi + t\chi, \wt a, \wt a^*, \nu, \nu^*, \wt \nu, \wt \nu^* \rho, \rho^*, A_{1,0}$ and $A_{1,0}^*$ to 0 in the twisted action functional.  Finally, we set the remaining eliminated field $\chi^*-t\wt\chi^*$ equal to the expression $S_1$, as in Proposition \ref{prop:integrateoutfield}.  That is, we extract the summand in the $Q_{s,t}$-twisted action of the form $(\chi^* - t\wt \chi^*)S_1$.  
+
+It is important that we check that this expression $S_1$ occuring in the $Q_{s,t}$-twisted action functional is equal to the corresponding expression in the $Q_0 + sQ_2$-twisted action functional, so that the presence of our correction term does not alter the $Q_0 + sQ_2$-twisted action.  To see this, first recall that we argued above that there are no terms proportional to $st$ after setting $\wt \chi^* = 0$.  Then, look at terms proportional to $t \chi^*$ in equation \ref{4d_donaldson_susy_prop}.  Notice that all such terms are also proportional to $\wt \chi^*$, so vanish after setting $\wt \chi^* = 0$.
+
+We have therefore shown that the $Q_{s,t}$-twisted action coincides with the sum of the $Q_0 + sQ_2$-twisted action functional from Theorem \ref{thm:4d_11_twist}, with the deformation \ref{eq:4d_12_general_def}.  The $st$-term vanishes, and the deformation given by the first three terms was computed in the proof of Theorem \ref{thm:4dDonaldsontwist} to be
 \begin{equation}
 \label{eq:4d_12_further_deformation}
-t \int\dvol\left(-(b, A_{0, 1}^*) + a c^* + \frac{1}{2} \xi^* B^* + t (\varsigma, \phi^*) + \frac 14 (\psi^*, \psi^*) \right).
+t \int\dvol\left(-(b, A_{0, 1}^*) + a c^* + \frac{1}{2} \xi^* B^* + t (\varsigma, \phi^*) + \frac 14 (\psi^*, \psi^*) \right)
 \end{equation}
-The fourth and final term, proportional to $st$, vanishes after the field elimination we have performed, since $\Gamma_{10}(Q_1,Q_2) = 0$, and the remaining term from equation \ref{eq:gaugeI2}, of form $st(Q_1,\lambda^*)(Q_2,\lambda^*)$, is proportional to $(Q_1,\lambda^*)$, which is proportional to $\chi^*$.
+in terms of the $\mr U(2)$-component fields, which can be further broken to $\spin(2;\RR) \times \spin(2;\RR)$.
 
-Therefore, the $Q_{st}$ twisted action theory is equivalent to the rank $(1,1)$-twisted theory from Theorem \ref{thm:4d_11_twist}, with action deformed by the expression \ref{eq:4d_12_further_deformation}.  This deformation gives the desired theory.  The rank $(1,1)$-twisted theory was $\ZZ$-graded, and the deformation here by $tQ_1$ is a deformation by a degree 1 operator, so the twisted theory is also $\ZZ$-graded.  Finally, the rank $(1,1)$-twisted theory was shown to be $\spin(2;\RR) \times \spin(2;\RR)$-invariant, and the deformation \ref{eq:4d_12_further_deformation} was $\MU(2)$-equivariant, so the rank $(1,2)$-twisted theory is still $\spin(2;\RR) \times \spin(2;\RR)$-invariant.
-
+Therefore, the $Q_{s,t}$ twisted action theory is equivalent to the rank $(1,1)$-twisted theory from Theorem \ref{thm:4d_11_twist}, with action deformed by the expression \ref{eq:4d_12_further_deformation}.  This deformation gives the desired theory.  The rank $(1,1)$-twisted theory was $\ZZ$-graded, and the deformation here by $tQ_1$ is a deformation by a degree 1 operator, so the twisted theory is also $\ZZ$-graded.  Finally, the rank $(1,1)$-twisted theory was shown to be $\spin(2;\RR) \times \spin(2;\RR)$-invariant, and the deformation \ref{eq:4d_12_further_deformation} was $\MU(2)$-equivariant, so the rank $(1,2)$-twisted theory is still $\spin(2;\RR) \times \spin(2;\RR)$-invariant.
 \end{proof}
 
 \subsubsection{Rank \texorpdfstring{$(2, 2)$}{(2,2)} Topological Twist}
@@ -3406,7 +3412,7 @@ The R-symmetry group is $\spin(2;\CC) = \CC^\times$, acting on $W$ by the defini
 This theory admits a unique twist up to equivalence:
 \begin{itemize}
  \item A square zero supercharge $Q \ne 0 \in \Sigma$ has two invariant directions.  There is a twisting homomorphism $\phi = (-)^{1/2} \colon \U(1)\hookrightarrow G_R$, so the twisted theory carries a $U(1)$-action.
-The twist is $\ZZ$-graded with $\alpha : \U(1) \hookrightarrow G_R$ given by the natural embedding. 
+The twist is $\ZZ$-graded with $\alpha \colon \U(1) \hookrightarrow G_R$ given by the natural embedding. 
 \end{itemize}
 
 \subsubsection{Minimal Twist}
@@ -3468,7 +3474,7 @@ A rank $(2,0)$ square 0 supercharge in the 4d $\mc N=2$ supersymmetry algebra re
 Let $W_4$ be the complex two-dimensional auxiliary space of the 4d $\cN=2$ supesymmetry algebra.
 The projection from the 4d $\mc N=2$ supertranslation algebra to the 3d $\mc N=4$ supertranslation algebra induces an isomorphism $W_4 \oplus W_4^* \to W$ of representations of the group $\spin(3;\CC)$.  
 This splits the fundamental representation $W$ into the sum of two Lagrangians, defining an orientation on $W$. 
-A rank $(2,0)$ supercharge induces the Lagrangian subspace $W_4 \sub W$, which is oriented.  The corresponding twist can be promoted to a twisting datum using a copy of $\mr U(1)$ acting with weight 1 on $W_4$; explicitly, this is the homomorphism $\alpha : \U(1) \to G_R = \SL(2;\CC) \times \SL(2;\CC)$ given by the embedding into the second factor. 
+A rank $(2,0)$ supercharge induces the Lagrangian subspace $W_4 \sub W$, which is oriented.  The corresponding twist can be promoted to a twisting datum using a copy of $\mr U(1)$ acting with weight 1 on $W_4$; explicitly, this is the homomorphism $\alpha \colon \U(1) \to G_R = \SL(2;\CC) \times \SL(2;\CC)$ given by the embedding into the second factor. 
 This is the $A$-twist in our classification above.
 
 A rank $(1,1)$ supercharges induces a Lagrangian subspace of the form $L \oplus L^* \sub W$, where $L$ is a 1-dimensional subspace of $W_4$.  This subspace has the opposite orientation, so corresponds to the $B$-twist in our classification above.  
@@ -3478,7 +3484,7 @@ A rank $(1,1)$ supercharges induces a Lagrangian subspace of the form $L \oplus 
 \label{sect:3d_4_minimal_twist}
 Note that 3d $\cN=4$ supersymmetric Yang--Mills theory, viewed as a $\cN=2$ supersymmetric theory, coincides with 3d $\cN=2$ supersymmetric Yang--Mills theory with matter valued in the representation $R = U \oplus \gg$.  
 
-There is a unique twisting homomorphism $\phi : \U(1) \to \Spin(4;\CC)$ given by the restriction of the 4d $\cN=2$ twisting homomorphism for the minimal twist as in Theorem \ref{thm:4d2holomorphictwist} to the subgroup $\U(1) \subset \MU(2)$. 
+There is a unique twisting homomorphism $\phi \colon \U(1) \to \Spin(4;\CC)$ given by the restriction of the 4d $\cN=2$ twisting homomorphism for the minimal twist as in Theorem \ref{thm:4d2holomorphictwist} to the subgroup $\U(1) \subset \MU(2)$. 
 
 This twist also admits the following twisting datum.
 To incorporate the $\ZZ$-grading, we use the twisting datum $\alpha \colon \mr U(1) \to \SU(2)_+ \times \SU(2)_- \iso G_R$.  The action of this $\alpha$ on $W$ coincides with the action of $\alpha_0$ in Section \ref{sect:4d_2_holomorphictwist} on the sum of the 4d auxiliary space with its dual $W_4 \oplus W_4^*$, composed with the isomorphism $W_4 \oplus W_4^* \to W$: indeed, both have weights $(1,1,-1,-1)$.  Therefore our equivalence is compatible with the $\ZZ$-grading in Theorem \ref{thm:4d2holomorphictwist} induced by $\alpha_0$.
@@ -3970,7 +3976,7 @@ S^{(2)}_{\mr{gauge}} &= \int \dvol \bigg( -\frac{1}{4} (\lambda_0^*)^2 \bigg) .
 \end{align*}
 %Here, in terms of the K\"ahler form $\omega$, the volume form is identified as $\dvol = \frac{\omega^2}2$.
 
-\begin{theorem}
+\begin{theorem} 
 The minimal twist of 2d $\cN=(0,2)$ super Yang-Mills with matter valued in a $\fg$-representation $R$ is perturbatively equivalent to holomorphic $BF$ theory coupled to the holomorphic $\beta\gamma$ system with moduli space $T^*[-1] \map(\CC , R / \fg)$.
 This equivalence is $\U(1)$-equivariant.
 \end{theorem}
