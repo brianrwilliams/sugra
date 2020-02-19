@@ -948,14 +948,10 @@ We call $L[1]$ the \defterm{space of BRST fields}.
 In the most typical examples, the bundle $L[1]$ is concentrated in $\ZZ$-degrees $-1$ and 0.  In this case, sections in degree 0 are thought of as physical fields, and ghosts -- sections in degree $-1$ -- are thought of as generators of the infinitesimal gauge symmetry.  The action of gauge transformations on fields is then encoded by the Lie structure.
 \end{remark}
 
-Given a classical BRST theory $\cM$, we may consider the cotangent theory $T^*[-1]\cM$ whose action functional we denote by $S_g$.
-\brian{
-Why $S_g$? I suggest $S_0$, or $S_\cM$, or $S_{\rm cot}$. Also it's not clear from this sentence how $S_g$ depends on the data of the BRST theory. It doesn't use $S_{BRST}$, for instance.
-} 
-Let us denote the pullback of $S_{\mathrm{BRST}}$ along the obvious projection $T^*[-1]\cM\rightarrow \cM$ by the same letter. Then the equation $Q_{\mathrm{BRST}} S_{\mathrm{BRST}} = 0$ in $\oloc(\cM)$ implies that $\{S_g, S_{\mathrm{BRST}}\} = 0$ in $\oloc(T^*[-1]\cM)$.
+Given a classical BRST theory $\cM$, we may consider the cotangent theory $T^*[-1]\cM$ whose action functional we denote by $S_0$.  Let us denote the pullback of $S_{\mathrm{BRST}}$ along the obvious projection $T^*[-1]\cM\rightarrow \cM$ by the same letter. Then the equation $Q_{\mathrm{BRST}} S_{\mathrm{BRST}} = 0$ in $\oloc(\cM)$ implies that $\{S_0, S_{\mathrm{BRST}}\} = 0$ in $\oloc(T^*[-1]\cM)$.
 
 \begin{definition}
-Let $(\cM, S_{\mr{BRST}})$ be a classical BRST theory. The \defterm{associated classical BV theory} is the $(-1)$-shifted cotangent bundle $T^*[-1]\cM$ equipped with its natural $(-1)$-shifted symplectic structure and the action functional $S_{\mathrm{BRST}} + S_g$.
+Let $(\cM, S_{\mr{BRST}})$ be a classical BRST theory. The \defterm{associated classical BV theory} is the $(-1)$-shifted cotangent bundle $T^*[-1]\cM$ equipped with its natural $(-1)$-shifted symplectic structure and the action functional $S_{\mathrm{BRST}} + S_0$.
 \end{definition}
 
 In the case where $S_{\mr{BRST}} = 0$, the associated BV theory is of cotangent type, as in Example \ref{def:cotangent_type}.
