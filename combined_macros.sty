@@ -26,7 +26,7 @@
 \usepackage[pdftex, bookmarks=true, linkbordercolor={0 0 1}]{hyperref}
 \usepackage{epstopdf}
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
-\usepackage{mathpazo}
+%\usepackage{mathpazo}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -324,9 +324,21 @@
 \fancyhead[R]{\textsf{Section \nouppercase{\leftmark}}}
 \fancyhead[L]{\textsf{\textbf{\thepage}}}
 
+\fancypagestyle{standard}{
+  \fancyhf{}
+  \fancyhead[R]{\textsf{Section \nouppercase{\leftmark}}}
+  \fancyhead[L]{\textsf{\textbf{\thepage}}}
+}
+
 \fancypagestyle{bib}{
   \fancyhf{}
   \fancyhead[R]{\textsf{\nouppercase{\leftmark}}}
+  \fancyhead[L]{\textsf{\textbf{\thepage}}}
+}
+
+\fancypagestyle{intro}{
+  \fancyhf{}
+  \fancyhead[R]{}
   \fancyhead[L]{\textsf{\textbf{\thepage}}}
 }
 
