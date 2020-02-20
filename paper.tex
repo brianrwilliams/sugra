@@ -232,7 +232,7 @@ where $\Phi$ is the moment map and $\sd\d_A$ is the Dirac operator (we refer to 
 -\d_A C + \d_A^* B &= 0 \\
 F^+ - \frac{1}{4}B\times B - \frac{1}{2}[C, B] &= 0.
 \end{align}
-Finally, the third twisting homomorphism was studied by Marcus \cite{Marcus} and Kapustin and Witten \cite{KapustinWitten}. The classical solutions are given by principal $G_\RR$-bundles $P\rightarrow M$ together with a connection $A$ and a section $\phi\in\Gamma(M, \mathrm{ad} P)$ which satisfy
+Finally, the third twisting homomorphism was studied by Marcus \cite{Marcus} and Kapustin and Witten \cite{KapustinWitten}. The classical solutions are given by principal $G_\RR$-bundles $P\rightarrow M$ together with a connection $A$ and a one-form $\phi\in\Omega^1(M, \mathrm{ad} P)$ which satisfy
 \begin{align}
 (F-\phi\wedge \phi)^+ &= 0\\
 (\d_A \phi)^- &= 0 \\
@@ -241,20 +241,22 @@ Finally, the third twisting homomorphism was studied by Marcus \cite{Marcus} and
 
  \item \emph{$\mc N=4$ topological B twist.} For the 4d $\cN=4$ super Yang--Mills theory there is a single topological twist which is not perturbatively trivial. It is equivalent to a topological BF theory defined on a 4-manifold (this theory corresponds to the value $t=\pm i$ of the family considered in \cite{KapustinWitten}).
  
- \item \emph{$\cN=4$ topological rank $(2, 2)$ twist.} The $\cN=4$ topological B twist admits a deformation to a perturbatively trivial theory. The corresponding deformation is parametrized by $s\in\CC^\times$, where $s=1$ is the topological B twist. Choosing a parameter $t\in\CC^\times$ satisfying $s=-t^2$, the theory counts solutions of the Kapustin--Witten equations on an oriented 4-manifold $M$. The classical solutions are given by principal $G_\RR$-bundles $P\rightarrow M$ together with a connection $A$ and a section $\phi\in\Gamma(M, \mathrm{ad} P)$ which satisfy
+ \item \emph{$\cN=4$ topological rank $(2, 2)$ twist.} The $\cN=4$ topological B twist admits a deformation to a perturbatively trivial theory. The corresponding deformation is parametrized by $s\in\CC^\times$, where $s=1$ is the topological B twist. Choosing a parameter $t\in\CC^\times$ satisfying $s=-t^2$, the theory counts solutions of the Kapustin--Witten equations on an oriented 4-manifold $M$. The classical solutions are given by principal $G_\RR$-bundles $P\rightarrow M$ together with a connection $A$ and a one-form $\phi\in\Omega^1(M, \mathrm{ad} P)$ which satisfy
 \begin{align}
 (F-\phi\wedge\phi +t \d_A \phi)^+ &= 0 \\
 (F-\phi\wedge\phi -t^{-1}\d_A \phi)^- &= 0 \\
 \d^*_A \phi &= 0.
 \end{align}
 
-\item \emph{$\cN=4$ topological rank $(2, 1)$ twist.} The $\cN=4$ intermediate twist also admits a deformation to a perturbatively trivial theory defined on K\"ahler surface $M$ given by a twist by a rank $(2, 1)$ supercharge. The classical solutions of this theory are given by principal $G_\RR$-bundles $P\rightarrow M$ together with a connection $A$ and a section $\phi\in\Gamma(M, \mathrm{ad} P)$ which satisfy
-\begin{align}
-(F-\phi\wedge\phi +\d_A \phi)^+ + [F-\phi\wedge\phi, \omega] &= 0 \\
-(F-\phi\wedge\phi -\d_A \phi)^- &= 0 \\
-\d^*_A \phi &= 0.
-\end{align}
-Here $\omega$ is the K\"ahler form on $M$ and $[-, -]$ is the natural Lie bracket on differential forms given by identifying $\wedge^2 T^*_M\cong \mathfrak{so}(T_M)$.
+\item \emph{$\cN=4$ topological rank $(2, 1)$ twist.} The $\cN=4$ intermediate twist also admits a deformation to a perturbatively trivial theory defined on K\"ahler surface $M$ given by twisting by a rank $(2, 1)$ supercharge. The corresponding equation is a deformation of the Kapustin--Witten equations using the K\"ahler form.
+
+%The classical solutions of this theory are given by principal $G_\RR$-bundles $P\rightarrow M$ together with a connection $A$ and a one-form $\phi\in\Omega^1(M, \mathrm{ad} P)$ which satisfy
+%\begin{align}
+%(F-\phi\wedge\phi +\d_A \phi)^+ + [F-\phi\wedge\phi, \omega] &= 0 \\
+%(F-\phi\wedge\phi -\d_A \phi)^- &= 0 \\
+%\d^*_A \phi &= 0.
+%\end{align}
+%Here $\omega$ is the K\"ahler form on $M$ and $[-, -]$ is the natural Lie bracket on differential forms given by identifying $\wedge^2 T^*_M\cong \mathfrak{so}(T_M)$.
 
 An analysis of topological twists of the 4d $\cN=4$ super Yang--Mills theory using similar techniques to this paper, but with the aim of obtaining the full derived stack of solutions to the equations of motion, rather than only the perturbative classical field theory, was carried out in \cite{ElliottYoo1}.
 \end{itemize}
@@ -263,9 +265,21 @@ An analysis of topological twists of the 4d $\cN=4$ super Yang--Mills theory usi
 \begin{itemize}
  \item \emph{$\cN=2$ minimal twist.} The minimal twist of the 3d $\cN=2$ super Yang--Mills theory with matter valued in a $G$-representation $R$ is defined on a product $C\times L$ of a complex curve $C$ and a real 1-manifold $L$. It is equivalent to the cotangent theory of the theory of maps from $C\times L$ to $R/G$ which are holomorphic along $C$ and locally-constant along $L$.
  \item \emph{$\cN=4$ and $\cN=8$ minimal twist.} We may also consider the minimal twist of $\cN=4$ and $\cN=8$ super Yang--Mills theories. The minimal twist of the $\cN=4$ super Yang--Mills theory with matter valued in a symplectic $G$-representation $U$ is equivalent to the cotangent theory of the theory of maps from $C\times L$ to the Hamiltonian reduction of $U$ which are holomorphic along $C$ and locally-constant along $L$. The 3d $\cN=8$ theory corresponds to the case $U=T^*\fg$.
- \item \emph{$\mc N=4$ and $\mc N=8$ topological A twist.} If $\mc N$ is at least 4, this minimal twist can be deformed in two inequivalent ways.  The first is a perturbatively trivial theory which we refer to as the A-twist, obtained by dimensional reduction from the 4d A-twist.  This theory fits into a non-trivial family deforming the minimal twist, which is $\mr U(1)$-equivariant, and can be defined on the product of a Riemann surface and a flat 1-manifold.  This twist was studied by Blau and Thompson \cite{BlauThompson1}, where it is referred to as a Casson invariant model, as well as Kapustin and Vyas \cite{KapustinVyas} as a dimensional reduction of Donaldson-Witten theory.
- \item \emph{$\mc N=4$ and $\mc N=8$ topological B twist.} The remaining topological twist is perturbatively equivalent to the 3d topological BF theory coupled to a symplectic boson valued in symplectic representation $U$.  It is $\spin(3;\RR)$-invariant, and can be defined on arbitrary 3-manifolds. This form of twist was studied by Rozansky and Witten, \cite{RozanskyWitten} as well as by Blau and Thompson \cite{BlauThompson2}.
-\end{itemize}
+
+ \item \emph{$\mc N=4$ topological A twist.} In 3d $\cN=4$ super Yang--Mills theory we may consider a deformation of the minimal twist which gives rise to a perturbatively trivial topological theory defined on spin 3-manifolds. This twist was studied in \cite{BaulieuGrossman,BlauThompson1,Ohta}. From a mathematical point of view the space of states on a two-sphere is studied in \cite{BFN}. The partition function counts solutions to a 3-dimensional version of the nonabelian Seiberg--Witten equations \eqref{eq:SW1}, \eqref{eq:SW2}. Let $G_\RR$ be a compact Lie group and $U$ a quaternionic-unitary $G_\RR$-representation. Let $M$ be a spin 3-manifold and let $P_{\Spin}\rightarrow M$ be the corresponding $\Spin(3)$-principal bundle. The classical solutions in this theory are given by principal $G_\RR$-bundles $P\rightarrow M$ together with a connection $A$, a section $\sigma\in\Gamma(M, \mathrm{ad} P)$ and a section $u\in\Gamma(M, (P\times P_{\Spin})\times^{G\times \Spin(3)} U)$ which together satisfy
+\begin{align}
+\sd \d_A u + [\sigma, u]  &= 0 \label{eq:3dSW1} \\
+F + \ast\d_A \sigma + \Phi(u) &= 0. \label{eq:3dSW2}
+\end{align}
+
+\item \emph{$\cN=8$ topological A twist.} We may regard the 3d $\cN=8$ super Yang--Mills theory as a 3d $\cN=4$ super Yang--Mills theory with matter valued in $U=\fg\otimes\mathbb{H}$. In particular, the partition function in the twisted theory counts solutions to the equations \eqref{eq:3dSW1}, \eqref{eq:3dSW2}. We may also consider a different twisting homomorphism obtained by dimensionally reducing the Vafa--Witten or Kapustin--Witten twisting homomorphism. The classical solutions in this theory are given by principal $G$-bundles $P\rightarrow M$ ($G$ is the complexification of the compact Lie group $G_\RR$) together with a connection $A$ and a section $\sigma\in\Gamma(M, \mathrm{ad} P)$ satisfying a complexified version of the Bogomolny equation:
+\[
+F + \ast \d_A \sigma = 0.
+\]
+The corresponding field theory in the formalism of extended topological field theories is studied in \cite{BZGN}.
+
+ \item \emph{$\mc N=4$ and $\mc N=8$ topological B twist.} The minimal twist of the 3d $\cN=4$ super Yang--Mills theory also admits another deformation to a gauged version of the Rozansky--Witten model valued in the Hamiltonian reduction of $U$ \cite{RozanskyWitten,BlauThompson2}.
+ \end{itemize}
 
 \textbf{Dimension 2}
 \begin{itemize}
@@ -3210,7 +3224,7 @@ The twisting homomorphism used in Section \ref{sect:4d_2_holomorphictwist} diffe
 In particular, this equivalence is not $\U(2)$-equivariant. In the present case the fields decompose in the same fashion as in the proof of Theorem \ref{thm:4d4holomorphictwist} which are precisely the fields of $\map(\CC^2_{\rm Dol}, B \fg_{\rm Hod})$.
 \end{proof}
 
-\subsubsection{Rank (1, 1) Partially Topological Twist}
+\subsubsection{Rank \texorpdfstring{$(1, 1)$}{(1,1)} Partially Topological Twist}
 \label{sect:4d4partialtwist}
 
 Next we consider the twist with respect to a rank $(1,1)$ supercharge. As in Section \ref{sect:4d_2_11} the twist is compatible with the group $G = \Spin(2, \RR) \times \Spin(2, \RR)$. However, we will use a different twisting homomorphism. We denote each factor by $\Spin(2, \RR)_i$, $i=1,2$, and by $S_{\pm, i}$ the semi-spin representations of the factor $\Spin(2, \RR)_i$.
