@@ -2278,7 +2278,7 @@ The 8-dimensional supersymmetry algebra has odd part $\Sigma\cong S_+\otimes W\o
 
 \subsection{\texorpdfstring{$\cN=1$}{N=1} Super Yang--Mills Theory}
 
-We consider $\cN=1$ super Yang--Mills theory on $M=\RR^8$ with the Euclidean metric. It admits $R$-symmetry group $G_R=\Spin(2, \CC)$ which acts with weight $1/2$ on $W$ and weight $-1/2$ on $W^*$.
+We consider $\cN=1$ super Yang--Mills theory on $M=\RR^8$ with the Euclidean metric. It admits $R$-symmetry group $G_R=\Spin(2; \CC)$ which acts with weight $1/2$ on $W$ and weight $-1/2$ on $W^*$.
 
 This theory admits three twists:
 \begin{itemize}
@@ -3893,19 +3893,19 @@ Combining Theorem \ref{3d_8_B_twist_thm} and Proposition \ref{CS_to_BF_diml_red_
 The B-twist of 2d $\mc N=(8,8)$ super Yang-Mills is perturbatively equivalent to the topological BF theory with moduli space $T^*[-1]\mr{Map}(\RR^2_{\mr{dR}}, T^*[2](\gg / \gg))$.  This equivalence is $\mr U(1)$-invariant.
 \end{theorem}
 
-\subsection{\texorpdfstring{$\cN=(0,2)$}{N=(0,2)} Super Yang--Mills Theory} \label{sect:2d(0,2)}
+\subsection{\texorpdfstring{$\cN=(2,0)$}{N=(2,0)} Super Yang--Mills Theory} \label{sect:2d(0,2)}
 
-We turn to $\cN=(0,2)$ supersymmetric Yang-Mills theory.
-Here, $W_+ = 0$ and $W_-$ is a complex two-dimensional vector space equipped with a symmetric pairing. 
-The supersymmetric matter consists of the $\cN = (0,2)$ chiral multiplet with values in a representation $R$. 
-The $R$-symmetry group is $G_R = \spin(2;\CC)$ which acts on $W_-$ by the defining representation. 
+We turn to $\cN=(2,0)$ supersymmetric Yang-Mills theory.
+In the supersymmetry algebra, we have $W_-=0$ and $W_+$ is a complex two-dimensional vector space equipped with a symmetric pairing. 
+The supersymmetric matter consists of the $\cN = (2,0)$ chiral multiplet with values in a representation $R$. 
+The $R$-symmetry group is $G_R = \spin(2;\CC)$ which acts on $W_+$ by the defining representation. 
 
-The untwisted fields are given by:
+The fields of the untwisted theory are:
 \begin{itemize}
 \item a gauge boson $A \in \Omega^1(\RR^2;\fg)$.
-\item gauge fermions $\lambda \in C^\infty(\RR^2 ; S_- \otimes W_- \otimes \fg)$. 
+\item gauge fermions $\lambda \in C^\infty(\RR^2 ; S_+ \otimes W_+ \otimes \fg)$. 
 \item matter bosons $\phi \in C^\infty(\RR^2 ; R)$ and $\Bar{\phi} \in C^\infty(\RR^2 ; R^*)$;
-\item matter fermions $\psi \in C^\infty(\RR^2 ; S_+ \otimes R^*)$  and $\Bar{\psi} \in C^\infty(\RR^2 ; S_+ \otimes R)$.
+\item matter fermions $\psi \in C^\infty(\RR^2 ; S_- \otimes R^*)$  and $\Bar{\psi} \in C^\infty(\RR^2 ; S_- \otimes R)$.
 \item a ghost field $c \in \Omega^0(\RR^2 ; \fg)[1]$.
 \end{itemize}
 The field $\lambda$ transforms in the defining representation of $G_R = \spin(2; \CC)$.
@@ -3913,7 +3913,7 @@ The fields $\psi, \Bar{\psi}$ have weights $-1,+1$ respectively under $G_R \cong
 
 The theory admits a unique twist:
 \begin{itemize}
-\item Elements $Q \in S_- \otimes W_-$ of rank $1$. 
+\item Elements $Q \in S_+ \otimes W_+$ of rank $1$. 
 Such supercharges are automatically square-zero and are holomorphic.
 There is a compatible twisting homomorphism
 \[
@@ -3928,7 +3928,7 @@ Under the embedding $U(1) \hookrightarrow \spin(2;\CC)$, the semi-spin represent
 \[
 S_+ = \det(L)^{1/2} \;\; , \;\; S_- = \det(L)^{-1/2} .
 \]
-Note that under the twisting homomorphism $\phi = \det^{1/2}$, we have $W_- = \det(L)^{1/2} \oplus \det^{-1/2}$.
+Note that under the twisting homomorphism $\phi = \det^{1/2}$, we have $W_+ = \det(L)^{1/2} \oplus \det^{-1/2}$.
 
 Further, fields decompose under the twisting homomorphism as:
 \begin{itemize}
@@ -3990,8 +3990,8 @@ S^{(2)}_{\mr{gauge}} &= \int \dvol \bigg( -\frac{1}{4} (\lambda_0^*)^2 \bigg) .
 \end{align*}
 %Here, in terms of the K\"ahler form $\omega$, the volume form is identified as $\dvol = \frac{\omega^2}2$.
 
-\begin{theorem} \label{2d(0,2)}
-The minimal twist of 2d $\cN=(0,2)$ super Yang-Mills with matter valued in a $\fg$-representation $R$ is perturbatively equivalent to holomorphic $BF$ theory coupled to the holomorphic $\beta\gamma$ system with moduli space $T^*[-1] \map(\CC , R / \fg)$.
+\begin{theorem} \label{thm: 2d(2,0)}
+The minimal twist of 2d $\cN=(2,0)$ super Yang-Mills with matter valued in a $\fg$-representation $R$ is perturbatively equivalent to holomorphic $BF$ theory coupled to the holomorphic $\beta\gamma$ system with moduli space $T^*[-1] \map(\CC , R / \fg)$.
 This equivalence is $\U(1)$-equivariant.
 \end{theorem}
 \begin{proof}
@@ -4010,20 +4010,44 @@ This is the action functional of the required theory, where $B_{1,0} = A_{0,1}^*
 
 \subsection{\texorpdfstring{$\cN=(0,4)$}{N=(0,4)} Super Yang--Mills Theory}
 
-We consider $\cN=(0,4)$ super Yang-Mills for a Lie algebra $\fg$ coupled to $\cN=(0,4)$ supersymmetric matter. 
-The supersymmetric matter consists of the $\cN = (0,4)$ hypermultiplet with values in a complex symplectic representation $U$. 
-The spinorial representation is $\Sigma = S_- \otimes W_-$ where $W_- = {\rm span}_{\CC} \{u_1,u_2, v_1,v_2\}$ is the four-dimensional auxiliary space equipped with the pairing $\<u_i, v_j\> = \delta_{ij}$. 
-Let $W = {\rm span}_{\CC} \{u_1,u_2\}$. 
+Next, we consider $\cN=(4,0)$ supersymmetric Yang-Mills theory.
+In the supersymmetry algebra, we have $W_- = 0$ and $W_+$ is a complex four-dimensional vector space equipped with a nondegenerate symmetric bilinear pairing.
+The supersymmetric matter consists of the $\cN = (4,0)$ hypermultiplet with values in a complex symplectic representation $U$. 
+The $R$-symmetry group is $\Spin(4;\CC)$, which acts on $W_+$ as the defining representation. 
 
-The field content is:
+%The spinorial representation is $\Sigma = S_- \otimes W_-$ where $W_- = {\rm span}_{\CC} \{u_1,u_2, v_1,v_2\}$ is the four-dimensional auxiliary space equipped with the pairing $\<u_i, v_j\> = \delta_{ij}$. 
+%Let $W = {\rm span}_{\CC} \{u_1,u_2\}$. 
 \begin{itemize}
-\item $\fg$-valued bosons: a gauge field $A \in \Omega^1(\RR^2;\fg)$.
-\item $\fg$-valued fermions: a spinor $\lambda \in C^\infty(\RR^2 ; S_- \otimes W_- \otimes \fg)$. 
-\item $W \otimes U$-valued scalars: $\phi \in C^\infty(\RR^2 ; W \otimes U)$;
-\item $W \otimes U$-valued fermions: $\psi \in C^\infty(\RR^2 ; W \otimes S_+ \otimes U)$ .
+\item a gauge boson $A \in \Omega^1(\RR^2;\fg)$.
+\item gauge fermions $\lambda \in C^\infty(\RR^2 ; S_+ \otimes W_+ \otimes \fg)$. 
+\item matter bosons $\phi \in C^\infty(\RR^2 ; W \otimes U)$;
+\item matter fermions $\psi \in C^\infty(\RR^2 ; S_- \otimes W_+ \otimes U)$  
+\item a ghost field $c \in \Omega^0(\RR^2 ; \fg)[1]$.
 \end{itemize}
 
-We twist by the nilpotent supercharge $Q = q \otimes u_1$ where $q \in S_-$ is any nonzero vector. 
+The fields $\lambda, \psi$ transform in the defining representation of $G_R = \spin(4;\CC)$. 
+
+The theory admits a unique twist:
+\begin{itemize}
+\item Elements $Q \in S_+ \otimes W_+$ of rank $1$. 
+Such supercharges are automatically square-zero, holomorphic, and lie in a $(2,0)$ supersymmetry subalgebra.
+There is a compatible twisting homomorphism
+\[
+\phi : \U(1) \xto{\det^{1/2}} \U(1) \hookrightarrow G_R 
+\]
+which factors through the twisting homomorphism of 2d $(2,0)$ supersymmetric Yang--Mills theory in Section \ref{sect:2d(0,2)}.
+\end{itemize}
+
+
+%The field content is:
+%\begin{itemize}
+%\item $\fg$-valued bosons: a gauge field $A \in \Omega^1(\RR^2;\fg)$.
+%\item $\fg$-valued fermions: a spinor $\lambda \in C^\infty(\RR^2 ; S_- \otimes W_- \otimes \fg)$. 
+%\item $W \otimes U$-valued scalars: $\phi \in C^\infty(\RR^2 ; W \otimes U)$;
+%\item $W \otimes U$-valued fermions: $\psi \in C^\infty(\RR^2 ; W \otimes S_+ \otimes U)$ .
+%\end{itemize}
+
+%We twist by the nilpotent supercharge $Q = q \otimes u_1$ where $q \in S_-$ is any nonzero vector. 
 
 \subsubsection{Minimal Twist} \label{sect:2d04minimaltwist}
 
