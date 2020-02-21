@@ -1492,6 +1492,7 @@ A classical field theory $(E, S, \omega)$ is \defterm{supersymmetric} if $E\righ
 \label{sect:compositionalgebras}
 
 We will now recall a relationship between certain ``minimal'' supersymmetry algebras and composition algebras. Our treatment will essentially follow that of Baez and Huerta \cite{BaezHuerta}.
+This section provides the representation theoretic underpinning for theories with minimally supersymmetric matter in dimensions $\geq 3$.
 
 Let $A$ be a unital (possibly non-associative) complex algebra equipped with an antiinvolution $\sigma\colon A\rightarrow A$. We make the following assumptions:
 \begin{enumerate}
@@ -1517,12 +1518,12 @@ Suppose $M$ is a left $A$-module and $N$ a right $A$-module equipped with a nond
 \label{lm:extendpairing}
 \end{lemma}
 
-Consider the two isomorphic spinorial representations $\Sigma=A\oplus A$ and its dual $\Sigma^* = A\oplus A$.
+Consider the left $A$-module $\Sigma=A\oplus A$ and the right $A$-module $\Sigma^* = A\oplus A$.
 We will equip the sum $\Sigma \oplus \Sigma^*$ with an action of the Clifford algebra ${\rm C}\ell_V$.  
 The action on the two summands $\Sigma$ and $\Sigma^*$ will be different, hence the different notation.  
-We define action maps
+Define the action maps
 \[\rho \colon V \otimes \Sigma\rightarrow \Sigma^*,\qquad \rho \colon V\otimes \Sigma^*\rightarrow \Sigma\]
-given, respectively, by
+by
 \[\rho(M)Q = M Q,\qquad \rho(M)Q = \widetilde{M} Q.\]
 
 The following is proved in \cite[Proposition 6]{BaezHuerta}.
@@ -1532,7 +1533,7 @@ The action maps $V\otimes \Sigma\rightarrow \Sigma^*$ and $V\otimes \Sigma^*\rig
 \[\rho(M)\rho(M) = -\det(M)\cdot 1.\]
 \end{prop}
 
-So, $\Sigma\oplus \Sigma^*$ forms a $\ZZ/2\ZZ$-graded Clifford module.
+As a result, $\Sigma\oplus \Sigma^*$ forms a $\ZZ/2\ZZ$-graded Clifford module.
 
 We have a nondegenerate scalar spinorial pairing
 \[\Sigma\otimes \Sigma^*\longrightarrow \CC\]
@@ -1567,9 +1568,11 @@ which by associativity can be rewritten as
 which is the left-hand side.
 \end{proof}
 
+Note that since $\dim(V) = \dim(A) + 2$, the above constructions are only valid in dimensions $\geq 3$.
 We will be interested in the following examples:
 \begin{enumerate}
-\item (\textbf{3d $\mc N=1$ supersymmetry}) $A = \CC$. We have $\dim(V) = 3$ and $\Sigma$ is the spin representation of $\Spin(3, \CC)$.
+\item (\textbf{3d $\mc N=1$ supersymmetry}) $A = \CC$. 
+Here, $\dim(V) = 3$ and $\Sigma$ is the spin representation of $\Spin(3, \CC)$.
 
 \item (\textbf{4d $\mc N=1$ supersymmetry}) $A = \CC\otimes_{\RR}\CC\cong \CC[x]/(x^2+1)$ with $\sigma(x) = -x$. Moreover, $\dim(V) = 4$ and $\Sigma=S_+\oplus S_-$ is the sum of semi-spin representations of $\Spin(4;\CC)$.
 
@@ -1582,7 +1585,8 @@ All four examples are alternative, while the first three examples are also assoc
 
 \subsection{Two-dimensional Chiral Supersymmetry} \label{sect:2dchiral}
 
-In the previous section we have related composition algebras to minimal supersymmetry algebras in dimensions 3, 4, 6 and 10. In this section we explain a different relationship between composition algebras and supersymmetry algebras, this time in the case of 2d $\cN=(\cN_+, 0)$ supersymmetry.
+In the previous section we have related composition algebras to minimal supersymmetry algebras in dimensions 3, 4, 6 and 10. 
+In this section we explain a different relationship between composition algebras and supersymmetry algebras, this time in the case of 2d $\cN=(\cN_+, 0)$ supersymmetry.
 
 Recall that in the case $\dim(V) = 2$ we have two one-dimensional semi-spin representations $S_+, S_-$. Moreover, we have an isomorphism
 \[V\cong S_+^{\otimes 2}\oplus S_-^{\otimes 2}\]
@@ -1786,7 +1790,6 @@ For $Q_1, Q_2, Q_3\in\Sigma$ we have
 \label{assumption:3psi}
 \end{assumption}
 
-Explicitly, we consider the following cases:
 \begin{itemize}
 \item (\textbf{2d $\cN=(\cN_+, 0)$ supersymmetry}) We have $\dim(V) = 2$ and $\Sigma = S_+\otimes W$ for some complex vector space $W$ equipped with a nondegenerate symmetric bilinear pairing. Assumption \ref{assumption:3psi} is satisfied by Theorem \ref{thm:2d3psi}.
 
@@ -1984,13 +1987,21 @@ For $Q_1, Q_2\in\Sigma$ and $Q_3\in\Sigma^*$ we have
 \label{assumption:matter3psi}
 \end{assumption}
 
-Explicitly, we consider the following cases:
+Explicitly, we consider the following examples of theories of matter with minimal supersymmetry. 
+
+The first three examples concern chiral two-dimensional supersymmetry, where $\Sigma = S^{2 \rm d}_+ \otimes A$, with $S_+^{2 \rm d}$ the one-dimensional positive complex semi-spin representation of $\Spin(2;\CC)$:
+
 \begin{itemize}
 \item (\textbf{2d $\cN=(1, 0)$ supersymmetry}) $A = \CC$. Assumption \ref{assumption:matter3psi} is satisfied by Theorem \ref{thm:2dmatter3psi}.
 
 \item (\textbf{2d $\cN=(2, 0)$ supersymmetry}) $A = \CC[x]/(x^2+1)$. Assumption \ref{assumption:matter3psi} is satisfied by Theorem \ref{thm:2dmatter3psi}.
 
 \item (\textbf{2d $\cN=(4, 0)$ supersymmetry}) $A = \eend(Z)$ where $Z$ is a 2-dimensional symplectic vector space. Assumption \ref{assumption:matter3psi} is satisfied by Theorem \ref{thm:2dmatter3psi}.
+\end{itemize}
+
+In dimensions $\geq 3$ we have the following examples, where $\Sigma = A \oplus A$:
+
+\begin{itemize}
 
 \item (\textbf{3d $\cN=1$ supersymmetry}) $A = \CC$. Assumption \ref{assumption:matter3psi} is satisfied by Theorem \ref{thm:matter3psi}.
 
