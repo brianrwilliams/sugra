@@ -375,7 +375,7 @@ F + 2(u_1, u_2) &= 0.
  \multirow{2}*{5} & \multirow{2}*{$1$} & \multirow{2}*{\hyperref[sect:5d1minimaltwist] {Rank $1$}} & {Generalized BF Theory coupled to a generalized symplectic boson} & \multirow{2}*{3 (minimal)} \\
  &&& $\Sect(\CC^2 \times \RR_{\mr{dR}}, (U\otimes K_{\CC^2}^{1/2}) \ham \fg)$ & \\ \hline
  \multirow{6}*{4} & \multirow{6}*{$2$} & \multirow{2}*{\hyperref[sect:4d_2_holomorphictwist] {Rank $(1,0)$}} & {Holomorphic BF Theory} & \multirow{2}*{2 (holomorphic)} \\
- &&& $T^*[-1]\mr{Sect}(\CC^2, U \ham \fg)$ & \\ \cline{3-5}
+ &&& $T^*[-1]\mr{Sect}(\CC^2, (U \otimes K_{\CC^2}^{1/2}) \ham \fg)$ & \\ \cline{3-5}
  && \multirow{2}*{\hyperref[sect:4d_2_11] {Rank $(1,1)$}} & {Generalized BF Theory coupled to a generalized symplectic boson} & \multirow{2}*{3} \\
  &&& $\Sect(\CC \times \RR^2_{\mr{dR}}, (U\otimes K_\CC^{1/2}) \ham \fg)$  & \\ \cline{3-5}
  && \multirow{2}*{\hyperref[sect:4d2Donaldson] {Rank $(2,0)$}} & {Perturbatively trivial } & \multirow{2}*{4 (topological)} \\
@@ -3815,7 +3815,7 @@ The B-twist of 2d $\mc N=(8,8)$ super Yang-Mills is perturbatively equivalent to
 We turn to $\cN=(2,0)$ supersymmetric Yang-Mills theory.
 In the supersymmetry algebra, we have $W_-=0$ and $W_+$ is a complex two-dimensional vector space equipped with a symmetric pairing. 
 The supersymmetric matter consists of the $\cN = (2,0)$ chiral multiplet with values in a representation $R$. 
-The $R$-symmetry group is $G_R = \spin(2;\CC)$ which acts on $W_+$ by the defining representation. 
+The $R$-symmetry group is $G_R = \SO(2;\CC)$ which acts on $W_+$ by the defining representation. 
 
 The fields of the untwisted theory are:
 \begin{itemize}
@@ -3825,16 +3825,17 @@ The fields of the untwisted theory are:
 \item matter fermions $\psi \in C^\infty(\RR^2 ; S_- \otimes R^*)$  and $\Bar{\psi} \in C^\infty(\RR^2 ; S_- \otimes R)$.
 \item a ghost field $c \in \Omega^0(\RR^2 ; \fg)[1]$.
 \end{itemize}
-The field $\lambda$ transforms in the defining representation of $G_R = \spin(2; \CC)$.
-The fields $\psi, \Bar{\psi}$ have weights $-1,+1$ respectively under $G_R \cong \CC^\times$. 
+The field $\lambda$ transforms in the defining representation of $G_R = \SO(2;\CC)$.
+The fields $\psi, \Bar{\psi}$ have weights $-1,+1$ respectively.
 
 The theory admits a unique twist by the following class of supercharge.
 \begin{itemize}
 \item Elements $Q \in S_+ \otimes W_+$ of rank $1$. 
 Such supercharges are automatically square-zero and are holomorphic.
+We take $\alpha \colon U(1) \hookrightarrow G_R$ to be the standard embedding.
 There is a compatible twisting homomorphism
 \[
-\phi : \U(1) \xto{\det^{1/2}} \U(1) \hookrightarrow G_R .
+\phi \colon \U(1) \xto{\det^{1/2}} \U(1) \hookrightarrow G_R .
 \]
 \end{itemize}
 
@@ -3845,7 +3846,8 @@ Under the embedding $U(1) \hookrightarrow \spin(2;\CC)$, the semi-spin represent
 \[
 S_+ = \det(L)^{1/2} \;\; , \;\; S_- = \det(L)^{-1/2} .
 \]
-Note that under the twisting homomorphism $\phi = \det^{1/2}$ we have $W_+ = \det(L)^{1/2} \oplus \det^{-1/2}$.
+
+Note that under the twisting homomorphism $\phi = \det^{1/2}$, we have $W_+ = \det(L)^{1/2} \oplus \det(L)^{-1/2}$.
 
 The fields decompose under the twisting homomorphism as:
 \begin{itemize}
@@ -3858,13 +3860,12 @@ The fields decompose under the twisting homomorphism as:
 
 The action functional decomposes as follows:
 \begin{align*}
-S_{\mr{gauge}} &= \int \dvol \bigg(-(F^{2, 0}, F^{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2 + \frac 12 (\lambda_0 , \dbar_{A_{0,1}} \lambda_{1,0}) +(\lambda_{1,0} , \dbar_{A_{0,1}} \lambda_{0}) \bigg)    \\
-S_{\mr{matter}} &= \int \dvol \bigg( (\dd_{A_{1,0}}\Bar{\phi} , \ol \dd_{A_{0,1}} \gamma_0) + (\dd_{A_{1,0}}\gamma_0, \ol \dd_{A_{0,1}} \Bar{\phi}) + (\psi_0 , \partial_{A_{1,0}} \gamma_{0,1}) + (\gamma_{0,1} , \partial_{A_{1,0}} \psi_{0})  + \\
-&\qquad + ([\lambda_{1,0},\gamma_{0,1}],\psi_0) + ([\lambda_{1,0}, \psi_0], \gamma_{0,1})   \bigg) \\
+S_{\mr{gauge}} &= \int \dvol \bigg(-(F^{2, 0}, F^{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2 + \frac 12 (\lambda_0 , \dbar_{A_{0,1}} \lambda_{1,0})  \bigg)    \\
+S_{\mr{matter}} &= \int \dvol \bigg( (\dd_{A_{1,0}}\Bar{\phi} , \ol \dd_{A_{0,1}} \gamma_0) + (\dd_{A_{1,0}}\gamma_0, \ol \dd_{A_{0,1}} \Bar{\phi}) + (\psi_0 , \partial_{A_{1,0}} \gamma_{0,1}) + ([\lambda_{1,0}, \psi_0], \gamma_{0,1})   \bigg) \\
 S_{\mr{anti}} &= \int \dvol \bigg( (\dd_{A_{1, 0}} A_0 , A_{1,0}^*) + (\ol\dd_{A_{0, 1}} A_0, A_{0,1}^*) + ([\lambda_{1,0}, A_0], \lambda_{1,0}^*) +  [\lambda_{0}, A_0] \lambda_{0}^*\\
-&\qquad + \frac{1}{2}[A_0, A_0]A_0^* + [\gamma_0, A_0] \gamma_0^* + [\Bar{\phi}, A_0] \Bar{\phi}^* + [\gamma_{0,1}, A_0]\wedge \gamma_{0,1}^* + [\psi_0, A_0] \psi_{0}^*\bigg) \\
+&\qquad + \frac{1}{2}[A_0, A_0]A_0^* + [\gamma_0, A_0] \gamma_0^* + [\Bar{\phi}, A_0] \Bar{\phi}^* + [\gamma_{0,1}, A_0] \gamma_{0,1}^* + [\psi_0, A_0] \psi_{0}^*\bigg) \\
 S^{(1)}_{\mr{gauge}} &=  \int \dvol \bigg( - (\lambda_{1,0}, A_{1,0}^*) \bigg) \\
-S^{(1)}_{\mr{matter}} &=  \int \dvol \bigg( (\psi_{0}^*, \Bar{\phi}) + \frac 12(\dbar \gamma_0, \gamma_{0,1}^*) \bigg)\\
+S^{(1)}_{\mr{matter}} &=  \int \dvol \bigg( (\psi_{0}, \Bar{\phi}^*) + \frac 12(\dbar_{A_{0,1}} \gamma_0, \gamma_{0,1}^*) \bigg)\\
 S^{(2)}_{\mr{gauge}} &= \int \dvol \bigg( -\frac{1}{4} (\lambda_0^*)^2 \bigg) .
 \end{align*}
 
@@ -3874,69 +3875,142 @@ The minimal twist of 2d $\cN=(2,0)$ super Yang-Mills with matter valued in a $\f
 This equivalence is $\U(1)$-equivariant.
 \end{theorem}
 \begin{proof}
-The proof of this theorem is very similar to the proof of Theorem \ref{thm:10dholomorphictwist}.  
+%The proof of this theorem is very similar to the proof of Theorem \ref{thm:10dholomorphictwist}.  
 First, we integrate out the field $\lambda_{0}$ using Proposition \ref{prop:integrateoutfield}.  
-We then observe that the action includes the terms $\int  (\lambda_{1,0} , A_{0,1}^*)$ and  $\int (\phi, \psi_0^*)$.  
+We then observe that the action includes the terms $\int  (\lambda_{1,0} , A_{1,0}^*)$ and  $\int (\phi, \psi_0^*)$.  
 Thus, the two pairs $(\lambda_{1,0}, A_{1,0})$ and $(\phi, \psi_0)$ form BRST doublets, 
 which can be integrated out using Proposition \ref{prop:BRSTdoublet}.  
 
 The twisted theory is therefore perturbatively equivalent to the theory with BV action 
 \begin{align*}
-& \int \bigg(\dbar_{A_{0,1}} A_{0} \wedge A_{0,1}^* + (\dbar_{A_{0,1}} \gamma_{0} \wedge \gamma_{0,1}^*) \bigg) + \dvol \bigg( \frac{1}{2}[A_0, A_0]A_0^*+  [\gamma_0, A_0] \gamma_0^*  \bigg).
+& \int \bigg(\dbar_{A_{0,1}} A_{0} \wedge A_{0,1}^* + (\dbar_{A_{0,1}} \gamma_{0} \wedge \gamma_{0,1}^*) \bigg) + \dvol \bigg( \frac{1}{2}[A_0, A_0]A_0^*+ [\gamma_0, A_0] \gamma_0^* + ([\gamma_{0,1}, A_0] , \gamma_{0,1}^*)  \bigg).
 \end{align*}
 This is the action functional of the required theory, where $B_{1,0} = A_{0,1}^*$, $B_{1,1} = A_{0}^* \dvol$ comprise the anti-fields of holomorphic BF theory and $\beta_{1,0} = \gamma_{0,1}^*$,  $\beta_{1,1} = \gamma_0^* \dvol$ comprise the anti-fields of the $\beta\gamma$ system.
 \end{proof}
 
-\subsection{\texorpdfstring{$\cN=(0,4)$}{N=(0,4)} Super Yang--Mills Theory}
+\subsection{\texorpdfstring{$\cN=(4,0)$}{N=(4,0)} Super Yang--Mills Theory}
 
 Next, we consider $\cN=(4,0)$ supersymmetric Yang-Mills theory.
-In the supersymmetry algebra, we have $W_- = 0$ and $W_+$ is a complex four-dimensional vector space equipped with a nondegenerate symmetric bilinear pairing.  The supersymmetric matter consists of the $\cN = (4,0)$ hypermultiplet with values in a complex symplectic representation $U$. The $R$-symmetry group is $\Spin(4;\CC)$, which acts on $W_+$ as the defining representation. 
+In the supersymmetry algebra, we have $W_- = 0$ and $W_+$ is a complex four-dimensional vector space equipped with a nondegenerate symmetric bilinear pairing.
+The supersymmetric matter consists of the $\cN = (4,0)$ hypermultiplet with values in a complex symplectic representation $U$. 
+The $R$-symmetry group is $G_R = \SL(2;\CC) \times \GL(1;\CC)$.
+As a $G_R$-representation, $W_+ = \Tilde{W} \oplus \Tilde{W}$ where $\Tilde{W}$ is the defining representation of $\SL(2;\CC)$ and where $\GL(1;\CC)$ acts by weight $(1,-1)$ with respect to this decomposition. 
 
 \begin{itemize}
 \item a gauge boson $A \in \Omega^1(\RR^2;\fg)$.
-\item gauge fermions $\lambda \in C^\infty(\RR^2 ; S_+ \otimes W_+ \otimes \fg)$. 
-\item matter bosons $\phi \in C^\infty(\RR^2 ; W \otimes U)$;
-\item matter fermions $\psi \in C^\infty(\RR^2 ; S_- \otimes W_+ \otimes U)$  
+\item gauge fermions $(\lambda_-, \lambda_+) \in C^\infty(\RR^2 ; S_+ \otimes (\Tilde{W} \oplus \Tilde{W}) \otimes \fg)$. 
+\item matter bosons $\phi \in C^\infty(\RR^2 ; \Tilde{W} \otimes U)$;
+\item matter fermions $(\psi_-, \psi_+) \in C^\infty(\RR^2 ; S_- \otimes (U\oplus U))$;
+%\item \brian{matter fermions $\psi \in C^\infty(\RR^2 ; S_- \otimes W_+ \otimes U)$}
 \item a ghost field $c \in \Omega^0(\RR^2 ; \fg)[1]$.
 \end{itemize}
 
-The fields $\lambda, \psi$ transform in the defining representation of $G_R = \spin(4;\CC)$. 
+Under $\GL(1; \CC) \subset G_R$, the pairs of fields $(\lambda_-, \lambda_+)$ and $(\psi_-, \psi_+)$ have weights $(-1,+1)$ 
+The field $\phi$ has weight zero.
 
 The theory admits a unique twist:
 \begin{itemize}
 \item Elements $Q \in S_+ \otimes W_+$ of rank $1$. 
-Such supercharges are automatically square-zero, holomorphic, and lie in a $(2,0)$ supersymmetry subalgebra.
-There is a compatible twisting homomorphism
-\[
-\phi : \U(1) \xto{\det^{1/2}} \U(1) \hookrightarrow G_R 
-\]
-which factors through the twisting homomorphism of 2d $(2,0)$ supersymmetric Yang--Mills theory in Section \ref{sect:2d(0,2)}.
+Such supercharges are automatically square-zero and holomorphic.
+There is a twisting homomorphism $\phi : \U(1) \to G_R$ and twisting datum $\alpha : \U(1) \to G_R$. 
+%We take the twisting datum $\alpha$ and twisting homomorphism $\phi$ to factor through those of Section \ref{sect:2d(0,2)}.
+%We take $\alpha : \U(1) \hookrightarrow \spin(2;\CC) \to \spin(4;\CC)$ to factor through the twisting data of Section \ref{sect:2d(0,2)}.
+%There is a compatible twisting homomorphism
+%\[
+%\phi : \U(1) \xto{\det^{1/2}} \U(1) \hookrightarrow G_R 
+%\]
+%which factors through the twisting homomorphism of 2d $(2,0)$ supersymmetric Yang--Mills theory in Section \ref{sect:2d(0,2)}.
 \end{itemize}
 
-\subsubsection{Minimal Twist} \label{sect:2d04minimaltwist}
+\subsubsection{Minimal twist}
 
-\begin{theorem}\label{2d(0,4)}
-The minimal twist of 2d $\cN=(0,4)$ super Yang-Mills with Lie algebra $\fg$ coupled to the $\cN=(0,4)$ hypermultiplet is $U(1)$-equivariantly equivalent to holomorphic BF theory on $\CC$ for the Lie algebra $\fg$ coupled to the free fermion system on $\CC$ with values in the representation $\fg \otimes W_-' \cong \fg \oplus \fg$, where $\fg$ acts by the adjoint action, plus the free $\beta\gamma$ system on $\CC$ valued in the $\fg$-representation $U$. 
+Choose a complex structure $L \subset V_\RR$. 
+Under the embedding $U(1) \hookrightarrow \spin(2;\CC)$, the semi-spin representations decompose as
+\[
+S_+ = \det(L)^{1/2} \;\; , \;\; S_- = \det(L)^{-1/2} .
+\]
+We choose a twisting homomorphism $\phi : \U(1) \to G_R$ under which $\Tilde{W} = \det(L)^{1/2} \oplus \det(L)^{-1/2}$
+so that
+\[
+S_+ \otimes W_+ = \CC Q \oplus \CC \oplus L^{\oplus 2} .
+\]
+
+The twisting data homomorphism is the natural embedding $\alpha \colon \U(1) \hookrightarrow \GL(1;\CC) \to G_R$. 
+
+Further, fields decompose under the twisting homomorphism as:
+\begin{itemize}
+\item gauge bosons $A_{1,0} \in \Omega^{1,0}(\CC ; \fg)$, $A_{0,1} \in \Omega^{0,1}(\CC ; \fg)$;
+\item gauge fermions $\lambda^+ \in \Omega^0(\CC ; \fg)[-1]$, $\lambda^+_{1,0} \in \Omega^{1,0}(\CC ; \fg) [-1]$,  $\lambda^- \in \Omega^0(\CC ; \fg)[1]$, $\lambda^-_{1,0} \in \Omega^{1,0}(\CC ; \fg) [1]$;
+\item matter bosons $\gamma \in \Omega^0(\CC ; K_{\CC}^{1/2} \otimes U)$, $\nu \in \Omega^0(\CC ; K_{\CC}^{-1/2} \otimes U)$;
+\item matter fermions $\psi_- \in \Omega^{0}(\CC ; K_\CC^{-1/2} \otimes U)[1]$, $\psi_+ \in \Omega^{0}(\CC ; K_\CC^{-1/2} \otimes U)[-1]$;
+\item a ghost field $c \in \Omega^0(\CC ; \fg)[1]$.
+\end{itemize}
+
+The action functional decomposes as follows:
+\begin{align*}
+S_{\mr{gauge}} &= \int \dvol \bigg(-(F^{2, 0}, F^{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2 \bigg) + \lambda^+_0  \dbar_{A_{0,1}} \lambda^-_{1,0} + \lambda^-_{0} , \dbar_{A_{0,1}} \lambda^+_{1,0}    \\
+S_{\mr{matter}} &= \int \dvol \bigg( (\dd_{A_{1,0}} \nu , \ol \dd_{A_{0,1}} \gamma) + (\dd_{A_{1,0}}\gamma, \ol \dd_{A_{0,1}} \nu) + (\psi_- , \partial_{A_{1,0}} \gamma) + (\psi_+ , \partial_{A_{1,0}} \nu)  + \\
+%&\qquad + ([\lambda^+_{1,0}, ],\psi_0) + ([\lambda_{1,0}, \psi_0], \gamma_{0,1})   \bigg) \/\
+& \qquad + \brian{Figure out Yukawa's} \\
+S_{\mr{anti}} &= \int \dvol \bigg( (\dd_{A_{1, 0}} c , A_{1,0}^*) + (\ol\dd_{A_{0, 1}} c, A_{0,1}^*) \\ & \qquad + ([\lambda^+_{1,0}, c], \lambda_{1,0}^{+*}) + + ([\lambda^-_{1,0}, c], \lambda_{1,0}^{-*}) +  [\lambda^+_{0}, c] \lambda_{0}^{+*}+ [\lambda^-_{0}, c] \lambda_{0}^{-*}\\
+&\qquad + \frac{1}{2}[c, c]c^* + [\gamma, c] \gamma^* + [\nu, c] \nu^* + [\psi_-^*, c] \psi_-^* + [\psi_+, c] \psi_+^*\bigg) \\
+S^{(1)}_{\mr{gauge}} &=  \int \dvol \bigg( - (\lambda^-_{1,0}, A_{1,0}^*) \bigg) \\
+S^{(1)}_{\mr{matter}} &=  \int \dvol \bigg( (\psi_{-}, \nu^*) + \frac 12(\dbar_{A_{0,1}} \gamma, \psi_+^*) \bigg)\\
+S^{(2)}_{\mr{gauge}} &= \int \dvol \bigg( -\frac{1}{4} (\lambda^{-*})^2 \bigg) .
+\end{align*}
+
+%The field content is:
+%\begin{itemize}
+%\item $\fg$-valued bosons: a gauge field $A \in \Omega^1(\RR^2;\fg)$.
+%\item $\fg$-valued fermions: a spinor $\lambda \in C^\infty(\RR^2 ; S_- \otimes W_- \otimes \fg)$. 
+%\item $W \otimes U$-valued scalars: $\phi \in C^\infty(\RR^2 ; W \otimes U)$;
+%\item $W \otimes U$-valued fermions: $\psi \in C^\infty(\RR^2 ; W \otimes S_+ \otimes U)$ .
+%\end{itemize}
+
+%We twist by the nilpotent supercharge $Q = q \otimes u_1$ where $q \in S_-$ is any nonzero vector. 
+
+\begin{theorem} \label{thm: 2d(4,0)}
+The minimal twist of 2d $\cN=(4,0)$ super Yang-Mills with matter valued in a symplectic $\fg$-representation $U$ is perturbatively equivalent to holomorphic $BF$ theory coupled to the holomorphic $\beta\gamma$ system with moduli space $T^*[-1] \Sect(\CC , (U \otimes K^{1/2}_{\CC}) \ham \fg)$.
+This equivalence is $\U(1)$-equivariant.
 \end{theorem}
 
 \begin{proof}
-The supercharge $Q$ lies in an $\cN = (0,2)$ subalgebra of the full $\cN = (0,4)$ algebra.
-On the odd part of the supersymmetry algebra, this embedding is induced by the algebra map
-\[
-S_- \otimes \CC[x] / x^2 \to S_- \otimes {\rm End}(W)
-\]
-given by the identity on $S_-$ and the $2 \times 2$ matrix $\begin{pmatrix} 0 &1 \\ -1 & 0 \end{pmatrix}$ on $\CC[x]/x^2 \to {\rm End}(W)$. 
-Under this embedding we see that the scalar supercharge $Q$ is precisely the same as the scalar supercharge we used to twist in Section \ref{sect:2d(0,2)}. 
-Furthermore, under this embedding the $(0,4)$ vector multiplet $(A, \lambda)$ splits as a $(0,2)$ vector multiplet plus a $(0,2)$ Fermi multiplet. 
-The $(0,2)$ supersymmetry algebra acts trivially on the Fermi multiplet. 
-The $(0,4)$ hypermultiplet becomes a $(0,2)$ chiral multiplet valued in the representation $U$. 
-The claim now follows from Theorem \ref{thm:2d(2,0)}. 
+First, we integrate out the field $\lambda^-$ using Proposition \ref{prop:integrateoutfield}.  
+We then observe that the action includes the terms $\int  (\lambda^-_{1,0} , A_{1,0}^*)$ and  $\int (\psi_-, \nu^*)$.  
+Thus, the two pairs $(\lambda^-_{1,0}, A_{1,0})$ and $(\nu, \psi_-)$ form BRST doublets, 
+which can be integrated out using Proposition \ref{prop:BRSTdoublet}.  
+
+The twisted theory is therefore perturbatively equivalent to the theory with BV action 
+\begin{align*}
+& \int \bigg(\dbar_{A_{0,1}} c \wedge A_{0,1}^* + \lambda^+ \dbar_{A_{0,1}} \lambda^-_{1,0} + \dbar_{A_{0,1}} \gamma \wedge \psi_+^* \bigg) + \dvol \bigg( \frac{1}{2}[c, c]c^*+ ([\lambda_{1,0}^-, c] , \lambda_{1,0}^{-*}) + [\lambda^+, c] \lambda^{+*} + [\gamma, c] \gamma^* + [\psi_+, c] \psi_+^* \bigg).
+\end{align*}
+This is the action functional of the required theory.
 \end{proof}
 
-\begin{remark}
-The matter sector in the untwisted theory depends on $U$ as a complex symplectic $\fg$-representation. 
-The matter sector in the twisted theory only depends on $U$ as a complex $\fg$-representation, the dependence on the symplectic form disappears when we twist.
-\end{remark} 
+%\subsubsection{Minimal Twist} \label{sect:2d04minimaltwist}
+%
+%\begin{theorem}\label{2d(0,4)}
+%The minimal twist of 2d $\cN=(0,4)$ super Yang-Mills with Lie algebra $\fg$ coupled to the $\cN=(0,4)$ hypermultiplet is $U(1)$-equivariantly equivalent to holomorphic $BF$ theory on $\CC$ for the Lie algebra $\fg$ coupled to the free fermion system on $\CC$ with values in the representation $\fg \otimes W_-' \cong \fg \oplus \fg$ where $\fg$ acts by the adjoint action plus the free $\beta\gamma$ system on $\CC$ valued in the $\fg$-representation $U$. 
+%\end{theorem}
+%
+%\begin{proof}
+%The supercharge $Q$ lies in a $\cN = (0,2)$ subalgebra of the full $\cN = (0,4)$ algebra.
+%On the odd part of the supersymmetry algebras, this embedding is induced by the algebra map
+%\[
+%S_- \otimes \CC[x] / x^2 \to S_- \otimes {\rm End}(W)
+%\]
+%given by the identity on $S_-$ and the $2 \times 2$ matrix $\begin{pmatrix} 0 &1 \\ -1 & 0 \end{pmatrix}$ on $\CC[x]/x^2 \to {\rm End}(W)$. 
+%Under this embedding we see that the scalar supercharge $Q$ is precisely the same as the scalar supercharge we used to twist in Section \ref{sect:2d(0,2)}. 
+%Furthermore, under this embedding the $(0,4)$ vector multiplet $(A, \lambda)$ splits as a $(0,2)$ vector multiplet plus a $(0,2)$ Fermi multiplet. 
+%The $(0,2)$ supersymmetry algebra acts trivially on the Fermi multiplet. 
+%The $(0,4)$ hypermultiplet becomes a $(0,2)$ chiral multiplet valued in the representation $U$. 
+%The claim now follows from Theorem \ref{2d(0,2)}. 
+%\end{proof}
+%
+%\begin{remark}
+%The matter sector in the untwisted theory depends on $U$ as a complex symplectic $\fg$-representation. 
+%The matter sector in the twisted theory only depends on $U$ as a complex $\fg$-representation, the dependence on the symplectic form disappears when we twist.
+%\end{remark} 
 
 \subsection{\texorpdfstring{$\cN=(0,\cN_-)$}{N=(0,N-)} Super Yang--Mills Theory}
 
@@ -3956,7 +4030,7 @@ The field content is given as follows.
  \item A ghost field $A_{0} \in \Omega^0(\CC ; \fg)[1]$.
 \end{itemize}
 
-We twist by the nilpotent supercharge $Q = q \otimes u_1$ where $q \in S_-$ is any nonzero vector. 
+%We twist by the nilpotent supercharge $Q = q \otimes u_1$ where $q \in S_-$ is any nonzero vector. 
 
 \subsubsection{Minimal Twist} \label{sect:2d0Nminimaltwist}
 
@@ -3999,7 +4073,7 @@ by
 We have a subset $\Spin(V)\subset \Cl(V)$, so $\Sigma$ and $\Sigma^*$ are representations of the spin group. Moreover, the Clifford action and the maps $\Gamma$ are $\Spin(V)$-equivariant.
 
 We may identify $\wedge^2(V)\rightarrow \so(V)$ via
-\[\omega\mapsto (w\mapsto -2\iota_{(w, -\rangle)} \omega).\]
+\[\omega\mapsto (w\mapsto -2\iota_{(w, -)} \omega).\]
 This gives rise to an action map
 \[\wedge^2(V)\otimes \Sigma\longrightarrow \Sigma\]
 of two-forms on spinors.
