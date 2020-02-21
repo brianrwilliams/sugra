@@ -422,11 +422,11 @@ F + 2(u_1, u_2) &= 0.
  && {$T^*[-1]\mr{Map}(\RR^2_{\mr{dR}}, (R/\gg))$} & \\  \cline{2-4}
  & \multirow{2}*{\hyperref[sect:2d22Atwist] {Rank $(1,1)$ (A)}} & {Perturbatively trivial (A-model)} & \multirow{2}*{2 (topological)} \\
  && {$T^*[-1]\mr{Map}(\CC, (R/\gg)_{\mr{dR}})$} & \\  \hline
- \multirow{2}*{$(0,\mc N_-)$} & \multirow{2}*{\hyperref[sect:2d0Nminimaltwist] {Rank $(1,0)$}} & {Holomorphic BF theory coupled to $\mc N_- - 2$ free fermions} & \multirow{2}*{1 (holomorphic)} \\
- && {$T^*[-1]\mr{Map}(\CC, (\gg \otimes \CC^{\mc N_- -2})/\gg)$} & \\  \hline
- \multirow{2}*{$(0,4)$} & \multirow{2}*{\hyperref[sect:2d04minimaltwist] {Rank $(1,0)$}} & {Holomorphic BF theory coupled to a holomorphic symplectic boson} & \multirow{2}*{1 (holomorphic)} \\
- && {$T^*[-1]\mr{Map}(\CC, U \ham \gg)$} & \\  \hline
- \multirow{2}*{$(0,2)$} & \multirow{2}*{\hyperref[sect:2d02minimaltwist] {Rank $(1,0)$}} & {Holomorphic BF theory coupled to $R$ matter} & \multirow{2}*{1 (holomorphic)} \\
+ \multirow{2}*{$(\mc N_+, 0)$} & \multirow{2}*{\hyperref[sect:2dN0minimaltwist] {Rank $(1,0)$}} & {Holomorphic BF theory coupled to $\mc N_+ - 2$ free fermions} & \multirow{2}*{1 (holomorphic)} \\
+ && {$T^*[-1]\mr{Sect}(\CC, (\fg^{\mc N_- -2} \otimes K_{\CC}^{1/2}) / \gg)$} & \\  \hline
+ \multirow{2}*{$(4,0)$} & \multirow{2}*{\hyperref[sect:2d40minimaltwist] {Rank $(1,0)$}} & {Holomorphic BF theory coupled to a holomorphic symplectic boson} & \multirow{2}*{1 (holomorphic)} \\
+ && {$T^*[-1]\mr{Sect}(\CC, (U \otimes K_\CC^{1/2}) \ham \gg)$} & \\  \hline
+ \multirow{2}*{$(2,0)$} & \multirow{2}*{\hyperref[sect:2d20minimaltwist] {Rank $(1,0)$}} & {Holomorphic BF theory coupled to $R$ matter} & \multirow{2}*{1 (holomorphic)} \\
  && {$T^*[-1]\mr{Map}(\CC, R/\gg)$} & \\ \hline
  \end{tabular}
  \caption{Twists of Supersymmetric Yang-Mills Theories in two dimensions with gauge group $G$.  When $\mc N=(0,2)$ and $(2,2)$ the theory includes a chiral multiplet valued in a representation $R$. When $\mc N=(0,4)$ and $(4,4)$ the theory includes a hypermultiplet valued in a symplectic representation $U$.  We can promote the supersymmetry to $\mc N=(8,8)$ when $U = T^*\gg$, but no new twists occur.}
@@ -3810,7 +3810,7 @@ Combining Theorem \ref{3d_8_B_twist_thm} and Proposition \ref{CS_to_BF_diml_red_
 The B-twist of 2d $\mc N=(8,8)$ super Yang-Mills is perturbatively equivalent to the topological BF theory with moduli space $T^*[-1]\mr{Map}(\RR^2_{\mr{dR}}, T^*[2](\gg / \gg))$.  This equivalence is $\mr U(1)$-invariant.
 \end{theorem}
 
-\subsection{\texorpdfstring{$\cN=(2,0)$}{N=(2,0)} Super Yang--Mills Theory} \label{sect:2d(0,2)}
+\subsection{\texorpdfstring{$\cN=(2,0)$}{N=(2,0)} Super Yang--Mills Theory} \label{sect:2d(4,0)}
 
 We turn to $\cN=(2,0)$ supersymmetric Yang-Mills theory.
 In the supersymmetry algebra, we have $W_-=0$ and $W_+$ is a complex two-dimensional vector space equipped with a symmetric pairing. 
@@ -3839,7 +3839,7 @@ There is a compatible twisting homomorphism
 \]
 \end{itemize}
 
-\subsubsection{Minimal Twist} \label{sect:2d02minimaltwist}
+\subsubsection{Minimal Twist} \label{sect:2d20minimaltwist}
 
 Choose a complex structure $L \subset V_\RR$. 
 Under the embedding $U(1) \hookrightarrow \spin(2;\CC)$, the semi-spin representations decompose as
@@ -3922,7 +3922,7 @@ There is a twisting homomorphism $\phi : \U(1) \to G_R$ and twisting datum $\alp
 %which factors through the twisting homomorphism of 2d $(2,0)$ supersymmetric Yang--Mills theory in Section \ref{sect:2d(0,2)}.
 \end{itemize}
 
-\subsubsection{Minimal twist}
+\subsubsection{Minimal twist} \label{sect:2d40minimaltwist}
 
 Choose a complex structure $L \subset V_\RR$. 
 Under the embedding $U(1) \hookrightarrow \spin(2;\CC)$, the semi-spin representations decompose as
@@ -4032,7 +4032,7 @@ The field content is given as follows.
 
 %We twist by the nilpotent supercharge $Q = q \otimes u_1$ where $q \in S_-$ is any nonzero vector. 
 
-\subsubsection{Minimal Twist} \label{sect:2d0Nminimaltwist}
+\subsubsection{Minimal Twist} \label{sect:2dN0minimaltwist}
 
 \begin{theorem}[See also \cite{SWchar}]
 The minimal twist of 2d $\cN=(0,\cN_-)$ super Yang-Mills with Lie algebra $\fg$ is $U(1)$-equivariantly equivalent to holomorphic BF theory on $\CC$ for the Lie algebra $\fg$ coupled to a free fermion system on $\CC$ with values in the representation $\fg \otimes W_-' \cong \fg \otimes \CC^{\cN_- - 2}$ where $\fg$ acts by the adjoint action. 
@@ -4047,7 +4047,7 @@ S_- \otimes \CC[x] / x^2 \to S_- \otimes {\rm End}(\CC^2)
 \]
 given by the identity on $S_-$ and the $2 \times 2$ matrix $\begin{pmatrix} 0 &1 \\ -1 & 0 \end{pmatrix}$ on $\CC[x]/x^2 \to {\rm End}(\CC^2)$. 
 Here, $\CC^2$ is spanned by $\{u,v\}$ in the decomposition of $W_-$ given above.
-Under this embedding we see that the scalar supercharge $Q$ is precisely the same as the scalar supercharge we used to twist in Section \ref{sect:2d(0,2)}. 
+Under this embedding we see that the scalar supercharge $Q$ is precisely the same as the scalar supercharge we used to twist in Section \ref{sect:2d(2,0)}. 
 Furthermore, under this embedding the $(0,\cN_-)$ vector multiplet $(A, \lambda)$ splits as a $(0,2)$ vector multiplet plus a $(0,2)$ Fermi multiplet valued in $\fg \otimes W_-'$. 
 The $(0,2)$ supersymmetry algebra acts trivially on the Fermi multiplet. 
 The claim now follows from a special case of Theorem \ref{thm:2d(2,0)} where we take $R = 0$. 
