@@ -3860,13 +3860,12 @@ The fields decompose under the twisting homomorphism as:
 
 The action functional decomposes as follows:
 \begin{align*}
-S_{\mr{gauge}} &= \int \dvol \bigg(-(F^{2, 0}, F^{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2 + \frac 12 (\lambda_0 , \dbar_{A_{0,1}} \lambda_{1,0}) +(\lambda_{1,0} , \dbar_{A_{0,1}} \lambda_{0}) \bigg)    \\
-S_{\mr{matter}} &= \int \dvol \bigg( (\dd_{A_{1,0}}\Bar{\phi} , \ol \dd_{A_{0,1}} \gamma_0) + (\dd_{A_{1,0}}\gamma_0, \ol \dd_{A_{0,1}} \Bar{\phi}) + (\psi_0 , \partial_{A_{1,0}} \gamma_{0,1}) + (\gamma_{0,1} , \partial_{A_{1,0}} \psi_{0})  + \\
-&\qquad + ([\lambda_{1,0},\gamma_{0,1}],\psi_0) + ([\lambda_{1,0}, \psi_0], \gamma_{0,1})   \bigg) \\
+S_{\mr{gauge}} &= \int \dvol \bigg(-(F^{2, 0}, F^{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2 + \frac 12 (\lambda_0 , \dbar_{A_{0,1}} \lambda_{1,0})  \bigg)    \\
+S_{\mr{matter}} &= \int \dvol \bigg( (\dd_{A_{1,0}}\Bar{\phi} , \ol \dd_{A_{0,1}} \gamma_0) + (\dd_{A_{1,0}}\gamma_0, \ol \dd_{A_{0,1}} \Bar{\phi}) + (\psi_0 , \partial_{A_{1,0}} \gamma_{0,1}) + ([\lambda_{1,0}, \psi_0], \gamma_{0,1})   \bigg) \\
 S_{\mr{anti}} &= \int \dvol \bigg( (\dd_{A_{1, 0}} A_0 , A_{1,0}^*) + (\ol\dd_{A_{0, 1}} A_0, A_{0,1}^*) + ([\lambda_{1,0}, A_0], \lambda_{1,0}^*) +  [\lambda_{0}, A_0] \lambda_{0}^*\\
-&\qquad + \frac{1}{2}[A_0, A_0]A_0^* + [\gamma_0, A_0] \gamma_0^* + [\Bar{\phi}, A_0] \Bar{\phi}^* + [\gamma_{0,1}, A_0]\wedge \gamma_{0,1}^* + [\psi_0, A_0] \psi_{0}^*\bigg) \\
+&\qquad + \frac{1}{2}[A_0, A_0]A_0^* + [\gamma_0, A_0] \gamma_0^* + [\Bar{\phi}, A_0] \Bar{\phi}^* + [\gamma_{0,1}, A_0] \gamma_{0,1}^* + [\psi_0, A_0] \psi_{0}^*\bigg) \\
 S^{(1)}_{\mr{gauge}} &=  \int \dvol \bigg( - (\lambda_{1,0}, A_{1,0}^*) \bigg) \\
-S^{(1)}_{\mr{matter}} &=  \int \dvol \bigg( (\psi_{0}^*, \Bar{\phi}) + \frac 12(\dbar \gamma_0, \gamma_{0,1}^*) \bigg)\\
+S^{(1)}_{\mr{matter}} &=  \int \dvol \bigg( (\psi_{0}, \Bar{\phi}^*) + \frac 12(\dbar_{A_{0,1}} \gamma_0, \gamma_{0,1}^*) \bigg)\\
 S^{(2)}_{\mr{gauge}} &= \int \dvol \bigg( -\frac{1}{4} (\lambda_0^*)^2 \bigg) .
 \end{align*}
 
@@ -3876,15 +3875,15 @@ The minimal twist of 2d $\cN=(2,0)$ super Yang-Mills with matter valued in a $\f
 This equivalence is $\U(1)$-equivariant.
 \end{theorem}
 \begin{proof}
-The proof of this theorem is very similar to the proof of Theorem \ref{thm:10dholomorphictwist}.  
+%The proof of this theorem is very similar to the proof of Theorem \ref{thm:10dholomorphictwist}.  
 First, we integrate out the field $\lambda_{0}$ using Proposition \ref{prop:integrateoutfield}.  
-We then observe that the action includes the terms $\int  (\lambda_{1,0} , A_{0,1}^*)$ and  $\int (\phi, \psi_0^*)$.  
+We then observe that the action includes the terms $\int  (\lambda_{1,0} , A_{1,0}^*)$ and  $\int (\phi, \psi_0^*)$.  
 Thus, the two pairs $(\lambda_{1,0}, A_{1,0})$ and $(\phi, \psi_0)$ form BRST doublets, 
 which can be integrated out using Proposition \ref{prop:BRSTdoublet}.  
 
 The twisted theory is therefore perturbatively equivalent to the theory with BV action 
 \begin{align*}
-& \int \bigg(\dbar_{A_{0,1}} A_{0} \wedge A_{0,1}^* + (\dbar_{A_{0,1}} \gamma_{0} \wedge \gamma_{0,1}^*) \bigg) + \dvol \bigg( \frac{1}{2}[A_0, A_0]A_0^*+  [\gamma_0, A_0] \gamma_0^*  \bigg).
+& \int \bigg(\dbar_{A_{0,1}} A_{0} \wedge A_{0,1}^* + (\dbar_{A_{0,1}} \gamma_{0} \wedge \gamma_{0,1}^*) \bigg) + \dvol \bigg( \frac{1}{2}[A_0, A_0]A_0^*+ [\gamma_0, A_0] \gamma_0^* + ([\gamma_{0,1}, A_0] , \gamma_{0,1}^*)  \bigg).
 \end{align*}
 This is the action functional of the required theory, where $B_{1,0} = A_{0,1}^*$, $B_{1,1} = A_{0}^* \dvol$ comprise the anti-fields of holomorphic BF theory and $\beta_{1,0} = \gamma_{0,1}^*$,  $\beta_{1,1} = \gamma_0^* \dvol$ comprise the anti-fields of the $\beta\gamma$ system.
 \end{proof}
@@ -3900,14 +3899,14 @@ As a $G_R$-representation, $W_+ = \Tilde{W} \oplus \Tilde{W}$ where $\Tilde{W}$ 
 \begin{itemize}
 \item a gauge boson $A \in \Omega^1(\RR^2;\fg)$.
 \item gauge fermions $(\lambda_-, \lambda_+) \in C^\infty(\RR^2 ; S_+ \otimes (\Tilde{W} \oplus \Tilde{W}) \otimes \fg)$. 
-\item matter bosons $(\phi, \Bar{\phi}) \in C^\infty(\RR^2 ; (\Tilde{W} \oplus \Tilde{W}) \otimes U)$;
+\item matter bosons $\phi \in C^\infty(\RR^2 ; \Tilde{W} \otimes U)$;
 \item matter fermions $(\psi_-, \psi_+) \in C^\infty(\RR^2 ; S_- \otimes (U\oplus U))$;
 %\item \brian{matter fermions $\psi \in C^\infty(\RR^2 ; S_- \otimes W_+ \otimes U)$}
 \item a ghost field $c \in \Omega^0(\RR^2 ; \fg)[1]$.
 \end{itemize}
 
 Under $\GL(1; \CC) \subset G_R$, the pairs of fields $(\lambda_-, \lambda_+)$ and $(\psi_-, \psi_+)$ have weights $(-1,+1)$ 
-The fields $\phi, \Bar{\phi}$ have weight zero.
+The field $\phi$ has weight zero.
 
 The theory admits a unique twist:
 \begin{itemize}
@@ -3930,7 +3929,7 @@ Under the embedding $U(1) \hookrightarrow \spin(2;\CC)$, the semi-spin represent
 \[
 S_+ = \det(L)^{1/2} \;\; , \;\; S_- = \det(L)^{-1/2} .
 \]
-We choose a twisting homomorphism $\phi : \U(1) \to G_R$ under which $W_+ = (\det(L)^{1/2} \oplus \det(L)^{-1/2})^{\oplus 2}$
+We choose a twisting homomorphism $\phi : \U(1) \to G_R$ under which $\Tilde{W} = \det(L)^{1/2} \oplus \det(L)^{-1/2}$
 so that
 \[
 S_+ \otimes W_+ = \CC Q \oplus \CC \oplus L^{\oplus 2} .
@@ -3942,10 +3941,23 @@ Further, fields decompose under the twisting homomorphism as:
 \begin{itemize}
 \item gauge bosons $A_{1,0} \in \Omega^{1,0}(\CC ; \fg)$, $A_{0,1} \in \Omega^{0,1}(\CC ; \fg)$;
 \item gauge fermions $\lambda^+ \in \Omega^0(\CC ; \fg)[-1]$, $\lambda^+_{1,0} \in \Omega^{1,0}(\CC ; \fg) [-1]$,  $\lambda^- \in \Omega^0(\CC ; \fg)[1]$, $\lambda^-_{1,0} \in \Omega^{1,0}(\CC ; \fg) [1]$;
-\item matter bosons $\gamma \in \Omega^0(\CC ; K_{\CC}^{1/2} \otimes U)$, $\nu \in \Omega^0(\CC ; K_{\CC}^{-1/2} \otimes U)$, $\Bar{\phi} \in \Omega^0(\CC ; K_{\CC}^{1/2} \otimes U)$, $\Bar{\nu} \in \Omega^0(\CC ; K_{\CC}^{-1/2} \otimes U)$;
-\item matter fermions $\psi^- \in \Omega^{0}(\CC ; K_\CC^{-1/2} \otimes U)[1]$, $\psi^+ \in \Omega^{0}(\CC ; K_\CC^{-1/2} \otimes U)[-1]$;
+\item matter bosons $\gamma \in \Omega^0(\CC ; K_{\CC}^{1/2} \otimes U)$, $\nu \in \Omega^0(\CC ; K_{\CC}^{-1/2} \otimes U)$;
+\item matter fermions $\psi_- \in \Omega^{0}(\CC ; K_\CC^{-1/2} \otimes U)[1]$, $\psi_+ \in \Omega^{0}(\CC ; K_\CC^{-1/2} \otimes U)[-1]$;
 \item a ghost field $c \in \Omega^0(\CC ; \fg)[1]$.
 \end{itemize}
+
+The action functional decomposes as follows:
+\begin{align*}
+S_{\mr{gauge}} &= \int \dvol \bigg(-(F^{2, 0}, F^{0, 2}) - \frac{1}{4}(\Lambda F_{1, 1})^2 \bigg) + \lambda^+_0  \dbar_{A_{0,1}} \lambda^-_{1,0} + \lambda^-_{0} , \dbar_{A_{0,1}} \lambda^+_{1,0}    \\
+S_{\mr{matter}} &= \int \dvol \bigg( (\dd_{A_{1,0}} \nu , \ol \dd_{A_{0,1}} \gamma) + (\dd_{A_{1,0}}\gamma, \ol \dd_{A_{0,1}} \nu) + (\psi_- , \partial_{A_{1,0}} \gamma) + (\psi_+ , \partial_{A_{1,0}} \nu)  + \\
+%&\qquad + ([\lambda^+_{1,0}, ],\psi_0) + ([\lambda_{1,0}, \psi_0], \gamma_{0,1})   \bigg) \/\
+& \qquad + \brian{Figure out Yukawa's} \\
+S_{\mr{anti}} &= \int \dvol \bigg( (\dd_{A_{1, 0}} c , A_{1,0}^*) + (\ol\dd_{A_{0, 1}} c, A_{0,1}^*) \\ & \qquad + ([\lambda^+_{1,0}, c], \lambda_{1,0}^{+*}) + + ([\lambda^-_{1,0}, c], \lambda_{1,0}^{-*}) +  [\lambda^+_{0}, c] \lambda_{0}^{+*}+ [\lambda^-_{0}, c] \lambda_{0}^{-*}\\
+&\qquad + \frac{1}{2}[c, c]c^* + [\gamma, c] \gamma^* + [\nu, c] \nu^* + [\psi_-^*, c] \psi_-^* + [\psi_+, c] \psi_+^*\bigg) \\
+S^{(1)}_{\mr{gauge}} &=  \int \dvol \bigg( - (\lambda^-_{1,0}, A_{1,0}^*) \bigg) \\
+S^{(1)}_{\mr{matter}} &=  \int \dvol \bigg( (\psi_{-}, \nu^*) + \frac 12(\dbar_{A_{0,1}} \gamma, \psi_+^*) \bigg)\\
+S^{(2)}_{\mr{gauge}} &= \int \dvol \bigg( -\frac{1}{4} (\lambda^{-*})^2 \bigg) .
+\end{align*}
 
 %The field content is:
 %\begin{itemize}
@@ -3957,10 +3969,23 @@ Further, fields decompose under the twisting homomorphism as:
 
 %We twist by the nilpotent supercharge $Q = q \otimes u_1$ where $q \in S_-$ is any nonzero vector. 
 
-\begin{theorem} \label{thm: 2d(2,0)}
+\begin{theorem} \label{thm: 2d(4,0)}
 The minimal twist of 2d $\cN=(4,0)$ super Yang-Mills with matter valued in a symplectic $\fg$-representation $U$ is perturbatively equivalent to holomorphic $BF$ theory coupled to the holomorphic $\beta\gamma$ system with moduli space $T^*[-1] \Sect(\CC , (U \otimes K^{1/2}_{\CC}) \ham \fg)$.
 This equivalence is $\U(1)$-equivariant.
 \end{theorem}
+
+\begin{proof}
+First, we integrate out the field $\lambda^-$ using Proposition \ref{prop:integrateoutfield}.  
+We then observe that the action includes the terms $\int  (\lambda^-_{1,0} , A_{1,0}^*)$ and  $\int (\psi_-, \nu^*)$.  
+Thus, the two pairs $(\lambda^-_{1,0}, A_{1,0})$ and $(\nu, \psi_-)$ form BRST doublets, 
+which can be integrated out using Proposition \ref{prop:BRSTdoublet}.  
+
+The twisted theory is therefore perturbatively equivalent to the theory with BV action 
+\begin{align*}
+& \int \bigg(\dbar_{A_{0,1}} c \wedge A_{0,1}^* + \lambda^+ \dbar_{A_{0,1}} \lambda^-_{1,0} + \dbar_{A_{0,1}} \gamma \wedge \psi_+^* \bigg) + \dvol \bigg( \frac{1}{2}[c, c]c^*+ ([\lambda_{1,0}^-, c] , \lambda_{1,0}^{-*}) + [\lambda^+, c] \lambda^{+*} + [\gamma, c] \gamma^* + [\psi_+, c] \psi_+^* \bigg).
+\end{align*}
+This is the action functional of the required theory.
+\end{proof}
 
 %\subsubsection{Minimal Twist} \label{sect:2d04minimaltwist}
 %
@@ -4005,7 +4030,7 @@ The field content is given as follows.
  \item A ghost field $A_{0} \in \Omega^0(\CC ; \fg)[1]$.
 \end{itemize}
 
-We twist by the nilpotent supercharge $Q = q \otimes u_1$ where $q \in S_-$ is any nonzero vector. 
+%We twist by the nilpotent supercharge $Q = q \otimes u_1$ where $q \in S_-$ is any nonzero vector. 
 
 \subsubsection{Minimal Twist} \label{sect:2d0Nminimaltwist}
 
