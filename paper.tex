@@ -1375,6 +1375,64 @@ The result then follows from Proposition \ref{prop:BFholomorphicreduction} appli
 \section{Supersymmetry} \label{sect:susy}
 Having set up the formalism behind classical field theories in the BV and BRST formalisms, we will introduce the other main formal ingredient of this paper: the supersymmetry action.  So, we will discuss the classification of supersymmetry algebras, the notion of a supersymmetric field theory, and the idea of a \emph{twist} of a supersymmetric field theory, extending work of the first two authors in \cite{ElliottSafronov}.  We will introduce the classification of supersymmetry algebras using the division algebra perspective of Baez and Huerta \cite{BaezHuerta}, which will be useful for the classification of super Yang-Mills theories in Section \ref{sect:SYM} below.
 
+\subsection{Spinors}
+\label{sect:spinors}
+
+In this paper we will extensively use the theory of spinors. Let $V$ be a complex vector space equipped with a nondegenerate symmetric bilinear pairing. Recall that the Clifford algebra $\Cl(V)$ is defined to be the quotient of the tensor algebra on $V$ by the relation
+\[v_1 v_2 + v_2 v_1 = 2(v_1, v_2).\]
+Consider a $\ZZ/2\ZZ$-graded Clifford module $M=M^+\oplus M^-$. Denote the Clifford action by $\rho(v)\in\eend(M)$. We assume the Clifford module is equipped with a nondegenerate pairing $(-, -)\colon M^+\otimes M^-\rightarrow \CC$ such that
+\[(\rho(v) Q_1, Q_2) = (Q_1, \rho(v) Q_2)\]
+for any $Q_1, Q_2\in M$ and $v\in V$. From now on we denote $M^+=\Sigma$ and $M^-=\Sigma^*$. We define the $\Gamma$-pairings
+\[\Gamma\colon\Sym^2(\Sigma)\longrightarrow V,\qquad \Gamma\colon\Sym^2(\Sigma^*)\longrightarrow V\]
+by
+\begin{equation}
+(\rho(v) Q_1, Q_2) = (v, \Gamma(Q_1, Q_2))
+\label{eq:Gammaspinorpairing}
+\end{equation}
+
+We have a subset $\Spin(V)\subset \Cl(V)$, so $\Sigma$ and $\Sigma^*$ are representations of the spin group. Moreover, the Clifford action and the maps $\Gamma$ are $\Spin(V)$-equivariant.
+
+We may identify $\wedge^2(V)\rightarrow \so(V)$ via
+\[\omega\mapsto (w\mapsto -2\iota_{(w, -)} \omega).\]
+This gives rise to an action map
+\[\wedge^2(V)\otimes \Sigma\longrightarrow \Sigma\]
+of two-forms on spinors.
+
+Consider the map $q\colon \wedge^\bullet(V)\rightarrow \Cl(V)$ given by antisymmetrization, so that, for instance,
+\begin{equation}
+q(v_1\wedge v_2) = v_1v_2 - (v_1, v_2).
+\label{eq:quantizationtwoforms}
+\end{equation}
+
+The resulting action $\wedge^2(V)\otimes \Sigma\rightarrow \Sigma$ then coincides with the original action of $\so(V)$ on the spinorial representation $\Sigma$, so that $\so(V)$-equivariance of $\Gamma$ gives the following.
+
+\begin{prop}
+For $X\in\wedge^2(V)$ and $Q_1,Q_2\in\Sigma$ we have
+\[\Gamma(Q_1, \rho(X) Q_2) + \Gamma(Q_2, \rho(X) Q_1) = -2\iota_{\Gamma(Q_1, Q_2)} X.\]
+\label{prop:cliffordactionproperty1}
+\end{prop}
+
+We may extend the discussion to the case of Riemannian manifolds $N$, where we replace $V$ by the vector bundle $TN$. Given a bundle of Clifford modules $M=\Sigma\oplus \Sigma^*$ as before we have the associated Dirac operator
+\[\sd{\d}\colon \Gamma(N, \Sigma)\rightarrow \Gamma(N, \Sigma^*).\]
+
+From \eqref{eq:quantizationtwoforms} we get the following property.
+
+\begin{prop}
+Suppose $Q_1,Q_2\in\Sigma$ and $\lambda\in\Gamma(N, \Sigma)$. Then
+\[\sd{\d}\rho(\Gamma(Q_1, \lambda)) Q_2 = \rho(d \Gamma(Q_1, \lambda)) Q_2 + (Q_1, \sd{\d} \lambda) Q_2.\]
+\label{prop:cliffordactionproperty2}
+\end{prop}
+
+Finally, we have the following important compatibility between the Clifford action of differential forms and the Dirac operator proved in \cite[equation 7.6]{Snygg}.
+
+\begin{prop}
+Suppose $Q\in\Sigma$ and $X\in\Omega^p(N)$. Then
+\[\sd{\d}(\rho(X) Q) = \rho(\d X)Q + (-1)^{n(1+p)}\rho(\ast \d\ast X) Q.\]
+\label{prop:cliffordactionproperty3}
+\end{prop}
+
+Note that both Proposition \ref{prop:cliffordactionproperty2} and Proposition \ref{prop:cliffordactionproperty3} extend to the case when $\lambda$ and $X$ respectively are twisted by a vector bundle and $\sd{\d}$ is the corresponding twisted Dirac operator.
+
 \subsection{Supersymmetry Algebras} \label{sect:susyalgebras}
 In this section we will recall the framework for supersymmetry algebras and their classification following Deligne \cite{DeligneSpinors} and our previous work \cite{ElliottSafronov}, we refer there for more details.
 
@@ -1711,7 +1769,7 @@ In each case the lower-dimensional theories are obtained by dimensional reductio
 We begin with a description of certain pure supersymmetric Yang--Mills theories. Let $V_\RR = \RR^n$ be a real vector space of dimension $n$ equipped with a nondegenerate symmetric bilinear pairing and let $V$ be its complexification. 
 Fix a $\ZZ/2\ZZ$-graded Clifford module $\Sigma\oplus \Sigma^*\rightarrow \CC$ with the associated $\Gamma$-pairings
 \[\Gamma\colon \Sym^2(\Sigma)\rightarrow V,\qquad \Gamma\colon \Sym^2(\Sigma^*)\rightarrow V\]
-defined as in Appendix \ref{sect:spinors}. We make the following assumption on this setup.
+defined as in Section \ref{sect:spinors}. We make the following assumption on this setup.
 
 \begin{assumption}
 For $Q_1, Q_2, Q_3\in\Sigma$ we have
@@ -1741,7 +1799,7 @@ Let $\fg$ be a Lie algebra equipped with a nondegenerate symmetric bilinear pair
 \item A ghost field $c\in\Omega^0(V_\RR; \fg[1])$.
 \end{itemize}
 
-Denote by $F_A = \d A + \frac{1}{2}[A\wedge A]$ the curvature of $A$ and let $\sd\d_A$ be the twisted Dirac operator obtained from $\Gamma$ (see Appendix \ref{sect:spinors}).
+Denote by $F_A = \d A + \frac{1}{2}[A\wedge A]$ the curvature of $A$ and let $\sd\d_A$ be the twisted Dirac operator obtained from $\Gamma$ (see Section \ref{sect:spinors}).
 
 \begin{definition}
 \label{def:sym}
@@ -3885,17 +3943,17 @@ The topological B-twist of the 2d $\cN=(8, 8)$ super Yang--Mills theory is pertu
 
 \subsection{\texorpdfstring{$\cN=(2,0)$}{N=(2,0)} Super Yang--Mills Theory} \label{sect:2d(2,0)}
 
-We turn to $\cN=(2,0)$ supersymmetric Yang-Mills theory.
+We turn to the $\cN=(2,0)$ supersymmetric Yang-Mills theory.
 In the supersymmetry algebra, we have $W_-=0$ and $W_+$ is a complex two-dimensional vector space equipped with a symmetric pairing. 
-The supersymmetric matter consists of the $\cN = (2,0)$ chiral multiplet with values in a representation $R$. 
-The $R$-symmetry group is $G_R = \SO(2;\CC)$ which acts on $W_+$ by the defining representation. 
+The supersymmetric matter consists of the $\cN = (2,0)$ chiral multiplet with values in a $\fg$-representation $R$. 
+The R-symmetry group is $G_R = \SO(2;\CC)$ which acts on $W_+$ by the defining representation. 
 
 The fields of the untwisted theory are:
 \begin{itemize}
 \item a gauge boson $A \in \Omega^1(\RR^2;\fg)$.
-\item gauge fermions $\lambda \in C^\infty(\RR^2 ; S_+ \otimes W_+ \otimes \fg)$. 
+\item gauge fermions $\lambda \in C^\infty(\RR^2 ; \Pi S_+ \otimes W_+ \otimes \fg)$. 
 \item matter bosons $\phi \in C^\infty(\RR^2 ; R)$ and $\Bar{\phi} \in C^\infty(\RR^2 ; R^*)$;
-\item matter fermions $\psi \in C^\infty(\RR^2 ; S_- \otimes R^*)$  and $\Bar{\psi} \in C^\infty(\RR^2 ; S_- \otimes R)$.
+\item matter fermions $\psi \in C^\infty(\RR^2 ; \Pi S_- \otimes R^*)$  and $\Bar{\psi} \in C^\infty(\RR^2 ; \Pi S_- \otimes R)$.
 \item a ghost field $c \in \Omega^0(\RR^2 ; \fg)[1]$.
 \end{itemize}
 The field $\lambda$ transforms in the defining representation of $G_R = \SO(2;\CC)$.
@@ -3908,14 +3966,14 @@ Such supercharges are automatically square-zero and are holomorphic.
 We take $\alpha \colon U(1) \hookrightarrow G_R$ to be the standard embedding.
 There is a compatible twisting homomorphism
 \[
-\phi \colon \U(1) \xto{\det^{1/2}} \U(1) \hookrightarrow G_R .
+\phi \colon \MU(1) \xto{\det^{1/2}} \U(1) \hookrightarrow G_R .
 \]
 \end{itemize}
 
-\subsubsection{Minimal Twist} \label{sect:2d20minimaltwist}
+\subsubsection{Holomorphic Twist} \label{sect:2d20minimaltwist}
 
-Choose a complex structure $L \subset V_\RR$. 
-Under the embedding $U(1) \hookrightarrow \spin(2;\CC)$, the semi-spin representations decompose as
+Choose a complex structure $L \subset V$. 
+Under the embedding $MU(1) \hookrightarrow \Spin(2; \CC)$, the semi-spin representations decompose as
 \[
 S_+ = \det(L)^{1/2} \;\; , \;\; S_- = \det(L)^{-1/2} .
 \]
@@ -3944,15 +4002,15 @@ S^{(2)}_{\mr{gauge}} &= \int \dvol \bigg( -\frac{1}{4} (\lambda_0^*)^2 \bigg) .
 
 
 \begin{theorem} \label{thm:2d(2,0)}
-The minimal twist of 2d $\cN=(2,0)$ super Yang-Mills with matter valued in a $\fg$-representation $R$ is perturbatively equivalent to holomorphic $BF$ theory coupled to the holomorphic $\beta\gamma$ system with moduli space $T^*[-1] \map(\CC , R / \fg)$.
+The holomorphic twist of the 2d $\cN=(2,0)$ super Yang--Mills theory with matter valued in a $\fg$-representation $R$ is perturbatively equivalent to the holomorphic $BF$ theory with the space of fields $T^*[-1] \map(\CC , R / \fg)$.
 This equivalence is $\U(1)$-equivariant.
 \end{theorem}
 \begin{proof}
 %The proof of this theorem is very similar to the proof of Theorem \ref{thm:10dholomorphictwist}.  
-First, we integrate out the field $\lambda_{0}$ using Proposition \ref{prop:integrateoutfield}.  
+First, we eliminate the field $\lambda_{0}$ using Proposition \ref{prop:integrateoutfield}.  
 We then observe that the action includes the terms $\int  (\lambda_{1,0} , A_{1,0}^*)$ and  $\int (\phi, \psi_0^*)$.  
 Thus, the two pairs $(\lambda_{1,0}, A_{1,0})$ and $(\phi, \psi_0)$ form BRST doublets, 
-which can be integrated out using Proposition \ref{prop:BRSTdoublet}.  
+which can be eliminated using Proposition \ref{prop:BRSTdoublet}.  
 
 The twisted theory is therefore perturbatively equivalent to the theory with BV action 
 \begin{align*}
@@ -3963,10 +4021,10 @@ This is the action functional of the required theory, where $B_{1,0} = A_{0,1}^*
 
 \subsection{\texorpdfstring{$\cN=(4,0)$}{N=(4,0)} Super Yang--Mills Theory} \label{sect:2d(4,0)}
 
-Next, we consider $\cN=(4,0)$ supersymmetric Yang-Mills theory.
+Next, we consider the $\cN=(4,0)$ supersymmetric Yang--Mills theory.
 In the supersymmetry algebra, we have $W_- = 0$ and $W_+$ is a complex four-dimensional vector space equipped with a nondegenerate symmetric bilinear pairing.
-The supersymmetric matter consists of the $\cN = (4,0)$ hypermultiplet with values in a complex symplectic representation $U$. 
-The $R$-symmetry group is $G_R = \SL(2;\CC) \times \GL(1;\CC)$.
+The supersymmetric matter consists of the $\cN = (4,0)$ hypermultiplet with values in a complex symplectic $\fg$-representation $U$. 
+The R-symmetry group is $G_R = \SL(2;\CC) \times \GL(1;\CC)$.
 As a $G_R$-representation, $W_+ = \Tilde{W} \oplus \Tilde{W}$ where $\Tilde{W}$ is the defining representation of $\SL(2;\CC)$ and where $\GL(1;\CC)$ acts by weight $(1,-1)$ with respect to this decomposition. 
 
 \begin{itemize}
@@ -3995,20 +4053,20 @@ There is a twisting homomorphism $\phi : \U(1) \to G_R$ and twisting datum $\alp
 %which factors through the twisting homomorphism of 2d $(2,0)$ supersymmetric Yang--Mills theory in Section \ref{sect:2d(0,2)}.
 \end{itemize}
 
-\subsubsection{Minimal twist} \label{sect:2d40minimaltwist}
+\subsubsection{Holomorphic twist} \label{sect:2d40minimaltwist}
 
-Choose a complex structure $L \subset V_\RR$. 
-Under the embedding $U(1) \hookrightarrow \spin(2;\CC)$, the semi-spin representations decompose as
+Choose a complex structure $L \subset V$. 
+Under the embedding $MU(1) \hookrightarrow \Spin(2; \CC)$, the semi-spin representations decompose as
 \[
 S_+ = \det(L)^{1/2} \;\; , \;\; S_- = \det(L)^{-1/2} .
 \]
-We choose a twisting homomorphism $\phi : \U(1) \to G_R$ under which $\Tilde{W} = \det(L)^{1/2} \oplus \det(L)^{-1/2}$
+We choose a twisting homomorphism $\phi\colon \U(1) \to G_R$ under which $\Tilde{W} = \det(L)^{1/2} \oplus \det(L)^{-1/2}$
 so that
 \[
 S_+ \otimes W_+ = \CC Q \oplus \CC \oplus L^{\oplus 2} .
 \]
 
-The twisting data homomorphism is the natural embedding $\alpha \colon \U(1) \hookrightarrow \GL(1;\CC) \to G_R$. 
+The $\ZZ$-grading is induced by a natural embedding $\alpha \colon \U(1) \hookrightarrow \GL(1;\CC) \to G_R$. 
 
 Further, fields decompose under the twisting homomorphism as:
 \begin{itemize}
@@ -4043,15 +4101,15 @@ S^{(2)}_{\mr{gauge}} &= \int \dvol \bigg( -\frac{1}{4} (\lambda^{-*})^2 \bigg) .
 %We twist by the nilpotent supercharge $Q = q \otimes u_1$ where $q \in S_-$ is any nonzero vector. 
 
 \begin{theorem} \label{thm:2d(4,0)}
-The minimal twist of 2d $\cN=(4,0)$ super Yang-Mills with matter valued in a symplectic $\fg$-representation $U$ is perturbatively equivalent to holomorphic $BF$ theory coupled to the holomorphic $\beta\gamma$ system with moduli space $T^*[-1] \Sect(\CC , (U \otimes K^{1/2}_{\CC}) \ham \fg)$.
+The holomorphic twist of the 2d $\cN=(4,0)$ super Yang--Mills theory with matter valued in a symplectic $\fg$-representation $U$ is perturbatively equivalent to the holomorphic $BF$ theory coupled to the holomorphic $\beta\gamma$ system with the space of fields $T^*[-1] \Sect(\CC , (U \otimes K^{1/2}_{\CC}) \ham \fg)$.
 This equivalence is $\U(1)$-equivariant.
 \end{theorem}
 
 \begin{proof}
-First, we integrate out the field $\lambda^-$ using Proposition \ref{prop:integrateoutfield}.  
+First, we eliminate the field $\lambda^-$ using Proposition \ref{prop:integrateoutfield}.  
 We then observe that the action includes the terms $\int  (\lambda^-_{1,0} , A_{1,0}^*)$ and  $\int (\psi_-, \nu^*)$.  
 Thus, the two pairs $(\lambda^-_{1,0}, A_{1,0})$ and $(\nu, \psi_-)$ form BRST doublets, 
-which can be integrated out using Proposition \ref{prop:BRSTdoublet}.  
+which can be eliminated using Proposition \ref{prop:BRSTdoublet}.  
 
 The twisted theory is therefore perturbatively equivalent to the theory with BV action 
 \begin{align*}
@@ -4088,7 +4146,7 @@ This is the action functional of the required theory.
 \subsection{\texorpdfstring{$\cN=(\cN_+,0)$}{N=(N_+,0)} Super Yang--Mills Theory}
 
 We consider pure $\cN=(\cN_+,0)$ super Yang-Mills for a Lie algebra $\fg$, where $\cN_+ \geq 2$.
-The spinorial representation is $\Sigma = S_+ \otimes W_+$ where $W_+$ is the $\cN_+$-dimensional auxiliary equipped with a nondegenerate symmetric bilinear pairing.
+The spinorial representation is $\Sigma = S_+ \otimes W_+$ where $W_+$ is the $\cN_+$-dimensional auxiliary space equipped with a nondegenerate symmetric bilinear pairing.
 
 \begin{itemize}
 \item $\fg$-valued bosons: a gauge field $A \in \Omega^1(\RR^2;\fg)$.
@@ -4109,9 +4167,9 @@ We take the twisting datum $\alpha$ and twisting homomorphism $\phi$ to factor t
 
 %We twist by the nilpotent supercharge $Q = q \otimes u_1$ where $q \in S_-$ is any nonzero vector. 
 
-\subsubsection{Minimal Twist} \label{sect:2dN0minimaltwist}
+\subsubsection{Holomorphic Twist} \label{sect:2dN0minimaltwist}
 
-Choose a complex structure $L \subset V_\RR$. 
+Choose a complex structure $L \subset V$. 
 Under the embedding $U(1) \hookrightarrow \spin(2;\CC)$, the semi-spin representations decompose as
 \[
 S_+ = \det(L)^{1/2} \;\; , \;\; S_- = \det(L)^{-1/2} .
@@ -4136,16 +4194,16 @@ S^{(2)}_{\mr{gauge}} &= \int \dvol \bigg( -\frac{1}{4} (\lambda_0^*)^2 \bigg) .
 \end{align*}
 
 \begin{theorem} \label{thm:2d(N,0)}
-The minimal twist of 2d $\cN=(\cN_+,0)$ super Yang-Mills is perturbatively equivalent to holomorphic $BF$ with moduli space $T^*[-1]\mr{Sect}(\CC, (\fg^{\mc N_+ -2} \otimes K_{\CC}^{1/2}) / \gg)$.
+The holomorphic twist of 2d $\cN=(\cN_+,0)$ super Yang-Mills is perturbatively equivalent to the holomorphic $BF$ theory with the space of fields $T^*[-1]\mr{Sect}(\CC, (\fg^{\mc N_+ -2} \otimes K_{\CC}^{1/2}) / \gg)$.
 This equivalence is $\U(1)$-equivariant.
 \end{theorem}
 
 \begin{proof}
 %The proof of this theorem is very similar to the proof of Theorem \ref{thm:10dholomorphictwist}.  
-First, we integrate out the field $\lambda_{0}$ using Proposition \ref{prop:integrateoutfield}.  
+First, we eliminate the field $\lambda_{0}$ using Proposition \ref{prop:integrateoutfield}.  
 We then observe that the action includes the term $\int  (\lambda_{1,0} , A_{1,0}^*)$.
 Thus, the pair $(\lambda_{1,0}, A_{1,0})$ forms a BRST doublet, 
-which can be integrated out using Proposition \ref{prop:BRSTdoublet}.  
+which can be eliminated using Proposition \ref{prop:BRSTdoublet}.  
 
 The twisted theory is therefore perturbatively equivalent to the theory with BV action 
 \begin{align*}
@@ -4168,66 +4226,6 @@ This is the action functional of the required theory.
 %The $(0,2)$ supersymmetry algebra acts trivially on the Fermi multiplet. 
 %The claim now follows from a special case of Theorem \ref{thm:2d(2,0)} where we take $R = 0$. 
 %\end{proof}
-
-\appendix
-
-\section{Spinors}
-\label{sect:spinors}
-
-In this paper we will extensively use the theory of spinors. Let $V$ be a complex vector space equipped with a nondegenerate symmetric bilinear pairing. Recall that the Clifford algebra $\Cl(V)$ is defined to be the quotient of the tensor algebra on $V$ by the relation
-\[v_1 v_2 + v_2 v_1 = 2(v_1, v_2).\]
-Consider a $\ZZ/2\ZZ$-graded Clifford module $M=M^+\oplus M^-$. Denote the Clifford action by $\rho(v)\in\eend(M)$. We assume the Clifford module is equipped with a nondegenerate pairing $(-, -)\colon M^+\otimes M^-\rightarrow \CC$ such that
-\[(\rho(v) Q_1, Q_2) = (Q_1, \rho(v) Q_2)\]
-for any $Q_1, Q_2\in M$ and $v\in V$. From now on we denote $M^+=\Sigma$ and $M^-=\Sigma^*$. We define the $\Gamma$-pairings
-\[\Gamma\colon\Sym^2(\Sigma)\longrightarrow V,\qquad \Gamma\colon\Sym^2(\Sigma^*)\longrightarrow V\]
-by
-\begin{equation}
-(\rho(v) Q_1, Q_2) = (v, \Gamma(Q_1, Q_2))
-\label{eq:Gammaspinorpairing}
-\end{equation}
-
-We have a subset $\Spin(V)\subset \Cl(V)$, so $\Sigma$ and $\Sigma^*$ are representations of the spin group. Moreover, the Clifford action and the maps $\Gamma$ are $\Spin(V)$-equivariant.
-
-We may identify $\wedge^2(V)\rightarrow \so(V)$ via
-\[\omega\mapsto (w\mapsto -2\iota_{(w, -)} \omega).\]
-This gives rise to an action map
-\[\wedge^2(V)\otimes \Sigma\longrightarrow \Sigma\]
-of two-forms on spinors.
-
-Consider the map $q\colon \wedge^\bullet(V)\rightarrow \Cl(V)$ given by antisymmetrization, so that, for instance,
-\begin{equation}
-q(v_1\wedge v_2) = v_1v_2 - (v_1, v_2).
-\label{eq:quantizationtwoforms}
-\end{equation}
-
-The resulting action $\wedge^2(V)\otimes \Sigma\rightarrow \Sigma$ then coincides with the original action of $\so(V)$ on the spinorial representation $\Sigma$, so that $\so(V)$-equivariance of $\Gamma$ gives the following.
-
-\begin{prop}
-For $X\in\wedge^2(V)$ and $Q_1,Q_2\in\Sigma$ we have
-\[\Gamma(Q_1, \rho(X) Q_2) + \Gamma(Q_2, \rho(X) Q_1) = -2\iota_{\Gamma(Q_1, Q_2)} X.\]
-\label{prop:cliffordactionproperty1}
-\end{prop}
-
-We may extend the discussion to the case of Riemannian manifolds $N$, where we replace $V$ by the vector bundle $TN$. Given a bundle of Clifford modules $M=\Sigma\oplus \Sigma^*$ as before we have the associated Dirac operator
-\[\sd{\d}\colon \Gamma(N, \Sigma)\rightarrow \Gamma(N, \Sigma^*).\]
-
-From \eqref{eq:quantizationtwoforms} we get the following property.
-
-\begin{prop}
-Suppose $Q_1,Q_2\in\Sigma$ and $\lambda\in\Gamma(N, \Sigma)$. Then
-\[\sd{\d}\rho(\Gamma(Q_1, \lambda)) Q_2 = \rho(d \Gamma(Q_1, \lambda)) Q_2 + (Q_1, \sd{\d} \lambda) Q_2.\]
-\label{prop:cliffordactionproperty2}
-\end{prop}
-
-Finally, we have the following important compatibility between the Clifford action of differential forms and the Dirac operator proved in \cite[equation 7.6]{Snygg}.
-
-\begin{prop}
-Suppose $Q\in\Sigma$ and $X\in\Omega^p(N)$. Then
-\[\sd{\d}(\rho(X) Q) = \rho(\d X)Q + (-1)^{n(1+p)}\rho(\ast \d\ast X) Q.\]
-\label{prop:cliffordactionproperty3}
-\end{prop}
-
-Note that both Proposition \ref{prop:cliffordactionproperty2} and Proposition \ref{prop:cliffordactionproperty3} extend to the case when $\lambda$ and $X$ respectively are twisted by a vector bundle and $\sd{\d}$ is the corresponding twisted Dirac operator.
 
 \pagestyle{bib}
 \printbibliography
