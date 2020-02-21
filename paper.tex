@@ -2365,7 +2365,7 @@ We will use the notation for fields of 8d $\cN=1$ super Yang--Mills from Section
 \begin{prop}
 The functionals $I^{(1)}$ and $I^{(2)}$ (see \eqref{eq:gaugeI1} and \eqref{eq:gaugeI2}) in terms of the fields of 8d $\cN=1$ super Yang--Mills are
 \begin{align*}
-S^{(1)}(Q_t) &= \int \dvol\left(-(\rho, A_{1, 0}^*) - t(C, A_{0, 1}^*) - (\wt \chi + t\chi)\wt a^* + (F_{0, 2}, B^*)  + (\ol\dd_{A_{0, 1}} a, C^*)\right) 
+S^{(1)}(Q_t) &= \int \dvol\left(-(\rho, A_{1, 0}^*) - t(C, A_{0, 1}^*) - (\wt \chi + t\chi)\wt a^* + (F_{0, 2}, B^*)  + (\ol\dd_{A_{0, 1}} a, C^*)\right) \\
 &+ \int\dvol\left((t\dd_{A_{1, 0}} \Tilde{a}, \rho^*) + \frac{1}{2}\Lambda F_{1, 1}(\chi^* - t\wt\chi^*) + \frac{1}{2}[a, \wt a](\chi^*+t\wt\chi^*)\right) + t\Omega^{-1} F_{2, 0}\wedge B^* \\
 S^{(2)}(Q_t) &= \int \dvol \left(t\chi^*\wt \chi^* -\frac{1}{4}(\chi^* + t\wt\chi^*)^2 + tac^*\right) + \frac{t}{2}\Omega^{-1}B^*\wedge B^* .
 \end{align*}
@@ -3558,21 +3558,22 @@ Consider the dimensional reduction of the family $Q_t$ of rank $(2, 2)$ square-z
 The twist of the 3d $\cN=8$ super Yang--Mills theory with respect to the family $Q_t$ of square-zero supercharges is perturbatively equivalent to the theory $T^*[-1]\map(\RR^3_{\mathrm{dR}}, B\fg_{\Hod})$. Moreover, the equivalence is $\Spin(3, \RR)$-equivariant.
 \label{thm:3d8Hodgetwist}
 \end{theorem}
+
 \begin{proof}
 The claim follows by dimensional reduction (Proposition \ref{CS_to_BF_diml_red_prop}) from the corresponding statement in 4 dimensions (Theorem \ref{thm:4d422Hodgetwist}) which calculates the twist of the 4d $\cN=4$ super Yang--Mills theory with respect to that family to be $\map(\RR^4_{\mathrm{dR}}, B\fg_{\Hod})$.
 \end{proof}
 
 As we see from Theorem \ref{thm:3d8Hodgetwist}, at $t\neq 0$ the twist is perturbatively trivial while at $t=0$ it is not. By Lemma \ref{lm:3dN8twoorbits} there are only two orbits of topological supercharges, so the case $t\neq 0$ (the generic orbit) must be the $A$-twist and the case $t=0$ (the special orbit) must be the $B$-twist.
 
-\begin{cor}
+\begin{corollary}
 The topological $A$-twist of the 3d $\cN=8$ super Yang--Mills theory is perturbatively trivial.
 \label{cor:3dN8Atwist}
-\end{cor}
+\end{corollary}
 
-\begin{cor}
+\begin{corollary}
 The topological $B$-twist of the 3d $\cN=8$ super Yang--Mills theory is perturbatively equivalent to $T^*[-1]\map(\RR^3_{\mathrm{dR}}, \fg/\fg)$. Moreover, the equivalence is $\Spin(3, \RR)$-equivariant.
 \label{cor:3dN8Btwist}
-\end{cor}
+\end{corollary}
 
 \section{Dimension 2}
 The odd part of the $2$-dimensional supersymmetry algebra is 
@@ -3796,7 +3797,7 @@ The holomorphic twist of 2d $\mc N=(8,8)$ super Yang-Mills is perturbatively equ
 
 \subsubsection{Topological A Twist} \label{sect:2d88Atwist}
 The topological $A$-twist is obtained as the dimensional reduction of the $A$-twist of 3d $\cN = 8$ supersymmetric Yang--Mills theory.
-Combining Theorem \ref{3d_8_A_twist_thm} and Proposition \ref{CS_to_BF_diml_red_prop} we obtain the following.
+Combining Theorem \ref{thm:3d8Hodgetwist} and Proposition \ref{CS_to_BF_diml_red_prop} we obtain the following.
 
 \begin{theorem}
 The holomorphic twist of 2d $\mc N=(8,8)$ super Yang-Mills admits a one-parameter deformation to the $A$-twist.  This family is perturbatively equivalent to a Hodge theory, with moduli space given by $T^*[-1]\mr{Map}(\CC, (T^*[2](\gg / \gg))_{\mr{Hod}})$.   This equivalence is $\mr U(1)$-invariant.
@@ -3804,7 +3805,7 @@ The holomorphic twist of 2d $\mc N=(8,8)$ super Yang-Mills admits a one-paramete
 
 \subsubsection{Topological B Twist} \label{sect:2d88Btwist}
 The topological $B$-twist is obtained as the dimensional reduction of the $B$-twist of 3d $\cN = 8$ supersymmetric Yang--Mills theory.
-Combining Theorem \ref{3d_8_B_twist_thm} and Proposition \ref{CS_to_BF_diml_red_prop} we obtain the following.
+Combining Theorem \ref{cor:3dN8Btwist} and Proposition \ref{CS_to_BF_diml_red_prop} we obtain the following.
 
 \begin{theorem}
 The B-twist of 2d $\mc N=(8,8)$ super Yang-Mills is perturbatively equivalent to the topological BF theory with moduli space $T^*[-1]\mr{Map}(\RR^2_{\mr{dR}}, T^*[2](\gg / \gg))$.  This equivalence is $\mr U(1)$-invariant.
@@ -3969,7 +3970,7 @@ S^{(2)}_{\mr{gauge}} &= \int \dvol \bigg( -\frac{1}{4} (\lambda^{-*})^2 \bigg) .
 
 %We twist by the nilpotent supercharge $Q = q \otimes u_1$ where $q \in S_-$ is any nonzero vector. 
 
-\begin{theorem} \label{thm: 2d(4,0)}
+\begin{theorem} \label{thm:2d(4,0)}
 The minimal twist of 2d $\cN=(4,0)$ super Yang-Mills with matter valued in a symplectic $\fg$-representation $U$ is perturbatively equivalent to holomorphic $BF$ theory coupled to the holomorphic $\beta\gamma$ system with moduli space $T^*[-1] \Sect(\CC , (U \otimes K^{1/2}_{\CC}) \ham \fg)$.
 This equivalence is $\U(1)$-equivariant.
 \end{theorem}
@@ -4012,7 +4013,7 @@ This is the action functional of the required theory.
 %The matter sector in the twisted theory only depends on $U$ as a complex $\fg$-representation, the dependence on the symplectic form disappears when we twist.
 %\end{remark} 
 
-\subsection{Pure \texorpdfstring{$\cN=(0,\cN_-)$}{N=(0,N-)} Super Yang--Mills Theory}
+\subsection{\texorpdfstring{$\cN=(0,\cN_-)$}{N=(0,N-)} Super Yang--Mills Theory}
 
 We consider pure $\cN=(0,\cN_-)$ super Yang-Mills for a Lie algebra $\fg$, where $\cN_- \geq 2$.
 The spinorial representation is $\Sigma = S_- \otimes W_-$ where $W_-$ is the $\cN_-$-dimensional auxiliary equipped with a nondegenerate symmetric bilinear pairing.
@@ -4039,7 +4040,7 @@ The minimal twist of 2d $\cN=(0,\cN_-)$ super Yang-Mills with Lie algebra $\fg$ 
 \end{theorem}
 
 \begin{proof}
-The proof is similar to the proof of Theorem \ref{2d(0,4)}.
+The proof is similar to the proof of Theorem \ref{thm:2d(4,0)}.
 The supercharge $Q$ lies in a $\cN = (0,2)$ subalgebra of the full $\cN = (0,\cN_-)$ algebra.
 On the odd part of the supersymmetry algebras, this embedding is induced by the algebra map
 \[
@@ -4073,7 +4074,7 @@ by
 We have a subset $\Spin(V)\subset \Cl(V)$, so $\Sigma$ and $\Sigma^*$ are representations of the spin group. Moreover, the Clifford action and the maps $\Gamma$ are $\Spin(V)$-equivariant.
 
 We may identify $\wedge^2(V)\rightarrow \so(V)$ via
-\[\omega\mapsto (w\mapsto -2\iota_{(w, -\rangle)} \omega).\]
+\[\omega\mapsto (w\mapsto -2\iota_{(w, -)} \omega).\]
 This gives rise to an action map
 \[\wedge^2(V)\otimes \Sigma\longrightarrow \Sigma\]
 of two-forms on spinors.
