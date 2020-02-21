@@ -1444,7 +1444,13 @@ Let $A$ be a unital (possibly non-associative) complex algebra equipped with an 
 
 In fact, the data of the antiinvolution $\sigma$ may equivalently be encoded in the data of a non-degenerate multiplicative norm $x\mapsto x\sigma(x)$, i.e. $A$ is a real composition algebra \cite[Chapter 1.3]{SpringerVeldkamp}.
 
-For a $2\times 2$-matrix $M$ with entries in $A$ we define its hermitian adjoint $M^\dagger$ by transposing the matrix and applying $\sigma$ to the entries. We define $V$ to be the space of $2\times 2$ Hermitian matrices with values in $A$, so that $\dim(V) = \dim(A) + 2$. $V$ carries a nondegenerate quadratic form given by $M\mapsto -\det(M)$. Moreover, it carries an orthogonal involution $\widetilde{M} = M - \tr(M)\cdot 1$.
+For a $2\times 2$-matrix $M$ with entries in $A$ we define its hermitian adjoint $M^\dagger$ by transposing the matrix and applying $\sigma$ to the entries. 
+Let $V$ to be the complex vector space of $2\times 2$ Hermitian matrices with values in $A$.
+Note that $\dim(V) = \dim(A) + 2$. 
+The space $V$ carries a nondegenerate quadratic form given by $M\mapsto -\det(M)$. 
+Moreover, it carries an orthogonal involution $\widetilde{M} = M - \tr(M)\cdot 1$.
+Let ${\rm C}\ell_V$ be the resulting Clifford algebra.
+
 
 Given a left $A$-module, we may turn it into a right $A$-module via the antiinvolution $\sigma\colon A\rightarrow A$. Since $A$ is a Frobenius algebra, we have the following basic construction 
 
@@ -1453,7 +1459,10 @@ Suppose $M$ is a left $A$-module and $N$ a right $A$-module equipped with a nond
 \label{lm:extendpairing}
 \end{lemma}
 
-Consider two isomorphic spinorial representations $\Sigma=A\oplus A$ and $\Sigma^* = A\oplus A$; we will equip the sum of these representations with an action of the Clifford algebra.  The action on the two summands $\Sigma$ and $\Sigma^*$ will be different, hence the different notation.  We define action maps
+Consider the two isomorphic spinorial representations $\Sigma=A\oplus A$ and its dual $\Sigma^* = A\oplus A$.
+We will equip the sum $\Sigma \oplus \Sigma^*$ with an action of the Clifford algebra ${\rm C}\ell_V$.  
+The action on the two summands $\Sigma$ and $\Sigma^*$ will be different, hence the different notation.  
+We define action maps
 \[\rho \colon V \otimes \Sigma\rightarrow \Sigma^*,\qquad \rho \colon V\otimes \Sigma^*\rightarrow \Sigma\]
 given, respectively, by
 \[\rho(M)Q = M Q,\qquad \rho(M)Q = \widetilde{M} Q.\]
@@ -1511,7 +1520,7 @@ We will be interested in the following examples:
 \item (\textbf{10d $\mc N=(1, 0)$ supersymmetry}) $A=\mathbb{O}\otimes_{\RR}\CC$. We have $\dim(V) = 10$ and $\Sigma = S_+$ is a semi-spin representation of $\Spin(10;\CC)$.
 \end{enumerate}
 
-All four examples are alternative, while the first three examples are moreover associative.
+All four examples are alternative, while the first three examples are also associative.
 
 \subsection{Two-dimensional Chiral Supersymmetry} \label{sect:2dchiral}
 
@@ -3099,7 +3108,7 @@ S_{\rm matter}^{(1)}(Q_t) &= \int \dvol \left((\Tilde{\nu}, \nu^*) + t (\varsigm
 S_{\rm matter}^{(2)}(Q_t) &= \int \dvol \frac t4  (\psi^*, \psi^*)
 \end{align*}
 \end{prop}
-
+\brian{Anti field in $S^{(1)}_{matter}$.}
 %The $(1,2)$ action is in comments, it should agree with the $t=0$ limit of the above.
 %\begin{align*}
 %I^{(1)}(Q_t) &= \int \dvol\left(-(\rho, A_{1, 0}^*) - \wt \chi\wt a^* - (\Tilde{\nu}, \nu^*) - t(\varsigma, A_{1, 0}^*) - t(\wt\nu, A_{0, 1}^*) - t(b, \nu^*) - t(\rho, \phi^*) - t(\Lambda\psi)\wt a^*\right) \\
