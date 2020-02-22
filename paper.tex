@@ -843,7 +843,7 @@ satisfies the classical master equation, where $I_{\phi}, I_{\psi^*}, I_{\phi^*}
 Then the classical BV theory $(E, \omega, S)$ is perturbatively equivalent to the BV theory $(E_0, \omega_0, S')$ where $S'$ is given by setting $\phi = I_{\psi^*}, \phi^* = 0$ and $\psi^* = I_{\phi}, \psi = 0$ in the original action functional $S$. 
 \end{prop}
 \begin{proof}
-Concretely, we'll write $\sum_{n \ge 1} I^{(n)}_\phi$ and $\sum_{n \ge 1} I^{(n)}_{\psi^*}$ for the Taylor expansions of $I_\phi$ and $I_{\psi^*}$ respectively.  
+Concretely, we will write $\sum_{n \ge 1} I^{(n)}_\phi$ and $\sum_{n \ge 1} I^{(n)}_{\psi^*}$ for the Taylor expansions of $I_\phi$ and $I_{\psi^*}$ respectively.  
 The desired equivalence $\Phi \colon (E, \omega, S) \to (E_0, \omega_0, S')$ is given by the natural projection $\Phi = \Phi_1 \colon E \to E_0$. 
 The quasi-inverse $\Psi \colon (E_0, \omega_0, S') \to (E, \omega, S)$ is defined as follows.
 The linear term is $\Psi_1(e) = (e, I^{(1)}_{\phi}(e),0,0, I^{(1)}_{\psi^*}(e))$, and for $n > 1$ we have 
@@ -925,7 +925,7 @@ We have seen that a classical BV theory can also be presented in terms of a BV d
 \[Q_{\mr{BV}} I + \frac{1}{2} \{I,I\} = 0 .\]
 One can also formulate actions of a Lie algebra on a classical theory in these terms. 
 The data of an action of a Lie algebra $\fg$ on a classical field theory $(E, \omega, S)$ is equivalent to the choice of a local interaction functional 
-\[I_\fg = \sum_{k\geq 0} I_{\fg}^{(k)} \text{ in } C^\bullet(\fg, \oloc(\cE)),\]
+\[I_\fg = I + \sum_{k\geq 1} S_{\fg}^{(k)} \text{ in } C^\bullet(\fg, \oloc(\cE)),\]
 satisfying the Maurer-Cartan equation
 \[(\d_{\mr{CE}} + Q_{\mr{BV}}) I_\fg + \frac{1}{2} \{I_\fg, I_\fg\} = 0.\]
 \end{remark}
@@ -983,7 +983,7 @@ Let $(\cM, S_{\mr{BRST}})$ be a classical BRST theory. The \defterm{associated c
 In the case where $S_{\mr{BRST}} = 0$, the associated BV theory is of cotangent type, as in Example \ref{def:cotangent_type}.
 
 \begin{remark}
-In general, multiple BRST theories can give rise to the same BV theory.  A BV theory $(E, Q_{\mr{BV}}, \omega, I)$ is of cotangent type as long as there is \emph{some} $F$ with $S_{\mr{BRST}} = 0$ producing the given theory using the construction above.  Theories of cotangent type can still have interesting, non-trivial action functionals, encoded by the $L_\infty$ structure on $F$.
+In general, multiple BRST theories can give rise to the same BV theory.  A BV theory $(E, \omega, S)$ is of cotangent type as long as there is \emph{some} $F$ with $S_{\mr{BRST}} = 0$ producing the given theory using the construction above.  Theories of cotangent type can still have interesting, non-trivial action functionals, encoded by the $L_\infty$ structure on $F$.
 \end{remark}
 
 \begin{remark}
@@ -1661,13 +1661,13 @@ Given additional data, we may enhance the classical field theory.
 Let $Q\in\Sigma$ be a square-zero supercharge. A homomorphism $\alpha\colon U(1)\rightarrow G_R$ is \defterm{compatible} with $Q$ if $Q$ has weight 1 and the $\alpha$-weight mod 2 on $E$ coincides with the fermionic grading.
 \end{definition}
 
-Given such an $\alpha$ we may consider a new $\ZZ$-grading on $E$ given by the sum of the cohomological grading and the grading given by $\alpha$. The map $I_{\fA}^{(k)}\colon \fA^{\otimes k} \to \oloc(\cE)$ is $G_R$-equivariant, so the element $I_{\fA}^{(k)}(Q, \dots, Q)$ has $\alpha$-weight $k$. But it also has cohomological degree $-k$. In other words, the twisted action $S^Q$ has total degree zero, so $(E, S^Q, \omega)$ is a $\ZZ$-graded classical field theory.
+Given such an $\alpha$ we may consider a new $\ZZ$-grading on $E$ given by the sum of the cohomological grading and the grading given by $\alpha$. The map $S_{\fA}^{(k)}\colon \fA^{\otimes k} \to \oloc(\cE)$ is $G_R$-equivariant, so the element $S_{\fA}^{(k)}(Q, \dots, Q)$ has $\alpha$-weight $k$. But it also has cohomological degree $-k$. In other words, the twisted action $S^Q$ has total degree zero, so $(E, S^Q, \omega)$ is a $\ZZ$-graded classical field theory.
 
 \begin{definition}
 Let $Q\in\Sigma$ be a square-zero supercharge and suppose $\iota \colon G\rightarrow \Spin(V_\RR)$ is a fixed group homomorphism. A \defterm{twisting homomorphism} is a homomorphism $\phi\colon G\rightarrow G_R$ such that $Q$ is preserved under the product $(\iota, \phi) \colon G\rightarrow \Spin(V_\RR)\times G_R$.
 \end{definition}
 
-The classical field theory $(E, S, \omega)$ carries a $\Spin(V_\RR)\times G_R$-action. However, the $Q$-twisted theory $(E, S^Q, \omega)$ does not in general carry a $\Spin(V_\RR)\times G_R$-action since the elements $I_{\fA}^{(k)}(Q, \dots, Q)$ are not in general invariant under $\Spin(V_\RR)\times G_R$. However, given a twisting homomorphism $\phi$ we see that $I_{\fA}^{(k)}(Q, \dots, Q)$ is preserved under $G$, so $(E, S^Q, \omega)$ carries a $G$-action.
+The classical field theory $(E, S, \omega)$ carries a $\Spin(V_\RR)\times G_R$-action. However, the $Q$-twisted theory $(E, S^Q, \omega)$ does not in general carry a $\Spin(V_\RR)\times G_R$-action since the elements $S_{\fA}^{(k)}(Q, \dots, Q)$ are not in general invariant under $\Spin(V_\RR)\times G_R$. However, given a twisting homomorphism $\phi$ we see that $S_{\fA}^{(k)}(Q, \dots, Q)$ is preserved under $G$, so $(E, S^Q, \omega)$ carries a $G$-action.
 
 \subsection{Dimensional Reduction of Supersymmetric Theories}
 
@@ -2083,7 +2083,7 @@ One has
 \end{equation}
 \end{lemma}
 \begin{proof}
-Evaluating expression \eqref{CMEYM3} on $v_1,v_2 \in \mf{iso}(V)$ reduces to the claim that \eqref{eq:matterPoincareaction} defines a strict Lie action. Evaluating on $v \in \mf{iso}(V)$ and $Q \in \Sigma$, the claim reduces to the fact that $I^{(1)}$ is Poincar\'{e}-invariant. So, the only nontrivial term to check is the evaluation on $Q_1,Q_2 \in \Sigma$. 
+Evaluating expression \eqref{CMEYM3} on $v_1,v_2 \in \mf{iso}(V)$ reduces to the claim that \eqref{eq:matterPoincareaction} defines a strict Lie action. Evaluating on $v \in \mf{iso}(V)$ and $Q \in \Sigma$, the claim reduces to the fact that $S^{(1)}$ is Poincar\'{e}-invariant. So, the only nontrivial term to check is the evaluation on $Q_1,Q_2 \in \Sigma$. 
 
 The individual terms are:
 \begin{enumerate}
@@ -2413,7 +2413,7 @@ so at $t=0$ we have a holomorphic supercharge and $t\neq 0$ we have a topologica
 We will use the notation for fields of 8d $\cN=1$ super Yang--Mills from Section \ref{sect:8dholomorphictwist}. Using the Calabi--Yau structure we will regard $C$ as an element of $\Omega^{0, 1}(\CC^4;\fg)[1]$, $\wt\chi$ as an element of $\Omega^0(\CC^4;\fg)[-1]$, and $a$ as an element of $\Omega^0(\CC^4 ; \fg)$. First, we are going to write the functionals \eqref{eq:gaugeI1} and \eqref{eq:gaugeI2} in terms of these fields.
 
 \begin{prop}
-The functionals $I^{(1)}$ and $I^{(2)}$ (see \eqref{eq:gaugeI1} and \eqref{eq:gaugeI2}) in terms of the fields of 8d $\cN=1$ super Yang--Mills are
+The functionals $S^{(1)}$ and $S^{(2)}$ (see \eqref{eq:gaugeI1} and \eqref{eq:gaugeI2}) in terms of the fields of 8d $\cN=1$ super Yang--Mills are
 \begin{align*}
 S^{(1)}(Q_t) &= \int \dvol\left(-(\rho, A_{1, 0}^*) - t(C, A_{0, 1}^*) - (\wt \chi + t\chi)\wt a^* + (F_{0, 2}, B^*)  + (\ol\dd_{A_{0, 1}} a, C^*)\right) \\
 &+ \int\dvol\left((t\dd_{A_{1, 0}} \Tilde{a}, \rho^*) + \frac{1}{2}\Lambda F_{1, 1}(\chi^* - t\wt\chi^*) + \frac{1}{2}[a, \wt a](\chi^*+t\wt\chi^*)\right) + t\Omega^{-1} F_{2, 0}\wedge B^* \\
@@ -3060,7 +3060,7 @@ We will use the notation for fields from Section \ref{sect:4d_2_holomorphictwist
 \begin{prop}
 \label{4d_donaldson_susy_prop}
 Suppose $Q_t$ is the rank $(2,0)$ supercharge of \ref{eq:4dHodgefamily}.
-The $\MU(2)$ decomposition of the functionals $I_{\rm gauge}^{(1)}, I^{(1)}_{\rm matter}, I^{(2)}_{\rm gauge}, I^{(2)}_{\rm matter}$ (see \eqref{eq:gaugeI1},  \eqref{eq:gaugeI2}, \eqref{eq:matterI1}, \eqref{eq:matterI2}) in terms of the fields of 4d $\cN=2$ super Yang--Mills theory are
+The $\MU(2)$ decomposition of the functionals $S_{\rm gauge}^{(1)}, S^{(1)}_{\rm matter}, S^{(2)}_{\rm gauge}, S^{(2)}_{\rm matter}$ (see \eqref{eq:gaugeI1},  \eqref{eq:gaugeI2}, \eqref{eq:matterI1}, \eqref{eq:matterI2}) in terms of the fields of 4d $\cN=2$ super Yang--Mills theory are
 \begin{align*}
 S_{\rm gauge}^{(1)}(Q_t) &= \int \dvol\left(-(\rho, A_{1, 0}^*) - t(b, A_{0, 1}^*) - (\wt \chi + t\chi)\wt a^*\right) \\
 & + \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda(F_{1, 1}  + [a, \wt a])\chi^* + [\phi, \phi]\xi^* \right) \\
