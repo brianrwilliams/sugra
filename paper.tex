@@ -83,7 +83,8 @@ In addition to the dimensional reduction of these super Yang--Mills theories, th
 
 \subsection*{Supersymmetric Twists}
 
-The notion of supersymmetric twisting for a supersymmetric field theory was introduced by Witten \cite{WittenTQFT}. The definitions we use in this paper will follow our previous work \cite{ElliottSafronov}, so let us briefly recall the important terminology.
+The notion of supersymmetric twisting for a supersymmetric field theory was introduced by Witten \cite{WittenTQFT}, and further developed mathematically by Costello \cite{CostelloSUSY}. 
+The definitions we use in this paper will follow our previous work \cite{ElliottSafronov}, so let us briefly recall the important terminology.
 
 Suppose $Q$ is a square-zero supercharge, i.e. an odd element $Q\in\fA$ such that $[Q, Q]=0$. Then it gives rise to a square-zero odd symplectic vector field on the space of BV fields $\cE$. In particular, we may modify the differential on $\cE$ by the replacement $\mathrm{d}\mapsto \mathrm{d}+Q$. Working up to perturbative equivalence, this turns out to drastically simplify the theory as we will shortly see.
 
@@ -106,9 +107,13 @@ A classification of possible square-zero supercharges $Q$ was previously done in
 
 \subsection*{Supersymmetric Twists and Supergravity}
 
-In this paper we only consider the case of global supersymmetry for super Yang--Mills theories on $\RR^n$. In certain cases one may consider coupling of super Yang--Mills to supergravity in which case there is an interpretation of the twisting procedure as performing perturbation theory in a nontrivial supergravity background. Let us briefly explain this perspective.
+In this paper we only consider the case of global supersymmetry for super Yang--Mills theories on $\RR^n$. 
+In certain cases one may consider coupling of super Yang--Mills to supergravity in which case there is an interpretation of the twisting procedure as performing perturbation theory in a nontrivial supergravity background. 
+Let us briefly explain this perspective.
 
-A classical solution of supergravity consists, in particular, of the following data: a spacetime manifold $M$, a $\Spin(n)$-bundle $P_\Spin\rightarrow M$ equipped with a connection (spin connection), a $G_R$-bundle $P_R\rightarrow M$ equipped with a connection and a ghost for supertranslations $\eta\in \Gamma(M, (P_\Spin\times P_R)\times^{\Spin(n)\times G_R}\Sigma)$.  The ghost $\eta$ is bosonic: it lives in bidegree $(-1,1)$ for the $\ZZ \times \ZZ/2\ZZ$-grading, so it makes sense to give it a non-zero value.  If we couple super Yang--Mills to supergravity, then the super Yang--Mills fields become sections of the associated bundles to $P_\Spin\times P_R$.
+A classical solution of supergravity consists, in particular, of the following data: a spacetime manifold $M$, a $\Spin(n)$-bundle $P_\Spin\rightarrow M$ equipped with a connection (spin connection), a $G_R$-bundle $P_R\rightarrow M$ equipped with a connection and a ghost for supertranslations $\eta\in \Gamma(M, (P_\Spin\times P_R)\times^{\Spin(n)\times G_R}\Sigma)$.  
+The ghost $\eta$ is bosonic: it lives in bidegree $(-1,1)$ for the $\ZZ \times \ZZ/2\ZZ$-grading, so it makes sense to give it a non-zero value.  
+If we couple super Yang--Mills to supergravity, then the super Yang--Mills fields become sections of the associated bundles to $P_\Spin\times P_R$.
 
 We have the following supergravity analogs of the data $(Q, \phi, \alpha)$ for supersymmetric twisting:
 \begin{itemize}
@@ -118,6 +123,8 @@ We have the following supergravity analogs of the data $(Q, \phi, \alpha)$ for s
 
 \item The supergravity analog of $\alpha\colon \U(1)\rightarrow G_R$ is a choice of trivial $\U(1)$-subbundle in $G_R$ on which the connection restricts to zero.
 \end{itemize}
+
+%^An approach to twisting supergravity with the goal of formulating a twisted version of the AdS/CFT correspondence has been initiated in \cite{CostelloLiSUGRA}.
 
 \subsection*{Applications to Quantization}
 
@@ -496,12 +503,20 @@ F + 2(u_1, u_2) &= 0.
 \end{figure}
 
 \subsection*{Outline of the Paper}
-The remainder of the paper is divided into two parts.  In Part \ref{formalism_part} we set up the formalism that we will use when we study supersymmetric gauge theories and their twists.  The first main ingredient is the Batalin-Vilkovisky formalism \cite{BatalinVilkovisky} for classical field theory (Section \ref{BV_section}), as developed by Costello and Gwilliam in \cite{CostelloBook, Book1, Book2}.  The other main ingredient is the systematic study of supersymmetry algebras and supersymmetric action functionals using normed division algebras (Section \ref{sect:susy}), following Baez and Huerta \cite{BaezHuerta}.  We use this formalism to prove in Section \ref{sect:SYM} that super Yang-Mills theories with matter in dimensions 10, 6, 4 and 3 are in fact supersymmetric, meaning that there is a well-defined $L_\infty$ action of the supersymmetry algebra on the classical BV theory in question.  We introduce the idea of dimensional reduction (Section \ref{dim_red_section}) for classical field theories to show that supersymmetry action are well-defined in lower dimensions.
+The remainder of the paper is divided into two parts.  In Part \ref{formalism_part} we set up the formalism that we will use when we study supersymmetric gauge theories and their twists.  The first main ingredient is the Batalin-Vilkovisky formalism for classical field theory (Section \ref{BV_section}).
+%, as developed by Costello and Gwilliam in \cite{CostelloBook, Book1, Book2}.  
+The other main ingredient is the systematic study of supersymmetry algebras and supersymmetric action functionals using normed division algebras (Section \ref{sect:susy}).
+%, following Baez and Huerta \cite{BaezHuerta}.  
+We use this formalism to prove in Section \ref{sect:SYM} that super Yang-Mills theories with matter in dimensions 10, 6, 4 and 3 are in fact supersymmetric, meaning that there is a well-defined $L_\infty$ action of the supersymmetry algebra on the classical BV theory in question.  We introduce the idea of dimensional reduction (Section \ref{dim_red_section}) for classical field theories to show that supersymmetry action are well-defined in lower dimensions.
 
 In Part \ref{classification_part} of the paper, we produce the classification of supersymmetric Yang-Mills theories in dimensions 2 to 10 systematically.  We start with dimension 10 and work down by dimensional reduction.  Each subsection is divided by the number of supersymmetries, and the orbits of square-zero supercharges by which we can twist.  Twisted theories are characterized up to perturbative equivalence, including the residual Lorentz symmetry acting on each twisted theory.
 
 \subsection*{Acknowledgements}
-We would like to thank Owen Gwilliam, Justin Hilburn and Philsang Yoo for helpful discussions during the preparation of this paper.  We are also grateful to Dylan Butson for kind discussion of his related forthcoming work.  The research of CE on this project has received funding from the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation programme (QUASIFT grant agreement 677368).
+We would like to thank Owen Gwilliam, Justin Hilburn and Philsang Yoo for helpful discussions during the preparation of this paper.  
+We are also grateful to Dylan Butson for kind discussion of his related forthcoming work, specifically in reference to supersymmetric theories in dimension $6$.  
+The research of C.E. on this project has received funding from the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation programme (QUASIFT grant agreement 677368).
+The work of B.W. was supported by Northeastern University and National Science Foundation Award DMS-1645877.
+\pavel{Support}
 
 \pagestyle{standard}
 \part{Supersymmetric Gauge Theory} \label{formalism_part}
@@ -1492,6 +1507,7 @@ A classical field theory $(E, S, \omega)$ is \defterm{supersymmetric} if $E\righ
 \label{sect:compositionalgebras}
 
 We will now recall a relationship between certain ``minimal'' supersymmetry algebras and composition algebras. Our treatment will essentially follow that of Baez and Huerta \cite{BaezHuerta}.
+This section provides the representation theoretic underpinning for theories with minimally supersymmetric matter in dimensions $\geq 3$.
 
 Let $A$ be a unital (possibly non-associative) complex algebra equipped with an antiinvolution $\sigma\colon A\rightarrow A$. We make the following assumptions:
 \begin{enumerate}
@@ -1502,7 +1518,13 @@ Let $A$ be a unital (possibly non-associative) complex algebra equipped with an 
 
 In fact, the data of the antiinvolution $\sigma$ may equivalently be encoded in the data of a non-degenerate multiplicative norm $x\mapsto x\sigma(x)$, i.e. $A$ is a real composition algebra \cite[Chapter 1.3]{SpringerVeldkamp}.
 
-For a $2\times 2$-matrix $M$ with entries in $A$ we define its hermitian adjoint $M^\dagger$ by transposing the matrix and applying $\sigma$ to the entries. We define $V$ to be the space of $2\times 2$ Hermitian matrices with values in $A$, so that $\dim(V) = \dim(A) + 2$. $V$ carries a nondegenerate quadratic form given by $M\mapsto -\det(M)$. Moreover, it carries an orthogonal involution $\widetilde{M} = M - \tr(M)\cdot 1$.
+For a $2\times 2$-matrix $M$ with entries in $A$ we define its hermitian adjoint $M^\dagger$ by transposing the matrix and applying $\sigma$ to the entries. 
+Let $V$ to be the complex vector space of $2\times 2$ Hermitian matrices with values in $A$.
+Note that $\dim(V) = \dim(A) + 2$. 
+The space $V$ carries a nondegenerate quadratic form given by $M\mapsto -\det(M)$. 
+Moreover, it carries an orthogonal involution $\widetilde{M} = M - \tr(M)\cdot 1$.
+Let ${\rm C}\ell_V$ be the resulting Clifford algebra.
+
 
 Given a left $A$-module, we may turn it into a right $A$-module via the antiinvolution $\sigma\colon A\rightarrow A$. Since $A$ is a Frobenius algebra, we have the following basic construction 
 
@@ -1511,9 +1533,12 @@ Suppose $M$ is a left $A$-module and $N$ a right $A$-module equipped with a nond
 \label{lm:extendpairing}
 \end{lemma}
 
-Consider two isomorphic spinorial representations $\Sigma=A\oplus A$ and $\Sigma^* = A\oplus A$; we will equip the sum of these representations with an action of the Clifford algebra.  The action on the two summands $\Sigma$ and $\Sigma^*$ will be different, hence the different notation.  We define action maps
+Consider the left $A$-module $\Sigma=A\oplus A$ and the right $A$-module $\Sigma^* = A\oplus A$.
+We will equip the sum $\Sigma \oplus \Sigma^*$ with an action of the Clifford algebra ${\rm C}\ell_V$.  
+The action on the two summands $\Sigma$ and $\Sigma^*$ will be different, hence the different notation.  
+Define the action maps
 \[\rho \colon V \otimes \Sigma\rightarrow \Sigma^*,\qquad \rho \colon V\otimes \Sigma^*\rightarrow \Sigma\]
-given, respectively, by
+by
 \[\rho(M)Q = M Q,\qquad \rho(M)Q = \widetilde{M} Q.\]
 
 The following is proved in \cite[Proposition 6]{BaezHuerta}.
@@ -1523,7 +1548,7 @@ The action maps $V\otimes \Sigma\rightarrow \Sigma^*$ and $V\otimes \Sigma^*\rig
 \[\rho(M)\rho(M) = -\det(M)\cdot 1.\]
 \end{prop}
 
-So, $\Sigma\oplus \Sigma^*$ forms a $\ZZ/2\ZZ$-graded Clifford module.
+As a result, $\Sigma\oplus \Sigma^*$ forms a $\ZZ/2\ZZ$-graded Clifford module.
 
 We have a nondegenerate scalar spinorial pairing
 \[\Sigma\otimes \Sigma^*\longrightarrow \CC\]
@@ -1558,9 +1583,11 @@ which by associativity can be rewritten as
 which is the left-hand side.
 \end{proof}
 
+Note that since $\dim(V) = \dim(A) + 2$, the above constructions are only valid in dimensions $\geq 3$.
 We will be interested in the following examples:
 \begin{enumerate}
-\item (\textbf{3d $\mc N=1$ supersymmetry}) $A = \CC$. We have $\dim(V) = 3$ and $\Sigma$ is the spin representation of $\Spin(3, \CC)$.
+\item (\textbf{3d $\mc N=1$ supersymmetry}) $A = \CC$. 
+Here, $\dim(V) = 3$ and $\Sigma$ is the spin representation of $\Spin(3, \CC)$.
 
 \item (\textbf{4d $\mc N=1$ supersymmetry}) $A = \CC\otimes_{\RR}\CC\cong \CC[x]/(x^2+1)$ with $\sigma(x) = -x$. Moreover, $\dim(V) = 4$ and $\Sigma=S_+\oplus S_-$ is the sum of semi-spin representations of $\Spin(4;\CC)$.
 
@@ -1569,11 +1596,12 @@ We will be interested in the following examples:
 \item (\textbf{10d $\mc N=(1, 0)$ supersymmetry}) $A=\mathbb{O}\otimes_{\RR}\CC$. We have $\dim(V) = 10$ and $\Sigma = S_+$ is a semi-spin representation of $\Spin(10;\CC)$.
 \end{enumerate}
 
-All four examples are alternative, while the first three examples are moreover associative.
+All four examples are alternative, while the first three examples are also associative.
 
 \subsection{Two-dimensional Chiral Supersymmetry} \label{sect:2dchiral}
 
-In the previous section we have related composition algebras to minimal supersymmetry algebras in dimensions 3, 4, 6 and 10. In this section we explain a different relationship between composition algebras and supersymmetry algebras, this time in the case of 2d $\cN=(\cN_+, 0)$ supersymmetry.
+In the previous section we have related composition algebras to minimal supersymmetry algebras in dimensions 3, 4, 6 and 10. 
+In this section we explain a different relationship between composition algebras and supersymmetry algebras, this time in the case of 2d $\cN=(\cN_+, 0)$ supersymmetry.
 
 Recall that in the case $\dim(V) = 2$ we have two one-dimensional semi-spin representations $S_+, S_-$. Moreover, we have an isomorphism
 \[V\cong S_+^{\otimes 2}\oplus S_-^{\otimes 2}\]
@@ -1777,7 +1805,6 @@ For $Q_1, Q_2, Q_3\in\Sigma$ we have
 \label{assumption:3psi}
 \end{assumption}
 
-Explicitly, we consider the following cases:
 \begin{itemize}
 \item (\textbf{2d $\cN=(\cN_+, 0)$ supersymmetry}) We have $\dim(V) = 2$ and $\Sigma = S_+\otimes W$ for some complex vector space $W$ equipped with a nondegenerate symmetric bilinear pairing. Assumption \ref{assumption:3psi} is satisfied by Theorem \ref{thm:2d3psi}.
 
@@ -1975,13 +2002,21 @@ For $Q_1, Q_2\in\Sigma$ and $Q_3\in\Sigma^*$ we have
 \label{assumption:matter3psi}
 \end{assumption}
 
-Explicitly, we consider the following cases:
+Explicitly, we consider the following examples of theories of matter with minimal supersymmetry. 
+
+The first three examples concern chiral two-dimensional supersymmetry, where $\Sigma = S^{2 \rm d}_+ \otimes A$, with $S_+^{2 \rm d}$ the one-dimensional positive complex semi-spin representation of $\Spin(2;\CC)$:
+
 \begin{itemize}
 \item (\textbf{2d $\cN=(1, 0)$ supersymmetry}) $A = \CC$. Assumption \ref{assumption:matter3psi} is satisfied by Theorem \ref{thm:2dmatter3psi}.
 
 \item (\textbf{2d $\cN=(2, 0)$ supersymmetry}) $A = \CC[x]/(x^2+1)$. Assumption \ref{assumption:matter3psi} is satisfied by Theorem \ref{thm:2dmatter3psi}.
 
 \item (\textbf{2d $\cN=(4, 0)$ supersymmetry}) $A = \eend(Z)$ where $Z$ is a 2-dimensional symplectic vector space. Assumption \ref{assumption:matter3psi} is satisfied by Theorem \ref{thm:2dmatter3psi}.
+\end{itemize}
+
+In dimensions $\geq 3$ we have the following examples, where $\Sigma = A \oplus A$:
+
+\begin{itemize}
 
 \item (\textbf{3d $\cN=1$ supersymmetry}) $A = \CC$. Assumption \ref{assumption:matter3psi} is satisfied by Theorem \ref{thm:matter3psi}.
 
@@ -3157,7 +3192,7 @@ S_{\rm matter}^{(1)}(Q_t) &= \int \dvol \left((\Tilde{\nu}, \nu^*) + t (\varsigm
 S_{\rm matter}^{(2)}(Q_t) &= \int \dvol \frac t4  (\psi^*, \psi^*)
 \end{align*}
 \end{prop}
-
+\brian{Anti field in $S^{(1)}_{matter}$.}
 %The $(1,2)$ action is in comments, it should agree with the $t=0$ limit of the above.
 %\begin{align*}
 %I^{(1)}(Q_t) &= \int \dvol\left(-(\rho, A_{1, 0}^*) - \wt \chi\wt a^* - (\Tilde{\nu}, \nu^*) - t(\varsigma, A_{1, 0}^*) - t(\wt\nu, A_{0, 1}^*) - t(b, \nu^*) - t(\rho, \phi^*) - t(\Lambda\psi)\wt a^*\right) \\
@@ -3971,11 +4006,10 @@ S^{(2)}_{\mr{gauge}} &= \int \dvol \bigg( -\frac{1}{4} (\lambda_0^*)^2 \bigg) .
 
 
 \begin{theorem} \label{thm:2d(2,0)}
-The holomorphic twist of the 2d $\cN=(2,0)$ super Yang--Mills theory with matter valued in a $\fg$-representation $R$ is perturbatively equivalent to the holomorphic $BF$ theory with the space of fields $T^*[-1] \map(\CC , R / \fg)$.
+The minimal twist of 2d $\cN=(2,0)$ super Yang-Mills with matter valued in a $\fg$-representation $R$ is perturbatively equivalent to holomorphic BF theory coupled to the holomorphic $\beta\gamma$ system with moduli space $T^*[-1] \map(\CC , R / \fg)$.
 This equivalence is $\U(1)$-equivariant.
 \end{theorem}
 \begin{proof}
-%The proof of this theorem is very similar to the proof of Theorem \ref{thm:10dholomorphictwist}.  
 First, we eliminate the field $\lambda_{0}$ using Proposition \ref{prop:integrateoutfield}.  
 We then observe that the action includes the terms $\int  (\lambda_{1,0} , A_{1,0}^*)$ and  $\int (\phi, \psi_0^*)$.  
 Thus, the two pairs $(\lambda_{1,0}, A_{1,0})$ and $(\phi, \psi_0)$ form BRST doublets, 
@@ -4070,8 +4104,7 @@ S^{(2)}_{\mr{gauge}} &= \int \dvol \bigg( -\frac{1}{4} (\lambda^{-*})^2 \bigg) .
 %We twist by the nilpotent supercharge $Q = q \otimes u_1$ where $q \in S_-$ is any nonzero vector. 
 
 \begin{theorem} \label{thm:2d(4,0)}
-The holomorphic twist of the 2d $\cN=(4,0)$ super Yang--Mills theory with matter valued in a symplectic $\fg$-representation $U$ is perturbatively equivalent to the holomorphic $BF$ theory with the space of fields $T^*[-1] \Sect(\CC , (U \otimes K^{1/2}_{\CC}) \ham \fg)$.
-This equivalence is $\U(1)$-equivariant.
+The holomorphic twist of the 2d $\cN=(4,0)$ super Yang--Mills theory with matter valued in a symplectic $\fg$-representation $U$ is perturbatively equivalent to the holomorphic $BF$ theory with the space of fields $T^*[-1] \Sect(\CC , (U \otimes K^{1/2}_{\CC}) \ham \fg)$. This equivalence is $\U(1)$-equivariant.
 \end{theorem}
 
 \begin{proof}
@@ -4090,7 +4123,7 @@ This is the action functional of the required theory.
 %\subsubsection{Minimal Twist} \label{sect:2d04minimaltwist}
 %
 %\begin{theorem}\label{2d(0,4)}
-%The minimal twist of 2d $\cN=(0,4)$ super Yang-Mills with Lie algebra $\fg$ coupled to the $\cN=(0,4)$ hypermultiplet is $U(1)$-equivariantly equivalent to holomorphic $BF$ theory on $\CC$ for the Lie algebra $\fg$ coupled to the free fermion system on $\CC$ with values in the representation $\fg \otimes W_-' \cong \fg \oplus \fg$ where $\fg$ acts by the adjoint action plus the free $\beta\gamma$ system on $\CC$ valued in the $\fg$-representation $U$. 
+%The minimal twist of 2d $\cN=(0,4)$ super Yang-Mills with Lie algebra $\fg$ coupled to the $\cN=(0,4)$ hypermultiplet is $U(1)$-equivariantly equivalent to holomorphic BF theory on $\CC$ for the Lie algebra $\fg$ coupled to the free fermion system on $\CC$ with values in the representation $\fg \otimes W_-' \cong \fg \oplus \fg$ where $\fg$ acts by the adjoint action plus the free $\beta\gamma$ system on $\CC$ valued in the $\fg$-representation $U$. 
 %\end{theorem}
 %
 %\begin{proof}
@@ -4112,7 +4145,7 @@ This is the action functional of the required theory.
 %The matter sector in the twisted theory only depends on $U$ as a complex $\fg$-representation, the dependence on the symplectic form disappears when we twist.
 %\end{remark} 
 
-\subsection{\texorpdfstring{$\cN=(\cN_+,0)$}{N=(N_+,0)} Super Yang--Mills Theory}
+\subsection{\texorpdfstring{$\cN=(\cN_+,0)$}{N=(N+,0)} Super Yang--Mills Theory}
 
 We consider pure $\cN=(\cN_+,0)$ super Yang-Mills for a Lie algebra $\fg$, where $\cN_+ \geq 2$.
 The spinorial representation is $\Sigma = S_+ \otimes W_+$ where $W_+$ is the $\cN_+$-dimensional auxiliary space equipped with a nondegenerate symmetric bilinear pairing.
@@ -4163,13 +4196,12 @@ S^{(2)}_{\mr{gauge}} &= \int \dvol \bigg( -\frac{1}{4} (\lambda_0^*)^2 \bigg) .
 \end{align*}
 
 \begin{theorem} \label{thm:2d(N,0)}
-The holomorphic twist of 2d $\cN=(\cN_+,0)$ super Yang-Mills is perturbatively equivalent to the holomorphic $BF$ theory with the space of fields $T^*[-1]\mr{Sect}(\CC, (\fg^{\mc N_+ -2} \otimes K_{\CC}^{1/2}) / \gg)$.
-This equivalence is $\U(1)$-equivariant.
+The holomorphic twist of 2d $\cN=(\cN_+,0)$ super Yang-Mills is perturbatively equivalent to the holomorphic $BF$ theory with the space of fields $T^*[-1]\mr{Sect}(\CC, (\fg^{\mc N_+ -2} \otimes K_{\CC}^{1/2}) / \gg)$. This equivalence is $\U(1)$-equivariant.
 \end{theorem}
 
 \begin{proof}
+First, we integrate out the field $\lambda_{0}$ using Proposition \ref{prop:integrateoutfield}.  
 %The proof of this theorem is very similar to the proof of Theorem \ref{thm:10dholomorphictwist}.  
-First, we eliminate the field $\lambda_{0}$ using Proposition \ref{prop:integrateoutfield}.  
 We then observe that the action includes the term $\int  (\lambda_{1,0} , A_{1,0}^*)$.
 Thus, the pair $(\lambda_{1,0}, A_{1,0})$ forms a BRST doublet, 
 which can be eliminated using Proposition \ref{prop:BRSTdoublet}.  
