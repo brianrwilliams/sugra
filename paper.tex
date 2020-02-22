@@ -3356,70 +3356,39 @@ The 4d $\cN=4$ super Yang--Mills theory viewed as a $\cN=2$ theory is 4d $\cN=2$
 By construction the twisting homomorphism $\Spin(2,\RR)\times \Spin(2, \RR)\rightarrow G_R$ defined by \eqref{eq:4d411decomposition} factors as $\Spin(2, \RR)\times \Spin(2, \RR)\subset \MU(2)\rightarrow G_R$, where the latter map is the twisting homomorphism used in Section \ref{sect:4d4holomorphictwist}. Therefore, we have to restrict the fields used in that section to $\Spin(2, \RR)\times \Spin(2, \RR)$. But by Theorem \ref{thm:4d4holomorphictwist} the fields belong to $T^*[-1]\map(\CC_{\rm Dol}\times \CC_{\rm Dol}, B\fg)$ whose underlying graded $\Spin(2, \RR)\times \Spin(2, \RR)$-equivariant bundle coincides with that of $T^*[-1]\map(\CC_{\rm Dol}\times \RR^2_{\mathrm{dR}}, B\fg)$.
 \end{proof}
 
-\subsubsection{Rank \texorpdfstring{$(2,1)$}{(1,2)} Topological Twist}
+\subsubsection{Rank \texorpdfstring{$(2,1)$}{(2,1)} Topological Twist}
 
-%Next we look at the case of the twist by a rank $(1,2)$ supercharge. 
-%As in many cases so far, it will be useful to consider a family of supercharges which are generically of rank $(1,2)$. 
-%
-%We use the same twisting homomorphism $\phi\colon \MU(2) \to \Spin(6;\CC)$ and twisting datum $\alpha\colon U(1) \to G_R$ as in Section \ref{sect:4d4holomorphictwist}.
-%Then, $S_+ \otimes W$ decomposes under $\MU(2)$ as
-%\[
-%S_+\otimes W\cong L\oplus L^*\oplus \det(L)\oplus \CC \cdot Q_0 \oplus \CC \oplus \det(L)^{-1}.
-%\]
-%The representation $S_- \otimes W^*$ decomposes as
-%\[
-%S_- \otimes W^* = L \oplus L^* \oplus \CC Q'\oplus\eend_0(L),
-%\]
-%where $\eend_0(L)\subset \eend(L)$ is the subspace of traceless endomorphisms. The supercharge $Q_0$ has rank $(1, 0)$ and the supercharge $Q'$ has rank $(0, 2)$. Moreover, both are square-zero and commute with each other. Therefore, we may consider a family of square-zero supercharges
-%\begin{equation}
-%Q_t = Q_0 + tQ'
-%\label{eq:4d412Hodgefamily}
-%\end{equation}
-%which is of rank $(1, 0)$ at $t=0$ and of rank $(1, 2)$ at $t\neq 0$.
-%
-%We are going to use the notation of the fields from Section \ref{sect:4d4holomorphictwist}.
-%
-%\begin{prop}
-%Suppose $Q_t$ is the rank $(1,2)$ supercharge of \eqref{eq:4d412Hodgefamily}. The $\MU(2)$ decomposition of the functionals $I^{(1)}, I^{(2)}$ (see \eqref{eq:gaugeI1}, \eqref{eq:gaugeI2}) in terms of the fields of 4d $\cN=4$ super Yang--Mills theory are
-%\begin{align*}
-%I^{(1)}(Q_t) &= \int \dvol\left(-(\rho, A_{1, 0}^*) - \wt \chi\wt a^* - (\Tilde{\nu}, \nu^*) - t(\varsigma, A_{1, 0}^*) - t(\wt\nu, A_{0, 1}^*) - t(b, \nu^*) - t(\rho, \phi^*) - t(\Lambda\psi)\wt a^*\right) \\
-%&+ \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda(F_{1, 1} + [\phi, \nu] + \omega [a, \wt a])\chi^* + [\phi, \phi]\xi^* + [\nu, a]\varsigma^* + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*)\right) \\
-%&+t\int\dvol\left(\frac{1}{2} (F_{1, 1} + [\phi, \nu] + \omega [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* + \Lambda \dd_{A_{1, 0}}\nu \chi^* + \dd_{A_{1, 0}} a \varsigma^* + \ol\dd_{A_{0, 1}} a \wt\nu^* + [\phi, a]\rho^* + [\nu, a]b^*\right) \\
-%I^{(2)} (Q_t) &= \int \dvol \left(t^2(\xi^*B^* + \chi^*\wt\chi^* + \frac{1}{2}(\psi^*, \psi^*)) -\frac{1}{4}(\chi^* + t \Lambda\psi^*)^2 + t^2 ac^*\right) \\
-%\end{align*}
-%\end{prop}
+Next we look at the case of the twist by a rank $(2,1)$ supercharge. 
+As in many cases so far, it will be useful to consider a family of supercharges which are generically of rank $(2,1)$. Consider the twisting homomorphism $\phi\colon \Spin(2; \RR)\times \Spin(2; \RR)\to G_R$ from Section \ref{sect:4d4partialtwist}.
 
-%\begin{theorem}
-%The twist of 4d $\cN=4$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges of Equation \ref{eq:4d412Hodgefamily} is perturbatively equivalent to $\map\left(\CC^2_{\rm Dol}, B\fg_{\Hod}\right)$. Moreover, this equivalence is $\U(2)$-equivariant.
-%\label{thm:4d12hodge}
-%\end{theorem}
-
-%\begin{proof}
-%We begin by applying Corollary \ref{cor:quad} to the two $t$-dependent quadruples of fields:
-%\begin{align*}
-%& (t \varsigma, \rho, t \phi, A_{1,0}) \\
-%& (tb, \Tilde{\nu}, t A_{0,1}, \nu) .
-%\end{align*}
-%This has the effect of integrating out the fields $(\rho, A_{1,0})$ and $(\Tilde{\nu}, \nu)$ and replaces the action functionals by
-%\begin{align*}
-%\Tilde{I}^{(1)}(Q_t) &= \int \dvol\left(- t^2 (\varsigma, \phi^*) - t^2 (b, A_{0, 1}^*) - (\wt \chi + t\Lambda\psi) \wt a^*\right) \\
-%&+ \int\dvol\left((F_{0, 2}, B^*) + (\ol\dd_{A_{0, 1}}a, b^*) + \frac{1}{2}\Lambda(F_{1, 1} - t [\phi, A_{0,1}] + \omega [a, \wt a])\chi^* + [\phi, \phi]\xi^* - t [A_{0,1}, a] \phi^* + \frac{1}{2} (\dbar_{A_{0,1}} \phi, \psi^*)\right) \\
-%%&+t\int\dvol\left(\frac{1}{2} (-t \dbar \phi + \partial A_{0,1} -t [\phi, A_{0,1}] + \omega\wedge [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* - t^2 \Lambda \partial_{\phi} A_{0,1} \chi^* - t \partial_\phi a \varsigma^* \right) \\ & + t \int \dvol \left( t \dbar_{A_{0,1}} a b^* + t [\phi, a] \varsigma^* - t [A_{0,1}, a]b^* \right) \\
-%&+t\int\dvol\left(\frac{1}{2} (F_{1,1} -t [\phi, A_{0,1}] + \omega [a, \wt a], \psi^*) + \Lambda \ol\dd_{A_{0, 1}} \phi \wt\chi^* - t^2 \Lambda \partial_{\phi} A_{0,1} \chi^* - t \partial_\phi a \varsigma^* \right) \\ & + t \int \dvol \left( t \dbar_{A_{0,1}} a b^* + t [\phi, a] \varsigma^* - t [A_{0,1}, a]b^* \right) \\
-%\Tilde{I}^{(2)} (Q_t, Q_t) &= \int \dvol \left(t^2(\xi^*B^* + \chi^*\wt\chi^* + \frac{1}{2}(\psi^*, \psi^*)) -\frac{1}{4}(\chi^* + t \Lambda\psi^*)^2 + t^2 ac^*\right)
-%\end{align*}
-%
-%The next step is to decompose the $(1,1)$ form $\psi$ as
-%\[
-%\psi = \omega \Lambda \psi + \psi_{\perp}
-%\]
-%where $\Lambda \psi_{\perp} = 0$. 
-%
-%\end{proof}
+Consider a family of scalar square-zero supercharges
+\begin{equation}
+Q_{s, t} = Q_0 + t Q_1 + sQ_2,
+\label{eq:4d412Hodgefamily}
+\end{equation}
+where $Q_0,Q_1$ are rank $(1, 0)$ supercharges and $Q_2$ is a rank $(0, 1)$ supercharge, so that $Q_0 + t Q_1$ is the family of square-zero supercharges from Section \ref{sect:4d4Atwist} and $Q_0 + Q_2$ is the rank $(1, 1)$ square-zero supercharge from Section \ref{sect:4d4partialtwist}. We will now calculate the twist with respect to the family $Q_0 + tQ_1 + Q_2$.
 
 \begin{theorem}
-The twist of 4d $\cN=4$ super Yang--Mills with respect to the family $Q_t$ of square-zero supercharges of Equation \ref{eq:4d412Hodgefamily} is perturbatively equivalent to $\map\left(\CC_{\rm Dol} \times \RR^2_{\mr{dR}}, B\fg_{\Hod}\right)$. Moreover, this equivalence is $\spin(2;\RR) \times \spin(2;\RR)$-equivariant.
+The twist of the 4d $\cN=4$ super Yang--Mills theory with respect to the family $Q_{1, t}$ of square-zero supercharges of Equation \eqref{eq:4d412Hodgefamily} is perturbatively equivalent to the theory $\map\left(\CC_{\rm Dol} \times \RR^2_{\mr{dR}}, B\fg_{\Hod}\right)$. Moreover, this equivalence is $\spin(2;\RR) \times \spin(2;\RR)$-equivariant.
 \end{theorem}
+\begin{proof}
+The idea of the proof will be to eliminate fields as in the proof of Theorem \ref{thm:4dDonaldsontwist}, but keeping track of the $s$-dependence.
+
+Let $S(s,t)$ be the action functional of the 4d $\cN=4$ super Yang--Mills theory twisted by $Q_0 + tQ_1 + sQ_2$. Then we have
+\[S(s, t) = S(s, 0) + \left(S^{(1)}(tQ_1) + 2 S^{(2)}(Q_0, tQ_1) + S^{(2)}(tQ_1, tQ_1)\right) + 2S^{(2)}(tQ_1, sQ_2),\]
+where $S^{(1)}, S^{(2)}$ are the supersymmetry actions from Section \ref{sect:gaugemultipletSUSY}. Here the middle three terms in the parentheses are the $t$-dependent terms in Proposition \ref{4d_donaldson_susy_prop} and $S^{(2)}(tQ_1, sQ_2)$ is proportional to $\tilde{\chi}^*$.
+
+We will now repeat the simplifications performed in the proof of Theorem \ref{thm:4dDonaldsontwist}. We first perform a change of variables sending $\{\chi^*, \chi, \wt\chi^*, \wt\chi\}$ to $\{\chi^*-t\wt\chi^*, \chi, \wt\chi^*, \wt\chi + t\chi\}$. Then we perform the following field eliminations:
+\begin{itemize}
+\item Using Proposition \ref{prop:integrateoutfield} we set $\chi = 0$ and $\chi^* - t\wt\chi^*$ to a certain value.
+
+\item Using Proposition \ref{prop:BRSTdoublet} we set $\rho^* = 0$, $A_{1, 0} = 0$ and $\rho, A_{1, 0}^*$ to certain values.
+
+\item Using Proposition \ref{prop:BRSTdoublet} we set $\tilde{a} = 0$, $\tilde{\chi}^*=0$ and $\tilde{\chi}+t\chi, \tilde{a}^*$ to certain values.
+
+\item Using Proposition \ref{prop:BRSTdoublet} we set $\tilde{\nu}^* = 0$, $\nu = 0$ and $\tilde{\nu},\nu^*$ to certain values.
+\end{itemize}
+\end{proof}
 
 \begin{proof}
 Fix a rank $(2,1)$ supercharge of the form $Q_{s,t} = Q_0 + tQ_1 + sQ_2$, where $Q_t = Q_0 + tQ_1$ is a rank $(2,0)$ supercharge lying within a 4d $\mc N=2$ subalgebra of the 4d $\mc N=4$ supertranslation algebra.  Consider the supersymmetry actions 
@@ -3453,7 +3422,7 @@ t \int\dvol\left(-(b, A_{0, 1}^*) + a c^* + \frac{1}{2} \xi^* B^* + t (\varsigma
 \end{equation}
 in terms of the $\mr U(2)$-component fields, which can be further broken to $\spin(2;\RR) \times \spin(2;\RR)$.
 
-Therefore, the $Q_{s,t}$ twisted action theory is equivalent to the rank $(1,1)$-twisted theory from Theorem \ref{thm:4d_11_twist}, with action deformed by the expression \ref{eq:4d_12_further_deformation}.  This deformation gives the desired theory.  The rank $(1,1)$-twisted theory was $\ZZ$-graded, and the deformation here by $tQ_1$ is a deformation by a degree 1 operator, so the twisted theory is also $\ZZ$-graded.  Finally, the rank $(1,1)$-twisted theory was shown to be $\spin(2;\RR) \times \spin(2;\RR)$-invariant, and the deformation \ref{eq:4d_12_further_deformation} was $\MU(2)$-equivariant, so the rank $(1,2)$-twisted theory is still $\spin(2;\RR) \times \spin(2;\RR)$-invariant.
+Therefore, the $Q_{s,t}$ twisted action theory is equivalent to the rank $(1,1)$-twisted theory from Theorem \ref{thm:4d_11_twist}, with action deformed by the expression \ref{eq:4d_12_further_deformation}.  This deformation gives the desired theory.  The rank $(1,1)$-twisted theory was $\ZZ$-graded, and the deformation here by $tQ_1$ is a deformation by a degree 1 operator, so the twisted theory is also $\ZZ$-graded.  Finally, the rank $(1,1)$-twisted theory was shown to be $\spin(2;\RR) \times \spin(2;\RR)$-invariant, and the deformation \ref{eq:4d_12_further_deformation} was $\MU(2)$-equivariant, so the rank $(2,1)$-twisted theory is still $\spin(2;\RR) \times \spin(2;\RR)$-invariant.
 \end{proof}
 
 \subsubsection{Rank \texorpdfstring{$(2, 2)$}{(2,2)} Topological Twist}
@@ -4101,7 +4070,7 @@ S^{(2)}_{\mr{gauge}} &= \int \dvol \bigg( -\frac{1}{4} (\lambda^{-*})^2 \bigg) .
 %We twist by the nilpotent supercharge $Q = q \otimes u_1$ where $q \in S_-$ is any nonzero vector. 
 
 \begin{theorem} \label{thm:2d(4,0)}
-The holomorphic twist of the 2d $\cN=(4,0)$ super Yang--Mills theory with matter valued in a symplectic $\fg$-representation $U$ is perturbatively equivalent to the holomorphic $BF$ theory coupled to the holomorphic $\beta\gamma$ system with the space of fields $T^*[-1] \Sect(\CC , (U \otimes K^{1/2}_{\CC}) \ham \fg)$.
+The holomorphic twist of the 2d $\cN=(4,0)$ super Yang--Mills theory with matter valued in a symplectic $\fg$-representation $U$ is perturbatively equivalent to the holomorphic $BF$ theory with the space of fields $T^*[-1] \Sect(\CC , (U \otimes K^{1/2}_{\CC}) \ham \fg)$.
 This equivalence is $\U(1)$-equivariant.
 \end{theorem}
 
