@@ -376,13 +376,13 @@ F + 2(u_1, u_2) &= 0.
  && \multirow{2}*{\hyperref[sect:4d_2_11] {Rank $(1,1)$}} & {Generalized BF Theory coupled to a generalized symplectic boson} & \multirow{2}*{3} \\
  &&& $\Sect(\CC \times \RR^2_{\mr{dR}}, (U\otimes K_\CC^{1/2}) \ham \fg)$  & \\ \cline{3-5}
  && \multirow{2}*{\hyperref[sect:4d2Donaldson] {Rank $(2,0)$}} & {Perturbatively trivial } & \multirow{2}*{4 (topological)} \\
- &&& $\mr{Sect}(\CC^2, U \ham \fg)_{\mr{dR}}$ & \\ \hline
+ &&& $\mr{Sect}(\CC^2, (U\otimes K_{\CC^2}^{1/2}) \ham \fg)_{\mr{dR}}$ & \\ \hline
  \multirow{6}*{3} & \multirow{6}*{$4$} & \multirow{2}*{\hyperref[sect:3d_4_minimal_twist] {Rank $1$}} & {Generalized BF Theory coupled to a generalized symplectic boson} & \multirow{2}*{2 (minimal)} \\
- &&& $T^*[-1]\mr{Sect}(\CC \times \RR_{\mr{dR}}, U \ham \fg)$  & \\ \cline{3-5}
+ &&& $T^*[-1]\mr{Sect}(\CC \times \RR_{\mr{dR}}, (U\otimes K_\CC^{1/2}) \ham \fg)$  & \\ \cline{3-5}
  && \multirow{2}*{\hyperref[sect:3d_4_B_twist] {Rank $2$ (B)}} & {BF Theory coupled to a symplectic boson} & \multirow{2}*{3 (topological)} \\
  &&& $\map(\RR^3_{\mr{dR}}, U \ham \fg)$ & \\ \cline{3-5}
  && \multirow{2}*{\hyperref[sect:3d_4_A_twist] {Rank $2$ (A)}} & {Perturbatively trivial } & \multirow{2}*{3 (topological)} \\
- &&& $\mr{Sect}(\CC \times \RR_{\mr{dR}}, U \ham \fg)_{\mr{dR}}$ & \\ \hline
+ &&& $\mr{Sect}(\CC \times \RR_{\mr{dR}}, (U\otimes K_\CC^{1/2}) \ham \fg)_{\mr{dR}}$ & \\ \hline
   \end{tabular}
  \caption{Twists of Supersymmetric Yang-Mills Theories with gauge Lie algebra $\fg$ with a hypermultiplet valued in a symplectic representation $U$ (8 supercharges).}
  \label{table_of_twists_8}
@@ -408,7 +408,7 @@ F + 2(u_1, u_2) &= 0.
  $\mc N$ & Twist & Description & Invariant Directions \\
  \hline
  \multirow{6}*{$(4,4)$} & \multirow{2}*{\hyperref[sect:2d44minimaltwist] {Rank $(1,0)$}} & {Holomorphic BF theory coupled to a holomorphic symplectic boson} & \multirow{2}*{1 (holomorphic)} \\
- && {$T^*[-1]\mr{Map}(\CC, T[1](U \ham \gg))$} & \\ \cline{2-4}
+ && {$T^*[-1]\Sect(\CC, T[1]((U\otimes K_\CC^{1/2}) \ham \gg))$} & \\ \cline{2-4}
  & \multirow{2}*{\hyperref[sect:2d44Btwist] {Rank $(1,1)$ (B)}} & {Topological BF theory coupled to a holomorphic symplectic boson} & \multirow{2}*{2 (topological)} \\
  && {$T^*[-1]\mr{Map}(\RR^2_{\mr{dR}}, U \ham \gg)$} & \\  \cline{2-4}
  & \multirow{2}*{\hyperref[sect:2d44Atwist] {Rank $(1,1)$ (A)}} & {Perturbatively trivial (A-model)} & \multirow{2}*{2 (topological)} \\
@@ -3298,9 +3298,9 @@ We will now repeat the simplifications performed in the proof of Theorem \ref{th
 \item Using Proposition \ref{prop:BRSTdoublet} we set $\Tilde{\nu}^* = 0$, $\nu = 0$ and $\Tilde{\nu},\nu^*$ to certain values.
 \end{itemize}
 
-The last term $S^{(2)}(tQ_1 + sQ_2)$ in Equation (\ref{eqn:(2,1)2}) is proportional to $\Tilde{\chi}^*$, therefore it disappears upon applying the third step above. 
+The last term $S^{(2)}(tQ_1 + sQ_2)$ in Equation \eqref{eqn:(2,1)2} is proportional to $\Tilde{\chi}^*$, therefore it disappears upon applying the third step above. 
 Applying all the remaining steps, the first term $S(s,0)$ becomes the action functional of the $(1,1)$ twist upon setting $s=1$, see Theorem \ref{thm:4d4partialtwist}. 
-Finally, the term in parentheses in Equation (\ref{eqn:(2,1)2}) agrees with the $t$-dependent terms of in Equation (\ref{eqn:(2,0)}), (where now the fields are adjoint valued). 
+Finally, the term in parentheses in Equation \eqref{eqn:(2,1)2} agrees with the $t$-dependent terms in Equation \eqref{eqn:(2,0)}, (where now the fields are adjoint valued). 
 We have already seen that the $t$-dependent terms give rise to the desired Hodge family, so this completes the proof. 
 \end{proof}
 
@@ -3698,7 +3698,7 @@ The holomorphic twist is obtained as the dimensional reduction of the minimal tw
 By Theorem \ref{3d_4_minimal_twist_thm} and Proposition \ref{CS_to_BF_diml_red_prop} we have the following. 
 
 \begin{theorem}
-The holomorphic twist of 2d $\mc N=(4,4)$ super Yang-Mills theory with matter valued in a symplectic $\fg$-representation $U$ is perturbatively equivalent to a holomorphic BF theory, with moduli space given by $T^*[-1]\mr{Map}(\CC, T[1](U \ham \gg))$. 
+The holomorphic twist of 2d $\mc N=(4,4)$ super Yang-Mills theory with matter valued in a symplectic $\fg$-representation $U$ is perturbatively equivalent to a holomorphic BF theory, with moduli space given by $T^*[-1]\Sect(\CC, T[1]((U\otimes K_\CC^{1/2}) \ham \gg))$. 
 This equivalence is $\mr U(1)$-invariant.
 \label{thm:2d44holomorphictwist}
 \end{theorem}
@@ -3752,10 +3752,10 @@ The 2d $\cN=(8, 8)$ super Yang--Mills theory may be considered as a 2d $\cN=(4, 
 
 \subsubsection{Holomorphic Twist} \label{sect:2d88minimaltwist}
 
-From Theorem \ref{thm:2d44holomorphictwist} we obtain the following statement.
+The 2d $\cN=(8, 8)$ super Yang--Mills theory is a dimensional reduction of the 3d $\cN=8$ super Yang--Mills theory. Therefore, from Theorem \ref{3d_8_minimal_twist_thm} we obtain the following statement.
 
 \begin{theorem}
-The holomorphic twist of the 2d $\mc N=(8,8)$ super Yang--Mills theory is perturbatively equivalent to a holomorphic BF theory with the space of fields given by $T^*[-1]\mr{Map}(\CC, T[1] T^*(\fg/\fg))$. This equivalence is $\mr U(1)$-equivariant.
+The holomorphic twist of the 2d $\mc N=(8,8)$ super Yang--Mills theory is perturbatively equivalent to a holomorphic BF theory with the space of fields given by $T^*[-1]\mr{Map}(\CC_{\mathrm{Dol}}, T[1] \fg/\fg)$. This equivalence is $\mr U(1)$-equivariant.
 \end{theorem}
 
 \subsubsection{Topological Twists}
