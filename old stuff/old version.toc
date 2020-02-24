@@ -1,0 +1,173 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{I\hspace {1em}Supersymmetric Gauge Theory}{7}{part.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}The BV-BRST Formalism}{7}{section.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1}Conventions}{8}{subsection.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2}Classical BV Theories}{8}{subsection.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3}Symmetries in the Classical BV Formalism}{12}{subsection.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.4}From BRST to BV}{14}{subsection.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.5}Examples of Classical Field Theories}{15}{subsection.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.5.1}Generalized BF Theory}{15}{subsubsection.1.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.5.2}Generalized Chern--Simons Theory}{18}{subsubsection.1.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.5.3}Generalized Hodge theory}{19}{subsubsection.1.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.6}Dimensional Reduction}{20}{subsection.1.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Supersymmetry}{23}{section.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1}Supersymmetry Algebras}{23}{subsection.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2}Composition Algebras and Minimal Supersymmetry}{24}{subsection.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3}Two-dimensional Chiral Supersymmetry}{26}{subsection.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4}Supersymmetric Twisting}{28}{subsection.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5}Dimensional Reduction of Supersymmetric Theories}{29}{subsection.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Supersymmetric Yang--Mills theories}{30}{section.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1}Pure Super Yang--Mills Theory}{30}{subsection.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2}Coupling to Matter Multiplets}{34}{subsection.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{II\hspace {1em}Classification of Twists}{39}{part.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Dimension 10}{39}{section.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1}$\mathcal N=(1, 0)$ Super Yang--Mills}{39}{subsection.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.1.1}Holomorphic twist}{39}{subsubsection.4.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fields:}{40}{section*.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Dimension 9}{41}{section.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1}$\mathcal N=1$ Super Yang--Mills}{41}{subsection.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.1.1}Minimal twist}{42}{subsubsection.5.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Dimension 8}{43}{section.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1}$\mathcal N=1$ Super Yang--Mills}{43}{subsection.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.1.1}Holomorphic twist}{44}{subsubsection.6.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fields:}{44}{section*.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.1.2}Topological twist}{45}{subsubsection.6.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.1.3}Partially topological twist}{46}{subsubsection.6.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}Dimension 7}{46}{section.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1}$\mathcal N=1$ Super Yang--Mills}{46}{subsection.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {7.1.1}Minimal twist}{47}{subsubsection.7.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {7.1.2}Topological twist}{47}{subsubsection.7.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {7.1.3}Partially topological twist}{48}{subsubsection.7.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}Dimension 6}{48}{section.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1}$\mathcal N=(1, 0)$ Super Yang--Mills}{48}{subsection.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fields:}{48}{section*.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {8.1.1}Holomorphic twist}{49}{subsubsection.8.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fields:}{49}{section*.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2}$\mathcal N=(1, 1)$ Super Yang--Mills}{51}{subsection.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {8.2.1}Holomorphic twist}{51}{subsubsection.8.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {8.2.2}Rank $(1, 1)$ partially topological twist}{51}{subsubsection.8.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {8.2.3}Topological twist}{52}{subsubsection.8.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {8.2.4}Rank $(2, 2)$ twist}{52}{subsubsection.8.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9}Dimension 5}{53}{section.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.1}$\mathcal {N} = 1$ Super Yang-Mills Theory with Matter}{53}{subsection.9.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fields:}{53}{section*.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Twisting data:}{53}{section*.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.2}$\mathcal {N} = 2$ Super Yang-Mills Theory}{54}{subsection.9.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fields:}{54}{section*.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Twisting data:}{54}{section*.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {10}Dimension 4}{55}{section.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {10.1}$\mathcal N=1$ with chiral multiplet matter}{55}{subsection.10.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {10.1.1}Holomorphic twist}{55}{subsubsection.10.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {10.2}$\mathcal N=2$ Super Yang-Mills with Matter}{57}{subsection.10.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fields:}{57}{section*.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Supersymmetry action:}{57}{section*.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Twisting data:}{58}{section*.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {10.3}$\mathcal N=4$ Super Yang-Mills}{59}{subsection.10.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fields:}{59}{section*.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Twisting data:}{59}{section*.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {11}Dimension 3}{60}{section.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {11.1}$\mathcal N= 2$ Super Yang-Mills with Chiral Matter}{60}{subsection.11.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fields:}{60}{section*.20}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Twisting data:}{60}{section*.21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {11.2}$\mathcal N= 4$ Super Yang-Mills with Hypermultiplet Matter}{60}{subsection.11.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fields:}{60}{section*.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Twisting data:}{61}{section*.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {11.3}$\mathcal N= 8$ Super Yang-Mills Theory}{61}{subsection.11.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fields:}{61}{section*.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Twisting data:}{61}{section*.25}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {12}Dimension 2}{62}{section.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.1}$\mathcal N=(2,2)$ Super Yang-Mills with matter}{62}{subsection.12.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fields:}{62}{section*.26}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Supersymmetry action:}{62}{section*.27}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Twisting data:}{62}{section*.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.2}$\mathcal N=(4,4)$ and $\mathcal N=(8,8)$ Super Yang-Mills with matter}{63}{subsection.12.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.3}$\mathcal N=(0,2)$ Super Yang-Mills with matter}{63}{subsection.12.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.4}$\mathcal N=(0,4)$ Super Yang-Mills with matter}{65}{subsection.12.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.5}$\mathcal N=(0,\mathcal N_-)$ Super Yang-Mills}{66}{subsection.12.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A}Spinors}{66}{appendix.A}

@@ -52,16 +52,18 @@ The even nondegenerate pairings are the usual $\Gamma$ pairings $\Gamma : \wedge
 \end{itemize}
 \end{lem}
 
+\brian{Not sure if this is the correct formulation. The matter and fermions are treated differently in a theory of matter.}
+
 \begin{prop}
 \brian{how to state $3 \psi$-rule}
 
 \begin{itemize}
 \item[(1)] Dimension $n = 4$.
-Suppose $Q_+ \oplus Q_- \in S_+ \oplus S_-$.
+Suppose $Q_+ + Q_- \in S_+ \oplus S_-$.
 Then, the following diagram commutes
 \[
 \xymatrix{
-S_+ \otimes S_- \ar[dr]_-{(Q_+ + Q_-,-)} \ar[rr]^-{\Gamma} & & V \ar[dl]^-{\rho(v)} \\
+S_+ \otimes S_- \ar[dr]_-{(Q_+ + Q_-,-)} \ar[rr]^-{\Gamma} & & V \ar[dl]^-{\rho(-)(Q_+ + Q_-)} \\
 & S_+ \oplus S_- &  
 }
 \]
@@ -70,7 +72,7 @@ Suppose $Q \in S_\mp$.
 Then, the following diagram commutes
 \[
 \xymatrix{
-\wedge^2 S_\pm \ar[dr]_-{(Q,-)} \ar[rr]^-{\Gamma} & & V \ar[dl]^-{\rho(v)} \\
+\wedge^2 S_\pm \ar[dr]_-{(Q,-)} \ar[rr]^-{\Gamma} & & V \ar[dl]^-{\rho(-)Q} \\
 & S_\pm & 
 }
 \]
@@ -81,10 +83,11 @@ To a supersymmetric matter pair we will associate a free BV theory whose underly
 \begin{itemize}
 \item a scalar $\phi \in C^\infty(\RR^n ; \SS^*)$;
 \item a negative Weyl spinor valued in $U$; $\psi \in C^\infty(\RR^4 ; S_- \otimes U)$ .
-\begin{dfn}
-The BRST theory associated to a supersymmetric matter pair (even or odd) $(\SS, U)$ has underlying bundle of BRST fields:
-\[
+\end{itemize}
 
+\begin{definition}
+The BRST theory associated to a supersymmetric matter pair (even or odd) $(\SS, U)$ has underlying bundle of BRST fields:
+\end{definition}
 
 
 

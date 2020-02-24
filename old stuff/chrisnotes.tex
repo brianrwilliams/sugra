@@ -1,0 +1,115 @@
+\documentclass[10pt, oneside]{article}
+
+\input ./combined_macros.sty
+
+\newcommand{\BV}{\mathrm{BV}}
+\newcommand{\Cl}{\mathrm{Cl}}
+\newcommand{\Dens}{\mathrm{Dens}}
+\newcommand{\gauge}{\mathrm{gauge}}
+\newcommand{\Hod}{\mathrm{Hod}}
+\newcommand{\matter}{\mathrm{matter}}
+\newcommand{\ML}{\mathrm{ML}}
+\newcommand{\MU}{\mathrm{MU}}
+\renewcommand{\Re}{\mathrm{Re}}
+\renewcommand{\U}{\mathrm{U}}
+
+\newcommand{\ham}{/\!\!/}
+
+\newcommand{\defterm}[1]{\textbf{\emph{#1}}}
+
+\addbibresource{Twist.bib}
+
+\usepackage{pdflscape}
+\usetikzlibrary{shapes.geometric, arrows, positioning, matrix}
+
+\tikzstyle{s16} = [rectangle, rounded corners, text centered, draw=black,fill=red!30]
+\tikzstyle{s16chiral} = [s16, dashed]
+\tikzstyle{s8} = [rectangle, rounded corners, text centered, draw=black,fill=orange!30]
+\tikzstyle{s4} = [rectangle, rounded corners, text centered, draw=black,fill=yellow!30]
+\tikzstyle{s2chiral} = [rectangle, dashed, rounded corners, text centered, draw=black,fill=green!30]
+\tikzstyle{dimension} = [circle, text centered, text width=0.7cm, minimum height=0.7cm, draw=black]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\title{A Catalogue of Twists of Supersymmetric Gauge Theories}
+\author{Chris Elliott\and Pavel Safronov \and Brian Williams}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We give a complete classification of supersymmetric twists of super Yang-Mills theories with matter in all dimensions.  Super Yang-Mills theories can be modelled classically using the BV formalism; we construct the supersymmetry algebra action using the language of $L_\infty$ algebras, then for each class of square-zero supercharge we give a description of the corresponding twisted theory in terms of partially holomorphic versions of Chern-Simons and BF theory. 
+\end{abstract}
+
+\tableofcontents
+
+We obtain $\mc N=2$ super Yang-Mills theory on $\RR^4$ by dimensionally reducing $\mc N=(1,0)$ super Yang-Mills from $\RR^6$, or $\mc N=1$ super Yang-Mills from $\RR^5$, with a hypermultiplet valued in a symplectic representation $U$.  In these terms we can describe the BRST fields.
+
+\vspace{-10pt}
+\paragraph{Fields:}  We can describe the BRST fields of $\mc N=2$ super Yang-Mills with matter valued in the symplectic representation $U$ by restricting the 5d $\mc N=2$ fields from Section \ref{5d_1_section} to representations of the group $\mr O(4)$.  In addition to the ghost $c$, the fields we obtain are
+\begin{itemize}
+ \item $\gg$-valued Bosons: a gauge field $A \in \Omega^1(\RR^4; \gg)$, and a pair of scalar fields $(\phi_1,\phi_2) \in \Omega^1(\RR^4; \gg \otimes \wedge^2(W))^2$.
+ \item $U$-valued bosons: a $W$-valued scalar field $\phi \otimes v \in \Omega^0(\RR^4; W \otimes U)$.
+ \item $\gg$-valued fermions: a $W$-valued Dirac spinor $\lambda = (\lambda_+ \otimes u_+, \lambda_-\otimes u_-) \in \Omega^0(\RR^4; (S_+ \otimes W \oplus S_- \otimes W^*) \otimes \gg)$.
+ \item $U$-valued fermions: a Dirac spinor $\psi = (\psi_+,\psi_-) \in \Omega^0(\RR^4; (S_+\oplus S_-) \otimes U)$.
+\end{itemize}
+
+\vspace{-10pt}
+\paragraph{Supersymmetry action:} 
+It will be enough for our purposes to describe only the action of a chiral supercharge.
+\begin{prop} \label{4d_2_susy_action_prop}
+After reduction to $\mr O(4)$, the 6d $\mc N=(1,0)$ interaction terms $I^{(1)}$ and $I^{(2)}$ become
+\begin{align*}
+I^{(1)}_{\mr{gauge}}(Q) &= \int \dvol \bigg(-( (\Gamma(Q_+,\lambda_-)(w_+,u_-), A^*) + \langle Q_+,\lambda_+\rangle w_+ \wedge u_+, \phi_2^* ) + \\
+&\qquad  + \frac 12 ((\rho(F_A)Q_+, \lambda_+^*)(u_+^*,  w_+) + (\rho(\d_A \phi_2(w_+ \wedge u_-^*))Q_+, \lambda_-^*) \bigg)\\
+I^{(1)}_{\mr{matter}}(Q) &= \int \dvol (((Q_+,\psi_+), \phi^*)(v^*,w_+) + \frac 12 (\rho(\d_A \phi)Q_+, \psi_+^*)(v,w_+)) \\
+I^{(2)}_{\mr{gauge}}(Q,Q) &= \int \dvol \big(\frac 14 (Q_+,Q_+)(\lambda_-,\lambda_-)(u_-,w_+)^2 - \frac 12  (Q_+, \lambda_-^*)^2(w_+ \wedge u_-^*)^2 - (Q_+,Q_+)\phi_1(w_+ \wedge w_+)c^* \big) \\
+I^{(2)}_{\mr{matter}}(Q,Q) &= \int \frac 14 \dvol (Q_+,Q_+)(\psi_-^*,\psi_-^*)(w_-^* \wedge w_-^*)
+\end{align*}
+if $Q=Q_+ \otimes w_+$ is a non-zero element of $S_+ \otimes W$. \chris{missing thing here: trivialising those wedge pairs, or equivalently restricting $\Gamma(-,-)$ from 6d to 4d.}
+\end{prop}
+
+\vspace{-10pt}
+\paragraph{Twisting data:}
+There are three classes of square-zero supercharge in the 3d $\mc N=2$ supersymmetry algebra, distinguished by the ranks of the two summands $(Q_+,Q_-) \in S_+ \otimes W \oplus S_- \otimes W^*$.
+\begin{itemize}
+ \item Rank $(1,0)$ and $(0,1)$ supercharges automatically square to zero.  The corresponding twists are holomorphic, and coincide with the 4d $\mc N=1$ twists discussed above.
+ \item Rank $(2,0)$ and $(0,2)$ supercharges also automatically square to zero. The corresponding twists are topological (the \emph{Donaldson twist}).
+ \item Rank $(1,1)$ square-zero supercharges have three invariant directions.
+\end{itemize}
+
+We will identify the latter two twists as further deformations of the minimal twist, which we can describe similarly to what we saw for $\mc N=1$.
+
+\begin{theorem} \label{4d_2_holo_twist_thm}
+The minimal twist of 4d $\mc N=2$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$ on a Calabi-Yau surface $S$ is perturbatively equivalent to the generalized BF theory coupled to a higher holomorphic symplectic $U$-valued boson, with space of fields $\mr{Map}(S, T^*[1](U\ham \gg))$.
+\end{theorem}
+
+\begin{proof}
+To show this, we start with the 5d $\mc N=1$ minimal twist from Theorem \ref{5d_holo_twist_theorem} and dimensionally reduce in the de Rham direction $L_{\mr{dR}}$.  That is, we apply Proposition \ref{CS_to_BF_diml_red_prop} to the theorem obtained in Theorem \ref{5d_holo_twist_theorem}.
+\end{proof}
+
+We'll first consider the deformation of the holomorphic twist to the topological twist corresponding to a rank $(2,0)$ supercharge.
+
+\begin{theorem} \label{4d_Donaldson_twist_thm}
+The deformation of the holomorphic twist to the Donaldson twist of 4d $\mc N=2$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$ is perturbatively equivalent, as a 1-parameter family of theories, to the Hodge family $\mr{Map}(S, (U\ham \gg)_{\mr{Hod}})$.  
+\end{theorem}
+
+\begin{proof}
+Suppose the family of generically rank $(2,0)$ supercharge splits as a sum of two rank 1 supercharges as $Q_{\mr{hol}} + tQ$, where $t \in \CC$.  It is enough to understand the deformation of the holomorphically twisted action functional, which we wrote down in the proof of Theorem \ref{4d_minimal_twist_thm}, by $I^{(1)}(tQ) + I^{(2)}(tQ,tQ)$ using Proposition \ref{4d_2_susy_action_prop}.
+
+\chris{that term should correspond to an isomorphism between the two copies of $\gg \oplus \gg[-1] \oplus U[-1]$ in the BV complex.  Fields that survive will be $c, A_{0,1}, \phi_1,\phi_2, \psi_+$, then a single scalar from $\phi$, a single $(0,1)$-form from $\lambda_-$ and a single scalar from $\lambda_+$, along with anti-fields.  The terms that will contribute to the deformation of the differential will be an $A^*\lambda_-$ and a $\phi_2^* \lambda_+$ term from $I^{(1)}_{\mr{gauge}}$, a $\phi^*\psi_+$ term from $I^{(1)}_{\mr{matter}}$, a $c^*\phi_1$ term from $I^{(2)}_{\mr{gauge}}$, and a $\psi_-^*\psi_-^*$ term from $I^{(2)}_{\mr{matter}}$.}
+\end{proof}
+
+We now address the rank $(1,1)$ twist.  This is more straightforward: we can understand it by dimensional reduction from the 5d holomorphic twist, this time in a non-invariant direction.
+
+\begin{theorem} \label{4d_11_twist_thm}
+The rank $(1,1)$ twist of 4d $\mc N=2$ super Yang-Mills theory with gauge group $G$ and symplectic matter representation $U$ on a product $C_1 \times C_2$ of two Riemann surfaces, is perturbatively equivalent to the generalized BF theory coupled to a $U$-valued higher holomorphic boson with space of fields $\mr{Map}(C_1 \times {C_2}_{\mr{dR}}, U\ham \gg)$.  This theory is generally only $\ZZ/2\ZZ$-graded.
+\end{theorem}
+
+\begin{proof}
+We start with the 5d $\mc N=1$ holomorphic twist, as in Theorem \ref{5d_holo_twist_theorem}, and dimensionally reduce in one of the two non-invariant directions.  That is, we apply Proposition \ref{CS_diml_red_prop}.
+\end{proof}
+
+\end{document}

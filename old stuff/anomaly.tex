@@ -1,0 +1,36 @@
+\documentclass[10pt, oneside]{article}
+
+\input ./combined_macros.sty
+
+\addbibresource{Twist.bib}
+
+\title{Twists of supersymmetric gauge theories}
+\author{Chris Elliott\and Pavel Safronov \and Brian Williams}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{One-loop anomalies}
+
+\subsection{Holomorphic Chern-Simons}
+
+\begin{prop}
+Let $X$ be any flat Calabi-Yau manifold of odd complex dimension $d$. 
+The one-loop anomaly to quantizing holomorphic Chern-Simons theory with values in $\fg$ on $X$ is proportional to the local cocycle
+\[
+\int_X {\rm Tr}_{\rm ad} (\alpha \underbrace{\partial \alpha \cdots \partial \alpha}_{d}) \in \cloc^\bu \left(\sE_{\rm hCS}\right) .
+\] 
+where the trace is taken in the adjoint representation of $\fg$. 
+\end{prop}
+
+\begin{rmk}
+If we expand $\alpha$ in components as $\alpha = c + A^{0,1} + \sum_{i \geq 2} A^{0,i}$ where $c \in C^\infty(X) \otimes \fg$ and $A^{0,i} \in \Omega^{0,i}(X) \otimes \fg$, then up to some nonzero factor we can write the anomaly cocycle as 
+\[
+\int_X {\rm Tr}_{\rm ad} (c \partial A^{0,1} \cdots \partial A^{0,1}) = \int {\rm Tr}_{\rm ad} \left(c (F_{A^{0,1}})^d \right) .
+\]
+\end{rmk}
+
+\end{document}

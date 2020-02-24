@@ -1,0 +1,211 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Introduction}{3}{section*.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{I\hspace {1em}Supersymmetric Gauge Theory}{17}{part.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}The BV-BRST Formalism}{17}{section.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1}Conventions}{17}{subsection.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2}Formal Moduli Problems and Classical Field Theories}{18}{subsection.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3}Perturbative Equivalence of Classical Field Theories}{23}{subsection.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.4}Symmetries in the Classical BV Formalism}{25}{subsection.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.5}From BRST to BV}{27}{subsection.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.6}Examples of Classical Field Theories}{28}{subsection.1.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.6.1}Generalized BF Theory}{28}{subsubsection.1.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.6.2}Generalized Chern--Simons Theory}{29}{subsubsection.1.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.6.3}Generalized Hodge Theory}{31}{subsubsection.1.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.7}Dimensional Reduction}{31}{subsection.1.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Supersymmetry}{35}{section.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1}Spinors}{35}{subsection.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2}Supersymmetry Algebras}{36}{subsection.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3}Composition Algebras and Minimal Supersymmetry}{37}{subsection.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4}Two-dimensional Chiral Supersymmetry}{39}{subsection.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5}Supersymmetric Twisting}{41}{subsection.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.6}Dimensional Reduction of Supersymmetric Theories}{42}{subsection.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Supersymmetric Yang--Mills Theories}{43}{section.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1}Super Yang--Mills Theory: Pure Gauge Theory}{43}{subsection.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2}Coupling to Matter Multiplets}{47}{subsection.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{II\hspace {1em}Classification of Twists}{51}{part.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Dimension 10}{51}{section.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1}$\EuScript N=(1, 0)$ Super Yang--Mills Theory}{52}{subsection.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.1.1}Holomorphic Twist}{52}{subsubsection.4.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fields:}{53}{section*.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Dimension 9}{54}{section.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1}$\EuScript N=1$ Super Yang--Mills Theory}{54}{subsection.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.1.1}Minimal Twist}{55}{subsubsection.5.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Dimension 8}{56}{section.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1}$\EuScript N=1$ Super Yang--Mills Theory}{56}{subsection.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.1.1}Holomorphic Twist}{57}{subsubsection.6.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fields:}{57}{section*.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.1.2}Topological Twist}{57}{subsubsection.6.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.1.3}Partially Topological Twist}{59}{subsubsection.6.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}Dimension 7}{59}{section.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1}$\EuScript N=1$ Super Yang--Mills Theory}{59}{subsection.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {7.1.1}Minimal Twist}{60}{subsubsection.7.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {7.1.2}Topological Twist}{60}{subsubsection.7.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {7.1.3}Partially Topological Twist}{61}{subsubsection.7.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}Dimension 6}{61}{section.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1}$\EuScript N=(1, 0)$ Super Yang--Mills Theory}{61}{subsection.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {8.1.1}Holomorphic Twist}{62}{subsubsection.8.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fields:}{62}{section*.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2}$\EuScript N=(1, 1)$ Super Yang--Mills Theory}{64}{subsection.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {8.2.1}Holomorphic Twist}{64}{subsubsection.8.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {8.2.2}Rank $(1, 1)$ Partially Topological Twist}{64}{subsubsection.8.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {8.2.3}Topological Twist}{65}{subsubsection.8.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {8.2.4}Rank $(2, 2)$ Twist}{65}{subsubsection.8.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9}Dimension 5}{65}{section.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.1}$\EuScript {N} = 1$ Super Yang--Mills Theory}{65}{subsection.9.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {9.1.1}Minimal Twist}{66}{subsubsection.9.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {9.2}$\EuScript {N} = 2$ Super Yang--Mills Theory}{67}{subsection.9.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {9.2.1}Minimal Twist}{67}{subsubsection.9.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {9.2.2}Rank 2 Partially Topological Twist}{67}{subsubsection.9.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {9.2.3}Rank 2 Topological Twist}{68}{subsubsection.9.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {9.2.4}Rank 4 Twist}{68}{subsubsection.9.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {10}Dimension 4}{68}{section.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {10.1}$\EuScript N=1$ Super Yang--Mills Theory}{68}{subsection.10.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fields:}{69}{section*.20}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {10.1.1}Holomorphic Twist}{69}{subsubsection.10.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fields:}{69}{section*.21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {10.2}$\EuScript N=2$ Super Yang--Mills Theory}{70}{subsection.10.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fields:}{71}{section*.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {10.2.1}Holomorphic Twist}{71}{subsubsection.10.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fields:}{72}{section*.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {10.2.2}Rank $(2,0)$ Topological Twist}{73}{subsubsection.10.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {10.2.3}Rank $(1,1)$ Twist}{74}{subsubsection.10.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {10.3}$\EuScript N=4$ Super Yang--Mills Theory}{75}{subsection.10.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {10.3.1}Holomorphic Twist}{76}{subsubsection.10.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fields:}{76}{section*.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {10.3.2}Rank $(2,0)$ Topological Twist}{77}{subsubsection.10.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {10.3.3}Rank $(1, 1)$ Partially Topological Twist}{77}{subsubsection.10.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {10.3.4}Rank $(2,1)$ Topological Twist}{78}{subsubsection.10.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {10.3.5}Rank $(2, 2)$ Topological Twist}{79}{subsubsection.10.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {11}Dimension 3}{80}{section.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {11.1}$\EuScript N= 2$ Super Yang--Mills Theory}{80}{subsection.11.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {11.1.1}Minimal Twist}{80}{subsubsection.11.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {11.2}$\EuScript N= 4$ Super Yang--Mills Theory}{81}{subsection.11.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {11.2.1}Minimal Twist}{82}{subsubsection.11.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {11.2.2}Topological A-Twist}{82}{subsubsection.11.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {11.2.3}Topological B-Twist}{82}{subsubsection.11.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {11.3}$\EuScript N= 8$ Super Yang--Mills Theory}{82}{subsection.11.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {11.3.1}Minimal Twist}{83}{subsubsection.11.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {11.3.2}Topological Twists}{84}{subsubsection.11.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {12}Dimension 2}{84}{section.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.1}$\EuScript N=(2,2)$ Super Yang--Mills Theory}{84}{subsection.12.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fields:}{85}{section*.25}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {12.1.1}Holomorphic Twist}{85}{subsubsection.12.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {12.1.2}Topological A-Twist}{86}{subsubsection.12.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {12.1.3}Topological B-Twist}{87}{subsubsection.12.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.2}$\EuScript N=(4,4)$ Super Yang--Mills Theory}{87}{subsection.12.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {12.2.1}Holomorphic Twist}{88}{subsubsection.12.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {12.2.2}Topological Twists}{88}{subsubsection.12.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.3}$\EuScript N=(8,8)$ Super Yang--Mills Theory}{89}{subsection.12.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {12.3.1}Holomorphic Twist}{89}{subsubsection.12.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {12.3.2}Topological Twists}{89}{subsubsection.12.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.4}$\EuScript N=(2,0)$ Super Yang--Mills Theory}{90}{subsection.12.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {12.4.1}Holomorphic Twist}{90}{subsubsection.12.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.5}$\EuScript N=(4,0)$ Super Yang--Mills Theory}{91}{subsection.12.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {12.5.1}Holomorphic twist}{92}{subsubsection.12.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {12.6}$\EuScript N=(\EuScript N_+,0)$ Super Yang--Mills Theory}{93}{subsection.12.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {12.6.1}Holomorphic Twist}{93}{subsubsection.12.6.1}
