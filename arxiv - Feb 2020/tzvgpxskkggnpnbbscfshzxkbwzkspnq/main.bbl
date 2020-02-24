@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.9 $
+% $ biblatex bbl format version 2.8 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -16,7 +16,7 @@
   {}
 \endgroup
 
-\datalist[entry]{anyt/global//global/global}
+\sortlist[entry]{anyt/global/}
   \entry{AnselmiFre}{article}{}
     \name{author}{2}{}{%
       {{hash=AD}{%
@@ -3212,5 +3212,5 @@
     \field{journaltitle}{Physics Letters B}
     \field{year}{1988}
   \endentry
-\enddatalist
+\endsortlist
 \endinput
