@@ -688,21 +688,21 @@ We explain how to define the Poisson bracket in our context. Write $E = L[1]$ fo
 defined as follows. 
 A local functional $F \in  \oloc(\cE)$ can be written as an equivalence class of a sum of densities of the form
 \[
-D_1(-) \cdots D_n(-) \Omega
+D_1(-) \cdots D_m(-) \Omega
 \]
 where $D_i$ is a differential operator $D_i \colon \cE \to C^\infty_M$ and $\Omega$ is a density on $M$. 
 Without loss of generality, suppose $F$ is of this form. 
 Then, we can view $F$ as a functional in $\cO(\cE_c)$ by the assignment
 \[
-\phi \mapsto \int_M D_1(\phi) \cdots D_n(\phi) \Omega
+\phi \mapsto \int_M D_1(\phi) \cdots D_m(\phi) \Omega
 \]
 where $\phi$ denotes a compactly supported section. 
 Define the symmetric multilinear map
 \begin{align*}
-\d_{\mr{dR}} F  \colon  \cE_c^{\times (n-1)} & \to  \cE^\vee \\
- (\phi_1, \ldots, \phi_{n-1}) & \mapsto  D_1(\phi_1) \cdots D_{n-1}(\phi_{n-1}) D_{n} (-) + \{{\rm symmetric\;terms}\} .
+\d_{\mr{dR}} F  \colon  \cE_c^{\times (m-1)} & \to  \cE^\vee \\
+ (\phi_1, \ldots, \phi_{n-1}) & \mapsto  D_1(\phi_1) \cdots D_{m-1}(\phi_{m-1}) D_{m} (-) + \{{\rm symmetric\;terms}\} .
 \end{align*}
-Integrating by parts, we see that for any $(n-1)$-tuple $(\phi_1, \ldots, \phi_{n-1}) \in \cE_c^{n-1}$ the linear functional $(\d_{\mr{dR}} F) (\phi_1,\ldots, \phi_{n-1})$ is an element of $\cE^!$. 
+Integrating by parts, we see that for any $(m-1)$-tuple $(\phi_1, \ldots, \phi_{m-1}) \in \cE_c^{m-1}$ the linear functional $(\d_{\mr{dR}} F) (\phi_1,\ldots, \phi_{m-1})$ is an element of $\cE^!$. 
 This implies that $\d_{\mr{dR}} F \in {\rm Fun}_{\rm loc}(\cE, \cE^!)$.
 
 The non-degenerate pairing $\omega$ determines a bundle isomorphism $\omega \colon E \cong E^! [n]$ and hence an isomorphism of local functions
@@ -722,10 +722,10 @@ The Poisson bracket between local functionals $F, G$ is defined by
 \end{definition}
 
 The Poisson bracket enjoys the graded skew symmetry property
-\[\{F, G\} = (-1)^{|F| |G|} \{G, F\}\]
+\[\{F, G\} = (-1)^{|F||G|+n+1} \{G, F\}\]
 as well as the graded Jacobi identity.
 
-The differential on a local $L_\infty$ algebra $L$ is given by a differential operator $Q_{\mathrm{BV}}\colon L\rightarrow L$. The structure of the $L_\infty$ brackets can be encoded into its potential. In the same way, the structure of a local $L_\infty$ algebra $L$ together with an $n$-shifted symplectic structure on $BL$ may be encoded into the \defterm{action functional} $S\in\oloc(BL)$ of cohomological degree $1-n$ such that
+The differential on a local $L_\infty$ algebra $L$ is given by a differential operator $Q_{\mathrm{BV}}\colon L\rightarrow L$. The structure of the $L_\infty$ brackets can be encoded into its potential. In the same way, the structure of a local $L_\infty$ algebra $L$ together with an $n$-shifted symplectic structure on $BL$ may be encoded into the \defterm{action functional} $S\in\oloc(BL)$ of cohomological degree $n+1$ such that
 \[S = \frac{1}{2}\int_M\omega(e, Q_{BV} e) + I,\]
 where $e\in L$ and $I\in\oloc(BL)$ is at least cubic. Moreover, the action functional satisfies the \defterm{classical master equation}
 \[\{S, S\} = 0.\]
