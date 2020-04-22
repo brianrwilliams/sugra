@@ -1710,7 +1710,8 @@ It is shown in \cite[Proposition 3.25]{ElliottSafronov} that the number $d$ of i
 
 In the intermediate case we refer to $Q$ as a \defterm{holomorphic-topological} (alternatively, partially topological) supercharge. The collection of all square-zero supercharges in dimensions 2 through 10 (where one restricts to supersymmetries with at most 16 supercharges) was studied in \cite{ElliottSafronov} and \cite{EagerSaberiWalcher}. In particular, the orbits of square-zero supercharges under the $R$-symmetry group, $\Spin(V)$ and the obvious scaling action of $\CC^\times$ are shown in Figure \ref{fig:superchargeorbits}.
 
-Let $(E, S, \omega)$ be a supersymmetric classical field theory. Recall, this means we have a Maurer-Cartan element 
+Let $(E, S, \omega)$ be a supersymmetric classical field theory. 
+Recall, this means we have a Maurer-Cartan element 
 \[
 S_{\fA} = S + \sum_{k \geq 1} S_{\fA}^{(k)} \in C^\bu(\fA, \oloc(\cE))
 \]
@@ -1724,11 +1725,19 @@ Suppose $(E, S, \omega)$ is a supersymmetric classical field theory and $Q$ a sq
 Given additional data, we may enhance the classical field theory.
 
 \begin{definition}
-Let $Q\in\Sigma$ be a square-zero supercharge. A homomorphism $\alpha\colon U(1)\rightarrow G_R$ is \defterm{compatible} with $Q$ if $Q$ has weight 1 and the $\alpha$-weight mod 2 on $E$ coincides with the fermionic grading.
+Let $Q\in\Sigma$ be a square-zero supercharge. A homomorphism $\alpha\colon U(1)\rightarrow G_R$ is \defterm{compatible} with $Q$ if $Q$ has weight $+1$ and the $\alpha$-weight mod 2 on $E$ coincides with the fermionic grading.
 \end{definition}
 
+Recall, that before twisting the bundle $E$ is $\ZZ \times \ZZ/2$-graded.
 Given such an $\alpha$ we may consider a new $\ZZ$-grading on $E$ given by the sum of the cohomological grading and the grading given by $\alpha$. The map $I_{\fA}^{(k)}\colon \fA^{\otimes k} \to \oloc(\cE)$ is $G_R$-equivariant, so the element $I_{\fA}^{(k)}(Q, \dots, Q)$ has $\alpha$-weight $k$. But it also has cohomological degree $-k$. In other words, the twisted action $S^Q$ has total degree zero, so $(E, S^Q, \omega)$ is a $\ZZ$-graded classical field theory.
 
+\begin{rmk}
+There is a slight generalization of this regrading procedure where one only requires that the homomorphism $\alpha$ be such that the twisting supercharge $Q$ be weight $+1$. 
+One then defines a new $\ZZ \times \ZZ/2$-grading on $E$ by simultaneously rotating the $\ZZ$ and $\ZZ/2$-gradings by $\alpha$. 
+This results in new $\ZZ \times \ZZ/2$-graded theory for which both the action $S$ and supercharge $Q$ are of bidegree $(1,0)$. 
+This is a strict generalization of the situation above: the additional requirement that the $\alpha$-weight mod 2 on $E$ agree with the fermionic grading forces this new $\ZZ \times \ZZ/2$-grading to be concentrated purely even in the new $\ZZ/2$-degree. 
+\end{rmk} 
+ 
 \begin{definition}
 Let $Q\in\Sigma$ be a square-zero supercharge and suppose $\iota \colon G\rightarrow \Spin(V_\RR)$ is a fixed group homomorphism. A \defterm{twisting homomorphism} is a homomorphism $\phi\colon G\rightarrow G_R$ such that $Q$ is preserved under the product $(\iota, \phi) \colon G\rightarrow \Spin(V_\RR)\times G_R$.
 \end{definition}
