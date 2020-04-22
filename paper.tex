@@ -2,15 +2,6 @@
 
 \input ./combined_macros.sty
 
-
-\renewcommand{\Re}{\mathrm{Re}}
-\newcommand{\Sect}{\mathrm{Sect}}
-\renewcommand{\U}{\mathrm{U}}
-
-\newcommand{\ham}{/\!\!/}
-
-\newcommand{\defterm}[1]{\textbf{\emph{#1}}}
-
 \addbibresource{Twist.bib}
 
 \usepackage{pdflscape}
@@ -1723,12 +1714,9 @@ Let $Q\in\Sigma$ be a square-zero supercharge. A homomorphism $\alpha\colon U(1)
 Recall that before twisting the bundle $E$ is $\ZZ \times \ZZ/2$-graded.
 Given such an $\alpha$ we may consider a new $\ZZ$-grading on $E$ given by the sum of the cohomological grading and the grading given by $\alpha$. The map $I_{\fA}^{(k)}\colon \fA^{\otimes k} \to \oloc(\cE)$ is $G_R$-equivariant, so the element $I_{\fA}^{(k)}(Q, \dots, Q)$ has $\alpha$-weight $k$. But it also has cohomological degree $-k$. In other words, the twisted action $S^Q$ has total degree zero, so $(E, S^Q, \omega)$ is a $\ZZ$-graded classical field theory.
 
-\begin{rmk}
-There is a slight generalization of this regrading procedure where one only requires that the homomorphism $\alpha$ is such that the twisting supercharge $Q$ is of weight $+1$. 
-One then defines a new $\ZZ \times \ZZ/2$-grading on $E$ by simultaneously rotating the $\ZZ$ and $\ZZ/2$-gradings by $\alpha$. 
-This results in a new $\ZZ \times \ZZ/2$-graded theory for which both the action $S$ and supercharge $Q$ are of bidegree $(1,0)$. 
-This is a strict generalization of the situation above: the additional requirement that the $\alpha$-weight mod 2 on $E$ agrees with the fermionic grading forces this new $\ZZ \times \ZZ/2$-grading to be purely even in the new $\ZZ/2$-degree.
-\end{rmk} 
+\begin{remark}
+There is a slight generalization of this regrading procedure where one only relaces the requirement that the $\alpha$-weight coincides mod 2 with the fermionic grading, only requiring that the twisting supercharge $Q$ is of weight $+1$.  Given an action $\alpha$ of this more general class, one can define a new $\ZZ \times \ZZ/2$-grading on $E$ by simultaneously shifting the $\ZZ$ and $\ZZ/2$-gradings by $\alpha$. This results in a new $\ZZ \times \ZZ/2$-graded theory for which both the action $S$ and supercharge $Q$ are of bidegree $(1,0)$. This is a strict generalization of the situation above: the additional requirement that the $\alpha$-weight mod 2 on $E$ agrees with the fermionic grading forces this new $\ZZ \times \ZZ/2$-grading to be concentrated purely in the even $\ZZ/2$-degree part.
+\end{remark} 
  
 \begin{definition}
 Let $Q\in\Sigma$ be a square-zero supercharge and suppose $\iota \colon G\rightarrow \Spin(V_\RR)$ is a fixed group homomorphism. A \defterm{twisting homomorphism} is a homomorphism $\phi\colon G\rightarrow G_R$ such that $Q$ is preserved under the product $(\iota, \phi) \colon G\rightarrow \Spin(V_\RR)\times G_R$.
