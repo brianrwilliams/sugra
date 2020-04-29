@@ -1,0 +1,90 @@
+\documentclass[10pt, oneside]{article}
+
+\input ./combined_macros.sty
+
+\addbibresource{Twist.bib}
+
+\title{Note on Superconformal Chern--Simons}
+\author{Chris Elliott\and Pavel Safronov \and Brian Williams}
+
+\date{\today}
+
+\begin{document}
+ 
+\section*{Rough Note on Supersymmetry in Superconformal Chern--Simons}
+Choose a real semisimple Lie algebra $\gg$, a real representation $U$ of $\gg$ equipped with an inner product, and a superpotential $\mf W \colon U \to \RR$.  Let $\Sigma = S_\RR \otimes \Delta$ be a real spinorial representation of $\so(1,2)$, where $S_\RR$ is the 2-dimensional Majorana spin representation and $\Delta$ is equipped with an inner product (so we are considering $\mc N = \dim(\Delta)$ supersymmetry).  Superconformal Chern--Simons will have the following BRST fields in addition to the ghost $c$.
+\begin{align*}
+A &\in \Omega^0(\RR^3; \gg) \\
+X &\in \Pi \Omega^0(\RR^3; U) \\
+\Psi &\in \Pi \Omega^0(\RR^3; U \otimes \Sigma).
+\end{align*}
+Choose a supercharge $Q \in \Sigma$.  We define on-shell supersymmetry transformations by $Q$ to be
+\begin{align*}
+\delta_Q X &=  \langle Q, \Psi \rangle\\
+\delta_Q \Psi &= -\frac 12\left(\rho(\d_A X)Q + \nabla\mf W(X)Q\right)\\
+\delta_Q A &= k\, T(X, \Gamma( Q, \Psi )).
+\end{align*}
+Here $\langle - , - \rangle$ is the skew-symmetric scalar pairing on $\Sigma$ and $T \colon U \otimes U \to \gg$ is the skew-symmetric map obtained from the action using the inner products on $U$ and $\gg$.  Also we've included a number $k$ to be determined, which may depend on $\mc N$.  
+
+Let's sketch the anticommutation relations of the $\delta_Q$ operators.  I'm initially going to assume that $\mc N=\dim \Delta = 1$.  Start with the action on $X$.
+\begin{align*}
+\delta_{Q} \delta_{Q'}X &= \langle Q', \delta_{Q}\Psi \rangle \\
+&= - \frac 12 \langle Q', \rho(\d_A X)Q \rangle - \frac 12 \nabla\mf W(X) \langle Q', Q \rangle \\
+\text{so } [\delta_Q, \delta_{Q'}]X &= - \frac 12\langle Q', \rho(\d_A X)Q\rangle - \frac 12\langle Q, \rho(\d_A X)Q'\rangle \\
+&= \frac 12\langle \rho(\d_A X)Q, Q'\rangle + \frac 12\langle \rho(\d_A X)Q', Q\rangle \\
+&= \frac 12g(\rho(\d_A X), \Gamma(Q',Q) + \Gamma(Q,Q')) \\
+&=  g(\rho(\d_A X), \Gamma(Q',Q)) \\
+&= (\dd_i + A_i)X,
+\end{align*}
+where $\Gamma(Q',Q)$ is translation in the $x^i$ direction.  This looks pretty good.
+
+Now let's do the analogous calculation for $A$.
+\begin{align*}
+\delta_{Q} \delta_{Q'}A &= k \left( T(\delta_Q X, \Gamma( Q, \Psi )) + T(X, \Gamma( Q', \delta_{Q}\Psi )) \right) \\
+&= k \left( T(\langle Q', \Psi \rangle, \Gamma( Q, \Psi )) + \frac 12T(X, \Gamma( Q', \delta_{Q}\Psi )) \right) \\
+&= k \left( T(\langle Q', \Psi \rangle, \Gamma( Q, \Psi )) + \frac 12T(X, \Gamma( Q', \rho(\d_A X)Q + \Gamma(Q',Q)\nabla \mf W(X)))\right).
+\end{align*}
+The first two terms are anti-symmetric in $Q$ and $Q'$ \chris{I think?  I checked it fairly easily for the second term but I'm getting confused with the first term}.  Therefore
+\[[\delta_Q,\delta_{Q'}]A = k\Gamma(Q,Q')T(X, \nabla \mf W(X)).\]
+
+The Chern--Simons gauge field $A$ is supposed to be topological so translations should act trivially on $A$.  This term is, therefore, something that should vanish on-shell.
+
+If we compute $[\delta_Q, \delta_{Q'}]\Psi$ we get something more complicated.  
+\begin{align*}
+\delta_{Q} \delta_{Q'}\Psi &=-\frac 12\left( \rho(\d_A (\delta_Q X)Q' + \rho(\delta_Q(A)\cdot X)Q' + \nabla \mf W(\delta_Q X)Q' \right) \\
+&= -\frac 12\left( \rho(\langle Q, \d_A(\Psi)\rangle)Q' + k \rho(T(X, \Gamma( Q, \Psi ))\cdot X)Q' + \nabla \mf W(\langle Q, \Psi\rangle)Q' \right).
+\end{align*}
+If we take the first term alone and symmetrize then we get
+\begin{align*}
+-\frac 12 \left(\rho(\d_A (\delta_Q X)Q' + \rho(\d_A (\delta_{Q'} X)Q \right) &= \frac 12\left( g(\d_A \Psi, \Gamma(Q, Q') + \Gamma(Q',Q)\right) \\
+&= (\dd_i + A_i)\Psi,
+\end{align*}
+so this term alone gives the Lie derivative.  The other two terms should be $Q_{\mr{BV}}$-exact.  So in total we're claiming that
+\begin{align*}
+T(X, \nabla \mf W(X)) &\in \Omega^0(\RR^3; \gg) \\\
+T(X, \Psi ))\cdot X &\in \Omega^0(\RR^3;U \otimes S) \\
+\text{ and } T(X, \nabla \mf W(\Psi)) &\in \Omega^0(\RR^3; \gg \otimes S) 
+\end{align*}
+all vanish on-shell.  The vanishing of the first two follow from the claims in the paper that the supersymmetry closes off-shell when you insert auxiliary fields, which on-shell take the values $\chi = \frac 12 T(X,\Psi)$ and $C = \nabla \mf W(X)$ (suppressing the pairing on $U$).  I'm not immediately sure about the third.
+
+Let's try to work it out in the BV formalism.  Let me first of all try the simplest, abelian, case where $\gg = \mf u(1)$ and $\mf W$ is quadratic.  Say $\left| \nabla \mf W(X)\right|^2 = (X, m^2(X))$, for some $m^2 \in \GL(U)$.  The classical BV complex looks like
+\[\xymatrix{
+\Omega^0(\RR^3)_c \ar[r]^\d &\Omega^1(\RR^3)_A \ar[r]^\d &\Omega^2(\RR^3)_{A^*} \ar[r]^d &\Omega^3(\RR^3)_{c^*} \\
+&\Omega^0(\RR^3;U)_X \ar[r]^{\Delta + m^2} &\Omega^0(\RR^3; U)_{X^*} & \\
+&\Pi \Omega^0(\RR^3; S_\RR)_\Psi \ar[r]^{\sd \d - m^2} &\Pi \Omega^0(\RR^3; S_\RR)_{\Psi^*}.
+}\]
+Even in this case the theory isn't quite free: it has a quartic interaction of the form $|T(X,\Psi)|^2$. \chris{I'm gonna keep thinking about this.}
+
+
+
+
+
+% \begin{itemize}
+%  \item There should only be an $\mc N=\dim(\Delta)$ supertranslation action given appropriate constraints on $\gg$, $U$ and $\mf W$.
+%  \item Even when these constraints are satisfied, $([\delta_Q, \delta_{Q'}] - \mc L_{\Gamma(Q,Q')})\Psi$ should not equal zero, but rather something $Q_{\mr{BV}}$-exact.
+% \end{itemize}
+
+
+
+ 
+\end{document}
