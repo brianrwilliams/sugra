@@ -620,8 +620,9 @@ The claim follows from the following isomorphisms of graded vector bundles:
 \begin{align*}
 \left(\Omega^{0, \bullet}_X\right)^!&\cong \Omega^{0, \bullet}_X\otimes K_X[\dim(X)] \\
 \left(\Omega^{\bullet, \bullet}_Y\right)^!&\cong \Omega^{\bullet, \bullet}_Y[2\dim(Y)] \\
-\left(\Omega^\bullet_M\right)^!&\cong \Omega^\bullet_M\otimes \Dens_M[\dim(M)].
+\left(\Omega^\bullet_M\right)^!&\cong \Omega^\bullet_M\otimes \Dens_M[\dim(M)],
 \end{align*}
+where the superscript $!$ refers to the $\Dens_M$ valued dual space: $\mc E^! = \mc E^\vee \otimes \Dens_M$.
 \end{proof}
 
 \begin{corollary}
@@ -639,7 +640,7 @@ Let $\cM$ be a local formal moduli problem on $M$ represented by a local $L_\inf
 
 \item It is graded skew symmetric.
 
-\item The pairing $\cL_c\otimes \cL_c \rightarrow \CC$ defined by
+\item The pairing $\cL_c\otimes \cL_c \rightarrow \CC$ on the space of compactly supported sections of $L$ defined by
 \[\alpha\otimes \beta \mapsto \int_M \omega( \alpha, \beta)\]
 is an invariant pairing on the $L_\infty$ algebra $\cL_c$.
 \end{enumerate}
@@ -651,6 +652,10 @@ We can now state a concise definition of a classical field theory in the BV form
 A \defterm{classical BV field theory} (or, simply, classical field theory) is a local formal moduli problem on the spacetime manifold $M$ equipped with a strict $(-1)$-shifted symplectic structure.
 \label{def:classicalfieldtheory}
 \end{definition}
+
+\begin{remark}
+This definition is extremely broad, for instance the complex $\cL$ of fields can have cohomology in any degree.  In specific applications to quantum field theory one is likely to encounter examples that are more heavily restricted by assumptions about the existence of a quantization with certain properties.
+\end{remark}
 
 Given a local formal moduli problem $\cM = BL$ equipped with a strict $n$-shifted symplectic structure, the space of local functionals $\oloc(\cM)$ is equipped with a Poisson bracket (see \cite[Chapter 5.3]{CostelloBook}) 
 \[
@@ -1044,8 +1049,8 @@ is equipped with a shifted symplectic structure coming from the nondegenerate pa
 We may also consider a $\ZZ/2\ZZ$-graded version of the above theory where $\fg$ is merely $\ZZ/2\ZZ$-graded. If we assume that $B\fg$ carries a $\Gm$-action, we may define the generalized Chern--Simons theory without choosing a holomorphic volume form on $X$ (see also \cite{GinzburgRozenblyum}).
 
 \begin{definition}
-Let $X,Y$ be complex manifolds and $M$ a smooth oriented manifold. Fix an integer $m$ and suppose $X$ is equipped with an $m$-th root of the canonical bundle $K_X^{1/m}$. Let $\fg$ be an $L_\infty$ algebra equipped with a $\ZZ$-grading $\fg=\bigoplus_n \fg(n)$ and equipped with a symmetric pairing $\langle -, -\rangle$ as before, which has weight $m$ with respect to the grading. Then the generalized Chern--Simons theory is the classical field theory
-\[\Sect(X\times Y_{\mathrm{Dol}}\times M_{\mathrm{dR}}, B\fg\times_{\Gm} K_X^{1/m}).\]
+Let $X,Y$ be complex manifolds and $M$ a smooth oriented manifold. Fix an integer $m$ and suppose $X$ is equipped with a $j$-th root of the canonical bundle $K_X^{1/j}$. Let $\fg$ be an $L_\infty$ algebra equipped with a $\ZZ$-grading $\fg=\bigoplus_n \fg(n)$ and equipped with a symmetric pairing $\langle -, -\rangle$ as before, which has weight $j$ with respect to the grading. Then the generalized Chern--Simons theory is the classical field theory
+\[\Sect(X\times Y_{\mathrm{Dol}}\times M_{\mathrm{dR}}, B\fg\times_{\Gm} K_X^{1/j}).\]
 \label{def:sectChernSimons}
 \end{definition}
 
@@ -1246,8 +1251,8 @@ and similarly an isomorphism of bundles on $V_\RR$:
 \[\Omega^\bullet_{V_\RR}\cong \Sym_\RR^\bullet(\underline{V}_\RR[-1])\otimes_\RR\CC.\]
 
 Under the composition
-\[\Omega^\bullet(V_\RR; \CC)\xto{p^*} \Omega^\bullet(V)\rightarrow \Omega^{0, \bullet}(V)\]
-defined by pulling back forms along $p$ and projecting onto $(0,\bu)$-forms, the map $\Omega_V\wedge (-)\colon \Omega^{0, \bullet}_V \to \Omega^{{\rm dim}(V),\bu}_V \to \Omega^{\dim(V),\dim(V)}_V = {\rm Dens}_V$ given by projection onto the top component, reduces to the map $\Omega^{\bullet}(V_\RR;\CC)\rightarrow \Omega^{\dim(V)}_{V_\RR} = {\rm Dens}_{V_\RR}$ which also projects onto the top component. 
+\[\Omega^\bullet(V_\RR; \CC)\xto{\mr{Re}^*} \Omega^\bullet(V)\rightarrow \Omega^{0, \bullet}(V)\]
+defined by pulling back forms along $\mr{Re}$ and projecting onto $(0,\bu)$-forms, the map $\Omega_V\wedge (-)\colon \Omega^{0, \bullet}_V \to \Omega^{{\rm dim}(V),\bu}_V \to \Omega^{\dim(V),\dim(V)}_V = {\rm Dens}_V$ given by projection onto the top component, reduces to the map $\Omega^{\bullet}(V_\RR;\CC)\rightarrow \Omega^{\dim(V)}_{V_\RR} = {\rm Dens}_{V_\RR}$ which also projects onto the top component. 
 This shows that the BV pairings of the original and dimensionally reduced theory are compatible. 
 \end{proof}
 
@@ -1332,9 +1337,9 @@ by
 
 We have a subset $\Spin(V)\subset \Cl(V)$, so $\Sigma$ and $\Sigma^*$ are representations of the spin group. Moreover, the Clifford action and the maps $\Gamma$ are $\Spin(V)$-equivariant.
 
-We may identify $\wedge^2(V)\rightarrow \so(V)$ via
-\[\omega\mapsto (w\mapsto -2\iota_{(w, -)} \omega).\]
-This gives rise to an action map
+We may identify $\wedge^2(V)\rightarrow \so(V)$ via the map
+\[\omega\mapsto (v\mapsto -2\iota_{v^*} \omega),\]
+where $v$ is an element of $V$ and $\iota_{v^*}$ is the contraction with the associated element $v^* = (v,-)$ of $V^*$ induced by the bilinear pairing.  This gives rise to an action map
 \[\wedge^2(V)\otimes \Sigma\longrightarrow \Sigma\]
 of two-forms on spinors.
 
@@ -1352,13 +1357,13 @@ For $X\in\wedge^2(V)$ and $Q_1,Q_2\in\Sigma$ we have
 \label{prop:cliffordactionproperty1}
 \end{prop}
 
-We may extend the discussion to the case of Riemannian manifolds $N$, where we replace $V$ by the vector bundle $TN$. Given a bundle of Clifford modules $M=\Sigma\oplus \Sigma^*$ as before we have the associated Dirac operator
+We may extend the discussion to the case of Riemannian manifolds $N$, where we replace $V$ by the vector bundle $TN$. Given a bundle of Clifford modules $M=\Sigma\oplus \Sigma^*$ as described above we have the associated Dirac operator
 \[\sd{\d}\colon \Gamma(N, \Sigma)\rightarrow \Gamma(N, \Sigma^*).\]
 
 From \eqref{eq:quantizationtwoforms} we get the following property.
 
 \begin{prop}
-Suppose $Q_1,Q_2\in\Sigma$ and $\lambda\in\Gamma(N, \Sigma)$. Then
+Suppose $Q_1,Q_2$ and $\lambda\in\Gamma(N, \Sigma)$. Then
 \[\sd{\d}\rho(\Gamma(Q_1, \lambda)) Q_2 = \rho(d \Gamma(Q_1, \lambda)) Q_2 + (Q_1, \sd{\d} \lambda) Q_2.\]
 \label{prop:cliffordactionproperty2}
 \end{prop}
@@ -2136,7 +2141,7 @@ $\{S_{\matter}^{(1)}, S_{\matter}^{(2)}\}(Q_1,Q_2,Q_3)$ is obtained by cyclicall
 
 \part{Classification of Twists} \label{classification_part}
 
-In the following sections we fix a complex Lie algebra $\fg$ equipped with a symmetric bilinear invariant nondegenerate pairing, which should be thought of as the complexified Lie algebra of the gauge group.
+In the following sections we fix a complex Lie algebra $\fg$ equipped with a symmetric bilinear invariant nondegenerate pairing, which should be thought of as the complexified Lie algebra of the gauge group.  We will refer to the classification of twisting supercharges from \cite{ElliottSafronov} throughout.
 
 \section{Dimension 10}
 
