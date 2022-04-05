@@ -648,7 +648,7 @@ is an invariant pairing on the $L_\infty$ algebra $\cL_c$.
 
 We can now state a concise definition of a classical field theory in the BV formalism.
 
-\begin{definition}
+\begin{definition} \label{classical_BV_def}
 A \defterm{classical BV field theory} (or, simply, classical field theory) is a local formal moduli problem on the spacetime manifold $M$ equipped with a strict $(-1)$-shifted symplectic structure.
 \label{def:classicalfieldtheory}
 \end{definition}
@@ -736,12 +736,14 @@ that is
 \end{itemize}
 \end{definition}
 
+\begin{remark} \label{classical_BV_from_free_BV}
 The datum of a classical BV field theory as in Definition \ref{def:classicalfieldtheory} is equivalent to the datum of a free BV theory $(E, Q, \omega)$ equipped with an even functional
 \[I \in \oloc^+(\cE)\]
 of cohomological degree zero satisfying the Maurer-Cartan equation
 \[Q_{\mr{BV}} I + \frac{1}{2} \{I,I\} = 0,\]
 under the identification of the BV action as
 \[S = \frac{1}{2} \int_M \omega(e, Q_{\mr{BV}} e) + I\in \oloc(E).\]
+\end{remark}
 
 \begin{example} \label{def:cotangent_type}
 Let $\cM=BL$ be a local formal moduli problem. Then the $(-1)$-shifted cotangent bundle $T^*[-1]\cM$ carries a natural $(-1)$-shifted symplectic structure. Indeed, $T^*[-1]\cM = B(L\oplus L^![-3])$ and we simply pair $L$ and $L^!$. Classical field theories arising via this construction are called \defterm{cotangent type} theories.
@@ -963,6 +965,10 @@ where $Q_{\mr{BRST}}$ is the Chevalley--Eilenberg differential defined by the lo
 \end{definition}
 
 We call $L[1]$ the \defterm{space of BRST fields}.
+
+\begin{remark}
+We should note here that the formal moduli problem $\cM$ appearing in the definition is a local model for the stack of BRST fields \emph{before} imposing the classical equations of motion.  This is in alignment with Remark \ref{classical_BV_from_free_BV} -- where we consider a classical BV theory and equip it with the additional data of a classical interaction -- but in contrast to the formal moduli problem occurring in Definition \ref{classical_BV_def}.
+\end{remark}
 
 \begin{remark}
 In the most typical examples, the bundle $L[1]$ is concentrated in $\ZZ$-degrees $-1$ and 0.  In this case, sections in degree 0 are thought of as physical fields, and ghosts -- sections in degree $-1$ -- are thought of as generators of the infinitesimal gauge symmetry.  The action of gauge transformations on fields is then encoded by the Lie structure.
@@ -2168,7 +2174,7 @@ This theory admits a unique twist:
 \label{sect:10dholomorphictwist}
 
 Let $Q\in\Sigma$ be a square-zero supercharge, which we will fix for the rest of this section. 
-The image of $\Gamma(Q, -)\colon \Sigma\rightarrow V$ is a complex Lagrangian subspace $L\subset V$. Denote by $\sigma\colon V\rightarrow V$ the complex conjugation induced by the real structure $V = V_\RR\otimes_\RR\CC$. Since the bilinear form on $V_\RR$ is positive-definite, $L\cap \sigma(L) = 0$. In other words, $L$ defines a (linear) complex structure on $V_\RR$. Moreover, we may canonically identify $\sigma(L)\cong L^*$.
+The image of $\Gamma(Q, -)\colon \Sigma\rightarrow V$ is a complex isotropic subspace $L\subset V$. Denote by $\sigma\colon V\rightarrow V$ the complex conjugation induced by the real structure $V = V_\RR\otimes_\RR\CC$. Since the bilinear form on $V_\RR$ is positive-definite, $L\cap \sigma(L) = 0$. In other words, $L$ defines a (linear) complex structure on $V_\RR$. Moreover, we may canonically identify $\sigma(L)\cong L^*$.
 
 \begin{remark}
 It is important here that we are working in the complexified setting.  While it makes sense to study a real form of 10d supersymmetric Yang--Mills theory in Lorentzian signature associated to a real Lie algebra $\gg_\RR$, where the fermions are valued in the Majorana-Weyl spinor bundle, in this real supersymmetry algebra there are no square-zero supercharges. Indeed, a square-zero supercharge induces a 5-dimensional isotropic subspace of $\RR^{10}$, which only exists in the split signature $5+5$ (in which case there is no real structure for the Weyl spinor representation).  So necessarily, twists of maximal super Yang--Mills theory cannot be compatible with any unitary structure.
@@ -2281,7 +2287,7 @@ This theory admits a unique twist:
 \item A square-zero supercharge $Q\neq 0\in\Sigma$ has 5 invariant directions and does not admit a compatible homomorphism $\alpha$. So, it gives rise to a $\ZZ/2\ZZ$-graded holomorphic theory. Such a supercharge is stabilized by $G=\SU(4)\subset \Spin(9, \CC)$.
 \end{itemize}
 
-We may identify the odd part of the 9d $\mc N=1$ supersymmetry algebra with the odd part of the 10d $\mc N=(1, 0)$ supersymmetry algebra. Under this identification a supercharge $Q$ squares to zero in 9d iff it squares to zero in 10d.
+We may identify the odd part of the 9d $\mc N=1$ supersymmetry algebra with the odd part of the 10d $\mc N=(1, 0)$ supersymmetry algebra. Under this identification a supercharge $Q$ squares to zero in 9d if and only if it squares to zero in 10d (we refer to the discussion in \cite[Section 4.8--4.10]{ElliottSafronov} for details on the spaces of square-zero spinors).
 
 \subsubsection{Minimal Twist}
 \label{sect:9dminimaltwist}
@@ -2352,7 +2358,7 @@ This theory admits three twists by the following supercharges.
 
 \item Supercharges $(Q, 0)$ and $(0, Q)$ with $(Q, Q)_{S_\pm}\neq 0$. These are topological. As before, we may choose a compatible homomorphism $\alpha$, so they give rise to a $\ZZ$-graded topological theory. Such a supercharge is stabilized by $\Spin(7, \RR)\subset \Spin(8, \CC)$.
 
-\item Square-zero supercharges $(Q_+, Q_-)$ where both $Q_{\pm}$ are nonzero. These have 5 invariant directions and do not admit a compatible homomorphism $\alpha$, so they give rise to a $\ZZ/2\ZZ$-graded theory. We have $(Q_\pm, Q_\pm)_{S_\pm} = 0$. The supercharge $Q_+$ is stabilized by $\SU(4)\subset \Spin(8, \RR)$. The supercharge $Q_-$ is stabilized by $\SU(3)\subset \SU(4)\subset \Spin(8, \RR)$. We have a twisting homomorphism $\phi\colon \SU(3)\times \Spin(2, \RR)\rightarrow G_R=\Spin(2, \CC)$ given by projection onto the second factor, so the twisted theory in fact carries an action of $\SU(3)\times \Spin(2, \RR)$.
+\item Square-zero supercharges $(Q_+, Q_-)$ where both $Q_{\pm}$ are nonzero. These have 5 invariant directions and do not admit a compatible homomorphism $\alpha$, so they give rise to a $\ZZ/2\ZZ$-graded theory. We have $(Q_\pm, Q_\pm)_{S_\pm} = 0$. The supercharges $Q_+$ and $Q_-$ are each stabilized by copies of $\SU(4)\subset \Spin(8, \RR)$.  The intersection of these copies of $\SU(4)$ is isomorphic to $\SU(3)\subset \Spin(8, \RR)$. We have a twisting homomorphism $\phi\colon \SU(3)\times \Spin(2, \RR)\rightarrow G_R=\Spin(2, \CC)$ given by projection onto the second factor, so the twisted theory in fact carries an action of $\SU(3)\times \Spin(2, \RR)$.
 \end{itemize}
 
 \subsubsection{Holomorphic Twist}
