@@ -1163,9 +1163,15 @@ E_M\otimes E_M \ar^{\omega_M}[r] & \Dens_M[-1]
 \]
 is commutative.
 
-\item Under the map $p^*\colon \cE_N\rightarrow \cE_M$ we have $p^* S_M = S_N$.
+\item Under the map $p^*\colon \cE_N\rightarrow \cE_M$ we have $p^* S_N = S_M$.
 \end{itemize}
 \end{definition}
+
+\begin{remark}
+The last condition $p^* S_N = S_M$ should be understood as an equality as local functionals or equivalently as follows. 
+We recall that we can associate to the local functional $S_M$ an element of $\cO(\cE_{M,c}(M))$ where $\cE_{M,c}(M)$ is the space of compactly supported global sections of $E_M$ and similarly we can associate to the local functional $S_N$ an element of $\cO(\cE_{N,c}(N))$. 
+Using the isomorphism $p^* E_N \cong E_M$, pulling back induces a map $p^* \colon \cO(\cE_{N,c}(N)) \to \cO(\cE_{M,c}(M))$ and we require $p^*S_N = S_M$ in $\cO(\cE_{M,c}(M))$.
+\end{remark}
 
 We have an obvious notion of isomorphisms of dimensional reductions: these are linear isomorphisms of classical field theories on $N$ which are compatible with the isomorphisms $p^* E_N\cong E_M$. Thus, the collection of dimensional reductions of a given classical field theory on $M$ forms a groupoid.
 
@@ -1329,7 +1335,9 @@ Having set up the formalism behind classical field theories in the BV and BRST f
 \subsection{Spinors}
 \label{sect:spinors}
 
-In this paper we will extensively use the theory of spinors. Let $V$ be a complex vector space equipped with a nondegenerate symmetric bilinear pairing. Recall that the Clifford algebra $\Cl(V)$ is defined to be the quotient of the tensor algebra on $V$ by the relation
+In this paper we will extensively use the theory of spinors. 
+Throughout we work with the Euclidean signature and with complex spin representations. 
+Let $V$ be a complex vector space equipped with a nondegenerate symmetric bilinear pairing. Recall that the Clifford algebra $\Cl(V)$ is defined to be the quotient of the tensor algebra on $V$ by the relation
 \[v_1 v_2 + v_2 v_1 = 2(v_1, v_2).\]
 Consider a $\ZZ/2\ZZ$-graded Clifford module $M=M^+\oplus M^-$. Denote the Clifford action by $\rho(v)\in\eend(M)$. We assume the Clifford module is equipped with a nondegenerate pairing $(-, -)\colon M^+\otimes M^-\rightarrow \CC$ such that
 \[(\rho(v) Q_1, Q_2) = (Q_1, \rho(v) Q_2)\]
@@ -1436,8 +1444,9 @@ We will now define the fundamental notion of a supersymmetric field theory.  Con
 
 \begin{definition}
 \label{dfn: super}
-A classical field theory $(E, S, \omega)$ is \defterm{supersymmetric} if $E\rightarrow M$ is an $\ISO(V_\RR)\times G_R$-equivariant vector bundle and the infinitesimal strict action of the translation Lie algebra $V$ on the classical theory is extended to a $\Spin(V_\RR)\times G_R$-equivariant $L_\infty$ action of the supertranslation Lie algebra $\fA$ on the classical theory.
+A (Euclidean) classical field theory $(E, S, \omega)$ is \defterm{supersymmetric} if $E\rightarrow M$ is an $\ISO(V_\RR)\times G_R$-equivariant vector bundle and the infinitesimal strict action of the translation Lie algebra $V$ on the classical theory is extended to a $\Spin(V_\RR)\times G_R$-equivariant $L_\infty$ action of the supertranslation Lie algebra $\fA$ on the classical theory.
 \end{definition}
+
 
 \subsection{Composition Algebras and Minimal Supersymmetry}
 \label{sect:compositionalgebras}
