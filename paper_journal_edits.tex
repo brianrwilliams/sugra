@@ -164,7 +164,7 @@ Let us briefly discuss a twisting construction that our classification will not 
 \textbf{Dimension 8}
 \begin{itemize}
  \item \emph{$\mc N=1$ holomorphic twist.} Super Yang--Mills theory in 8 dimensions admits three classes of twists.  The minimal twist, by a holomorphic (or, equivalently, pure) supercharge, is equivalent to a holomorphic version of the BF theory defined on a complex 4-fold.
- \item \emph{$\mc N=1$ intermediate twist.} The holomorphic twist admits a deformation to a twist by a rank 1 impure spinor \footnote{When we refer to the \emph{rank} of a supercharge we will always mean the rank as a tensor, for instance in the 8d $\mc N=8$ case supercharges live in a tensor product $S \otimes W$, where $S$ is an irreducible representation of $\spin(8)$ and $W$ is a two-dimensional auxiliary symplectic vector space.}. This theory is equivalent to a generalized version of the Chern--Simons theory defined on a product of a Calabi--Yau 3-fold and an oriented surface. Note that this theory is only $\ZZ/2\ZZ$-graded.
+ \item \emph{$\mc N=1$ intermediate twist.} The holomorphic twist admits a deformation to a twist by a rank 1 impure spinor \footnote{When we refer to the \emph{rank} of a supercharge we will always mean the rank as a tensor, for instance in the 8d $\mc N=1$ case supercharges live in a tensor product $S \otimes W$, where $S$ is an irreducible representation of $\spin(8)$ and $W$ is a two-dimensional auxiliary symplectic vector space.}. This theory is equivalent to a generalized version of the Chern--Simons theory defined on a product of a Calabi--Yau 3-fold and an oriented surface. Note that this theory is only $\ZZ/2\ZZ$-graded.
  \item \emph{$\mc N=1$ topological twist.} The holomorphic twist also admits a deformation to a topological twist defined on $\spin(7)$-manifolds. This theory is perturbatively trivial, in the sense that the classical BV complex is contractible. It was studied in \cite{AcharyaOLoughlinSpence,BaulieuKannoSinger}. The partition function of this theory counts $\spin(7)$-instantons modulo gauge \cite{Lewis,DonaldsonThomas,ReyesCarrion}. If we denote by $\Omega$ the Cayley 4-form on a $\spin(7)$-manifold $M$, then the classical solutions are given by principal $G_\RR$-bundles on $M$ (where $G_\RR$ is a compact Lie group) together with a connection $A$, such that its curvature $F_A$ satisfies the equation
 \begin{equation} 
  F = \ast (\Omega\wedge F).
@@ -1168,7 +1168,7 @@ is commutative.
 \end{definition}
 
 \begin{remark}
-The last condition $p^* S_N = S_M$ should be understood as an equality as local functionals or equivalently as follows. 
+The last condition $p^* S_N = S_M$ should be understood as an equality of local functionals or, equivalently, as follows. 
 We recall that we can associate to the local functional $S_M$ an element of $\cO(\cE_{M,c}(M))$ where $\cE_{M,c}(M)$ is the space of compactly supported global sections of $E_M$ and similarly we can associate to the local functional $S_N$ an element of $\cO(\cE_{N,c}(N))$. 
 Using the isomorphism $p^* E_N \cong E_M$, pulling back induces a map $p^* \colon \cO(\cE_{N,c}(N)) \to \cO(\cE_{M,c}(M))$ and we require $p^*S_N = S_M$ in $\cO(\cE_{M,c}(M))$.
 \end{remark}
@@ -1264,7 +1264,7 @@ and similarly an isomorphism of bundles on $V_\RR$:
 
 Under the composition
 \[\Omega^\bullet(V_\RR; \CC)\xto{\mr{Re}^*} \Omega^\bullet(V)\rightarrow \Omega^{0, \bullet}(V)\]
-defined by pulling back forms along $\mr{Re}$ and projecting onto $(0,\bu)$-forms, the map $\Omega_V\wedge (-)\colon \Omega^{0, \bullet}_V \to \Omega^{{\rm dim}(V),\bu}_V \to \Omega^{\dim(V),\dim(V)}_V = {\rm Dens}_V$ given by projection onto the top component, reduces to the map $\Omega^{\bullet}(V_\RR;\CC)\rightarrow \Omega^{\dim(V)}_{V_\RR} = {\rm Dens}_{V_\RR}$ which also projects onto the top component. 
+defined by pulling back forms along ${\rm Re}\colon V \to V_{\RR}$ and projecting onto $(0,\bu)$-forms, the map $\Omega_V\wedge (-)\colon \Omega^{0, \bullet}_V \to \Omega^{{\rm dim}(V),\bu}_V \to \Omega^{\dim(V),\dim(V)}_V = {\rm Dens}_V$ given by projection onto the top component, reduces to the map $\Omega^{\bullet}(V_\RR;\CC)\rightarrow \Omega^{\dim(V)}_{V_\RR} = {\rm Dens}_{V_\RR}$ which also projects onto the top component. 
 This shows that the BV pairings of the original and dimensionally reduced theory are compatible. 
 \end{proof}
 
@@ -1395,7 +1395,7 @@ Note that both Proposition \ref{prop:cliffordactionproperty2} and Proposition \r
 \subsection{Supersymmetry Algebras} \label{sect:susyalgebras}
 In this section we will recall the framework for supersymmetry algebras and their classification following Deligne \cite{DeligneSpinors} and our previous work \cite{ElliottSafronov}, we refer there for more details.
 
-Let $V_\RR$ be a finite-dimensional real vector space of dimension $n=\dim_\RR(V_\RR)$ equipped with an orientation and a nondegenerate symmetric bilinear form. Denote by $V=V_\RR\otimes_\RR\CC$ its complexification. Consider the Lie algebra $\so(V)$. Let us recall the following facts:
+Let $V_\RR$ be a finite-dimensional real vector space of dimension $n=\dim_\RR(V_\RR)$ equipped with an orientation and a positive-definite nondegenerate symmetric bilinear form. Denote by $V=V_\RR\otimes_\RR\CC$ its complexification. Consider the Lie algebra $\so(V)$. Let us recall the following facts:
 \begin{itemize}
 \item If $n$ is odd, $\so(V)$ has a distinguished fundamental representation called the \defterm{spin} representation $S$.
 
@@ -2182,8 +2182,8 @@ This theory admits a unique twist:
 \subsubsection{Holomorphic Twist}
 \label{sect:10dholomorphictwist}
 
-Let $Q\in\Sigma$ be a square-zero supercharge, which we will fix for the rest of this section. 
-The image of $\Gamma(Q, -)\colon \Sigma\rightarrow V$ is a complex isotropic subspace $L\subset V$. Denote by $\sigma\colon V\rightarrow V$ the complex conjugation induced by the real structure $V = V_\RR\otimes_\RR\CC$. Since the bilinear form on $V_\RR$ is positive-definite, $L\cap \sigma(L) = 0$. In other words, $L$ defines a (linear) complex structure on $V_\RR$. Moreover, we may canonically identify $\sigma(L)\cong L^*$.
+Let $Q\in\Sigma$ be a nonzero square-zero supercharge, which we will fix for the rest of this section. 
+The image of $\Gamma(Q, -)\colon \Sigma\rightarrow V$ is a complex Lagrangian (i.e. maximal isotropic) subspace $L\subset V$. Denote by $\sigma\colon V\rightarrow V$ the complex conjugation induced by the real structure $V = V_\RR\otimes_\RR\CC$. Since the bilinear form on $V_\RR$ is positive-definite, $L\cap \sigma(L) = 0$. In other words, $L$ defines a (linear) complex structure on $V_\RR$. Moreover, we may canonically identify $\sigma(L)\cong L^*$.
 
 \begin{remark}
 It is important here that we are working in the complexified setting.  While it makes sense to study a real form of 10d supersymmetric Yang--Mills theory in Lorentzian signature associated to a real Lie algebra $\gg_\RR$, where the fermions are valued in the Majorana-Weyl spinor bundle, in this real supersymmetry algebra there are no square-zero supercharges. Indeed, a square-zero supercharge induces a 5-dimensional isotropic subspace of $\RR^{10}$, which only exists in the split signature $5+5$ (in which case there is no real structure for the Weyl spinor representation).  So necessarily, twists of maximal super Yang--Mills theory cannot be compatible with any unitary structure.
@@ -3161,7 +3161,7 @@ The minimal twist of 4d $\cN=2$ super Yang--Mills on $M=\CC \times \RR^2$ with m
 
 \subsection{\texorpdfstring{$\cN=4$}{N=4} Super Yang--Mills Theory} \label{4d_4_section}
 
-The 4d $\cN=4$ super Yang--Mills theory is obtained by dimensional reduction from the 10d $\cN=(1, 0)$ super Yang--Mills. It admits $R$-symmetry group $G_R=\Spin(6; \CC)\cong \SL(4, \CC)$ under which $W \cong S_+^6$ is the positive six-dimensional semi-spin representation and $W^* \cong S_-^6$. 
+The 4d $\cN=4$ super Yang--Mills theory is obtained by dimensional reduction from the 10d $\cN=(1, 0)$ super Yang--Mills. It admits $R$-symmetry group $G_R=\Spin(6; \CC)\cong \SL(4, \CC)$ under which $W \cong S_+^6$ is the positive semi-spin representation of $\Spin(6; \CC)$ and $W^* \cong S_-^6$. 
 
 Let us decompose the rotation group as $\Spin(4, \RR)\cong \SU(2)_+\times \SU(2)_-$. The classification of orbits of square-zero supercharges in the 4d $\mc N=4$ supersymmetry algebra is the most interesting among the examples we consider in this paper. We have the following classes. 
 \begin{itemize}
