@@ -1149,7 +1149,7 @@ At $t\neq 0$ the $L_\infty$ algebra $\fg_\Hod$ becomes acyclic, which proves the
 
 \subsection{Dimensional Reduction} \label{dim_red_section}
 
-In this section we formulate the procedure of dimensional reduction of a classical field theory. Fix a submersion $p\colon M\rightarrow N$ equipped with a fiberwise volume form, i.e. an isomorphism $p^*\Dens_N\cong \Dens_M$.  The idea is that the \emph{dimensional reduction} of a classical field theory on $M$ along the submersion $p$ is the theory obtained by restricting to those fields which are constant along the fibers of $p$.  We will begin with an abstract definition of dimensional reduction, then prove that if $M = N \times \RR^k$, and we consider field theories which are translation invariant along the fiber, then this procedure is well-defined.
+In this section we formulate the procedure of dimensional reduction of a classical field theory. Fix a submersion $p\colon M\rightarrow N$ equipped with a fiberwise density, i.e. an isomorphism $p^*\Dens_N\cong \Dens_M$.  The idea is that the \emph{dimensional reduction} of a classical field theory on $M$ along the submersion $p$ is the theory obtained by restricting to those fields which are constant along the fibers of $p$.  We will begin with an abstract definition of dimensional reduction, then prove that if $M = N \times \RR^k$, and we consider field theories which are translation invariant along the fiber, then this procedure is well-defined.
 
 \begin{definition}
 We say that a classical field theory $(E_N, \omega_N, S_N)$ on $N$ is a \defterm{dimensional reduction} along $p$ of the classical field theory $(E_M, \omega_M, S_M)$ on a manifold $M$ if one is given the data of a linear isomorphism $p^* E_N\cong E_M$ of the bundles of BV fields satisfying the following conditions:
@@ -1163,14 +1163,16 @@ E_M\otimes E_M \ar^{\omega_M}[r] & \Dens_M[-1]
 \]
 is commutative.
 
-\item Under the map $p^*\colon \cE_N\rightarrow \cE_M$ we have $p^* S_N = S_M$.
+\item Under the map $p^*\colon \cE_N\rightarrow \cE_M$ we have $p^* S_N = S_M$ in $\oloc(\cE_M)$.
 \end{itemize}
 \end{definition}
 
 \begin{remark}
-The last condition $p^* S_N = S_M$ should be understood as an equality of local functionals or, equivalently, as follows. 
-We recall that we can associate to the local functional $S_M$ an element of $\cO(\cE_{M,c}(M))$ where $\cE_{M,c}(M)$ is the space of compactly supported global sections of $E_M$ and similarly we can associate to the local functional $S_N$ an element of $\cO(\cE_{N,c}(N))$. 
-Using the isomorphism $p^* E_N \cong E_M$, pulling back induces a map $p^* \colon \cO(\cE_{N,c}(N)) \to \cO(\cE_{M,c}(M))$ and we require $p^*S_N = S_M$ in $\cO(\cE_{M,c}(M))$.
+The last condition involves a pullback of local functionals. Using the natural embeddings
+\[\oloc(\cE_M)\subset \cO(\cE_{M, c}),\qquad \oloc(\cE_N)\subset \cO(\cE_{N, c})\]
+we can interpret $S_N$ and $S_M$ as functionals on compactly-supported fields. Under these embeddings the pullback of local functionals corresponds to the map
+\[\cO(\cE_{N, c})\longrightarrow \cO(\cE_{M, c})\]
+which is the restriction under the map $\cE_{M, c}\rightarrow \cE_{N, c}$ given by integrating fields over the fibers of $p\colon M\rightarrow N$ for which we use the fiberwise density provided by the isomorphism $p^*\Dens_N\cong\Dens_M$; these integrals are convergent due to the compact support condition.
 \end{remark}
 
 We have an obvious notion of isomorphisms of dimensional reductions: these are linear isomorphisms of classical field theories on $N$ which are compatible with the isomorphisms $p^* E_N\cong E_M$. Thus, the collection of dimensional reductions of a given classical field theory on $M$ forms a groupoid.
@@ -1335,9 +1337,7 @@ Having set up the formalism behind classical field theories in the BV and BRST f
 \subsection{Spinors}
 \label{sect:spinors}
 
-In this paper we will extensively use the theory of spinors. 
-Throughout we work with the Euclidean signature and with complex spin representations. 
-Let $V$ be a complex vector space equipped with a nondegenerate symmetric bilinear pairing. Recall that the Clifford algebra $\Cl(V)$ is defined to be the quotient of the tensor algebra on $V$ by the relation
+In this paper we will extensively use the theory of spinors. Let $V$ be a complex vector space equipped with a nondegenerate symmetric bilinear pairing. Recall that the Clifford algebra $\Cl(V)$ is defined to be the quotient of the tensor algebra on $V$ by the relation
 \[v_1 v_2 + v_2 v_1 = 2(v_1, v_2).\]
 Consider a $\ZZ/2\ZZ$-graded Clifford module $M=M^+\oplus M^-$. Denote the Clifford action by $\rho(v)\in\eend(M)$. We assume the Clifford module is equipped with a nondegenerate pairing $(-, -)\colon M^+\otimes M^-\rightarrow \CC$ such that
 \[(\rho(v) Q_1, Q_2) = (Q_1, \rho(v) Q_2)\]
@@ -1393,7 +1393,7 @@ Suppose $Q\in\Sigma$ and $X\in\Omega^p(N)$. Then
 Note that both Proposition \ref{prop:cliffordactionproperty2} and Proposition \ref{prop:cliffordactionproperty3} extend to the case when $\lambda$ and $X$ respectively are twisted by a vector bundle and $\sd{\d}$ is the corresponding twisted Dirac operator.
 
 \subsection{Supersymmetry Algebras} \label{sect:susyalgebras}
-In this section we will recall the framework for supersymmetry algebras and their classification following Deligne \cite{DeligneSpinors} and our previous work \cite{ElliottSafronov}, we refer there for more details.
+In this section we will recall the framework for supersymmetry algebras and their classification following Deligne \cite{DeligneSpinors} and our previous work \cite{ElliottSafronov}; we refer there for more details.
 
 Let $V_\RR$ be a finite-dimensional real vector space of dimension $n=\dim_\RR(V_\RR)$ equipped with an orientation and a positive-definite nondegenerate symmetric bilinear form. Denote by $V=V_\RR\otimes_\RR\CC$ its complexification. Consider the Lie algebra $\so(V)$. Let us recall the following facts:
 \begin{itemize}
@@ -1447,38 +1447,36 @@ We will now define the fundamental notion of a supersymmetric field theory.  Con
 A (Euclidean) classical field theory $(E, S, \omega)$ is \defterm{supersymmetric} if $E\rightarrow M$ is an $\ISO(V_\RR)\times G_R$-equivariant vector bundle and the infinitesimal strict action of the translation Lie algebra $V$ on the classical theory is extended to a $\Spin(V_\RR)\times G_R$-equivariant $L_\infty$ action of the supertranslation Lie algebra $\fA$ on the classical theory.
 \end{definition}
 
-
 \subsection{Composition Algebras and Minimal Supersymmetry}
 \label{sect:compositionalgebras}
 
 We will now recall a relationship between certain ``minimal'' supersymmetry algebras and composition algebras. Our treatment will essentially follow that of Baez and Huerta \cite{BaezHuerta}.
 This section provides the representation theoretic underpinning for theories with minimally supersymmetric matter in dimensions $\geq 3$.
 
-Let $A$ be a unital (possibly non-associative) complex algebra equipped with an antiinvolution $\sigma\colon A\rightarrow A$. We make the following assumptions:
+Let $A$ be a unital alternative (recall that this means that $a\otimes b\otimes c\mapsto (ab)c - a(bc)$ is completely antisymmetric) complex algebra equipped with an antiinvolution $\dagger\colon A\rightarrow A$. We make the following assumptions:
 \begin{enumerate}
-\item The map $\Re(x)=x\mapsto (x + \sigma(x))/2$ defines a projector onto the subspace of $A$ spanned by the unit.
+\item The map $\Re(x)=x\mapsto (x + x^\dagger)/2$ defines a projector onto the subspace of $A$ spanned by the unit.
 
-\item By the previous assumption we have a quadratic form $x\sigma(x)\colon A\rightarrow \CC$. We assume that it is nondegenerate.
+\item By the previous assumption we have a quadratic form $xx^\dagger\colon A\rightarrow \CC$. We assume that it is nondegenerate.
 \end{enumerate}
 
-In fact, the data of the antiinvolution $\sigma$ may equivalently be encoded in the data of a non-degenerate multiplicative norm $x\mapsto x\sigma(x)$, i.e. $A$ is a real composition algebra \cite[Chapter 1.3]{SpringerVeldkamp}.
+In fact, the data of the antiinvolution $\dagger$ may equivalently be encoded in the data of a non-degenerate multiplicative norm $x\mapsto xx^\dagger$, i.e. $A$ is a real composition algebra \cite[Chapter 1.3]{SpringerVeldkamp}.
 
-For a $2\times 2$-matrix $M$ with entries in $A$ we define its hermitian adjoint $M^\dagger$ by transposing the matrix and applying $\sigma$ to the entries. 
+For a $2\times 2$-matrix $M$ with entries in $A$ we define its hermitian adjoint $M^\dagger$ by transposing the matrix and applying $\dagger$ to the entries. 
 Let $V$ to be the complex vector space of $2\times 2$ Hermitian matrices with values in $A$.
 Note that $\dim(V) = \dim(A) + 2$. 
-The space $V$ carries a nondegenerate quadratic form given by $M\mapsto -\det(M)$. 
+The space $V$ carries a nondegenerate quadratic form given by $M\mapsto -\det(M)$ (even though $A$ is non-associative, the determinant is well-defined since we are talking about $2\times 2$ matrices).
 Moreover, it carries an orthogonal involution $\widetilde{M} = M - \tr(M)\cdot 1$.
 Let ${\rm C}\ell_V$ be the resulting Clifford algebra.
 
-
-Given a left $A$-module, we may turn it into a right $A$-module via the antiinvolution $\sigma\colon A\rightarrow A$. Since $A$ is a Frobenius algebra, we have the following basic construction 
+If $A$ is associative, we may discuss left and right $A$-modules. Given a left $A$-module, we may turn it into a right $A$-module via the antiinvolution $\dagger\colon A\rightarrow A$. Since $A$ is a Frobenius algebra, we have the following basic construction.
 
 \begin{lemma}
-Suppose $M$ is a left $A$-module and $N$ a right $A$-module equipped with a nondegenerate pairing $(-, -)\colon M\otimes N\rightarrow \CC$ satisfying $(am, n) = (m, na)$ for every $a\in A$, $m\in M$ and $n\in N$. Then there is a unique map $(-, -)^A\colon M\otimes N\rightarrow A$ of $(A, A)$-bimodules whose real part is $(-, -)$.
+Suppose $A$ is associative. Let $M$ be a left $A$-module and $N$ a right $A$-module equipped with a nondegenerate pairing $(-, -)\colon M\otimes N\rightarrow \CC$ satisfying $(am, n) = (m, na)$ for every $a\in A$, $m\in M$ and $n\in N$. Then there is a unique map $(-, -)^A\colon M\otimes N\rightarrow A$ of $(A, A)$-bimodules whose real part is $(-, -)$.
 \label{lm:extendpairing}
 \end{lemma}
 
-Consider the left $A$-module $\Sigma=A\oplus A$ and the right $A$-module $\Sigma^* = A\oplus A$.
+Consider $\Sigma=A\oplus A$ equipped with the left $A$-action and $\Sigma^* = A\oplus A$ equipped with the right $A$-action.
 We will equip the sum $\Sigma \oplus \Sigma^*$ with an action of the Clifford algebra ${\rm C}\ell_V$.  
 The action on the two summands $\Sigma$ and $\Sigma^*$ will be different, hence the different notation.  
 Define the action maps
@@ -1499,16 +1497,16 @@ We have a nondegenerate scalar spinorial pairing
 \[\Sigma\otimes \Sigma^*\longrightarrow \CC\]
 given by
 \[(Q_1, Q_2) = \Re(Q_1^\dagger Q_2).\]
-It obviously satisfies $(Q_1 \sigma(a), Q_2) = (Q_1, Q_2 a)$. The extension to an $A$-valued pairing provided by Lemma \ref{lm:extendpairing} is given by
+If $A$ is associative, it satisfies $(Q_1 a^\dagger, Q_2) = (Q_1, Q_2 a)$. Then the extension to an $A$-valued pairing provided by Lemma \ref{lm:extendpairing} is given by
 \[(Q_1, Q_2)^A = Q_1^\dagger Q_2.\]
 
 By duality we obtain maps $\Gamma\colon\Sym^2(\Sigma)\rightarrow V$ and $\Gamma\colon \Sym^2(\Sigma^*)\rightarrow V$ given, respectively, by
 \[\Gamma(Q_1, Q_2) = \widetilde{Q_1Q_2^\dagger + Q_2Q_1^\dagger},\qquad \Gamma(Q_1, Q_2) = Q_1Q_2^\dagger + Q_2Q_1^\dagger.\]
 
-We will now state two important properties of $\Gamma$ and the spinorial pairing. The following statement was proved in \cite[Theorem 11]{BaezHuerta} (see also \cite{Schray} for the case $\dim(V)=10$).
+We will now state two important properties of $\Gamma$ and the spinorial pairing. The following statement (an analog of the Fierz identity) was proved in \cite[Theorem 11]{BaezHuerta} (see also \cite{Schray} for the case $\dim(V)=10$).
 
 \begin{theorem}
-Suppose $A$ is alternative, i.e. $a\otimes b\otimes c\mapsto (ab)c - a(bc)$ is completely antisymmetric. For $Q_1, Q_2, Q_3\in\Sigma$ we have
+For $Q_1, Q_2, Q_3\in\Sigma$ we have
 \[\rho(\Gamma(Q_1, Q_2))Q_3 + \rho(\Gamma(Q_2, Q_3))Q_1 + \rho(\Gamma(Q_2, Q_3))Q_1 = 0.\]
 \label{thm:3psi}
 \end{theorem}
@@ -1534,9 +1532,9 @@ We will be interested in the following examples:
 \item (\textbf{3d $\mc N=1$ supersymmetry}) $A = \CC$. 
 Here, $\dim(V) = 3$ and $\Sigma$ is the spin representation of $\Spin(3, \CC)$.
 
-\item (\textbf{4d $\mc N=1$ supersymmetry}) $A = \CC\otimes_{\RR}\CC\cong \CC[x]/(x^2+1)$ with $\sigma(x) = -x$. Moreover, $\dim(V) = 4$ and $\Sigma=S_+\oplus S_-$ is the sum of semi-spin representations of $\Spin(4;\CC)$.
+\item (\textbf{4d $\mc N=1$ supersymmetry}) $A = \CC\otimes_{\RR}\CC\cong \CC[x]/(x^2+1)$ with $x^\dagger = -x$. Moreover, $\dim(V) = 4$ and $\Sigma=S_+\oplus S_-$ is the sum of semi-spin representations of $\Spin(4;\CC)$.
 
-\item (\textbf{6d $\mc N=(1, 0)$ supersymmetry}) $A=\mathbb{H}\otimes_{\RR}\CC\cong \eend(W_+)$, where $W_+$ is a two-dimensional symplectic vector space with $\sigma$ given by the dual operator. Moreover, $\dim(V) = 6$ and $\Sigma = S_+\otimes W_+$ is the sum of two copies of a semi-spin representation of $\Spin(6;\CC)$.
+\item (\textbf{6d $\mc N=(1, 0)$ supersymmetry}) $A=\mathbb{H}\otimes_{\RR}\CC\cong \eend(W_+)$, where $W_+$ is a two-dimensional symplectic vector space with $\dagger$ given by the dual operator. Moreover, $\dim(V) = 6$ and $\Sigma = S_+\otimes W_+$ is the sum of two copies of a semi-spin representation of $\Spin(6;\CC)$.
 
 \item (\textbf{10d $\mc N=(1, 0)$ supersymmetry}) $A=\mathbb{O}\otimes_{\RR}\CC$. We have $\dim(V) = 10$ and $\Sigma = S_+$ is a semi-spin representation of $\Spin(10;\CC)$.
 \end{enumerate}
@@ -1611,14 +1609,14 @@ Indeed, $\Gamma(Q_1, Q_2)$ lies in $S_+^{\otimes 2}\subset V$, but the nonzero C
 \[S_-^{\otimes 2}\otimes (S_+\otimes W)\longrightarrow S_-\otimes W.\]
 \end{proof}
 
-We will now fix a composition algebra $A$ with an antiinvolution $\sigma$ as in Section \ref{sect:compositionalgebras} and set $W = A$. The nondegenerate symmetric bilinear pairing $a_1, a_2\mapsto \Re(a_1\sigma(a_2))$ on $A$ endows $W$ with a pairing. Both $\Sigma$ and $\Sigma^*$ are right $A$-modules and the Clifford actions $V\otimes \Sigma\rightarrow \Sigma^*$ and $V\otimes \Sigma^*\rightarrow \Sigma$ are maps of right $A$-modules.
+We will now fix a composition algebra $A$ with an antiinvolution $\dagger$ as in Section \ref{sect:compositionalgebras} and set $W = A$. The nondegenerate symmetric bilinear pairing $a_1, a_2\mapsto \Re(a_1 a_2^\dagger)$ on $A$ endows $W$ with a pairing.
 
-Since $\Sigma$ and $\Sigma^*$ are right $A$-modules, by Lemma \ref{lm:extendpairing} we may extend the scalar spinorial pairing to an $A$-valued pairing $\Sigma\otimes \Sigma^*\rightarrow A$ by
-\[(s_1\otimes q_1, s_2\otimes q_2)^A = (s_1, s_2)\sigma(q_1) q_2.\]
+If we additionally assume that $A$ is associative, then both $\Sigma$ and $\Sigma^*$ are right $A$-modules and the Clifford actions $V\otimes \Sigma\rightarrow \Sigma^*$ and $V\otimes \Sigma^*\rightarrow \Sigma$ are maps of right $A$-modules. By Lemma \ref{lm:extendpairing} we may extend the scalar spinorial pairing to an $A$-valued pairing $\Sigma\otimes \Sigma^*\rightarrow A$ by
+\[(s_1\otimes q_1, s_2\otimes q_2)^A = (s_1, s_2)q_1^\dagger q_2.\]
 We now give the analogue of Theorem \ref{thm:matter3psi} in the 2d chiral setting.
 
 \begin{theorem}
-For $Q_1, Q_2\in\Sigma$ and $Q_3\in\Sigma^*$ we have
+Suppose the composition algebra $A$ is associative. For $Q_1, Q_2\in\Sigma$ and $Q_3\in\Sigma^*$ we have
 \[Q_1(Q_2, Q_3)^A + Q_2(Q_1, Q_3)^A = \rho(\Gamma(Q_1, Q_2))Q_3.\]
 \label{thm:2dmatter3psi}
 \end{theorem}
@@ -1628,12 +1626,12 @@ Pick basis elements $s\in S_+$ and $f\in S_-$, so that
 The right-hand side is
 \begin{align*}
 (q_1, q_2) \rho(\Gamma_+(s, s)) f\otimes q_3 &= 2(s, f) s\otimes (q_1, q_2) q_3 \\
-&= (s, f) s\otimes (q_1\sigma(q_2) + q_2\sigma(q_1)) q_3.
+&= (s, f) s\otimes (q_1 q_2^\dagger + q_2 q_1^\dagger) q_3.
 \end{align*}
 We have
-\[Q_1(Q_2, Q_3)^A = s\otimes q_1 (s, f) (\sigma(q_2)q_3),\]
+\[Q_1(Q_2, Q_3)^A = s\otimes q_1 (s, f) (q_2^\dagger q_3),\]
 so the left-hand side is
-\[s(s, f)\otimes (q_1(\sigma(q_2) q_3) + q_2(\sigma(q_1)q_3)).\]
+\[s(s, f)\otimes (q_1(q_2^\dagger q_3) + q_2(q_1^\dagger q_3)).\]
 By associativity of $A$ the two expressions are equal.
 \end{proof}
 
@@ -1945,7 +1943,7 @@ Therefore, again using Assumption \ref{assumption:3psi} we see that the cyclic s
 
 In this section we describe the coupling of super Yang--Mills theory to matter valued in a $\fg$-representation $P$, i.e. the supersymmetric gauged linear $\sigma$-models. Our description of the supersymmetry of the matter multiplet is inspired by the presentation of the supersymmetric nonlinear $\sigma$-models by Deligne and Freed in \cite[Chapter 3]{DeligneFreed}.
 
-Consider as before $V_\RR$ and a Clifford module $\Sigma\oplus \Sigma^*$ satisfying Assumption \ref{assumption:3psi}. In addition, fix a complex associative composition algebra $A$ equipped with an antiinvolution $\sigma$ as in Section \ref{sect:compositionalgebras}. Suppose $\Sigma\oplus \Sigma^*$ carries a compatible right $A$-module structure. Let $(-, -)^A\colon \Sigma\otimes \Sigma^*\rightarrow A$ be the correspoding $A$-valued pairing given by Lemma \ref{lm:extendpairing}. We make the following additional assumption.
+Consider as before $V_\RR$ and a Clifford module $\Sigma\oplus \Sigma^*$ satisfying Assumption \ref{assumption:3psi}. In addition, fix a complex associative composition algebra $A$ equipped with an antiinvolution $\dagger$ as in Section \ref{sect:compositionalgebras}. Suppose $\Sigma\oplus \Sigma^*$ carries a compatible right $A$-module structure. Let $(-, -)^A\colon \Sigma\otimes \Sigma^*\rightarrow A$ be the correspoding $A$-valued pairing given by Lemma \ref{lm:extendpairing}. We make the following additional assumption.
 
 \begin{assumption}
 For $Q_1, Q_2\in\Sigma$ and $Q_3\in\Sigma^*$ we have
@@ -1977,7 +1975,7 @@ In dimensions $\geq 3$ we have the following examples, where $\Sigma = A \oplus 
 \end{itemize}
 
 Let $P$ be a left $A$-module equipped with a $\CC$-valued nondegenerate symmetric bilinear pairing such that
-\[(av, w) = (v, \sigma(a)w).\]
+\[(av, w) = (v, a^\dagger w).\]
 Moreover, assume $P$ carries a $\fg$-action commuting with the $A$-module structure and preserving the bilinear pairing. Explicitly, for $A=\CC, \CC\otimes_\RR\CC, \mathbb{H}\otimes_\RR\CC$ we get the following data:
 \begin{itemize}
 \item $A=\CC$. We are looking for a $\fg$-representation $P$ equipped with a nondegenerate symmetric bilinear pairing.
@@ -2186,7 +2184,7 @@ Let $Q\in\Sigma$ be a nonzero square-zero supercharge, which we will fix for the
 The image of $\Gamma(Q, -)\colon \Sigma\rightarrow V$ is a complex Lagrangian (i.e. maximal isotropic) subspace $L\subset V$. Denote by $\sigma\colon V\rightarrow V$ the complex conjugation induced by the real structure $V = V_\RR\otimes_\RR\CC$. Since the bilinear form on $V_\RR$ is positive-definite, $L\cap \sigma(L) = 0$. In other words, $L$ defines a (linear) complex structure on $V_\RR$. Moreover, we may canonically identify $\sigma(L)\cong L^*$.
 
 \begin{remark}
-It is important here that we are working in the complexified setting.  While it makes sense to study a real form of 10d supersymmetric Yang--Mills theory in Lorentzian signature associated to a real Lie algebra $\gg_\RR$, where the fermions are valued in the Majorana-Weyl spinor bundle, in this real supersymmetry algebra there are no square-zero supercharges. Indeed, a square-zero supercharge induces a 5-dimensional isotropic subspace of $\RR^{10}$, which only exists in the split signature $5+5$ (in which case there is no real structure for the Weyl spinor representation).  So necessarily, twists of maximal super Yang--Mills theory cannot be compatible with any unitary structure.
+It is important here that we are working in the complexified setting.  While it makes sense to study a real form of 10d supersymmetric Yang--Mills theory in Lorentzian signature associated to a real Lie algebra $\gg_\RR$, where the fermions are valued in the Majorana-Weyl spinor bundle, in this real supersymmetry algebra there are no square-zero supercharges. Indeed, a square-zero supercharge induces a 5-dimensional isotropic subspace of $\RR^{10}$, which only exists in the split signature $5+5$ (in which case there is no real structure for the Weyl spinor representation).
 \end{remark}
 
 Let $\ML(L) = \ML(5)$ be the metalinear group of $L$. Under the embedding $\ML(L)\subset \Spin(V)$, the semi-spin representation $\Sigma=S_+$ decomposes as
