@@ -529,7 +529,9 @@ There is a natural Lie bracket on ${\rm Fun}_{\rm loc}(\cE, \cE)$ and a canonica
 \subsection{Formal Moduli Problems and Classical Field Theories}
 \label{sect:FMPs}
 
-The classical BV (Batalin-Vilkovisky) formalism \cite{BatalinVilkovisky} is a model for classical field theory from the Lagrangian perspective.  In brief, the classical BV formalism produces a local model for the critical locus of an action functional, but considered in the derived sense.  That is, given a space $\mc F$ of fields and an action functional with derivative $\d S$, one considers not just the usual locus in $\mc F$ of fields with $\d S(\phi) = 0$, but the derived intersection $\mr{dCrit}(S) = \mc F \cap^h_{T^*\mc F} \Gamma_{\d S}$ of the zero section in $T^*\mc F$ with the graph of $\d S$.  The formalism we describe below can be interpreted as an abstract formalism for modelling the tangent complex at a point to a derived critical locus $\mr{dCrit}(S)$ as a formal moduli problem.
+The classical BV (Batalin-Vilkovisky) formalism \cite{BatalinVilkovisky} is a model for classical field theory from the Lagrangian perspective.  In brief, the classical BV formalism produces a local model for the critical locus of an action functional, but considered in the derived sense.  That is, given a space $\mc F$ of fields and an action functional with derivative $\d S$, one considers not just the usual locus in $\mc F$ of fields with $\d S(\phi) = 0$, but the derived intersection $\mr{dCrit}(S) = \mc F \cap^h_{T^*\mc F} \Gamma_{\d S}$ of the zero section in $T^*\mc F$ with the graph of $\d S$.  
+
+The formalism we describe below can be interpreted as an abstract formalism for modelling the tangent complex at a point to a derived critical locus $\mr{dCrit}(S)$ as a formal moduli problem.  We will provide this motivation and interpretation from formal derived geometry in brief before proceeding to the main definitions of this section (for which an understanding of the following motivational notions is not required).
 
 Recall that a formal moduli problem is a functor from connective dg Artinian algebras $(R, \mathfrak{m})$ to simplicial sets which satisfies a derived version of Schlessinger's condition. We refer to \cite{DAGX,PridhamFMP,Toen} for more details.
 
@@ -537,12 +539,16 @@ For instance, if $\fg$ is an $L_\infty$ algebra, we have a formal moduli problem
 \[(B\fg)(R, \mathfrak{m})=\mathrm{MC}(\fg\otimes \mathfrak{m}),\]
 where $\mathrm{MC}(\fg\otimes \mathfrak{m})$ is the simplicial set of Maurer--Cartan elements. The main result of \cite{DAGX,PridhamFMP} is that the functor $B$ defines an equivalence of $\infty$-categories between $L_\infty$ algebras and formal moduli problems. The inverse functor sends a formal moduli problem $\cM$ to the $L_\infty$-algebra $T_{\cM, \ast}[-1]$, the shifted tangent complex of $\cM$ at the basepoint. This important result will serve as motivation for the main definition in this section (Definition \ref{def:classicalfieldtheory}).
 
+\begin{remark}
+We would like to emphasise that, while our definitions are motivated by formal derived geometry, all of our constructions will be formulated entirely using the language of $L_\infty$-algebras.  No knowledge of $\infty$-categories or formal derived algebraic geometry will be needed for any of the results we present in this paper, and -- indeed -- using the result of Lurie and Pridham cited above, the datum of a formal moduli problem is equivalent to the datum of an $L_\infty$ algebra.
+\end{remark}
+
 Let $V$ be a $\fg$-representation. Then we may construct an $L_\infty$ algebra
 \[L_{V, \fg}=\fg\oplus V[-1]\]
 with the only nontrivial brackets coming from the $L_\infty$ brackets on $\fg$ and the action map of $\fg$ on $V$. We introduce the notation
 \[V/\fg:= B L_{V, \fg}.\]
 
-\begin{example}
+\begin{example} 
 If $\fg$ is an $L_\infty$ algebra, it has an adjoint representation $\fg$. We define the \defterm{$n$-shifted tangent bundle} of $B\fg$ to be
 \[T[n] B\fg = \fg[n+1] / \fg.\]
 \label{ex:tangentBg}
@@ -562,7 +568,7 @@ Let $\fg$ be an $L_\infty$ algebra. A \defterm{$\Gm$-action} on a formal moduli 
 Suppose $\fg$ is an $L_\infty$ algebra and $V$ is a $\fg$-representation. Then $V/\fg$ carries a $\Gm$-action: the underlying $L_\infty$ algebra $\fg\oplus V[-1]$ carries a grading where $\fg$ has weight $0$ and $V[-1]$ has weight $1$. For instance, $T[n] B\fg$ and $T^*[n] B\fg$ carry $\Gm$-actions.
 \end{example}
 
-\begin{example}
+\begin{example} \label{Hamiltonian_example}}
 Suppose $\fg$ is a dg Lie algebra and $U$ a $\fg$-representation equipped with an $n$-shifted symplectic pairing $U\otimes U\rightarrow \CC[n]$. Consider the dg Lie algebra
 \[\fh = \fg\oplus U[-1]\oplus \fg^*[n-2]\]
 with the brackets $\fg\otimes \fg\rightarrow \fg$ given by the Lie bracket on $\fg$, $\fg\otimes U\rightarrow U$ given by the $\fg$-action on $U$, $\fg\otimes \fg^*\rightarrow \fg^*$ given by the coadjoint action and $\mu\colon U\otimes U\rightarrow \fg^*[d-1]$ defined by $(\mu(v, w), x)_\fg = ([x, v], w)_U$. The dg Lie algebra $\fh$ carries nondegenerate invariant symmetric pairing of cohomological degree $n-2$ given by pairing $\fg$ and $\fg^*$ and pairing $U$ with itself. We denote
@@ -570,7 +576,13 @@ with the brackets $\fg\otimes \fg\rightarrow \fg$ given by the Lie bracket on $\
 This formal moduli problem is equipped with a $\Gm$-action where $\fg$ has weight 0, $U[-1]$ has weight $1$ and $\fg^*[n-2]$ has weight $2$. This may be thought of as an infinitesimal version of the Hamiltonian reduction of $U$ by the $\fg$-action.
 \end{example}
 
-Now suppose $L$ is a local $L_\infty$ algebra on a manifold $M$. For every open subset $U\subset M$ we have a formal moduli problem
+Now suppose $L$ is a \emph{local} $L_\infty$ algebra on a manifold $M$. By a local $L_\infty$ algebra, we mean an $L_\infty$ algebra whose underlying graded vector space is the sheaf of sections of a graded vector bundle, where the differential and the brackets are given by polydifferential operators (see \cite[Section 3.1.3]{Book2} for a detailed definition).  
+
+\begin{remark}
+The constructions given in Examples \ref{ex:tangentBg} to \ref{Hamiltonian_example} all still make sense for local $L_\infty$ algebras, although we should take some care.  Instead of using the \emph{linear} dual $\gg^*$ of a dg Lie algebra, we should always form the density-valued dual $\L^! = L^* \otimes \mr{dens}_M$ for a local $L_\infty$ algebra $L$ on a manifold $M$.
+\end{remark}
+
+For every open subset $U\subset M$ we have a formal moduli problem
 \[(B L)(U) = B L(U),\]
 i.e. $L$ defines a presheaf $B L$ of formal moduli problems on $M$. The following definition was introduced in \cite[Definition 4.1.3.3]{Book2}.
 
@@ -956,8 +968,8 @@ We will now explain how to build classical BV theories from more traditional dat
 \begin{definition}
 A \defterm{classical BRST theory} on a manifold $M$ consists of the following data:
 \begin{itemize}
-\item A local formal moduli problem $\cM$ represented by a local $L_\infty$ algebra $L$.
-\item A local functional $S_{\mr{BRST}} \in \oloc(\cM)$ of polynomial degree $\geq 2$.
+\item A local formal moduli problem $\mc F$ represented by a local $L_\infty$ algebra $L$.
+\item A local functional $S_{\mr{BRST}} \in \oloc(\mc F)$ of polynomial degree $\geq 2$.
 \end{itemize}
 Together, these data must satisfy the equation
 \[Q_{\mr{BRST}} S_{\mr{BRST}} = 0,\]
@@ -967,7 +979,7 @@ where $Q_{\mr{BRST}}$ is the Chevalley--Eilenberg differential defined by the lo
 We call $L[1]$ the \defterm{space of BRST fields}.
 
 \begin{remark}
-We should note here that the formal moduli problem $\cM$ appearing in the definition is a local model for the stack of BRST fields \emph{before} imposing the classical equations of motion.  This is in alignment with Remark \ref{classical_BV_from_free_BV} -- where we consider a classical BV theory and equip it with the additional data of a classical interaction -- but in contrast to the formal moduli problem occurring in Definition \ref{classical_BV_def}.
+We should note here that the formal moduli problem $\mc F$ appearing in the definition is a local model for the stack of BRST fields \emph{before} imposing the classical equations of motion.  This is in alignment with Remark \ref{classical_BV_from_free_BV} -- where we consider a classical BV theory and equip it with the additional data of a classical interaction -- but in contrast to the formal moduli problem occurring in Definition \ref{classical_BV_def}.
 \end{remark}
 
 \begin{remark}
@@ -975,21 +987,21 @@ In the most typical examples, the bundle $L[1]$ is concentrated in $\ZZ$-degrees
 \end{remark}
 
 
-Given a classical BRST theory $\cM$, we may consider the cotangent theory $T^*[-1]\cM$ whose action functional we denote by $S_{\rm anti}$.
-Let us denote the pullback of $S_{\mathrm{BRST}}$ along the obvious projection $T^*[-1]\cM\rightarrow \cM$ by the same letter. Then the equation $Q_{\mathrm{BRST}} S_{\mathrm{BRST}} = 0$ in $\oloc(\cM)$ implies that $\{S_{\rm anti}, S_{\mathrm{BRST}}\} = 0$ in $\oloc(T^*[-1]\cM)$.
+Given a classical BRST theory $\mc F$, we may consider the cotangent theory $T^*[-1]\mc F$ whose action functional we denote by $S_{\rm anti}$.
+Let us denote the pullback of $S_{\mathrm{BRST}}$ along the obvious projection $T^*[-1]\mc F\rightarrow \mc F$ by the same letter. Then the equation $Q_{\mathrm{BRST}} S_{\mathrm{BRST}} = 0$ in $\oloc(\mc F)$ implies that $\{S_{\rm anti}, S_{\mathrm{BRST}}\} = 0$ in $\oloc(T^*[-1]\mc F)$.
 
 \begin{definition}
-Let $(\cM, S_{\mr{BRST}})$ be a classical BRST theory. The \defterm{associated classical BV theory} is the $(-1)$-shifted cotangent bundle $T^*[-1]\cM$ equipped with its natural $(-1)$-shifted symplectic structure and the action functional $S_{\mathrm{BRST}} + S_{\rm anti}$.
+Let $(\mc F, S_{\mr{BRST}})$ be a classical BRST theory. The \defterm{associated classical BV theory} is the $(-1)$-shifted cotangent bundle $T^*[-1]\mc F$ equipped with its natural $(-1)$-shifted symplectic structure and the action functional $S_{\mathrm{BRST}} + S_{\rm anti}$.
 \end{definition}
 
 In the case where $S_{\mr{BRST}} = 0$, the associated BV theory is of cotangent type, as in Example \ref{def:cotangent_type}.
 
 \begin{remark}
-In general, multiple BRST theories can give rise to the same BV theory.  A BV theory $(E, Q_{\mr{BV}}, \omega, I)$ is of cotangent type as long as there is \emph{some} $F$ with $S_{\mr{BRST}} = 0$ producing the given theory using the construction above.  Theories of cotangent type can still have interesting, non-trivial action functionals, encoded by the $L_\infty$ structure on $F$.
+In general, multiple BRST theories can give rise to the same BV theory.  A BV theory $(E, Q_{\mr{BV}}, \omega, I)$ is of cotangent type as long as there is \emph{some} graded vector sub-bundle with $S_{\mr{BRST}} = 0$ producing the given theory using the construction above.  Theories of cotangent type can still have interesting, non-trivial action functionals, encoded by the $L_\infty$ structure on the sub-bundle.
 \end{remark}
 
 \begin{remark}
-It is common to refer to coordinates on $\cM$ as \defterm{fields} and coordinates along the cotangent direction of $T^*[-1]\cM$ as \defterm{antifields}. Given a field $\phi$ the corresponding antifield will be denoted by $\phi^*$.
+It is common to refer to coordinates on $\mc F$ as \defterm{fields} and coordinates along the cotangent direction of $T^*[-1]\mc F$ as \defterm{antifields}. Given a field $\phi$ the corresponding antifield will be denoted by $\phi^*$.
 \end{remark}
 
 \subsection{Examples of Classical Field Theories}
