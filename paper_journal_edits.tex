@@ -1174,17 +1174,23 @@ E_M\otimes E_M \ar^{\omega_M}[r] & \Dens_M[-1]
 }
 \]
 is commutative.
-
-\item Under the map $p^*\colon \cE_N\rightarrow \cE_M$ we have $p^* S_N = S_M$ in $\oloc(\cE_M)$.
+\item Via the projection map $p \colon M \to N$ we have $p^* S_N = S_M$ in $\oloc(\cE_M)$ (see the remark below).
 \end{itemize}
 \end{definition}
 
 \begin{remark}
-The last condition involves a pullback of local functionals. Using the natural embeddings
-\[\oloc(\cE_M)\subset \cO(\cE_{M, c}),\qquad \oloc(\cE_N)\subset \cO(\cE_{N, c})\]
-we can interpret $S_N$ and $S_M$ as functionals on compactly-supported fields. Under these embeddings the pullback of local functionals corresponds to the map
-\[\cO(\cE_{N, c})\longrightarrow \cO(\cE_{M, c})\]
-which is the restriction under the map $\cE_{M, c}\rightarrow \cE_{N, c}$ given by integrating fields over the fibers of $p\colon M\rightarrow N$ for which we use the fiberwise density provided by the isomorphism $p^*\Dens_N\cong\Dens_M$; these integrals are convergent due to the compact support condition.
+The last condition involves a pullback of local functionals.
+Indeed, the isomorphisms $p^* E_N \cong E_M$ and $p^* {\rm Dens}_M \cong {\rm Dens}_N$ determine a map $p^* \colon \oloc(\cE_N) \to \oloc(\cE_M)$ defined as follows. 
+First, we define a map
+\[
+p^* \colon \cO(\cE_{N,c}) \to \cO(\cE_{M,c}) 
+\]
+as the restriction of the map $\cE_{M, c}\rightarrow \cE_{N, c}$ given by integrating fields over the fibers of $p\colon M\rightarrow N$ which uses the fiberwise density provided by the isomorphism $p^*\Dens_N\cong\Dens_M$---these integrals are convergent due to the compact support condition.
+Next, we use the natural embedding
+\[\oloc(\cE_M)\subset \cO(\cE_{M, c})
+\]
+to interpret any local functional $S \in \oloc(\cE_M)$ as a functional on compactly-supported fields $\cE_{M,c}$. 
+It is immediate to see that if $S$ is a local functional then so is $p^*S$ and hence we obtained the desired map.
 \end{remark}
 
 We have an obvious notion of isomorphisms of dimensional reductions: these are linear isomorphisms of classical field theories on $N$ which are compatible with the isomorphisms $p^* E_N\cong E_M$. Thus, the collection of dimensional reductions of a given classical field theory on $M$ forms a groupoid.
@@ -1396,18 +1402,18 @@ Given a bundle of Clifford modules $M=\Sigma\oplus \Sigma^*$, as in \eqref{eqn:c
 From \eqref{eq:quantizationtwoforms} we get the following property.
 
 \begin{prop}
-Suppose $Q_1,Q_2$ and $\lambda$ are sections of the bundle $\Sigma$ on $N$, and suppose that $Q_1$ and $Q_2$ are covariant constant. Then
+Suppose $Q_1,Q_2$ and $\lambda$ are sections of the bundle $\Sigma$ on $N$, and suppose that $Q_1$ and $Q_2$ are covariantly constant. Then
 \[\sd{\d}\rho(\Gamma(Q_1, \lambda)) Q_2 = \rho(d \Gamma(Q_1, \lambda)) Q_2 + (Q_1, \sd{\d} \lambda) Q_2\]
 \label{prop:cliffordactionproperty2}
-as sections of $\Sigma^* \to N$. 
+as sections of $\Sigma \to N$. 
 \end{prop}
 
 Finally, we have the following important compatibility between the Clifford action of differential forms, see \eqref{eq:quantizationtwoforms}, and the Dirac operator proved in \cite[equation 7.6]{Snygg}.
 
 \begin{prop}
-Suppose $Q$ is a covariant constant section of the bundle $\Sigma$ and $X\in\Omega^p(N)$. Then
+Suppose $Q$ is a covariantly constant section of $\Sigma$ and $X\in\Omega^p(N)$. Then
 \[\sd{\d}(\rho(X) Q) = \rho(\d X)Q + (-1)^{n(1+p)}\rho(\ast \d\ast X) Q\]
-as sections of $\Sigma^* \to N$. 
+as sections of $M = \Sigma \oplus \Sigma^* \to N$. 
 \label{prop:cliffordactionproperty3}
 \end{prop}
 
