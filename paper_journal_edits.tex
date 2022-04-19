@@ -568,7 +568,7 @@ Let $\fg$ be an $L_\infty$ algebra. A \defterm{$\Gm$-action} on a formal moduli 
 Suppose $\fg$ is an $L_\infty$ algebra and $V$ is a $\fg$-representation. Then $V/\fg$ carries a $\Gm$-action: the underlying $L_\infty$ algebra $\fg\oplus V[-1]$ carries a grading where $\fg$ has weight $0$ and $V[-1]$ has weight $1$. For instance, $T[n] B\fg$ and $T^*[n] B\fg$ carry $\Gm$-actions.
 \end{example}
 
-\begin{example} \label{Hamiltonian_example}}
+\begin{example} \label{Hamiltonian_example}
 Suppose $\fg$ is a dg Lie algebra and $U$ a $\fg$-representation equipped with an $n$-shifted symplectic pairing $U\otimes U\rightarrow \CC[n]$. Consider the dg Lie algebra
 \[\fh = \fg\oplus U[-1]\oplus \fg^*[n-2]\]
 with the brackets $\fg\otimes \fg\rightarrow \fg$ given by the Lie bracket on $\fg$, $\fg\otimes U\rightarrow U$ given by the $\fg$-action on $U$, $\fg\otimes \fg^*\rightarrow \fg^*$ given by the coadjoint action and $\mu\colon U\otimes U\rightarrow \fg^*[d-1]$ defined by $(\mu(v, w), x)_\fg = ([x, v], w)_U$. The dg Lie algebra $\fh$ carries nondegenerate invariant symmetric pairing of cohomological degree $n-2$ given by pairing $\fg$ and $\fg^*$ and pairing $U$ with itself. We denote
@@ -1351,7 +1351,12 @@ Having set up the formalism behind classical field theories in the BV and BRST f
 
 In this paper we will extensively use the theory of spinors. Let $V$ be a complex vector space equipped with a nondegenerate symmetric bilinear pairing. Recall that the Clifford algebra $\Cl(V)$ is defined to be the quotient of the tensor algebra on $V$ by the relation
 \[v_1 v_2 + v_2 v_1 = 2(v_1, v_2).\]
-Consider a $\ZZ/2\ZZ$-graded Clifford module $M=M^+\oplus M^-$. Denote the Clifford action by $\rho(v)\in\eend(M)$. We assume the Clifford module is equipped with a nondegenerate pairing $(-, -)\colon M^+\otimes M^-\rightarrow \CC$ such that
+Consider a $\ZZ/2\ZZ$-graded Clifford module 
+\begin{equation}\label{eqn:cliffordmod}
+M=M^+\oplus M^- .
+\end{equation}
+We note that in many examples with extended supersymmetry that $M$ is irreducible as a spin representation.
+Denote the Clifford action by $\rho(v)\in\eend(M)$. We assume the Clifford module is equipped with a nondegenerate pairing $(-, -)\colon M^+\otimes M^-\rightarrow \CC$ such that
 \[(\rho(v) Q_1, Q_2) = (Q_1, \rho(v) Q_2)\]
 for any $Q_1, Q_2\in M$ and $v\in V$. From now on we denote $M^+=\Sigma$ and $M^-=\Sigma^*$. We define the $\Gamma$-pairings
 \[\Gamma\colon\Sym^2(\Sigma)\longrightarrow V,\qquad \Gamma\colon\Sym^2(\Sigma^*)\longrightarrow V\]
@@ -1379,11 +1384,12 @@ The resulting action $\wedge^2(V)\otimes \Sigma\rightarrow \Sigma$ then coincide
 
 \begin{prop}
 For $X\in\wedge^2(V)$ and $Q_1,Q_2\in\Sigma$ we have
-\[\Gamma(Q_1, \rho(X) Q_2) + \Gamma(Q_2, \rho(X) Q_1) = -2\iota_{\Gamma(Q_1, Q_2)} X.\]
+\[\Gamma(Q_1, \rho(X) Q_2) + \Gamma(Q_2, \rho(X) Q_1) = -2\iota_{\Gamma(Q_1, Q_2)} X\]
 \label{prop:cliffordactionproperty1}
+where $\iota_{v} \colon \wedge^2(V) \to V$ denotes contraction by an element $v \in V$ using the nondegenerate symmetric pairing. 
 \end{prop}
 
-We may extend the discussion to the case of Riemannian manifolds $N$, where we replace $V$ by the vector bundle $TN$. Given a bundle of Clifford modules $M=\Sigma\oplus \Sigma^*$ as described above we have the associated Dirac operator
+We may extend the discussion to the case of Riemannian manifolds $N$, where we replace $V$ by the vector bundle $TN$. Given a bundle of Clifford modules $M=\Sigma\oplus \Sigma^*$, as in \eqref{eqn:cliffordmod}, we have the associated Dirac operator
 \[\sd{\d}\colon \Gamma(N, \Sigma)\rightarrow \Gamma(N, \Sigma^*).\]
 
 From \eqref{eq:quantizationtwoforms} we get the following property.
@@ -1394,11 +1400,12 @@ Suppose $Q_1,Q_2$ and $\lambda\in\Gamma(N, \Sigma)$. Then
 \label{prop:cliffordactionproperty2}
 \end{prop}
 
-Finally, we have the following important compatibility between the Clifford action of differential forms and the Dirac operator proved in \cite[equation 7.6]{Snygg}.
+Finally, we have the following important compatibility between the Clifford action of differential forms, see \eqref{eq:quantizationtwoforms}, and the Dirac operator proved in \cite[equation 7.6]{Snygg}.
 
 \begin{prop}
 Suppose $Q\in\Sigma$ and $X\in\Omega^p(N)$. Then
-\[\sd{\d}(\rho(X) Q) = \rho(\d X)Q + (-1)^{n(1+p)}\rho(\ast \d\ast X) Q.\]
+\[\sd{\d}(\rho(X) Q) = \rho(\d X)Q + (-1)^{n(1+p)}\rho(\ast \d\ast X) Q\]
+as sections of $\Sigma^* \to N$. 
 \label{prop:cliffordactionproperty3}
 \end{prop}
 
