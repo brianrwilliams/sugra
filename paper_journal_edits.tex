@@ -1174,23 +1174,21 @@ E_M\otimes E_M \ar^{\omega_M}[r] & \Dens_M[-1]
 }
 \]
 is commutative.
-\item Via the projection map $p \colon M \to N$ we have $p^* S_N = S_M$ in $\oloc(\cE_M)$ (see the remark below).
+\item Via the projection map $p \colon M \to N$ we have $p^* S_N = S_M$ in $\oloc(\cE_M)$.
 \end{itemize}
 \end{definition}
 
 \begin{remark}
-The last condition involves a pullback of local functionals.
-Indeed, the isomorphisms $p^* E_N \cong E_M$ and $p^* {\rm Dens}_M \cong {\rm Dens}_N$ determine a map $p^* \colon \oloc(\cE_N) \to \oloc(\cE_M)$ defined as follows. 
-First, we define a map
+The isomorphisms $p^* E_N \cong E_M$ and $p^* {\rm Dens}_M \cong {\rm Dens}_N$ determine the pullback map
+\[p^* \colon \oloc(\cE_N) \to \oloc(\cE_M)\]
+of local functionals used in the last condition. Recall that one also has inclusion maps $\oloc(\cE_N)\hookrightarrow \cO(\cE_{N, c})$ and $\oloc(\cE_M)\hookrightarrow \cO(\cE_{M, c})$ allowing us to interpret local functionals as functionals on compactly-supported fields. Then there is a commutative diagram
 \[
-p^* \colon \cO(\cE_{N,c}) \to \cO(\cE_{M,c}) 
+\xymatrix{
+\oloc(\cE_N) \ar^{p^*}[r] \ar[d] & \oloc(\cE_M) \ar[d] \\
+\cO(\cE_{N, c}) \ar[r] & \cO(\cE_{M, c})
+}
 \]
-as the restriction of the map $\cE_{M, c}\rightarrow \cE_{N, c}$ given by integrating fields over the fibers of $p\colon M\rightarrow N$ which uses the fiberwise density provided by the isomorphism $p^*\Dens_N\cong\Dens_M$---these integrals are convergent due to the compact support condition.
-Next, we use the natural embedding
-\[\oloc(\cE_M)\subset \cO(\cE_{M, c})
-\]
-to interpret any local functional $S \in \oloc(\cE_M)$ as a functional on compactly-supported fields $\cE_{M,c}$. 
-It is immediate to see that if $S$ is a local functional then so is $p^*S$ and hence we obtained the desired map.
+where the bottom map is the restriction under the map $\cE_{M, c}\rightarrow \cE_{N, c}$ given by integrating fields over the fibers of $p\colon M\rightarrow N$: this uses the fiberwise density provided by the isomorphism $p^*\Dens_N\cong\Dens_M$ and this is well-defined due to the compact support condition.
 \end{remark}
 
 We have an obvious notion of isomorphisms of dimensional reductions: these are linear isomorphisms of classical field theories on $N$ which are compatible with the isomorphisms $p^* E_N\cong E_M$. Thus, the collection of dimensional reductions of a given classical field theory on $M$ forms a groupoid.
